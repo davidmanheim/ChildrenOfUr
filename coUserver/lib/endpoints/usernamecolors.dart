@@ -26,13 +26,15 @@ class UsernameColors {
       String query = "SELECT username_color FROM users WHERE lower(username) = lower(@username)";
 
       // Results
-      List<Map<String, dynamic>> hexes = await dbConn.query(query, String, {
-        "username": username
-      });
+		List hexes = await dbConn.query(query, String, {
+		"username": username
+	  });
 
       // At least 1 row (should only be 1)
       if (hexes.length >= 1) {
-        String returnedHex = hexes.first["username_color"];
+		Map returnedRow = hexes.first as Map;
+		dynamic storedHex = returnedRow["username_color"];
+		String returnedHex = storedHex == null ? "#" : storedHex.toString();
         // Return result
         if (returnedHex.trim() != "#") {
           // Value provided

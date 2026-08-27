@@ -107,11 +107,11 @@ handleCORS() async {
 	});
 }
 
-PostgreSql get dbConn => app.request.attributes.dbConn;
+PostgreSql get dbConn => app.request.attributes.get('dbConn');
 
 @app.Route('/serverStatus')
-Map getServerStatus() {
-	Map statusMap = {};
+Map<String, dynamic> getServerStatus() {
+	Map<String, dynamic> statusMap = {};
 	try {
 		statusMap['status'] = "OK";
 		statusMap['loadCert'] = loadCert;

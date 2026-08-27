@@ -11,9 +11,17 @@ class MetalRock extends Rock {
 			..itemRequirements = itemReq
 			..energyRequirements = new EnergyRequirements(energyAmount: 10);
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/rock_metal/rock_metal_1/rock_metal_1.swf)
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host. The source SWF's main timeline has 6
+		// real frames (not the 5 the old hardcoded metadata implied); all 6
+		// are used here rather than dropping one to match the old count.
 		states =
 		{
-			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "https://childrenofur.com/assets/entityImages/rock_metal_x1_5_x1_4_x1_3_x1_2_x1_1__1_png_1354832615.png", 685, 100, 137, 100, 5, false)
+			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "files/sprites/generated/converted/metalrock-5-4-3-2-1.png", 822, 101, 137, 101, 6, false)
 		};
 		setState('5-4-3-2-1');
 		state = new Random().nextInt(currentState.numFrames);

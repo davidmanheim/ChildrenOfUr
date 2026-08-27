@@ -240,10 +240,10 @@ class RockWindow extends Modal {
 			..dataset['goto'] = '${choice.gotoScreen}'
 			..text = choice.text;
 
-		if (choice.isQuestAccept) {
+		if (choice.isQuestAccept ?? false) {
 			_createChoiceListener(choiceE, 'acceptQuest', questId);
 		}
-		if (choice.isQuestReject) {
+		if (choice.isQuestReject ?? false) {
 			_createChoiceListener(choiceE, 'rejectQuest', questId);
 		}
 

@@ -35,8 +35,8 @@ class SkillManager extends Object {
 	/// Read skills from JSON file
 	static Future<int> loadSkills() async {
 		File file = new File(path.join(serverDir.path, 'lib', 'skills', 'skillsdata.json'));
-		JSON.decode(await file.readAsString()).forEach((String id, Map data) {
-			SKILL_DATA[id] = new Skill.fromMap(data, id);
+		jsonDecode(await file.readAsString()).forEach((dynamic id, dynamic data) {
+			SKILL_DATA[id as String] = new Skill.fromMap(data as Map, id as String);
 		});
 
 		_loading.complete();
@@ -87,7 +87,13 @@ class SkillManager extends Object {
 		PostgreSql dbConn = await dbManager.getConnection();
 		try {
 			// Get data from database
-			Map<String, int> playerSkillsData = JSON.decode((await getMetabolics(email: email)).skillsJson);
+			Map<dynamic, dynamic> decodedSkills = jsonDecode((await getMetabolics(email: email)).skillsJson);
+			Map<String, int> playerSkillsData = {};
+			decodedSkills.forEach((dynamic id, dynamic points) {
+				if (points is num) {
+					playerSkillsData[id.toString()] = points.toInt();
+				}
+			});
 
 			// Fill in skill information
 			List<Map<String, dynamic>> playerSkillsList = new List();
@@ -98,7 +104,9 @@ class SkillManager extends Object {
 			return playerSkillsList;
 		} catch (e, st) {
 			Log.error('Error getting skill list for email <email=$email>', e, st);
-			return null;
+			// The browser expects valid JSON array data even when a player's
+			// skill record cannot be read.
+			return [];
 		} finally {
 			dbManager.closeConnection(dbConn);
 		}

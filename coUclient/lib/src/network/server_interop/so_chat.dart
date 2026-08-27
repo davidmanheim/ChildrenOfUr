@@ -64,7 +64,7 @@ void _updateChatBubble(Map<String, dynamic> map, Entity entity) {
 			if (windowManager.settings.logNpcMessages && bubbleText.trim().length > 0) {
 				String type = entity.canvas.attributes['type'];
 				Chat.localChat.addMessage('($type)', bubbleText,
-					overrideUsernameLink: 'https://childrenofur.com/encyclopedia/#/entity/${type.replaceAll(' ', '')}');
+					overrideUsernameLink: 'https://www2.childrenofur.com/encyclopedia/#/entity/${type.replaceAll(' ', '')}');
 			}
 		}
 

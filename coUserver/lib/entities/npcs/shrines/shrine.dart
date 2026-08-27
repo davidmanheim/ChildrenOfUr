@@ -44,7 +44,7 @@ class Shrine extends NPC {
 		map['favor'] = giantFavor;
 		map['maxFavor'] = maxAmt;
 		map['id'] = id;
-		userSocket.add(JSON.encode(map));
+		userSocket.add(jsonEncode(map));
 
 		communeCount++;
 		setState('open');
@@ -74,7 +74,7 @@ class Shrine extends NPC {
 			addedFavorMap['maxFavor'] = instanceMirror
 				.getField(new Symbol(giantName.toLowerCase() + 'FavorMax'))
 				.reflectee;
-			userSocket.add(JSON.encode(addedFavorMap));
+			userSocket.add(jsonEncode(addedFavorMap));
 
 			//offer 'get an emblem with a giant' quest
 			QuestEndpoint.questLogCache[email]?.offerQuest('Q3');

@@ -23,7 +23,7 @@ part 'quest_endpoint.dart';
 
 part 'quest_service.dart';
 
-abstract class Trackable implements EventHandler {
+abstract class Trackable implements EventHandler<RequirementProgress> {
 	String email;
 	bool beingTracked = false;
 	Timer limitTimer;
@@ -50,7 +50,7 @@ class Requirement extends Trackable {
 	@Field() int numRequired, timeLimit;
 	@Field() String id, text, type, eventType;
 	@Field() String iconUrl = '';
-	@Field() List<String> typeDone = [];
+	@Field() List typeDone = [];
 
 	@Field() bool get fulfilled => _fulfilled;
 
@@ -130,7 +130,8 @@ class Requirement extends Trackable {
 		}
 
 		messageBus.subscribe(RequirementProgress, this,
-								 whereFunc: (RequirementProgress progress) => progress.email == email);
+								 whereFunc: (dynamic progress) =>
+									progress is RequirementProgress && progress.email == email);
 		mbSubscriptions[RequirementProgress] = this;
 	}
 
@@ -143,7 +144,7 @@ class Requirement extends Trackable {
 	String toString() => encode(this).toString();
 
 	@override
-	bool operator ==(Requirement other) => this.id == other.id;
+	bool operator ==(Object other) => other is Requirement && this.id == other.id;
 
 	@override
 	int get hashCode => id.hashCode;
@@ -151,12 +152,12 @@ class Requirement extends Trackable {
 
 class Conversation {
 	@Field() String id, title;
-	@Field() List<ConvoScreen> screens;
+	@Field() List screens;
 }
 
 class ConvoScreen {
-	@Field() List<String> paragraphs;
-	@Field() List<ConvoChoice> choices;
+	@Field() List paragraphs;
+	@Field() List choices;
 }
 
 class ConvoChoice {
@@ -171,7 +172,7 @@ class QuestRewards {
 		mood = 0,
 		img = 0,
 		currants = 0;
-	@Field() List<QuestFavor> favor = [];
+	@Field() List favor = [];
 }
 
 class QuestFavor {
@@ -182,8 +183,9 @@ class QuestFavor {
 class Quest extends Trackable with MetabolicsChange {
 	@Field() String id, title, description;
 	@Field() bool complete = false;
-	@Field() List<String> prerequisites = [];
-	@Field() List<Requirement> requirements = [];
+	@Field() List prerequisites = [];
+	// Kept raw for the legacy mirror mapper; QuestService normalizes the entries after decoding.
+	@Field() List requirements = [];
 	@Field() Conversation conversation_start, conversation_end, conversation_fail;
 	@Field() QuestRewards rewards;
 
@@ -196,7 +198,7 @@ class Quest extends Trackable with MetabolicsChange {
 		description = model.description;
 		prerequisites = model.prerequisites;
 		List<Requirement> requirements = [];
-		model.requirements.forEach((Requirement req) => requirements.add(new Requirement.clone(req)));
+		model.requirements.cast<Requirement>().forEach((Requirement req) => requirements.add(new Requirement.clone(req)));
 		this.requirements = requirements;
 		conversation_start = model.conversation_start;
 		conversation_end = model.conversation_end;
@@ -208,7 +210,7 @@ class Quest extends Trackable with MetabolicsChange {
 	Future handleEvent(dynamic r) async {
 		if (r is CompleteRequirement) {
 			try {
-				requirements.firstWhere((Requirement r) => !r.fulfilled);
+				requirements.cast<Requirement>().firstWhere((Requirement r) => !r.fulfilled);
 			} catch (e) {
 				complete = true;
 
@@ -230,7 +232,7 @@ class Quest extends Trackable with MetabolicsChange {
 			stopTracking();
 		} else if (r is RequirementUpdated) {
 			Map map = {'questUpdate': true, 'quest': encode(this)};
-			QuestEndpoint.userSockets[email]?.add(JSON.encode(map));
+			QuestEndpoint.userSockets[email]?.add(jsonEncode(map));
 		}
 	}
 
@@ -242,20 +244,20 @@ class Quest extends Trackable with MetabolicsChange {
 
 		super.startTracking(email);
 
-		requirements.forEach((Requirement r) => r.startTracking(email));
+		requirements.cast<Requirement>().forEach((Requirement r) => r.startTracking(email));
 
 		String heading = justStarted ? 'questBegin' : 'questInProgress';
 		Map questInProgress = {heading: true, 'quest': encode(this)};
-		QuestEndpoint.userSockets[email]?.add(JSON.encode(questInProgress));
+		QuestEndpoint.userSockets[email]?.add(jsonEncode(questInProgress));
 
-		messageBus.subscribe(CompleteRequirement, this, whereFunc: (CompleteRequirement r) {
-			return requirements.contains(r.requirement) && r.email == email;
+		messageBus.subscribe(CompleteRequirement, this, whereFunc: (dynamic event) {
+			return event is CompleteRequirement && requirements.contains(event.requirement) && event.email == email;
 		});
-		messageBus.subscribe(FailRequirement, this, whereFunc: (FailRequirement r) {
-			return requirements.contains(r.requirement) && r.email == email;
+		messageBus.subscribe(FailRequirement, this, whereFunc: (dynamic event) {
+			return event is FailRequirement && requirements.contains(event.requirement) && event.email == email;
 		});
-		messageBus.subscribe(RequirementUpdated, this, whereFunc: (RequirementUpdated update) {
-			return requirements.contains(update.requirement) && update.email == email;
+		messageBus.subscribe(RequirementUpdated, this, whereFunc: (dynamic event) {
+			return event is RequirementUpdated && requirements.contains(event.requirement) && event.email == email;
 		});
 		mbSubscriptions.addAll({
 								   CompleteRequirement: this,
@@ -271,7 +273,7 @@ class Quest extends Trackable with MetabolicsChange {
 	@override
 	void stopTracking() {
 		super.stopTracking();
-		requirements.forEach((Requirement r) => r.stopTracking());
+		requirements.cast<Requirement>().forEach((Requirement r) => r.stopTracking());
 	}
 
 	@override
@@ -300,7 +302,7 @@ class UserQuestLog extends Trackable {
 
 			Map map = {'questComplete': true, 'quest': encode(q.quest)};
 			if (QuestEndpoint.userSockets[email] != null) {
-				QuestEndpoint.userSockets[email].add(JSON.encode(map));
+				QuestEndpoint.userSockets[email].add(jsonEncode(map));
 			}
 
 			inProgressQuests = new List.from(inProgressQuests)
@@ -308,7 +310,7 @@ class UserQuestLog extends Trackable {
 			completedQuests = new List.from(completedQuests)
 				..add(q.quest);
 
-			QuestService.updateQuestLog(this);
+			QuestService.saveQuestLog(this);
 
 			//if they completed the sammich quest, go get a snocone
 			//wait for a minute before offering
@@ -322,13 +324,13 @@ class UserQuestLog extends Trackable {
 
 			Map map = {'questFail': true, 'quest': encode(q.quest)};
 			if (QuestEndpoint.userSockets[email] != null) {
-				QuestEndpoint.userSockets[email].add(JSON.encode(map));
+				QuestEndpoint.userSockets[email].add(jsonEncode(map));
 			}
 
 			inProgressQuests = new List.from(inProgressQuests)
 				..removeWhere((Quest quest) => quest == q.quest);
 
-			QuestService.updateQuestLog(this);
+			QuestService.saveQuestLog(this);
 		} else if (event is RequirementUpdated) {
 			RequirementUpdated update = event;
 			List<Quest> tmp = [];
@@ -341,7 +343,7 @@ class UserQuestLog extends Trackable {
 			});
 			inProgressQuests = tmp;
 
-			QuestService.updateQuestLog(this);
+			QuestService.saveQuestLog(this);
 		} else if (event is AcceptQuest) {
 			AcceptQuest acceptance = event;
 			if (headers['fromItem'] ?? false) {
@@ -367,14 +369,14 @@ class UserQuestLog extends Trackable {
 		//listen for quest completion events
 		//if they don't belong to us, let someone else get them
 		//if they do belong to us, send a message to the client to tell them of their success
-		messageBus.subscribe(CompleteQuest, this, whereFunc: (CompleteQuest q) {
-			return q.email == email;
+		messageBus.subscribe(CompleteQuest, this, whereFunc: (dynamic event) {
+			return event is CompleteQuest && event.email == email;
 		});
-		messageBus.subscribe(FailQuest, this, whereFunc: (FailQuest q) {
-			return q.email == email;
+		messageBus.subscribe(FailQuest, this, whereFunc: (dynamic event) {
+			return event is FailQuest && event.email == email;
 		});
-		messageBus.subscribe(RequirementUpdated, this, whereFunc: (RequirementUpdated update) {
-			return update.email == email;
+		messageBus.subscribe(RequirementUpdated, this, whereFunc: (dynamic event) {
+			return event is RequirementUpdated && event.email == email;
 		});
 		mbSubscriptions.addAll({
 								   CompleteQuest: this,
@@ -387,7 +389,7 @@ class UserQuestLog extends Trackable {
 	void stopTracking() {
 		super.stopTracking();
 		inProgressQuests.forEach((Quest q) => q.stopTracking());
-		QuestService.updateQuestLog(this);
+		QuestService.saveQuestLog(this);
 	}
 
 	Future<bool> addInProgressQuest(String questId) async {
@@ -400,7 +402,7 @@ class UserQuestLog extends Trackable {
 		List<Quest> tmp = inProgressQuests;
 		tmp.add(questToAdd);
 		inProgressQuests = tmp;
-		await QuestService.updateQuestLog(this);
+		await QuestService.saveQuestLog(this);
 
 		return true;
 	}
@@ -433,15 +435,15 @@ class UserQuestLog extends Trackable {
 			}
 		}
 
-		messageBus.subscribe(AcceptQuest, this, whereFunc: (AcceptQuest acceptance) {
-			return acceptance.email == email;
+		messageBus.subscribe(AcceptQuest, this, whereFunc: (dynamic event) {
+			return event is AcceptQuest && event.email == email;
 		}, enrichFunc: () {
 			headers['fromItem'] = fromItem;
 			headers['slot'] = slot;
 			headers['subSlot'] = subSlot;
 		});
-		messageBus.subscribe(RejectQuest, this, whereFunc: (RejectQuest rejection) {
-			return rejection.email == email;
+		messageBus.subscribe(RejectQuest, this, whereFunc: (dynamic event) {
+			return event is RejectQuest && event.email == email;
 		});
 		mbSubscriptions.addAll({
 								   AcceptQuest: this,
@@ -452,20 +454,52 @@ class UserQuestLog extends Trackable {
 			'questOffer': true,
 			'quest': encode(questToOffer)
 		};
-		QuestEndpoint.userSockets[email].add(JSON.encode(questOffer));
+		QuestEndpoint.userSockets[email].add(jsonEncode(questOffer));
 		offeringQuest = true;
 	}
 
-	List<Quest> get completedQuests => decode(JSON.decode(completed_list), Quest);
+	List<Quest> _decodeQuestList(String encodedQuests) {
+		dynamic decoded = decode(jsonDecode(encodedQuests ?? '[]'), Quest);
+		if (decoded is! List) {
+			return <Quest>[];
+		}
 
-	void set completedQuests(List<Quest> value) {
-		completed_list = JSON.encode(encode(value));
+		List<Quest> result = <Quest>[];
+		for (dynamic decodedQuest in decoded) {
+			if (decodedQuest is! Quest) {
+				continue;
+			}
+
+			// The legacy mirror mapper restores the outer Quest but leaves nested
+			// requirement records as JSON maps. Normalize them before lifecycle
+			// methods call Requirement.startTracking/stopTracking.
+			List<Requirement> requirements = <Requirement>[];
+			for (dynamic decodedRequirement in decodedQuest.requirements ?? const []) {
+				if (decodedRequirement is Requirement) {
+					requirements.add(decodedRequirement);
+				} else if (decodedRequirement is Map) {
+					dynamic requirement = decode(decodedRequirement, Requirement);
+					if (requirement is Requirement) {
+						requirements.add(requirement);
+					}
+				}
+			}
+			decodedQuest.requirements = requirements;
+			result.add(decodedQuest);
+		}
+		return result;
 	}
 
-	List<Quest> get inProgressQuests => decode(JSON.decode(in_progress_list), Quest);
+	List<Quest> get completedQuests => _decodeQuestList(completed_list);
+
+	void set completedQuests(List<Quest> value) {
+		completed_list = jsonEncode(encode(value));
+	}
+
+	List<Quest> get inProgressQuests => _decodeQuestList(in_progress_list);
 
 	void set inProgressQuests(List<Quest> value) {
-		in_progress_list = JSON.encode(encode(value));
+		in_progress_list = jsonEncode(encode(value));
 	}
 
 	@override

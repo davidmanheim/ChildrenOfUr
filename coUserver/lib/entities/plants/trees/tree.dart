@@ -37,20 +37,20 @@ abstract class Tree extends Plant {
 	@override
 	void restoreState(Map<String, String> metadata) {
 		if (metadata.containsKey('maturity')) {
-			maturity = JSON.decode(metadata['maturity']);
+			maturity = jsonDecode(metadata['maturity']);
 			setState('maturity_$maturity');
 			maxState = currentState.numFrames - 1;
 		}
 		if (metadata.containsKey('state')) {
-			state = JSON.decode(metadata['state']);
+			state = jsonDecode(metadata['state']);
 		}
 	}
 
 	@override
 	Map<String, String> getPersistMetadata() {
 		Map<String, String> map = {
-			'maturity': JSON.encode(maturity),
-			'state': JSON.encode(state),
+			'maturity': jsonEncode(maturity),
+			'state': jsonEncode(state),
 		};
 
 		return map;

@@ -98,13 +98,15 @@ class PlayerBuff extends Buff {
 		await stopUpdating(write: false);
 		remaining = new Duration(milliseconds: 0);
 		await _write(remove: true);
-		cache.remove(this);
+		// cache is keyed by email; cache.remove(this) was a silent no-op that
+		// left removed buffs discoverable through getFromCache().
+		cache[email]?.remove(this);
 	}
 
 	Future extend(Duration additional) async {
 		remaining += additional;
 		await _write();
-		StreetUpdateHandler.userSockets[email].add(JSON.encode({
+		StreetUpdateHandler.userSockets[email].add(jsonEncode({
 			'buff_extend': id,
 			'buff_extend_secs': additional.inSeconds
 		}));
@@ -113,17 +115,18 @@ class PlayerBuff extends Buff {
 	Future<bool> _write({remove: false}) async {
 		PostgreSql dbConn = await dbManager.getConnection();
 		try {
-			// Get existing data
-			Map<String, int> buffsData = JSON.decode(
+			// Get existing data. jsonDecode returns Map<String, dynamic>, which the
+			// Dart 2 VM will not implicitly downcast to Map<String, int>.
+			Map<String, int> buffsData = (jsonDecode(
 				(await dbConn.query(BuffManager.CELL_QUERY, Metabolics, {"email": email})
-			).first.buffsJson);
+			).first.buffsJson) as Map).cast<String, int>();
 
 			// Modify
 			buffsData[id] = remaining.inSeconds;
 			if ((!indefinite || remove) && remaining.inSeconds <= 0) {
 				buffsData.remove(id);
 			}
-			String newJson = JSON.encode(buffsData);
+			String newJson = jsonEncode(buffsData);
 
 			// Write new data
 			return (await (dbConn.execute(

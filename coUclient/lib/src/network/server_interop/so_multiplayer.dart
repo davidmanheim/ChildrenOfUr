@@ -1,7 +1,9 @@
 part of couclient;
 
-String multiplayerServer = "${Configs.ws}//${Configs.websocketServerAddress}/playerUpdate";
-String streetEventServer = "${Configs.ws}//${Configs.websocketServerAddress}/streetUpdate";
+// These values are read after login, but this library itself is loaded before
+// Configs.init().  Keep them lazy so they use the configured local endpoint.
+String get multiplayerServer => "${Configs.ws}//${Configs.websocketServerAddress}/playerUpdate";
+String get streetEventServer => "${Configs.ws}//${Configs.websocketServerAddress}/streetUpdate";
 String joined = "",
 	creatingPlayer = "";
 WebSocket streetSocket, playerSocket;

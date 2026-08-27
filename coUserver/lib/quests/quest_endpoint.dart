@@ -6,9 +6,18 @@ class QuestEndpoint {
 	static Map<String, UserQuestLog> questLogCache = {};
 
 	static void handle(WebSocket ws) {
-		ws.listen((message) => processMessage(ws, message),
-			          onError: (error) => cleanupList(ws),
-			          onDone: () => cleanupList(ws));
+		ws.listen((message) async {
+			try {
+				await processMessage(ws, message);
+			} catch (error, stackTrace) {
+				// A malformed or incomplete quest payload must not become an
+				// unhandled asynchronous exception and terminate the server.
+				Log.error('Processing quest websocket message', error, stackTrace);
+				cleanupList(ws);
+			}
+		},
+		          onError: (error) => cleanupList(ws),
+		          onDone: () => cleanupList(ws));
 	}
 
 	static void cleanupList(WebSocket ws) {
@@ -22,23 +31,39 @@ class QuestEndpoint {
 		});
 
 		if (leavingUser != null) {
-			questLogCache[leavingUser]?.stopTracking();
+			try {
+				questLogCache[leavingUser]?.stopTracking();
+			} catch (error, stackTrace) {
+				// A bad persisted quest must not be able to terminate the process
+				// merely because a browser websocket closes.
+				Log.error('Cleaning up quests for <email=$leavingUser>', error, stackTrace);
+			}
 			questLogCache.remove(leavingUser);
 			userSockets.remove(leavingUser);
 		}
 	}
 
 	static Future processMessage(WebSocket ws, String message) async {
-		Map map = JSON.decode(message);
+		Map map = jsonDecode(message);
 		if (map['connect'] != null) {
 			String email = map['email'];
 
 			//setup our associative data structures
 			userSockets[email] = ws;
-			questLogCache[email] = await QuestService.getQuestLog(email);
+			questLogCache[email] = await QuestService.loadQuestLog(email);
 
 			//start tracking this user's quest log
 			questLogCache[email].startTracking(email);
+
+			// A restored local world has no NPC placement data to offer the first
+			// quest. Seed the existing starter quest only when explicitly enabled
+			// by the local compose configuration; hosted deployments remain driven
+			// by their normal quest triggers.
+			if (Platform.environment['LOCAL_SEED_QUESTS'] == 'true' &&
+				questLogCache[email].inProgressQuests.isEmpty &&
+				questLogCache[email].completedQuests.isEmpty) {
+				await questLogCache[email].addInProgressQuest('Q1');
+			}
 		}
 		if (map['acceptQuest'] != null) {
 			try {
@@ -62,7 +87,7 @@ class QuestEndpoint {
 		List<String> events = [];
 
 		quests.values.forEach((Quest quest) {
-			quest.requirements.forEach((Requirement requirement) {
+			quest.requirements.cast<Requirement>().forEach((Requirement requirement) {
 				if (!types.contains(requirement.type)) {
 					types.add(requirement.type);
 				}

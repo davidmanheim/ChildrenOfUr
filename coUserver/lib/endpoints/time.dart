@@ -59,7 +59,7 @@ class Clock {
 	Stream onUpdate, onNewDay, onHoliday;
 	String _dayofweek, _year, _day, _month, _time;
 	int _dayInt, _monthInt;
-	List _dPM = [29, 3, 53, 17, 73, 19, 13, 37, 5, 47, 11, 1];
+	List<int> _dPM = [29, 3, 53, 17, 73, 19, 13, 37, 5, 47, 11, 1];
 	DateTime startDate;
 
 	// Getters, so they can only be written by the Clock

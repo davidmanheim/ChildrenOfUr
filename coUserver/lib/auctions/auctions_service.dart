@@ -57,15 +57,16 @@ class AuctionService {
 			queryString = queryString.substring(0, queryString.length - 3);
 		}
 
-		List<Auction> auctions = await dbConn.query(queryString, Auction, values);
+		List<Auction> auctions =
+			(await dbConn.query(queryString, Auction, values)).cast<Auction>();
 		return API.createResponse(result: auctions);
 	}
 
 	@app.Route('/auctions/:id', methods: const[app.GET])
 	Future<shelf.Response> getAuction(String id) async {
 		String queryString = 'SELECT * FROM auctions WHERE id = @id';
-		List<Auction> auctions = await dbConn.query(queryString, Auction,
-			                                        {'id': id});
+		List<Auction> auctions = (await dbConn.query(queryString, Auction,
+			                                        {'id': id})).cast<Auction>();
 		if (auctions.length > 0) {
 			return API.createResponse(result: auctions.first);
 		} else {

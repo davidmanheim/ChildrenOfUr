@@ -5,7 +5,7 @@ part of item;
 // //// //
 
 // takes away item and gives the stats specified in items/actions/consume.json
-class Consumable extends Object with MetabolicsChange {
+abstract class Consumable {
 	Future<bool> eat({String streetName, Map map, WebSocket userSocket, String email, String username}) async {
 		Item consumed = await consume(streetName: streetName,
 			map: map,
@@ -56,7 +56,7 @@ class Consumable extends Object with MetabolicsChange {
 	}
 
 	Future<bool> taste({String streetName, Map map, WebSocket userSocket, String email, String username}) async {
-		bool result = await trySetMetabolics(email, mood: -5);
+		bool result = await (this as Item).trySetMetabolics(email, mood: -5);
 		
 		if (result) {
 			toast(
@@ -120,7 +120,7 @@ class Consumable extends Object with MetabolicsChange {
 			BuffManager.addToUser('full_of_pie', email, userSocket);
 		}
 
-		await trySetMetabolics(email, energy: energyAward, mood: moodAward, imgMin: imgAward);
+		await (this as Item).trySetMetabolics(email, energy: energyAward, mood: moodAward, imgMin: imgAward);
 		return consumed;
 	}
 }

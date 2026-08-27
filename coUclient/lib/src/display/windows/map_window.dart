@@ -325,7 +325,7 @@ class WorldMap {
 					try {
 						// Visited streets
 						String tsid = mapData.streetData[streetName]["tsid"];
-						if (metabolics.playerMetabolics.locationHistory.contains(tsidL(tsid))) {
+						if (metabolics.location_history.contains(tsidL(tsid))) {
 							street.classes.add("visited");
 						}
 					} catch (e) {
@@ -509,7 +509,7 @@ class WorldMap {
 				"enabled": true,
 				"timeRequired": 0,
 				"clientCallback": () {
-					window.open("https://childrenofur.com/encyclopedia/#/street/$tsid", "_blank");
+					window.open("https://www2.childrenofur.com/encyclopedia/#/street/$tsid", "_blank");
 				}
 			}
 		];

@@ -3,8 +3,6 @@ part of couclient;
 class Meters {
 	int runCount;
 
-	NumberFormat commaFormatter = new NumberFormat("#,###");
-
 	Element greenDisk = querySelector('#energyDisks .green');
 	Element redDisk = querySelector('#energyDisks .red');
 	Element hurtDisk = querySelector('#leftDisk .hurt');

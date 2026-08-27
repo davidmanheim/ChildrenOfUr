@@ -48,7 +48,7 @@ class Action {
 	@override
 	String toString() {
 		String returnString = "$actionName requires any of ${itemRequirements.any}, all of ${itemRequirements.all} and at least ";
-		skillRequirements.requiredSkillLevels.forEach((String skill, int level) {
+		skillRequirements.requiredSkillLevels.forEach((dynamic skill, dynamic level) {
 			returnString += "$level level of $skill, ";
 		});
 		returnString = returnString.substring(0, returnString.length - 1);
@@ -59,7 +59,10 @@ class Action {
 
 class SkillRequirements {
 	@Field()
-	Map<String, int> requiredSkillLevels = {};
+	// The archived JSON decoder yields untyped maps.  Keeping these maps
+	// unparameterized lets the legacy Redstone mapper load the definitions;
+	// callers still use string keys and integer values from the source JSON.
+	Map requiredSkillLevels = {};
 	@Field()
 	String error = "You don't have the required skill(s)";
 
@@ -72,9 +75,9 @@ class SkillRequirements {
 
 class ItemRequirements {
 	@Field()
-	List<String> any = [];
+	List any = [];
 	@Field()
-	Map<String, int> all = {};
+	Map all = {};
 	@Field()
 	String error = "You don't have the required item(s)";
 

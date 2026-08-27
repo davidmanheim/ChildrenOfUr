@@ -6,7 +6,7 @@ class WeatherLocation {
 	@Field() WeatherData current;
 
 	/// Forecast conditions
-	@Field() List<WeatherData> forecast;
+	@Field() List forecast;
 
 	/// Decode to object
 	WeatherLocation(this.current, this.forecast);

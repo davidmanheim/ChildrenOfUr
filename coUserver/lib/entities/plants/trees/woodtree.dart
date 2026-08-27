@@ -40,12 +40,20 @@ class WoodTree extends Tree {
 			..actionWord = 'chopping'
 			..itemRequirements = itemReq;
 
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/wood_tree/wood_tree.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// These replace the previous hardcoded links to the retired
+		// childrenofur.com asset host (which also all pointed at the same
+		// single remote file under different crop rectangles).
+		const String base = "files/sprites/generated/converted/wood_tree-";
 		states =
 		{
-			"maturity_1" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/wood_tree_maturity_6_variant_2_x6_1_png_1354833445.png", 528, 138, 88, 138, 6, false),
-			"maturity_2" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/wood_tree_maturity_6_variant_2_x6_1_png_1354833445.png", 564, 135, 94, 135, 6, false),
-			"maturity_3" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/wood_tree_maturity_6_variant_2_x6_1_png_1354833445.png", 522, 121, 87, 121, 6, false),
-			"maturity_4" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/wood_tree_maturity_6_variant_2_x6_1_png_1354833445.png", 558, 138, 93, 138, 6, false)
+			"maturity_1" : new Spritesheet("maturity_1", "${base}maturity_1.png", 528, 138, 88, 138, 6, false),
+			"maturity_2" : new Spritesheet("maturity_2", "${base}maturity_2.png", 564, 135, 94, 135, 6, false),
+			"maturity_3" : new Spritesheet("maturity_3", "${base}maturity_3.png", 522, 121, 87, 121, 6, false),
+			"maturity_4" : new Spritesheet("maturity_4", "${base}maturity_4.png", 558, 138, 93, 138, 6, false)
 		};
 		maturity = new Random().nextInt(states.length) + 1;
 		setState('maturity_$maturity');

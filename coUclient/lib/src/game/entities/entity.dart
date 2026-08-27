@@ -36,7 +36,11 @@ abstract class Entity {
 	List<Action> actions = [];
 
 	void update(double dt) {
-		if (this != CurrentPlayer && CurrentPlayer.entityRect.intersects(this.entityRect)) {
+		// This is an identity check, not an entity-value comparison.  Using the
+		// overloaded equality operator here makes the legacy DDC runtime perform
+		// a dynamic inherited-field lookup (`Player.id`) that current browsers
+		// reject during the game loop.
+		if (!identical(this, CurrentPlayer) && CurrentPlayer.entityRect.intersects(this.entityRect)) {
 			updateGlow(true);
 			CurrentPlayer.intersectingObjects[id] = this.entityRect;
 		} else {
@@ -132,11 +136,15 @@ abstract class Entity {
 	int get hashCode => id.hashCode;
 
 	@override
-	operator ==(other) {
+	bool operator ==(Object other) {
+		if (identical(this, other)) {
+			return true;
+		}
 		if (other is! Entity) {
 			return false;
 		}
 
-		return (other.id == this.id);
+		Entity entity = other;
+		return entity.id == id;
 	}
 }

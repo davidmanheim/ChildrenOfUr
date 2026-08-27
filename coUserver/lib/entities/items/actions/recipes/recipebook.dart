@@ -55,7 +55,7 @@ class RecipeBook extends Object with MetabolicsChange {
 				if (email != null && email != "") {
 
 					// For every item it requires...
-					await Future.forEach(recipe.input.keys, (String itemType) async {
+					await Future.forEach(recipe.input.keys.cast<String>(), (String itemType) async {
 						int qty = recipe.input[itemType];
 
 						// Get the item data to send
@@ -70,7 +70,7 @@ class RecipeBook extends Object with MetabolicsChange {
 
 					// For every skill it requires...
 					if (recipe.skills != null) {
-						await Future.forEach(recipe.skills.keys, (String skillId) async {
+						await Future.forEach(recipe.skills.keys.cast<String>(), (String skillId) async {
 							// Already missing a skill, skip checking the rest
 							if (skillTooLow) {
 								return;
@@ -103,7 +103,7 @@ class RecipeBook extends Object with MetabolicsChange {
 
 		}); // End recipes loop
 
-		return JSON.encode(toolRecipes);
+		return jsonEncode(toolRecipes);
 	}
 
 	// Returned string is displayed as "You had to stop using your {tool} because {reason}
@@ -158,7 +158,7 @@ class RecipeBook extends Object with MetabolicsChange {
 
 		String missingItem = null;
 		// Test all of the items
-		await Future.forEach(recipe.input.keys, (String itemType) async {
+		await Future.forEach(recipe.input.keys.cast<String>(), (String itemType) async {
 			if (missingItem != null) {
 				// Can't escape the async forEach,
 				// but we can save inventory calls
@@ -182,7 +182,7 @@ class RecipeBook extends Object with MetabolicsChange {
 		}
 
 		// Take all of the items
-		await Future.forEach(recipe.input.keys, (String itemType) async {
+		await Future.forEach(recipe.input.keys.cast<String>(), (String itemType) async {
 			// Remove the item
 			int qty = recipe.input[itemType];
 			int got = (await InventoryV2.takeAnyItemsFromUser(email, itemType, qty));

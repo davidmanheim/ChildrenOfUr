@@ -49,7 +49,7 @@ class CollisionPlatform implements Comparable {
 		id = platformLine['id'];
 		ceiling = platformLine['platform_pc_perm'] == 1;
 
-		(platformLine['endpoints'] as List).forEach((Map endpoint) {
+		(platformLine['endpoints'] as List).forEach((dynamic endpoint) {
 			if (endpoint["name"] == "start") {
 				start = new Point(endpoint["x"], endpoint["y"] + groundY);
 				if (layer['name'] == 'middleground') {
@@ -75,8 +75,10 @@ class CollisionPlatform implements Comparable {
 	}
 
 	@override
-	int compareTo(CollisionPlatform other) {
-		return other.start.y - start.y;
+	int compareTo(Object other) {
+		if (other is! CollisionPlatform) return 0;
+		CollisionPlatform platform = other as CollisionPlatform;
+		return platform.start.y - start.y;
 	}
 }
 
@@ -150,7 +152,9 @@ class Street {
 
 			if (type == "Img" || type == "Mood" || type == "Energy" || type == "Currant"
 				|| type == "Mystery" || type == "Favor" || type == "Time" || type == "Quarazy") {
-				quoins[id] = new Quoin(id, x, y, type.toLowerCase());
+				// PostgreSQL returns the coordinate columns as doubles, while the
+				// legacy Quoin wire model uses integer pixel coordinates.
+				quoins[id] = new Quoin(id, x.toInt(), y.toInt(), type.toLowerCase());
 			} else {
 				try {
 					ClassMirror classMirror = findClassMirror(type.replaceAll(" ", ""));
@@ -318,7 +322,7 @@ class Street {
 		CollisionPlatform bestPlatform;
 		num x = posX;
 		num feetY = cameFrom + groundY;
-		num bestDiffY = double.INFINITY;
+		num bestDiffY = double.infinity;
 
 		for (CollisionPlatform platform in platforms) {
 			if (platform.ceiling) {

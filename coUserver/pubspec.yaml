@@ -2,21 +2,23 @@ name: coUserver
 version: 0.0.0
 author: coU Development Team
 description: The sourcecode/tools needed to hack/compile the Children of Ur server
+environment:
+  sdk: '>=2.0.0 <3.0.0'
 dependencies:
-  redstone: "^0.6.4"
-  redstone_mapper_pg: "^0.2.0-beta.2+2"
-  intl: "^0.14.0"
+  redstone:
+    path: ../vendor/redstone
+  redstone_mapper_pg:
+    path: ../vendor/redstone_mapper_pg
+  intl: "^0.15.8"
   http: "^0.11.3+3"
-  slack: "^1.2.2"
-  image: "^1.1.25"
-  message_bus: "^0.0.4"
-  jsonx: "2.0.1"
-  inflection: "^0.4.1"
-  args: "^0.13.5"
+  slack:
+    path: ../vendor/dart-slack
+  image: "^2.1.19"
+  message_bus:
+    path: ../vendor/message_bus
+  jsonx:
+    path: ../vendor/jsonx
+  inflection:
+    path: ../vendor/inflection
+  args: "^1.5.2"
 
-dev_dependencies:
-  coverage: "^0.7.2"
-  dart_dev: "^1.0.0"
-  dart_style: ">=0.1.8 <0.3.0"
-  dartdoc: any
-  test: "^0.12.15+3"

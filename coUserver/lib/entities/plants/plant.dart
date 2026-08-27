@@ -10,7 +10,9 @@ abstract class Plant extends Entity {
 	 */
 
 	String id, type, streetName;
-	int state, maxState, x, y, z, rotation = 0, actionTime = 3000;
+	int state, maxState;
+	int actionTime = 3000;
+	num x, y, z, rotation = 0;
 	bool h_flip = false;
 	DateTime respawn;
 	List<Action> actions = [];

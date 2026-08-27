@@ -6,9 +6,9 @@ part of coUserver;
 Future<List<String>> searchUsers(@app.QueryParam('query') String query) async {
 	query = '%${query.toLowerCase()}%';
 
-	List<User> users = await dbConn.query(
+	List<User> users = (await dbConn.query(
 		'SELECT * FROM users WHERE lower(username) LIKE @query',
-		User, {'query': query});
+		User, {'query': query})).cast<User>();
 
 	List<String> usernames = [];
 

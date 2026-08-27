@@ -1,9 +1,9 @@
 part of couclient;
 
 class Quoin {
+	static const int generatedSpriteSize = 64;
 	static Map<String, bool> notified = new Map();
 
-	Map <String, int> quoins = {"img":0, "mood":1, "energy":2, "currant":3, "mystery":4, "favor":5, "time":6, "quarazy":7};
 	String typeString;
 	Animation animation;
 	bool ready = false;
@@ -39,14 +39,10 @@ class Quoin {
 		}
 
 		id = map["id"];
-		int quoinValue = quoins[typeString.toLowerCase()];
-
-		List<int> frameList = [];
-		for(int i = 0; i < 24; i++) {
-			frameList.add(quoinValue * 24 + i);
-		}
-
-		animation = new Animation(map['url'], typeString.toLowerCase(), 8, 24, frameList, fps:22);
+		// The original 8x24 remote quoin sprite sheet has been retired.  The
+		// local fallback is one static token, deliberately rendered at a small
+		// in-world size rather than cropped as a legacy sprite sheet.
+		animation = new Animation(map['url'], typeString.toLowerCase(), 1, 1, [0], fps: 1);
 		try {
 		await animation.load();
 		} catch (e, st) {
@@ -55,8 +51,8 @@ class Quoin {
 		}
 
 		canvas = new CanvasElement();
-		canvas.width = animation.width;
-		canvas.height = animation.height;
+		canvas.width = generatedSpriteSize;
+		canvas.height = generatedSpriteSize;
 		canvas.id = id;
 		canvas.className = map['type'] + " quoin";
 		canvas.style.position = "absolute";
@@ -222,9 +218,9 @@ class Quoin {
 
 			//fastest way to clear a canvas (without using a solid color)
 			//source: http://jsperf.com/ctx-clearrect-vs-canvas-width-canvas-width/6
-			canvas.context2D.clearRect(0, 0, animation.width, animation.height);
+			canvas.context2D.clearRect(0, 0, canvas.width, canvas.height);
 
-			Rectangle destRect = new Rectangle(0, 0, animation.width, animation.height);
+			Rectangle destRect = new Rectangle(0, 0, canvas.width, canvas.height);
 			canvas.context2D.drawImageToRect(animation.spritesheet, destRect, sourceRect: animation.sourceRect);
 			animation.dirty = false;
 		}

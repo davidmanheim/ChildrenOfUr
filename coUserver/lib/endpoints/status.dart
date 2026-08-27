@@ -56,9 +56,11 @@ class ServerStatus {
 	static int get numStreetsLoaded => streetsLoaded.length;
 
 	/// Memory usage (bytes)
+	/// Uses the VM's own resident set size; the historical getMemoryUsage.sh
+	/// relied on bc/awk, which the slim server image does not ship.
 	static Future<int> get bytesUsed async {
 		try {
-			return int.parse(await _getScript('getMemoryUsage')) * 1024;
+			return ProcessInfo.currentRss;
 		} catch (e, st) {
 			Log.error('Getting memory usage', e, st);
 			return 0;
@@ -68,7 +70,13 @@ class ServerStatus {
 	/// CPU usage (percent)
 	static Future<double> get cpuUsed async {
 		try {
-			return double.parse(await _getScript('getCpuUsage'));
+			// The slim server image has no ps(1); an empty result is an expected
+			// environment limitation, not an error worth logging on every poll.
+			String out = await _getScript('getCpuUsage');
+			if (out.isEmpty) {
+				return 0.0;
+			}
+			return double.parse(out);
 		} catch (e, st) {
 			Log.error('Getting CPU usage', e, st);
 			return 0.0;
@@ -117,15 +125,17 @@ class ServerStatus {
 }
 
 @app.Route('/serverStatus')
-Future<Map<String, dynamic>> getServerStatus() async => {
-	'numPlayers': ServerStatus.numOnlinePlayers,
-	'playerList': ServerStatus.onlinePlayers,
-	'numStreetsLoaded': ServerStatus.numStreetsLoaded,
-	'streetsLoaded': ServerStatus.streetsLoaded,
-	'bytesUsed': await ServerStatus.bytesUsed,
-	'cpuUsed': await ServerStatus.cpuUsed,
-	'uptime': ServerStatus.uptime.toString().split('.').first
-};
+Future<Map<String, dynamic>> getServerStatus() async {
+	return new Map<String, dynamic>.from({
+		'numPlayers': ServerStatus.numOnlinePlayers,
+		'playerList': ServerStatus.onlinePlayers,
+		'numStreetsLoaded': ServerStatus.numStreetsLoaded,
+		'streetsLoaded': ServerStatus.streetsLoaded,
+		'bytesUsed': await ServerStatus.bytesUsed,
+		'cpuUsed': await ServerStatus.cpuUsed,
+		'uptime': ServerStatus.uptime.toString().split('.').first
+	});
+}
 
 // Get the server log
 @app.Route('/serverLog')

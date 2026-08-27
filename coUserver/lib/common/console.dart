@@ -149,14 +149,18 @@ class Console {
 
 	static void init() {
 		// Graceful shutdown
-		ProcessSignal.SIGINT.watch().listen((ProcessSignal sig) async => await cleanup());
+		ProcessSignal.sigint.watch().listen((ProcessSignal sig) async => await cleanup());
 		if (!Platform.isWindows) {
-			ProcessSignal.SIGTERM.watch().listen((ProcessSignal sig) async => await cleanup());
+			ProcessSignal.sigterm.watch().listen((ProcessSignal sig) async => await cleanup());
 		}
 
 		if (!Platform.isWindows) {
-			stdin.echoMode = true;
-			stdin.lineMode = true;
+			// Docker's detached process has no interactive terminal.  The game
+			// server can still run without the optional command console.
+			try {
+				stdin.echoMode = true;
+				stdin.lineMode = true;
+			} catch (_) {}
 		}
 
 		_handler?.cancel();

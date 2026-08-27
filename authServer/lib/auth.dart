@@ -4,6 +4,43 @@ part of authServer;
 class AuthService {
     static Map<String, WebSocket> pendingVerifications = {};
 
+    /// Local development does not have the original Firebase project or a
+    /// production account database.  Create (once) and return a complete
+    /// session for a deterministic local player so the browser can enter the
+    /// game without external authentication or email verification.
+    @app.Route('/localSession', methods: const[app.POST])
+    Future<Map> localSession() async {
+        const String username = 'LocalPlayer';
+        const String email = 'local-player@localhost';
+
+        List<User> users = (await dbConn.query(
+            'SELECT * FROM users WHERE email = @email', User, {'email': email})).cast<User>();
+
+        if (users.length == 0) {
+            await dbConn.execute(
+                'INSERT INTO users (username, email, bio) VALUES (@username, @email, @bio)',
+                {'username': username, 'email': email, 'bio': ''});
+
+            users = (await dbConn.query(
+                'SELECT * FROM users WHERE email = @email', User, {'email': email})).cast<User>();
+            int userId = users.first.id;
+
+            await dbConn.execute(
+                'INSERT INTO api_access (user_id, api_token) VALUES (@userId, @token)',
+                {'userId': userId, 'token': 'local-api-token'});
+            await dbConn.execute(
+                'INSERT INTO metabolics (user_id) VALUES (@userId)', {'userId': userId});
+            await dbConn.execute(
+                'INSERT INTO user_quests (user_id) VALUES (@userId)', {'userId': userId});
+            await dbConn.execute(
+                'INSERT INTO inventories (user_id) VALUES (@userId)', {'userId': userId});
+            await dbConn.execute(
+                'INSERT INTO stats (user_id) VALUES (@userId)', {'userId': userId});
+        }
+
+        return getSession({'email': email});
+    }
+
     @app.Route('/verifyEmail', methods: const[app.POST])
     Future<Map> verifyEmail(@app.Body(app.JSON) Map parameters) async
     {
@@ -17,8 +54,11 @@ class AuthService {
         String link = 'https://$serverUrl:8383/auth/verifyLink?token=$token&email=$email';
 
         //check to see if we've already tried to verify.
+        //NOTE: the table stores the raw address; `email` above is URL-encoded
+        //for the link only, and matching on it would never find existing rows.
         String query = "SELECT * FROM email_verifications WHERE email = @email";
-        List<EmailVerification> verificationResults = await dbConn.query(query, EmailVerification, {'email':email});
+        List<EmailVerification> verificationResults = (await dbConn.query(
+            query, EmailVerification, {'email':parameters['email']})).cast<EmailVerification>();
 
         //store this in the database with their email so we can verify when they click the link
         String updateQuery;
@@ -26,7 +66,7 @@ class AuthService {
             updateQuery = 'INSERT INTO email_verifications(email,token) VALUES(@email,@token)';
         }
         else {
-            updateQuery = 'UPDATE email_verification SET token = @token WHERE email = @email';
+            updateQuery = 'UPDATE email_verifications SET token = @token WHERE email = @email';
         }
         int result = await dbConn.execute(updateQuery, {'email':parameters['email'], 'token':token});
         if (result < 1) {
@@ -69,14 +109,15 @@ class AuthService {
     Future verifyLink(@app.QueryParam() String email, @app.QueryParam() String token) async
     {
         String query = "SELECT * FROM email_verifications WHERE email = @email AND token = @token";
-        List<EmailVerification> results = await dbConn.query(query, EmailVerification, {'email':email, 'token':token});
+        List<EmailVerification> results = (await dbConn.query(
+            query, EmailVerification, {'email':email, 'token':token})).cast<EmailVerification>();
         if (results.length > 0) {
             EmailVerification result = results[0];
             Map serverdata = await getSession({'email':email});
             Map response = {'result':'success', 'serverdata':serverdata};
 
             if (AuthService.pendingVerifications[email] != null) {
-                AuthService.pendingVerifications[email].add(JSON.encode(response));
+                AuthService.pendingVerifications[email].add(jsonEncode(response));
             }
             //set verified to true
             query = "UPDATE email_verifications SET verified = true WHERE email = @email";
@@ -94,7 +135,8 @@ class AuthService {
         Map response = {'result':'not verified'};
 
         String query = "SELECT * FROM email_verifications WHERE email = @email AND verified = true";
-        List<EmailVerification> results = await dbConn.query(query, EmailVerification, {'email':email});
+        List<EmailVerification> results = (await dbConn.query(
+            query, EmailVerification, {'email':email})).cast<EmailVerification>();
         if (results.length > 0) {
             Map serverdata = await getSession({'email':email});
             response = {'result':'success', 'serverdata':serverdata};
@@ -109,7 +151,8 @@ class AuthService {
         String email = parameters['email'];
         String sessionKey = await createSession(email);
         String query = "SELECT * FROM metabolics AS m JOIN users AS u ON m.user_id = u.id WHERE u.username = @username";
-        List<Metabolics> m = await dbConn.query(query, Metabolics, {'username':SESSIONS[sessionKey].username});
+        List<Metabolics> m = (await dbConn.query(
+            query, Metabolics, {'username':SESSIONS[sessionKey].username})).cast<Metabolics>();
         Metabolics playerMetabolics = new Metabolics();
         if (m.length > 0)
             playerMetabolics = m[0];
@@ -120,15 +163,16 @@ class AuthService {
             'playerName':SESSIONS[sessionKey].username,
             'playerEmail':email,
             'playerStreet':playerMetabolics.currentStreet,
-            'metabolics':JSON.encode(encode(playerMetabolics))};
+            'metabolics':jsonEncode(encode(playerMetabolics))};
 
         return serverdata;
     }
 
     @app.Route('/logout', methods: const[app.POST])
     Map logoutUser(@app.Body(app.JSON) Map parameters) {
-        //should remove any session key associated with parameters['sessionToken']
-        SESSIONS.remove([parameters['sessionToken']]);
+        //remove any session key associated with parameters['sessionToken']
+        //(previously passed a one-element List as the key, which never matched)
+        SESSIONS.remove(parameters['sessionToken']);
         return {'ok':'yes'};
     }
 
@@ -146,7 +190,8 @@ class AuthService {
             print('got from token this email: $email');
             //check for existing username
             String query = "SELECT username FROM users WHERE username = @username";
-            List<User> users = await dbConn.query(query, User, {'username':parameters['username']});
+            List<User> users = (await dbConn.query(
+                query, User, {'username':parameters['username']})).cast<User>();
             if (users.length != 0) {
                 print('user ${parameters['username']} already exists');
                 return {'ok':'no', 'reason':'user ${parameters['username']} already exists'};
@@ -154,7 +199,7 @@ class AuthService {
 
             //check for existing email
             query = "SELECT email FROM users WHERE email = @email";
-            users = await dbConn.query(query, User, {'email':email});
+            users = (await dbConn.query(query, User, {'email':email})).cast<User>();
             if (users.length != 0) {
                 print('email $email already exists');
                 return {'ok':'no', 'reason':'email $email already exists'};
@@ -201,7 +246,7 @@ class AuthService {
 
         String sessionKey = uuid.v1();
 
-        List<User> users = await dbConn.query(query, User, params);
+        List<User> users = (await dbConn.query(query, User, params)).cast<User>();
         Session session;
 
         if (users.length > 0)

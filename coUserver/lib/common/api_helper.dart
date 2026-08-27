@@ -82,8 +82,8 @@ class API {
 			String query = "SELECT * FROM api_access WHERE api_token = @apiToken";
 			PostgreSql dbConn = await dbManager.getConnection();
 			try {
-				List<ApiAccess> accesses = await dbConn.query(
-					query, ApiAccess,{'api_token': apiToken});
+				List<ApiAccess> accesses = (await dbConn.query(
+					query, ApiAccess,{'api_token': apiToken})).cast<ApiAccess>();
 				if (accesses.length > 0) {
 					access = accesses.first;
 					_accessCache[apiToken] = access;
@@ -108,7 +108,7 @@ class API {
 		_accessCache = {};
 		PostgreSql dbConn = await dbManager.getConnection();
 		try {
-			List<ApiAccess> accesses = await dbConn.query(query, ApiAccess);
+			List<ApiAccess> accesses = (await dbConn.query(query, ApiAccess)).cast<ApiAccess>();
 			for (ApiAccess access in accesses) {
 				_accessCache[access.api_token] = access;
 			}

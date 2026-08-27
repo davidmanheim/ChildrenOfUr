@@ -87,7 +87,8 @@ class HomeStreet {
 		try {
 			int userId = await User.getIdFromUsername(username);
 			String query = "SELECT tsid FROM ${StreetInstance.TABLE} WHERE is_home AND tsid LIKE '%.@userId'";
-			List<String> rows = await dbConn.query(query, String, {'userId': userId});
+			List<String> rows =
+				(await dbConn.query(query, String, {'userId': userId})).cast<String>();
 			return rows.single;
 		} catch (ex) {
 			return null;

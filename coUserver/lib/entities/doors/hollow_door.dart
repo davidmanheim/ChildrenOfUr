@@ -42,12 +42,10 @@ class HollowDoor extends Door {
 
 		if (outside) {
 			toLocation = datastate["data"]["inside"]["tsid"];
-			actions = [{
-				"action": "enter",
-				"timeRequired": 0,
-				"enabled": true,
-				"actionWord": "walking in"
-			}];
+			actions = [new Action.withName('enter')
+				..timeRequired = 0
+				..enabled = true
+				..actionWord = 'walking in'];
 			currentState = new Spritesheet(
 				"door_shoppe_int",
 				"https://childrenofur.com/assets/entityImages/door_asset_mini_door_01a_g1.png",
@@ -55,12 +53,10 @@ class HollowDoor extends Door {
 			);
 		} else {
 			toLocation = datastate["data"]["outside"]["tsid"];
-			actions = [{
-				"action": "exit",
-				"timeRequired": 0,
-				"enabled": true,
-				"actionWord": "walking out"
-			}];
+			actions = [new Action.withName('exit')
+				..timeRequired = 0
+				..enabled = true
+				..actionWord = 'walking out'];
 			currentState = new Spritesheet(
 				"door_shoppe_int",
 				"https://childrenofur.com/assets/entityImages/door_asset_heights.png",

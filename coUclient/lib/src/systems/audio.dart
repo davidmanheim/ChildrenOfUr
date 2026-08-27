@@ -1,5 +1,5 @@
 part of couclient;
-// Handles all the engine's audio needs
+// Handles all the engine's audio needs.
 
 
 class SoundManager {
@@ -15,6 +15,8 @@ class SoundManager {
 	Map<String, Scound> songs = {};
 	Scound currentSong;
 	AudioInstance currentAudioInstance, loadingSound;
+	bool _soundCloudUnavailableLogged = false;
+	bool _audioUnlocked = false;
 
 	SoundManager() {
 		logmessage('[SoundManager] Starting up...');
@@ -51,6 +53,12 @@ class SoundManager {
 		} finally {
 			setMute(view.slider.muted);
 		}
+
+		// Chrome suspends Web Audio contexts created during page load. Resume the
+		// already-loaded local effects only after the first real user gesture.
+		document.onClick.first.then((_) => _unlockAudio());
+		document.onTouchStart.first.then((_) => _unlockAudio());
+		document.onKeyDown.first.then((_) => _unlockAudio());
 
 		if(useWebAudio) {
 			//if canPlayType returns the empty string, that format is not compatible
@@ -97,6 +105,16 @@ class SoundManager {
 		} else {
 			await loadNonWebAudio();
 		}
+	}
+
+	void _unlockAudio() {
+		if (_audioUnlocked || !useWebAudio) {
+			return;
+		}
+		_audioUnlocked = true;
+		audioChannels.values.forEach((AudioChannel channel) {
+			channel.resume().catchError((_) {});
+		});
 	}
 
 	// Sound Effects ////////////////////////////////////////////////////////////////////////////////
@@ -228,6 +246,13 @@ class SoundManager {
 	}
 
 	Future<void> loadSong(String name) async {
+		if (SC_TOKEN == null || SC_TOKEN.trim().isEmpty) {
+			if (!_soundCloudUnavailableLogged) {
+				logmessage('[SoundManager] Background music is disabled locally: no SoundCloud API token is configured.');
+				_soundCloudUnavailableLogged = true;
+			}
+			return;
+		}
 		try{
 			if(ASSET['music'].get()[name] == null) {
 				logmessage('Song "$name" does not exist.');
@@ -262,6 +287,9 @@ class SoundManager {
 	}
 
 	Future<Null> _playSong(String name) {
+		if (songs[name] == null) {
+			return null;
+		}
 		/*
 		 * canPlayType should return:
 		 * probably: if the specified type appears to be playable.

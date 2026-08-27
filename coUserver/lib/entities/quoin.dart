@@ -2,7 +2,9 @@ part of entity;
 
 class Quoin
 {
-	String url = "https://childrenofur.com/assets/entityImages/quoin__x1_1_x1_2_x1_3_x1_4_x1_5_x1_6_x1_7_x1_8_png_1354829599.png";
+	// The original remotely-hosted sprite is no longer available.  This is a
+	// local generated fallback used by the synthetic local-world seed.
+	String url = "files/sprites/generated/local-quoin.svg";
 	String id, type;
 	int x,y;
 	DateTime respawn;

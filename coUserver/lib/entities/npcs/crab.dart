@@ -124,7 +124,7 @@ class Crab extends NPC {
 
 	/// Called from the client menu
 	void playFor({WebSocket userSocket, String email}) {
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			"action": "playMusic",
 			"id": id,
 			"openWindow": "itemChooser",

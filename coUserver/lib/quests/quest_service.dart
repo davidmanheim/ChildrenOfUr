@@ -6,36 +6,46 @@ Map<String, Quest> quests = {};
 class QuestService extends Object with MetabolicsChange {
 	@app.Route("/completed/:email")
 	@Encode()
-	static Future<List<Quest>> getCompleted(String email) async {
+	Future<List<Quest>> getCompleted(String email) async {
 		return await _getQuestList(email, 'completed_list');
 	}
 
 	@app.Route("/inProgress/:email")
 	@Encode()
-	static Future<List<Quest>> getInProgress(String email) async {
+	Future<List<Quest>> getInProgress(String email) async {
 		return await _getQuestList(email, 'in_progress_list');
 	}
 
 	@app.Route("/getQuestLog/:email")
 	@Encode()
-	static Future<UserQuestLog> getQuestLog(String email) async {
-		PostgreSql dbConn = await dbManager.getConnection();
-		UserQuestLog questLog = null;
+	Future<UserQuestLog> getQuestLog(String email) async {
+		return await loadQuestLog(email);
+	}
 
+	/// Shared non-HTTP lookup used by the quest websocket and quest tracking.
+	static Future<UserQuestLog> loadQuestLog(String email) async {
+		PostgreSql dbConn = await dbManager.getConnection();
 		String query = "SELECT q.* from user_quests q JOIN users u ON u.id = user_id where u.email = @email";
-		List<UserQuestLog> questLogs = await dbConn.query(query, UserQuestLog, {'email':email});
-		if (questLogs.length > 0) {
-			questLog = questLogs.first;
-		} else {
-			questLog = await createQuestLog(email);
+		List<UserQuestLog> questLogs;
+		try {
+			questLogs = (await dbConn.query(query, UserQuestLog, {'email':email})).cast<UserQuestLog>();
+		} finally {
+			await dbManager.closeConnection(dbConn);
 		}
 
-		await dbManager.closeConnection(dbConn);
-		return questLog;
+		// Do not hold the lookup connection while creating a missing record:
+		// local deployments use a small pool and that pattern deadlocks on a
+		// player's first quest websocket connection.
+		return questLogs.isNotEmpty ? questLogs.first : await createQuestLog(email);
 	}
 
 	@app.Route("/updateQuestLog", methods: const[app.POST])
-	static Future<bool> updateQuestLog(@Decode() UserQuestLog questLog) async {
+	Future<bool> updateQuestLog(@Decode() UserQuestLog questLog) async {
+		return await saveQuestLog(questLog);
+	}
+
+	/// Shared non-HTTP update used by quest tracking.
+	static Future<bool> saveQuestLog(UserQuestLog questLog) async {
 		PostgreSql dbConn = await dbManager.getConnection();
 		String query = "UPDATE user_quests SET completed_list = @completed_list, in_progress_list = @in_progress_list where id = @id";
 		int numUpdated = await dbConn.execute(query, questLog);
@@ -79,7 +89,7 @@ class QuestService extends Object with MetabolicsChange {
 		if (success) {
 			//create the item and give it to the user
 			Item questItem = new Item.clone('user_made_quest');
-			questItem.metadata['questData'] = JSON.encode(encode(quest));
+			questItem.metadata['questData'] = jsonEncode(encode(quest));
 			await InventoryV2.addItemToUser(email, questItem.getMap(), 1);
 		}
 	}
@@ -87,7 +97,7 @@ class QuestService extends Object with MetabolicsChange {
 	static Future<UserQuestLog> createQuestLog(String email) async {
 		PostgreSql dbConn = await dbManager.getConnection();
 		String query = "SELECT * FROM users where email = @email";
-		List<User> users = await dbConn.query(query, User, {'email':email});
+		List<User> users = (await dbConn.query(query, User, {'email':email})).cast<User>();
 		if(users.length > 0) {
 			int userId = users.first.id;
 			query = "INSERT INTO user_quests(user_id) VALUES(@id)";
@@ -95,12 +105,14 @@ class QuestService extends Object with MetabolicsChange {
 		}
 		await dbManager.closeConnection(dbConn);
 
-		return await getQuestLog(email);
+		return await loadQuestLog(email);
 	}
 
 	static Future<List<Quest>> _getQuestList(String email, String listType) async {
+		PostgreSql dbConn = await dbManager.getConnection();
 		String query = "SELECT q.* FROM user_quests q JOIN users u ON u.id = user_id WHERE u.email = @email";
-		List<UserQuestLog> results = await dbConn.query(query, UserQuestLog, {'email':email});
+		List<UserQuestLog> results = (await dbConn.query(query, UserQuestLog, {'email':email})).cast<UserQuestLog>();
+		await dbManager.closeConnection(dbConn);
 		if (results.length <= 0) {
 			return [];
 		}
@@ -125,7 +137,12 @@ class QuestService extends Object with MetabolicsChange {
 			await for(FileSystemEntity entity in questsDirectory.list(recursive: true)) {
 				if (entity is File) {
 					// load quests
-					Quest q = decode(JSON.decode(await entity.readAsString()), Quest);
+					Quest q = decode(jsonDecode(await entity.readAsString()), Quest);
+					q.requirements = (q.requirements ?? []).map((dynamic requirement) {
+						return requirement is Requirement
+							? requirement
+							: decode(new Map<String, dynamic>.from(requirement as Map), Requirement);
+					}).toList();
 					quests[q.id] = q;
 				}
 			}

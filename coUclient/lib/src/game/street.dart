@@ -302,34 +302,9 @@ class Street {
 
 // the callback function for our deco loading 'Batch'
 void setLoadingPercent(int percent) {
-	currentStreet.loadTime = new Stopwatch();
-	currentStreet.loadTime.start();
-
 	streetService.streetLoadingScreen.loadingPercent = percent;
 
 	if (percent >= 99) {
-		//TODO: Whatever '1000' is changed to, that's how long it takes to display street image
-		new KeepingTime().delayMilliseconds(1000 - currentStreet.loadTime.elapsedMilliseconds);
 		gpsIndicator.loadingNew = false;
-		currentStreet.loadTime.stop();
-		currentStreet.loadTime.reset();
-	}
-}
-
-//test stopwatch
-
-class KeepingTime {
-	Stopwatch watch;
-
-	KeepingTime() {
-		watch = new Stopwatch();
-	}
-
-	void delayMilliseconds(int milliseconds) {
-		watch.start();
-
-		while (watch.elapsedMilliseconds < (milliseconds));
-
-		watch.stop();
 	}
 }

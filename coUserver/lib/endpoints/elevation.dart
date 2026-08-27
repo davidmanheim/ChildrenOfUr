@@ -15,10 +15,10 @@ class Elevation {
 		if (_cache[username] != null) {
 			return _cache[username];
 		} else {
-			List<User> rows = await dbConn.query(
+			List<User> rows = (await dbConn.query(
 				'SELECT elevation FROM users WHERE username = @username',
 				User, {'username': username}
-			);
+			)).cast<User>();
 
 			String elevationStr = DEFAULT;
 			if (rows.length > 0) {
@@ -33,11 +33,11 @@ class Elevation {
 	/// Used to list guides/devs on site
 	@app.Route('/list/:status')
 	Future<List<Map<String, dynamic>>> list(String status) async {
-		List<User> rows = await dbConn.query(
+		List<User> rows = (await dbConn.query(
 			'SELECT username, last_login FROM users'
 			' WHERE elevation = @elevation',
 			User, {'elevation': status}
-		);
+		)).cast<User>();
 
 		List<Map<String, dynamic>> users = new List();
 

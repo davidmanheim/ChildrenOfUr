@@ -41,7 +41,7 @@ class Slot {
 	//a new instance of a Slot is empty by default
 	@Field() String itemType = "";
 	@Field() int count = 0;
-	@Field() Map<String, String> metadata = {};
+	@Field() Map metadata = {};
 
 	/// Create a slot from type, count, and metadata
 	Slot({this.itemType: '', this.count: 0, this.metadata: const {}});
@@ -91,11 +91,13 @@ class Slot {
 		}
 	}
 
-	bool operator ==(Slot other) {
+	bool operator ==(Object other) {
+		if (other is! Slot) return false;
+		Slot slot = other as Slot;
 		return (
-			itemType == other.itemType &&
-			count == other.count &&
-			metadata.toString() == other.metadata.toString()
+			itemType == slot.itemType &&
+			count == slot.count &&
+			metadata.toString() == slot.metadata.toString()
 		);
 	}
 }
@@ -143,7 +145,7 @@ class InventoryV2 {
 
 //	 Might need this
 //	void _upgradeItems() {
-//		List<Map> slots = JSON.decode(inventory_json);
+//		List<Map> slots = jsonDecode(inventory_json);
 //		List<Map> newSlots = [];
 //		for(Map slot in slots) {
 //			if(slot['itemType'] == null) {
@@ -157,9 +159,9 @@ class InventoryV2 {
 //			}
 //			newSlots.add(slot);
 //		}
-//		inventory_json = JSON.encode(newSlots);
-//		if (JSON.decode(inventory_json) is Map) {
-//			Map<String, int> inventoryMap = JSON.decode(inventory_json);
+//		inventory_json = jsonEncode(newSlots);
+//		if (jsonDecode(inventory_json) is Map) {
+//			Map<String, int> inventoryMap = jsonDecode(inventory_json);
 //			List<Slot> slotsToAdd = [];
 //
 //			inventoryMap.forEach((String itemType, int count) {
@@ -309,7 +311,7 @@ class InventoryV2 {
 
 	Future<int> _addItem(Map itemMap, int count, String email) async {
 		//instantiate an item object based on the map
-		Item item = jsonx.decode(JSON.encode(itemMap), type: Item);
+		Item item = jsonx.decode(jsonEncode(itemMap), type: Item);
 
 		if (item.isContainer && item.metadata['slots'] == null) {
 			List<Slot> emptySlots = [];
@@ -616,7 +618,7 @@ class InventoryV2 {
 			return 0;
 		}
 
-		Item item = jsonx.decode(JSON.encode(itemMap), type: Item);
+		Item item = jsonx.decode(jsonEncode(itemMap), type: Item);
 		// Keep a record of how many items we have taken from slots already,
 		// and how many more we need to remove
 		int toGrab = count,
@@ -754,7 +756,7 @@ class InventoryV2 {
 						if (!bagSlot.isEmpty) {
 							bagItem = new Item.clone(bagSlot.itemType);
 							Map<String,String> fixedMeta = {};
-							bagSlot.metadata.forEach((String key, dynamic value) {
+							bagSlot.metadata.forEach((dynamic key, dynamic value) {
 								fixedMeta[key] = value.toString();
 							});
 							bagItem.metadata = fixedMeta;
@@ -783,7 +785,7 @@ class InventoryV2 {
 			slotMaps.add(slotMap);
 		}
 		Map inventoryMap = {'inventory':'true', 'update':update, 'slots':slotMaps};
-		userSocket?.add(JSON.encode(inventoryMap));
+		userSocket?.add(jsonEncode(inventoryMap));
 	}
 
 	// Public Methods /////////////////////////////////////////////////////////////////////////////
@@ -791,7 +793,7 @@ class InventoryV2 {
 	// Return the inventory as a List<Map>, where each slot is a Map in the List
 	// Can then be READ by other functions (but not written to)
 	List<Map> getItems() {
-		return JSON.decode(inventory_json);
+		return jsonDecode(inventory_json);
 	}
 
 	bool _durabilityOk(Slot slot) {
@@ -1239,7 +1241,8 @@ Future<InventoryV2> getInventoryByUsername(String username) async {
 	PostgreSql dbConn = await dbManager.getConnection();
 
 	String queryString = "SELECT * FROM inventories JOIN users ON users.id = user_id WHERE users.username = @username";
-	List<InventoryV2> inventories = await dbConn.query(queryString, InventoryV2, {'username':username});
+	List<InventoryV2> inventories = (await dbConn.query(
+		queryString, InventoryV2, {'username':username})).cast<InventoryV2>();
 
 	InventoryV2 inventory = new InventoryV2();
 	if (inventories.length > 0) {
@@ -1256,7 +1259,8 @@ Future<InventoryV2> getInventory(String email) async {
 	PostgreSql dbConn = await dbManager.getConnection();
 
 	String queryString = "SELECT * FROM inventories JOIN users ON users.id = user_id WHERE users.email = @email";
-	List<InventoryV2> inventories = await dbConn.query(queryString, InventoryV2, {'email':email});
+	List<InventoryV2> inventories = (await dbConn.query(
+		queryString, InventoryV2, {'email':email})).cast<InventoryV2>();
 
 	InventoryV2 inventory = new InventoryV2();
 	if (inventories.length > 0) {

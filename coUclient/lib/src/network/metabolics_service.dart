@@ -12,7 +12,8 @@ MetabolicsService metabolics = new MetabolicsService();
 class MetabolicsService {
 	Metabolics playerMetabolics;
 	DateTime lastUpdate, nextUpdate;
-	String url = '${Configs.ws}//${Configs.websocketServerAddress}/metabolics';
+	// MetabolicsService is a global, constructed before Configs.init().
+	String get url => '${Configs.ws}//${Configs.websocketServerAddress}/metabolics';
 	int webSocketMessages = 0;
 	bool loaded = false;
 	Completer load = new Completer();
@@ -58,10 +59,24 @@ class MetabolicsService {
 	void update() => view.meters.update();
 
 	void collectQuoin(Map<String, dynamic> map) {
-		Element element = querySelector('#${map['id']}');
-		quoins[map['id'] as String].checking = false;
+		String quoinId = map['id'] as String;
+		Element element = querySelector('#$quoinId');
+		Quoin quoin = quoins[quoinId];
 
-		if (map['success'].toString() == 'false') return;
+		// The response can arrive after a street change already discarded the
+		// quoin/DOM node; a missing entry must not crash the metabolics socket.
+		if (quoin == null || element == null) {
+			return;
+		}
+
+		quoin.checking = false;
+
+		if (map['success'].toString() == 'false') {
+			// Denied (limit reached / too far): _sendToServer optimistically hid
+			// the canvas, so make the still-uncollected quoin visible again.
+			element.style.display = '';
+			return;
+		}
 
 		num amt = map['amt'];
 		if (querySelector("#buff-quoin") != null) {
@@ -76,7 +91,7 @@ class MetabolicsService {
 		if (quoinType == "mood" && playerMetabolics.mood + amt > playerMetabolics.maxMood) {
 			amt = playerMetabolics.maxMood - playerMetabolics.mood;
 		}
-		quoins[map['id'] as String].collected = true;
+		quoin.collected = true;
 
 		Element quoinText = querySelector("#qq" + element.id + " .quoinString");
 
@@ -143,7 +158,26 @@ class MetabolicsService {
 
 	num get currentStreetY => playerMetabolics.currentStreetY;
 
-	List<String> get location_history => (jsonDecode(playerMetabolics.locationHistory) as List).cast<String>();
+	/// Location history arrived as null from some legacy/local metabolics payloads.
+	/// Treat that as an empty history rather than letting map rendering (and
+	/// Quarazy-quoin filtering) fail on a nullable string.
+	List<String> get location_history {
+		String rawHistory = playerMetabolics?.locationHistory;
+		if (rawHistory == null || rawHistory.trim().isEmpty) {
+			return const <String>[];
+		}
+
+		try {
+			dynamic decoded = jsonDecode(rawHistory);
+			if (decoded is List) {
+				return decoded.map((dynamic tsid) => tsid.toString()).toList();
+			}
+		} catch (_) {
+			// A malformed legacy value must not prevent the map from opening.
+		}
+
+		return const <String>[];
+	}
 
 	Future<int> get level async {
 		String lvlStr = await HttpRequest.getString(

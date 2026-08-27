@@ -38,9 +38,9 @@ Future<Map> getSpritesheets(
 	// Check to see if this player has selected a different avatar
 	if (noCustomAvatars == null || !noCustomAvatars) {
 		try {
-			List<User> dbRows = await dbConn.query(
+			List<User> dbRows = (await dbConn.query(
 				'SELECT custom_avatar FROM users WHERE username = @username',
-				User, {'username': username});
+				User, {'username': username})).cast<User>();
 			if (dbRows.length == 1 && dbRows.single.custom_avatar != null) {
 				username = dbRows.single.custom_avatar;
 			}
@@ -55,14 +55,14 @@ Future<Map> getSpritesheets(
 		try {
 			await cache.create(recursive: true);
 			spritesheets = await _getSpritesheetsFromWeb(username);
-			await cache.writeAsString(JSON.encode(spritesheets));
+			await cache.writeAsString(jsonEncode(spritesheets));
 			return spritesheets;
 		} catch (_) {
 			return {};
 		}
 	} else {
 		try {
-			return JSON.decode(cache.readAsStringSync());
+			return jsonDecode(cache.readAsStringSync());
 		} catch (_) {
 			return {};
 		}
@@ -109,7 +109,7 @@ Future<int> getActualImageHeight(@app.QueryParam('url') String imageUrl,
 		}
 
 		Image singleFrame = copyCrop(image, 0, 0, image.width ~/ numColumns, image.height ~/ numRows);
-		int actualHeight = findTrim(singleFrame, mode: TRIM_TRANSPARENT)[3];
+		int actualHeight = findTrim(singleFrame, mode: TrimMode.transparent)[3];
 		FileCache.heightsCache[imageUrl] = actualHeight;
 		return actualHeight;
 	}
@@ -126,25 +126,36 @@ Future<String> trimImage(
 	if (FileCache.headsCache[cacheKey] != null) {
 		return FileCache.headsCache[cacheKey];
 	} else {
-		Map<String, String> spritesheet = await getSpritesheets(username, noCustomAvatars);
-		String imageUrl = spritesheet['base'];
-		if (imageUrl == null) {
+		try {
+			// jsonDecode returns Map<String, dynamic>, not Map<String, String>.
+			// Keep this untyped at the API boundary so a missing local avatar
+			// gracefully returns an empty portrait instead of a repeated HTTP 500.
+			Map spritesheet = await getSpritesheets(username, noCustomAvatars);
+			String imageUrl = spritesheet['base'];
+			if (imageUrl == null) {
+				return '';
+			}
+
+			http.Response response = await http.get(imageUrl);
+			Image image = decodeImage(response.bodyBytes);
+			if (image == null) {
+				return '';
+			}
+
+			int frameWidth = image.width ~/ 15;
+			int frameHeightScl = ((fullHeight != null && fullHeight)
+				? image.height // full height
+				: image.height ~/ 1.5); // head only
+			image = copyCrop(image, image.width - frameWidth, 0, frameWidth, frameHeightScl);
+			List<int> trimRect = findTrim(image, mode: TrimMode.transparent);
+			Image trimmed = copyCrop(image, trimRect[0], trimRect[1], trimRect[2], trimRect[3]);
+
+			String str = base64.encode(encodePng(trimmed));
+			FileCache.headsCache[cacheKey] = str;
+			return str;
+		} catch (e) {
+			Log.warning('Could not create avatar image for <username=$username>', e);
 			return '';
 		}
-
-		http.Response response = await http.get(imageUrl);
-
-		Image image = decodeImage(response.bodyBytes);
-		int frameWidth = image.width ~/ 15;
-		int frameHeightScl = ((fullHeight != null && fullHeight)
-			? image.height // full height
-			: image.height ~/ 1.5); // head only
-		image = copyCrop(image, image.width - frameWidth, 0, frameWidth, frameHeightScl);
-		List<int> trimRect = findTrim(image, mode: TRIM_TRANSPARENT);
-		Image trimmed = copyCrop(image, trimRect[0], trimRect[1], trimRect[2], trimRect[3]);
-
-		String str = BASE64.encode(encodePng(trimmed));
-		FileCache.headsCache[cacheKey] = str;
-		return str;
 	}
 }

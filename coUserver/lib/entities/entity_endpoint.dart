@@ -187,7 +187,7 @@ Future previewStreetEntities(@app.QueryParam('tsid') String tsid) async {
 
 class EntitySet {
 	@Field() String tsid;
-	@Field() List<StreetEntity> entities;
+	@Field() List entities;
 }
 
 @app.Route('/setEntities', methods: const[app.POST])
@@ -204,7 +204,8 @@ Future<String> setEntities(@Decode() EntitySet entitySet) async {
 	//here, then we need to remove it
 	List<StreetEntity> existingEntities = await StreetEntities.getEntities(entitySet.tsid);
 
-	await Future.forEach(entitySet.entities, (StreetEntity entity) async {
+	await Future.forEach(entitySet.entities, (dynamic rawEntity) async {
+		StreetEntity entity = rawEntity as StreetEntity;
 		try {
 			if (entity.id == null) {
 				entity.id = createId(entity.x, entity.y, entity.type, tsidL(entity.tsid));

@@ -122,16 +122,15 @@ class Buff {
 	/// Start the decreasing progress bar
 	void _animate() {
 		if (!indefinite) {
-			Stopwatch stopwatch = new Stopwatch()
-				..start();
+			DateTime animationStarted = new DateTime.now();
 			timer = new Timer.periodic(new Duration(seconds: 1), (_) {
-				int elapsed = ((length - remaining.inSeconds) + stopwatch.elapsed.inSeconds);
+				int elapsed = ((length - remaining.inSeconds) +
+					new DateTime.now().difference(animationStarted).inSeconds);
 				if (elapsed < length) {
 					num width = 100 - ((100 / length) * elapsed);
 					buffElement.querySelector(".buff-progress")
 						.style.width = "calc($width% - 6px)";
 				} else {
-					stopwatch.stop();
 					remove();
 				}
 			});

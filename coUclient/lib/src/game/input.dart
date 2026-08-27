@@ -119,13 +119,36 @@ class InputManager {
 	}
 
 	void updateGamepad() {
-		//get any gamepads
-		List<Gamepad> gamepads = window.navigator.getGamepads();
+		// Do not use the legacy dart:html Gamepad binding here.  Its generated
+		// runtime type check is incompatible with current Chromium navigator
+		// objects (it can turn a normal polling call into a MemoryInfo ->
+		// Gamepad cast error).  Read the Web API directly and validate the few
+		// fields this client uses instead.
+		dynamic gamepads = context['navigator'].callMethod('getGamepads');
+		if (gamepads == null) {
+			return;
+		}
 
-		for (Gamepad gamepad in gamepads) {
-			//the list of gamepads the browser returns can include nulls
-			if (gamepad == null) {
+		for (int gamepadIndex = 0; gamepadIndex < gamepads.length; gamepadIndex++) {
+			dynamic gamepad = gamepads[gamepadIndex];
+			// The list returned by browsers can include null or incomplete entries.
+			if (gamepad == null || gamepad['axes'] == null) {
 				continue;
+			}
+			dynamic axes = gamepad['axes'];
+			if (axes.length < 4) {
+				continue;
+			}
+
+			num axis(int index) {
+				dynamic value = axes[index];
+				return value is num ? value : 0;
+			}
+
+			bool buttonPressed(int index) {
+				dynamic buttons = gamepad['buttons'];
+				return buttons != null && buttons.length > index &&
+					buttons[index] != null && buttons[index]['pressed'] == true;
 			}
 
 			//don't do anything in certain situations
@@ -152,32 +175,32 @@ class InputManager {
 				}
 			}
 
-			if (gamepad.axes[0] > .2 || gamepad.axes[2] > .2) {
+			if (axis(0) > .2 || axis(2) > .2) {
 				activateControl('rightKey', true, 'gamepad');
 			} else {
 				activateControl('rightKey', false, 'gamepad');
 			}
 
-			if (gamepad.axes[0] < -.2 || gamepad.axes[2] < -.2) {
+			if (axis(0) < -.2 || axis(2) < -.2) {
 				activateControl('leftKey', true, 'gamepad');
 			} else {
 				activateControl('leftKey', false, 'gamepad');
 			}
 
-			if (gamepad.axes[1] > .2 || gamepad.axes[3] > .2) {
+			if (axis(1) > .2 || axis(3) > .2) {
 				activateControl('upKey', true, 'gamepad');
 			} else {
 				activateControl('upKey', false, 'gamepad');
 			}
 
-			if (gamepad.axes[1] < -.2 || gamepad.axes[3] < -.2) {
+			if (axis(1) < -.2 || axis(3) < -.2) {
 				activateControl('downKey', true, 'gamepad');
 			} else {
 				activateControl('downKey', false, 'gamepad');
 			}
 
-			bool button0 = context['navigator'].callMethod('getGamepads')[gamepad.index]['buttons'][0]['pressed'];
-			bool button1 = context['navigator'].callMethod('getGamepads')[gamepad.index]['buttons'][1]['pressed'];
+			bool button0 = buttonPressed(0);
+			bool button1 = buttonPressed(1);
 
 			if (button0) {
 				activateControl('jumpKey', true, 'gamepad');

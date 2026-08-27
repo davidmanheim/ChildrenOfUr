@@ -83,7 +83,7 @@ class Report {
 
 	// Submits an issue to GitHub
 	Future<Map<String, dynamic>> createIssue(Map<String, dynamic> issue) async {
-		String sendData = JSON.encode(issue);
+		String sendData = jsonEncode(issue);
 
 		http.Response ghReturn = await http.post(
 			'https://api.github.com/repos/$issuesUrl',
@@ -91,7 +91,7 @@ class Report {
 			body: sendData
 		);
 
-		return JSON.decode(ghReturn.body);
+		return jsonDecode(ghReturn.body);
 	}
 
 	// Upload screenshot to Imgur
@@ -105,7 +105,7 @@ class Report {
 			}
 		);
 
-		Map<String, dynamic> image = JSON.decode(imgurReturn.body);
+		Map<String, dynamic> image = jsonDecode(imgurReturn.body);
 
 		if (!image['error']) {
 			Log.info('Uploaded screenshot <id=${image['data']['id']}> and <deletehash=${image['data']['deletehash']}>');
@@ -172,11 +172,11 @@ class Report {
 			}
 
 			// Send
-			String sendData = JSON.encode(assembleData);
+			String sendData = jsonEncode(assembleData);
 			ghReturn = await http.post('https://api.github.com/repos/$issuesUrl', headers: headers, body: sendData);
 
 			// Return
-			Map ghReturnData = JSON.decode(ghReturn.body);
+			Map ghReturnData = jsonDecode(ghReturn.body);
 			int newIssueId = ghReturnData['number'];
 
 			// Prepare slack message
@@ -193,14 +193,14 @@ class Report {
 			};
 
 			// Send
-			String sendData = JSON.encode(assembleData);
+			String sendData = jsonEncode(assembleData);
 			ghReturn = await http.post('https://api.github.com/repos/$issuesUrl/${data['reply_to_issue']}/comments', headers: headers, body: sendData);
 
 			// Return
-			Map ghReturnData = JSON.decode(ghReturn.body);
+			Map ghReturnData = jsonDecode(ghReturn.body);
 
 			http.Response issueResponse = await http.get('https://api.github.com/repos/$issuesUrl/${data['reply_to_issue']}');
-			Map issueData = JSON.decode(issueResponse.body);
+			Map issueData = jsonDecode(issueResponse.body);
 
 			// Prepare slack message
 			slackAttachment = new slack.Attachment(

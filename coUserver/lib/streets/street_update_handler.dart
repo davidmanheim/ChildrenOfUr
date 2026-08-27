@@ -114,7 +114,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 								}
 							}
 
-							socket.add(JSON.encode(moveMap));
+							socket.add(jsonEncode(moveMap));
 						} catch (e, st) {
 							Log.error('Error sending moveMap $moveMap to $username', e, st);
 						}
@@ -172,7 +172,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 							..addAll(updates)
 							..['npcs'] = [];
 						street.npcs.values.forEach((NPC npc) => customUpdates['npcs'].add(npc.getMap(username)));
-						userSocket.add(JSON.encode(customUpdates));
+						userSocket.add(jsonEncode(customUpdates));
 
 						SavannaHandler.update(streetName, email, userSocket);
 					}
@@ -236,7 +236,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 		//player enters street, player exits street, player interacts with object
 		//everything else will be outgoing
 		try {
-			Map map = JSON.decode(message);
+			Map map = jsonDecode(message);
 
 			// Chat bubbles: button clicked, call callback
 			if (map['bubbleButton'] != null) {
@@ -278,7 +278,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 				}
 
 				if (map['clientVersion'] != null && map['clientVersion'] < MIN_CLIENT_VER) {
-					ws.add(JSON.encode({'error':'version too low'}));
+					ws.add(jsonEncode({'error':'version too low'}));
 					return;
 				} else {
 					userSockets[email] = ws;
@@ -300,7 +300,10 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 						MetabolicsEndpoint.addToLocationHistory(username, email, map["tsid"]);
 					});
 
-					if (map['firstConnect']) {
+					// Explicit comparison: a missing/null firstConnect must not throw
+					// (Dart 2 rejects null in a boolean condition), which previously
+					// skipped the Wintry/Savanna enter handlers below via the outer catch.
+					if (map['firstConnect'] == true) {
 						await InventoryV2.fireInventoryAtUser(ws, email);
 						MetabolicsEndpoint.updateDeath(
 							PlayerUpdateHandler.users[username], null, true);
@@ -368,7 +371,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 
 							//ground items can sometimes perform item actions so we need to prepare the arguments
 							if (type == 'groundItem') {
-								(entityMirror.reflectee as Item).actions.forEach((Action action) {
+								(entityMirror.reflectee as Item).actions.cast<Action>().forEach((Action action) {
 									if (normalizeMethodName(action.actionName) == methodName && action.groundAction) {
 										map['arguments']['map'] = {'id' : map['id'], 'streetName': map['streetName']};
 									}
@@ -496,7 +499,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 
 		leaveStreet(email: email, street: m.currentStreet);
 
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			"gotoStreet": "true",
 			"tsid": tsid
 		}));
@@ -516,7 +519,7 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 
 	static Future writeNote({WebSocket userSocket, String email, Map noteData}) async {
 		Map newNote = await NoteManager.addFromClient(noteData);
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			"note_response": newNote
 		}));
 
@@ -531,13 +534,13 @@ class StreetUpdateHandler extends Object with MetabolicsChange {
 		changeUsername(oldUsername: oldUsername, newUsername: newUsername, userSocket: userSocket);
 
 	static void profile({WebSocket userSocket, String email, String username, String player}) {
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			'open_profile': player
 		}));
 	}
 
 	static void follow({WebSocket userSocket, String email, String username, String player}) {
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			'follow': player
 		}));
 	}

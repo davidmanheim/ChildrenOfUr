@@ -42,7 +42,9 @@ class AuthManager {
 	void logout() async {
 		logmessage('[AuthManager] Attempting logout');
 		localStorage.remove('username');
-		await firebase.auth().signOut();
+		if (!Configs.testing) {
+			await firebase.auth().signOut();
+		}
 		window.location.reload();
 	}
 

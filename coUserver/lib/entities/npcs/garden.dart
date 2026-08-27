@@ -422,7 +422,7 @@ class Garden extends NPC {
 			return false;
 		}
 
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			'action': 'plantSeed',
 			'id': id,
 			'openWindow': 'itemChooser',

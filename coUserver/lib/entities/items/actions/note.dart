@@ -141,13 +141,14 @@ class NoteManager {
 	}
 
 	@app.Route("/find/:id")
-	Future<String> appFind(int id) async => JSON.encode(await (await find(id)).toMap());
+	Future<String> appFind(int id) async => jsonEncode(await (await find(id)).toMap());
 
 	@app.Route("/dropped")
 	Future<List<Map>> dropped() async {
 		List<Map> notes = [];
 		List<Future> streetLookups = [];
-		List<DBStreet> streets = await dbConn.query("SELECT * FROM streets WHERE items LIKE '%note%'", DBStreet);
+		List<DBStreet> streets = (await dbConn.query(
+			"SELECT * FROM streets WHERE items LIKE '%note%'", DBStreet)).cast<DBStreet>();
 
 		for (DBStreet street in streets) {
 			streetLookups.add(Future.forEach(street.groundItems, (Item item) async {

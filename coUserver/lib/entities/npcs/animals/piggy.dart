@@ -34,14 +34,20 @@ class Piggy extends NPC {
 		speed = 75; //pixels per second
 		renameable = true;
 
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (inhabitants/piggy/npc_piggy.swf) via tools/build-sprite-sheet.py;
+		// see content/source-manifest.json for provenance and
+		// content/runtime-manifest.json for the route entry. These replace the
+		// previous hardcoded links to the retired childrenofur.com asset host.
+		const String base = "files/sprites/generated/converted/piggy-";
 		states = {
-			"chew" : new Spritesheet("chew", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_chew_png_1354829433.png", 968, 310, 88, 62, 53, true),
-			"look_screen" : new Spritesheet("look_screen", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_look_screen_png_1354829434.png", 880, 310, 88, 62, 48, false),
-			"nibble" : new Spritesheet("nibble", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_nibble_png_1354829441.png", 880, 372, 88, 62, 60, false),
-			"rooked1" : new Spritesheet("rooked1", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_rooked1_png_1354829442.png", 880, 62, 88, 62, 10, true),
-			"rooked2" : new Spritesheet("rooked2", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_rooked2_png_1354829443.png", 704, 186, 88, 62, 24, false),
-			"too_much_nibble" : new Spritesheet("too_much_nibble", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_too_much_nibble_png_1354829441.png", 968, 372, 88, 62, 65, false),
-			"walk" : new Spritesheet("walk", "https://childrenofur.com/assets/entityImages/npc_piggy__x1_walk_png_1354829432.png", 704, 186, 88, 62, 24, true)
+			"chew" : new Spritesheet("chew", "${base}chew.png", 4876, 70, 92, 70, 53, true),
+			"look_screen" : new Spritesheet("look_screen", "${base}look_screen.png", 4416, 70, 92, 70, 48, false),
+			"nibble" : new Spritesheet("nibble", "${base}nibble.png", 5520, 70, 92, 70, 60, false),
+			"rooked1" : new Spritesheet("rooked1", "${base}rooked1.png", 920, 70, 92, 70, 10, true),
+			"rooked2" : new Spritesheet("rooked2", "${base}rooked2.png", 2208, 70, 92, 70, 24, false),
+			"too_much_nibble" : new Spritesheet("too_much_nibble", "${base}too_much_nibble.png", 5980, 70, 92, 70, 65, false),
+			"walk" : new Spritesheet("walk", "${base}walk.png", 2208, 70, 92, 70, 24, true)
 		};
 		setState('walk');
 
@@ -69,11 +75,11 @@ class Piggy extends NPC {
 		super.restoreState(metadata);
 
 		if (metadata.containsKey('petCounts')) {
-			petCounts = JSON.decode(metadata['petCounts']);
+			petCounts = jsonDecode(metadata['petCounts']);
 		}
 
 		if (metadata.containsKey('nibbleCounts')) {
-			nibbleCounts = JSON.decode(metadata['nibbleCounts']);
+			nibbleCounts = jsonDecode(metadata['nibbleCounts']);
 		}
 
 		if (metadata.containsKey('lastReset')) {
@@ -90,8 +96,8 @@ class Piggy extends NPC {
 	@override
 	Map<String, String> getPersistMetadata() =>
 		super.getPersistMetadata()
-			..['petCounts'] = JSON.encode(petCounts)
-			..['nibbleCounts'] = JSON.encode(nibbleCounts)
+			..['petCounts'] = jsonEncode(petCounts)
+			..['nibbleCounts'] = jsonEncode(nibbleCounts)
 			..['lastReset'] = lastReset.millisecondsSinceEpoch.toString();
 
 	Future<bool> _setLevelBasedMetabolics(int level, String action, String email) async {
@@ -204,7 +210,7 @@ class Piggy extends NPC {
 		map['openWindow'] = 'itemChooser';
 		map['filter'] = 'category=Croppery & Gardening Supplies|||itemType=^(?!.+(?:_seed|_bean)).+\$';
 		map['windowTitle'] = 'Feed Piggy What?';
-		userSocket.add(JSON.encode(map));
+		userSocket.add(jsonEncode(map));
 		return true;
 	}
 

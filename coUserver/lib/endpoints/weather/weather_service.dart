@@ -79,6 +79,12 @@ class WeatherService {
 	/// Pass cityId to download for one city (and return the data),
 	/// or not to refresh the entire cache (and return true)
 	static Future download([int cityId]) async {
+		/// No OpenWeatherMap key configured (local mode): every call would 401,
+		/// so skip the external request instead of logging an error per street.
+		if (openWeatherMap == null || openWeatherMap.isEmpty) {
+			return null;
+		}
+
 		/// Waiting for recovery?
 		if (deferredMins > 0) {
 			if (lastCheck == null) {
@@ -99,7 +105,7 @@ class WeatherService {
 			// Download from OpenWeatherMap
 			String url = OWM_API + endpoint + OWM_PARAMS + cityId.toString();
 			String json = (await http.get(url)).body;
-			Map<String, dynamic> owm = JSON.decode(json);
+			Map<String, dynamic> owm = jsonDecode(json);
 
 			// Verify result
 			var responseCode = owm['cod']; // 'cod' is not a typo (unless it's OWM's)

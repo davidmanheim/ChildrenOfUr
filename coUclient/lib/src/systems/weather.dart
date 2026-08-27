@@ -15,7 +15,9 @@ class WeatherManager {
 	static WeatherState _currentState = WeatherState.CLEAR;
 	static bool _enabled = true, _gradientEnabled = true;
 	static var rainSound;
-	static String url = '${Configs.ws}//${Configs.websocketServerAddress}/weather';
+	// Configs is populated asynchronously during startup, after static fields
+	// are initialized.  A getter prevents this from becoming null//null/weather.
+	static String get url => '${Configs.ws}//${Configs.websocketServerAddress}/weather';
 	static Map<String, dynamic> _weatherData;
 	static Map<String, dynamic> get weatherData => new Map.from(_weatherData);
 	static WebSocket socket;

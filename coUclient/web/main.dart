@@ -20,7 +20,7 @@ import 'package:couclient/src/network/server_interop/itemdef.dart'; // Items
 import 'package:coUemoticons/bin/main.dart' as emoji; // Emoticons
 import 'package:dnd/dnd.dart'; // Webaudio api
 import 'package:gorgon/gorgon.dart'; // Audio and graphics
-import 'package:intl/intl.dart'; // Used for NumberFormat
+import 'package:intl/intl.dart'; // Date formatting in the notes window
 import 'package:json_annotation/json_annotation.dart'; // Dart object <-> JSON conversions
 import 'package:libld/libld.dart'; // Asset loading
 import 'package:scproxy/scproxy.dart'; // SoundCloud helper
@@ -28,7 +28,7 @@ import 'package:transmit/transmit.dart'; // Event bus
 import "package:xml/xml.dart" as XML; // Blog post checking
 import 'package:firebase/firebase.dart' as firebase; // Login
 import 'package:angular/angular.dart';
-import 'package:cou_login/cou_login/cou_login.template.dart' as loginComponent; // ignore: uri_has_not_been_generated
+import 'package:cou_login/login/login.template.dart' as loginComponent; // ignore: uri_has_not_been_generated
 
 // Systems
 
@@ -159,11 +159,15 @@ part 'main.g.dart';
 // Globals
 
 final GpsIndicator gpsIndicator = new GpsIndicator(); // GPS status display
-final NumberFormat commaFormatter = new NumberFormat("#,###"); // Comma format
+// intl 0.15's NumberFormat parser calls StringBuffer.write, which fails in
+// the archived Dart-to-JavaScript runtime.  The UI only needs integer digit
+// grouping, so keep that tiny operation local and avoid initializing intl.
+final ThousandsFormatter commaFormatter = new ThousandsFormatter();
 final Random random = new Random(); // Random object
 final Storage localStorage = window.localStorage; // Local storage
 final Storage sessionStorage = window.sessionStorage; // Session storage
-final String rsToken = "ud6He9TXcpyOEByE944g"; // Token for redstone
+// Local Docker setup leaves the Redstone token empty.
+final String rsToken = "";
 
 Constants constants; // Server-defined constants
 MapData mapData; // Map, street, and hub metadata
@@ -181,6 +185,28 @@ WeatherManager weather; // Weather manager
 WindowManager windowManager; // Window manager
 
 bool get hasTouchSupport => context.callMethod("hasTouchSupport");
+
+class ThousandsFormatter {
+	String format(num value) {
+		String text = value.toString();
+		bool negative = text.startsWith('-');
+		if (negative) {
+			text = text.substring(1);
+		}
+
+		int decimal = text.indexOf('.');
+		String whole = decimal == -1 ? text : text.substring(0, decimal);
+		String fraction = decimal == -1 ? '' : text.substring(decimal);
+		String grouped = '';
+
+		while (whole.length > 3) {
+			grouped = ',' + whole.substring(whole.length - 3) + grouped;
+			whole = whole.substring(0, whole.length - 3);
+		}
+
+		return (negative ? '-' : '') + whole + grouped + fraction;
+	}
+}
 
 Future main() async {
 	// Don't try to load the game in an unsupported browser
@@ -201,15 +227,19 @@ Future main() async {
 	startConsoleErrorLogging();
 
 	try {
-    // initialize firebase and the login component
-    firebase.initializeApp(
-        apiKey: 'AIzaSyCTXgszjO2AJNLTZUMYp2ZtFAmVLS2G6J4',
-        authDomain: 'blinding-fire-920.firebaseapp.com',
-    );
-    runApp(loginComponent.CouLoginNgFactory);
-
 		// Load server connection configuration
 		await Configs.init();
+
+		// The archived Firebase login component targets a removed Firebase API.
+		// Local mode creates its player session below, so do not mount that
+		// component (or touch Firebase) at all.
+		if (!Configs.testing) {
+			firebase.initializeApp(
+				apiKey: 'AIzaSyCTXgszjO2AJNLTZUMYp2ZtFAmVLS2G6J4',
+				authDomain: 'blinding-fire-920.firebaseapp.com',
+			);
+			runApp(loginComponent.UrLoginNgFactory);
+		}
 
 		// Download the latest map data
 		mapData = await MapData.download();
@@ -249,8 +279,35 @@ Future main() async {
 	// Watch for Collision-Triggered teleporters
 	Wormhole.init();
 
+	// The archived production login depended on Firebase and email services
+	// that are deliberately absent from the local Docker stack.  Enter the
+	// local development player once the complete client is ready; dispatching
+	// on document reaches AuthManager's normal loginSuccess listener.
+	if (Configs.testing) {
+		await startLocalSession();
+	}
+
 	// Check the blog
 	BlogNotifier.refresh();
+}
+
+Future<void> startLocalSession() async {
+	try {
+		HttpRequest request = await HttpRequest.request(
+			'${Configs.http}//${Configs.authAddress}/auth/localSession',
+			method: 'POST',
+			requestHeaders: {'content-type': 'application/json'},
+			sendData: '{}');
+		Map<String, dynamic> session = jsonDecode(request.response);
+		// Game reads its identity from browser storage during construction, while
+		// AuthManager receives it from the event payload.  Keep both paths in
+		// sync before emitting loginSuccess.
+		localStorage['username'] = session['playerName'];
+		localStorage['authEmail'] = session['playerEmail'];
+		document.dispatchEvent(new CustomEvent('loginSuccess', detail: session));
+	} catch (e, st) {
+		logmessage('Unable to create the local player session: $e\\n$st');
+	}
 }
 
 // Clear cache with JS reload

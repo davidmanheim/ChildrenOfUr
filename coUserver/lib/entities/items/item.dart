@@ -68,16 +68,24 @@ class Item extends Object
 		RecipeTool implements Actionable {
 
 	Future<List<Action>> customizeActions(String email) async {
-		return actions;
+		return actions.cast<Action>();
 	}
 
 	// Load item data from JSON files
 	static Future<int> loadItems() async {
 		String filePath = path.join(serverDir.path, 'lib', 'entities', 'items', 'json');
-		await Future.forEach(await new Directory(filePath).list().toList(), (File cat) async {
-			JSON.decode(await cat.readAsString()).forEach((String name, Map itemMap) {
+		await Future.forEach(await new Directory(filePath).list().toList(), (FileSystemEntity cat) async {
+			jsonDecode(await (cat as File).readAsString()).forEach((dynamic name, dynamic itemMap) {
+				name = name as String;
+				itemMap = new Map.from(itemMap as Map);
 				itemMap['itemType'] = name;
-				items[name] = decode(itemMap, Item);
+				Item item = decode(itemMap, Item);
+				item.actions = (item.actions ?? []).map((dynamic action) {
+					return action is Action
+						? action
+						: decode(new Map<String, dynamic>.from(action as Map), Action);
+				}).toList();
+				items[name] = item;
 			});
 		});
 
@@ -94,7 +102,9 @@ class Item extends Object
 		int total = 0;
 		String filePath = path.join(
 			serverDir.path, 'lib', 'entities', 'items', 'actions', 'consume.json');
-		JSON.decode(await new File(filePath).readAsString()).forEach((String item, Map award) {
+		jsonDecode(await new File(filePath).readAsString()).forEach((dynamic item, dynamic award) {
+			item = item as String;
+			award = new Map.from(award as Map);
 			try {
 				items[item].consumeValues = award;
 				total++;
@@ -130,10 +140,11 @@ class Item extends Object
 	@Field() num x, y;
 	@Field() bool onGround = false;
 	@Field() bool isContainer = false;
-	@Field() List<String> subSlotFilter;
-	@Field() List<Action> actions = [];
-	@Field() Map<String, int> consumeValues = {};
-	@Field() Map<String, String> metadata = {};
+	@Field() List subSlotFilter;
+	// Kept raw for the legacy mirror mapper; loadItems normalizes the entries.
+	@Field() List actions = [];
+	@Field() Map consumeValues = {};
+	@Field() Map metadata = {};
 
 	Action dropAction = new Action.withName('drop')
 		..description = "Drop this item on the ground."
@@ -177,7 +188,7 @@ class Item extends Object
 		consumeValues = model.consumeValues;
 
 		//make sure the drop action is last
-		actions.removeWhere((Action action) => action.actionName == 'drop');
+		actions.cast<Action>().removeWhere((Action action) => action.actionName == 'drop');
 		actions.add(dropAction);
 	}
 
@@ -217,7 +228,7 @@ class Item extends Object
 	List<Map> get actionList {
 		List<Map> result = [];
 		if (onGround) {
-			actions.forEach((Action action) {
+			actions.cast<Action>().forEach((Action action) {
 				if (action.groundAction) {
 					result.add(encode(action));
 				}
@@ -226,7 +237,7 @@ class Item extends Object
 			return result;
 		} else {
 			//make sure the drop action is last
-			actions.removeWhere((Action action) => action.actionName == 'drop');
+			actions.cast<Action>().removeWhere((Action action) => action.actionName == 'drop');
 			List<Map> result = encode(actions);
 			result.add(encode(dropAction));
 			return result;
@@ -260,7 +271,7 @@ class Item extends Object
 	Future<bool> openQuest({String streetName, Map map, WebSocket userSocket, String email, String username}) async {
 		InventoryV2 inv = await getInventory(email);
 		Item itemInSlot = await inv.getItemInSlot(map['slot'], map['subSlot'], email);
-		Quest quest = decode(JSON.decode(itemInSlot.metadata['questData']), Quest);
+		Quest quest = decode(jsonDecode(itemInSlot.metadata['questData']), Quest);
 
 		// Install the quest in the map of available quests
 		quests[quest.id] = quest;

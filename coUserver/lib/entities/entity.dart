@@ -59,6 +59,7 @@ part 'npcs/vistingstone.dart';
 part 'npcs/animals/batterfly.dart';
 part 'npcs/animals/butterfly.dart';
 part 'npcs/animals/chicken.dart';
+part 'npcs/animals/demo_chicken.dart';
 part 'npcs/animals/firefly.dart';
 part 'npcs/animals/fox.dart';
 part 'npcs/animals/helikitty.dart';
@@ -98,6 +99,7 @@ part 'plants/jellisacgrowth.dart';
 part 'plants/mortarbarnacle.dart';
 part 'plants/peatbog.dart';
 part 'plants/plant.dart';
+part 'plants/demo_plants.dart';
 part 'plants/respawning_items/awesome_stew.dart';
 part 'plants/respawning_items/butterfly_milk.dart';
 part 'plants/respawning_items/cinnamon.dart';
@@ -156,7 +158,7 @@ abstract class Actionable {
 
 abstract class Entity extends Object with MetabolicsChange implements Persistable, Actionable {
 	List<Action> actions = [];
-	num actionTime = 2500;
+	int actionTime = 2500;
 	num x, y, z, rotation;
 	bool h_flip;
 	String streetName, type, id;
@@ -205,7 +207,7 @@ abstract class Entity extends Object with MetabolicsChange implements Persistabl
 			z: z,
 			rotation: rotation,
 			h_flip: h_flip,
-			metadata_json: JSON.encode(getPersistMetadata()));
+			metadata_json: jsonEncode(getPersistMetadata()));
 	}
 
 	Map<String, dynamic> getMap() {
@@ -280,9 +282,10 @@ abstract class Entity extends Object with MetabolicsChange implements Persistabl
 		}
 
 		//check the players skill level(s) against the required skill level(s)
-		await Future.forEach(action.skillRequirements.requiredSkillLevels.keys, (String skillName) async {
+		await Future.forEach(action.skillRequirements.requiredSkillLevels.keys, (dynamic rawSkillName) async {
+			String skillName = rawSkillName as String;
 			if (hasRequirements == true) {
-				int reqSkillLevel = action.skillRequirements.requiredSkillLevels[skillName];
+				int reqSkillLevel = action.skillRequirements.requiredSkillLevels[skillName] as int;
 				int haveLevel = await SkillManager.getLevel(skillName, email);
 				if (haveLevel < reqSkillLevel) {
 					hasRequirements = false;
@@ -297,7 +300,8 @@ abstract class Entity extends Object with MetabolicsChange implements Persistabl
 
 		//check that the player has the necessary item(s)
 		bool hasAtLeastOne = action.itemRequirements.any.length == 0;
-		await Future.forEach(action.itemRequirements.any, (String itemType) async {
+		await Future.forEach(action.itemRequirements.any, (dynamic rawItemType) async {
+			String itemType = rawItemType as String;
 			if (!hasAtLeastOne) {
 				if (includeBroken) {
 					hasAtLeastOne = await InventoryV2.hasItem(email, itemType, 1);
@@ -312,8 +316,9 @@ abstract class Entity extends Object with MetabolicsChange implements Persistabl
 			return false;
 		}
 
-		await Future.forEach(action.itemRequirements.all.keys, (String itemType) async {
-			int numNeeded = action.itemRequirements.all[itemType];
+		await Future.forEach(action.itemRequirements.all.keys, (dynamic rawItemType) async {
+			String itemType = rawItemType as String;
+			int numNeeded = action.itemRequirements.all[itemType] as int;
 			if (includeBroken) {
 				hasRequirements = await InventoryV2.hasItem(email, itemType, numNeeded);
 			} else {

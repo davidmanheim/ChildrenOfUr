@@ -28,11 +28,11 @@ class Skill {
 		this.id = id ?? map["id"];
 		this.name = map["name"];
 		this.category = map["category"];
-		this.descriptions = map["descriptions"];
-		this.levels = map["levels"];
-		this.iconUrls = map["iconUrls"];
-		this.requirements = map["requirements"];
-		this.giants = map["giants"];
+		this.descriptions = (map["descriptions"] as List).cast<String>().toList();
+		this.levels = (map["levels"] as List).cast<int>().toList();
+		this.iconUrls = (map["iconUrls"] as List).cast<String>().toList();
+		this.requirements = map["requirements"] == null ? {} : new Map<String, dynamic>.from(map["requirements"] as Map);
+		this.giants = (map["giants"] as List).cast<String>().toList();
 		this.color = map["color"];
 		this.title = map["title"];
 
@@ -132,12 +132,12 @@ class Skill {
 	Future<PlayerSkill> getForPlayer(String email) async {
 		PostgreSql dbConn = await dbManager.getConnection();
 		try {
-			List<Metabolics> rows = await dbConn.query(
+			List<Metabolics> rows = (await dbConn.query(
 				SkillManager.CELL_QUERY, Metabolics, {"email": email}
-			);
+			)).cast<Metabolics>();
 			int points = 0;
 			if (rows.length > 0) {
-				points = JSON.decode(rows.first.skillsJson)[id] ?? 0;
+				points = jsonDecode(rows.first.skillsJson)[id] ?? 0;
 			}
 			return new PlayerSkill(copy, email, points);
 		} catch (e, st) {

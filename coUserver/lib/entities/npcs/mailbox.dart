@@ -55,7 +55,8 @@ class Mailbox extends NPC {
 	Future checkForMail({WebSocket userSocket, String email}) async {
 		String query = 'SELECT * FROM messages JOIN users ON username = to_user WHERE email = @email AND read = FALSE';
 		PostgreSql dbConn = await dbManager.getConnection();
-		List<Message> messages = await dbConn.query(query, Message, {'email':email});
+		List<Message> messages =
+			(await dbConn.query(query, Message, {'email':email})).cast<Message>();
 		if (messages.length > 0) {
 			say('${messages.length} New Messages');
 		} else {
@@ -68,7 +69,7 @@ class Mailbox extends NPC {
 		Map map = {};
 		map['id'] = id;
 		map['openWindow'] = 'mailbox';
-		userSocket.add(JSON.encode(map));
+		userSocket.add(jsonEncode(map));
 	}
 }
 
@@ -83,25 +84,26 @@ Future<List<Message>> getMail(@app.Body(app.JSON) Map parameters) async {
 	String query = 'SELECT * FROM messages WHERE lower(to_user) = @user';
 	List<Row> rows = await dbConn.innerConn.query(query, {'user':user}).toList();
 	rows.forEach((Row row) {
+		dynamic dynamicRow = row;
 		Message m = new Message()
-			..id = row.id
-			..to_user = row.to_user
-			..from_user = row.from_user
-			..subject = row.subject
-			..body = row.body
-			..read = row.read
-			..currants = row.currants
-			..currants_taken = row.currants_taken
-			..item1 = row.item1
-			..item1_taken = row.item1_taken
-			..item2 = row.item2
-			..item2_taken = row.item2_taken
-			..item3 = row.item3
-			..item3_taken = row.item3_taken
-			..item4 = row.item4
-			..item4_taken = row.item4_taken
-			..item5 = row.item5
-			..item5_taken = row.item5_taken;
+			..id = dynamicRow.id
+			..to_user = dynamicRow.to_user
+			..from_user = dynamicRow.from_user
+			..subject = dynamicRow.subject
+			..body = dynamicRow.body
+			..read = dynamicRow.read
+			..currants = dynamicRow.currants
+			..currants_taken = dynamicRow.currants_taken
+			..item1 = dynamicRow.item1
+			..item1_taken = dynamicRow.item1_taken
+			..item2 = dynamicRow.item2
+			..item2_taken = dynamicRow.item2_taken
+			..item3 = dynamicRow.item3
+			..item3_taken = dynamicRow.item3_taken
+			..item4 = dynamicRow.item4
+			..item4_taken = dynamicRow.item4_taken
+			..item5 = dynamicRow.item5
+			..item5_taken = dynamicRow.item5_taken;
 		messages.add(m);
 	});
 
@@ -110,7 +112,7 @@ Future<List<Message>> getMail(@app.Body(app.JSON) Map parameters) async {
 
 @app.Route('/sendMail', methods: const[app.POST])
 Future<String> sendMail(@app.Body(app.JSON) Map parameters) async {
-	Message message = jsonx.decode(JSON.encode(parameters), type: Message);
+	Message message = jsonx.decode(jsonEncode(parameters), type: Message);
 
 	String email = await User.getEmailFromUsername(message.from_user);
 
@@ -218,7 +220,7 @@ Future collectItem(@app.Body(app.JSON) Map parameters) async {
 
 @app.Route('/collectCurrants', methods: const[app.POST])
 Future collectCurrants(@app.Body(app.JSON) Map parameters) async {
-	Message message = jsonx.decode(JSON.encode(parameters), type: Message);
+	Message message = jsonx.decode(jsonEncode(parameters), type: Message);
 	//mark the currants as already taken so they can't be taken again
 	String query = 'UPDATE messages set currants_taken = true where id = @id AND currants_taken = false';
 	int result = await dbConn.execute(query, message);
@@ -247,7 +249,7 @@ Future<String> deleteMail(@app.Body(app.JSON) Map parameters) async {
 
 @app.Route('/readMail', methods: const[app.POST])
 readMail(@app.Body(app.JSON) Map parameters) async {
-	Message message = jsonx.decode(JSON.encode(parameters), type: Message);
+	Message message = jsonx.decode(jsonEncode(parameters), type: Message);
 	String query = 'UPDATE messages SET read = TRUE WHERE id = @id';
 	await dbConn.execute(query, message);
 }

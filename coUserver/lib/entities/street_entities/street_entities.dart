@@ -36,8 +36,8 @@ class StreetEntities {
 				'FROM $TABLE '
 				'WHERE tsid = @tsid';
 
-			List<StreetEntity> rows = await dbConn.query(
-				query, StreetEntity, {'tsid': tsid});
+			List<StreetEntity> rows = (await dbConn.query(
+				query, StreetEntity, {'tsid': tsid})).cast<StreetEntity>();
 
 			return rows;
 		} catch (e, st) {
@@ -56,8 +56,8 @@ class StreetEntities {
 				'FROM $TABLE '
 				'WHERE id = @entityId';
 
-			List<StreetEntity> rows = await dbConn.query(
-				query, StreetEntity, {'entityId': entityId});
+			List<StreetEntity> rows = (await dbConn.query(
+				query, StreetEntity, {'entityId': entityId})).cast<StreetEntity>();
 
 			return rows.single;
 		} catch (e, st) {

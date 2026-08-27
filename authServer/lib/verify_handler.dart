@@ -20,7 +20,7 @@ class VerifyHandler {
 
 	static handle(WebSocket ws) {
 		ws.listen((message) {
-			Map m = JSON.decode(message);
+			Map m = jsonDecode(message);
 			String email = m['email'];
 			AuthService.pendingVerifications[email] = ws;
 		},

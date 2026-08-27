@@ -92,7 +92,7 @@ class Rube extends NPC with MetabolicsChange {
 //				tsid: tsid,
 //				x: target.currentX ?? 0,
 //				y: target.currentY ?? 0,
-//				metadata_json: JSON.encode({'targetUsername': username}));
+//				metadata_json: jsonEncode({'targetUsername': username}));
 //			return await StreetEntities.setEntity(entity);
 //		} else {
 //			return false;
@@ -249,7 +249,7 @@ class Rube extends NPC with MetabolicsChange {
 			return true;
 		} else {
 			// Pick cubimal
-			userSocket.add(JSON.encode({
+			userSocket.add(jsonEncode({
 				"action": "giveCubimal", // recursive call, but with more arguments
 				"id": id,
 				"openWindow": "itemChooser",

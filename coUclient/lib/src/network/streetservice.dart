@@ -17,11 +17,9 @@ class StreetService {
 		return !_loading.contains(tsid.substring(1));
 	}
 
-	String _dataUrl;
-
-	StreetService() {
-		_dataUrl = '${Configs.http}//${Configs.utilServerAddress}';
-	}
+	// This service is created before main() awaits Configs.init().  Compute the
+	// URL only when it is used so it cannot retain a null pre-config value.
+	String get _dataUrl => '${Configs.http}//${Configs.utilServerAddress}';
 
 	Future<bool> requestStreet(String StreetID) async {
 		if (_loading.length > 0) {

@@ -10,14 +10,16 @@ class Configs {
 	static String authAddress;
 	static String authWebsocket;
 
-	static String http = baseAddress.contains('localhost') ? 'http:' : 'https:';
-	static String ws = baseAddress.contains('localhost') ? 'ws:' : 'wss:';
+	static String http;
+	static String ws;
 	static bool testing;
 
 	static final int clientVersion = 1471;
 
 	static Future init() async {
 		baseAddress = (await HttpRequest.getString('server_domain.txt')).trim();
+		http = baseAddress.contains('localhost') ? 'http:' : 'https:';
+		ws = baseAddress.contains('localhost') ? 'ws:' : 'wss:';
 		utilServerAddress = '$baseAddress:8181';
 		websocketServerAddress = '$baseAddress:8282';
 		authAddress = '$baseAddress:8383';

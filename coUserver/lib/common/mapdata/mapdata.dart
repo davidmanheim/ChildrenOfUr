@@ -22,21 +22,41 @@ abstract class MapData {
 
 	/// Load from JSON
 	static Future load() async {
+		Map<String, Map<String, dynamic>> decodeFlat(dynamic value) {
+			Map raw = value as Map;
+			return new Map<String, Map<String, dynamic>>.fromEntries(raw.entries.map((entry) {
+				return new MapEntry<String, Map<String, dynamic>>(
+					entry.key.toString(), new Map<String, dynamic>.from(entry.value as Map));
+			}));
+		}
+
+		Map<String, Map<String, Map<String, dynamic>>> decodeRender(dynamic value) {
+			Map raw = value as Map;
+			return new Map<String, Map<String, Map<String, dynamic>>>.fromEntries(raw.entries.map((entry) {
+				Map inner = entry.value as Map;
+				return new MapEntry<String, Map<String, Map<String, dynamic>>>(
+					entry.key.toString(), new Map<String, Map<String, dynamic>>.fromEntries(inner.entries.map((child) {
+						return new MapEntry<String, Map<String, dynamic>>(
+							child.key.toString(), new Map<String, dynamic>.from(child.value as Map));
+					})));
+			}));
+		}
+
 		Future _loadHubs(String parent) async {
 			File hubdata = new File(path.join(parent, 'hubdata.json'));
-			_hubs = JSON.decode(await hubdata.readAsString());
+			_hubs = decodeFlat(jsonDecode(await hubdata.readAsString()));
 			Log.verbose('[MapData] Loaded ${_hubs.length} hub files');
 		}
 
 		Future _loadStreets(String parent) async {
 			File streetdata = new File(path.join(parent, 'streetdata.json'));
-			_streets = JSON.decode(await streetdata.readAsString());
+			_streets = decodeFlat(jsonDecode(await streetdata.readAsString()));
 			Log.verbose('[MapData] Loaded ${_streets.length} street files');
 		}
 
 		Future _loadRender(String parent) async {
 			File renderdata = new File(path.join(parent, 'renderdata.json'));
-			_render = JSON.decode(await renderdata.readAsString());
+			_render = decodeRender(jsonDecode(await renderdata.readAsString()));
 			Log.verbose('[MapData] Loaded ${_render.length} hub render files');
 		}
 
@@ -101,7 +121,7 @@ abstract class MapData {
 
 		// Read street JSON file
 		if (streetFile.existsSync()) {
-			streetData = JSON.decode(streetFile.readAsStringSync());
+			streetData = jsonDecode(streetFile.readAsStringSync());
 		} else {
 			Log.warning('Street <tsidG=$tsid> not found in CAT422 files');
 		}
@@ -113,10 +133,15 @@ abstract class MapData {
 	static bool isSavannaStreet(String streetName) {
 		try {
 			Map<String, dynamic> street = getStreetByName(streetName);
-			assert(street != null);
+			if (street == null) {
+				return false;
+			}
 			Map<String, dynamic> hub = hubs[street['hub_id'].toString()];
-			assert(hub != null && hub['savanna'] != null);
-			return hub['savanna'];
+			// Most hubs are not Savanna hubs, and consequently have no
+			// `savanna` key.  Treat an absent or malformed flag as false rather
+			// than leaking a null through this boolean API and crashing the street
+			// websocket handler during a normal street join.
+			return hub != null && hub['savanna'] == true;
 		} catch (_) {
 			return false;
 		}

@@ -27,6 +27,12 @@ class BlogNotifier {
 	}
 
 	static void refresh() {
+		// The archived public RSS endpoint is no longer part of a local stack and
+		// its cross-origin failure used to appear as an unrelated browser error.
+		if (Configs.testing) {
+			return;
+		}
+
 		HttpRequest.getString(_RSS_URL).then((String xml) {
 			// Parse RSS -> XML -> Document
 			XML.XmlDocument feed = XML.parse(xml);
@@ -45,6 +51,8 @@ class BlogNotifier {
 				// Update cached
 				_lastSaved = guid;
 			}
+		}).catchError((_) {
+			// Blog notifications must never interfere with loading the game.
 		});
 	}
 }

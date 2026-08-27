@@ -1,6 +1,6 @@
 part of couclient;
 
-class Platform implements Comparable {
+class Platform implements Comparable<Platform> {
 	Point start, end;
 	String id;
 	bool itemPerm = true, ceiling = false;
@@ -36,8 +36,7 @@ class Platform implements Comparable {
 	}
 
 	@override
-	int compareTo(dynamic other) {
-		assert(other is Platform);
+	int compareTo(Platform other) {
 		return other.start.y - start.y;
 	}
 }

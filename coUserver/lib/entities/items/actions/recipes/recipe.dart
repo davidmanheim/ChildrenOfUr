@@ -24,9 +24,12 @@ class Recipe {
 	static Future<int> load() async {
 		String filePath = path.join(
 			serverDir.path, 'lib', 'entities', 'items', 'actions', 'recipes', 'json');
-		await Future.forEach(await new Directory(filePath).list().toList(), (File tool) async {
-			JSON.decode(await tool.readAsString()).forEach((Map recipeMap) {
-				RecipeBook.recipes.add(decode(recipeMap, Recipe));
+		await Future.forEach(await new Directory(filePath).list().toList(), (FileSystemEntity tool) async {
+			jsonDecode(await (tool as File).readAsString()).forEach((dynamic recipeMap) {
+				Recipe recipe = decode(recipeMap, Recipe);
+				recipe.input = new Map<String, int>.from(recipe.input ?? {});
+				recipe.skills = new Map<String, int>.from(recipe.skills ?? {});
+				RecipeBook.recipes.add(recipe);
 			});
 		});
 
@@ -36,14 +39,14 @@ class Recipe {
 
 	@Field() String id;
 	@Field() String tool;
-	@Field() Map<String, int> input;
+	@Field() Map input;
 	@Field() String output;
 	@Field() int output_amt;
 	@Field() int time;
 	@Field() int energy = 0;
 	@Field() int img = 0;
-	@Field() Map<String, int> skills;
-	@Field() List<String> holidays;
+	@Field() Map skills;
+	@Field() List holidays;
 
 	// Items are initialized in street_update_handler.dart after all of the items are loaded
 	Recipe();
@@ -56,7 +59,7 @@ class Recipe {
 	static Future useItem(Map map, WebSocket userSocket, String email) async {
 		InventoryV2 inv = await getInventory(email);
 		Item itemInSlot = await inv.getItemInSlot(map['slot'], map['subSlot'], email);
-		userSocket.add(JSON.encode({
+		userSocket.add(jsonEncode({
 			"useItem": itemInSlot.itemType,
 			"useItemName": itemInSlot.name
 		}));
