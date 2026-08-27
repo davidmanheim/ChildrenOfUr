@@ -15,9 +15,3 @@ pubspec_overrides.yaml
 # Editor/OS noise
 .DS_Store
 Thumbs.db
-
-# Temporary staging area used while migrating coUserver/coUclient/authServer
-# into git-subtree-merged forks; removed once the migration commit lands.
-/coUserver.local/
-/coUclient.local/
-/authServer.local/
