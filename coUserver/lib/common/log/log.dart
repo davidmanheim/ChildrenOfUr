@@ -55,12 +55,12 @@ abstract class Log {
 		String message = '[${levelString(level)} ($time)] $object';
 
 		// Print error if enabled and applicable
-		if (LogSettings.getBool('errors') && error != null) {
+		if ((LogSettings.getBool('errors', fallback: true) ?? true) && error != null) {
 			message += '\n$error';
 		}
 
 		// Print stack traces if enabled and applicable
-		if (LogSettings.getBool('stackTraces') && stackTrace != null) {
+		if ((LogSettings.getBool('stackTraces', fallback: true) ?? true) && stackTrace != null) {
 			message += '\n$stackTrace';
 		}
 
@@ -68,7 +68,7 @@ abstract class Log {
 		message = message.trimRight();
 
 		// Apply colors if enabled
-		if (LogSettings.getBool('colors')) {
+		if (LogSettings.getBool('colors', fallback: false) ?? false) {
 			message = AnsiColors.color(message, AnsiColors.getColor(level));
 		}
 
