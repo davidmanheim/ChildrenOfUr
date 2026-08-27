@@ -1,0 +1,15 @@
+name: route_hierarchical
+version: 0.7.0
+authors:
+- Justin Fagnani <justinfagnani@google.com>
+- Pavel Jbanov <pavelj@google.com>
+description: A client routing library for Dart
+homepage: https://github.com/angular/route.dart
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+dependencies:
+  logging: any
+dev_dependencies:
+  browser: any
+  mockito: any
+  test: any

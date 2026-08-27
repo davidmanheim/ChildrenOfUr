@@ -1,0 +1,7 @@
+/pubspec.lock
+packages
+out
+*.js
+*.deps
+test/test_config.yaml
+

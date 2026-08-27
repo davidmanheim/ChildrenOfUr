@@ -1,0 +1,10 @@
+/.atom/
+/.idea/
+/.project
+/pubspec.lock
+packages
+.pub/
+.packages
+/test/gmail_account.dart
+/test/test.dart
+*.iml

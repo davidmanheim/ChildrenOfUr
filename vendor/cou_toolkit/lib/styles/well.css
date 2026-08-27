@@ -1,0 +1,8 @@
+.well {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 9px;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
+}

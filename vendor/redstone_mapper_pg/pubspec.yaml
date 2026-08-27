@@ -1,0 +1,17 @@
+name: redstone_mapper_pg
+version: 0.2.0-beta.2+2
+author: Luiz Mineo <luiz.mineo@gmail.com>
+description: PostgreSQL extension for redstone_mapper
+homepage: http://redstonedart.org
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+dependencies:
+  redstone:
+    path: ../redstone
+  redstone_mapper:
+    path: ../redstone_mapper
+  postgresql:
+    path: ../postgresql
+dev_dependencies:
+  unittest: '>=0.10.0 <0.12.0'
+  mock: '>=0.11.0+1 <0.12.0'

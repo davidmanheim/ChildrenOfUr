@@ -1,0 +1,15 @@
+.panel {
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	border-bottom: 2px solid #bbb;
+	padding: 4px;
+	margin: 5px;
+	border-radius: 8px;
+}
+
+.panel[darkui="true"] {
+	background-color: #282828;
+	color: #eee;
+	border-color: #181818;
+}

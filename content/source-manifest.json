@@ -1,0 +1,148 @@
+{
+  "$schema": "Content recovery source manifest. See CONTENT_RECOVERY_PLAN.md, 'Required manifests and validation'.",
+  "generatedBy": "tools/build-sprite-sheet.py + tools/swf-frame-labels.py + tools/swf-extract-bitmaps.py",
+  "generatedAt": "2026-08-27",
+  "sourceRepositories": [
+    {
+      "id": "tinyspeck/glitch-items",
+      "remote": "https://github.com/tinyspeck/glitch-items.git",
+      "vendoredAt": "tmp/glitch-items",
+      "commit": "9a6402163f53a64ef7633c0f59a5f2e4c2008170",
+      "commitDate": "2013-12-15T22:51:34-08:00",
+      "license": "CC0-1.0",
+      "licenseNote": "Per tmp/glitch-items/README.md: CC0 1.0 Universal, except the Glitch logo/trademark which are explicitly excluded (not relevant to the assets converted here)."
+    },
+    {
+      "id": "tinyspeck/glitch-GameServerJS",
+      "remote": "https://github.com/tinyspeck/glitch-GameServerJS.git",
+      "vendoredAt": "tmp/glitch-gameserver",
+      "commit": "f4cf3e3ed540227b0f1fec26dd5273c03b0f9ead",
+      "commitDate": "2013-12-11T13:58:30-08:00",
+      "license": "CC0-1.0",
+      "licenseNote": "Reference-only game logic data; not used as a runtime dependency (see CONTENT_RECOVERY_PLAN.md - must be translated, never executed as trusted server code). Not converted by this pass."
+    }
+  ],
+  "conversionTooling": {
+    "vectorRenderer": {
+      "tool": "JPEXS Free Flash Decompiler (ffdec)",
+      "version": "26.2.1",
+      "source": "https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version26.2.1/ffdec_26.2.1.zip",
+      "role": "Rasterizes SWF vector shapes/timelines (DefineShape/DefineSprite) to per-frame PNG. Required because every inventoried source SWF in inhabitants/chicken and harvestable_resources/wood_tree is 100% vector art with zero embedded bitmap tags -- confirmed via tools/swf-extract-bitmaps.py, see 'bitmapExtractionAttempted' below.",
+      "checkedIntoRepo": false,
+      "reason": "~20MB Java application archive; not vendored to keep the repo small. A human/CI step must download and unzip this exact release (or a pinned equivalent) before re-running the pipeline. See tools/README-swf-pipeline.md."
+    },
+    "frameLabelResolver": {
+      "tool": "tools/swf-frame-labels.py",
+      "role": "Parses the SWF tag stream directly (stdlib zlib/struct only) to compute REAL 1-based animation frame numbers for each named FrameLabel tag inside a chosen DefineSprite, by counting ShowFrame tags. This is more reliable than ffdec's -dumpSWF text output, whose per-line counters are nested-tag-list positions, not frame numbers."
+    },
+    "sheetPacker": {
+      "tool": "tools/build-sprite-sheet.py",
+      "role": "Packs a contiguous run of ffdec-exported per-frame PNGs into one horizontal sprite-sheet PNG matching the coUserver Spritesheet grid model (frameWidth x frameHeight x numFrames, single row). Fails if frames are missing or of inconsistent size."
+    },
+    "bitmapExtractor": {
+      "tool": "tools/swf-extract-bitmaps.py",
+      "role": "Diagnostic/fallback: extracts embedded raster tags (DefineBits*/DefineBitsLossless*) directly without rendering, for source SWFs that DO bake bitmaps rather than vectors. Run against both selected sources first; both reported zero bitmap tags (161 and 24 unextracted vector shape tags respectively), which is why ffdec rendering was required instead of a simpler direct-extract path.",
+      "runOn": [
+        "tmp/glitch-items/inhabitants/chicken/npc_chicken.swf",
+        "tmp/glitch-items/harvestable_resources/wood_tree/wood_tree.swf"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "id": "chicken",
+      "sourcePath": "tmp/glitch-items/inhabitants/chicken/npc_chicken.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/chicken/npc_chicken.fla",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), 100% vector shapes (161 DefineShape tags, 21 DefineSprite symbols), no embedded bitmaps",
+      "rootSymbol": { "characterId": 183, "class": "npc_chicken_fla.Chicken_1", "totalFrames": 897 },
+      "conversionMethod": "ffdec -export sprite (rasterize) -> swf-frame-labels.py (resolve real frame numbers for each named state) -> build-sprite-sheet.py (pack each state's frame range into one PNG strip)",
+      "conversionResult": "success",
+      "outputs": [
+        { "state": "walk", "sourceFrameRange": [1, 24], "file": "content/sprites/chicken/walk.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-walk.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 24 },
+        { "state": "flying", "sourceFrameRange": [25, 66], "file": "content/sprites/chicken/flying.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-flying.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 42 },
+        { "state": "flying_no_feathers", "sourceFrameRange": [67, 108], "file": "content/sprites/chicken/flying_no_feathers.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-flying_no_feathers.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 42 },
+        { "state": "land", "sourceFrameRange": [109, 133], "file": "content/sprites/chicken/land.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-land.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 25 },
+        { "state": "land_on_ladder", "sourceFrameRange": [134, 159], "file": "content/sprites/chicken/land_on_ladder.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-land_on_ladder.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 26 },
+        { "state": "flying_back", "sourceFrameRange": [160, 176], "file": "content/sprites/chicken/flying_back.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-flying_back.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 17 },
+        { "state": "fall", "sourceFrameRange": [177, 201], "file": "content/sprites/chicken/fall.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-fall.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 25 },
+        { "state": "pause", "sourceFrameRange": [202, 332], "file": "content/sprites/chicken/pause.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-pause.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 131 },
+        { "state": "verb", "sourceFrameRange": [333, 387], "file": "content/sprites/chicken/verb.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-verb.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 55 },
+        { "state": "pecking_twice", "sourceFrameRange": [388, 427], "file": "content/sprites/chicken/pecking_twice.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-pecking_twice.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 40, "note": "Original hardcoded coUserver value was numFrames=27; the resolved real frame-label range in the source SWF is 40 frames (388-427, next label 'pecking_once' at 428). Using the source-derived value." },
+        { "state": "pecking_once", "sourceFrameRange": [428, 459], "file": "content/sprites/chicken/pecking_once.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-pecking_once.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 32 },
+        { "state": "sit", "sourceFrameRange": [460, 479], "file": "content/sprites/chicken/sit.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-sit.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 20 },
+        { "state": "incubate", "sourceFrameRange": [480, 669], "file": "content/sprites/chicken/incubate.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-incubate.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 190 },
+        { "state": "idle1", "sourceFrameRange": [670, 736], "file": "content/sprites/chicken/idle1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-idle1.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 67 },
+        { "state": "idle2", "sourceFrameRange": [737, 783], "file": "content/sprites/chicken/idle2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-idle2.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 47 },
+        { "state": "idle3", "sourceFrameRange": [784, 869], "file": "content/sprites/chicken/idle3.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-idle3.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 86 },
+        { "state": "rooked2", "sourceFrameRange": [871, 897], "file": "content/sprites/chicken/rooked2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/chicken-rooked2.png", "frameWidth": 153, "frameHeight": 112, "numFrames": 27 }
+      ],
+      "deferredStates": [
+        {
+          "state": "rooked1",
+          "sourceFrameRange": [870, 870],
+          "reason": "Present as a frame label in the source SWF (single frame) but not referenced by any state in coUserver's Chicken entity class. Not converted; left for a future pass if a gameplay use is identified."
+        }
+      ]
+    },
+    {
+      "id": "wood_tree",
+      "sourcePath": "tmp/glitch-items/harvestable_resources/wood_tree/wood_tree.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/harvestable_resources/wood_tree/wood_tree.fla",
+      "actionScriptSiblingPresent": "tmp/glitch-items/harvestable_resources/wood_tree/wood_tree.as",
+      "enchantedVariantNotConverted": "tmp/glitch-items/harvestable_resources/wood_tree/wood_tree_enchanted/wood_tree_enchanted.swf",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (24 DefineShape tags across 4 growth-stage DefineSprite symbols), no embedded bitmaps",
+      "conversionMethod": "ffdec -export sprite (rasterize each of the 4 growth-variant DefineSprite symbols, 6 frames each) -> build-sprite-sheet.py (pack each variant's 6 frames into one PNG strip)",
+      "conversionResult": "success",
+      "outputs": [
+        { "state": "maturity_1", "characterId": 14, "sourceFrameRange": [1, 6], "file": "content/sprites/wood_tree/maturity_1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/wood_tree-maturity_1.png", "frameWidth": 88, "frameHeight": 138, "numFrames": 6 },
+        { "state": "maturity_2", "characterId": 21, "sourceFrameRange": [1, 6], "file": "content/sprites/wood_tree/maturity_2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/wood_tree-maturity_2.png", "frameWidth": 94, "frameHeight": 135, "numFrames": 6 },
+        { "state": "maturity_3", "characterId": 28, "sourceFrameRange": [1, 6], "file": "content/sprites/wood_tree/maturity_3.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/wood_tree-maturity_3.png", "frameWidth": 87, "frameHeight": 121, "numFrames": 6 },
+        { "state": "maturity_4", "characterId": 7, "sourceFrameRange": [1, 6], "file": "content/sprites/wood_tree/maturity_4.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/wood_tree-maturity_4.png", "frameWidth": 93, "frameHeight": 138, "numFrames": 6 }
+      ],
+      "validationNote": "The converted frameWidth/frameHeight for each of the 4 growth-variant symbols matches, pixel-for-pixel, the 4 distinct crop rectangles previously hardcoded in coUserver/lib/entities/plants/trees/woodtree.dart against a single (now-dead) remote URL -- strong independent confirmation that this pipeline reproduces the original asset geometry exactly, not just a lookalike render. A pre-existing copy/paste bug where all 4 Spritesheet entries shared the literal stateName \"maturity_1\" was also fixed while rewiring the URLs."
+    },
+    {
+      "id": "piggy",
+      "sourcePath": "tmp/glitch-items/inhabitants/piggy/npc_piggy.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/piggy/npc_piggy.fla",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (57 DefineShape + 19 DefineShape2 + 2 DefineShape4 tags, 1 DefineSprite), no embedded bitmaps",
+      "rootSymbol": { "characterId": 79, "class": "npc_piggy_fla.pig_1", "totalFrames": 284 },
+      "conversionMethod": "ffdec -export sprite (rasterize) -> swf-frame-labels.py (resolve real frame numbers for each named state) -> build-sprite-sheet.py (pack each state's frame range into one PNG strip)",
+      "conversionResult": "success",
+      "outputs": [
+        { "state": "walk", "sourceFrameRange": [1, 24], "file": "content/sprites/piggy/walk.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-walk.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 24 },
+        { "state": "chew", "sourceFrameRange": [25, 77], "file": "content/sprites/piggy/chew.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-chew.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 53 },
+        { "state": "look_screen", "sourceFrameRange": [78, 125], "file": "content/sprites/piggy/look_screen.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-look_screen.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 48 },
+        { "state": "nibble", "sourceFrameRange": [126, 185], "file": "content/sprites/piggy/nibble.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-nibble.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 60 },
+        { "state": "too_much_nibble", "sourceFrameRange": [186, 250], "file": "content/sprites/piggy/too_much_nibble.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-too_much_nibble.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 65 },
+        { "state": "rooked1", "sourceFrameRange": [251, 260], "file": "content/sprites/piggy/rooked1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-rooked1.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 10 },
+        { "state": "rooked2", "sourceFrameRange": [261, 284], "file": "content/sprites/piggy/rooked2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/piggy-rooked2.png", "frameWidth": 92, "frameHeight": 70, "numFrames": 24 }
+      ],
+      "validationNote": "All 7 resolved frame ranges match the previously hardcoded coUserver numFrames values exactly (24/53/48/60/65/10/24) -- strong independent confirmation the pipeline reproduces the original animation boundaries precisely for this asset."
+    },
+    {
+      "id": "metalrock",
+      "sourcePath": "tmp/glitch-items/harvestable_resources/rock_metal/rock_metal_1/rock_metal_1.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/harvestable_resources/rock_metal/rock_metal_1/rock_metal_1.fla",
+      "siblingVariantsNotConverted": [
+        "tmp/glitch-items/harvestable_resources/rock_metal/rock_metal_2/rock_metal_2.swf",
+        "tmp/glitch-items/harvestable_resources/rock_metal/rock_metal_3/rock_metal_3.swf"
+      ],
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (5 DefineShape3 tags on the main timeline, 1 unrelated DefineSprite), no embedded bitmaps",
+      "conversionMethod": "ffdec -export frame (rasterize the main timeline directly -- there is no separate named character symbol for this asset) -> build-sprite-sheet.py (pack the full frame run into one PNG strip)",
+      "conversionResult": "success",
+      "outputs": [
+        { "state": "5-4-3-2-1", "sourceFrameRange": [1, 6], "file": "content/sprites/metalrock/5-4-3-2-1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/metalrock-5-4-3-2-1.png", "frameWidth": 137, "frameHeight": 101, "numFrames": 6 }
+      ],
+      "validationNote": "The source SWF's main timeline actually has 6 frames, not the 5 implied by the previously hardcoded coUserver numFrames=5 (state name '5-4-3-2-1' suggests 5 depletion stages). All 6 real frames were kept rather than dropping one to match the old count; see the comment left in coUserver/lib/entities/plants/rocks/metalrock.dart. rock_metal_1 of the 3 sibling numbered variant folders was used arbitrarily as the representative source; the other two were not converted in this pass."
+    }
+  ],
+  "notConverted": {
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "families": ["seeds", "food", "furniture", "tools", "other inhabitants (fox, butterfly, salmon, etc.)", "other harvestable_resources (bean_tree, bubble_tree, fruit_tree, other rock/rock_metal variants, peat, garden, etc.)"]
+  }
+}

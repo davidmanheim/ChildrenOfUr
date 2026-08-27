@@ -1,0 +1,5 @@
+name: jsonx
+version: 2.0.1-local
+description: Dart 2-compatible local copy of jsonx 2.0.1.
+environment:
+  sdk: '>=2.0.0 <3.0.0'

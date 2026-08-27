@@ -1,0 +1,11 @@
+name: transmit
+version: 2.0.0
+author: Paul VanKeuren <paul.vankeuren@gmail.com>
+description: A dart package that allows for quick event passing between distinct parts of your codebase.
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dev_dependencies:
+  build_runner: '>=0.8.10 <2.0.0'
+  build_web_compilers: '>=0.3.6 <2.0.0'

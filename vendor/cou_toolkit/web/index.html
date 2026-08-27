@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>toolkit</title>
+
+	<style>
+		html {
+			margin: 0;
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 20px;
+			background: linear-gradient(to bottom, #eee, #aaa);
+		}
+	</style>
+
+	<link rel="import" href="fonts.html" />
+
+	<link rel="stylesheet" href="packages/cou_toolkit/styles/button.css" />
+	<link rel="stylesheet" href="packages/cou_toolkit/styles/panel.css" />
+	<link rel="stylesheet" href="packages/cou_toolkit/styles/progress.css" />
+	<link rel="stylesheet" href="packages/cou_toolkit/styles/slider.css" />
+	<link rel="stylesheet" href="packages/cou_toolkit/styles/well.css" />
+</head>
+<body>
+
+Drag Me.<br>
+
+<ur-itembox item="http://c2.glitch.bz/items/2012-12-06/cherry__x1_iconic_png_1354829757.png" quantity="10"></ur-itembox>
+
+<ur-itembox item="http://c2.glitch.bz/items/2012-12-06/cherry__x1_iconic_png_1354829757.png" quantity="1"></ur-itembox>
+
+<ur-itembox></ur-itembox>
+
+<ur-itembox item="http://www.clker.com/cliparts/9/e/4/2/119542278093319550johnny_automatic_potatoes.svg" quantity="100"></ur-itembox>
+
+<br><br>
+
+<label>
+	Slider<br>
+	<input type="range" min="0" max="1" step="0.1" value="0.5" id="inputRange" />
+</label>
+
+<br><br>
+
+<button>Button</button>
+<button><i class="fa fa-bicycle"></i></button>
+<button>MORE BUTTON</button>
+<button class="btn-big">BIG BUTTON</button>
+
+<br><br>
+
+<button class="btn-light">Button</button>
+<button class="btn-light"><i class="fa fa-bicycle"></i></button>
+<button class="btn-light">MORE BUTTON</button>
+<button class="btn-light btn-big">BIG BUTTON</button>
+
+<br><br>
+
+<button class="btn-warn">Button</button>
+<button class="btn-warn"><i class="fa fa-bicycle"></i></button>
+<button class="btn-warn">MORE BUTTON</button>
+<button class="btn-warn btn-big">BIG BUTTON</button>
+
+<br><br>
+
+<button class="btn-success">Button</button>
+<button class="btn-success"><i class="fa fa-bicycle"></i></button>
+<button class="btn-success">MORE BUTTON</button>
+<button class="btn-success btn-big">BIG BUTTON</button>
+
+<br><br>
+
+<button class="btn-light" darkui="true">Button</button>
+<button class="btn-light" darkui="true"><i class="fa fa-bicycle"></i></button>
+<button class="btn-light" darkui="true">MORE BUTTON</button>
+<button class="btn-light btn-big" darkui="true">BIG BUTTON</button>
+
+<br><br>
+
+<div class="well">Place Text into a well</div>
+
+<br><br>
+
+<div class="panel">
+	Or in a Panel
+	<button>Panel Button</button>
+</div>
+
+<br><br>
+
+<div class="progress">
+	<progress value="0.5" id="outputProgress"></progress>
+	<label for="outputProgress">50% loaded</label>
+</div>
+<br>
+<div class="progress">
+	<progress value="0.5" id="outputNotProgress"></progress>
+	<label for="outputNotProgress">50% unloaded</label>
+</div>
+
+<script type="application/dart" src="main.dart"></script>
+<script src="packages/browser/dart.js"></script>
+</body>
+</html>

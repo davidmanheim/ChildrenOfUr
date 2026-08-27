@@ -1,0 +1,6 @@
+.idea
+pubspec.lock
+packages
+out
+docs
+Thumbs.db

@@ -1,0 +1,14 @@
+name: postgresql
+version: 0.3.1+1
+author: Greg Lowe <greg@vis.net.nz>
+description: Postgresql database driver.
+homepage: https://github.com/xxgreg/dart_postgresql
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+dependencies:
+  crypto:
+    version: ^2.0.0
+dev_dependencies:
+  unittest: ">=0.9.0 <0.12.0"
+  yaml: ">=0.9.0 <3.0.0"
+  matcher: ">=0.11.1 <0.12.0"

@@ -1,0 +1,5 @@
+name: cou_toolkit
+version: 0.1.7
+description: A polymer library of components for use with CoU applications
+environment:
+  sdk: '>=2.0.0 <3.0.0'

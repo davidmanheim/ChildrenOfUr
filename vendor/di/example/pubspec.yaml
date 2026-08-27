@@ -1,0 +1,10 @@
+name: di_example
+version: 0.0.2
+dependencies:
+  browser: any
+  web_components: any
+  di:
+    path: ../
+
+transformers:
+- di

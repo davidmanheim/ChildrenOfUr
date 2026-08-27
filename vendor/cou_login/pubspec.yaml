@@ -1,0 +1,17 @@
+name: cou_login
+version: 0.1.4
+description: A polymer component that encapsulates the functionality needed for the game's login system
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dependencies:
+  angular: "^5.0.0"
+  firebase: "^5.0.0"
+  transmit:
+    path: ../transmit
+  cou_toolkit:
+    path: ../cou_toolkit
+
+transformers:
+- angular:
+    entry_points: web/login.dart

@@ -1,0 +1,11 @@
+**/.git
+**/.git/**
+.git
+.git/**
+**/.pub
+**/.dart_tool
+**/packages
+**/build
+**/out
+**/coverage
+**/*.log

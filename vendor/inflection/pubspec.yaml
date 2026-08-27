@@ -1,0 +1,5 @@
+name: inflection
+version: 0.4.1-local
+description: Dart 2-compatible local compatibility implementation for Children of Ur.
+environment:
+  sdk: '>=2.0.0 <3.0.0'

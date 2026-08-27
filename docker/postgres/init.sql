@@ -1,0 +1,144 @@
+-- Minimal local-development schema for the archived Children of Ur server.
+-- A production database dump is not part of the public repositories.
+
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  username TEXT UNIQUE,
+  email TEXT UNIQUE NOT NULL,
+  bio TEXT NOT NULL DEFAULT '',
+  achievements TEXT NOT NULL DEFAULT '[]',
+  elevation TEXT NOT NULL DEFAULT '',
+  custom_avatar TEXT,
+  friends TEXT NOT NULL DEFAULT '[]',
+  chat_disabled BOOLEAN NOT NULL DEFAULT FALSE,
+  last_login TIMESTAMPTZ,
+  username_color TEXT,
+  registration_date TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS api_access (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  api_token TEXT UNIQUE NOT NULL,
+  access_count INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS metabolics (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER UNIQUE NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  mood INTEGER NOT NULL DEFAULT 50,
+  max_mood INTEGER NOT NULL DEFAULT 100,
+  energy INTEGER NOT NULL DEFAULT 50,
+  max_energy INTEGER NOT NULL DEFAULT 100,
+  currants INTEGER NOT NULL DEFAULT 0,
+  img INTEGER NOT NULL DEFAULT 0,
+  lifetime_img INTEGER NOT NULL DEFAULT 0,
+  level INTEGER NOT NULL DEFAULT 1,
+  current_street TEXT NOT NULL DEFAULT 'LA58KK7B9O522PC',
+  last_street TEXT,
+  undead_street TEXT,
+  current_street_x DOUBLE PRECISION NOT NULL DEFAULT 1.0,
+  current_street_y DOUBLE PRECISION NOT NULL DEFAULT 0.0,
+  quoin_multiplier DOUBLE PRECISION NOT NULL DEFAULT 1.0,
+  quoins_collected INTEGER NOT NULL DEFAULT 0,
+  location_history TEXT NOT NULL DEFAULT '[]',
+  skills_json TEXT NOT NULL DEFAULT '{}',
+  buffs_json TEXT NOT NULL DEFAULT '{}',
+  alphfavor INTEGER NOT NULL DEFAULT 0,
+  alphfavor_max INTEGER NOT NULL DEFAULT 1000,
+  cosmafavor INTEGER NOT NULL DEFAULT 0,
+  cosmafavor_max INTEGER NOT NULL DEFAULT 1000,
+  friendlyfavor INTEGER NOT NULL DEFAULT 0,
+  friendlyfavor_max INTEGER NOT NULL DEFAULT 1000,
+  grendalinefavor INTEGER NOT NULL DEFAULT 0,
+  grendalinefavor_max INTEGER NOT NULL DEFAULT 1000,
+  humbabafavor INTEGER NOT NULL DEFAULT 0,
+  humbabafavor_max INTEGER NOT NULL DEFAULT 1000,
+  lemfavor INTEGER NOT NULL DEFAULT 0,
+  lemfavor_max INTEGER NOT NULL DEFAULT 1000,
+  mabfavor INTEGER NOT NULL DEFAULT 0,
+  mabfavor_max INTEGER NOT NULL DEFAULT 1000,
+  potfavor INTEGER NOT NULL DEFAULT 0,
+  potfavor_max INTEGER NOT NULL DEFAULT 1000,
+  sprigganfavor INTEGER NOT NULL DEFAULT 0,
+  sprigganfavor_max INTEGER NOT NULL DEFAULT 1000,
+  tiifavor INTEGER NOT NULL DEFAULT 0,
+  tiifavor_max INTEGER NOT NULL DEFAULT 1000,
+  zillefavor INTEGER NOT NULL DEFAULT 0,
+  zillefavor_max INTEGER NOT NULL DEFAULT 1000
+);
+
+CREATE TABLE IF NOT EXISTS user_quests (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER UNIQUE NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  completed_list TEXT NOT NULL DEFAULT '[]',
+  in_progress_list TEXT NOT NULL DEFAULT '[]'
+);
+
+CREATE TABLE IF NOT EXISTS inventories (
+  inventory_id SERIAL PRIMARY KEY,
+  user_id INTEGER UNIQUE NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  inventory_json TEXT NOT NULL DEFAULT '[]'
+);
+
+CREATE TABLE IF NOT EXISTS streets (
+  id TEXT PRIMARY KEY,
+  tsid TEXT,
+  is_home BOOLEAN NOT NULL DEFAULT FALSE,
+  items TEXT NOT NULL DEFAULT '[]'
+);
+
+CREATE TABLE IF NOT EXISTS street_entities (
+  id TEXT PRIMARY KEY,
+  type TEXT,
+  tsid TEXT,
+  x DOUBLE PRECISION,
+  y DOUBLE PRECISION,
+  z DOUBLE PRECISION,
+  h_flip BOOLEAN,
+  rotation DOUBLE PRECISION,
+  metadata_json TEXT
+);
+
+CREATE TABLE IF NOT EXISTS stats (
+  user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  awesome_pot_uses INTEGER NOT NULL DEFAULT 0, barnacles_scraped INTEGER NOT NULL DEFAULT 0, beaker_uses INTEGER NOT NULL DEFAULT 0,
+  bean_trees_petted INTEGER NOT NULL DEFAULT 0, bean_trees_watered INTEGER NOT NULL DEFAULT 0, beans_harvested INTEGER NOT NULL DEFAULT 0, beans_seasoned INTEGER NOT NULL DEFAULT 0,
+  blender_uses INTEGER NOT NULL DEFAULT 0, bubble_trees_petted INTEGER NOT NULL DEFAULT 0, bubble_trees_watered INTEGER NOT NULL DEFAULT 0, bubbles_harvested INTEGER NOT NULL DEFAULT 0, bubbles_transformed INTEGER NOT NULL DEFAULT 0,
+  butterflies_massaged INTEGER NOT NULL DEFAULT 0, butterflies_milked INTEGER NOT NULL DEFAULT 0, cherries_harvested INTEGER NOT NULL DEFAULT 0, chickens_squeezed INTEGER NOT NULL DEFAULT 0,
+  cocktail_shaker_uses INTEGER NOT NULL DEFAULT 0, crops_harvested INTEGER NOT NULL DEFAULT 0, crops_hoed INTEGER NOT NULL DEFAULT 0, crops_planted INTEGER NOT NULL DEFAULT 0, crops_watered INTEGER NOT NULL DEFAULT 0,
+  cubimal_boxes_opened INTEGER NOT NULL DEFAULT 0, cubimals_set_free INTEGER NOT NULL DEFAULT 0, dirt_dug INTEGER NOT NULL DEFAULT 0, egg_plants_petted INTEGER NOT NULL DEFAULT 0, egg_plants_watered INTEGER NOT NULL DEFAULT 0,
+  eggs_harveted INTEGER NOT NULL DEFAULT 0, eggs_seasoned INTEGER NOT NULL DEFAULT 0, emblems_caressed INTEGER NOT NULL DEFAULT 0, emblems_collected INTEGER NOT NULL DEFAULT 0, emblems_considered INTEGER NOT NULL DEFAULT 0, emblems_contemplated INTEGER NOT NULL DEFAULT 0,
+  favor_earned INTEGER NOT NULL DEFAULT 0, fruit_converted INTEGER NOT NULL DEFAULT 0, fruit_trees_petted INTEGER NOT NULL DEFAULT 0, fruit_trees_watered INTEGER NOT NULL DEFAULT 0, frying_pan_uses INTEGER NOT NULL DEFAULT 0,
+  gas_converted INTEGER NOT NULL DEFAULT 0, gas_harvested INTEGER NOT NULL DEFAULT 0, gas_plants_petted INTEGER NOT NULL DEFAULT 0, gas_plants_watered INTEGER NOT NULL DEFAULT 0, grapes_squished INTEGER NOT NULL DEFAULT 0,
+  famous_pugilist_grill_uses INTEGER NOT NULL DEFAULT 0, heli_kitties_petted INTEGER NOT NULL DEFAULT 0, ice_scraped INTEGER NOT NULL DEFAULT 0, icons_collected INTEGER NOT NULL DEFAULT 0, icons_tithed INTEGER NOT NULL DEFAULT 0, icons_revered INTEGER NOT NULL DEFAULT 0, icons_ruminated INTEGER NOT NULL DEFAULT 0,
+  items_dropped INTEGER NOT NULL DEFAULT 0, items_picked_up INTEGER NOT NULL DEFAULT 0, items_from_vendors INTEGER NOT NULL DEFAULT 0, jellisac_harvested INTEGER NOT NULL DEFAULT 0, jumps INTEGER NOT NULL DEFAULT 0, knife_board_uses INTEGER NOT NULL DEFAULT 0,
+  paper_harvested INTEGER NOT NULL DEFAULT 0, peat_harvested INTEGER NOT NULL DEFAULT 0, piggies_nibbled INTEGER NOT NULL DEFAULT 0, piggies_petted INTEGER NOT NULL DEFAULT 0, piggies_fed INTEGER NOT NULL DEFAULT 0, planks_harvested INTEGER NOT NULL DEFAULT 0,
+  quoins_collected INTEGER NOT NULL DEFAULT 0, rainbo_snocones_blended INTEGER NOT NULL DEFAULT 0, rocks_mined INTEGER NOT NULL DEFAULT 0, salmon_pocketed INTEGER NOT NULL DEFAULT 0, sauce_pan_uses INTEGER NOT NULL DEFAULT 0,
+  shrine_donations INTEGER NOT NULL DEFAULT 0, smelter_uses INTEGER NOT NULL DEFAULT 0, spice_harvested INTEGER NOT NULL DEFAULT 0, spice_milled INTEGER NOT NULL DEFAULT 0, spice_plants_petted INTEGER NOT NULL DEFAULT 0, spice_plants_watered INTEGER NOT NULL DEFAULT 0,
+  steps_taken INTEGER NOT NULL DEFAULT 0, test_tube_uses INTEGER NOT NULL DEFAULT 0, tinkertool_uses INTEGER NOT NULL DEFAULT 0, wood_trees_petted INTEGER NOT NULL DEFAULT 0, wood_trees_watered INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS notes (
+  id SERIAL PRIMARY KEY,
+  author_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL DEFAULT '', body TEXT NOT NULL DEFAULT '', timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS messages (
+  id SERIAL PRIMARY KEY,
+  to_user TEXT NOT NULL, from_user TEXT NOT NULL DEFAULT '', subject TEXT NOT NULL DEFAULT '', body TEXT NOT NULL DEFAULT '', currants INTEGER NOT NULL DEFAULT 0,
+  read BOOLEAN NOT NULL DEFAULT FALSE, currants_taken BOOLEAN NOT NULL DEFAULT FALSE,
+  item1 TEXT, item2 TEXT, item3 TEXT, item4 TEXT, item5 TEXT,
+  item1_slot TEXT, item2_slot TEXT, item3_slot TEXT, item4_slot TEXT, item5_slot TEXT,
+  item1_taken BOOLEAN NOT NULL DEFAULT FALSE, item2_taken BOOLEAN NOT NULL DEFAULT FALSE, item3_taken BOOLEAN NOT NULL DEFAULT FALSE, item4_taken BOOLEAN NOT NULL DEFAULT FALSE, item5_taken BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE IF NOT EXISTS auctions (
+  id SERIAL PRIMARY KEY, item_name TEXT NOT NULL, item_count INTEGER NOT NULL DEFAULT 1, total_cost INTEGER NOT NULL DEFAULT 0,
+  username TEXT NOT NULL DEFAULT '', start_time TIMESTAMPTZ NOT NULL DEFAULT NOW(), end_time TIMESTAMPTZ NOT NULL DEFAULT NOW() + INTERVAL '2 days'
+);
+
+CREATE TABLE IF NOT EXISTS email_verifications (
+  id SERIAL PRIMARY KEY, email TEXT UNIQUE NOT NULL, token TEXT NOT NULL, verified BOOLEAN NOT NULL DEFAULT FALSE
+);

@@ -1,0 +1,11 @@
+name: message_bus
+description: A simple pubsub message bus.
+version: 0.0.4
+author: Robert McDermot <me@robertmcdermot.com>
+homepage: https://github.com/RobertMcDermot/dart_message_bus
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'

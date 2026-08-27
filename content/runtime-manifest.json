@@ -1,0 +1,155 @@
+{
+  "$schema": "Content recovery runtime manifest. One row per runtime asset/item. Every row MUST have exactly one of the 5 destinations from CONTENT_RECOVERY_PLAN.md ('Street presentation' | 'World entity' | 'Player item' | 'UI/feedback visual' | 'Deliberately deferred'). tools/validate-content.mjs enforces this.",
+  "generatedAt": "2026-08-27",
+  "destinations": [
+    "Street presentation",
+    "World entity",
+    "Player item",
+    "UI/feedback visual",
+    "Deliberately deferred"
+  ],
+  "assets": [
+    {
+      "id": "chicken",
+      "displayName": "Chicken",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "chicken",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware habitat placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4) and the animal-kinship skill loop (squeeze for grain, incubate eggs into chicks).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/chicken.dart:Chicken",
+        "actions": ["squeeze", "incubate"],
+        "skill": "animal_kinship",
+        "rewardItem": "grain",
+        "achievements": ["hen_hugger", "hen_hugger_deluxe", "hen_hugger_supremalicious", "the_hugginator"]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into Chicken.dart in this pass, replacing dead https://childrenofur.com/assets/entityImages/... links. Entity logic (squeeze/incubate/achievements) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a Chicken (only the synthetic DemoChicken stand-in is seeded today) -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
+    },
+    {
+      "id": "wood_tree",
+      "displayName": "Wood Tree",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "wood_tree",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4), then the harvesting loop (chop with a hatchet/class_axe for planks).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/woodtree.dart:WoodTree",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": ["chop", "pet", "water"],
+        "itemRequirement": ["hatchet", "class_axe"],
+        "rewardItem": "plank",
+        "achievements": ["wood_wacker", "timber_jack", "loggerator"]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into woodtree.dart in this pass, replacing dead childrenofur.com links (all 4 maturity states previously pointed at ONE remote file with different crop rects; now 4 distinct locally converted files). Also fixed a pre-existing copy/paste bug where every Spritesheet entry used the literal stateName \"maturity_1\". Entity logic (chop/pet/water/achievements) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a WoodTree today -- placement is step 4, still open."
+    },
+    {
+      "id": "piggy",
+      "displayName": "Piggy",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "piggy",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware habitat placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4) and the animal-kinship skill loop (massage/milk for meat).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/piggy.dart:Piggy",
+        "actions": ["massage", "milk"],
+        "skill": "animal_kinship",
+        "rewardItem": "meat"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into piggy.dart in this pass, replacing dead childrenofur.com links. Entity logic (massage/milk) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a Piggy today -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
+    },
+    {
+      "id": "metalrock",
+      "displayName": "Metal Rock",
+      "category": "harvestable resource (rock)",
+      "sourceAssetId": "metalrock",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4), then the mining loop (mine with a fancy_pick for chunk_metal).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/rocks/metalrock.dart:MetalRock",
+        "baseClass": "coUserver/lib/entities/plants/rocks/rock.dart:Rock",
+        "actions": ["mine"],
+        "itemRequirement": ["fancy_pick"],
+        "rewardItem": "chunk_metal",
+        "skill": "mining"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into metalrock.dart in this pass, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a MetalRock today -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
+    },
+    {
+      "id": "demo-chicken",
+      "displayName": "Demo Chicken",
+      "category": "synthetic visual stand-in",
+      "sourceAssetId": null,
+      "destination": "World entity",
+      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoChicken per street TSID (demo- IDs).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/demo_chicken.dart:DemoChicken"
+      },
+      "status": "existing-synthetic",
+      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-chicken.svg), not derived from any original Glitch/Ur asset. Intentionally non-interactive (no actions). Listed here for coverage completeness, not produced by this pass. Should eventually be replaced/supplemented by placed instances of the real 'chicken' asset above."
+    },
+    {
+      "id": "demo-tree",
+      "displayName": "Demo Tree",
+      "category": "synthetic visual stand-in",
+      "sourceAssetId": null,
+      "destination": "World entity",
+      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoTree per street TSID (demo- IDs).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/demo_plants.dart:DemoTree"
+      },
+      "status": "existing-synthetic",
+      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-tree.svg), not derived from any original Glitch/Ur asset. Intentionally non-harvestable. Listed here for coverage completeness, not produced by this pass."
+    },
+    {
+      "id": "demo-wheat",
+      "displayName": "Demo Wheat",
+      "category": "synthetic visual stand-in",
+      "sourceAssetId": null,
+      "destination": "World entity",
+      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoWheat per street TSID (demo- IDs).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/demo_plants.dart:DemoWheat"
+      },
+      "status": "existing-synthetic",
+      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-wheat.svg), not derived from any original Glitch/Ur asset. Intentionally non-harvestable. Listed here for coverage completeness, not produced by this pass."
+    },
+    {
+      "id": "quoin-collectibles",
+      "displayName": "Quoin collectibles (Img/Mood/Energy/Currant/Mystery/Favor)",
+      "category": "collectible",
+      "sourceAssetId": null,
+      "destination": "Player item",
+      "accessibleThrough": "World collection: tools/seed-demo-world.mjs places one of each quoin type per street TSID (demo- IDs); collecting one grants the corresponding stat/currency via Quoin.setCollected.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/quoin.dart:Quoin",
+        "types": ["Img", "Mood", "Energy", "Currant", "Mystery", "Favor"]
+      },
+      "status": "existing-synthetic",
+      "statusNote": "Pre-existing local fallback SVG/PNG (files/sprites/generated/local-quoin.svg|png), not derived from an original per-type Glitch/Ur quoin sprite. Listed here for coverage completeness, not produced by this pass."
+    }
+  ],
+  "deliberatelyDeferred": [
+    {
+      "id": "wood_tree_enchanted",
+      "category": "harvestable resource (tree variant)",
+      "reason": "Enchanted-tree variant SWF exists (tmp/glitch-items/harvestable_resources/wood_tree/wood_tree_enchanted/) but has no corresponding coUserver entity class yet, and no known trigger (quest/event) that would grant it.",
+      "replacementMilestone": "CONTENT_RECOVERY_PLAN.md step 5 (item/recipe/quest data translation) -- convert once an enchantment mechanic and its trigger are defined."
+    },
+    {
+      "id": "all-other-glitch-items-families",
+      "category": "seeds, food, furniture, tools, other inhabitants, other harvestable_resources",
+      "reason": "~5400 files remain unconverted; this pass proved the pipeline end-to-end on exactly the two assets named in CONTENT_RECOVERY_PLAN.md step 1 (chicken, one tree family) and used remaining time to also wire step 3 for those same two entities. Broader conversion is future work.",
+      "replacementMilestone": "CONTENT_RECOVERY_PLAN.md step 3 (continue converting/localizing animals and harvestables already supported by coUserver), then step 5 for item/recipe/quest-only art."
+    },
+    {
+      "id": "street-layers-glitch-locations",
+      "category": "street presentation (CAT422 background/layer art)",
+      "reason": "tinyspeck/glitch-locations has not been fetched locally yet (RECOVERY_TODO.md: 'planned'). No source to convert from until it is vendored the way glitch-items and glitch-GameServerJS already are.",
+      "replacementMilestone": "Fetch tinyspeck/glitch-locations into tmp/, then apply this same SWF/FLA conversion pipeline to street art."
+    }
+  ]
+}
