@@ -1,0 +1,120 @@
+#minimap-container {
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#minimap {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: "Lato", sans-serif;
+    background-color: #eee;
+}
+
+.darkui #minimap {
+    background-color: #282828;
+    border-color: #282828;
+}
+
+#minimap-img {
+    width: 166px;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+#minimap-objects {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+#minimap-label {
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+    position: relative;
+    top: -2px;
+}
+
+.darkui #minimap-label {
+    color: #eee;
+}
+
+.minimap-player {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: help;
+}
+
+.minimap-player.minimap-me {
+    border-color: white;
+}
+
+.minimap-exit {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: url(../../../system/icons/signpost.svg) no-repeat;
+    background-size: 20px 20px;
+    cursor: help;
+}
+
+#minimap-toggle {
+    width: 40px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.darkui #minimap-toggle {
+    background-color: #282828;
+    color: #eee;
+}
+
+#minimap-toggle .fa {
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+}
+
+#mapButton {
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    bottom: 15px;
+    left: -8px;
+    cursor: pointer;
+}
+
+#mapButton.closed {
+    background-image: url(../../../system/icons/zoom-in.svg);
+}
+
+#mapButton.open {
+    background-image: url(../../../system/icons/zoom-out.svg);
+}
+
+#mapButton:hover {
+    -webkit-filter: drop-shadow(0 1px 2px cyan);
+    -moz-filter: drop-shadow(0 1px 2px cyan);
+    -o-filter: drop-shadow(0 1px 2px cyan);
+    filter: drop-shadow(0 1px 2px cyan);
+}
+
+#mapButton:active {
+    -webkit-filter: drop-shadow(0 1px 1px cyan);
+    -moz-filter: drop-shadow(0 1px 1px cyan);
+    -o-filter: drop-shadow(0 1px 1px cyan);
+    filter: drop-shadow(0 1px 1px cyan);
+}

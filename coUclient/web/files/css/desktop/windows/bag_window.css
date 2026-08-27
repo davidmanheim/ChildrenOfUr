@@ -1,0 +1,36 @@
+#windowHolder .window.bagWindow {
+    width: 494px;
+    height: 153px !important;
+    transform: translate(-50%, 0%); /* Create bag windows closer to the bag */
+}
+
+#windowHolder .window.bagWindow .iw-title {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.bagWindow header img.fa-li {
+    height: 32px;
+    margin-top: 4px;
+}
+
+.box.bagwindow-box {
+    margin: 2px;
+}
+
+.box.bagwindow-box .itemCount {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    font-family: "Fredoka One", sans-serif !important;
+    color: #4b2e4c;
+    font-size: 16px !important;
+}
+
+.darkui .box.bagwindow-box .itemCount {
+    color: #eee;
+}
+
+.bagInventoryItem {
+    cursor: pointer;
+}

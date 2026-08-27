@@ -1,0 +1,26 @@
+.achv-overlay {
+    background-color: rgb(188, 255, 244);
+    text-align: center;
+    padding-top: 95px;
+}
+
+.achv-name {
+    font-size: 50px;
+}
+
+.achv-desc {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.achv-icon {
+    width: 180px;
+    height: 180px;
+    margin: 30px auto;
+    -webkit-filter: drop-shadow(0 3px 5px #000);
+    -moz-filter: drop-shadow(0 3px 5px #000);
+    -o-filter: drop-shadow(0 3px 5px #000);
+    filter: drop-shadow(0 3px 5px #000);
+}

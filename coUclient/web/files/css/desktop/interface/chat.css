@@ -1,0 +1,406 @@
+.conversation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.conversation header {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.darkui .conversation header {
+    color: #fff;
+}
+
+.conversation header span {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.darkui .conversation header span {
+    color: #eee;
+}
+
+.conversation header .fa {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 20px;
+    width: 1em;
+    opacity: 0.9;
+}
+
+.conversation header .chat-scroll-toggle {
+	left: calc(100% - 25px);
+	cursor: pointer;
+}
+
+.chat-resize {
+	cursor: ns-resize;
+}
+
+.conversation .dialog {
+    position: absolute;
+    padding: 2px;
+    margin: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    top: 33px;
+    bottom: 33px;
+    left: 1.5%;
+    right: 1.5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: auto;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    color: #000;
+    transform: translateZ(0);
+}
+
+.dialog p {
+    font-family: 'Lato', sans-serif;
+    padding: 2px;
+    margin: 2px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    word-wrap: break-word;
+}
+
+.dialog p *.name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+}
+
+.dialog p *.message {
+    font-family: 'Lato', sans-serif;
+    cursor: auto;
+    color: #000;
+    font-size: 1.2em;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.darkui .dialog p *.message {
+    color: #fff;
+}
+
+.dialog p.system {
+    font-style: italic;
+    color: #444;
+    border-left: 2px solid #444;
+    padding-left: 5px;
+}
+
+.darkui .dialog p.system {
+    color: #eee;
+}
+
+.dialog p.system.chat-toast {
+    opacity: 0.5;
+    border-left-style: dotted;
+}
+
+.dialog p *.name > a {
+    color: inherit;
+}
+
+p.me {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.conversation input {
+    position: absolute;
+    bottom: 5px;
+    left: 3%;
+    width: calc(93% - 22px);
+    padding-right: 22px;
+}
+
+.dialog a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.darkui .dialog a {
+    color: #fff;
+}
+
+.dialog a:hover {
+    opacity: 0.5;
+}
+
+.conversation .fa-chevron-down {
+    cursor: pointer;
+}
+
+/* Better Chat Bubbles */
+
+.chat-bubble {
+    font-family: 'Lato', sans-serif;
+    z-index: 1060;
+    position: relative;
+    padding: 1px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    -webkit-transform-origin: bottom center;
+    -moz-transform-origin: bottom center;
+    -o-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
+.darkui .chat-bubble {
+    background-color: #282828;
+    border-color: #181818;
+    color: #fff;
+}
+
+.cb-content {
+    padding: 9px 14px;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.chat-bubble > .cb-arrow,
+.chat-bubble > .cb-arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+}
+
+.chat-bubble > .cb-arrow {
+    border-width: 11px;
+    left: 50%;
+    margin-left: -11px;
+    border-bottom-width: 0;
+    border-top-color: #999;
+    border-top-color: rgba(0, 0, 0, 0.25);
+    bottom: -10px;
+}
+
+.chat-bubble > .cb-arrow:after {
+    border-width: 10px;
+    content: " ";
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+    border-top-color: #fff;
+}
+
+.darkui .chat-bubble > .cb-arrow:after {
+    border-top-color: #282828;
+}
+
+.username {
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Chat bubble buttons */
+
+.cb-content button {
+    pointer-events: all;
+    margin: 0.5em;
+    font-family: 'Fredoka One', cursive;
+    position: relative;
+    min-width: 30px;
+    border-radius: 7px;
+    padding: 6px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 -2px 5px 1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s;
+    color: #4b2e4c;
+}
+
+/* Entity Interaction Completion */
+
+.cb-content .awarded {
+    margin-top: 8px;
+}
+
+.cb-content .awarded span {
+    padding: 0 4px 2px 4px;
+    display: inline-block;
+    margin: 0 1px 3px 0;
+    border-radius: 10px;
+}
+
+.cb-content .awarded span::after {
+    display: inline-block;
+    position: relative;
+    left: 2px;
+}
+
+.cb-content .awarded span.energy {
+    background-color: #E9CFCD;
+    color: #620400;
+}
+
+.cb-content .awarded span.energy::after {
+    content: url(../../../system/icons/interaction_energy.svg);
+    margin-right: 2px;
+}
+
+.cb-content .awarded span.mood {
+    background-color: #CCD795;
+    color: #25340B;
+}
+
+.cb-content .awarded span.mood::after {
+    content: url(../../../system/icons/interaction_mood.svg);
+    top: 2px;
+}
+
+.cb-content .awarded span.img {
+    background-color: rgb(239, 179, 255);
+    color: rgb(71, 1, 71);
+}
+
+.cb-content .awarded span.img::after {
+    content: url(../../../system/icons/interaction_img.svg);
+    top: 2px;
+}
+
+.cb-content .awarded span.currants {
+    background-color: rgb(240, 208, 158);
+    color: rgb(86, 53, 16);
+}
+
+.cb-content .awarded span.currants::after {
+    content: url(../../../system/icons/interaction_currants.svg);
+    top: 2px;
+}
+
+/* don't underline username links, looks bad */
+
+a.noUnderline {
+    text-decoration: none;
+}
+
+span.name.dev::before,
+a.name.dev::before {
+    border: 2px solid #4b2e4c;
+    border-radius: 4px;
+    content: "dev";
+    font-family: "Lato", sans-serif;
+    color: #444;
+    margin-right: 3px;
+    padding: 0 2px;
+    opacity: 0.75;
+    font-weight: normal;
+}
+
+span.name.guide::before,
+a.name.guide::before {
+    border: 2px solid teal;
+    border-radius: 4px;
+    content: "guide";
+    font-family: "Lato", sans-serif;
+    color: #444;
+    margin-right: 3px;
+    padding: 0 2px;
+    opacity: 0.75;
+    font-weight: normal;
+}
+
+.conversation .emoticon,
+.cb-content .emoticon {
+    vertical-align: middle;
+    margin: 0 2px;
+    height: 1em;
+    width: auto;
+    transition: height 0.25s ease-in-out;
+}
+
+.conversation .emoticon:hover {
+    height: 3em;
+}
+
+#bottomList a {
+    cursor: pointer;
+}
+
+/* Join/Leave messages */
+
+.chat-member-change-event {
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    margin: 20px 0 !important;
+    height: 0;
+}
+
+.chat-member-change-event:first-child {
+    margin-top: 10px !important;
+}
+
+.chat-member-change-event > * {
+    position: relative;
+    top: -6px;
+    background-color: #fff;
+    font-family: "Lato", sans-serif !important;
+}
+
+.darkui .chat-member-change-event > * {
+    background-color: #282828;
+}
+
+.chat-member-change-event > span:first-child {
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.chat-member-change-event > span:last-child {
+    padding-right: 10px;
+}
+
+/* Links */
+
+.item-chat-link-icon {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    background-size: contain;
+    margin-right: 0.1em;
+    background: no-repeat center center;
+    cursor: pointer;
+}
+
+.location-chat-link::before {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    content: "";
+    background-size: contain;
+    margin-right: 0.1em;
+    background: url(../../../system/icons/signpost.svg) no-repeat center center;
+    cursor: pointer;
+}
+
+.chat-member-change-event .location-chat-link::before {
+    display: none;
+}

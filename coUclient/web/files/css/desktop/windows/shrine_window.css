@@ -1,0 +1,84 @@
+#shrineWindow .well *:not(.fa) {
+    font-family: "Lato", sans-serif;
+}
+
+#shrine-window-top {
+    height: 110px;
+}
+
+#donate-drop {
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+#DonateDropTarget {
+	border: 2px dashed #999;
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+	background: white no-repeat center center;
+}
+
+.darkui #DonateDropTarget {
+   background-color: black;
+}
+
+#shrine-window-buttons > * {
+    margin-top: 5px;
+}
+
+#shrine-window-buttons > * button {
+    width: 78px;
+}
+
+#shrineWindow .well .NumToDonate {
+    margin: 0 5px;
+    width: 40px;
+    text-align: center;
+}
+
+#shrineWindow .well .NumToDonate::-webkit-inner-spin-button,
+#shrineWindow .well .NumToDonate::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#shrineWindow .well .plus,
+#shrineWindow .well .minus {
+    cursor: pointer;
+}
+
+#DonateHelp {
+    max-width: 300px;
+    position: relative;
+    top: -160px;
+    left: 200px;
+}
+
+#shrine-window-bottom .progress {
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 14px);
+    height: 30px;
+}
+
+#shrine-window-bottom .progress progress {
+    height: 28px;
+    left: -1px;
+}
+
+#shrine-window-bottom .progress label {
+    top: -26px;
+}
+
+#shrine-window-qty {
+    position: absolute;
+    top: 105px;
+    left: 205px;
+}
+
+#shrine-window-icon {
+    width: 1em;
+    top: 10px;
+    left: -45px;
+}

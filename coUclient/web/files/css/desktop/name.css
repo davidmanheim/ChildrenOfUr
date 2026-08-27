@@ -1,0 +1,36 @@
+#PlayerHolder {
+  pointer-events: none;
+}
+.playerParent {
+  display: inline-block;
+  pointer-events: none;
+  text-align: center;
+}
+.playerName {
+  text-shadow: rgba(0,0,0,0.5) 0 1px 3px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  position: absolute;
+  margin-top:25px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%) translateY(-34px);
+}
+
+.playerCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.groundItemGlow {
+  -webkit-filter: drop-shadow(0 1px 2px cyan);
+  filter: drop-shadow(0 1px 2px cyan);
+}
+
+.entity, .playerCanvas, .playerParent {
+  will-change: transform;
+}

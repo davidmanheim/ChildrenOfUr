@@ -1,0 +1,1105 @@
+/* PROGRESS BARS */
+
+.fill {
+    width: 0;
+    position: absolute;
+    color: #4b2e4c;
+    opacity: 0.7;
+    overflow: hidden;
+    display: inline-block;
+    font-family: "Sniglet", "RockoFLFBold", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    z-index: 133346;
+}
+
+.fill.harvesting,
+.fill.chopping,
+.fill.harvest,
+.fill.chop {
+    color: #ed7e00;
+}
+
+.fill.watering,
+.fill.milking,
+.fill.water,
+.fill.milk {
+    color: #5f8ddd;
+}
+
+.fill.petting,
+.fill.massaging,
+.fill.pet,
+.fill.massage {
+    color: #f98686;
+}
+
+.fill.nibbling,
+.fill.nibble {
+    color: #c42323;
+}
+
+.fill.mining,
+.fill.mine {
+    color: #5e5e5e;
+}
+
+.fill.digging,
+.fill.squeezing,
+.fill.dig,
+.fill.squeeze {
+    color: #823917;
+}
+
+.fill.scraping,
+.fill.scrape {
+    color: #938f80;
+}
+
+.fill.squishing,
+.fill.squish {
+    color: #567238;
+}
+
+/* Focusing Orb */
+
+.fill.levitate,
+.fill.focus_energy,
+.fill.focus_mood,
+.fill.radiate,
+.fill.meditate {
+    color: #9EB7D3;
+}
+
+/* Emblems */
+
+.fill.caress,
+.fill.consider,
+.fill.contemplate {
+    color: #AD8F42;
+}
+
+/* Icons */
+
+.fill.ruminate,
+.fill.revere,
+.fill.reflect {
+    color: #725e2b;
+}
+
+.border {
+    position: absolute;
+    color: #d3d3d3;
+    opacity: 0.9;
+    text-shadow: -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: "Sniglet", "RockoFLFBold", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    z-index: 133348;
+}
+
+.border::after {
+    width: 1em;
+    height: 1em;
+    -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    -moz-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    -o-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    position: absolute;
+    opacity: 1;
+}
+
+/* MINING ANIMATION */
+
+@-webkit-keyframes miningAnimation {
+    from {
+        background-position-x: 3729px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes miningAnimation {
+    from {
+        background-position-x: 3729px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes miningAnimation {
+    from {
+        background-position-x: 3729px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes miningAnimation {
+    from {
+        background-position-x: 3729px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-webkit-keyframes miningAnimationFancy {
+    from {
+        background-position-x: 3663px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes miningAnimationFancy {
+    from {
+        background-position-x: 3663px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes miningAnimationFancy {
+    from {
+        background-position-x: 3663px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes miningAnimationFancy {
+    from {
+        background-position-x: 3663px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+/* DIGGING ANIMATION */
+
+@-webkit-keyframes diggingAnimation {
+    from {
+        background-position-x: 3445px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes diggingAnimation {
+    from {
+        background-position-x: 3445px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes diggingAnimation {
+    from {
+        background-position-x: 3445px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes diggingAnimation {
+    from {
+        background-position-x: 3445px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-webkit-keyframes diggingAnimationFancy {
+    from {
+        background-position-x: 3339px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes diggingAnimationFancy {
+    from {
+        background-position-x: 3339px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes diggingAnimationFancy {
+    from {
+        background-position-x: 3339px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes diggingAnimationFancy {
+    from {
+        background-position-x: 3339px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+/* WATERING ANIMATION */
+
+@-webkit-keyframes wateringAnimation {
+    from {
+        background-position-x: 2730px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes wateringAnimation {
+    from {
+        background-position-x: 2730px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes wateringAnimation {
+    from {
+        background-position-x: 2730px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes wateringAnimation {
+    from {
+        background-position-x: 2730px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+/* CHOPPING ANIMATION */
+
+@-webkit-keyframes choppingAnimation {
+    from {
+        background-position-x: 4180px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes choppingAnimation {
+    from {
+        background-position-x: 4180px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes choppingAnimation {
+    from {
+        background-position-x: 4180px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes choppingAnimation {
+    from {
+        background-position-x: 4180px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-webkit-keyframes choppingAnimationFancy {
+    from {
+        background-position-x: 4218px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes choppingAnimationFancy {
+    from {
+        background-position-x: 4218px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes choppingAnimationFancy {
+    from {
+        background-position-x: 4218px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes choppingAnimationFancy {
+    from {
+        background-position-x: 4218px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+/* HOEING ANIMATION */
+
+@-webkit-keyframes hoeingAnimation {
+    from {
+        background-position-x: 2580px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes hoeingAnimation {
+    from {
+        background-position-x: 2580px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes hoeingAnimation {
+    from {
+        background-position-x: 2580px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes hoeingAnimation {
+    from {
+        background-position-x: 4180px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-webkit-keyframes hoeingAnimationFancy {
+    from {
+        background-position-x: 2670px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-moz-keyframes hoeingAnimationFancy {
+    from {
+        background-position-x: 2670px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@-o-keyframes hoeingAnimationFancy {
+    from {
+        background-position-x: 2670px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+@keyframes hoeingAnimationFancy {
+    from {
+        background-position-x: 2670px;
+    }
+    to {
+        background-position-x: 0;
+    }
+}
+
+/* ASSIGN ANIMATIONS */
+
+.border.mining::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60px;
+    display: inline-block;
+    width: 113px;
+    height: 63px;
+    background-image: url(../../system/actions/using_pick.png);
+    -webkit-animation: miningAnimation 1.5s steps(33, end) infinite;
+    -moz-animation: miningAnimation 1.5s steps(33, end) infinite;
+    -o-animation: miningAnimation 1.5s steps(33, end) infinite;
+    animation: miningAnimation 1.5s steps(33, end) infinite;
+}
+
+.border.mining-fancy::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60px;
+    display: inline-block;
+    width: 111px;
+    height: 62px;
+    background-image: url(../../system/actions/using_pick_fancy.png);
+    -webkit-animation: miningAnimationFancy 1.5s steps(33, end) infinite;
+    -moz-animation: miningAnimationFancy 1.5s steps(33, end) infinite;
+    -o-animation: miningAnimationFancy 1.5s steps(33, end) infinite;
+    animation: miningAnimationFancy 1.5s steps(33, end) infinite;
+}
+
+.border.watering::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 91px;
+    height: 78px;
+    background-image: url(../../system/actions/using_watering.png);
+    -webkit-animation: wateringAnimation 1.5s steps(30, end) infinite;
+    -moz-animation: wateringAnimation 1.5s steps(30, end) infinite;
+    -o-animation: wateringAnimation 1.5s steps(30, end) infinite;
+    animation: wateringAnimation 1.5s steps(30, end) infinite;
+}
+
+.border.digging::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 65px;
+    height: 82px;
+    background-image: url(../../system/actions/using_shovel.png);
+    -webkit-animation: diggingAnimation 1.5s steps(53, end) infinite;
+    -moz-animation: diggingAnimation 1.5s steps(53, end) infinite;
+    -o-animation: diggingAnimation 1.5s steps(53, end) infinite;
+    animation: diggingAnimation 1.5s steps(53, end) infinite;
+}
+
+.border.digging-fancy::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 63px;
+    height: 79px;
+    background-image: url(../../system/actions/using_shovel_fancy.png);
+    -webkit-animation: diggingAnimationFancy 1.5s steps(53, end) infinite;
+    -moz-animation: diggingAnimationFancy 1.5s steps(53, end) infinite;
+    -o-animation: diggingAnimationFancy 1.5s steps(53, end) infinite;
+    animation: diggingAnimationFancy 1.5s steps(53, end) infinite;
+}
+
+.border.chopping::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 110px;
+    height: 64px;
+    background-image: url(../../system/actions/using_hatchet.png);
+    -webkit-animation: choppingAnimation 1.5s steps(38, end) infinite;
+    -moz-animation: choppingAnimation 1.5s steps(38, end) infinite;
+    -o-animation: choppingAnimation 1.5s steps(38, end) infinite;
+    animation: choppingAnimation 1.5s steps(38, end) infinite;
+}
+
+.border.chopping-fancy::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 111px;
+    height: 65px;
+    background-image: url(../../system/actions/using_class_axe.png);
+    -webkit-animation: choppingAnimationFancy 1.5s steps(38, end) infinite;
+    -moz-animation: choppingAnimationFancy 1.5s steps(38, end) infinite;
+    -o-animation: choppingAnimationFancy 1.5s steps(38, end) infinite;
+    animation: choppingAnimationFancy 1.5s steps(38, end) infinite;
+}
+
+.border.hoeing::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 86px;
+    height: 58px;
+    background-image: url(../../system/actions/using_hoe.png);
+    -webkit-animation: hoeingAnimation 1.5s steps(30, end) infinite;
+    -moz-animation: hoeingAnimation 1.5s steps(30, end) infinite;
+    -o-animation: hoeingAnimation 1.5s steps(30, end) infinite;
+    animation: hoeingAnimation 1.5s steps(30, end) infinite;
+}
+
+.border.hoeing-fancy::after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    display: inline-block;
+    width: 89px;
+    height: 55px;
+    background-image: url(../../system/actions/using_hoe_fancy.png);
+    -webkit-animation: hoeingAnimationFancy 1.5s steps(30, end) infinite;
+    -moz-animation: hoeingAnimationFancy 1.5s steps(30, end) infinite;
+    -o-animation: hoeingAnimationFancy 1.5s steps(30, end) infinite;
+    animation: hoeingAnimationFancy 1.5s steps(30, end) infinite;
+}
+
+.item {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.bounce {
+    -webkit-animation: bounce 800ms 1;
+    animation: bounce 800ms 1;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-100%);
+        opacity: 0;
+    }
+    5% {
+        -webkit-transform: translateY(-100%);
+        opacity: 0;
+    }
+    15% {
+        -webkit-transform: translateY(0);
+        padding-bottom: 5px;
+    }
+    30% {
+        -webkit-transform: translateY(-50%);
+    }
+    40% {
+        -webkit-transform: translateY(0%);
+        padding-bottom: 6px;
+    }
+    50% {
+        -webkit-transform: translateY(-30%);
+    }
+    70% {
+        -webkit-transform: translateY(0%);
+        padding-bottom: 7px;
+    }
+    80% {
+        -webkit-transform: translateY(-15%);
+    }
+    90% {
+        -webkit-transform: translateY(0%);
+        padding-bottom: 8px;
+    }
+    95% {
+        -webkit-transform: translateY(-10%);
+    }
+    97% {
+        -webkit-transform: translateY(0%);
+        padding-bottom: 9px;
+    }
+    99% {
+        -webkit-transform: translateY(-5%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        padding-bottom: 9px;
+        opacity: 1;
+    }
+}
+
+/* W3, Opera 12+, Firefox 16+ */
+
+@keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    5% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    15% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        padding-bottom: 5px;
+    }
+    30% {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    40% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        padding-bottom: 6px;
+    }
+    50% {
+        -webkit-transform: translateY(-30%);
+        transform: translateY(-30%);
+    }
+    70% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        padding-bottom: 7px;
+    }
+    80% {
+        -webkit-transform: translateY(-15%);
+        transform: translateY(-15%);
+    }
+    90% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        padding-bottom: 8px;
+    }
+    95% {
+        -webkit-transform: translateY(-7%);
+        transform: translateY(-7%);
+    }
+    97% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        padding-bottom: 9px;
+    }
+    99% {
+        -webkit-transform: translateY(-3%);
+        transform: translateY(-3%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        padding-bottom: 9px;
+        opacity: 1;
+    }
+}
+
+/* INTERACT WITH... SELECTOR */
+
+.interactionWindow {
+    z-index: 2;
+    padding: 21px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+#InteractionTitle,
+#InteractionContent > .entityContainer > span {
+    text-shadow: 0 0 5px #000;
+}
+
+#InteractionContent {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.entityContainer {
+    border: 1px solid #eee;
+    border-radius: 50%;
+    background-color: #eee;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+}
+
+.entityContainer.disabled {
+    opacity: 0.3;
+}
+
+.entityContainer > * {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+
+.entityContainer > img:not([src*="signpost"]) {
+    max-width: 35px;
+    max-height: 35px;
+    height: auto;
+    width: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.entityContainer > canvas {
+    max-width: 35px;
+    max-height: 35px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.entityContainer > img[src*="signpost"] {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    top: 4px;
+    left: 1px;
+}
+
+.entityContainer > span {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.entitySelected > span {
+    visibility: visible;
+}
+
+.entityContainer:hover,
+.entitySelected {
+    border: 1px solid orange;
+    background-color: #F8DA9E;
+    color: orange;
+}
+
+/* RIGHT CLICK MENU */
+
+.RightClickMenu {
+    overflow: visible;
+    background-color: #eee;
+    width: 120px;
+    position: absolute;
+    padding: 6px;
+    font-size: 14px;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transform-origin: bottom center;
+    -moz-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    -o-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
+.darkui .RightClickMenu {
+    background-color: #282828;
+    color: #eee;
+}
+
+.InfoButton {
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #4b2e4c;
+}
+
+.darkui .InfoButton {
+    background-color: #282828;
+    color: #fff;
+}
+
+.InfoButton:hover {
+    cursor: pointer;
+    color: #d79035;
+}
+
+.darkui .InfoButton:hover {
+    color: #eee;
+}
+
+.RCActionList {
+    line-height: 150%;
+    list-style-type: none;
+}
+
+.RCItem {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #333;
+    width: calc(100% - 8px);
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin: 2px 0;
+    padding: 2px;
+}
+
+.darkui .RCItem {
+    border-color: #181818;
+    color: #eee;
+}
+
+.RCItem:hover,
+.RCItemSelected {
+    cursor: pointer;
+    color: #d79035;
+    border: 1px solid #d79035;
+    background-color: #F8F2E1;
+}
+
+.darkui .RCItem:hover,
+.darkui .RCItemSelected {
+    background-color: #181818;
+    border: 1px solid #d79035;
+}
+
+.RCItemDisabled,
+.RCItemDisabled:hover {
+    color: grey;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+.darkui .RCItemDisabled,
+.darkui .RCItemDisabled:hover {
+    border-color: transparent;
+}
+
+.RCItemDisabled:hover {
+    border: 1px solid lightgrey;
+}
+
+.action_wrapper .action_error_tooltip {
+    background-color: rgba(15, 39, 39, 0.8);
+    border-radius: 8px;
+    bottom: 100%;
+    color: #fff;
+    display: block;
+    left: 50%;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 20px;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    transform: translateX(-50%) translateY(10px);
+    transition: all .25s ease-out;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    text-align: center;
+}
+
+.action_wrapper .action_error_tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid rgba(15, 39, 39, 0.8) 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+}
+
+.action_hover a,
+.action_wrapper:hover .action_error_tooltip,
+.RCItemSelected + .action_error_tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(0px);
+}
+
+/* HOW MANY... SELECTOR */
+
+#HowManyMenu {
+    overflow: visible;
+    background-color: #eee;
+    width: 110px;
+    position: absolute;
+    padding: 6px;
+    font-size: 14px;
+    z-index: 5;
+    border-radius: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.darkui #HowManyMenu {
+    background-color: #282828;
+    border-color: #181818;
+    color: #eee;
+}
+
+#hm-title {
+    display: block;
+}
+
+#hm-controls {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hm-btn {
+    font-size: 12px;
+    font-family: 'Fredoka One', cursive;
+    position: relative;
+    border-radius: 7px;
+    padding: 4px 6px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 -2px 5px 1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s;
+    outline: none;
+}
+
+.hm-btn:hover {
+    box-shadow: inset 0 -2px 5px 3px rgba(255, 0, 200, 0.1);
+}
+
+.hm-btn:active {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+#hm-minus,
+#hm-plus {
+    width: 40px;
+    padding: 0 5px;
+    color: #4b2e4c;
+    background-color: white;
+}
+
+.darkui #hm-minus,
+.darkui #hm-plus {
+    background-color: black;
+    color: #eee;
+}
+
+#hm-num {
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    width: 65px;
+}
+
+#hm-enter {
+    width: 100%;
+    height: 25px;
+    color: white;
+    background-color: #57AA4B;
+}
+
+#itemChooser {
+    background: #eee;
+    border-radius: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    pointer-events: all;
+    max-width: 75%;
+}
+
+.darkui #itemChooser {
+    background: #282828;
+    color: #eee;
+}
+
+#itemChooser .itemChoice {
+    width: 50px;
+    height: 50px;
+    background: no-repeat 50%;
+    background-size: 30px;
+    border: 1px solid transparent;
+}
+
+.darkui #itemChooser .itemChoice {
+    color: #eee;
+}
+
+#itemChooser .itemChoice:hover {
+    cursor: pointer;
+    border: 1px solid #d79035;
+    border-radius: 8px;
+    background-color: #F8F2E1;
+}
+
+.darkui #itemChooser .itemChoice:hover {
+    background-color: #181818;
+}
+
+#itemChooser .itemHolder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* String input box */
+
+.prompt-str-window {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    background-color: #eee;
+    padding: 10px;
+    left: calc(50% - 300px);
+    top: 50%;
+    border-radius: 5px;
+    border: 4px solid white;
+}
+
+.prompt-str-window input[type="text"] {
+    display: block;
+    width: calc(100% - 4px);
+    margin-bottom: 6px;
+}
+
+.prompt-str-window button {
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    color: #333;
+    width: calc(50% - 3px);
+}
+
+.prompt-str-window button:not(:last-child) {
+    margin-right: 6px;
+}

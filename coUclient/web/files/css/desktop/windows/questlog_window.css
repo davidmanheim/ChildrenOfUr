@@ -1,0 +1,170 @@
+#questLogButton {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 64px;
+    height: 64px;
+    background-image: url(../../../system/icons/quest_log.png);
+}
+
+#questLogButton:hover {
+    -webkit-filter: drop-shadow(0 1px 2px cyan);
+    -o-filter: drop-shadow(0 1px 2px cyan);
+    filter: drop-shadow(0 1px 2px cyan);
+}
+
+#questLogButton:active {
+    -webkit-filter: drop-shadow(0 1px 2px cyan);
+    -o-filter: drop-shadow(0 1px 2px cyan);
+    filter: drop-shadow(0 1px 2px cyan);
+}
+
+#questLogWindow article {
+    display: flex;
+    font-size: medium;
+}
+
+/* Hide content with no quests */
+#questLogWindow.noquests #listOfQuests,
+#questLogWindow.noquests #questDetails {
+    display: none;
+}
+
+/* Display message instead */
+#questLogWindow.noquests #noquests {
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20%;
+    width: 100%;
+}
+
+/* Hide message if there are quests */
+#questLogWindow:not(.noquests) #noquests {
+    display: none;
+}
+
+#questDetails {
+    display: inline-block;
+    border-left: 2px solid #cccccc;
+    padding: 0 20px 0 30px;
+    flex-basis: 66%;
+    overflow-y: auto;
+}
+
+#questDetails .questDescription {
+    margin: 20px 0 30px 0;
+    padding: 20px 15px;
+    border-top: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+    text-align: center;
+}
+
+/*
+#questDetails .questDescription::before,
+#questDetails .questDescription::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    background-color: #eee;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    height: 10px;
+    width: 20px;
+    border-radius: 33%;
+}
+
+#questDetails .questDescription::before {
+    top: -31px;
+    right: -118px;
+}
+
+#questDetails .questDescription::after {
+    bottom: -29px;
+    right: 92px;
+}
+*/
+
+.quest-reqs > span:first-child,
+.quest-rewards > span:first-child {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px 0;
+}
+
+#questDetails .requirementCompletion.completed::before {
+    content: '';
+    margin-right: 10px;
+}
+
+.questRequirement {
+    display: inline-block;
+    border: 2px solid #B2B2B2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    width: 76px;
+}
+
+.questRequirement,
+.questRequirement * {
+    cursor: help;
+}
+
+.questRequirement.fulfilled {
+    border-color: green;
+    background-color: rgb(234, 255, 244);
+}
+
+.questRequirement img,
+.questRequirement span {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: text-top;
+}
+
+.questRequirement span:first-child {
+    color: green;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 24px;
+    position: relative;
+    top: -5px;
+}
+
+.quest-rewards > div {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.quest-rewards > div.inline {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.quest-info-icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    background-size: contain;
+    background: no-repeat center center;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+.quest-info-icon.currant {
+    background-image: url(../../../system/icons/interaction_currants.svg);
+}
+
+.quest-info-icon.energy {
+    background-image: url(../../../system/icons/interaction_energy.svg);
+}
+
+.quest-info-icon.img {
+    background-image: url(../../../system/icons/interaction_img.svg);
+}
+
+.quest-info-icon.mood {
+    background-image: url(../../../system/icons/interaction_mood.svg);
+}

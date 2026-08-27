@@ -1,0 +1,77 @@
+#invSearchWindow #invSearchInput {
+	width: calc(100% - 8px);
+	padding: 2px;
+}
+
+#invSearchWindow #invSearchOutput {
+	width: 500px;
+	position: relative;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result {
+	max-height: 40px;
+	height: 50px;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result,
+#invSearchWindow #invSearchOutput .inv-search-result * {
+	cursor: pointer;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result:hover {
+	opacity: 0.9;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result-icon {
+	text-align: center;
+	width: 60px;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result-icon img {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result-label {
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+#invSearchWindow #invSearchOutput .inv-search-result-qty {
+	font-size: 18px;
+	opacity: 0.5;
+	text-align: right;
+}
+
+/* Box highlighting */
+
+@-webkit-keyframes inv-hl-anim {
+	from {
+		box-shadow: inset 0 0 1px #555;
+	}
+
+	to {
+		box-shadow: inset 0 0 10px #555;
+	}
+}
+
+@-webkit-keyframes inv-hl-anim-darkui {
+	from {
+		box-shadow: inset 0 0 1px #fff;
+	}
+
+	to {
+		box-shadow: inset 0 0 10px #fff;
+	}
+}
+
+.box.inv-highlight {
+	-webkit-animation: inv-hl-anim 1s ease-in-out infinite alternate;
+}
+
+.darkui .box.inv-highlight {
+	-webkit-animation: inv-hl-anim-darkui 1s ease-in-out infinite alternate;
+}

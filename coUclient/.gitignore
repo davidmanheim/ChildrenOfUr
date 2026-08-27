@@ -1,0 +1,15 @@
+packages
+out
+pubspec.lock
+.buildlog
+.pub
+.idea
+API_KEYS.json
+web/*.js*
+build/
+*.orig
+.pub/
+.packages
+.atom/
+.dart_tool/
+*.g.dart
