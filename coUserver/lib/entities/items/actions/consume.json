@@ -1,0 +1,953 @@
+{
+	"abbasid_ribs": {
+		"energy": 201,
+		"img": 0,
+		"mood": 0
+	},
+	"apple": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"applejack": {
+		"energy": 25,
+		"mood": 0,
+		"img": 0
+	},
+	"awesome_stew": {
+		"energy": 268,
+		"mood": 0,
+		"img": 0
+	},
+	"bacon": {
+		"energy": 20,
+		"mood": 0,
+		"img": 0
+	},
+	"banana": {
+		"energy": 10,
+		"mood": 0,
+		"img": 0
+	},
+	"banana_no_names": {
+		"energy": 40,
+		"mood": 0,
+		"img": 0
+	},
+	"basic_omelet": {
+		"energy": 46,
+		"mood": 0,
+		"img": 0
+	},
+	"berry_bowl": {
+		"energy": 20,
+		"mood": 0,
+		"img": 0
+	},
+	"best_bean_dip": {
+		"energy": 54,
+		"mood": 0,
+		"img": 0
+	},
+	"big_salad": {
+		"energy": 58,
+		"mood": 0,
+		"img": 0
+	},
+	"birch_candy": {
+		"energy": 13,
+		"mood": 0,
+		"img": 0
+	},
+	"birch_syrup": {
+		"energy": 4,
+		"mood": 0,
+		"img": 0
+	},
+	"broccoli": {
+		"energy": 10,
+		"mood": 0,
+		"img": 0
+	},
+	"bubble_and_squeak": {
+		"energy": 60,
+		"mood": 0,
+		"img": 0
+	},
+	"bun": {
+		"energy": 9,
+		"mood": 0,
+		"img": 0
+	},
+	"bunch_of_grapes": {
+		"energy": 6,
+		"mood": 0,
+		"img": 0
+	},
+	"butterfly_butter": {
+		"energy": 10,
+		"mood": 0,
+		"img": 0
+	},
+	"cabbage": {
+		"energy": 8,
+		"mood": 0,
+		"img": 0
+	},
+	"carobish_treats": {
+		"energy": 25,
+		"mood": 0,
+		"img": 0
+	},
+	"carrot": {
+		"energy": 10,
+		"mood": 1,
+		"img": 10
+	},
+	"cedar_plank_salmon": {
+		"energy": 70,
+		"mood": 0,
+		"img": 0
+	},
+	"cheese": {
+		"energy": 15,
+		"mood": 0,
+		"img": 0
+	},
+	"cheese_plate": {
+		"energy": 58,
+		"mood": 0,
+		"img": 0
+	},
+	"cheezy_sammich": {
+		"energy": 37,
+		"mood": 0,
+		"img": 0
+	},
+	"cheezy_sauce": {
+		"energy": 59,
+		"mood": 0,
+		"img": 0
+	},
+	"chillybusting_chili": {
+		"energy": 349,
+		"mood": 0,
+		"img": 0
+	},
+	"choice_crudites": {
+		"energy": 42,
+		"mood": 0,
+		"img": 0
+	},
+	"cloudberry": {
+		"energy": 4,
+		"mood": 0,
+		"img": 0
+	},
+	"cloudberry_jam": {
+		"energy": 39,
+		"mood": 0,
+		"img": 0
+	},
+	"cold_taco": {
+		"energy": 69,
+		"mood": 0,
+		"img": 0
+	},
+	"common_crudites": {
+		"energy": 33,
+		"mood": 0,
+		"img": 0
+	},
+	"corn": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"corn_off_the_cob": {
+		"energy": 55,
+		"mood": 0,
+		"img": 0
+	},
+	"corn_syrup_squares": {
+		"energy": 50,
+		"mood": 0,
+		"img": 0
+	},
+	"corny_fritter": {
+		"energy": 39,
+		"mood": 0,
+		"img": 0
+	},
+	"creamy_catsup": {
+		"energy": 81,
+		"mood": 0,
+		"img": 0
+	},
+	"cucumber": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"death_to_veg": {
+		"energy": 39,
+		"mood": 0,
+		"img": 0
+	},
+	"deluxe_sammich": {
+		"energy": 86,
+		"mood": 0,
+		"img": 0
+	},
+	"desssert_rub": {
+		"energy": 78,
+		"mood": 0,
+		"img": 0
+	},
+	"divine_crepes": {
+		"energy": 279,
+		"mood": 0,
+		"img": 0
+	},
+	"egg": {
+		"energy": 1,
+		"mood": -1,
+		"img": 0
+	},
+	"eggy_scramble": {
+		"energy": 32,
+		"mood": 0,
+		"img": 0
+	},
+	"exotic_fruit_salad": {
+		"energy": 33,
+		"mood": 0,
+		"img": 0
+	},
+	"expensive_grilled_cheese": {
+		"energy": 220,
+		"mood": 0,
+		"img": 0
+	},
+	"flour": {
+		"energy": 7,
+		"mood": 0,
+		"img": 0
+	},
+	"flummery": {
+		"energy": 229,
+		"mood": 0,
+		"img": 0
+	},
+	"fortifying_gruel": {
+		"energy": 271,
+		"mood": 0,
+		"img": 0
+	},
+	"fried_egg": {
+		"energy": 11,
+		"mood": 0,
+		"img": 0
+	},
+	"fried_noodles": {
+		"energy": 35, 
+		"mood": 0,
+		"img": 0
+	},
+	"fried_rice": {
+		"energy": 114,
+		"mood": 0,
+		"img": 0
+	},
+	"frog_in_a_hole": {
+		"energy": 44,
+		"mood": 0,
+		"img": 0
+	},
+	"fruit_salad": {
+		"energy": 29,
+		"mood": 0,
+		"img": 0
+	},
+	"gammas_pancakes": {
+		"energy": 57,
+		"mood": 0,
+		"img": 0
+	},
+	"glitchepoix": {
+		"energy": 45,
+		"mood": 0,
+		"img": 0
+	},
+	"greasy_frybread": {
+		"energy": 53,
+		"mood": 0,
+		"img": 0
+	},
+	"green": {
+		"energy": 48,
+		"mood": 0,
+		"img": 0
+	},
+	"green_eggs": {
+		"energy": 12,
+		"mood": 0,
+		"img": 0
+	},
+	"grilled_cheese": {
+		"energy": 90,
+		"mood": 0,
+		"img": 0
+	},
+	"hash": {
+		"energy": 57,
+		"mood": 0,
+		"img": 0
+	},
+	"hearty_groddle_sammich": {
+		"energy": 93,
+		"mood": 0,
+		"img": 0
+	},
+	"hearty_omelet": {
+		"energy": 120,
+		"mood": 0,
+		"img": 0
+	},
+	"heston_mash": {
+		"energy": 576,
+		"mood": 0,
+		"img": 0
+	},
+	"honey": {
+		"energy": 7,
+		"mood": 0,
+		"img": 0
+	},
+	"hot_n_fizzy_sauce": {
+		"energy": 48,
+		"mood": 0,
+		"img": 0
+	},
+	"hot_potatoes": {
+		"energy": 66,
+		"mood": 0,
+		"img": 0
+	},
+	"hototot_rub": {
+		"energy": 77,
+		"mood": 0,
+		"img": 0
+	},
+	"hungry_nachos": {
+		"energy": 508,
+		"mood": 0,
+		"img": 0
+	},
+	"ixstyle_braised_meat": {
+		"energy": 234,
+		"mood": 0,
+		"img": 0
+	},
+	"juicy_carpaccio": {
+		"energy": 71,
+		"mood": 0,
+		"img": 0
+	},
+	"kind_breakfurst_burrito": {
+		"energy": 292,
+		"mood": 0,
+		"img": 0
+	},
+	"king_of_condiments": {
+		"energy": 20,
+		"mood": 0,
+		"img": 0
+	},
+	"lazy_salad": {
+		"energy": 38,
+		"mood": 0,
+		"img": 0
+	},
+	"legumes_abbassidienne": {
+		"energy": 22,
+		"mood": 0,
+		"img": 0
+	},
+	"lemburger": {
+		"energy": 187,
+		"mood": 0,
+		"img": 0
+	},
+	"lemon": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"lotsa_lox": {
+		"energy": 34,
+		"mood": 0,
+		"img": 0
+	},
+	"maburger_royale": {
+		"energy": 350,
+		"mood": 0,
+		"img": 0
+	},
+	"mangosteen": {
+		"energy": 10,
+		"mood": 0,
+		"img": 0
+	},
+	"meat": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"meat_gumbo": {
+		"energy": 225,
+		"mood": 0,
+		"img": 0
+	},
+	"meat_tetrazzini": {
+		"energy": 192,
+		"mood": 0,
+		"img": 0
+	},
+	"messy_fry_up": {
+		"energy": 60,
+		"mood": 0,
+		"img": 0
+	},
+	"mexicali_eggs": {
+		"energy": 78,
+		"mood": 0,
+		"img": 0
+	},
+	"mild_sauce": {
+		"energy": 26,
+		"mood": 0,
+		"img": 0
+	},
+	"mushroom": {
+		"energy": 3,
+		"mood": 0,
+		"img": 0
+	},
+	"naraka_flame_rub": {
+		"energy": 84,
+		"mood": 0,
+		"img": 0
+	},
+	"oats": {
+		"energy": 8,
+		"mood": 0,
+		"img": 0
+	},
+	"oaty_cake": {
+		"energy": 32,
+		"mood": 0,
+		"img": 0
+	},
+	"obvious_panini": {
+		"energy": 132,
+		"mood": 0,
+		"img": 0
+	},
+	"oily_dressing": {
+		"energy": 3,
+		"mood": 0,
+		"img": 0
+	},
+	"olive_oil": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"onion": {
+		"energy": 1,
+		"mood": -5,
+		"img": 2
+	},
+	"onion_ring": {
+		"energy": 51,
+		"mood": 0,
+		"img": 0
+	},
+	"onion_sauce": {
+		"energy": 64,
+		"mood": 0,
+		"img": 0
+	},
+	"orange": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"pad_tii": {
+		"energy": 392,
+		"mood": 0,
+		"img": 0
+	},
+	"parsnip": {
+		"energy": 1,
+		"mood": 0,
+		"img": 0
+	},
+	"pi": {
+		"energy": 314,
+		"mood": 0,
+		"img": 0
+	},
+	"pickle": {
+		"energy": 21,
+		"mood": 0,
+		"img": 0
+	},
+	"pineapple": {
+		"energy": 7,
+		"mood": 0,
+		"img": 0
+	},
+	"pineapple_upside_down_pizza": {
+		"energy": 111,
+		"mood": 0,
+		"img": 0
+	},
+	"plain_noodles": {
+		"energy": 13,
+		"mood": 0,
+		"img": 0
+	},
+	"plum": {
+		"energy": 3,
+		"mood": 0,
+		"img": 0
+	},
+	"pocket_salmon": {
+		"energy": 15,
+		"mood": 0,
+		"img": 0
+	},
+	"potato": {
+		"energy": 10,
+		"mood": 0,
+		"img": 0
+	},
+	"potato_patty": {
+		"energy": 33,
+		"mood": 0,
+		"img": 0
+	},
+	"potcorn": {
+		"energy": 136,
+		"mood": 0,
+		"img": 0
+	},
+	"potians_feast": {
+		"energy": 1000,
+		"mood": 0,
+		"img": 0
+	},
+	"pottine": {
+		"energy": 267,
+		"mood": 0,
+		"img": 0
+	},
+	"precious_potato_salad": {
+		"energy": 860,
+		"mood": 0,
+		"img": 0
+	},
+	"proper_rice": {
+		"energy": 26,
+		"mood": 0,
+		"img": 0
+	},
+	"pumpkin": {
+		"energy": 4,
+		"mood": 0,
+		"img": 0
+	},
+	"pumpkin_pie": {
+		"energy": 111,
+		"mood": 0,
+		"img": 0
+	},
+	"red": {
+		"energy": 30,
+		"mood": 0,
+		"img": 0
+	},
+	"rice": {
+		"energy": 1,
+		"mood": 1,
+		"img": 1
+	},
+	"rich_tagine": {
+		"energy": 332,
+		"mood": 0,
+		"img": 0
+	},
+	"roasted_pepitas": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"roux": {
+		"energy": 22,
+		"mood": 0,
+		"img": 0
+	},
+	"salmon_jaella": {
+		"energy": 241,
+		"mood": 0,
+		"img": 0
+	},
+	"sammich": {
+		"energy": 29,
+		"mood": 0,
+		"img": 0
+	},
+	"scrumptious_frittata": {
+		"energy": 78,
+		"mood": 0,
+		"img": 0
+	},
+	"secret_sauce": {
+		"energy": 47,
+		"mood": 0,
+		"img": 0
+	},
+	"sesame_oil": {
+		"energy": 4,
+		"mood": 0,
+		"img": 0
+	},
+	"simple_bbq": {
+		"energy": 116,
+		"mood": 0,
+		"img": 0
+	},
+	"simple_slaw": {
+		"energy": 27,
+		"mood": 0,
+		"img": 0
+	},
+	"snack_pack": {
+		"energy": 66,
+		"mood": 0,
+		"img": 0
+	},
+	"snocone_blue": {
+		"energy": 75,
+		"mood": 0,
+		"img": 44
+	},
+	"snocone_green": {
+		"energy": 100,
+		"mood": 0,
+		"img": 90
+	},
+	"snocone_orange": {
+		"energy": 150,
+		"mood": 0,
+		"img": 180
+	},
+	"snocone_purple": {
+		"energy": 200,
+		"mood": 0,
+		"img": 660
+	},
+	"snocone_rainbo": {
+		"energy": 300,
+		"mood": 10,
+		"img": 1000
+	},
+	"snocone_red": {
+		"energy": 360,
+		"mood": 0,
+		"img": 0
+	},
+	"spicy_quesadilla": {
+		"energy": 86,
+		"mood": 0,
+		"img": 0
+	},
+	"spinach": {
+		"energy": 3,
+		"mood": 0,
+		"img": 0
+	},
+	"spinach_salad": {
+		"energy": 18,
+		"mood": 0,
+		"img": 0
+	},
+	"stinky_cheese": {
+		"energy": 21,
+		"mood": 0,
+		"img": 0
+	},
+	"stock_sauce": {
+		"energy": 34,
+		"mood": 0,
+		"img": 0
+	},
+	"strawberry": {
+		"energy": 4,
+		"mood": 0,
+		"img": 0
+	},
+	"super_veggie_kebabs": {
+		"energy": 256,
+		"mood": 0,
+		"img": 0
+	},
+	"swank_zucchini_loaf": {
+		"energy": 441,
+		"mood": 0,
+		"img": 0
+	},
+	"sweet_n_sour_sauce": {
+		"energy": 63,
+		"mood": 0,
+		"img": 0
+	},
+	"swing_batter": {
+		"energy": 31,
+		"mood": 0,
+		"img": 0
+	},
+	"tangy_noodles": {
+		"energy": 54,
+		"mood": 0,
+		"img": 0
+	},
+	"tangy_sauce": {
+		"energy": 154,
+		"mood": 0,
+		"img": 0
+	},
+	"tasty_pasta": {
+		"energy": 338,
+		"mood": 0,
+		"img": 0
+	},
+	"tomato": {
+		"energy": 7,
+		"mood": 0,
+		"img": 0
+	},
+	"tortilla": {
+		"energy": 19,
+		"mood": 0,
+		"img": 0
+	},
+	"trump_rub": {
+		"energy": 128,
+		"mood": 0,
+		"img": 0
+	},
+	"urfu": {
+		"energy": 73,
+		"mood": 0,
+		"img": 0
+	},
+	"vegmageddon": {
+		"energy": 90,
+		"mood": 0,
+		"img": 0
+	},
+	"very_stinky_cheese": {
+		"energy": 27,
+		"mood": 0,
+		"img": 0
+	},
+	"very_very_stinky_cheese": {
+		"energy": 33,
+		"mood": 0,
+		"img": 0
+	},
+	"waffles": {
+		"energy": 185,
+		"mood": 0,
+		"img": 0
+	},
+	"wavy_gravy": {
+		"energy": 75,
+		"mood": 0,
+		"img": 0
+	},
+	"whortleberry": {
+		"energy": 5,
+		"mood": 0,
+		"img": 0
+	},
+	"whortleberry_jelly": {
+		"energy": 75,
+		"mood": 0,
+		"img": 0
+	},
+	"wicked_bolognese_sauce": {
+		"energy": 79,
+		"mood": 0,
+		"img": 0
+	},
+	"yummy_gruel": {
+		"energy": 237,
+		"mood": 0,
+		"img": 0
+	},
+	"zucchini": {
+		"energy": 3,
+		"mood": 0,
+		"img": 0
+	},
+
+	"beer": {
+		"energy": 10,
+		"img": 0,
+		"mood": 5
+	},
+	"bubble_tea": {
+		"energy": 172,
+		"img": 2,
+		"mood": 8
+	},
+	"butterfly_milk": {
+		"energy": 8,
+		"img": 10,
+		"mood": 15
+	},
+	"carrot_margarita": {
+		"energy": 90,
+		"img": 0,
+		"mood": 25
+	},
+	"cloud_11_smoothie": {
+		"energy": 69,
+		"img": 10,
+		"mood": 15
+	},
+	"cloudberry_daiquiri": {
+		"energy": 142,
+		"img": 0,
+		"mood": 5
+	},
+	"coffee": {
+		"energy": 20,
+		"img": 20,
+		"mood": 5
+	},
+	"cosma_politan": {
+		"energy": 131,
+		"img": 0,
+		"mood": 5
+	},
+	"crabato_juice": {
+		"energy": 50,
+		"img": 10,
+		"mood": 15
+	},
+	"creamy_martini": {
+		"energy": 60,
+		"img": 0,
+		"mood": 7
+	},
+	"cup_of_water": {
+		"energy": 1,
+		"img": 5,
+		"mood": -5
+	},
+	"earthshaker": {
+		"energy": 152,
+		"img": 1,
+		"mood": 3
+	},
+	"exotic_juice": {
+		"energy": 54,
+		"img": 0,
+		"mood": 25
+	},
+	"face_smelter": {
+		"energy": 141,
+		"img": 10,
+		"mood": 0
+	},
+	"flaming_humbaba": {
+		"energy": 168,
+		"img": 0,
+		"mood": 9
+	},
+	"fruity_juice": {
+		"energy": 24,
+		"img": 6,
+		"mood": 6
+	},
+	"gurly_drink": {
+		"energy": 160,
+		"img": 5,
+		"mood": 5
+	},
+	"hooch": {
+		"energy": 15,
+		"img": 7,
+		"mood": 5
+	},
+	"lemon_juice": {
+		"energy": 39,
+		"img": 50,
+		"mood": -5
+	},
+	"mabbish_coffee": {
+		"energy": 54,
+		"img": 5,
+		"mood": 5
+	},
+	"mega_healthy_veggie_juice": {
+		"energy": 46,
+		"img": 15,
+		"mood": 20
+	},
+	"orange_juice": {
+		"energy": 39,
+		"img": 3,
+		"mood": 5
+	},
+	"pumpkin_ale": {
+		"energy": 83,
+		"img": 0,
+		"mood": 5
+	},
+	"pungent_sunrise": {
+		"energy": 197,
+		"img": 50,
+		"mood": 50
+	},
+	"savory_smoothie": {
+		"energy": 96,
+		"img": 0,
+		"mood": 10
+	},
+	"slow_gin_fizz": {
+		"energy": 76,
+		"img": 0,
+		"mood": 35
+	},
+	"spicy_grog": {
+		"energy": 51,
+		"img": 20,
+		"mood": 2
+	},
+	"tooberry_shake": {
+		"energy": 76,
+		"img": 0,
+		"mood": 5
+	},
+	"wine_of_the_dead": {
+		"energy": 66,
+		"img": 200,
+		"mood": 5
+	}
+}

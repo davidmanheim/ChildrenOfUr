@@ -1,0 +1,217 @@
+{
+	"alchemy": {
+		"name": "Alchemy",
+		"category": "Alchemy",
+		"levels": [15, 551, 5515],
+		"descriptions": [
+			"Ah, the transformational power of transformation. Alchemy puts that Element Handling to good use and teaches you how to use a Test Tube to craft loose elements into marginally more valuable compounds. Further down this path, compounds can become powders and soon enough you are making potions and recycling even the most complex items down to their components.",
+			"With Alchemy II, you can harness your love of shiny things and use Alchemical Tongs to transform everyday Plain Metal into fancy metals such as Copper, Tin, and Molybdenum.",
+			"With Alchemy III, who knows what's possible?"
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/alchemy_1.png",
+			"https://childrenofur.com/assets/skills/alchemy_2.png",
+			"https://childrenofur.com/assets/skills/alchemy_3.png"
+		],
+		"requirements": {
+			"skills": {
+				"element_handling": 1
+			}
+		},
+		"giants": ["Tii", "Alph", "Lem"],
+		"color": "#65E846",
+		"title": "Alchemist"
+	},
+	"animal_kinship": {
+		"name": "Animal Kinship",
+		"category": "Animals",
+		"levels": [7, 17, 67, 257, 509, 1019, 2039],
+		"descriptions": [
+			"Animals can seem skittish until you learn the basics of Animal Kinship. With it, you'll no longer fail at basic animal interactions; petting, nibbling, massaging will happen faster; chickens will consent to be squeezed more than once a day, and you'll lose much less energy to boot.",
+			"Advancing on the path of Animal Kinship introduces some additional rewards for the basic animal interactions, such as increasing the amount of meat piggies give when nibbled and the amount of milk butterflies give when milked.",
+			"The third level of animal kinship grants a further increase in imagination rewards for animal interactions and gives a chance for large meat, milk and grain bonuses.",
+			"The fourth level of Animal Kinship increases the basic milk and meat rewards, gives a chance of a serious mood bonus when massaging butterflies and is necessary to learn Animal Husbandry.",
+			"At the fifth level of Animal Kinship, practitioners experience substantial lifts in the imagination rewards, more mood bonus in some interactions and an increase in the chance for bonus meat and milk. Massaging a Butterfly no longer requires a lotion. Tantalizingly, it also confers the power to name your animal friends.",
+			"A rarefied skill offering kinship so close that pigs no longer require petting before a nibble, nor butterflies expect a massage before they'll consent to a milking - and not once, but twice a day. Same number of critters - TWICE the meat and milk action! Rewards and bonuses are all notched up as well.",
+			"The ultimate in Animal Kinship. Almost every interaction now grants significant imagination, rewards and bonus chances are gigantic and the animals themselves ... well, they love you best."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/animalkinship_1.png",
+			"https://childrenofur.com/assets/skills/animalkinship_2.png",
+			"https://childrenofur.com/assets/skills/animalkinship_3.png",
+			"https://childrenofur.com/assets/skills/animalkinship_4.png",
+			"https://childrenofur.com/assets/skills/animalkinship_5.png",
+			"https://childrenofur.com/assets/skills/animalkinship_6.png",
+			"https://childrenofur.com/assets/skills/animalkinship_7.png"
+		],
+		"requirements": {},
+		"giants": ["Humbaba", "Friendly", "Mab"],
+		"color": "#",
+		"title": ""
+	},
+	"arborology": {
+		"name": "Arborology",
+		"category": "Gathering",
+		"levels": [151, 532, 1625, 4116, 6516],
+		"descriptions": [
+			"The Arborology skill means an increased awareness of how the great garden of Ur grows: and how best to exploit it. Hurrah! You can get a little more imagination every time you harvest.",
+			"A higher level of Arborology skill bestows upon you a certain facility with trees such that your deft and graceful harvesting hands return twice more product with each harvest.",
+			"Acquire the third level of the Arborology skill, and see your harvests improve dramatically. As the energy it takes to gather tree-based goods decreases, you'll develop the ability to occasionally coax a bonus reward from your harvestings. Life is win/win for the Level III Arborologist.",
+			"Arborology IV is notable for increasing your chance of a bonus gift during harvesting, and increasing the imagination you get every time you do harvest. Which all serves to increase your reason for learning it.",
+			"The ultimate level of Arborology skill offers an altogether better class of bonus reward, and provides the foundation necessary to upgrade to even more productive methods of harvesting."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/gardening_1.png",
+			"https://childrenofur.com/assets/skills/gardening_2.png",
+			"https://childrenofur.com/assets/skills/gardening_3.png",
+			"https://childrenofur.com/assets/skills/gardening_4.png",
+			"https://childrenofur.com/assets/skills/gardening_5.png"
+		],
+		"requirements": {
+			"skills": {
+				"soil_appreciation": 1,
+				"light_green_thumb": 1
+			}
+		},
+		"giants": ["Spriggan", "Grendaline", "Mab"],
+		"color": "#",
+		"title": "Arborologist"
+	},
+	"bubble_tuning": {
+		"name": "Bubble Tuning",
+		"category": "Gathering",
+		"levels": [153],
+		"descriptions": [
+			"Though one may use a Bubble Tuner without the Bubble Tuning skill, it is slow, taxing to one's energy and STILL has the possibility of failing. Well, learn Bubble Tuning and your bubble transmogrifications will come sweet 'n' easy."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/bubbletuning_1.png"
+		],
+		"requirements": {
+			"level": 3
+		},
+		"giants": ["Spriggan", "Grendaline", "Tii"],
+		"color": "#",
+		"title": ""
+	},
+	"croppery": {
+		"name": "Croppery",
+		"category": "Growing",
+		"levels": [57, 173, 769],
+		"descriptions": [
+			"Anyone who possesses a Crop Garden in their back yard would be wise to learn Croppery because anyone who knows Croppery will yield twice as much crop product from a plot (along with benefits to mood and imagination).",
+			"Advancing your Croppery skill to the second level means you'll use less energy planting, watering and harvesting your crops. And every so often, the land will give you a little super fun happy bonus present.",
+			"Croppery III makes you a veritable master of the garden, giving you more mood and imagination for tending your crops through their lifecycle, and yielding a higher chance of surprise bonuses (or bonus surprises). Above all of that, every so often you will have a 'super harvest', which yields double the amount of crops from a plot."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/croppery_1.png",
+			"https://childrenofur.com/assets/skills/croppery_2.png",
+			"https://childrenofur.com/assets/skills/croppery_3.png"
+		],
+		"requirements": {
+			"level": 3
+		},
+		"giants": ["Mab", "Grendaline", "Humbaba"],
+		"color": "#",
+		"title": ""
+	},
+	"distilling": {
+		"name": "Distilling",
+		"category": "Alchemy",
+		"levels": [124],
+		"descriptions": [
+			"The clandestine art of distillation enables the amateur moonshiner to create home-brewed hooch from grain or potatoes in mere minutes, using only a Still and the desire to extract booze from the most innocent of ingredients."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/distilling_1.png"
+		],
+		"requirements": {
+			"level": 5
+		},
+		"giants": ["Friendly", "Mab", "Pot"],
+		"color": "#DAA962",
+		"title": "Distiller"
+	},
+	"element_handling": {
+		"name": "Element Handling",
+		"category": "Alchemy",
+		"levels": [5],
+		"descriptions": [
+			"The basic elements, Red, Green, Blue and Shiny, are tricky things. Not just anyone can handle them. Learning Element Handling gives you the ability to carry an Elemental Pouch and thereby handle all the elements you want. It is also the prerequisite for learning Alchemy and Refining."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/elementhandling_1.png"
+		],
+		"requirements": {
+			"level": 3
+		},
+		"giants": ["Tii", "Alph", "Lem"],
+		"color": "#",
+		"title": ""
+	},
+	"mining": {
+		"name": "Mining",
+		"category": "Industrial",
+		"levels": [27, 362, 1123, 2113],
+		"descriptions": [
+			"Mining is the gateway to some pretty valuable resource extraction procedures: you'll be using a Pick to produce Chunks of Ore from special rocks scattered around the world. Though mining is hard work, the rewards are worth it.",
+			"Mining II increases the chance of special rewards and reduces the amount of energy you use to extract ore. Sweet.",
+			"Mining III reduces energy it takes to mine, reduces wear on your preferred mining instrument, and rewards more imagination.",
+			"Mining IV further improves your luck and doubles the imagination you get by mining."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/mining_1.png",
+			"https://childrenofur.com/assets/skills/mining_2.png",
+			"https://childrenofur.com/assets/skills/mining_3.png",
+			"https://childrenofur.com/assets/skills/mining_4.png"
+		],
+		"requirements": {
+			"level": 3
+		},
+		"giants": ["Zille", "Alph", "Cosma"],
+		"color": "#",
+		"title": "Miner"
+	},
+	"penpersonship": {
+		"name": "Penpersonship",
+		"category": "Intellectual",
+		"levels": [10],
+		"descriptions": [
+			"The pen is mightier than the sword. This is good, because we don't have any swords. With Penpersonship, you can use a Quill and Paper to write down all your important thoughts and feelings."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/penmanship_1.png"
+		],
+		"requirements": {
+			"level": 7
+		},
+		"giants": ["Lem", "Friendly", "Spriggan"],
+		"color": "#",
+		"title": "Writer"
+	},
+	"tinkering": {
+		"name": "Tinkering",
+		"category": "Industrial",
+		"levels": [3, 20, 80, 140, 300],
+		"descriptions": [
+			"The first level of Tinkering allows the repair of any broken or worn down tool, but, you know, you're not going to be especially fast at it right off the bat! Note: requires a Tinkertool.",
+			"Upgrade to Tinkering II and double the speed at which you repair tools and simultaneously reduce the amount of energy required to operate the Tinkertool!",
+			"With Tinkering III, the speed of tool repair doubles yet again. Getting speedy! But also, you can use a Tinkertool to repair itself. Talk about snakes swallowing tails ...",
+			"Just when you thought Tinkering couldn't get much better, along comes Tinkering IV. In addition to doubling your repair speed, a slew of new tools are yours to craft. And when combined with skill of Engineering, that slew expands to a truckload. Powerful stuff.",
+			"Learn Tinkering V, and consider yourself a mastertink. Repair speed is nigh instantaneous and Tinkertool operation barely taxes your energy, but that's just the beginning. With this AND Engineering, you can practically create any tool imaginable. As long as your imagination is restricted to tools that already exist, of course."
+		],
+		"iconUrls": [
+			"https://childrenofur.com/assets/skills/tinkering_1.png",
+			"https://childrenofur.com/assets/skills/tinkering_2.png",
+			"https://childrenofur.com/assets/skills/tinkering_3.png",
+			"https://childrenofur.com/assets/skills/tinkering_4.png",
+			"https://childrenofur.com/assets/skills/tinkering_5.png"
+		],
+		"requirements": {
+			"level": 3
+		},
+		"giants": ["Alph", "Friendly", "Tii"],
+		"color": "#",
+		"title": "Tinkerer"
+	}
+}
