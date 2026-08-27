@@ -14,59 +14,30 @@ class Batterfly extends NPC {
 			new Action.withName('feed')
 				..actionWord = 'feeding'
 		);
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (inhabitants/batterfly/npc_batterfly.swf, DefineSprite 81,
+		// instance-named "batterfly" on the root timeline; its own internal
+		// SymbolClass is "npc_batterfly_fla.MainTimeline", an exact match
+		// for this class's dead-URL naming) via tools/build-sprite-sheet.py;
+		// see content/source-manifest.json for provenance and
+		// content/runtime-manifest.json for the route entry. These replace
+		// the previous hardcoded links to the retired childrenofur.com asset
+		// host. Every resolved real frame count exactly matched what was
+		// already hardcoded here; only pixel dimensions changed.
+		const String base = "files/sprites/generated/converted/batterfly-";
 		states = {
-			"chew": new Spritesheet(
-				"chew",
-				"https://childrenofur.com/assets/entityImages/npc_batterfly__x1_chew_png_1354831854.png",
-				999,
-				1344,
-				111,
-				96,
-				120,
-				false),
-			"front_turned": new Spritesheet(
-				"front_turned",
-				"https://childrenofur.com/assets/entityImages/npc_batterfly__x1_front_turned_png_1354831847.png",
-				888,
-				480,
-				111,
-				96,
-				40,
-				true),
-			"front_waiting": new Spritesheet(
-				"front_waiting",
-				"https://childrenofur.com/assets/entityImages/npc_batterfly__x1_front_waiting_png_1354831849.png",
-				888,
-				480,
-				111,
-				96,
-				40,
-				true),
-			"fly_profile": new Spritesheet(
-				"fly_profile",
-				"https://childrenofur.com/assets/entityImages/npc_batterfly__x1_profile_png_1354831844.png",
-				888,
-				480,
-				111,
-				96,
-				40,
-				true),
-			"fly_profile_turned": new Spritesheet(
-				"fly_profile_turned",
-				"https://childrenofur.com/assets/entityImages/npc_batterfly__x1_profile_turned_png_1354831846.png",
-				888,
-				480,
-				111,
-				96,
-				40,
-				true)
+			"chew": new Spritesheet("chew", "${base}chew.png", 14520, 104, 121, 104, 120, false),
+			"front_turned": new Spritesheet("front_turned", "${base}front_turned.png", 4840, 104, 121, 104, 40, true),
+			"front_waiting": new Spritesheet("front_waiting", "${base}front_waiting.png", 4840, 104, 121, 104, 40, true),
+			"fly_profile": new Spritesheet("fly_profile", "${base}fly_profile.png", 4840, 104, 121, 104, 40, true),
+			"fly_profile_turned": new Spritesheet("fly_profile_turned", "${base}fly_profile_turned.png", 4840, 104, 121, 104, 40, true)
 		};
 		setState("fly_profile");
 		facingRight = true;
 	}
 
 	Future<bool> feed({WebSocket userSocket, String email}) async {
-		Map map = {};
+		Map<String, dynamic> map = {};
 		map['id'] = id;
         map['action'] = "feedItem";
 		map['openWindow'] = 'itemChooser';

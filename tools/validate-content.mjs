@@ -183,7 +183,7 @@ function checkItemRefs(entry, context) {
   const route = entry.routeIds ?? {};
   const refs = [
     ...(Array.isArray(route.itemRequirement) ? route.itemRequirement : route.itemRequirement ? [route.itemRequirement] : []),
-    ...(route.rewardItem ? [route.rewardItem] : []),
+    ...(Array.isArray(route.rewardItem) ? route.rewardItem : route.rewardItem ? [route.rewardItem] : []),
   ];
   for (const ref of refs) {
     if (knownItems.size > 0 && !knownItems.has(ref)) {

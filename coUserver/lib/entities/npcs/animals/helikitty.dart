@@ -15,88 +15,51 @@ class HeliKitty extends NPC {
 		speed = 75; //pixels per second
 		renameable = true;
 		age = 3; //TODO: make them get older
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (inhabitants/heli_kitty/npc_kitty_chicken.swf, DefineSprite
+		// 115 "kitty" -- the single combined timeline holding all three age
+		// variations back-to-back via "1"/"2"/"3"-prefixed frame labels,
+		// matching this class's own naming) via tools/build-sprite-sheet.py;
+		// see content/source-manifest.json for provenance and
+		// content/runtime-manifest.json for the route entry. These replace
+		// the previous hardcoded links to the retired childrenofur.com asset
+		// host. Real resolved frame counts matched every prior hardcoded
+		// value except 2blink (was guessed 20, really 5) and 2sleep (was
+		// guessed 26, really 57); those two now use the source-derived
+		// values. The old data also pointed both "2fly" and "3fly" at the
+		// same file (a copy/paste artifact) -- they are now two genuinely
+		// distinct converted sprites (frames 160-179 vs 303-322).
+		const String base = "files/sprites/generated/converted/helikitty-";
 		states = {
 			// newborn (variation 1)
-			"1blink": new Spritesheet("1blink",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1blink_png_1354840541.png",
-			                          680, 115, 136, 115, 5, false),
-			"1jumpAntic": new Spritesheet("1jumpAntic",
-			                              "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1jumpAntic_png_1354840542.png",
-			                              544, 230, 136, 115, 8, false),
-			"1jump": new Spritesheet("1jump",
-			                         "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1jump_png_1354840543.png",
-			                         816, 345, 136, 115, 16, true),
-			"1rollStart": new Spritesheet("1rollStart",
-			                              "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1rollStart_png_1354840544.png",
-			                              272, 115, 136, 115, 2, false),
-			"1roll": new Spritesheet("1roll",
-			                         "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1roll_png_1354840544.png",
-			                         816, 230, 136, 115, 12, true),
-			"1sleepStart": new Spritesheet("1sleepStart",
-			                               "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1sleepStart_png_1354840546.png",
-			                               952, 460, 136, 115, 26, false),
-			"1sleep": new Spritesheet("1sleep",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_1sleep_png_1354840547.pngg",
-			                          952, 1035, 136, 115, 57, true),
+			"1blink": new Spritesheet("1blink", "${base}1blink.png", 620, 102, 124, 102, 5, false),
+			"1jumpAntic": new Spritesheet("1jumpAntic", "${base}1jumpAntic.png", 992, 102, 124, 102, 8, false),
+			"1jump": new Spritesheet("1jump", "${base}1jump.png", 1984, 102, 124, 102, 16, true),
+			"1rollStart": new Spritesheet("1rollStart", "${base}1rollStart.png", 248, 102, 124, 102, 2, false),
+			"1roll": new Spritesheet("1roll", "${base}1roll.png", 1488, 102, 124, 102, 12, true),
+			"1sleepStart": new Spritesheet("1sleepStart", "${base}1sleepStart.png", 3224, 102, 124, 102, 26, false),
+			"1sleep": new Spritesheet("1sleep", "${base}1sleep.png", 7068, 102, 124, 102, 57, true),
 			// kitten (variation 2)
-			"2blink": new Spritesheet("2blink",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2blink_png_1354840549.png",
-			                          680, 115, 136, 115, 20, true),
-			"2fly": new Spritesheet("2fly",
-			                        "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3fly_png_1354840558.png",
-			                        952, 345, 136, 115, 20, true),
-			"2hitBall": new Spritesheet("2hitBall",
-			                            "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2hitBall_png_1354840552.png",
-			                            680, 230, 136, 115, 9, false),
-			"2jumpAntic": new Spritesheet("2jumpAntic",
-			                              "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2jumpAntic_png_1354840549.png",
-			                              544, 230, 136, 115, 8, false),
-			"2jump": new Spritesheet("2jump",
-			                         "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2jump_png_1354840550.png",
-			                         816, 345, 136, 115, 16, true),
-			"2sleepStart": new Spritesheet("2sleepStart",
-			                               "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2sleepStart_png_1354840553.png",
-			                               952, 460, 136, 115, 26, false),
-			"2sleep": new Spritesheet("2sleep",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_2sleep_png_1354840554.png",
-			                          952, 1035, 136, 115, 26, true),
+			"2blink": new Spritesheet("2blink", "${base}2blink.png", 620, 102, 124, 102, 5, true),
+			"2fly": new Spritesheet("2fly", "${base}2fly.png", 2480, 102, 124, 102, 20, true),
+			"2hitBall": new Spritesheet("2hitBall", "${base}2hitBall.png", 1116, 102, 124, 102, 9, false),
+			"2jumpAntic": new Spritesheet("2jumpAntic", "${base}2jumpAntic.png", 992, 102, 124, 102, 8, false),
+			"2jump": new Spritesheet("2jump", "${base}2jump.png", 1984, 102, 124, 102, 16, true),
+			"2sleepStart": new Spritesheet("2sleepStart", "${base}2sleepStart.png", 3224, 102, 124, 102, 26, false),
+			"2sleep": new Spritesheet("2sleep", "${base}2sleep.png", 7068, 102, 124, 102, 57, true),
 			// adult (variation 3)
-			"3appear": new Spritesheet("3appear",
-			                           "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3appear_png_1354840565.png",
-			                           952, 805, 136, 115, 47, false),
-			"3blink": new Spritesheet("3blink",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3blink_png_1354840555.png",
-			                          680, 115, 136, 115, 5, false),
-			"3chew": new Spritesheet("3chew",
-			                         "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3chew_png_1354840562.png",
-			                         680, 345, 136, 115, 15, true),
-			"3disappear": new Spritesheet("3disappear",
-			                              "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3disappear_png_1354840566.png",
-			                              952, 460, 136, 115, 27, false),
-			"3fly": new Spritesheet("3fly",
-			                        "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3fly_png_1354840558.png",
-			                        952, 345, 136, 115, 20, true),
-			"3happy": new Spritesheet("3happy",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3happy_png_1354840564.png",
-			                          952, 690, 136, 115, 38, false),
-			"3hitBall": new Spritesheet("3hitBall",
-			                            "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3hitBall_png_1354840558.png",
-			                            680, 230, 136, 115, 9, false),
-			"3jumpAntic": new Spritesheet("3jumpAntic",
-			                              "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3jumpAntic_png_1354840556.png",
-			                              544, 230, 136, 115, 8, false),
-			"3jump": new Spritesheet("3jump",
-			                         "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3jump_png_1354840557.png",
-			                         816, 345, 136, 115, 16, true),
-			"3sad": new Spritesheet("3sad",
-			                        "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3sad_png_1354840563.png",
-			                        816, 345, 136, 115, 17, false),
-			"3sleepStart": new Spritesheet("3sleepStart",
-			                               "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3sleepStart_png_1354840559.png",
-			                               952, 460, 136, 115, 26, false),
-			"3sleep": new Spritesheet("3sleep",
-			                          "https://childrenofur.com/assets/entityImages/npc_kitty_chicken__x1_3sleep_png_1354840561.png",
-			                          952, 1035, 136, 115, 57, true)
+			"3appear": new Spritesheet("3appear", "${base}3appear.png", 5828, 102, 124, 102, 47, false),
+			"3blink": new Spritesheet("3blink", "${base}3blink.png", 620, 102, 124, 102, 5, false),
+			"3chew": new Spritesheet("3chew", "${base}3chew.png", 1860, 102, 124, 102, 15, true),
+			"3disappear": new Spritesheet("3disappear", "${base}3disappear.png", 3348, 102, 124, 102, 27, false),
+			"3fly": new Spritesheet("3fly", "${base}3fly.png", 2480, 102, 124, 102, 20, true),
+			"3happy": new Spritesheet("3happy", "${base}3happy.png", 4712, 102, 124, 102, 38, false),
+			"3hitBall": new Spritesheet("3hitBall", "${base}3hitBall.png", 1116, 102, 124, 102, 9, false),
+			"3jumpAntic": new Spritesheet("3jumpAntic", "${base}3jumpAntic.png", 992, 102, 124, 102, 8, false),
+			"3jump": new Spritesheet("3jump", "${base}3jump.png", 1984, 102, 124, 102, 16, true),
+			"3sad": new Spritesheet("3sad", "${base}3sad.png", 2108, 102, 124, 102, 17, false),
+			"3sleepStart": new Spritesheet("3sleepStart", "${base}3sleepStart.png", 3224, 102, 124, 102, 26, false),
+			"3sleep": new Spritesheet("3sleep", "${base}3sleep.png", 7068, 102, 124, 102, 57, true)
 		};
 		setState(sheetName("fly"));
 		responses = {

@@ -15,3 +15,6 @@ pubspec_overrides.yaml
 # Editor/OS noise
 .DS_Store
 Thumbs.db
+
+# Not vendored -- fetched on demand by tools/README-swf-pipeline.md
+/ffdec/

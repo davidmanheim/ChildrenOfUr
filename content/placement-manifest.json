@@ -143,10 +143,310 @@
       "x": -287,
       "y": 750,
       "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-11",
+      "provenanceKind": "synthetic",
+      "entityType": "Fox",
+      "runtimeAssetId": "fox",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -762,
+      "y": 631,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-11",
+      "provenanceKind": "synthetic",
+      "entityType": "Fox",
+      "runtimeAssetId": "fox",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -717,
+      "y": 665,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-11",
+      "provenanceKind": "synthetic",
+      "entityType": "Fox",
+      "runtimeAssetId": "fox",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -784,
+      "y": 646,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-12",
+      "provenanceKind": "synthetic",
+      "entityType": "SilverFox",
+      "runtimeAssetId": "silverfox",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 729,
+      "y": 763,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-12",
+      "provenanceKind": "synthetic",
+      "entityType": "SilverFox",
+      "runtimeAssetId": "silverfox",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -220,
+      "y": 769,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-12",
+      "provenanceKind": "synthetic",
+      "entityType": "SilverFox",
+      "runtimeAssetId": "silverfox",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 707,
+      "y": 778,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-13",
+      "provenanceKind": "synthetic",
+      "entityType": "HeliKitty",
+      "runtimeAssetId": "helikitty",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 232,
+      "y": 659,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-13",
+      "provenanceKind": "synthetic",
+      "entityType": "HeliKitty",
+      "runtimeAssetId": "helikitty",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 277,
+      "y": 693,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-13",
+      "provenanceKind": "synthetic",
+      "entityType": "HeliKitty",
+      "runtimeAssetId": "helikitty",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 210,
+      "y": 674,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-14",
+      "provenanceKind": "synthetic",
+      "entityType": "Salmon",
+      "runtimeAssetId": "salmon",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -452,
+      "y": 679,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-14",
+      "provenanceKind": "synthetic",
+      "entityType": "Salmon",
+      "runtimeAssetId": "salmon",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 400,
+      "y": 685,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-14",
+      "provenanceKind": "synthetic",
+      "entityType": "Salmon",
+      "runtimeAssetId": "salmon",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -474,
+      "y": 694,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-15",
+      "provenanceKind": "synthetic",
+      "entityType": "Butterfly",
+      "runtimeAssetId": "butterfly",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 852,
+      "y": 755,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-15",
+      "provenanceKind": "synthetic",
+      "entityType": "Butterfly",
+      "runtimeAssetId": "butterfly",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 897,
+      "y": 609,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-15",
+      "provenanceKind": "synthetic",
+      "entityType": "Butterfly",
+      "runtimeAssetId": "butterfly",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 830,
+      "y": 770,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-16",
+      "provenanceKind": "synthetic",
+      "entityType": "Batterfly",
+      "runtimeAssetId": "batterfly",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 542,
+      "y": 707,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-16",
+      "provenanceKind": "synthetic",
+      "entityType": "Batterfly",
+      "runtimeAssetId": "batterfly",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -407,
+      "y": 713,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-16",
+      "provenanceKind": "synthetic",
+      "entityType": "Batterfly",
+      "runtimeAssetId": "batterfly",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 520,
+      "y": 722,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-17",
+      "provenanceKind": "synthetic",
+      "entityType": "BeanTree",
+      "runtimeAssetId": "bean_tree",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 45,
+      "y": 603,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-17",
+      "provenanceKind": "synthetic",
+      "entityType": "BeanTree",
+      "runtimeAssetId": "bean_tree",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 90,
+      "y": 637,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-17",
+      "provenanceKind": "synthetic",
+      "entityType": "BeanTree",
+      "runtimeAssetId": "bean_tree",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 23,
+      "y": 618,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-18",
+      "provenanceKind": "synthetic",
+      "entityType": "BubbleTree",
+      "runtimeAssetId": "bubble_tree",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -639,
+      "y": 623,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-18",
+      "provenanceKind": "synthetic",
+      "entityType": "BubbleTree",
+      "runtimeAssetId": "bubble_tree",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 213,
+      "y": 629,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-18",
+      "provenanceKind": "synthetic",
+      "entityType": "BubbleTree",
+      "runtimeAssetId": "bubble_tree",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -661,
+      "y": 638,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-19",
+      "provenanceKind": "synthetic",
+      "entityType": "FruitTree",
+      "runtimeAssetId": "fruit_tree",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 665,
+      "y": 699,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-19",
+      "provenanceKind": "synthetic",
+      "entityType": "FruitTree",
+      "runtimeAssetId": "fruit_tree",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 710,
+      "y": 733,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-19",
+      "provenanceKind": "synthetic",
+      "entityType": "FruitTree",
+      "runtimeAssetId": "fruit_tree",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 643,
+      "y": 714,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-20",
+      "provenanceKind": "synthetic",
+      "entityType": "PaperTree",
+      "runtimeAssetId": "paper_tree",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 7,
+      "y": 729,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-20",
+      "provenanceKind": "synthetic",
+      "entityType": "PaperTree",
+      "runtimeAssetId": "paper_tree",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 620,
+      "y": 659,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-20",
+      "provenanceKind": "synthetic",
+      "entityType": "PaperTree",
+      "runtimeAssetId": "paper_tree",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 694,
+      "y": 751,
+      "sourceExport": null
     }
   ],
   "coverageSummary": {
-    "note": "Full per-row placement data (35013 rows across 11 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (chicken/wood_tree/piggy/metalrock) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "note": "Full per-row placement data (66843 rows across 21 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
     "streetsCovered": 3180,
     "totalStreets": 3183,
     "placementsByEntityType": {
@@ -160,7 +460,17 @@
       "Chicken": 3183,
       "DemoWheat": 3183,
       "Piggy": 3183,
-      "MetalRock": 3183
+      "MetalRock": 3183,
+      "Fox": 3183,
+      "SilverFox": 3183,
+      "HeliKitty": 3183,
+      "Salmon": 3183,
+      "Butterfly": 3183,
+      "Batterfly": 3183,
+      "BeanTree": 3183,
+      "BubbleTree": 3183,
+      "FruitTree": 3183,
+      "PaperTree": 3183
     }
   }
 }

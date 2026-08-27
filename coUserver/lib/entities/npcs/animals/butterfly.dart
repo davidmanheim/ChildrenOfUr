@@ -22,79 +22,33 @@ class Butterfly extends NPC {
 					   ]);
 		speed = 75; //pixels per second
 		renameable = true;
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source. The dead URLs below were all "npc_butterfly__x1_...", but
+		// no "npc_butterfly.swf" exists in the fetched archive -- only
+		// inhabitants/batterfly (a different, already-correctly-named
+		// creature; see Batterfly below), inhabitants/swoonerfly, and
+		// inhabitants/caterpillar (a separate, non-flying baby form with no
+		// coUserver entity class of its own). inhabitants/swoonerfly/
+		// npc_swoonerfly.swf's own internal SymbolClass names are literally
+		// "npc_butterfly_fla.*" (confirmed by dumping its symbol table), and
+		// every one of its 8 frame-labeled state ranges resolves to exactly
+		// the frame count already hardcoded in this file from the dead-URL
+		// era -- both facts together give high confidence this SWF is the
+		// real source for this class, just filed under a renamed folder.
+		// Converted via tools/build-sprite-sheet.py; see
+		// content/source-manifest.json for the exact per-state provenance
+		// (source DefineSprite id + frame range) and
+		// content/runtime-manifest.json for the route entry.
+		const String base = "files/sprites/generated/converted/butterfly-";
 		states = {
-			"fly-angle1": new Spritesheet(
-				"fly-angle1",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_fly-angle1_png_1354829526.png",
-				840,
-				195,
-				70,
-				65,
-				34,
-				true),
-			"fly-angle2": new Spritesheet(
-				"fly-angle2",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_fly-angle2_png_1354829527.png",
-				700,
-				130,
-				70,
-				65,
-				20,
-				true),
-			"fly-rooked": new Spritesheet(
-				"fly-rooked",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_fly-rooked_png_1354829525.png",
-				980,
-				65,
-				70,
-				65,
-				14,
-				true),
-			"fly-side": new Spritesheet(
-				"fly-side",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_fly-side_png_1354829525.png",
-				980,
-				390,
-				70,
-				65,
-				84,
-				true),
-			"fly-top": new Spritesheet(
-				"fly-top",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_fly-top_png_1354829528.png",
-				910,
-				455,
-				70,
-				65,
-				87,
-				true),
-			"rest-angle1": new Spritesheet(
-				"rest-angle1",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_rest-angle1_png_1354829530.png",
-				420,
-				65,
-				70,
-				65,
-				6,
-				true),
-			"rest-angle2": new Spritesheet(
-				"rest-angle2",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_rest-angle2_png_1354829531.png",
-				700,
-				65,
-				70,
-				65,
-				10,
-				true),
-			"rest-top": new Spritesheet(
-				"rest-top",
-				"https://childrenofur.com/assets/entityImages/npc_butterfly__x1_rest-top_png_1354829532.png",
-				980,
-				195,
-				70,
-				65,
-				42,
-				true)
+			"fly-angle1": new Spritesheet("fly-angle1", "${base}fly-angle1.png", 2652, 76, 78, 76, 34, true),
+			"fly-angle2": new Spritesheet("fly-angle2", "${base}fly-angle2.png", 1540, 69, 77, 69, 20, true),
+			"fly-rooked": new Spritesheet("fly-rooked", "${base}fly-rooked.png", 5796, 291, 414, 291, 14, true),
+			"fly-side": new Spritesheet("fly-side", "${base}fly-side.png", 39564, 479, 471, 479, 84, true),
+			"fly-top": new Spritesheet("fly-top", "${base}fly-top.png", 34974, 380, 402, 380, 87, true),
+			"rest-angle1": new Spritesheet("rest-angle1", "${base}rest-angle1.png", 468, 76, 78, 76, 6, true),
+			"rest-angle2": new Spritesheet("rest-angle2", "${base}rest-angle2.png", 770, 69, 77, 69, 10, true),
+			"rest-top": new Spritesheet("rest-top", "${base}rest-top.png", 16884, 380, 402, 380, 42, true)
 		};
 		setState("fly-side");
 		responses = {

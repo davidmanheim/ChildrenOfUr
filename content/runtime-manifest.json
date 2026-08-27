@@ -104,6 +104,171 @@
       },
       "status": "existing-synthetic",
       "statusNote": "Pre-existing local fallback SVG/PNG (files/sprites/generated/local-quoin.svg|png), not derived from an original per-type Glitch/Ur quoin sprite. Listed here for coverage completeness, not produced by this pass."
+    },
+    {
+      "id": "fox",
+      "displayName": "Fox",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "fox",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs). Spawns hidden until a player places fox_bait nearby, matching the source design (see routeIds.actions); once attracted it can be brushed for fiber.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/fox.dart:Fox",
+        "actions": ["brush"],
+        "itemRequirement": ["fox_brush"],
+        "rewardItem": "fiber"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into fox.dart, replacing dead childrenofur.com links. Entity logic (brush/bait-seeking/hide-show) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Fox per street TSID (demo- IDs, new index 11)."
+    },
+    {
+      "id": "silverfox",
+      "displayName": "Silver Fox",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "silverfox",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs). Same hidden-until-baited behavior as Fox.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/fox.dart:SilverFox",
+        "baseClass": "coUserver/lib/entities/npcs/animals/fox.dart:Fox",
+        "actions": ["brush"],
+        "itemRequirement": ["fox_brush"],
+        "rewardItem": "fiber"
+      },
+      "status": "placed",
+      "statusNote": "Color-variant sibling of Fox, converted from the same source SWF's silverFox symbol (DefineSprite 80). Not explicitly requested but converted alongside Fox since it shares the same source file and entity logic; placed to make use of the real converted art. PLACED: tools/seed-demo-world.mjs now seeds one SilverFox per street TSID (demo- IDs, new index 12)."
+    },
+    {
+      "id": "helikitty",
+      "displayName": "Heli Kitty",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "helikitty",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the animal-kinship skill loop (pet).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/helikitty.dart:HeliKitty",
+        "actions": ["pet"],
+        "skill": "animal_kinship"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into helikitty.dart, replacing dead childrenofur.com links. Entity logic (pet) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one HeliKitty per street TSID (demo- IDs, new index 13)."
+    },
+    {
+      "id": "salmon",
+      "displayName": "Salmon",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "salmon",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the pocket loop (pocket for pocket_salmon or salmon_bubble).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/salmon.dart:Salmon",
+        "actions": ["pocket"],
+        "rewardItem": ["pocket_salmon", "salmon_bubble"]
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into salmon.dart, replacing dead childrenofur.com links (including the 'gone' respawn placeholder, now NPC.TRANSPARENT_SPRITE instead of a dead blank.png URL). Entity logic (pocket) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Salmon per street TSID (demo- IDs, new index 14)."
+    },
+    {
+      "id": "butterfly",
+      "displayName": "Butterfly",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "butterfly",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the animal-kinship skill loop (massage, then milk for butterfly_milk).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/butterfly.dart:Butterfly",
+        "actions": ["massage", "milk"],
+        "itemRequirement": ["butterfly_lotion"],
+        "rewardItem": "butterfly_milk"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF (inhabitants/swoonerfly, see content/source-manifest.json's sourceMappingAmbiguityNote for how this was resolved with high confidence despite the folder-name mismatch) and wired into butterfly.dart, replacing dead childrenofur.com links. Entity logic (massage/milk/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Butterfly per street TSID (demo- IDs, new index 15)."
+    },
+    {
+      "id": "batterfly",
+      "displayName": "Batterfly",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "batterfly",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the feed loop (feed any energy-restoring item for a chance at guano).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/batterfly.dart:Batterfly",
+        "actions": ["feed"],
+        "rewardItem": "guano"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into batterfly.dart, replacing dead childrenofur.com links. Entity logic (feed) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Batterfly per street TSID (demo- IDs, new index 16)."
+    },
+    {
+      "id": "bean_tree",
+      "displayName": "Bean Tree",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "bean_tree",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs), then the harvesting loop (harvest with arborology for bean).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/beantree.dart:BeanTree",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": ["harvest", "pet", "water"],
+        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "rewardItem": "bean",
+        "skill": "arborology"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into beantree.dart, replacing dead childrenofur.com links. See content/source-manifest.json's complexityNote for this tree's real (more elaborate than wood_tree) growth-stage x health source structure and how it maps onto Tree's existing state mechanic. Entity logic (harvest/pet/water/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one BeanTree per street TSID (demo- IDs, new index 17)."
+    },
+    {
+      "id": "bubble_tree",
+      "displayName": "Bubble Tree",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "bubble_tree",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs), then the harvesting loop (harvest with arborology for plain_bubble).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/bubbletree.dart:BubbleTree",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": ["harvest", "pet", "water"],
+        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "rewardItem": "plain_bubble",
+        "skill": "arborology"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into bubbletree.dart, replacing dead childrenofur.com links. Same growth-stage x health source structure as bean_tree; see content/source-manifest.json's complexityNote. Entity logic already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one BubbleTree per street TSID (demo- IDs, new index 18)."
+    },
+    {
+      "id": "fruit_tree",
+      "displayName": "Fruit Tree",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "fruit_tree",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs), then the harvesting loop (harvest with arborology for cherry).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/fruittree.dart:FruitTree",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": ["harvest", "pet", "water"],
+        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "rewardItem": "cherry",
+        "skill": "arborology"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into fruittree.dart, replacing dead childrenofur.com links. This tree's source is the most elaborate of the four converted (per-leaf/per-cherry combinatorial visuals, not a single per-stage animation range) -- see content/source-manifest.json's complexityNote for exactly what was and wasn't representable, and why each maturity sheet duplicates its one real converted frame across 10 columns to keep Tree's existing state/maxState harvest mechanic (10 levels) fully functional. Entity logic already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one FruitTree per street TSID (demo- IDs, new index 19)."
+    },
+    {
+      "id": "paper_tree",
+      "displayName": "Paper Tree",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "paper_tree",
+      "destination": "World entity",
+      "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs), then the harvesting loop (harvest with arborology for paper).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/papertree.dart:PaperTree",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": ["harvest"],
+        "rewardItem": "paper",
+        "skill": "arborology"
+      },
+      "status": "placed",
+      "statusNote": "Sprite sheet converted from source SWF and wired into papertree.dart, replacing a dead childrenofur.com link. Unlike the other 3 trees, this one is not a 10-stage maturity ladder in the source -- see content/source-manifest.json's complexityNote. Entity logic (harvest) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one PaperTree per street TSID (demo- IDs, new index 20)."
     }
   ],
   "deliberatelyDeferred": [
@@ -120,6 +285,18 @@
       "category": "synthetic visual stand-in (retired)",
       "reason": "Superseded: tools/seed-demo-world.mjs now seeds the real 'wood_tree' asset at the same array index (see content/source-manifest.json), so DemoTree is no longer placed anywhere. The class and its hand-drawn placeholder SVG (files/sprites/generated/demo-tree.svg) remain in the codebase, unreferenced by the seed, in case a future rollback or a distinct non-interactive-filler use case needs it.",
       "replacementMilestone": "None planned -- permanently superseded by the real 'wood_tree' asset. Remove the class/SVG only if a future cleanup pass confirms nothing else references it."
+    },
+    {
+      "id": "caterpillar",
+      "category": "animal (inhabitant, butterfly life-cycle baby form)",
+      "reason": "tmp/glitch-items/inhabitants/caterpillar/caterpillar.swf exists and is the real butterfly_egg -> caterpillar hatch target referenced by Chicken.EGG_ANIMALS, but coUserver has no Caterpillar entity class to wire it into -- caterpillar items currently exist only as an inert inventory item, not a placeable/world-entity life stage. Considered while resolving the butterfly/batterfly source mapping for this pass (see content/source-manifest.json's 'butterfly' sourceMappingAmbiguityNote) but out of scope: it was not one of the 9 requested entities and has no existing server-side game logic to attach real art to.",
+      "replacementMilestone": "Add a Caterpillar entity class (coUserver/lib/entities/npcs/animals/) with its own maturation/interaction logic, then convert caterpillar.swf the same way as this pass's other animals."
+    },
+    {
+      "id": "fox_bait",
+      "category": "animal (inhabitant, player-placed lure item)",
+      "reason": "FoxBait (coUserver/lib/entities/npcs/animals/fox.dart:FoxBait) already has full game logic (attracts a placed Fox, times out, gets eaten) and dead childrenofur.com stink1/2/3 sprite links, but was not one of the 9 entities requested for this pass (only fox.dart's Fox/SilverFox classes were) and there is no separate real source SWF identified for it in tmp/glitch-items/inhabitants (fox_ranger, the only other fox-family folder, was inspected and is a distinct asset, not fox bait art).",
+      "replacementMilestone": "Identify or confirm the correct source SWF for fox_bait's stink1/2/3 states in a future pass, then convert with the same pipeline."
     },
     {
       "id": "wood_tree_enchanted",

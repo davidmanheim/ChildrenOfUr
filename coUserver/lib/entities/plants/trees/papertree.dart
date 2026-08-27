@@ -45,9 +45,28 @@ class PaperTree extends Tree {
 			]
 		};
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/paper_tree/paper_tree.swf,
+		// instance-named "normal" on the root timeline, DefineSprite 101)
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json
+		// for provenance and content/runtime-manifest.json for the route
+		// entry. This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host.
+		//
+		// Unlike the other three trees converted in this pass, paper_tree
+		// doesn't use a 10-stage maturity ladder at all: paper_tree.as
+		// defines a single "normal" clip with a genuine 22-frame timeline
+		// (gotoAndStop(paper_count+1) for paper_count 0..21), plus 3
+		// unconverted sibling variants (needs_pet, needs_water,
+		// needs_pet_and_water) not referenced by this entity class. The
+		// resolved real frame count (22) exactly matches what was already
+		// hardcoded here from the dead-URL era; only pixel dimensions
+		// changed. This single 22-frame state continues to drive Tree's
+		// existing state/maxState harvest mechanic unchanged.
+		const String base = "files/sprites/generated/converted/paper_tree-";
 		states =
 		{
-			"maturity_1" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/paper_tree_needs_pet_false_needs_water_false_paper_count_21_x22_1_png_1354832565.png", 928, 1296, 232, 216, 22, false)
+			"maturity_1" : new Spritesheet("maturity_1", "${base}maturity_1.png", 5104, 217, 232, 217, 22, false)
 		};
 		maturity = new Random().nextInt(states.length) + 1;
 		setState('maturity_$maturity');

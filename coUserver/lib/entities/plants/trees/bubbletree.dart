@@ -30,18 +30,39 @@ class BubbleTree extends Tree {
 			]
 		};
 
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/bubble_tree/trant_bubble.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// These replace the previous hardcoded links to the retired
+		// childrenofur.com asset host.
+		//
+		// Same more-elaborate-than-wood_tree structure as BeanTree (see the
+		// comment there): trant_bubble.as defines 10 maturity-stage clips
+		// (bt_grow1..grow10, matched here by their exported symbol names),
+		// each itself a genuine 10-frame health timeline
+		// (`tree.gotoAndPlay(health)` in the source AS3), which lines up
+		// exactly with Tree's existing state/maxState harvest mechanic --
+		// every maturity_N sheet below has the true numFrames=10 rather than
+		// the old dead-URL era's guessed, inconsistent per-stage counts (9,
+		// 10, 44, 61, 62, 72 x3, 76). Per-bubble (bubble_1..bubble_N)
+		// visibility is separately AS3-driven from "fruit_amt" inside each
+		// growN clip and isn't representable by this single-image-per-state
+		// architecture; each converted frame shows that stage/health
+		// combination's default authored bubble visibility.
+		const String base = "files/sprites/generated/converted/bubble_tree-";
 		states =
 		{
-			"maturity_1" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_1_seed_0_119919911_png_1354830122.png", 835, 554, 167, 277, 9, false),
-			"maturity_2" : new Spritesheet("maturity_2", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_2_seed_0_119919911_png_1354830123.png", 835, 554, 167, 277, 9, false),
-			"maturity_3" : new Spritesheet("maturity_3", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_3_seed_0_119919911_png_1354830125.png", 835, 554, 167, 277, 10, false),
-			"maturity_4" : new Spritesheet("maturity_4", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_4_seed_0_119919911_png_1354830127.png", 835, 2493, 167, 277, 44, false),
-			"maturity_5" : new Spritesheet("maturity_5", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_5_seed_0_119919911_png_1354830131.png", 835, 3601, 167, 277, 61, false),
-			"maturity_6" : new Spritesheet("maturity_6", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_6_seed_0_119919911_png_1354830279.png", 835, 3601, 167, 277, 62, false),
-			"maturity_7" : new Spritesheet("maturity_7", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_7_seed_0_119919911_png_1354830283.png", 4008, 831, 167, 277, 72, false),
-			"maturity_8" : new Spritesheet("maturity_8", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_8_seed_0_119919911_png_1354830289.png", 4008, 831, 167, 277, 72, false),
-			"maturity_9" : new Spritesheet("maturity_9", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_9_seed_0_119919911_png_1354830295.png", 4008, 831, 167, 277, 72, false),
-			"maturity_10" : new Spritesheet("maturity_10", "https://childrenofur.com/assets/entityImages/trant_bubble__f_cap_10_f_num_10_h_10_m_10_seed_0_119919911_png_1354830301.png", 3173, 1108, 167, 277, 76, false)
+			"maturity_1" : new Spritesheet("maturity_1", "${base}maturity_1.png", 420, 91, 42, 91, 10, false),
+			"maturity_2" : new Spritesheet("maturity_2", "${base}maturity_2.png", 450, 122, 45, 122, 10, false),
+			"maturity_3" : new Spritesheet("maturity_3", "${base}maturity_3.png", 530, 144, 53, 144, 10, false),
+			"maturity_4" : new Spritesheet("maturity_4", "${base}maturity_4.png", 630, 160, 63, 160, 10, false),
+			"maturity_5" : new Spritesheet("maturity_5", "${base}maturity_5.png", 770, 184, 77, 184, 10, false),
+			"maturity_6" : new Spritesheet("maturity_6", "${base}maturity_6.png", 900, 190, 90, 190, 10, false),
+			"maturity_7" : new Spritesheet("maturity_7", "${base}maturity_7.png", 1230, 205, 123, 205, 10, false),
+			"maturity_8" : new Spritesheet("maturity_8", "${base}maturity_8.png", 1300, 213, 130, 213, 10, false),
+			"maturity_9" : new Spritesheet("maturity_9", "${base}maturity_9.png", 1550, 250, 155, 250, 10, false),
+			"maturity_10" : new Spritesheet("maturity_10", "${base}maturity_10.png", 1710, 277, 171, 277, 10, false)
 		};
 		maturity = new Random().nextInt(states.length) + 1;
 		setState('maturity_$maturity');

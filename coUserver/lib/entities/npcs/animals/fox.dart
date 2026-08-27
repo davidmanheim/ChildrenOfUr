@@ -45,26 +45,26 @@ class Fox extends NPC {
 				..itemRequirements = itemReq
 		);
 
-		// Spritesheets
+		// Spritesheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (inhabitants/fox/npc_fox.swf, DefineSprite 151 "orangeFox")
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json
+		// for provenance and content/runtime-manifest.json for the route
+		// entry. These replace the previous hardcoded links to the retired
+		// childrenofur.com asset host. Every resolved real frame count below
+		// exactly matched the frame counts already hardcoded here from the
+		// dead-URL era, which independently confirms both the source mapping
+		// and the original numbers -- only pixel dimensions changed.
+		const String base = 'files/sprites/generated/converted/fox-';
 		states = {
-			'brushed': new Spritesheet('brushed',
-				'https://childrenofur.com/assets/entityImages/orange_fox_brushed.png', 306, 139, 153, 139, 2, true),
-			'eatEnd': new Spritesheet('eatEnd',
-				'https://childrenofur.com/assets/entityImages/orange_fox_eat_end.png', 765, 556, 153, 139, 20, false),
-			'eatStart': new Spritesheet('eatStart',
-				'https://childrenofur.com/assets/entityImages/orange_fox_eat_start.png', 765, 278, 153, 139, 10, false),
-			'eat': new Spritesheet('eat',
-				'https://childrenofur.com/assets/entityImages/orange_fox_eat.png', 765, 556, 153, 139, 20, true),
-			'jump': new Spritesheet('jump',
-				'https://childrenofur.com/assets/entityImages/orange_fox_jump.png', 918, 695, 153, 139, 28, false),
-			'pause': new Spritesheet('pause',
-				'https://childrenofur.com/assets/entityImages/orange_fox_pause.png', 918, 1390, 153, 139, 56, false),
-			'run': new Spritesheet('run',
-				'https://childrenofur.com/assets/entityImages/orange_fox_run.png', 918, 278, 153, 139, 12, true),
-			'taunt': new Spritesheet('taunt',
-				'https://childrenofur.com/assets/entityImages/orange_fox_taunt.png', 918, 973, 153, 139, 40, false),
-			'walk': new Spritesheet('walk',
-				'https://childrenofur.com/assets/entityImages/orange_fox_walk.png', 918, 556, 153, 139, 24, true),
+			'brushed': new Spritesheet('brushed', '${base}brushed.png', 314, 141, 157, 141, 2, true),
+			'eatEnd': new Spritesheet('eatEnd', '${base}eatEnd.png', 3140, 141, 157, 141, 20, false),
+			'eatStart': new Spritesheet('eatStart', '${base}eatStart.png', 1570, 141, 157, 141, 10, false),
+			'eat': new Spritesheet('eat', '${base}eat.png', 3140, 141, 157, 141, 20, true),
+			'jump': new Spritesheet('jump', '${base}jump.png', 4396, 141, 157, 141, 28, false),
+			'pause': new Spritesheet('pause', '${base}pause.png', 8792, 141, 157, 141, 56, false),
+			'run': new Spritesheet('run', '${base}run.png', 1884, 141, 157, 141, 12, true),
+			'taunt': new Spritesheet('taunt', '${base}taunt.png', 6280, 141, 157, 141, 40, false),
+			'walk': new Spritesheet('walk', '${base}walk.png', 3768, 141, 157, 141, 24, true),
 			'_hidden': NPC.TRANSPARENT_SPRITE
 		};
 		hide();
@@ -211,25 +211,20 @@ class Fox extends NPC {
 
 class SilverFox extends Fox {
 	SilverFox(String id, num x, num y, num z, num rotation, bool h_flip, String streetName) : super(id, x, y, z, rotation, h_flip, streetName) {
+		// Converted from the same source SWF's DefineSprite 80 ("silverFox"),
+		// the color-variant sibling of orangeFox with an identical frame-label
+		// layout -- see the comment on Fox's states map above.
+		const String base = 'files/sprites/generated/converted/silverfox-';
 		states = {
-			'brushed': new Spritesheet('brushed',
-				'https://childrenofur.com/assets/entityImages/silver_fox_brushed.png', 306, 139, 153, 139, 2, true),
-			'eatEnd': new Spritesheet('eatEnd',
-				'https://childrenofur.com/assets/entityImages/silver_fox_eat_end.png', 765, 556, 153, 139, 20, false),
-			'eatStart': new Spritesheet('eatStart',
-				'https://childrenofur.com/assets/entityImages/silver_fox_eat_start.png', 765, 278, 153, 139, 10, false),
-			'eat': new Spritesheet('eat',
-				'https://childrenofur.com/assets/entityImages/silver_fox_eat.png', 765, 556, 153, 139, 20, true),
-			'jump': new Spritesheet('jump',
-				'https://childrenofur.com/assets/entityImages/silver_fox_jump.png', 918, 695, 153, 139, 28, false),
-			'pause': new Spritesheet('pause',
-				'https://childrenofur.com/assets/entityImages/silver_fox_pause.png', 918, 1390, 153, 139, 56, false),
-			'run': new Spritesheet('run',
-				'https://childrenofur.com/assets/entityImages/silver_fox_run.png', 918, 278, 153, 139, 12, true),
-			'taunt': new Spritesheet('taunt',
-				'https://childrenofur.com/assets/entityImages/silver_fox_taunt.png', 918, 973, 153, 139, 40, false),
-			'walk': new Spritesheet('walk',
-				'https://childrenofur.com/assets/entityImages/silver_fox_walk.png', 918, 556, 153, 139, 24, true),
+			'brushed': new Spritesheet('brushed', '${base}brushed.png', 314, 141, 157, 141, 2, true),
+			'eatEnd': new Spritesheet('eatEnd', '${base}eatEnd.png', 3140, 141, 157, 141, 20, false),
+			'eatStart': new Spritesheet('eatStart', '${base}eatStart.png', 1570, 141, 157, 141, 10, false),
+			'eat': new Spritesheet('eat', '${base}eat.png', 3140, 141, 157, 141, 20, true),
+			'jump': new Spritesheet('jump', '${base}jump.png', 4396, 141, 157, 141, 28, false),
+			'pause': new Spritesheet('pause', '${base}pause.png', 8792, 141, 157, 141, 56, false),
+			'run': new Spritesheet('run', '${base}run.png', 1884, 141, 157, 141, 12, true),
+			'taunt': new Spritesheet('taunt', '${base}taunt.png', 6280, 141, 157, 141, 40, false),
+			'walk': new Spritesheet('walk', '${base}walk.png', 3768, 141, 157, 141, 24, true),
 			'_hidden': NPC.TRANSPARENT_SPRITE
 		};
 		hide();

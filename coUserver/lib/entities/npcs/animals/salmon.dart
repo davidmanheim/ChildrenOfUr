@@ -12,70 +12,23 @@ class Salmon extends NPC {
 		renameable = true;
 		speed = 35;
 		ySpeed = 0;
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (inhabitants/salmon/npc_salmon.swf, DefineSprite 16, the
+		// sole animated symbol in the file) via tools/build-sprite-sheet.py;
+		// see content/source-manifest.json for provenance and
+		// content/runtime-manifest.json for the route entry. These replace
+		// the previous hardcoded links to the retired childrenofur.com asset
+		// host. Every resolved real frame count exactly matched what was
+		// already hardcoded here; only pixel dimensions changed.
+		const String base = "files/sprites/generated/converted/salmon-";
 		states = {
-			"swimDown15": new Spritesheet(
-				"swimRightDown15",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_swimRightDown15_png_1354840510.png",
-				649,
-				74,
-				59,
-				37,
-				22,
-				true),
-			"swimDown30": new Spritesheet(
-				"swimRightDown30",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_swimRightDown30_png_1354840511.png",
-				649,
-				74,
-				59,
-				37,
-				22,
-				true),
-			"swimUp15": new Spritesheet(
-				"swimRightUp15",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_swimRightUp15_png_1354840509.png",
-				649,
-				74,
-				59,
-				37,
-				22,
-				true),
-			"swimUp30": new Spritesheet(
-				"swimRightUp30",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_swimRightUp30_png_1354840509.png",
-				649,
-				74,
-				59,
-				37,
-				22,
-				true),
-			"swim": new Spritesheet(
-				"swimRight",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_swimRight_png_1354840508.png",
-				649,
-				74,
-				59,
-				37,
-				22,
-				true),
-			"turn": new Spritesheet(
-				"turnRight",
-				"https://childrenofur.com/assets/entityImages/npc_salmon__x1_turnRight_png_1354840511.png",
-				649,
-				37,
-				59,
-				37,
-				11,
-				false),
-			"gone": new Spritesheet(
-				"gone",
-				"https://childrenofur.com/assets/entityImages/blank.png",
-				1,
-				1,
-				1,
-				1,
-				1,
-				false)
+			"swimDown15": new Spritesheet("swimRightDown15", "${base}swimDown15.png", 1320, 41, 60, 41, 22, true),
+			"swimDown30": new Spritesheet("swimRightDown30", "${base}swimDown30.png", 1320, 41, 60, 41, 22, true),
+			"swimUp15": new Spritesheet("swimRightUp15", "${base}swimUp15.png", 1320, 41, 60, 41, 22, true),
+			"swimUp30": new Spritesheet("swimRightUp30", "${base}swimUp30.png", 1320, 41, 60, 41, 22, true),
+			"swim": new Spritesheet("swimRight", "${base}swim.png", 1320, 41, 60, 41, 22, true),
+			"turn": new Spritesheet("turnRight", "${base}turn.png", 660, 41, 60, 41, 11, false),
+			"gone": NPC.TRANSPARENT_SPRITE
 		};
 		setState("swim");
 		//50/50 chance to face left or right to start

@@ -33,8 +33,16 @@ const locations = path.join(root, 'coUserver', 'CAT422', 'locations');
 // yet). `DemoTree`/`DemoChicken` placeholders are retired by this array: the
 // real WoodTree/Chicken take their place at the same index, so a rerun
 // upgrades existing demo- rows in place (see the ON CONFLICT clause below).
+// `Fox`/`SilverFox`/`HeliKitty`/`Salmon`/`Butterfly`/`Batterfly`/`BeanTree`/
+// `BubbleTree`/`FruitTree`/`PaperTree` are a second real-official-art batch
+// (same recovery pass, later session; provenance in
+// content/source-manifest.json) appended at new indices rather than reusing
+// any existing one, since there is no retired Demo* stand-in to upgrade in
+// place for any of them.
 const types = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor',
-  'WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock'];
+  'WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
+  'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
+  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree'];
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
 // content/placement-manifest.json provenance rows (see generatePlacementManifest below).
@@ -43,11 +51,16 @@ const RUNTIME_ASSET_ID = {
   Currant: 'quoin-collectibles', Mystery: 'quoin-collectibles', Favor: 'quoin-collectibles',
   WoodTree: 'wood_tree', Chicken: 'chicken', DemoWheat: 'demo-wheat',
   Piggy: 'piggy', MetalRock: 'metalrock',
+  Fox: 'fox', SilverFox: 'silverfox', HeliKitty: 'helikitty', Salmon: 'salmon',
+  Butterfly: 'butterfly', Batterfly: 'batterfly',
+  BeanTree: 'bean_tree', BubbleTree: 'bubble_tree', FruitTree: 'fruit_tree', PaperTree: 'paper_tree',
 };
 // Types with real, newly-converted official art (as opposed to quoins/DemoWheat,
 // which predate this pass) -- these get concrete example rows in the placement
 // manifest; see generatePlacementManifest for why the full set isn't dumped there.
-const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock'];
+const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
+  'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
+  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree'];
 
 function hash(value) {
   let result = 2166136261;
@@ -152,8 +165,8 @@ placementManifest.coverageSummary = {
   note: `Full per-row placement data (${rows.length} rows across ${types.length} types) lives in the ` +
     `database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively ` +
     `duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds ` +
-    `${EXAMPLES_PER_TYPE} concrete example rows per newly-converted real-asset type (chicken/wood_tree/piggy/` +
-    `metalrock) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.`,
+    `${EXAMPLES_PER_TYPE} concrete example rows per newly-converted real-asset type (${NEWLY_PLACED_TYPES.join('/')}) ` +
+    `for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.`,
   streetsCovered: new Set(rows.map(r => r.tsid)).size,
   totalStreets: Object.values(streets).filter(d => d?.tsid).length,
   placementsByEntityType,
