@@ -1,0 +1,10 @@
+.pub
+certdb/
+API_KEYS.dart
+packages
+pubspec.lock
+build
+*.swp
+.idea/
+.packages
+ssl/
