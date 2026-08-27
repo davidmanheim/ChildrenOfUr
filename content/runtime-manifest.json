@@ -23,8 +23,8 @@
         "rewardItem": "grain",
         "achievements": ["hen_hugger", "hen_hugger_deluxe", "hen_hugger_supremalicious", "the_hugginator"]
       },
-      "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF and wired into Chicken.dart in this pass, replacing dead https://childrenofur.com/assets/entityImages/... links. Entity logic (squeeze/incubate/achievements) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a Chicken (only the synthetic DemoChicken stand-in is seeded today) -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into Chicken.dart, replacing dead https://childrenofur.com/assets/entityImages/... links. Entity logic (squeeze/incubate/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Chicken per street TSID (demo- IDs, index 7 -- upgraded in place from the retired DemoChicken stand-in at the same index). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
     },
     {
       "id": "wood_tree",
@@ -41,8 +41,8 @@
         "rewardItem": "plank",
         "achievements": ["wood_wacker", "timber_jack", "loggerator"]
       },
-      "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF and wired into woodtree.dart in this pass, replacing dead childrenofur.com links (all 4 maturity states previously pointed at ONE remote file with different crop rects; now 4 distinct locally converted files). Also fixed a pre-existing copy/paste bug where every Spritesheet entry used the literal stateName \"maturity_1\". Entity logic (chop/pet/water/achievements) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a WoodTree today -- placement is step 4, still open."
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into woodtree.dart, replacing dead childrenofur.com links (all 4 maturity states previously pointed at ONE remote file with different crop rects; now 4 distinct locally converted files). Also fixed a pre-existing copy/paste bug where every Spritesheet entry used the literal stateName \"maturity_1\". Entity logic (chop/pet/water/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one WoodTree per street TSID (demo- IDs, index 6 -- upgraded in place from the retired DemoTree stand-in at the same index). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
     },
     {
       "id": "piggy",
@@ -57,8 +57,8 @@
         "skill": "animal_kinship",
         "rewardItem": "meat"
       },
-      "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF and wired into piggy.dart in this pass, replacing dead childrenofur.com links. Entity logic (massage/milk) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a Piggy today -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
+      "status": "placed",
+      "statusNote": "Sprite sheets converted from source SWF and wired into piggy.dart, replacing dead childrenofur.com links. Entity logic (massage/milk) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Piggy per street TSID (demo- IDs, new index 9). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
     },
     {
       "id": "metalrock",
@@ -75,34 +75,8 @@
         "rewardItem": "chunk_metal",
         "skill": "mining"
       },
-      "status": "converted",
-      "statusNote": "Sprite sheet converted from source SWF and wired into metalrock.dart in this pass, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. NOT YET PLACED: no street_entities rows spawn a MetalRock today -- placement is CONTENT_RECOVERY_PLAN.md step 4, still open."
-    },
-    {
-      "id": "demo-chicken",
-      "displayName": "Demo Chicken",
-      "category": "synthetic visual stand-in",
-      "sourceAssetId": null,
-      "destination": "World entity",
-      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoChicken per street TSID (demo- IDs).",
-      "routeIds": {
-        "entityClass": "coUserver/lib/entities/npcs/animals/demo_chicken.dart:DemoChicken"
-      },
-      "status": "existing-synthetic",
-      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-chicken.svg), not derived from any original Glitch/Ur asset. Intentionally non-interactive (no actions). Listed here for coverage completeness, not produced by this pass. Should eventually be replaced/supplemented by placed instances of the real 'chicken' asset above."
-    },
-    {
-      "id": "demo-tree",
-      "displayName": "Demo Tree",
-      "category": "synthetic visual stand-in",
-      "sourceAssetId": null,
-      "destination": "World entity",
-      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoTree per street TSID (demo- IDs).",
-      "routeIds": {
-        "entityClass": "coUserver/lib/entities/plants/demo_plants.dart:DemoTree"
-      },
-      "status": "existing-synthetic",
-      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-tree.svg), not derived from any original Glitch/Ur asset. Intentionally non-harvestable. Listed here for coverage completeness, not produced by this pass."
+      "status": "placed",
+      "statusNote": "Sprite sheet converted from source SWF and wired into metalrock.dart, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one MetalRock per street TSID (demo- IDs, new index 10). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
     },
     {
       "id": "demo-wheat",
@@ -133,6 +107,20 @@
     }
   ],
   "deliberatelyDeferred": [
+    {
+      "id": "demo-chicken",
+      "displayName": "Demo Chicken",
+      "category": "synthetic visual stand-in (retired)",
+      "reason": "Superseded: tools/seed-demo-world.mjs now seeds the real 'chicken' asset at the same array index (see content/source-manifest.json), so DemoChicken is no longer placed anywhere. The class and its hand-drawn placeholder SVG (files/sprites/generated/demo-chicken.svg) remain in the codebase, unreferenced by the seed, in case a future rollback or a distinct non-interactive-filler use case needs it.",
+      "replacementMilestone": "None planned -- permanently superseded by the real 'chicken' asset. Remove the class/SVG only if a future cleanup pass confirms nothing else references it."
+    },
+    {
+      "id": "demo-tree",
+      "displayName": "Demo Tree",
+      "category": "synthetic visual stand-in (retired)",
+      "reason": "Superseded: tools/seed-demo-world.mjs now seeds the real 'wood_tree' asset at the same array index (see content/source-manifest.json), so DemoTree is no longer placed anywhere. The class and its hand-drawn placeholder SVG (files/sprites/generated/demo-tree.svg) remain in the codebase, unreferenced by the seed, in case a future rollback or a distinct non-interactive-filler use case needs it.",
+      "replacementMilestone": "None planned -- permanently superseded by the real 'wood_tree' asset. Remove the class/SVG only if a future cleanup pass confirms nothing else references it."
+    },
     {
       "id": "wood_tree_enchanted",
       "category": "harvestable resource (tree variant)",

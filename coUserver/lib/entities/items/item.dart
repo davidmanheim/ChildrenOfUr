@@ -238,7 +238,13 @@ class Item extends Object
 		} else {
 			//make sure the drop action is last
 			actions.cast<Action>().removeWhere((Action action) => action.actionName == 'drop');
-			List<Map> result = encode(actions);
+			// List<Map>.from(...) is required: encode() (redstone_mapper) returns
+			// an untyped List<dynamic> at runtime, and assigning that directly to
+			// this List<Map> local is an implicit downcast that throws the first
+			// time any item-reward action (e.g. Chicken.squeeze awarding grain)
+			// actually runs -- confirmed live: "type 'List<dynamic>' is not a
+			// subtype of type 'List<Map<dynamic, dynamic>>'" from Item.actionList.
+			List<Map> result = List<Map>.from(encode(actions));
 			result.add(encode(dropAction));
 			return result;
 		}

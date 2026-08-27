@@ -211,7 +211,13 @@ abstract class Entity extends Object with MetabolicsChange implements Persistabl
 	}
 
 	Map<String, dynamic> getMap() {
-		Map map = {};
+		// Must be explicitly typed: an untyped `{}` literal infers as
+		// Map<dynamic, dynamic>, and returning that as the declared
+		// Map<String, dynamic> is an implicit downcast that throws at runtime
+		// ("_InternalLinkedHashMap<dynamic, dynamic> is not a subtype of
+		// Map<String, dynamic>") the first time any subclass's getMap() (e.g.
+		// Plant.getMap calling super.getMap()) actually gets invoked.
+		Map<String, dynamic> map = {};
 		map['bubbleText'] = bubbleText;
 		map['gains'] = gains;
 		return map;

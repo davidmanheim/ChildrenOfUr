@@ -49,8 +49,12 @@ class GardeningGoodsVendor extends Vendor implements EventHandler<PlayerPosition
 		itemsPredefined = true;
 		itemsForSale = SELL_ITEMS;
 
-		messageBus.subscribe(PlayerPosition, this, whereFunc: (PlayerPosition position) {
-			return position.streetName == streetName;
+		// See chicken.dart's identical fix: whereFunc must match message_bus's
+		// `bool Function(dynamic)` typedef exactly, or this throws when the
+		// class is constructed reflectively (dart:mirrors) via street.dart's
+		// entity factory.
+		messageBus.subscribe(PlayerPosition, this, whereFunc: (dynamic position) {
+			return position is PlayerPosition && position.streetName == streetName;
 		});
 	}
 

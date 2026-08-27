@@ -146,8 +146,16 @@ class Chicken extends NPC implements EventHandler<ChatEvent> {
 		Clock clock = new Clock();
 		clock.onNewDay.listen((_) => _resetLists());
 
-		messageBus.subscribe(ChatEvent, this, whereFunc: (ChatEvent event) {
-			return (event.streetName == this.streetName) && (event.message.toLowerCase().contains('kfc'));
+		// message_bus's `subscribe` stores whereFunc in a field statically typed
+		// as its `whereFunc` typedef (bool Function(dynamic)); a closure typed
+		// narrowly as `(ChatEvent event) => bool` fails that implicit downcast
+		// specifically when this class is constructed reflectively (dart:mirrors)
+		// rather than via a normal `new Chicken(...)` call, since the mirrors path
+		// doesn't apply the same covariance-check thunk the compiler would
+		// otherwise insert -- so the parameter must match the typedef exactly.
+		messageBus.subscribe(ChatEvent, this, whereFunc: (dynamic event) {
+			return event is ChatEvent &&
+				(event.streetName == this.streetName) && (event.message.toLowerCase().contains('kfc'));
 		});
 	}
 
@@ -159,8 +167,15 @@ class Chicken extends NPC implements EventHandler<ChatEvent> {
 	void restoreState(Map<String, String> metadata) {
 		super.restoreState(metadata);
 
+		// List<String>.from(...) is required: jsonDecode returns an untyped
+		// List<dynamic>, and assigning that directly to this List<String>
+		// field is an implicit downcast that throws at runtime the first
+		// time a Chicken that has actually squeezed someone (and so has real
+		// persisted metadata) gets reloaded -- confirmed live: "Unable to
+		// instantiate a class for Chicken: type 'List<dynamic>' is not a
+		// subtype of type 'List<String>'".
 		if (metadata.containsKey('squeezeList')) {
-			squeezeList = jsonDecode(metadata['squeezeList']);
+			squeezeList = List<String>.from(jsonDecode(metadata['squeezeList']));
 		}
 
 		if (metadata.containsKey('lastReset')) {

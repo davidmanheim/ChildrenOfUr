@@ -74,12 +74,18 @@ class Piggy extends NPC {
 	void restoreState(Map<String, String> metadata) {
 		super.restoreState(metadata);
 
+		// .cast<String, int>() is required: jsonDecode returns an untyped
+		// Map<String, dynamic>, and assigning that directly to these
+		// Map<String, int> fields is an implicit downcast that throws at
+		// runtime the first time a Piggy that has actually been interacted
+		// with (and so has real persisted metadata) gets reloaded -- same bug
+		// class already fixed in playerbuff.dart this session.
 		if (metadata.containsKey('petCounts')) {
-			petCounts = jsonDecode(metadata['petCounts']);
+			petCounts = (jsonDecode(metadata['petCounts']) as Map).cast<String, int>();
 		}
 
 		if (metadata.containsKey('nibbleCounts')) {
-			nibbleCounts = jsonDecode(metadata['nibbleCounts']);
+			nibbleCounts = (jsonDecode(metadata['nibbleCounts']) as Map).cast<String, int>();
 		}
 
 		if (metadata.containsKey('lastReset')) {

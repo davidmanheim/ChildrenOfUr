@@ -23,11 +23,144 @@
     "y": "number",
     "sourceExport": "string or null; for provenanceKind=recovered, the name/date of the validated export this row came from"
   },
-  "placements": [],
+  "placements": [
+    {
+      "id": "demo-LA5A8BOUU3E23J5-6",
+      "provenanceKind": "synthetic",
+      "entityType": "WoodTree",
+      "runtimeAssetId": "wood_tree",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 839,
+      "y": 728,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-6",
+      "provenanceKind": "synthetic",
+      "entityType": "WoodTree",
+      "runtimeAssetId": "wood_tree",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 833,
+      "y": 742,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-6",
+      "provenanceKind": "synthetic",
+      "entityType": "WoodTree",
+      "runtimeAssetId": "wood_tree",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -225,
+      "y": 651,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-7",
+      "provenanceKind": "synthetic",
+      "entityType": "Chicken",
+      "runtimeAssetId": "chicken",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -465,
+      "y": 652,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-7",
+      "provenanceKind": "synthetic",
+      "entityType": "Chicken",
+      "runtimeAssetId": "chicken",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 336,
+      "y": 638,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-7",
+      "provenanceKind": "synthetic",
+      "entityType": "Chicken",
+      "runtimeAssetId": "chicken",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 272,
+      "y": 755,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-9",
+      "provenanceKind": "synthetic",
+      "entityType": "Piggy",
+      "runtimeAssetId": "piggy",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -219,
+      "y": 637,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-9",
+      "provenanceKind": "synthetic",
+      "entityType": "Piggy",
+      "runtimeAssetId": "piggy",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -658,
+      "y": 610,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-9",
+      "provenanceKind": "synthetic",
+      "entityType": "Piggy",
+      "runtimeAssetId": "piggy",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 518,
+      "y": 739,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-10",
+      "provenanceKind": "synthetic",
+      "entityType": "MetalRock",
+      "runtimeAssetId": "metalrock",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -265,
+      "y": 735,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-10",
+      "provenanceKind": "synthetic",
+      "entityType": "MetalRock",
+      "runtimeAssetId": "metalrock",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 587,
+      "y": 741,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-10",
+      "provenanceKind": "synthetic",
+      "entityType": "MetalRock",
+      "runtimeAssetId": "metalrock",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -287,
+      "y": 750,
+      "sourceExport": null
+    }
+  ],
   "coverageSummary": {
-    "note": "Intentionally empty pending seed generation for the two newly-converted assets (chicken, wood_tree). Once tools/seed-demo-world.mjs (or a successor script) is extended to place demo- rows of type Chicken and WoodTree, re-run tools/validate-content.mjs to regenerate this summary rather than hand-editing it.",
-    "streetsCovered": 0,
-    "totalStreets": 3180,
-    "placementsByEntityType": {}
+    "note": "Full per-row placement data (35013 rows across 11 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (chicken/wood_tree/piggy/metalrock) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "streetsCovered": 3180,
+    "totalStreets": 3183,
+    "placementsByEntityType": {
+      "Img": 3183,
+      "Mood": 3183,
+      "Energy": 3183,
+      "Currant": 3183,
+      "Mystery": 3183,
+      "Favor": 3183,
+      "WoodTree": 3183,
+      "Chicken": 3183,
+      "DemoWheat": 3183,
+      "Piggy": 3183,
+      "MetalRock": 3183
+    }
   }
 }

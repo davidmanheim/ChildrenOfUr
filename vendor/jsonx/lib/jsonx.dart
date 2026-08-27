@@ -292,7 +292,15 @@ _jsonToObject(json, mirror) {
 
   // Handle enums.
 
-  if (mirror.isEnum) {
+  // `mirror` can be a _SpecialTypeMirror (e.g. for a `dynamic`-typed field,
+  // or the value-type mirror recursed into from a Map<String, dynamic> at
+  // line ~319 below) which has no `isEnum` getter at all -- calling it
+  // unconditionally throws NoSuchMethodError the moment any decoded object
+  // has a dynamically-typed field with actual content (confirmed live: this
+  // crashed the whole game server every time a player received an item with
+  // non-empty metadata, e.g. Item.metadata is Map<String, dynamic>). Only
+  // ClassMirror supports isEnum, so guard on that first.
+  if (mirror is ClassMirror && mirror.isEnum) {
     return mirror.getField(#values).reflectee[json];
   }
 
