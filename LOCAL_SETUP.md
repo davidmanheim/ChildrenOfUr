@@ -37,6 +37,40 @@ The main repositories came from the [ChildrenOfUr GitHub organization](https://g
 
 The other directories under `vendor/` are copied or reconstructed compatibility packages needed by the archived pub dependencies, including `di`, `inflection`, `jsonx`, `message_bus`, `postgresql`, `redstone`, `redstone_mapper`, `redstone_mapper_pg`, and `route_hierarchical`.
 
+## Version control
+
+This directory is now a git repository, pushed to
+[davidmanheim/ChildrenOfUr](https://github.com/davidmanheim/ChildrenOfUr).
+`coUserver/`, `coUclient/`, and `authServer/` are **git-subtree merges** of
+real forks of the upstream repos, not copied snapshots:
+
+| Subdirectory | Fork (origin of subtree) | Upstream |
+| --- | --- | --- |
+| `coUserver/` | [davidmanheim/coUserver](https://github.com/davidmanheim/coUserver) | [ChildrenOfUr/coUserver](https://github.com/ChildrenOfUr/coUserver) |
+| `coUclient/` | [davidmanheim/coUclient](https://github.com/davidmanheim/coUclient) | [ChildrenOfUr/coUclient](https://github.com/ChildrenOfUr/coUclient) |
+| `authServer/` | [davidmanheim/authServer](https://github.com/davidmanheim/authServer) | [ChildrenOfUr/authServer](https://github.com/ChildrenOfUr/authServer) |
+
+Each was merged at prefix `<name>/` from its fork's `dev` branch via
+`git subtree add`, so the full original commit history/blame for those three
+subdirectories is preserved (see `git log --follow` inside them), followed by
+one commit applying this project's local-revival modifications on top. The
+local git remotes `coUserver-fork`/`coUclient-fork`/`authServer-fork` point at
+the forks (push target for sending changes upstream) and
+`coUserver-upstream`/`coUclient-upstream`/`authServer-upstream` point at the
+original `ChildrenOfUr` org repos (fetch target for pulling upstream changes).
+
+Everything else (root docs, `vendor/`, `docker/`, `tools/`, `content/`) is
+plain history local to the umbrella repo — the `vendor/` packages are vendored
+snapshots, not forks, since they're pinned compatibility copies rather than
+something changes would be sent upstream for.
+
+`tmp/` (downloaded reference archives — `glitch-items`, `glitch-gameserver`,
+browser-check data) and any `*.zip`/`*.crdownload` files dropped in the repo
+root (e.g. a soundtrack archive) are gitignored: too large and/or
+licensing-sensitive for normal git history. Keep them local-only unless a
+deliberate decision is made to host them elsewhere (e.g. Git LFS, object
+storage, or an external link).
+
 ## Prerequisites
 
 - Windows PowerShell.
