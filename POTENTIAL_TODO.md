@@ -352,6 +352,71 @@ Prioritize and verify items before implementation.
   `tools/seed-demo-world.mjs`-style seeding, `keys.json` would need either
   11 more door subclasses or a generalization of `LockedDoor` to take its
   required key as placement data instead of being hardcoded per-subclass.
+- Found 2026-08-28 (eleventh item-icon batch, `toys.json`/`tools.json`/
+  `alchemical.json`, RECOVERY_TODO.md's "Continue asset conversion" row):
+  a distinct flavor of the "genuinely missing design" gap already
+  documented above for achievements/`bacon`/`potion_rainbow_juice` --
+  several `toys.json` items have an `actionName` in their item JSON
+  (`"Insert Note"` on `fortune_cookie`, `"Break Cookie"` on
+  `fortune_cookie_withfortune`, `"Read Fortune"` on `fortune`) that reads
+  as if it should do something, but grepping every literal string under
+  `coUserver/lib/entities/items/actions/` found no handler implementing
+  any of them -- confirmed these are pure display metadata, same as
+  `card_carrying_qualification`'s achievement-only reference from the
+  seventh batch. This blocks not just the action but the *acquisition*
+  route for a related item in one case: `fortune_cookie_withfortune`
+  cannot be crafted from `fortune_cookie` + `note` because `"Insert
+  Note"` has no handler, even though both ingredients are themselves
+  real (`fortune_cookie` is live `toy`-`StreetSpirit` stock; `note` is a
+  real `NoteManager.appEdit` HTTP-route item per the seventh batch's own
+  finding). Also confirmed in this batch: `dice.dart` (the file, not the
+  `dice`/`12_sided_die` items) is entirely commented-out dead code --
+  the `"Roll"` action on both dice items has no live server
+  implementation either, though this doesn't block *acquiring* either
+  item (both are real `toy`-`StreetSpirit` stock), only what happens
+  after. Also found 3 tools (`high_class_hoe`, `irrigator_9000`,
+  `super_scraper`) that are real `tinkertool` recipe outputs but are
+  *not* listed in `ToolVendor`/any `StreetSpirit` category themselves --
+  i.e. craftable-only upgrades to their vendor-stocked base tools
+  (`hoe`, `watering_can`, `scraper`), a legitimate design (not a gap),
+  but worth noting as a different accessibility shape than the plain
+  "vendor stock" pattern most other tools follow.
+- Found 2026-08-28 (twelfth item-icon batch, `collectibles.json`,
+  RECOVERY_TODO.md's "Continue asset conversion" row): a genuinely live,
+  previously-undocumented route for 43 of `collectibles.json`'s 44
+  `cubimal_*` items -- `CubimalBox.takeOutCubimal`
+  (`coUserver/lib/entities/items/actions/itemgroups/cubimals.dart`)
+  consumes a real, live, vendor-stocked `cubimal_series_1_box`/
+  `cubimal_series_2_box` and grants a random named cubimal item directly
+  to inventory, end to end. The 1 exception, `cubimal_factorydefect_chick`,
+  has real converted art but is not a key in either series table, so it
+  has no acquisition route despite looking identical in kind to its 43
+  siblings -- worth a second look if a "rare/bonus cubimal" drop table is
+  ever added elsewhere. Also confirmed the artifact-piece "assemble into
+  a whole item" gap the seventh batch found for `wooden_apple`/
+  `magical_pendant` extends to every sibling `artifact_*` family
+  (necklaces/beads, hair clip, chicken brick, mysterious cube, mirror
+  with scribbles, nose of china, platinumium spork, torn manuscript,
+  glove with metal finger) and to the 20 `piece_of_street_creator_*_
+  trophy_*` fragments (whose already-converted whole-trophy siblings in
+  `misc.json` narratively describe collecting "all five parts" but have
+  no code that actually does so) -- no "combine/assemble" item-action
+  exists anywhere in `coUserver` for any multi-piece collectible.
+  Confirmed a dead end worth not re-attempting: 19 `collectibles.json`
+  items forming a coherent "wearable artifact accessory" sub-family
+  (`button_shape_of_*` x4, `caterpillar_trousers`, `ear_trumpet`,
+  `extremely_long_scarf`, `fake_nose_made_of_{plaster,wool}`, `fan`,
+  `handbag_clasp`, `intricately_carved_wooden_ear`,
+  `oversized_protective_goggles`, `pouch_full_of_old_seeds`,
+  `remains_of_a_daybag`, `tangled_pair_of_sock_garters`,
+  `three_cornered_hat`, `twenty_nine_cornered_hat`, `very_tall_top_hat`)
+  have dead iconUrls but no matching source SWF anywhere under
+  `tmp/glitch-items` (the `artifacts/` folder holds exactly 11 artifact
+  families total, confirmed by a full directory listing, none of these);
+  together with the file's pre-existing 20 empty-iconUrl items (also
+  individually re-checked by item name this pass, no hits), these 39
+  items cap `collectibles.json` at 173/212 real converted art given
+  currently-vendored source material.
 
 ## Asset conversion pipeline
 
