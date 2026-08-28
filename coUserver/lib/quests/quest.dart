@@ -485,6 +485,29 @@ class UserQuestLog extends Trackable {
 				}
 			}
 			decodedQuest.requirements = requirements;
+
+			// Same normalization as `requirements` above, and the same gap
+			// already fixed once in quest_service.dart's static loadQuests()
+			// for the OTHER place a Quest gets decoded from raw JSON --
+			// missed here because this is a second, separate decode path (a
+			// player's own tracked-quest copy, stored per-user in
+			// user_quests.in_progress_list/completed_list, not the static
+			// quest definitions). QuestRewards.favor is kept as a raw List
+			// for the legacy mapper, so trySetFavor's `List<QuestFavor>
+			// favors` parameter got a raw List<dynamic> of decoded Maps --
+			// confirmed live: crashed the whole server ("type
+			// 'List<dynamic>' is not a subtype of type 'List<QuestFavor>'")
+			// via Tree.pet -> Quest.handleEvent -> _giveRewards ->
+			// trySetMetabolics -> trySetFavor, for a quest reloaded from a
+			// player's saved progress rather than freshly started.
+			if (decodedQuest.rewards != null) {
+				decodedQuest.rewards.favor = (decodedQuest.rewards.favor ?? []).map((dynamic favor) {
+					return favor is QuestFavor
+						? favor
+						: decode(new Map<String, dynamic>.from(favor as Map), QuestFavor);
+				}).toList();
+			}
+
 			result.add(decodedQuest);
 		}
 		return result;

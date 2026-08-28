@@ -559,6 +559,17 @@ class InputManager {
 	}
 
 	void selectUp(List<Element> options, String className) {
+		// Guard against an empty options list -- e.g. the interaction menu's
+		// entities are still loading (getActions is async) or its `getActions`
+		// request failed (a server crash/restart mid-request throws before any
+		// `.entityContainer` gets appended). `options[0]` on an empty list
+		// threw "RangeError: Index out of range: no indices are valid: 0" and
+		// crashed the whole client -- confirmed live, arrow-key-driven menu
+		// navigation with zero rendered options.
+		if (options.isEmpty) {
+			return;
+		}
+
 		int removed = 0;
 		for (int i = 0; i < options.length; i++) {
 			options[i].classes.remove('action_hover');
@@ -578,6 +589,11 @@ class InputManager {
 	}
 
 	void selectDown(List<Element> options, String className) {
+		// Same empty-list guard as selectUp -- see its comment.
+		if (options.isEmpty) {
+			return;
+		}
+
 		int removed = options.length - 1;
 		for (int i = 0; i < options.length; i++) {
 			options[i].classes.remove('action_hover');
