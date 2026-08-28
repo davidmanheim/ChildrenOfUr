@@ -3,14 +3,23 @@ part of entity;
 class StreetSpiritGroddle extends StreetSpirit {
 	static final Map <String, Map<String, Map<String, Spritesheet>>> VARIANTS = {
 		'alph': {
+			// 'day' below is converted from the real source SWF's default composited
+			// puppet (street_spirit_groddle.swf, streetSpiritContainer_1, char 377) --
+			// its resolved frame-label ranges match this variant's old hardcoded
+			// numFrames exactly (119/73/37/19/17/85), confirming this is genuinely the
+			// 'alph'/'day' look. All other 23 giant/light combos in this map are
+			// runtime-composited from separate layered part symbols (base/bottom/eyes/
+			// skull/top) that ffdec's static per-frame export cannot reconstruct without
+			// custom multi-layer compositing; they remain on their original dead links,
+			// deliberately deferred -- see content/source-manifest.json.
 			'day': {
-				'close': new Spritesheet('close', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_close_png_1354835031.png', 792, 591, 132, 197, 17, false),
-				'idle_hold': new Spritesheet('idle_hold', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_idle_hold_png_1354835020.png', 924, 2561, 132, 197, 85, true),
-				'idle_move': new Spritesheet('idle_move', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_idle_move_png_1354835036.png', 924, 3349, 132, 197, 119, true),
-				'open': new Spritesheet('open', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_open_png_1354835030.png', 924, 591, 132, 197, 19, false),
-				'still': new Spritesheet('still', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_open_png_1354835030.png', 924, 591, 132, 197, 1, false),
-				'talk': new Spritesheet('talk', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_talk_png_1354835025.png', 924, 2167, 132, 197, 73, false),
-				'turn': new Spritesheet('turn', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes2_skull_skull_L1dirt_top_top_L1LeafSprout_x1_turn_png_1354835028.png', 924, 1182, 132, 197, 37, false)
+				'close': new Spritesheet('close', 'files/sprites/generated/converted/streetspiritgroddle-close.png', 6324, 328, 372, 328, 17, false),
+				'idle_hold': new Spritesheet('idle_hold', 'files/sprites/generated/converted/streetspiritgroddle-idle_hold.png', 31620, 328, 372, 328, 85, true),
+				'idle_move': new Spritesheet('idle_move', 'files/sprites/generated/converted/streetspiritgroddle-idle_move.png', 44268, 328, 372, 328, 119, true),
+				'open': new Spritesheet('open', 'files/sprites/generated/converted/streetspiritgroddle-open.png', 7068, 328, 372, 328, 19, false),
+				'still': new Spritesheet('still', 'files/sprites/generated/converted/streetspiritgroddle-still.png', 372, 328, 372, 328, 1, false),
+				'talk': new Spritesheet('talk', 'files/sprites/generated/converted/streetspiritgroddle-talk.png', 27156, 328, 372, 328, 73, false),
+				'turn': new Spritesheet('turn', 'files/sprites/generated/converted/streetspiritgroddle-turn.png', 13764, 328, 372, 328, 37, false)
 			},
 			'night': {
 				'close': new Spritesheet('close', 'https://childrenofur.com/assets/entityImages/street_spirit_groddle_base_base_L1dirt_bottom_bottom_L1LeafSkirt_eyes_eyes_L1eyes3_skull_skull_L1dirt_top_top_L1LeafSprout_x1_close_png_1354835067.png', 792, 591, 132, 197, 17, false),

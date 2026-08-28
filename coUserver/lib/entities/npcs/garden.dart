@@ -187,19 +187,41 @@ class Garden extends NPC {
 		ENERGY_REQ_WATER = new EnergyRequirements(energyAmount: -2),
 		ENERGY_REQ_HARVEST = new EnergyRequirements(energyAmount: -3);
 
+	/// Crop growth-stage art: the source SWF (harvestable_resources/garden/garden_new.swf)
+	/// contains exactly one mature-crop graphic per crop type (no separate 1/2/3
+	/// growth-stage variants), so the same converted image is reused across all 3
+	/// numbered stage states below -- see content/source-manifest.json's
+	/// complexityNote for 'garden', following the same documented precedent as
+	/// fruit_tree's per-level sprite reuse.
+	static final Map<String, List<int>> CROP_DIMENSIONS = {
+		'broccoli': [70, 75],
+		'cabbage': [67, 65],
+		'carrot': [53, 68],
+		'corn': [56, 74],
+		'cucumber': [66, 75],
+		'onion': [56, 72],
+		'parsnip': [59, 58],
+		'potato': [46, 62],
+		'pumpkin': [62, 48],
+		'rice': [70, 75],
+		'spinach': [60, 66],
+		'tomato': [64, 71],
+		'zucchini': [69, 79],
+	};
+
 	static final Map<String, Spritesheet> STATES = {
 		'new': new Spritesheet('new',
-			'https://childrenofur.com/assets/entityImages/garden_plot_new.png',
-			100, 90, 100, 90, 1, false),
+			'files/sprites/generated/converted/garden-new.png',
+			85, 27, 85, 27, 1, false),
 		'hoed': new Spritesheet('hoed',
-			'https://childrenofur.com/assets/entityImages/garden_plot_hoed.png',
-			100, 90, 100, 90, 1, false),
+			'files/sprites/generated/converted/garden-hoed.png',
+			81, 23, 81, 23, 1, false),
 		'watered': new Spritesheet('watered',
-			'https://childrenofur.com/assets/entityImages/garden_plot_watered.png',
-			100, 90, 100, 90, 1, false),
+			'files/sprites/generated/converted/garden-watered.png',
+			81, 23, 81, 23, 1, false),
 		'planted_baby': new Spritesheet('planted_baby',
-			'https://childrenofur.com/assets/entityImages/garden_plot_planted_baby.png',
-			100, 90, 100, 90, 1, false),
+			'files/sprites/generated/converted/garden-planted_baby.png',
+			46, 34, 46, 34, 1, false),
 	};
 
 	GardenStates gardenState = GardenStates.NEW;
@@ -250,9 +272,10 @@ class Garden extends NPC {
 	void _createCropStates() {
 
 		for (String crop in CROPS) {
+			List<int> dims = CROP_DIMENSIONS[crop];
 			for (int i=1; i<4; i++) {
 				String cropState = '${crop}_${i}';
-				states[cropState] = new Spritesheet(cropState, 'https://childrenofur.com/assets/entityImages/$cropState.png', 100, 90, 100, 90, 1, false);
+				states[cropState] = new Spritesheet(cropState, 'files/sprites/generated/converted/garden-$crop.png', dims[0], dims[1], dims[0], dims[1], 1, false);
 			}
 		}
 	}

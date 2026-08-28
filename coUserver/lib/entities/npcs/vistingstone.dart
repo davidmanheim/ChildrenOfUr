@@ -14,8 +14,8 @@ class VisitingStone extends NPC {
 		states = {
 			"_": new Spritesheet(
 				"up",
-				"https://childrenofur.com/assets/entityImages/visiting_stone__x1_1_png_1354840181.png",
-				101, 155, 101, 155, 1, true
+				"files/sprites/generated/converted/vistingstone-up.png",
+				82, 155, 82, 155, 1, true
 			)
 		};
 		setState("_");

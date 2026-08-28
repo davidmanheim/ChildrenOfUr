@@ -3930,6 +3930,1486 @@
           "numFrames": 4
         }
       ]
+    },
+    {
+      "id": "auctioneer",
+      "sourcePath": "tmp/glitch-items/inhabitants/rare_item_vendor/npc_rare_item_vendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/rare_item_vendor/npc_rare_item_vendor.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 81,
+        "class": "smuggler",
+        "totalFrames": 200,
+        "note": "The SWF's own internal SymbolClass name for its root character is 'smuggler', not 'auctioneer' or 'rare_item_vendor' -- an internal FLA-authoring leftover, not a wrong-source risk: the dead URLs already hardcoded in Auctioneer.dart (npc_rare_item_vendor__x1_*) match this exact file, and the resolved idle/talk/walk frame counts (109/72/16) match the old hardcoded values exactly."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 81) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "idle",
+          "sourceFrameRange": [
+            4,
+            112
+          ],
+          "file": "content/sprites/auctioneer/idle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/auctioneer-idle.png",
+          "frameWidth": 175,
+          "frameHeight": 193,
+          "numFrames": 109
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            113,
+            184
+          ],
+          "file": "content/sprites/auctioneer/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/auctioneer-talk.png",
+          "frameWidth": 175,
+          "frameHeight": 193,
+          "numFrames": 72
+        },
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            185,
+            200
+          ],
+          "file": "content/sprites/auctioneer/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/auctioneer-walk.png",
+          "frameWidth": 175,
+          "frameHeight": 193,
+          "numFrames": 16
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "iconic/empty/idleHold",
+          "sourceFrameRange": [
+            1,
+            3
+          ],
+          "reason": "Single-frame labels present in the source but not referenced by any state in coUserver's Auctioneer entity class."
+        }
+      ],
+      "validationNote": "All 3 converted states' resolved frame counts (109/72/16) match Auctioneer.dart's old hardcoded numFrames exactly."
+    },
+    {
+      "id": "crab",
+      "sourcePath": "tmp/glitch-items/inhabitants/crab/npc_crab.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/crab/npc_crab.fla",
+      "sourceFormat": "SWF, vector shapes only (85 DefineShape2 + 33 DefineShape + 2 DefineShape3, 13 DefineSprite), no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 133,
+        "class": null,
+        "totalFrames": 338,
+        "note": "Not exported via SymbolClass (only the MainTimeline is, as npc_crab_fla.MainTimeline); located by scanning DefineSprite tags directly for the one whose body begins with a 'walk' FrameLabel, the same technique used for firefly/helga/meal_vendor/tool_vendor below."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 133) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            1,
+            24
+          ],
+          "file": "content/sprites/crab/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-walk.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 24
+        },
+        {
+          "state": "listen",
+          "sourceFrameRange": [
+            25,
+            58
+          ],
+          "file": "content/sprites/crab/listen.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-listen.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 34,
+          "note": "Old hardcoded numFrames was 24; resolved real range is 34 frames. Using the source-derived value."
+        },
+        {
+          "state": "like_on",
+          "sourceFrameRange": [
+            59,
+            92
+          ],
+          "file": "content/sprites/crab/like_on.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-like_on.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 34,
+          "note": "Old hardcoded numFrames was 24; resolved real range is 34 frames."
+        },
+        {
+          "state": "like_off",
+          "sourceFrameRange": [
+            93,
+            126
+          ],
+          "file": "content/sprites/crab/like_off.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-like_off.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 34,
+          "note": "Old hardcoded numFrames was 24; resolved real range is 34 frames."
+        },
+        {
+          "state": "dislike_on",
+          "sourceFrameRange": [
+            127,
+            158
+          ],
+          "file": "content/sprites/crab/dislike_on.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-dislike_on.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 32,
+          "note": "Old hardcoded numFrames was 30; resolved real range is 32 frames."
+        },
+        {
+          "state": "dislike_off",
+          "sourceFrameRange": [
+            159,
+            190
+          ],
+          "file": "content/sprites/crab/dislike_off.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-dislike_off.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 32,
+          "note": "Old hardcoded numFrames was 22; resolved real range is 32 frames."
+        },
+        {
+          "state": "idle0",
+          "sourceFrameRange": [
+            191,
+            220
+          ],
+          "file": "content/sprites/crab/idle0.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-idle0.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 30
+        },
+        {
+          "state": "idle1",
+          "sourceFrameRange": [
+            221,
+            250
+          ],
+          "file": "content/sprites/crab/idle1.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-idle1.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 30
+        },
+        {
+          "state": "idle2",
+          "sourceFrameRange": [
+            251,
+            280
+          ],
+          "file": "content/sprites/crab/idle2.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-idle2.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 30
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            281,
+            338
+          ],
+          "file": "content/sprites/crab/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/crab-talk.png",
+          "frameWidth": 133,
+          "frameHeight": 137,
+          "numFrames": 58
+        }
+      ],
+      "validationNote": "idle0/idle1/idle2/talk/walk resolved frame counts match the old hardcoded values exactly; listen/like_on/like_off/dislike_on/dislike_off differ from the old hardcoded values (which used a uniform stand-in 22-30 across several related states) -- source-derived values are used per project convention."
+    },
+    {
+      "id": "garden",
+      "sourcePath": "tmp/glitch-items/harvestable_resources/garden/garden_new.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/harvestable_resources/garden/garden_new.fla",
+      "siblingVariantNotConverted": "tmp/glitch-items/harvestable_resources/garden/garden.swf -- a differently-structured SWF sharing the 'garden' name (strip/shimla/polherb/polcrop/apartment plot-tileset symbols, unrelated to Garden.dart's crop/plot-state naming); garden_new.swf was used instead because it contains a symbol for every one of Garden.dart's 13 CROPS names plus 4 plausible plot-state graphics, confirmed by visually inspecting the rendered frames (see complexityNote).",
+      "sourceFormat": "SWF (version 10), vector shapes + 1 embedded DefineBitsJPEG3, 54 DefineSprite symbols (one per crop/plot-state)",
+      "conversionMethod": "ffdec -export sprite (rasterize all 54 named symbols) -> visual inspection of each candidate frame (Read/image view) to identify which symbol is which plot state, since none of these single-frame symbols carry further internal frame labels -> build-sprite-sheet.py (1-frame passthrough per symbol)",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "new",
+          "sourceSymbol": "depleted (char 20)",
+          "file": "content/sprites/garden/new.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-new.png",
+          "frameWidth": 85,
+          "frameHeight": 27,
+          "numFrames": 1
+        },
+        {
+          "state": "hoed",
+          "sourceSymbol": "dry (char 18)",
+          "file": "content/sprites/garden/hoed.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-hoed.png",
+          "frameWidth": 81,
+          "frameHeight": 23,
+          "numFrames": 1
+        },
+        {
+          "state": "watered",
+          "sourceSymbol": "wet (char 108)",
+          "file": "content/sprites/garden/watered.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-watered.png",
+          "frameWidth": 81,
+          "frameHeight": 23,
+          "numFrames": 1
+        },
+        {
+          "state": "planted_baby",
+          "sourceSymbol": "seedling_wet (char 106)",
+          "file": "content/sprites/garden/planted_baby.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-planted_baby.png",
+          "frameWidth": 46,
+          "frameHeight": 34,
+          "numFrames": 1
+        },
+        {
+          "state": "broccoli_1/2/3",
+          "sourceSymbol": "garden_broccoli (char 104)",
+          "file": "content/sprites/garden/broccoli.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-broccoli.png",
+          "frameWidth": 70,
+          "frameHeight": 75,
+          "numFrames": 1
+        },
+        {
+          "state": "cabbage_1/2/3",
+          "sourceSymbol": "garden_cabbage (char 102)",
+          "file": "content/sprites/garden/cabbage.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-cabbage.png",
+          "frameWidth": 67,
+          "frameHeight": 65,
+          "numFrames": 1
+        },
+        {
+          "state": "carrot_1/2/3",
+          "sourceSymbol": "garden_carrot (char 100)",
+          "file": "content/sprites/garden/carrot.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-carrot.png",
+          "frameWidth": 53,
+          "frameHeight": 68,
+          "numFrames": 1
+        },
+        {
+          "state": "corn_1/2/3",
+          "sourceSymbol": "garden_corn (char 98)",
+          "file": "content/sprites/garden/corn.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-corn.png",
+          "frameWidth": 56,
+          "frameHeight": 74,
+          "numFrames": 1
+        },
+        {
+          "state": "cucumber_1/2/3",
+          "sourceSymbol": "garden_cucumber (char 96)",
+          "file": "content/sprites/garden/cucumber.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-cucumber.png",
+          "frameWidth": 66,
+          "frameHeight": 75,
+          "numFrames": 1
+        },
+        {
+          "state": "onion_1/2/3",
+          "sourceSymbol": "garden_onion (char 90)",
+          "file": "content/sprites/garden/onion.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-onion.png",
+          "frameWidth": 56,
+          "frameHeight": 72,
+          "numFrames": 1
+        },
+        {
+          "state": "parsnip_1/2/3",
+          "sourceSymbol": "garden_parsnip (char 88)",
+          "file": "content/sprites/garden/parsnip.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-parsnip.png",
+          "frameWidth": 59,
+          "frameHeight": 58,
+          "numFrames": 1
+        },
+        {
+          "state": "potato_1/2/3",
+          "sourceSymbol": "garden_potato (char 86)",
+          "file": "content/sprites/garden/potato.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-potato.png",
+          "frameWidth": 46,
+          "frameHeight": 62,
+          "numFrames": 1
+        },
+        {
+          "state": "pumpkin_1/2/3",
+          "sourceSymbol": "garden_pumpkin (char 84)",
+          "file": "content/sprites/garden/pumpkin.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-pumpkin.png",
+          "frameWidth": 62,
+          "frameHeight": 48,
+          "numFrames": 1
+        },
+        {
+          "state": "rice_1/2/3",
+          "sourceSymbol": "garden_rice (char 80)",
+          "file": "content/sprites/garden/rice.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-rice.png",
+          "frameWidth": 70,
+          "frameHeight": 75,
+          "numFrames": 1
+        },
+        {
+          "state": "spinach_1/2/3",
+          "sourceSymbol": "garden_spinach (char 78)",
+          "file": "content/sprites/garden/spinach.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-spinach.png",
+          "frameWidth": 60,
+          "frameHeight": 66,
+          "numFrames": 1
+        },
+        {
+          "state": "tomato_1/2/3",
+          "sourceSymbol": "garden_tomato (char 74)",
+          "file": "content/sprites/garden/tomato.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-tomato.png",
+          "frameWidth": 64,
+          "frameHeight": 71,
+          "numFrames": 1
+        },
+        {
+          "state": "zucchini_1/2/3",
+          "sourceSymbol": "garden_zucchini (char 70)",
+          "file": "content/sprites/garden/zucchini.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/garden-zucchini.png",
+          "frameWidth": 69,
+          "frameHeight": 79,
+          "numFrames": 1
+        }
+      ],
+      "complexityNote": "garden_new.swf has exactly one mature-crop graphic per crop type -- no separate 1/2/3 growth-stage variants exist in the source. Garden.dart's _createCropStates() numbers each crop's 3 growth-stage Spritesheet entries (${crop}_1/_2/_3); this pass reuses the single real converted crop image across all 3 numbered states for that crop, the same documented precedent used for fruit_tree's per-level sprite reuse. The 4 empty-plot states (new/hoed/watered/planted_baby) were identified by visually inspecting each rendered candidate frame image (no internal frame labels distinguish them): 'depleted' shows cluttered/weedy dirt (matches an un-hoed 'new' plot), 'dry' shows plain tilled dirt (matches 'hoed'), 'wet' shows dark damp dirt (matches 'watered'), and 'seedling_wet' shows a tiny green sprout in wet dirt (matches 'planted_baby')."
+    },
+    {
+      "id": "hell_bartender",
+      "sourcePath": "tmp/glitch-items/inhabitants/hell_bartender/hell_bartender.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/hell_bartender/hell_bartender.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 34,
+        "class": "hellBartender",
+        "totalFrames": 388
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 34) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "idle1",
+          "sourceFrameRange": [
+            1,
+            81
+          ],
+          "file": "content/sprites/hell_bartender/idle1.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_bartender-idle1.png",
+          "frameWidth": 249,
+          "frameHeight": 206,
+          "numFrames": 81
+        },
+        {
+          "state": "idle2",
+          "sourceFrameRange": [
+            82,
+            168
+          ],
+          "file": "content/sprites/hell_bartender/idle2.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_bartender-idle2.png",
+          "frameWidth": 249,
+          "frameHeight": 206,
+          "numFrames": 87
+        },
+        {
+          "state": "talk_right",
+          "sourceFrameRange": [
+            169,
+            271
+          ],
+          "file": "content/sprites/hell_bartender/talk_right.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_bartender-talk_right.png",
+          "frameWidth": 249,
+          "frameHeight": 206,
+          "numFrames": 103
+        },
+        {
+          "state": "talk_right_out",
+          "sourceFrameRange": [
+            272,
+            278
+          ],
+          "file": "content/sprites/hell_bartender/talk_right_out.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_bartender-talk_right_out.png",
+          "frameWidth": 249,
+          "frameHeight": 206,
+          "numFrames": 7
+        },
+        {
+          "state": "talk_left",
+          "sourceFrameRange": [
+            279,
+            388
+          ],
+          "file": "content/sprites/hell_bartender/talk_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_bartender-talk_left.png",
+          "frameWidth": 249,
+          "frameHeight": 206,
+          "numFrames": 110
+        }
+      ],
+      "validationNote": "All 5 resolved frame ranges (81/87/103/7/110) match HellBartender.dart's old hardcoded numFrames exactly."
+    },
+    {
+      "id": "rube",
+      "sourcePath": "tmp/glitch-items/inhabitants/rube/npc_rube.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/rube/npc_rube.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 78,
+        "class": "npc_rube_fla.Rube_1",
+        "totalFrames": 1001
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 78) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spawn_in",
+          "sourceFrameRange": [
+            2,
+            206
+          ],
+          "file": "content/sprites/rube/spawn_in.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-spawn_in.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 205
+        },
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            207,
+            230
+          ],
+          "file": "content/sprites/rube/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-walk.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 24,
+          "note": "Old hardcoded numFrames was 15; resolved real range is 24 frames."
+        },
+        {
+          "state": "walk_end",
+          "sourceFrameRange": [
+            231,
+            244
+          ],
+          "file": "content/sprites/rube/walk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-walk_end.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 14
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            245,
+            264
+          ],
+          "file": "content/sprites/rube/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-talk.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 20
+        },
+        {
+          "state": "offer_trade",
+          "sourceFrameRange": [
+            265,
+            700
+          ],
+          "file": "content/sprites/rube/offer_trade.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-offer_trade.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 436,
+          "note": "Old hardcoded numFrames was 340; resolved real range is 436 frames."
+        },
+        {
+          "state": "offer_accept",
+          "sourceFrameRange": [
+            701,
+            770
+          ],
+          "file": "content/sprites/rube/offer_accept.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-offer_accept.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 70
+        },
+        {
+          "state": "offer_reject",
+          "sourceFrameRange": [
+            771,
+            900
+          ],
+          "file": "content/sprites/rube/offer_reject.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-offer_reject.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 130
+        },
+        {
+          "state": "fade_out",
+          "sourceFrameRange": [
+            901,
+            1001
+          ],
+          "file": "content/sprites/rube/fade_out.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/rube-fade_out.png",
+          "frameWidth": 114,
+          "frameHeight": 158,
+          "numFrames": 101
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "iconic",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "reason": "Single-frame label present but not referenced by any state in coUserver's Rube entity class."
+        }
+      ],
+      "validationNote": "6 of 8 converted states' resolved frame counts match Rube.dart's old hardcoded values exactly; walk and offer_trade differ (see per-state notes) and use the source-derived values."
+    },
+    {
+      "id": "vistingstone",
+      "sourcePath": "tmp/glitch-items/misc/visiting_stone/visiting_stone.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/visiting_stone/visiting_stone.fla",
+      "sourceFormat": "SWF, vector shapes only (2 unrendered shape tags total), no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 3,
+        "class": null,
+        "totalFrames": 1,
+        "note": "Nested under the exported MainTimeline (char 0, class visiting_stone_fla.MainTimeline); a tiny static single-frame character, matching VisitingStone.dart's single static '_' state."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 3) -> build-sprite-sheet.py (1-frame passthrough)",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "up",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/vistingstone/up.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/vistingstone-up.png",
+          "frameWidth": 82,
+          "frameHeight": 155,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "firefly",
+      "sourcePath": "tmp/glitch-items/misc/npc/npc_firefly/npc_firefly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/npc/npc_firefly/npc_firefly.fla",
+      "sourceFormat": "SWF, vector shapes only (1 unrendered shape tag total), no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 3,
+        "class": null,
+        "totalFrames": 149,
+        "note": "Not exported via SymbolClass (only the MainTimeline is); located by scanning DefineSprite tags for the one whose body begins with a 'fullPath' FrameLabel."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 3) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fullPath",
+          "sourceFrameRange": [
+            1,
+            89
+          ],
+          "file": "content/sprites/firefly/fullPath.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/firefly-fullPath.png",
+          "frameWidth": 88,
+          "frameHeight": 42,
+          "numFrames": 89
+        },
+        {
+          "state": "halfPath",
+          "sourceFrameRange": [
+            90,
+            129
+          ],
+          "file": "content/sprites/firefly/halfPath.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/firefly-halfPath.png",
+          "frameWidth": 88,
+          "frameHeight": 42,
+          "numFrames": 40
+        },
+        {
+          "state": "smallPath",
+          "sourceFrameRange": [
+            130,
+            149
+          ],
+          "file": "content/sprites/firefly/smallPath.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/firefly-smallPath.png",
+          "frameWidth": 88,
+          "frameHeight": 42,
+          "numFrames": 20
+        }
+      ],
+      "validationNote": "All 3 resolved frame counts (89/40/20) match Firefly.dart's old hardcoded numFrames exactly."
+    },
+    {
+      "id": "helga",
+      "sourcePath": "tmp/glitch-items/inhabitants/helga/npc_jabba2.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/helga/npc_jabba2.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 251,
+        "class": null,
+        "totalFrames": 600,
+        "note": "Not exported via SymbolClass (only MainTimeline is, as npc_helga_fla.MainTimeline); located by scanning DefineSprite tags for the one whose body begins with a 'walk_left' FrameLabel."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 251) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "turn_left",
+          "sourceFrameRange": [
+            93,
+            110
+          ],
+          "file": "content/sprites/helga/turn_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-turn_left.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 18,
+          "note": "dart key 'turn_left' has Spritesheet stateName 'turn'; maps to the source's 'turn' FrameLabel."
+        },
+        {
+          "state": "turn_right",
+          "sourceFrameRange": [
+            39,
+            54
+          ],
+          "file": "content/sprites/helga/turn_right.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-turn_right.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 16
+        },
+        {
+          "state": "walk_left",
+          "sourceFrameRange": [
+            1,
+            23
+          ],
+          "file": "content/sprites/helga/walk_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-walk_left.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 23,
+          "note": "Old hardcoded numFrames was 16; resolved real range is 23 frames."
+        },
+        {
+          "state": "walk_left_end",
+          "sourceFrameRange": [
+            24,
+            38
+          ],
+          "file": "content/sprites/helga/walk_left_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-walk_left_end.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 15
+        },
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            55,
+            77
+          ],
+          "file": "content/sprites/helga/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-walk.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 23,
+          "note": "Old hardcoded numFrames was 16; resolved real range is 23 frames."
+        },
+        {
+          "state": "walk_end",
+          "sourceFrameRange": [
+            78,
+            92
+          ],
+          "file": "content/sprites/helga/walk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-walk_end.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 15
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            111,
+            182
+          ],
+          "file": "content/sprites/helga/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-talk.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 72
+        },
+        {
+          "state": "impatient",
+          "sourceFrameRange": [
+            183,
+            280
+          ],
+          "file": "content/sprites/helga/impatient.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-impatient.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 98
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            281,
+            600
+          ],
+          "file": "content/sprites/helga/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/helga-idle_stand.png",
+          "frameWidth": 440,
+          "frameHeight": 196,
+          "numFrames": 320,
+          "note": "The dart source had idle_stand split across two dead-URL Spritesheet entries (idle_stand=189 frames + idle_stand_2=131 frames, 320 combined -- a historic filesize-driven asset split); the real single source range covers both (320 frames). The unused 'idle_stand_2' dict key (never setState'd anywhere in the codebase, confirmed by grep) is kept pointing at this same converted file rather than removed, to minimize unrelated changes."
+        }
+      ],
+      "validationNote": "7 of 9 converted states match Helga.dart's old hardcoded values exactly (turn_left/turn_right/walk_left_end/walk_end/talk/impatient/idle_stand-combined); walk_left and walk differ (see per-state notes)."
+    },
+    {
+      "id": "uncle_friendly",
+      "sourcePath": "tmp/glitch-items/inhabitants/uncle_friendly/npc_jabba1.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/uncle_friendly/npc_jabba1.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 187,
+        "class": "npc_jabba1_fla.shopkeeper_1",
+        "totalFrames": 464
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 187) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            2,
+            23
+          ],
+          "file": "content/sprites/uncle_friendly/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-walk.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 22,
+          "note": "Old hardcoded numFrames was 14; resolved real range is 22 frames."
+        },
+        {
+          "state": "walk_end",
+          "sourceFrameRange": [
+            24,
+            33
+          ],
+          "file": "content/sprites/uncle_friendly/walk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-walk_end.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 10
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            34,
+            86
+          ],
+          "file": "content/sprites/uncle_friendly/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-talk.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 53
+        },
+        {
+          "state": "talk_end",
+          "sourceFrameRange": [
+            87,
+            100
+          ],
+          "file": "content/sprites/uncle_friendly/talk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-talk_end.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 14
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            101,
+            355
+          ],
+          "file": "content/sprites/uncle_friendly/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-idle_stand.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 255,
+          "note": "Same historic split-asset pattern as helga: old idle_stand=180 + idle_stand_2=74 (254 combined, matching the real 255 range within 1 frame). The unused 'idle_stand_2' key is kept pointing at this same converted file."
+        },
+        {
+          "state": "impatient",
+          "sourceFrameRange": [
+            356,
+            441
+          ],
+          "file": "content/sprites/uncle_friendly/impatient.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-impatient.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 86
+        },
+        {
+          "state": "turn",
+          "sourceFrameRange": [
+            442,
+            448
+          ],
+          "file": "content/sprites/uncle_friendly/turn.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-turn.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 7
+        },
+        {
+          "state": "walk_reverse",
+          "sourceFrameRange": [
+            449,
+            464
+          ],
+          "file": "content/sprites/uncle_friendly/walk_reverse.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/uncle_friendly-walk_reverse.png",
+          "frameWidth": 586,
+          "frameHeight": 260,
+          "numFrames": 16,
+          "note": "Old hardcoded numFrames was 15; resolved real range is 16 frames."
+        }
+      ],
+      "validationNote": "6 of 8 converted states match UncleFriendly.dart's old hardcoded values exactly or within the expected combined-split tolerance; walk and walk_reverse differ slightly."
+    },
+    {
+      "id": "meal_vendor",
+      "sourcePath": "tmp/glitch-items/inhabitants/meal_vendor/npc_cooking_vendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/meal_vendor/npc_cooking_vendor.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 116,
+        "class": null,
+        "totalFrames": 550,
+        "note": "Not exported via SymbolClass (only MainTimeline is); located by scanning DefineSprite tags for the one whose body begins with a 'walk_right' FrameLabel."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 116) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk (stateName walk_right)",
+          "sourceFrameRange": [
+            1,
+            20
+          ],
+          "file": "content/sprites/meal_vendor/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/meal_vendor-walk.png",
+          "frameWidth": 196,
+          "frameHeight": 238,
+          "numFrames": 20,
+          "note": "Old hardcoded numFrames was 16; resolved real range is 20 frames."
+        },
+        {
+          "state": "walk_left",
+          "sourceFrameRange": [
+            35,
+            58
+          ],
+          "file": "content/sprites/meal_vendor/walk_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/meal_vendor-walk_left.png",
+          "frameWidth": 196,
+          "frameHeight": 238,
+          "numFrames": 24,
+          "note": "Old hardcoded numFrames was 16; resolved real range is 24 frames."
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            75,
+            110
+          ],
+          "file": "content/sprites/meal_vendor/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/meal_vendor-talk.png",
+          "frameWidth": 196,
+          "frameHeight": 238,
+          "numFrames": 36
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            111,
+            500
+          ],
+          "file": "content/sprites/meal_vendor/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/meal_vendor-idle_stand.png",
+          "frameWidth": 196,
+          "frameHeight": 238,
+          "numFrames": 390,
+          "note": "Old hardcoded numFrames was 357; resolved real range is 390 frames."
+        },
+        {
+          "state": "attract",
+          "sourceFrameRange": [
+            501,
+            550
+          ],
+          "file": "content/sprites/meal_vendor/attract.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/meal_vendor-attract.png",
+          "frameWidth": 196,
+          "frameHeight": 238,
+          "numFrames": 50
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "walk_right_end/walk_left_end",
+          "sourceFrameRange": [
+            21,
+            74
+          ],
+          "reason": "Present as frame labels in the source but not referenced by any state in coUserver's MealVendor entity class."
+        }
+      ],
+      "validationNote": "talk and attract resolved frame counts match MealVendor.dart's old hardcoded values exactly; walk/walk_left/idle_stand differ (see per-state notes)."
+    },
+    {
+      "id": "sno_cone",
+      "sourcePath": "tmp/glitch-items/inhabitants/sno_cone_vending_machine/npc_sno_cone_vending_machine.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/sno_cone_vending_machine/npc_sno_cone_vending_machine.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 79,
+        "class": "npc_sno_cone_vending_machine_fla.snoconevendor_1",
+        "totalFrames": 159
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 79) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk_right",
+          "sourceFrameRange": [
+            2,
+            15
+          ],
+          "file": "content/sprites/sno_cone/walk_right.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-walk_right.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 14,
+          "note": "Old hardcoded numFrames was 7; resolved real range is 14 frames."
+        },
+        {
+          "state": "walk_left",
+          "sourceFrameRange": [
+            16,
+            29
+          ],
+          "file": "content/sprites/sno_cone/walk_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-walk_left.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 14,
+          "note": "Old hardcoded numFrames was 7; resolved real range is 14 frames."
+        },
+        {
+          "state": "walk_end",
+          "sourceFrameRange": [
+            30,
+            43
+          ],
+          "file": "content/sprites/sno_cone/walk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-walk_end.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 14
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            44,
+            63
+          ],
+          "file": "content/sprites/sno_cone/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-talk.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 20
+        },
+        {
+          "state": "attract",
+          "sourceFrameRange": [
+            64,
+            97
+          ],
+          "file": "content/sprites/sno_cone/attract.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-attract.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 34
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            98,
+            159
+          ],
+          "file": "content/sprites/sno_cone/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/sno_cone-idle_stand.png",
+          "frameWidth": 192,
+          "frameHeight": 228,
+          "numFrames": 62
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "iconic",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "reason": "Single-frame label present but not referenced by any state in coUserver's SnoConeVendingMachine entity class."
+        }
+      ],
+      "validationNote": "4 of 6 converted states match SnoConeVendingMachine.dart's old hardcoded values exactly; walk_right and walk_left differ (see per-state notes)."
+    },
+    {
+      "id": "tool_vendor",
+      "sourcePath": "tmp/glitch-items/inhabitants/tool_vendor/npc_tool_vendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/tool_vendor/npc_tool_vendor.fla",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps",
+      "rootSymbol": {
+        "characterId": 102,
+        "class": null,
+        "totalFrames": 475,
+        "note": "Not exported via SymbolClass (only MainTimeline is); located by scanning DefineSprite tags for the one whose body begins with a 'walk' FrameLabel."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 102) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            1,
+            24
+          ],
+          "file": "content/sprites/tool_vendor/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-walk.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 24
+        },
+        {
+          "state": "turn_left",
+          "sourceFrameRange": [
+            25,
+            34
+          ],
+          "file": "content/sprites/tool_vendor/turn_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-turn_left.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 10
+        },
+        {
+          "state": "walk_left",
+          "sourceFrameRange": [
+            35,
+            59
+          ],
+          "file": "content/sprites/tool_vendor/walk_left.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-walk_left.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 25
+        },
+        {
+          "state": "turn_right",
+          "sourceFrameRange": [
+            60,
+            70
+          ],
+          "file": "content/sprites/tool_vendor/turn_right.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-turn_right.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 11
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            71,
+            399
+          ],
+          "file": "content/sprites/tool_vendor/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-idle_stand.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 329
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            400,
+            425
+          ],
+          "file": "content/sprites/tool_vendor/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-talk.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 26
+        },
+        {
+          "state": "attract",
+          "sourceFrameRange": [
+            426,
+            475
+          ],
+          "file": "content/sprites/tool_vendor/attract.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/tool_vendor-attract.png",
+          "frameWidth": 185,
+          "frameHeight": 258,
+          "numFrames": 50
+        }
+      ],
+      "validationNote": "All 7 resolved frame ranges match ToolVendor.dart's old hardcoded numFrames exactly -- strong independent confirmation of the source mapping."
+    },
+    {
+      "id": "street_spirit_firebog",
+      "sourcePath": "tmp/glitch-items/inhabitants/street_spirit_firebog/street_spirit_firebog.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_firebog/street_spirit_firebog.fla",
+      "actionScriptSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_firebog/street_spirit_firebog.as",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps; 3 size variants (small/medium/large) as separate symbols",
+      "rootSymbol": {
+        "characterId": 161,
+        "class": "large",
+        "totalFrames": 332,
+        "note": "StreetSpiritFirebog.dart's dead URLs specify 'size_large' explicitly, matching this symbol; the small (char 97) and medium (char 94) size variants exist but are unused by the dart class."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 161) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "idle_move",
+          "sourceFrameRange": [
+            1,
+            24
+          ],
+          "file": "content/sprites/ss_firebog/idle_move.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_firebog-idle_move.png",
+          "frameWidth": 283,
+          "frameHeight": 549,
+          "numFrames": 24
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            25,
+            86
+          ],
+          "file": "content/sprites/ss_firebog/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_firebog-talk.png",
+          "frameWidth": 283,
+          "frameHeight": 549,
+          "numFrames": 62,
+          "note": "Old hardcoded numFrames was 17; resolved real range is 62 frames."
+        },
+        {
+          "state": "open",
+          "sourceFrameRange": [
+            87,
+            105
+          ],
+          "file": "content/sprites/ss_firebog/open.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_firebog-open.png",
+          "frameWidth": 283,
+          "frameHeight": 549,
+          "numFrames": 19
+        },
+        {
+          "state": "close",
+          "sourceFrameRange": [
+            106,
+            122
+          ],
+          "file": "content/sprites/ss_firebog/close.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_firebog-close.png",
+          "frameWidth": 283,
+          "frameHeight": 549,
+          "numFrames": 17
+        },
+        {
+          "state": "idle_cry",
+          "sourceFrameRange": [
+            201,
+            224
+          ],
+          "file": "content/sprites/ss_firebog/idle_cry.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_firebog-idle_cry.png",
+          "frameWidth": 283,
+          "frameHeight": 549,
+          "numFrames": 24
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "rooked/rookedLoop/rookedRecover/loneliness_in/loneliness/loneliness_out",
+          "sourceFrameRange": [
+            123,
+            332
+          ],
+          "reason": "Present as frame labels in the source but not referenced by any state in coUserver's StreetSpiritFirebog entity class."
+        }
+      ],
+      "validationNote": "idle_move/open/close/idle_cry resolved frame counts match the old hardcoded values exactly; talk differs significantly (17 vs 62) -- source-derived value used."
+    },
+    {
+      "id": "street_spirit_groddle",
+      "sourcePath": "tmp/glitch-items/inhabitants/street_spirit_groddle/street_spirit_groddle.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_groddle/street_spirit_groddle.fla",
+      "actionScriptSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_groddle/street_spirit_groddle.as",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps. StreetSpiritGroddle.dart's VARIANTS map has 12 giants x 2 times-of-day x 7 states = 168 dead-link Spritesheet entries; the source SWF represents this as ~45 separately-composited layered part symbols (base_L*/bottom_L*/eyes_L*/skull_L*/top_L* -- one body-base skin, one leg/skirt accessory, one eye style, one head accessory, one hat/hair accessory per giant), assembled at runtime by AS3 code, not as 168 independent pre-rendered characters.",
+      "rootSymbol": {
+        "characterId": 377,
+        "class": "street_spirit_groddle_fla.streetSpiritContainer_1",
+        "totalFrames": 477,
+        "note": "The container symbol that composites the layered parts. Its authored/default timeline (before any runtime part-swapping) already renders one complete, fully-composited character -- a root-vegetable-like body with dirt/leaf-sprout styling and simple dot eyes -- confirmed both by direct visual inspection (a real character render, not an empty rig) and because its resolved frame-label ranges for idle_move/talk/turn/open/close/idle_hold (119/73/37/19/17/85) match VARIANTS['alph']['day']'s old hardcoded numFrames exactly, independently confirming this default composite IS the 'alph'/'day' variant."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 377's default/authored composite) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "partial -- 1 of 24 giant/light variants converted with real art (see complexityNote)",
+      "outputs": [
+        {
+          "state": "alph/day: idle_move",
+          "sourceFrameRange": [
+            2,
+            120
+          ],
+          "file": "content/sprites/streetspiritgroddle/idle_move.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-idle_move.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 119
+        },
+        {
+          "state": "alph/day: talk",
+          "sourceFrameRange": [
+            121,
+            193
+          ],
+          "file": "content/sprites/streetspiritgroddle/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-talk.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 73
+        },
+        {
+          "state": "alph/day: turn",
+          "sourceFrameRange": [
+            194,
+            230
+          ],
+          "file": "content/sprites/streetspiritgroddle/turn.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-turn.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 37
+        },
+        {
+          "state": "alph/day: open",
+          "sourceFrameRange": [
+            231,
+            249
+          ],
+          "file": "content/sprites/streetspiritgroddle/open.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-open.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 19
+        },
+        {
+          "state": "alph/day: close",
+          "sourceFrameRange": [
+            250,
+            266
+          ],
+          "file": "content/sprites/streetspiritgroddle/close.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-close.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 17
+        },
+        {
+          "state": "alph/day: idle_hold",
+          "sourceFrameRange": [
+            267,
+            351
+          ],
+          "file": "content/sprites/streetspiritgroddle/idle_hold.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-idle_hold.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 85
+        },
+        {
+          "state": "alph/day: still",
+          "sourceFrameRange": [
+            231,
+            231
+          ],
+          "file": "content/sprites/streetspiritgroddle/still.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/streetspiritgroddle-still.png",
+          "frameWidth": 372,
+          "frameHeight": 328,
+          "numFrames": 1
+        }
+      ],
+      "complexityNote": "Only VARIANTS['alph']['day'] (7 states) was converted with real art; the remaining 23 giant/light combinations (alph/night, cosma, friendly, grendaline, humbaba, lem, mab, pot, spriggan, tii, zille x day/night) each require compositing a distinct combination of the layered base/bottom/eyes/skull/top part symbols, which ffdec's static per-frame export cannot reconstruct (those combinations only exist as AS3 runtime instantiation logic, not as pre-rendered timelines in the SWF). They remain on their original dead childrenofur.com URLs, deliberately deferred -- see runtime-manifest.json's deliberatelyDeferred entry 'street_spirit_groddle_reskins'. This follows the same base-converted/reskins-deferred precedent already used for the shrine_* entities (Ix variant converted, Firebog/Ix/Uralia reskin subclasses deferred)."
+    },
+    {
+      "id": "street_spirit_zutto",
+      "sourcePath": "tmp/glitch-items/inhabitants/street_spirit_zutto/street_spirit_zutto.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_zutto/street_spirit_zutto.fla",
+      "actionScriptSiblingPresent": "tmp/glitch-items/inhabitants/street_spirit_zutto/street_spirit_zutto.as",
+      "sourceFormat": "SWF, vector shapes only, no embedded bitmaps; 4 cap-color accessory variants (capOrange/capGreen/capAqua/capPurple) plus an unrelated uraliaStreetSpirit symbol",
+      "rootSymbol": {
+        "characterId": 20,
+        "class": "capAqua",
+        "totalFrames": 266,
+        "note": "StreetSpiritZutto.dart's dead URLs specify 'cap_capAqua' explicitly, matching this symbol; the capOrange/capGreen/capPurple siblings are unused by the dart class."
+      },
+      "conversionMethod": "ffdec -export sprite (rasterize char 20) -> swf-frame-labels.py (resolve real frame numbers per state) -> build-sprite-sheet.py",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "groundIdle",
+          "sourceFrameRange": [
+            1,
+            24
+          ],
+          "file": "content/sprites/ss_zutto/groundIdle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_zutto-groundIdle.png",
+          "frameWidth": 85,
+          "frameHeight": 61,
+          "numFrames": 24
+        },
+        {
+          "state": "raise",
+          "sourceFrameRange": [
+            25,
+            55
+          ],
+          "file": "content/sprites/ss_zutto/raise.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_zutto-raise.png",
+          "frameWidth": 85,
+          "frameHeight": 61,
+          "numFrames": 31
+        },
+        {
+          "state": "hoverIdle",
+          "sourceFrameRange": [
+            56,
+            78
+          ],
+          "file": "content/sprites/ss_zutto/hoverIdle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_zutto-hoverIdle.png",
+          "frameWidth": 85,
+          "frameHeight": 61,
+          "numFrames": 23
+        },
+        {
+          "state": "hoverTalk",
+          "sourceFrameRange": [
+            102,
+            147
+          ],
+          "file": "content/sprites/ss_zutto/hoverTalk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_zutto-hoverTalk.png",
+          "frameWidth": 85,
+          "frameHeight": 61,
+          "numFrames": 46
+        },
+        {
+          "state": "lower",
+          "sourceFrameRange": [
+            148,
+            173
+          ],
+          "file": "content/sprites/ss_zutto/lower.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/ss_zutto-lower.png",
+          "frameWidth": 85,
+          "frameHeight": 61,
+          "numFrames": 26
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "hoverCry/loneliness_in/loneliness/loneliness_out",
+          "sourceFrameRange": [
+            79,
+            266
+          ],
+          "reason": "Present as frame labels in the source but not referenced by any state in coUserver's StreetSpiritZutto entity class."
+        }
+      ],
+      "validationNote": "All 5 resolved frame ranges match StreetSpiritZutto.dart's old hardcoded numFrames exactly."
     }
   ],
   "notConverted": {

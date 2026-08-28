@@ -57,26 +57,26 @@ class ToolVendor extends Vendor {
 		speed = 75;
 		states = {
 			"attract": new Spritesheet("attract",
-			                           "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_attract_png_1354831448.png",
-			                           925, 2500, 185, 250, 50, false),
+			                           "files/sprites/generated/converted/tool_vendor-attract.png",
+			                           9250, 258, 185, 258, 50, false),
 			"idle_stand": new Spritesheet("idle_stand",
-			                              "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_idle_stand_png_1354831438.png",
-			                              4070, 3750, 185, 250, 329, true),
+			                              "files/sprites/generated/converted/tool_vendor-idle_stand.png",
+			                              60865, 258, 185, 258, 329, true),
 			"talk": new Spritesheet("talk",
-			                        "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_talk_png_1354831442.png",
-			                        925, 1500, 185, 250, 26, false),
+			                        "files/sprites/generated/converted/tool_vendor-talk.png",
+			                        4810, 258, 185, 258, 26, false),
 			"turn_left": new Spritesheet("turn_left",
-			                             "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_turn_left_png_1354831414.png",
-			                             925, 500, 185, 250, 10, false),
+			                             "files/sprites/generated/converted/tool_vendor-turn_left.png",
+			                             1850, 258, 185, 258, 10, false),
 			"turn_right": new Spritesheet("turn_right",
-			                              "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_turn_right_png_1354831419.png",
-			                              740, 750, 185, 250, 11, false),
+			                              "files/sprites/generated/converted/tool_vendor-turn_right.png",
+			                              2035, 258, 185, 258, 11, false),
 			"walk_left": new Spritesheet("walk_left",
-			                             "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_walk_left_png_1354831417.png",
-			                             925, 1250, 185, 250, 25, true),
+			                             "files/sprites/generated/converted/tool_vendor-walk_left.png",
+			                             4625, 258, 185, 258, 25, true),
 			"walk": new Spritesheet("walk",
-			                        "https://childrenofur.com/assets/entityImages/npc_tool_vendor__x1_walk_png_1354831412.png",
-			                        925, 1250, 185, 250, 24, true)
+			                        "files/sprites/generated/converted/tool_vendor-walk.png",
+			                        4440, 258, 185, 258, 24, true)
 		};
 		setState('idle_stand');
 	}

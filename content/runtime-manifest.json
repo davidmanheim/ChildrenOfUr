@@ -786,6 +786,246 @@
       },
       "status": "converted",
       "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_ti/npc_shrine_ix_ti, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into tii.dart's base (Tii) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The TiiFirebog/TiiIx/TiiUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "auctioneer",
+      "displayName": "Auctioneer",
+      "category": "NPC (vendor-like talk NPC)",
+      "sourceAssetId": "auctioneer",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible by visiting the street it's on and talking to it.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/auctioneer.dart:Auctioneer",
+        "actions": [
+          "Talk To"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (inhabitants/rare_item_vendor, whose internal root symbol is named 'smuggler' -- see source-manifest.json) and wired into auctioneer.dart, replacing dead childrenofur.com links. Entity logic (talkTo) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "crab",
+      "displayName": "Crab",
+      "category": "NPC (musicblock DJ)",
+      "sourceAssetId": "crab",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible by visiting the street it's on and playing musicblocks for it.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/crab.dart:Crab",
+        "actions": [
+          "play for",
+          "buy crabpack"
+        ],
+        "rewardItem": [
+          "crabpod_headphones",
+          "crabato_juice"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into crab.dart, replacing dead childrenofur.com links. Entity logic (playMusic/buyCrabpack) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "garden",
+      "displayName": "Crop/Herb Garden",
+      "category": "NPC (interactive plot)",
+      "sourceAssetId": "garden",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the croppery skill loop (hoe, water, plant, harvest).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/garden.dart:Garden",
+        "baseClassNote": "HerbGarden extends Garden with the same sprite set",
+        "actions": [
+          "hoe",
+          "water",
+          "plant",
+          "harvest",
+          "view"
+        ],
+        "skill": "croppery"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (harvestable_resources/garden_new.swf) and wired into garden.dart, replacing dead childrenofur.com links, including all 13 crop types and the 4 empty-plot states. Entity logic (hoe/water/plant/harvest) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "hell_bartender",
+      "displayName": "Hell Bartender",
+      "category": "NPC (drink vendor, not yet functional)",
+      "sourceAssetId": "hell_bartender",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible by visiting the street it's on (drink actions are currently stubbed server-side).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/hell_bartender.dart:HellBartender",
+        "actions": [
+          "glass of wine",
+          "pint of beer"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into hell_bartender.dart, replacing dead childrenofur.com links. Entity logic already existed (stubbed 'still setting up shop' responses) and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "rube",
+      "displayName": "Rube",
+      "category": "NPC (roaming trader, currently disabled)",
+      "sourceAssetId": "rube",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; spawn logic (maybeSpawn) is currently short-circuited to always return false server-side pending a fix, independent of this pass.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/rube.dart:Rube",
+        "actions": [
+          "Give Cubimal",
+          "Talk To"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into rube.dart, replacing dead childrenofur.com links. Entity logic (trade offers/cubimal gifting) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope, and the class's own maybeSpawn() is already disabled independent of this pass."
+    },
+    {
+      "id": "vistingstone",
+      "displayName": "Visiting Stone",
+      "category": "NPC (fast-travel waypoint)",
+      "sourceAssetId": "vistingstone",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible by visiting the street it's on and using 'visit a street'.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vistingstone.dart:VisitingStone",
+        "actions": [
+          "visit a street"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF (misc/visiting_stone) and wired into vistingstone.dart, replacing a dead childrenofur.com link. Entity logic (visitAStreet) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "firefly",
+      "displayName": "Firefly",
+      "category": "animal (inhabitant)",
+      "sourceAssetId": "firefly",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible at night via the collect loop (with a firefly_jar).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/animals/firefly.dart:Firefly",
+        "actions": [
+          "collect"
+        ],
+        "itemRequirement": [
+          "firefly_jar"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (misc/npc/npc_firefly) and wired into firefly.dart, replacing dead childrenofur.com links. Entity logic (collect/night-time flight patterns) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+    },
+    {
+      "id": "jabba_helga",
+      "displayName": "Helga (Drinks Vendor)",
+      "category": "NPC vendor",
+      "sourceAssetId": "helga",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (drinks).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/jabba_helga.dart:Helga",
+        "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (inhabitants/helga/npc_jabba2.swf) and wired into jabba_helga.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/impatient appearance. Vendor logic and item catalog (drinks) already existed and are unchanged; catalog item icons were not converted this pass (lower priority per batch scope). Not yet placed."
+    },
+    {
+      "id": "jabba_unclefriendly",
+      "displayName": "Uncle Friendly (Grocer)",
+      "category": "NPC vendor",
+      "sourceAssetId": "uncle_friendly",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (groceries/produce).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/jabba_unclefriendly.dart:UncleFriendly",
+        "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (inhabitants/uncle_friendly/npc_jabba1.swf) and wired into jabba_unclefriendly.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/impatient appearance. Vendor logic and item catalog already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+    },
+    {
+      "id": "mealvendor",
+      "displayName": "Meal Vendor",
+      "category": "NPC vendor",
+      "sourceAssetId": "meal_vendor",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (cooked meals).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/mealvendor.dart:MealVendor",
+        "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (inhabitants/meal_vendor/npc_cooking_vendor.swf) and wired into mealvendor.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/attract appearance. Vendor logic and item catalog already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+    },
+    {
+      "id": "snoconevendingmachine",
+      "displayName": "Sno Cone Vending Machine",
+      "category": "NPC vendor",
+      "sourceAssetId": "sno_cone",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (sno cones).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/snoconevendingmachine.dart:SnoConeVendingMachine",
+        "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into snoconevendingmachine.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/attract appearance. Vendor logic and item catalog already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+    },
+    {
+      "id": "toolvendor",
+      "displayName": "Tool Vendor",
+      "category": "NPC vendor",
+      "sourceAssetId": "tool_vendor",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (tools/machines).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+        "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into toolvendor.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/turn/talk/attract appearance. Vendor logic and item catalog (extensive tool/machine list) already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+    },
+    {
+      "id": "streetspiritfirebog",
+      "displayName": "Street Spirit (Firebog)",
+      "category": "NPC vendor (regional street spirit)",
+      "sourceAssetId": "street_spirit_firebog",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (region-specific goods).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+        "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (large size variant) and wired into streetspiritfirebog.dart, replacing dead childrenofur.com links across all 5 states this class uses (idle_move/talk/open/close/idle_cry). Vendor logic already existed and is unchanged. Not yet placed."
+    },
+    {
+      "id": "streetspiritgroddle",
+      "displayName": "Street Spirit (Groddle)",
+      "category": "NPC vendor (giant-reskinned street spirit)",
+      "sourceAssetId": "street_spirit_groddle",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow, with its costume matching whichever giant shrine is present on the street (or a random giant if none).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle",
+        "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
+      },
+      "status": "converted",
+      "statusNote": "Partial conversion: the 'alph'/'day' giant/light variant (7 states) is converted from the source SWF's default composited puppet and wired in, replacing its dead links; the other 23 giant/light variant combinations remain on dead links, deliberately deferred -- see source-manifest.json's complexityNote and runtime-manifest.json's deliberatelyDeferred entry 'street_spirit_groddle_reskins'. Vendor logic (giant detection, day/night selection) already existed and is unchanged. Not yet placed."
+    },
+    {
+      "id": "streetspiritzutto",
+      "displayName": "Street Spirit (Zutto)",
+      "category": "NPC vendor (regional street spirit)",
+      "sourceAssetId": "street_spirit_zutto",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (region-specific goods).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+        "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (capAqua cap-color variant, matching the dart class's dead-link filenames) and wired into streetspiritzutto.dart, replacing dead childrenofur.com links across all 5 states this class uses (groundIdle/raise/hoverIdle/hoverTalk/lower). Vendor logic already existed and is unchanged. Not yet placed."
     }
   ],
   "deliberatelyDeferred": [
@@ -832,6 +1072,12 @@
       "category": "street presentation (CAT422 background/layer art)",
       "reason": "tinyspeck/glitch-locations has not been fetched locally yet (RECOVERY_TODO.md: 'planned'). No source to convert from until it is vendored the way glitch-items and glitch-GameServerJS already are.",
       "replacementMilestone": "Fetch tinyspeck/glitch-locations into tmp/, then apply this same SWF/FLA conversion pipeline to street art."
+    },
+    {
+      "id": "street_spirit_groddle_reskins",
+      "category": "NPC vendor (giant-reskin costume variants)",
+      "reason": "StreetSpiritGroddle.dart's VARIANTS map has 23 remaining giant/light combinations (alph/night, cosma, friendly, grendaline, humbaba, lem, mab, pot, spriggan, tii, zille x day/night) beyond the 1 ('alph'/'day') converted this pass. Each requires compositing a distinct combination of layered base/bottom/eyes/skull/top part symbols from street_spirit_groddle.swf; this combination logic exists only as AS3 runtime instantiation code, not as pre-rendered timelines, so ffdec's static per-frame export cannot reconstruct them without custom multi-layer compositing tooling beyond this pipeline's current scope.",
+      "replacementMilestone": "Extend tools/build-sprite-sheet.py (or a new script) to alpha-composite named part-symbol frame sequences at matching frame offsets, then convert the remaining 23 combinations the same way as 'alph'/'day'."
     }
   ]
 }

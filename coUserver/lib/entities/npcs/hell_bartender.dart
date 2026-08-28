@@ -18,28 +18,28 @@ class HellBartender extends NPC {
 		states = {
 			"idle1": new Spritesheet(
 				"idle1",
-				"https://childrenofur.com/assets/entityImages/hell_bartender__x1_idle1_png_1354837767.png",
-				3416, 1182, 244, 197, 81, true
+				"files/sprites/generated/converted/hell_bartender-idle1.png",
+				20169, 206, 249, 206, 81, true
 			),
 			"idle2": new Spritesheet(
 				"idle2",
-				"https://childrenofur.com/assets/entityImages/hell_bartender__x1_idle2_png_1354837775.png",
-				3660, 1182, 244, 197, 87, false
+				"files/sprites/generated/converted/hell_bartender-idle2.png",
+				21663, 206, 249, 206, 87, false
 			),
 			"talk_left": new Spritesheet(
 				"talk_left",
-				"https://childrenofur.com/assets/entityImages/hell_bartender__x1_talk_left_png_1354837789.png",
-				3904, 1379, 244, 197, 110 , false
+				"files/sprites/generated/converted/hell_bartender-talk_left.png",
+				27390, 206, 249, 206, 110 , false
 			),
 			"talk_right_out": new Spritesheet(
 				"talk_right_out",
-				"https://childrenofur.com/assets/entityImages/hell_bartender__x1_talk_right_out_png_1354837783.png",
-				976, 394, 244, 197, 7 , false
+				"files/sprites/generated/converted/hell_bartender-talk_right_out.png",
+				1743, 206, 249, 206, 7 , false
 			),
 			"talk_right": new Spritesheet(
 				"talk_right",
-				"https://childrenofur.com/assets/entityImages/hell_bartender__x1_talk_right_png_1354837781.png",
-				3660, 1379, 244, 197, 103 , false
+				"files/sprites/generated/converted/hell_bartender-talk_right.png",
+				25647, 206, 249, 206, 103 , false
 			)
 		};
 		setState("idle1");

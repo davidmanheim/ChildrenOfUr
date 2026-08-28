@@ -116,36 +116,36 @@ class Rube extends NPC with MetabolicsChange {
 		states = {
 			'fade_out': new Spritesheet(
 				'fade_out',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_fade_out_png_1354831089.png',
-				972, 1848, 108, 154, 101, false),
+				'files/sprites/generated/converted/rube-fade_out.png',
+				11514, 158, 114, 158, 101, false),
 			'offer_accept': new Spritesheet(
 				'offer_accept',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_offer_accept_png_1354831080.png',
-				972, 1232, 108, 154, 70, false),
+				'files/sprites/generated/converted/rube-offer_accept.png',
+				7980, 158, 114, 158, 70, false),
 			'offer_reject': new Spritesheet(
 				'offer_reject',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_offer_reject_png_1354831084.png',
-				972, 2310, 108, 154, 130, false),
+				'files/sprites/generated/converted/rube-offer_reject.png',
+				14820, 158, 114, 158, 130, false),
 			'offer_trade': new Spritesheet(
 				'offer_trade',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_offer_trade_png_1354831077.png',
-				3672, 1540, 108, 154, 340, true),
+				'files/sprites/generated/converted/rube-offer_trade.png',
+				49704, 158, 114, 158, 436, true),
 			'spawn_in': new Spritesheet(
 				'spawn_in',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_spawn_in_png_1354831067.png',
-				972, 3542, 108, 154, 205, false),
+				'files/sprites/generated/converted/rube-spawn_in.png',
+				23370, 158, 114, 158, 205, false),
 			'talk': new Spritesheet(
 				'talk',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_talk_png_1354831071.png',
-				756, 462, 108, 154, 20, true),
+				'files/sprites/generated/converted/rube-talk.png',
+				2280, 158, 114, 158, 20, true),
 			'walk_end': new Spritesheet(
 				'walk_end',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_walk_end_png_1354831070.png',
-				756, 308, 108, 154, 14, false),
+				'files/sprites/generated/converted/rube-walk_end.png',
+				1596, 158, 114, 158, 14, false),
 			'walk': new Spritesheet(
 				'walk',
-				'https://childrenofur.com/assets/entityImages/npc_rube__x1_walk_png_1354831069.png',
-				864, 308, 108, 154, 15, true)
+				'files/sprites/generated/converted/rube-walk.png',
+				2736, 158, 114, 158, 24, true)
 		};
 		setState('spawn_in');
 		new Future.delayed(new Duration(seconds: 3)).then((_) => setState('walk'));
