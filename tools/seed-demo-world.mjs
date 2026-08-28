@@ -71,7 +71,21 @@ function hash(value) {
   return result >>> 0;
 }
 
-function position(tsid, dynamic, index) {
+// Which types float (elevated above ground is correct -- matches the
+// original design of collectibles/flyers) vs. are ground-anchored (must sit
+// ON the walkable ground line, feet planted, like a real tree/animal).
+// Everything not listed here is ground-anchored. The client places a
+// sprite's *bottom* edge at its `y` (coUclient npc.dart:
+// `top = map['y'] - animation.height`), so for a ground-anchored entity,
+// `y` = the ground line's canvas-local coordinate puts it exactly on the
+// ground; the old code applied the quoin float offset to every type
+// uniformly, which put trees, rocks, and land animals floating up to ~275px
+// in mid-air -- confirmed live (a Bean Tree rendered hovering well above the
+// walkable surface).
+const FLOATING_TYPES = new Set(['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor']);
+const AERIAL_TYPES = new Set(['Butterfly', 'Batterfly', 'HeliKitty']);
+
+function position(tsid, dynamic, index, type) {
 	const seed = hash(`${tsid}:${index}`);
 	if (!dynamic) {
 		// Some historical map records have no accompanying CAT422 layout. Keep
@@ -87,12 +101,24 @@ function position(tsid, dynamic, index) {
 	const r = Number(dynamic.r);
 	const ground = Number(dynamic.ground_y);
 	const height = Math.abs(Number(dynamic.t) - Number(dynamic.b));
-	return {
-		x: Math.round(l + (r - l) * fraction),
-		// Entity coordinates are local to the street canvas, whose origin is at
-		// its top rather than the game's signed ground coordinate.
-		y: Math.round(height + ground - 55 - ((seed >>> 16) % 220))
-  };
+	// Entity coordinates are local to the street canvas, whose origin is at
+	// its top rather than the game's signed ground coordinate; this is the
+	// canvas-local Y of the walkable ground line.
+	const groundLineY = height + ground;
+	let y;
+	if (FLOATING_TYPES.has(type)) {
+		// Floating collectibles: hover well above the ground at a varied
+		// height, matching the original quoin design.
+		y = groundLineY - 55 - ((seed >>> 16) % 220);
+	} else if (AERIAL_TYPES.has(type)) {
+		// Flying creatures: a modest hover height, not quoin-height.
+		y = groundLineY - 20 - ((seed >>> 16) % 80);
+	} else {
+		// Ground-anchored: feet on the ground line, with a few px of natural
+		// variance so a street's row of entities doesn't look perfectly ruled.
+		y = groundLineY - ((seed >>> 16) % 12);
+	}
+	return { x: Math.round(l + (r - l) * fraction), y: Math.round(y) };
 }
 
 const rows = [];
@@ -108,7 +134,7 @@ for (const data of Object.values(streets)) {
 		!Number.isFinite(Number(dynamic.ground_y))) dynamic = null;
 
   for (let index = 0; index < types.length; index++) {
-    const { x, y } = position(data.tsid, dynamic, index);
+    const { x, y } = position(data.tsid, dynamic, index, types[index]);
     rows.push({ id: `demo-${data.tsid}-${index}`, type: types[index], tsid: data.tsid, x, y });
   }
 }
