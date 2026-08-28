@@ -27,6 +27,18 @@ const streets = JSON.parse(fs.readFileSync(
 const hubs = JSON.parse(fs.readFileSync(
   path.join(root, 'coUserver', 'lib', 'common', 'mapdata', 'json', 'hubdata.json'), 'utf8'));
 const locations = path.join(root, 'coUserver', 'CAT422', 'locations');
+// streetdata.json's top-level keys are the actual street names (`Street.label`
+// at runtime -- confirmed by reading coUserver/lib/streets/street.dart and
+// coUserver/lib/common/mapdata/mapdata.dart's getStreetByName, which indexes
+// _streets by this same key). vendors.json is keyed by that identical street
+// name (862/865 of its keys match a streetdata.json key directly), and
+// Vendor's constructor (coUserver/lib/entities/npcs/vendors/vendor.dart) reads
+// `vendorTypes[streetName]` using the Street object's own `label` field --
+// so a placed vendor NPC automatically gets the right stock category with no
+// extra logic here; we only need the street name to apply a documented,
+// grounded (not invented) Garden placement bias below.
+const vendorTypeByStreetName = JSON.parse(fs.readFileSync(
+  path.join(root, 'coUserver', 'lib', 'entities', 'npcs', 'vendors', 'vendors.json'), 'utf8'));
 
 // Resolves a street's region/biome key exactly the way the client already
 // does for world music (coUclient mapdata.dart's checkStringSetting: the
@@ -94,7 +106,10 @@ for (const [region, adjustments] of Object.entries({
   cave: { BerylRock: 2.5, DulliteRock: 2.5, SparklyRock: 2.5, MortarBarnacle: 2, IceNubbin: 1.6 },
   ilmenskie: { BerylRock: 2.5, DulliteRock: 2.5, SparklyRock: 2.5, MortarBarnacle: 2, IceNubbin: 1.6 },
   // Bog: jellisac/peat are bog resources by name; gas plant (swamp gas) fits.
-  firebog: { Jellisac: 2, PeatBog: 2.2, GasPlant: 1.6 },
+  // StreetSpiritFirebog is a genuinely regional asset here too -- its source
+  // SWF and class name (coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart)
+  // are explicitly the Firebog street spirit, not a guess.
+  firebog: { Jellisac: 2, PeatBog: 2.2, GasPlant: 1.6, StreetSpiritFirebog: 9 },
   // Farmland/pastoral: egg plant fits alongside the other farm-style crops.
   uralia2: { EggPlant: 1.4, SpicePlant: 1.3 },
   kajuu: { EggPlant: 1.4, SpicePlant: 1.3 },
@@ -106,6 +121,10 @@ for (const [region, adjustments] of Object.entries({
 })) {
   REGION_THEME[region] = { ...(REGION_THEME[region] ?? {}), ...adjustments };
 }
+// StreetSpiritZutto and StreetSpiritGroddle get no region theme: no confident
+// biome association was found for either in any recovered data (same "don't
+// guess" rule already applied to the giant shrines above) -- see the RARITY
+// table below for their flat rates instead.
 // Shrines are deliberately NOT region-themed: no confident giant-to-biome
 // association exists in any data recovered so far (the 11 giants' regional
 // SWF variants -- Firebog/Ix/Uralia reskins -- are a rendering detail, not a
@@ -127,13 +146,27 @@ for (const [region, adjustments] of Object.entries({
 const QUOIN_TYPES = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor'];
 const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem', 'Mab',
   'Pot', 'Spriggan', 'Tii', 'Zille'];
+// Vendor/harvest NPC family (third asset-conversion batch): Garden.CROPS and
+// its harvest() route, ToolVendor.itemsForSale, and the per-street-category
+// StreetSpirit vendor stock (vendors.json) are all real, unmodified game
+// logic with real converted art, but were never placed anywhere -- see
+// RECOVERY_TODO.md/POTENTIAL_TODO.md "Item economy". Deliberately NOT
+// included: the abstract `StreetSpirit` base class itself. It has no `states`
+// map and never calls setState() (only its concrete subclasses do), so its
+// inherited update() would dereference a null `currentState` and crash the
+// first simulate tick after placement -- confirmed by reading
+// coUserver/lib/entities/npcs/vendors/street_spirit.dart and
+// coUserver/lib/streets/street.dart's putEntitiesInMemory. The 3 concrete,
+// real-art subclasses (StreetSpiritFirebog/Zutto/Groddle) are used instead.
+const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
+  'StreetSpiritFirebog', 'StreetSpiritZutto', 'StreetSpiritGroddle'];
 const REAL_TYPES = ['WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
   'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
   'BerylRock', 'DulliteRock', 'SparklyRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
-  ...SHRINE_TYPES];
+  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES];
 const types = [...QUOIN_TYPES, ...REAL_TYPES]; // still used for the manifest's total-type-count text
 
 // Per-street inclusion chance (0-100) and max instance count for each real
@@ -172,6 +205,25 @@ const RARITY = {
   // still special. No region theming (see REGION_THEME comment above) and
   // never more than one of a given giant on the same street.
   ...Object.fromEntries(SHRINE_TYPES.map(t => [t, { chance: 5, maxCount: 1 }])),
+  // Vendor/harvest NPCs: useful/valuable, not decorative flora/fauna, so
+  // deliberately rarer than the common-tier animals/trees (45-50%) above,
+  // but still common enough that a player exploring a handful of streets
+  // will reliably find one of each -- these are also each capped at a
+  // single instance per street (a second garden/vendor on the same street
+  // adds nothing but clutter).
+  Garden: { chance: 20, maxCount: 1 },
+  ToolVendor: { chance: 12, maxCount: 1 },
+  // StreetSpiritFirebog's flat baseline stays low everywhere (see the
+  // REGION_THEME firebog entry above, which raises it to ~36% there); Zutto
+  // and Groddle get no regional read (no confident association found in any
+  // recovered data -- same rule as the shrines), so a single flat rate
+  // applies everywhere instead of inventing a theme. Groddle is the
+  // "generic" street-spirit skin (its giant costume auto-matches whichever
+  // shrine, if any, is on the same street, or picks randomly) so it's given
+  // a slightly higher baseline than the two single-region variants.
+  StreetSpiritFirebog: { chance: 4, maxCount: 1 },
+  StreetSpiritZutto: { chance: 12, maxCount: 1 },
+  StreetSpiritGroddle: { chance: 15, maxCount: 1 },
 };
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
@@ -192,6 +244,9 @@ const RUNTIME_ASSET_ID = {
   Grendaline: 'shrine_grendaline', Humbaba: 'shrine_humbaba', Lem: 'shrine_lem',
   Mab: 'shrine_mab', Pot: 'shrine_pot', Spriggan: 'shrine_spriggan',
   Tii: 'shrine_ti', Zille: 'shrine_zille',
+  Garden: 'garden', ToolVendor: 'toolvendor',
+  StreetSpiritFirebog: 'streetspiritfirebog', StreetSpiritZutto: 'streetspiritzutto',
+  StreetSpiritGroddle: 'streetspiritgroddle',
 };
 // Types with real, newly-converted official art (as opposed to quoins/DemoWheat,
 // which predate this pass) -- these get concrete example rows in the placement
@@ -202,7 +257,7 @@ const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'BerylRock', 'DulliteRock', 'SparklyRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
-  ...SHRINE_TYPES];
+  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES];
 
 function hash(value) {
   let result = 2166136261;
@@ -264,7 +319,7 @@ function position(tsid, dynamic, index, type) {
 }
 
 const rows = [];
-for (const data of Object.values(streets)) {
+for (const [streetName, data] of Object.entries(streets)) {
 	if (!data?.tsid) continue;
 	const gTsid = data.tsid.replace(/^L/, 'G');
 	const file = path.join(locations, `${gTsid}.json`);
@@ -287,9 +342,18 @@ for (const data of Object.values(streets)) {
   // themed by region (REGION_THEME) instead of unconditionally placing all
   // 15 types everywhere at a flat rate.
   const region = regionKey(data);
+  // Garden's placement is nudged toward streets vendors.json already marks
+  // "gardening" (sells the hoe/watering_can/seeds a garden needs) or
+  // "produce" (sells 12 of Garden's 13 crops) -- a real, grounded per-street
+  // signal that already exists in the codebase, not an invented heuristic.
+  // Every other street keeps Garden's flat base rate unchanged.
+  const vendorCategory = vendorTypeByStreetName[streetName];
+  const gardenVendorBoost = vendorCategory === 'gardening' ? 1.6
+    : vendorCategory === 'produce' ? 1.3 : 1;
   for (const type of REAL_TYPES) {
     const { chance, maxCount } = RARITY[type];
-    const multiplier = REGION_THEME[region]?.[type] ?? 1;
+    const multiplier = (REGION_THEME[region]?.[type] ?? 1) *
+      (type === 'Garden' ? gardenVendorBoost : 1);
     const effectiveChance = Math.max(2, Math.min(95, Math.round(chance * multiplier)));
     if (hash(`${data.tsid}:${type}:include`) % 100 >= effectiveChance) continue;
     const count = 1 + ((maxCount > 1 && hash(`${data.tsid}:${type}:count`) % 100 < 30) ? 1 : 0);

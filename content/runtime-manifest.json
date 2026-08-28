@@ -830,7 +830,7 @@
       "category": "NPC (interactive plot)",
       "sourceAssetId": "garden",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the croppery skill loop (hoe, water, plant, harvest).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the croppery skill loop (hoe, water, plant, harvest) on any street it appears.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/garden.dart:Garden",
         "baseClassNote": "HerbGarden extends Garden with the same sprite set",
@@ -844,7 +844,7 @@
         "skill": "croppery"
       },
       "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF (harvestable_resources/garden_new.swf) and wired into garden.dart, replacing dead childrenofur.com links, including all 13 crop types and the 4 empty-plot states. Entity logic (hoe/water/plant/harvest) already existed and is unchanged. Not yet placed -- placement is deferred per this batch's scope."
+      "statusNote": "Sprite sheets converted from source SWF (harvestable_resources/garden_new.swf) and wired into garden.dart, replacing dead childrenofur.com links, including all 13 crop types and the 4 empty-plot states. Entity logic (hoe/water/plant/harvest) already existed and is unchanged. Placed 2026-08-28 (~20% base chance per street, boosted on vendors.json 'gardening'/'produce' streets) -- verified live: street loads with a Garden present crash neither construction nor restoreState."
     },
     {
       "id": "hell_bartender",
@@ -977,13 +977,13 @@
       "category": "NPC vendor",
       "sourceAssetId": "tool_vendor",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (tools/machines).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the standard vendor buy/sell flow (tools/machines) on any street it appears.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
         "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
       },
       "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF and wired into toolvendor.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/turn/talk/attract appearance. Vendor logic and item catalog (extensive tool/machine list) already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+      "statusNote": "Sprite sheets converted from source SWF and wired into toolvendor.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/turn/talk/attract appearance. Vendor logic and item catalog (extensive tool/machine list) already existed and are unchanged; catalog item icons were not converted this pass. Placed 2026-08-28 (~12% chance per street) -- verified live: a street loaded with a ToolVendor present constructs and unloads cleanly."
     },
     {
       "id": "streetspiritfirebog",
@@ -991,13 +991,13 @@
       "category": "NPC vendor (regional street spirit)",
       "sourceAssetId": "street_spirit_firebog",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (region-specific goods).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the standard vendor buy/sell flow, with stock category auto-selected per street from vendors.json (the existing Vendor.vendorType lookup -- no new category logic was added). Mostly concentrated in the firebog region (~36% chance there vs. a 4% flat baseline elsewhere).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
         "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
       },
       "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF (large size variant) and wired into streetspiritfirebog.dart, replacing dead childrenofur.com links across all 5 states this class uses (idle_move/talk/open/close/idle_cry). Vendor logic already existed and is unchanged. Not yet placed."
+      "statusNote": "Sprite sheets converted from source SWF (large size variant) and wired into streetspiritfirebog.dart, replacing dead childrenofur.com links across all 5 states this class uses (idle_move/talk/open/close/idle_cry). Vendor logic already existed and is unchanged. Placed 2026-08-28 -- verified live: a street loaded with a StreetSpiritFirebog present constructs and unloads cleanly."
     },
     {
       "id": "streetspiritgroddle",
@@ -1005,13 +1005,13 @@
       "category": "NPC vendor (giant-reskinned street spirit)",
       "sourceAssetId": "street_spirit_groddle",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow, with its costume matching whichever giant shrine is present on the street (or a random giant if none).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the standard vendor buy/sell flow, with its costume matching whichever giant shrine is present on the street (or a random giant if none) and stock category auto-selected per street from vendors.json.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle",
         "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
       },
       "status": "converted",
-      "statusNote": "Partial conversion: the 'alph'/'day' giant/light variant (7 states) is converted from the source SWF's default composited puppet and wired in, replacing its dead links; the other 23 giant/light variant combinations remain on dead links, deliberately deferred -- see source-manifest.json's complexityNote and runtime-manifest.json's deliberatelyDeferred entry 'street_spirit_groddle_reskins'. Vendor logic (giant detection, day/night selection) already existed and is unchanged. Not yet placed."
+      "statusNote": "Partial conversion: the 'alph'/'day' giant/light variant (7 states) is converted from the source SWF's default composited puppet and wired in, replacing its dead links; the other 23 giant/light variant combinations remain on dead links, deliberately deferred -- see source-manifest.json's complexityNote and runtime-manifest.json's deliberatelyDeferred entry 'street_spirit_groddle_reskins'. Vendor logic (giant detection, day/night selection) already existed and is unchanged. Placed 2026-08-28 (~15% chance per street, no region theme -- see placement-manifest.json) -- verified live, including its async giant-detection lookup; most instances will render with the still-dead-linked variants until the remaining 23 combos are converted, same caveat as before placement, just now actually visitable."
     },
     {
       "id": "streetspiritzutto",
@@ -1019,13 +1019,13 @@
       "category": "NPC vendor (regional street spirit)",
       "sourceAssetId": "street_spirit_zutto",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (region-specific goods).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the standard vendor buy/sell flow, with stock category auto-selected per street from vendors.json. No region theme was applied -- no confident biome association for 'Zutto' was found in any recovered data.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
         "baseClass": "coUserver/lib/entities/npcs/vendors/streetspirit.dart:StreetSpirit"
       },
       "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF (capAqua cap-color variant, matching the dart class's dead-link filenames) and wired into streetspiritzutto.dart, replacing dead childrenofur.com links across all 5 states this class uses (groundIdle/raise/hoverIdle/hoverTalk/lower). Vendor logic already existed and is unchanged. Not yet placed."
+      "statusNote": "Sprite sheets converted from source SWF (capAqua cap-color variant, matching the dart class's dead-link filenames) and wired into streetspiritzutto.dart, replacing dead childrenofur.com links across all 5 states this class uses (groundIdle/raise/hoverIdle/hoverTalk/lower). Vendor logic already existed and is unchanged. Placed 2026-08-28 (~12% chance per street) -- verified live: a street loaded with a StreetSpiritZutto present constructs and unloads cleanly."
     },
     {
       "id": "item-apple",

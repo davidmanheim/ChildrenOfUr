@@ -47,13 +47,22 @@ Prioritize and verify items before implementation.
   stock lists (`coUserver/lib/entities/npcs/vendors/vendor.dart`, switched on
   `vendors.json`'s real per-street `vendorType` assignment -- 865 streets
   across 9 categories: hardware, kitchen, groceries, toy, mining, produce,
-  gardening, alchemical, animal). None of these vendor NPC classes are
-  currently placed/spawned anywhere in the live world (no street/hub seed
-  data references them), so this real acquisition data is currently
-  inert. Placing one vendor NPC per street (analogous to
-  `tools/seed-demo-world.mjs`'s world-entity seeding, but for vendors) would
-  make a large fraction of the item registry genuinely obtainable at once
-  without any further per-item work. Recipe data
+  gardening, alchemical, animal).
+  ~~None of these vendor NPC classes are currently placed/spawned anywhere in
+  the live world (no street/hub seed data references them), so this real
+  acquisition data is currently inert. Placing one vendor NPC per street
+  (analogous to `tools/seed-demo-world.mjs`'s world-entity seeding, but for
+  vendors) would make a large fraction of the item registry genuinely
+  obtainable at once without any further per-item work.~~ Done 2026-08-28:
+  `ToolVendor` and the 3 concrete real-art `StreetSpirit` subclasses
+  (`StreetSpiritFirebog`/`Zutto`/`Groddle` -- not the abstract `StreetSpirit`
+  base, which would crash on placement; see RECOVERY_TODO.md's "Vendor/harvest
+  NPC family placement" row) are now placed by `tools/seed-demo-world.mjs` and
+  verified live. `MealVendor` and the other named vendor NPCs
+  (`jabba_helga.dart`, `jabba_unclefriendly.dart`, `snoconevendingmachine.dart`)
+  remain unplaced -- out of scope for this pass, which covered only the 3
+  classes with real converted art per CONTENT_RECOVERY_PLAN.md's asset-recovery
+  tracking. Recipe data
   (`coUserver/lib/entities/items/actions/recipes/json/*.json`) is similarly
   real and wired but only reachable once a player owns the required tool.
 - Some items have no acquisition route anywhere in the current codebase at
@@ -78,9 +87,12 @@ Prioritize and verify items before implementation.
   saffron, turmeric) are ALL real, unmodified `spice_mill` recipe outputs
   from `allspice` (`coUserver/lib/entities/items/actions/recipes/json/
   spice_mill.json`).
-  Placing one `Garden` NPC per gardening-themed street (mirroring the
+  ~~Placing one `Garden` NPC per gardening-themed street (mirroring the
   proposed vendor-placement idea above) would make the crop-garden loop
-  genuinely playable at once.
+  genuinely playable at once.~~ Done 2026-08-28: `Garden` is now placed by
+  `tools/seed-demo-world.mjs` (~20% chance per street, boosted on
+  `vendors.json` "gardening"/"produce" streets) and verified live; see
+  RECOVERY_TODO.md's "Vendor/harvest NPC family placement" row.
 - Done 2026-08-28 (third batch, same day as the crop batch above): converted
   icon/sprite art for all 16 non-`allspice` `spices.json` items, and
   re-verified the `spice_mill`-from-`allspice` recipe route directly rather
@@ -89,14 +101,16 @@ Prioritize and verify items before implementation.
   (`coUserver/lib/entities/plants/trees/spiceplant.dart`), the world entity
   whose harvest grants the recipe's `allspice` input, **is** placed in the
   live world (`tools/seed-demo-world.mjs`'s `RARITY.SpicePlant`, 45% per
-  street + a regional boost on uralia2/kajuu) -- unlike `Garden`/
-  `ToolVendor`/`StreetSpirit`, which are still not placed anywhere. The
-  remaining blocker for these 16 spices is narrower: the `spice_mill` tool
-  itself is only sold by `ToolVendor`/`StreetSpirit`(`kitchen`), both still
-  confirmed inert (not instantiated anywhere outside their own class
-  definitions). So placing just one tool vendor (or a `spice_mill` starter
-  grant / achievement reward) would make this whole 16-item family live,
-  without needing any additional harvest-loop placement work.
+  street + a regional boost on uralia2/kajuu). [Update 2026-08-28: `Garden`,
+  `ToolVendor`, and `StreetSpirit` (via its 3 concrete real-art subclasses)
+  are now placed too -- see RECOVERY_TODO.md's "Vendor/harvest NPC family
+  placement" row -- so the `spice_mill` tool needed for this recipe is a
+  `ToolVendor`/`StreetSpirit`("kitchen") stock item on any street carrying
+  one of those NPCs, same as `allspice` itself.] The remaining blocker for
+  these 16 spices was narrower: the `spice_mill` tool itself is only sold by
+  `ToolVendor`/`StreetSpirit`(`kitchen`), both previously confirmed inert
+  (not instantiated anywhere outside their own class definitions) and now
+  placed as noted above.
 
 ## Operations and reproducibility
 
