@@ -139,6 +139,16 @@ Prioritize and verify items before implementation.
   so placing `HoochRespawningItem` or `Still` would unblock more than just
   the `hooch` item itself -- a good candidate for a future placement pass
   alongside `Garden`/`ToolVendor`/`StreetSpirit`.
+  Done 2026-08-28: `HoochRespawningItem` (~25%/street), `Still` (~6%/street),
+  and `Crab` (~22%/street) are now placed by `tools/seed-demo-world.mjs`
+  and verified live (see RECOVERY_TODO.md's "Placement pass:
+  hooch/purple_flower/crabato_juice" row) -- all four constructors were
+  re-verified directly against `street.dart`'s reflective placement code
+  before placing, not trusted from this note alone. Caveat carried
+  forward: `HoochRespawningItem`/`Still` (unlike `Crab`) still render a
+  broken on-map sprite -- only their item-icon art was ever converted,
+  not their world-entity `Spritesheet`, which still points at a dead
+  `childrenofur.com` URL; a separate future art-conversion item.
 - Found 2026-08-28 (fifth batch, all 7 `herbalism.json` herbs + their 7
   seeds): a genuine *code* gap, not just a placement gap, distinct from
   everything found in prior batches. `HerbGarden`
@@ -160,9 +170,12 @@ Prioritize and verify items before implementation.
   (`coUserver/lib/entities/plants/respawning_items/purple_flower.dart`)
   is a real, unmodified `RespawningItem` world-entity harvestable
   (3-minute respawn, same shape as `hooch`'s `HoochRespawningItem`) that
-  is simply never referenced in `tools/seed-demo-world.mjs` -- a genuine
-  placement-gap candidate for the same future pass as `hooch`/`Still`/
-  `Crab`, unlike its 6 sibling herbs. All 7 herbs are real
+  was simply never referenced in `tools/seed-demo-world.mjs` -- unlike
+  its 6 sibling herbs. Done 2026-08-28: now placed (~35% chance/street,
+  maxCount 2) alongside `hooch`'s two routes, see RECOVERY_TODO.md's
+  "Placement pass: hooch/purple_flower/crabato_juice" row; same
+  still-dead-linked on-map sprite caveat as `HoochRespawningItem`/`Still`
+  applies here too. All 7 herbs are real
   `tincturing_kit` recipe *inputs* (`essence_of_<herb>`) but never
   outputs, so that recipe file provides no acquisition route either.
   Fixing `HerbGarden` itself (adding a herb `CROPS`/`ITEM_REQ_PLANT` list,

@@ -1253,10 +1253,40 @@
       "x": 255,
       "y": 767,
       "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-Crab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Crab",
+      "runtimeAssetId": "crab",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 259,
+      "y": 637,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI272SII2J1NT9-Crab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Crab",
+      "runtimeAssetId": "crab",
+      "tsid": "LLI272SII2J1NT9",
+      "x": -221,
+      "y": 715,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI161CEI2J10K4-Crab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Crab",
+      "runtimeAssetId": "crab",
+      "tsid": "LLI161CEI2J10K4",
+      "x": -453,
+      "y": 732,
+      "sourceExport": null
     }
   ],
   "coverageSummary": {
-    "note": "Full per-row placement data (58499 rows across 48 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "note": "Full per-row placement data (61607 rows across 52 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle/Crab) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
     "streetsCovered": 3180,
     "totalStreets": 3183,
     "placementsByEntityType": {
@@ -1283,6 +1313,9 @@
       "SpicePlant": 1814,
       "Friendly": 154,
       "StreetSpiritGroddle": 466,
+      "HoochRespawningItem": 791,
+      "PurpleFlowerRespawningItem": 1448,
+      "Still": 196,
       "Fox": 1179,
       "FruitTree": 1812,
       "PaperTree": 1756,
@@ -1290,6 +1323,7 @@
       "PeatBog": 811,
       "EggPlant": 1892,
       "Garden": 692,
+      "Crab": 673,
       "ToolVendor": 356,
       "Chicken": 2047,
       "Spriggan": 159,

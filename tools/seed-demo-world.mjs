@@ -160,13 +160,40 @@ const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem
 // real-art subclasses (StreetSpiritFirebog/Zutto/Groddle) are used instead.
 const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
   'StreetSpiritFirebog', 'StreetSpiritZutto', 'StreetSpiritGroddle'];
+// Fourth/fifth drinks/herbalism conversion batches (see RECOVERY_TODO.md
+// "Continue asset conversion") documented three real, unmodified, working
+// acquisition routes that were simply never placed here -- confirmed directly
+// by reading each class (not trusted from the prior batch note alone):
+// `HoochRespawningItem` and `PurpleFlowerRespawningItem`
+// (coUserver/lib/entities/plants/respawning_items/{hooch,purple_flower}.dart)
+// are real `RespawningItem` (-> Plant) world-entity harvestables with the
+// same constructor shape as the already-placed harvestable types above;
+// `Crab` (coUserver/lib/entities/npcs/crab.dart) is a real NPC whose
+// `playMusic()` action rewards `crabato_juice`. `Still`
+// (coUserver/lib/entities/npcs/items/still.dart) is a real `EntityItem` (->
+// NPC) that ferments corn/grain/potato/rice into hooch over time. All four
+// use the exact `(id, x, y, z, rotation, h_flip, streetName)` constructor
+// signature `street.dart`'s reflective placement code expects, and all four
+// source files are already `part of entity;` in entity.dart, so no
+// server-side code changes are needed to place them -- only this list.
+// Unlike the batch above, `HoochRespawningItem`/`PurpleFlowerRespawningItem`/
+// `Still` still point their own on-map Spritesheet at dead
+// `https://childrenofur.com/...` URLs (only their *item-icon* art was
+// converted in the drinks/herbalism batches, not their world-entity sprite);
+// placing them makes their gameplay logic (harvest/ferment/reward) genuinely
+// reachable, but their in-world sprite will render broken until a future
+// pass converts that art too -- see RECOVERY_TODO.md. `Crab` already has
+// real converted world-entity sprites (files/sprites/generated/converted/
+// crab-*.png) from its own prior conversion batch, so it renders correctly.
+const RESPAWNING_ITEM_TYPES = ['HoochRespawningItem', 'PurpleFlowerRespawningItem'];
+const NPC_ITEM_TYPES = ['Still', 'Crab'];
 const REAL_TYPES = ['WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
   'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
   'BerylRock', 'DulliteRock', 'SparklyRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
-  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES];
+  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES, ...RESPAWNING_ITEM_TYPES, ...NPC_ITEM_TYPES];
 const types = [...QUOIN_TYPES, ...REAL_TYPES]; // still used for the manifest's total-type-count text
 
 // Per-street inclusion chance (0-100) and max instance count for each real
@@ -224,6 +251,31 @@ const RARITY = {
   StreetSpiritFirebog: { chance: 4, maxCount: 1 },
   StreetSpiritZutto: { chance: 12, maxCount: 1 },
   StreetSpiritGroddle: { chance: 15, maxCount: 1 },
+  // HoochRespawningItem/PurpleFlowerRespawningItem: ordinary ground-resource
+  // harvestables (same RespawningItem shape as the mining-tier
+  // rocks/plants above), not decorative flora -- placed at that same
+  // general tier. PurpleFlowerRespawningItem respawns fast (3 min, vs.
+  // Hooch's 7 min) so it can support the DirtPile-tier common rate;
+  // HoochRespawningItem (found alcohol lying on the ground) is themed as a
+  // rarer "find" than an ordinary flower, closer to the
+  // IceNubbin/Jellisac/MortarBarnacle/PeatBog tier. No REGION_THEME entry
+  // for either: no confident biome association was found in any recovered
+  // data for either item (same "don't guess" rule already applied to the
+  // shrines/StreetSpiritZutto/Groddle above).
+  HoochRespawningItem: { chance: 25, maxCount: 1 },
+  PurpleFlowerRespawningItem: { chance: 35, maxCount: 2 },
+  // Still: a stationary fermenting "structure" NPC, not wildlife/flora --
+  // rarer than ToolVendor (12%), same tier logic as the giant shrines'
+  // "landmark, not commodity" reasoning above. No REGION_THEME entry: no
+  // confident biome read for it either.
+  Still: { chance: 6, maxCount: 1 },
+  // Crab: a wandering novelty NPC (musicblock "DJ"), same general tier as
+  // the other wildlife-ish creature NPCs above (Fox/HeliKitty/Salmon,
+  // 30%/maxCount 1) but slightly rarer since it's a single distinctive
+  // character rather than a species. No REGION_THEME entry: no confident
+  // biome/beach association was found in any recovered data for it (same
+  // "don't guess" rule as everything else above).
+  Crab: { chance: 22, maxCount: 1 },
 };
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
@@ -247,6 +299,14 @@ const RUNTIME_ASSET_ID = {
   Garden: 'garden', ToolVendor: 'toolvendor',
   StreetSpiritFirebog: 'streetspiritfirebog', StreetSpiritZutto: 'streetspiritzutto',
   StreetSpiritGroddle: 'streetspiritgroddle',
+  // Crab has its own real converted-art runtime-manifest row (from its prior
+  // NPC conversion batch). HoochRespawningItem/PurpleFlowerRespawningItem/
+  // Still are deliberately NOT mapped here: their world-entity sprite was
+  // never converted (still dead-linked, see the REAL_TYPES comment above),
+  // so they're excluded from NEWLY_PLACED_TYPES below and never hit this
+  // lookup -- giving them a runtime-manifest id here would misrepresent
+  // them as having real converted world-entity art.
+  Crab: 'crab',
 };
 // Types with real, newly-converted official art (as opposed to quoins/DemoWheat,
 // which predate this pass) -- these get concrete example rows in the placement
@@ -257,7 +317,7 @@ const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'BerylRock', 'DulliteRock', 'SparklyRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
-  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES];
+  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES, 'Crab'];
 
 function hash(value) {
   let result = 2166136261;
