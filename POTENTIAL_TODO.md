@@ -111,6 +111,34 @@ Prioritize and verify items before implementation.
   `ToolVendor`/`StreetSpirit`(`kitchen`), both previously confirmed inert
   (not instantiated anywhere outside their own class definitions) and now
   placed as noted above.
+- Done 2026-08-28 (fourth batch, converted after the vendor/harvest NPC
+  placement pass above, not before it like the spices batch): converted
+  icon/sprite art for 15 `drinks.json` items. This is the first item-icon
+  batch to directly benefit from that placement pass rather than merely
+  document the gap it left -- beer/coffee (`groceries` StreetSpirit stock,
+  86 streets) and earthshaker/face_smelter/flaming_humbaba (`mining`
+  StreetSpirit stock, 42 streets) are now genuinely buyable wherever one of
+  the 3 placed `StreetSpirit` subclasses lands on a matching-category
+  street, and the `blender`/`cocktail_shaker`/`saucepan` tools needed for
+  the batch's remaining recipe-output drinks are themselves real `kitchen`
+  StreetSpirit stock (109 streets) -- the same "one hop already works"
+  pattern the spices batch found for `spice_mill`, but for the tool itself
+  this time, not just its plant input.
+  Also found: two more real-but-entirely-unplaced acquisition routes,
+  distinct in kind from the vendor/Garden gap above (these are individual
+  NPC/entity classes, not a systemic vendor-family gap) -- `hooch` has
+  both a `RespawningItem` world-entity harvestable (`HoochRespawningItem`,
+  `coUserver/lib/entities/plants/respawning_items/hooch.dart`) and a
+  standalone fermenting NPC-item (`Still`,
+  `coUserver/lib/entities/npcs/items/still.dart`) that neither appear in
+  `tools/seed-demo-world.mjs`; `crabato_juice` has a real reward chain on
+  `Crab` (`coUserver/lib/entities/npcs/crab.dart`'s `playMusic()`) that is
+  similarly never spawned. hooch in particular is a heavily-used recipe
+  ingredient elsewhere (7 `tincturing_kit` essence recipes, 11 of 12
+  `cocktail_shaker` recipes including several converted this same batch),
+  so placing `HoochRespawningItem` or `Still` would unblock more than just
+  the `hooch` item itself -- a good candidate for a future placement pass
+  alongside `Garden`/`ToolVendor`/`StreetSpirit`.
 
 ## Operations and reproducibility
 

@@ -1720,6 +1720,291 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/turmeric/turmeric.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-beer",
+      "displayName": "Beer",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_beer",
+      "destination": "Player item",
+      "accessibleThrough": "Direct, unmodified vendor stock: Vendor's 'groceries' vendorType case (coUserver/lib/entities/npcs/vendors/vendor.dart) lists items[\"beer\"].getMap() verbatim in itemsForSale -- no recipe/harvest needed, just buy it. vendors.json assigns vendorType \"groceries\" to 86 of 865 streets (re-counted directly this pass). Since the third asset-conversion batch (2026-08-28), the 3 concrete real-art StreetSpirit subclasses (StreetSpiritFirebog/Zutto/Groddle) that read this per-street vendorType automatically ARE placed in the live world by tools/seed-demo-world.mjs (flat 4%/12%/15% chance per street respectively) -- so wherever one of those 3 lands on a street whose vendors.json entry says \"groceries\", beer is genuinely buyable right now, not just wired-but-inert as documented for earlier batches before that placement pass. Not independently re-verified in-browser this pass, but the code path (vendorType lookup -> switch case -> itemsForSale) is unmodified, real, and reachable.",
+      "routeIds": {
+        "itemId": "beer",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType \"groceries\", direct stock)",
+          "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+          "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+          "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/beer/beer.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data (vendor.dart groceries case) is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-coffee",
+      "displayName": "Coffee",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_coffee",
+      "destination": "Player item",
+      "accessibleThrough": "Two real, unmodified routes. (1) Direct vendor stock: same \"groceries\" StreetSpirit case as beer (items[\"coffee\"].getMap() is also listed there) -- same 86-street/3-placed-subclass reachability as beer, above. (2) Recipe: saucepan.json's \"coffee\" recipe (bean:2, cherry:2, licorice:1 -> coffee:1), verified directly in the recipe JSON. The saucepan tool itself is real \"kitchen\" StreetSpirit vendor stock (109 of 865 streets per vendors.json, re-counted this pass) -- reachable the same way beer's groceries stock is, via the 3 placed StreetSpirit subclasses landing on a \"kitchen\" street. cherry is genuinely live-harvestable right now (FruitTree.rewardItemType = \"cherry\", and FruitTree is one of the 38 world-entity types placed by tools/seed-demo-world.mjs); bean/licorice availability was not independently re-traced beyond this point.",
+      "routeIds": {
+        "itemId": "coffee",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType \"groceries\", direct stock)",
+          "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+          "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+          "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle"
+        ],
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/saucepan.json",
+        "itemRequirement": [
+          "saucepan"
+        ],
+        "rewardItem": "coffee"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/coffee/coffee.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock and saucepan recipe data are already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-earthshaker",
+      "displayName": "Earthshaker",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_earthshaker",
+      "destination": "Player item",
+      "accessibleThrough": "Two real, unmodified routes. (1) Direct vendor stock: Vendor's \"mining\" vendorType case lists items[\"earthshaker\"].getMap() directly. vendors.json assigns \"mining\" to 42 of 865 streets (re-counted this pass) -- narrower than groceries/kitchen but real, and reachable via the 3 placed StreetSpirit subclasses the same way as beer/coffee above. (2) Recipe: blender.json's \"earthshaker\" recipe (egg:6, banana:1, hot_n_fizzy_sauce:1, garlic:1, beer:1 -> earthshaker:1). blender is real \"kitchen\" StreetSpirit vendor stock (109 streets), and beer (an ingredient here) has its own direct groceries-vendor route documented above.",
+      "routeIds": {
+        "itemId": "earthshaker",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType \"mining\", direct stock)",
+          "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+          "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+          "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle"
+        ],
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "earthshaker"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/earthshaker/earthshaker.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock and blender recipe data are already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-face_smelter",
+      "displayName": "Face Smelter",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_face_smelter",
+      "destination": "Player item",
+      "accessibleThrough": "Two real, unmodified routes. (1) Direct vendor stock: Vendor's \"mining\" vendorType case lists items[\"face_smelter\"].getMap() directly (same 42-street/StreetSpirit-placement reachability as earthshaker, above). (2) Recipe: cocktail_shaker.json's \"face_smelter\" recipe (hooch:1, onion_sauce:1, gas_crying:1, parsnip:2 -> face_smelter:1). cocktail_shaker is real \"kitchen\" StreetSpirit vendor stock (109 streets); this recipe's own \"hooch\" ingredient is the same item documented below as not yet live-obtainable, so route (2) is currently weaker than route (1) for this item.",
+      "routeIds": {
+        "itemId": "face_smelter",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType \"mining\", direct stock)",
+          "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+          "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+          "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle"
+        ],
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/cocktail_shaker.json",
+        "itemRequirement": [
+          "cocktail_shaker"
+        ],
+        "rewardItem": "face_smelter"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/face_smelter/face_smelter.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock and cocktail_shaker recipe data are already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-flaming_humbaba",
+      "displayName": "Flaming Humbaba",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_flaming_humbaba",
+      "destination": "Player item",
+      "accessibleThrough": "Two real, unmodified routes. (1) Direct vendor stock: Vendor's \"mining\" vendorType case lists items[\"flaming_humbaba\"].getMap() directly (same 42-street/StreetSpirit-placement reachability as earthshaker/face_smelter, above). (2) Recipe: cocktail_shaker.json's \"flaming_humbaba\" recipe (fruity_juice:1, hooch:1, hot_n_fizzy_sauce:1, gas_laughing:1 -> flaming_humbaba:1), same cocktail_shaker tool route as face_smelter; also blocked on the same not-yet-live hooch ingredient, so route (1) is the primary reachable path.",
+      "routeIds": {
+        "itemId": "flaming_humbaba",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType \"mining\", direct stock)",
+          "coUserver/lib/entities/npcs/vendors/streetspiritfirebog.dart:StreetSpiritFirebog",
+          "coUserver/lib/entities/npcs/vendors/streetspiritzutto.dart:StreetSpiritZutto",
+          "coUserver/lib/entities/npcs/vendors/streetspiritgroddle.dart:StreetSpiritGroddle"
+        ],
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/cocktail_shaker.json",
+        "itemRequirement": [
+          "cocktail_shaker"
+        ],
+        "rewardItem": "flaming_humbaba"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/flaming_humbaba/flaming_humbaba.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock and cocktail_shaker recipe data are already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-bubble_tea",
+      "displayName": "Bubble Tea",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_bubble_tea",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: blender.json's \"bubble_tea\" recipe (bubble_blue:5, bubble_hard:2, bubble_tiny:4, plain_bubble:7 -> bubble_tea:1), verified directly in the recipe JSON; not stocked by any vendor category directly. blender is real \"kitchen\" StreetSpirit vendor stock (109 of 865 streets), reachable via the 3 placed StreetSpirit subclasses. Bubble-type ingredients were not independently re-traced to a world-entity source this pass.",
+      "routeIds": {
+        "itemId": "bubble_tea",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "bubble_tea"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/bubble_tea/bubble_tea.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. blender recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-cloud_11_smoothie",
+      "displayName": "Cloud 11 Smoothie",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_cloud_11_smoothie",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: blender.json's \"cloud_11_smoothie\" recipe (cloudberry:11, banana:1, honey:1, butterfly_milk:1 -> cloud_11_smoothie:1); not stocked by any vendor category directly. Same blender/kitchen tool route as bubble_tea (109 streets, reachable via the 3 placed StreetSpirit subclasses). honey is already-documented real groceries/StreetSpirit stock from an earlier batch.",
+      "routeIds": {
+        "itemId": "cloud_11_smoothie",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "cloud_11_smoothie"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/cloud_11_smoothie/cloud_11_smoothie.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. blender recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-exotic_juice",
+      "displayName": "Exotic Juice",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_exotic_juice",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: blender.json's \"exotic_juice\" recipe (pineapple:1, mangosteen:3, banana:1 -> exotic_juice:1); not stocked by any vendor category directly. Same blender/kitchen tool route as bubble_tea. pineapple and mangosteen are themselves fruit_changing_machine recipe outputs from cherry (coUserver/lib/entities/items/actions/recipes/json/fruit_changing_machine.json, verified directly), and cherry is genuinely live-harvestable (FruitTree, placed by tools/seed-demo-world.mjs) -- so this is a real, if multi-hop, chain, not independently re-traced past fruit_changing_machine's own kitchen-vendor availability.",
+      "routeIds": {
+        "itemId": "exotic_juice",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "exotic_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/exotic_juice/exotic_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. blender recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-fruity_juice",
+      "displayName": "Fruity Juice",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_fruity_juice",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: blender.json's \"fruity_juice\" recipe (cherry:4, plum:2, orange:1 -> fruity_juice:1); not stocked by any vendor category directly. Same blender/kitchen tool route as bubble_tea. cherry is directly live-harvestable (FruitTree, placed); plum and orange are both real fruit_changing_machine recipe outputs from cherry (same recipe file as exotic_juice's chain, verified directly) -- so 2 of 3 ingredients trace to a confirmed-live source, the third (cherry itself) directly so.",
+      "routeIds": {
+        "itemId": "fruity_juice",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "fruity_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/fruity_juice/fruity_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. blender recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-orange_juice",
+      "displayName": "Orange Juice",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_orange_juice",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: blender.json's \"orange_juice\" recipe (orange:5 -> orange_juice:1); not stocked by any vendor category directly. Same blender/kitchen tool route as bubble_tea. orange is itself a real fruit_changing_machine recipe output from cherry (verified directly), and cherry is genuinely live-harvestable (FruitTree, placed).",
+      "routeIds": {
+        "itemId": "orange_juice",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/blender.json",
+        "itemRequirement": [
+          "blender"
+        ],
+        "rewardItem": "orange_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/orange_juice/orange_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. blender recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-carrot_margarita",
+      "displayName": "Carrot Margarita",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_carrot_margarita",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: cocktail_shaker.json's \"carrot_margarita\" recipe (hooch:1, ice:2, lemon:1, orange_juice:1, pinch_of_salt:1 -> carrot_margarita:1), verified directly. cocktail_shaker is real \"kitchen\" StreetSpirit vendor stock (109 streets). orange_juice is itself a real blender recipe output documented above; hooch is not yet live-obtainable (see item-hooch below), so this recipe's ingredient chain has one confirmed weak link despite the tool itself being reachable.",
+      "routeIds": {
+        "itemId": "carrot_margarita",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/cocktail_shaker.json",
+        "itemRequirement": [
+          "cocktail_shaker"
+        ],
+        "rewardItem": "carrot_margarita"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/carrot_margarita/carrot_margarita.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. cocktail_shaker recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-cosma_politan",
+      "displayName": "Cosma-politan",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_cosma_politan",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: cocktail_shaker.json's \"cosma_politan\" recipe (fruity_juice:1, hooch:1, ice:1, lemon_juice:1 -> cosma_politan:1), verified directly. Same cocktail_shaker/kitchen tool route as carrot_margarita. fruity_juice is itself a real blender recipe output documented above; hooch is not yet live-obtainable.",
+      "routeIds": {
+        "itemId": "cosma_politan",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/cocktail_shaker.json",
+        "itemRequirement": [
+          "cocktail_shaker"
+        ],
+        "rewardItem": "cosma_politan"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/cosmapolitan/cosmapolitan.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. cocktail_shaker recipe data is already real and unchanged; only the icon/sprite asset was produced this pass. Source folder/file is named \"cosmapolitan\" (no underscore); the item registry key is \"cosma_politan\" -- a source-folder/item-id naming mismatch, same pattern already documented for butterfly_milk/milk_butterfly in an earlier batch."
+    },
+    {
+      "id": "item-pumpkin_ale",
+      "displayName": "Pumpkin Ale",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_pumpkin_ale",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: cocktail_shaker.json's \"pumpkin_ale\" recipe (beer:1, cinnamon:1, pumpkin:1 -> pumpkin_ale:1), verified directly. Same cocktail_shaker/kitchen tool route as carrot_margarita. Every ingredient traces to an already-confirmed-real route: beer is direct groceries-vendor stock (documented above), cinnamon is a real, unmodified spice_mill-from-allspice output (prior batch), and pumpkin is a real Garden-NPC/'produce'-adjacent crop (croppery-gardening batch, though pumpkin itself is the one crop the produce vendor category omits). This is the most fully-chained-real route in this batch.",
+      "routeIds": {
+        "itemId": "pumpkin_ale",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/cocktail_shaker.json",
+        "itemRequirement": [
+          "cocktail_shaker"
+        ],
+        "rewardItem": "pumpkin_ale"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/pumpkin_ale/pumpkin_ale.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. cocktail_shaker recipe data is already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-hooch",
+      "displayName": "Hooch",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_hooch",
+      "destination": "Player item",
+      "accessibleThrough": "Two real, unmodified code routes exist but neither is placed in the live world (checked tools/seed-demo-world.mjs directly -- no reference to either class). (1) HoochRespawningItem (coUserver/lib/entities/plants/respawning_items/hooch.dart), a RespawningItem world-entity harvestable (itemType 'hooch', 7-minute respawnTime) -- same kind of entity class as the already-placed harvestables, just never added to the seed script's placed-type list. (2) Still (coUserver/lib/entities/npcs/items/still.dart), a standalone EntityItem NPC-item that ferments corn/grain/potato/rice into hooch over time and grants it via collect() -> InventoryV2.addItemToUser -- also never placed. hooch is also a common recipe ingredient (tincturing_kit's 7 essence_of_* recipes, and 11 of cocktail_shaker's 12 recipes including several in this very batch), so this is a real gap worth closing, not an invented one: no recipe or vendor stock list produces hooch anywhere in the current codebase, only these two unplaced entities.",
+      "routeIds": {
+        "itemId": "hooch"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/hooch/hooch.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. HoochRespawningItem and Still game logic are pre-existing and unmodified; only the icon/sprite asset was produced this pass. Placement (adding either class to tools/seed-demo-world.mjs) is out of scope for this pass per instruction not to touch that file/content/placement-manifest.json."
+    },
+    {
+      "id": "item-crabato_juice",
+      "displayName": "Crabato Juice",
+      "category": "drinks (player item)",
+      "sourceAssetId": "item_icon_crabato_juice",
+      "destination": "Player item",
+      "accessibleThrough": "One real, unmodified code route exists but is not placed in the live world (checked tools/seed-demo-world.mjs directly -- no reference to Crab). Crab (coUserver/lib/entities/npcs/crab.dart)'s playMusic() action rewards crabato_juice (CRABATO = items[\"crabato_juice\"].getMap()) via InventoryV2.addItemToUser when a player plays a musicblock the crab \"likes\" (based on its rolling listen history) while it still holds the headphones it was given for that interaction. This is a real, fully-implemented, if unusually elaborate, reward chain -- not invented for this pass -- but Crab itself is never spawned anywhere, so it is currently unreachable.",
+      "routeIds": {
+        "itemId": "crabato_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/crabato_juice/crabato_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Crab.playMusic()/CRABATO reward logic is pre-existing and unmodified; only the icon/sprite asset was produced this pass. Placement is out of scope for this pass per instruction not to touch tools/seed-demo-world.mjs/content/placement-manifest.json."
     }
   ],
   "deliberatelyDeferred": [

@@ -6804,10 +6804,520 @@
           "numFrames": 4
         }
       ]
+    },
+    {
+      "id": "item_icon_beer",
+      "sourcePath": "tmp/glitch-items/drink/beer/beer.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "beer-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/beer/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-beer-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "beer-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/beer/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-beer-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_coffee",
+      "sourcePath": "tmp/glitch-items/drink/coffee/coffee.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "coffee-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/coffee/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-coffee-icon.png",
+          "frameWidth": 49,
+          "frameHeight": 33,
+          "numFrames": 1
+        },
+        {
+          "state": "coffee-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/coffee/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-coffee-sprite.png",
+          "frameWidth": 49,
+          "frameHeight": 33,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_earthshaker",
+      "sourcePath": "tmp/glitch-items/drink/earthshaker/earthshaker.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "earthshaker-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/earthshaker/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-earthshaker-icon.png",
+          "frameWidth": 40,
+          "frameHeight": 54,
+          "numFrames": 1
+        },
+        {
+          "state": "earthshaker-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/earthshaker/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-earthshaker-sprite.png",
+          "frameWidth": 40,
+          "frameHeight": 54,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_face_smelter",
+      "sourcePath": "tmp/glitch-items/drink/face_smelter/face_smelter.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "face_smelter-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/face_smelter/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-face_smelter-icon.png",
+          "frameWidth": 68,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "face_smelter-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/face_smelter/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-face_smelter-sprite.png",
+          "frameWidth": 68,
+          "frameHeight": 50,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_flaming_humbaba",
+      "sourcePath": "tmp/glitch-items/drink/flaming_humbaba/flaming_humbaba.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "flaming_humbaba-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/flaming_humbaba/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-flaming_humbaba-icon.png",
+          "frameWidth": 54,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "flaming_humbaba-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/flaming_humbaba/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-flaming_humbaba-sprite.png",
+          "frameWidth": 54,
+          "frameHeight": 56,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_tea",
+      "sourcePath": "tmp/glitch-items/drink/bubble_tea/bubble_tea.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_tea-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_tea/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tea-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 63,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_tea-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bubble_tea/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tea-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 63,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cloud_11_smoothie",
+      "sourcePath": "tmp/glitch-items/drink/cloud_11_smoothie/cloud_11_smoothie.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cloud_11_smoothie-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cloud_11_smoothie/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cloud_11_smoothie-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "cloud_11_smoothie-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cloud_11_smoothie/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cloud_11_smoothie-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 46,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_exotic_juice",
+      "sourcePath": "tmp/glitch-items/drink/exotic_juice/exotic_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "exotic_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/exotic_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-exotic_juice-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 58,
+          "numFrames": 1
+        },
+        {
+          "state": "exotic_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/exotic_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-exotic_juice-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 58,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fruity_juice",
+      "sourcePath": "tmp/glitch-items/drink/fruity_juice/fruity_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fruity_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fruity_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruity_juice-icon.png",
+          "frameWidth": 62,
+          "frameHeight": 93,
+          "numFrames": 1
+        },
+        {
+          "state": "fruity_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/fruity_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruity_juice-sprite.png",
+          "frameWidth": 62,
+          "frameHeight": 93,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_orange_juice",
+      "sourcePath": "tmp/glitch-items/drink/orange_juice/orange_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "orange_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/orange_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-orange_juice-icon.png",
+          "frameWidth": 55,
+          "frameHeight": 95,
+          "numFrames": 1
+        },
+        {
+          "state": "orange_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/orange_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-orange_juice-sprite.png",
+          "frameWidth": 55,
+          "frameHeight": 95,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_carrot_margarita",
+      "sourcePath": "tmp/glitch-items/drink/carrot_margarita/carrot_margarita.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "carrot_margarita-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/carrot_margarita/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot_margarita-icon.png",
+          "frameWidth": 72,
+          "frameHeight": 68,
+          "numFrames": 1
+        },
+        {
+          "state": "carrot_margarita-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/carrot_margarita/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot_margarita-sprite.png",
+          "frameWidth": 72,
+          "frameHeight": 68,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cosma_politan",
+      "sourcePath": "tmp/glitch-items/drink/cosmapolitan/cosmapolitan.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag. (source folder/file is named \"cosmapolitan\"; the item registry key is \"cosma_politan\" -- same kind of source-folder/item-id mismatch already documented for butterfly_milk/milk_butterfly in an earlier batch).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cosma_politan-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cosma_politan/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cosma_politan-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 45,
+          "numFrames": 1
+        },
+        {
+          "state": "cosma_politan-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cosma_politan/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cosma_politan-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 45,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pumpkin_ale",
+      "sourcePath": "tmp/glitch-items/drink/pumpkin_ale/pumpkin_ale.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pumpkin_ale-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pumpkin_ale/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin_ale-icon.png",
+          "frameWidth": 46,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "pumpkin_ale-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pumpkin_ale/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin_ale-sprite.png",
+          "frameWidth": 46,
+          "frameHeight": 51,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_hooch",
+      "sourcePath": "tmp/glitch-items/drink/hooch/hooch.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "hooch-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hooch/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hooch-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "hooch-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/hooch/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hooch-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 51,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_crabato_juice",
+      "sourcePath": "tmp/glitch-items/drink/crabato_juice/crabato_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only, verified via tools/swf-extract-bitmaps.py: 0 bitmap tags), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field, same family/authoring convention as item_icon_allspice/item_icon_turmeric from the prior spices batch: 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). Directly re-verified for this batch (not assumed) by parsing each source SWF's DefineSceneAndFrameLabelData tag.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip, same method as the spices batch.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "crabato_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/crabato_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crabato_juice-icon.png",
+          "frameWidth": 40,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "crabato_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/crabato_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crabato_juice-sprite.png",
+          "frameWidth": 40,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
     "families": [
       "seeds",
       "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",
@@ -6816,6 +7326,7 @@
       "tools (36 of 41 items still unconverted after this pass)",
       "toys, tinctures-potions (mostly unconverted; 2 and 1 converted respectively in the first pass)",
       "spices (0 of 17 still unconverted after this pass -- all 16 non-allspice spices converted; allspice itself was already converted in an earlier pass)",
+      "drinks (13 of 29 items still unconverted after this pass -- 15 converted this pass plus the pre-existing butterfly_milk; cloudberry_daiquiri/creamy_martini/cup_of_water/gurly_drink/lemon_juice/mabbish_coffee/mega_healthy_veggie_juice/pungent_sunrise/savory_smoothie/slow_gin_fizz/spicy_grog/tooberry_shake/wine_of_the_dead remain, all but cup_of_water/wine_of_the_dead have a matching source SWF under tmp/glitch-items/drink/)",
       "caterpillar (butterfly life-cycle baby form, no coUserver entity class)",
       "fox_ranger, fox_bait (not requested this pass)",
       "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)"
