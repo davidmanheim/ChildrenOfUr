@@ -192,8 +192,8 @@
 	"potion_rainbow_juice": {
 		"name": "Rainbow Juice",
 		"category": "Tinctures & Potions",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/potion_rainbow_juice__x1_1_png_1354837000.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/potion_rainbow_juice__x1_tool_animation_png_1354837000.png",
+		"iconUrl": "files/sprites/generated/converted/item-potion_rainbow_juice-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-potion_rainbow_juice-sprite.png",
 		"stacksTo": 1,
 		"price": 750,
 		"description": "Where is the end of the rainbow? Apparently, in this bottle. Warning: may produce curious disruptive effect on air around it. Thus the term, 'Anti-Gravity Rainbow'."

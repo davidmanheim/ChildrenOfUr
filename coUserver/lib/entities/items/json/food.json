@@ -20,8 +20,8 @@
 	"apple": {
 		"name": "Apple",
 		"category": "Food",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/apple__x1_iconic_png_1354829396.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/apple__x1_1_x1_2_x1_3_x1_4_png_1354829397.png",
+		"iconUrl": "files/sprites/generated/converted/item-apple-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-apple-sprite.png",
 		"stacksTo": 100,
 		"price": 5,
 		"description": "A boldly red and brazenly juicy apple.",
@@ -74,8 +74,8 @@
 	"bacon": {
 		"name": "Rasher of Bacon",
 		"category": "Food",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bacon__x1_iconic_png_1354829444.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bacon__x1_1_x1_2_png_1354829445.png",
+		"iconUrl": "files/sprites/generated/converted/item-bacon-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bacon-sprite.png",
 		"stacksTo": 20,
 		"price": 20,
 		"description": "A delicious, greasy, surprise Piggy treat from the Piggy's newly discovered Orthogonal Meat Generator (OMG).",
@@ -92,8 +92,8 @@
 	"banana": {
 		"name": "Banana",
 		"category": "Food",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/banana__x1_iconic_png_1354829403.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/banana__x1_1_x1_2_x1_3_x1_4_png_1354829404.png",
+		"iconUrl": "files/sprites/generated/converted/item-banana-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-banana-sprite.png",
 		"stacksTo": 100,
 		"price": 10,
 		"description": "A bright yellow, potassium-rich banana.",
@@ -1061,8 +1061,8 @@
 	"honey": {
 		"name": "Honey",
 		"category": "Food",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/honey__x1_iconic_png_1354829878.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/honey__x1_1_x1_2_x1_3_x1_4_png_1354829878.png",
+		"iconUrl": "files/sprites/generated/converted/item-honey-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-honey-sprite.png",
 		"stacksTo": 40,
 		"price": 4,
 		"description": "A brimful jar of raw golden honey.",

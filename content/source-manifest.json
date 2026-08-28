@@ -5410,15 +5410,424 @@
         }
       ],
       "validationNote": "All 5 resolved frame ranges match StreetSpiritZutto.dart's old hardcoded numFrames exactly."
+    },
+    {
+      "id": "item_icon_apple",
+      "sourcePath": "tmp/glitch-items/food/apple/apple.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (many small single-frame decoration/mask DefineSprites plus a 5-frame main timeline, no bitmap tags).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default). Root timeline has no FrameLabel tags (unlike the previously-converted grain/salmon/etc. sources), but the same positional pattern holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame and comparing against the item's original dead-URL naming (e.g. \"__x1_iconic\" / \"__x1_1_x1_2..._x1_4\").",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "apple-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/apple/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-apple-icon.png",
+          "frameWidth": 43,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "apple-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/apple/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-apple-sprite.png",
+          "frameWidth": 43,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_banana",
+      "sourcePath": "tmp/glitch-items/food/banana/banana.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4). Root timeline has no FrameLabel tags (unlike the previously-converted grain/salmon/etc. sources), but the same positional pattern holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame and comparing against the item's original dead-URL naming (e.g. \"__x1_iconic\" / \"__x1_1_x1_2..._x1_4\").",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "banana-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/banana/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-banana-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 93,
+          "numFrames": 1
+        },
+        {
+          "state": "banana-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/banana/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-banana-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 93,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_honey",
+      "sourcePath": "tmp/glitch-items/food/honey/honey.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4). Root timeline has no FrameLabel tags (unlike the previously-converted grain/salmon/etc. sources), but the same positional pattern holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame and comparing against the item's original dead-URL naming (e.g. \"__x1_iconic\" / \"__x1_1_x1_2..._x1_4\").",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "honey-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/honey/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-honey-icon.png",
+          "frameWidth": 38,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "honey-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/honey/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-honey-sprite.png",
+          "frameWidth": 38,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bacon",
+      "sourcePath": "tmp/glitch-items/food/bacon/bacon.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 3-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-3 packed via build-sprite-sheet.py into the spriteUrl strip. Root timeline has no FrameLabel tags (unlike the previously-converted grain/salmon/etc. sources), but the same positional pattern holds: frame 1 is a clean single-item icon pose and frames 2-3 are 2 successive stack-quantity poses, visually confirmed by rendering every frame and comparing against the item's original dead-URL naming (e.g. \"__x1_iconic\" / \"__x1_1_x1_2..._x1_2\"). Matches the item's original dead-URL naming exactly (\"bacon__x1_iconic\" / \"bacon__x1_1_x1_2\" -- only 2 quantity poses, item.dart's iconNum for this entry was left at its existing value).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bacon-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bacon/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bacon-icon.png",
+          "frameWidth": 65,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "bacon-sprite",
+          "sourceFrameRange": [
+            2,
+            3
+          ],
+          "file": "content/sprites/items/bacon/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bacon-sprite.png",
+          "frameWidth": 65,
+          "frameHeight": 32,
+          "numFrames": 2
+        }
+      ]
+    },
+    {
+      "id": "item_icon_hoe",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/hoe/hoe.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 34-frame main timeline (tool equip/use animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a much longer tool-use/equip animation (tens of frames), not the short icon+stack-quantity pattern used by stackable resources. The item registry entry uses a single static image for both iconUrl and spriteUrl (stacksTo:1, iconNum:1 -- a non-stacking equippable tool), so only frame 1 (the plain rest/iconic pose, visually confirmed) was used for both outputs, matching the task scope of converting iconUrl/spriteUrl only. The toolAnimation and brokenUrl fields still point at the original dead childrenofur.com URLs and are left for a future pass (they would need separate frame ranges from this same source, not yet resolved).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "hoe-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hoe/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hoe-icon.png",
+          "frameWidth": 100,
+          "frameHeight": 100,
+          "numFrames": 1
+        },
+        {
+          "state": "hoe-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hoe/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hoe-sprite.png",
+          "frameWidth": 100,
+          "frameHeight": 100,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_shovel",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/shovel/shovel.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 57-frame main timeline (tool equip/use animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a much longer tool-use/equip animation (tens of frames), not the short icon+stack-quantity pattern used by stackable resources. The item registry entry uses a single static image for both iconUrl and spriteUrl (stacksTo:1, iconNum:1 -- a non-stacking equippable tool), so only frame 1 (the plain rest/iconic pose, visually confirmed) was used for both outputs, matching the task scope of converting iconUrl/spriteUrl only. The toolAnimation and brokenUrl fields still point at the original dead childrenofur.com URLs and are left for a future pass (they would need separate frame ranges from this same source, not yet resolved).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "shovel-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/shovel/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-shovel-icon.png",
+          "frameWidth": 91,
+          "frameHeight": 94,
+          "numFrames": 1
+        },
+        {
+          "state": "shovel-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/shovel/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-shovel-sprite.png",
+          "frameWidth": 91,
+          "frameHeight": 94,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pick",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/pick/pick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 37-frame main timeline (tool equip/use animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a much longer tool-use/equip animation (tens of frames), not the short icon+stack-quantity pattern used by stackable resources. The item registry entry uses a single static image for both iconUrl and spriteUrl (stacksTo:1, iconNum:1 -- a non-stacking equippable tool), so only frame 1 (the plain rest/iconic pose, visually confirmed) was used for both outputs, matching the task scope of converting iconUrl/spriteUrl only. The toolAnimation and brokenUrl fields still point at the original dead childrenofur.com URLs and are left for a future pass (they would need separate frame ranges from this same source, not yet resolved).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pick-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pick/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pick-icon.png",
+          "frameWidth": 115,
+          "frameHeight": 63,
+          "numFrames": 1
+        },
+        {
+          "state": "pick-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pick/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pick-sprite.png",
+          "frameWidth": 115,
+          "frameHeight": 63,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_scraper",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/scraper/scraper.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 55-frame main timeline (tool equip/use animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a much longer tool-use/equip animation (tens of frames), not the short icon+stack-quantity pattern used by stackable resources. The item registry entry uses a single static image for both iconUrl and spriteUrl (stacksTo:1, iconNum:1 -- a non-stacking equippable tool), so only frame 1 (the plain rest/iconic pose, visually confirmed) was used for both outputs, matching the task scope of converting iconUrl/spriteUrl only. The toolAnimation and brokenUrl fields still point at the original dead childrenofur.com URLs and are left for a future pass (they would need separate frame ranges from this same source, not yet resolved).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "scraper-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/scraper/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-scraper-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 80,
+          "numFrames": 1
+        },
+        {
+          "state": "scraper-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/scraper/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-scraper-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 80,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_watering_can",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/watering_can/watering_can.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 33-frame main timeline (tool equip/use animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a much longer tool-use/equip animation (tens of frames), not the short icon+stack-quantity pattern used by stackable resources. The item registry entry uses a single static image for both iconUrl and spriteUrl (stacksTo:1, iconNum:1 -- a non-stacking equippable tool), so only frame 1 (the plain rest/iconic pose, visually confirmed) was used for both outputs, matching the task scope of converting iconUrl/spriteUrl only. The toolAnimation and brokenUrl fields still point at the original dead childrenofur.com URLs and are left for a future pass (they would need separate frame ranges from this same source, not yet resolved).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "watering_can-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/watering_can/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-watering_can-icon.png",
+          "frameWidth": 150,
+          "frameHeight": 150,
+          "numFrames": 1
+        },
+        {
+          "state": "watering_can-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/watering_can/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-watering_can-sprite.png",
+          "frameWidth": 150,
+          "frameHeight": 150,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_dice",
+      "sourcePath": "tmp/glitch-items/misc/dice/dice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 (visually near-identical to frame 2) used for both icon and sprite outputs. This item is single-icon (stacksTo:1); the source SWF's single usable static pose (frame 1, visually confirmed) was used for both the icon and sprite outputs, matching the item registry entry which already used the same dead URL (or an equivalent single-frame convention) for both fields.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "dice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dice-icon.png",
+          "frameWidth": 26,
+          "frameHeight": 22,
+          "numFrames": 1
+        },
+        {
+          "state": "dice-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dice-sprite.png",
+          "frameWidth": 26,
+          "frameHeight": 22,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_camera",
+      "sourcePath": "tmp/glitch-items/misc/camera/camera.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 (visually near-identical to frame 2) used for both icon and sprite outputs. This item is single-icon (stacksTo:1); the source SWF's single usable static pose (frame 1, visually confirmed) was used for both the icon and sprite outputs, matching the item registry entry which already used the same dead URL (or an equivalent single-frame convention) for both fields.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "camera-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/camera/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-camera-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 28,
+          "numFrames": 1
+        },
+        {
+          "state": "camera-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/camera/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-camera-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 28,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_rainbow_juice",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_rainbow_juice/potion_rainbow_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 77-frame main timeline (bottle + a long shimmer/sparkle effect animation), no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 (a clean static bottle icon, visually confirmed) used for both icon and sprite outputs. This item is single-icon (stacksTo:1); the source SWF's single usable static pose (frame 1, visually confirmed) was used for both the icon and sprite outputs, matching the item registry entry which already used the same dead URL (or an equivalent single-frame convention) for both fields. The original spriteUrl pointed at a distinct \"tool_animation\" dead URL (a full effect animation, not a quantity strip -- this item is stacksTo:1); only the static icon pose was converted, matching the iconUrl/spriteUrl-only task scope.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_rainbow_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_rainbow_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_rainbow_juice-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_rainbow_juice-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_rainbow_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_rainbow_juice-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
     "families": [
       "seeds",
-      "food",
+      "food (341 of 345 items still unconverted after this pass)",
       "furniture",
-      "tools",
+      "tools (36 of 41 items still unconverted after this pass)",
+      "toys, tinctures-potions (mostly unconverted; 2 and 1 converted respectively this pass)",
       "caterpillar (butterfly life-cycle baby form, no coUserver entity class)",
       "fox_ranger, fox_bait (not requested this pass)",
       "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)"

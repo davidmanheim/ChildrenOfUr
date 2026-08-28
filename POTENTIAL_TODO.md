@@ -37,6 +37,33 @@ Prioritize and verify items before implementation.
   loopback, and use non-default secrets and production database authentication.
 - Disable stack traces in production HTTP responses.
 
+## Item economy
+
+- Found 2026-08-28 while converting a standalone player-item icon batch:
+  `coUserver` already has real, unmodified vendor-stock data wired for a wide
+  swath of the item registry -- `ToolVendor.itemsForSale`
+  (`coUserver/lib/entities/npcs/vendors/toolvendor.dart`),
+  `MealVendor.itemsForSale`, and especially `StreetSpirit`'s per-category
+  stock lists (`coUserver/lib/entities/npcs/vendors/vendor.dart`, switched on
+  `vendors.json`'s real per-street `vendorType` assignment -- 865 streets
+  across 9 categories: hardware, kitchen, groceries, toy, mining, produce,
+  gardening, alchemical, animal). None of these vendor NPC classes are
+  currently placed/spawned anywhere in the live world (no street/hub seed
+  data references them), so this real acquisition data is currently
+  inert. Placing one vendor NPC per street (analogous to
+  `tools/seed-demo-world.mjs`'s world-entity seeding, but for vendors) would
+  make a large fraction of the item registry genuinely obtainable at once
+  without any further per-item work. Recipe data
+  (`coUserver/lib/entities/items/actions/recipes/json/*.json`) is similarly
+  real and wired but only reachable once a player owns the required tool.
+- Some items have no acquisition route anywhere in the current codebase at
+  all (not a placement gap, an actual missing design) -- e.g. `bacon` and
+  `potion_rainbow_juice`, found while documenting the above batch's
+  `content/runtime-manifest.json` rows. A systematic sweep of the item
+  registry against vendor stock lists + recipe outputs + NPC harvest rewards
+  would find the full set and is a prerequisite for RECOVERY_TODO.md's
+  "Import/translate item, recipe, vendor, quest, and achievement graph" item.
+
 ## Operations and reproducibility
 
 - Add durable, structured application logs with rotation/retention; Docker logs

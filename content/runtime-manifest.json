@@ -1026,6 +1026,194 @@
       },
       "status": "converted",
       "statusNote": "Sprite sheets converted from source SWF (capAqua cap-color variant, matching the dart class's dead-link filenames) and wired into streetspiritzutto.dart, replacing dead childrenofur.com links across all 5 states this class uses (groundIdle/raise/hoverIdle/hoverTalk/lower). Vendor logic already existed and is unchanged. Not yet placed."
+    },
+    {
+      "id": "item-apple",
+      "displayName": "Apple",
+      "category": "food (player item)",
+      "sourceAssetId": "item_icon_apple",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: crafted from 3x Cherry using the fruit_changing_machine tool (coUserver/lib/entities/items/actions/recipes/json/fruit_changing_machine.json, recipe id \"apple\") -- a real, pre-existing, unmodified recipe definition, not created for this pass.",
+      "routeIds": {
+        "itemId": "apple",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/fruit_changing_machine.json (id: apple, tool: fruit_changing_machine, input: cherry x3)"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/apple/apple.swf and wired into food.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe/crafting logic already existed and is unchanged."
+    },
+    {
+      "id": "item-banana",
+      "displayName": "Banana",
+      "category": "food (player item)",
+      "sourceAssetId": "item_icon_banana",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: crafted from 6x Cherry using the fruit_changing_machine tool (coUserver/lib/entities/items/actions/recipes/json/fruit_changing_machine.json, recipe id \"banana\") -- a real, pre-existing, unmodified recipe definition, not created for this pass.",
+      "routeIds": {
+        "itemId": "banana",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/fruit_changing_machine.json (id: banana, tool: fruit_changing_machine, input: cherry x6)"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/banana/banana.swf and wired into food.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe/crafting logic already existed and is unchanged."
+    },
+    {
+      "id": "item-honey",
+      "displayName": "Honey",
+      "category": "food (player item)",
+      "sourceAssetId": "item_icon_honey",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by the 'groceries' StreetSpirit vendor stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'groceries', and coUserver/lib/entities/npcs/vendors/jabba_unclefriendly.dart), assigned to 86 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "honey",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"groceries\")",
+          "coUserver/lib/entities/npcs/vendors/jabba_unclefriendly.dart:JabbaUncleFriendly"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/honey/honey.swf and wired into food.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock logic already existed and is unchanged."
+    },
+    {
+      "id": "item-bacon",
+      "displayName": "Rasher of Bacon",
+      "category": "food (player item)",
+      "sourceAssetId": "item_icon_bacon",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list and every coUserver/lib/entities/items/actions/recipes/json/*.json file -- \"bacon\" appears nowhere as a sale item or recipe output; Piggy.dart's harvest only grants \"meat\" and the \"bacon_biter\" achievement, not this item). Per CONTENT_RECOVERY_PLAN.md's routing table, Food is normally a Player item obtained via vendors/recipes/quest rewards/starter grants; wiring a concrete route is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "bacon"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/bacon/bacon.swf and wired into food.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-hoe",
+      "displayName": "Hoe",
+      "category": "tool (player item)",
+      "sourceAssetId": "item_icon_hoe",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and by the 'gardening'/'hardware' StreetSpirit categories (coUserver/lib/entities/npcs/vendors/vendor.dart), assigned to streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "hoe",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"gardening\"/\"hardware\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/hoe/hoe.swf and wired into tools.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's much longer tool-use animation timeline (34 frames) was not converted -- only frame 1 (rest pose) is used, matching the existing single-icon (iconNum:1, stacksTo:1) item definition; toolAnimation/brokenUrl fields are unchanged and still point at dead links (out of this pass's iconUrl/spriteUrl-only scope)."
+    },
+    {
+      "id": "item-shovel",
+      "displayName": "Shovel",
+      "category": "tool (player item)",
+      "sourceAssetId": "item_icon_shovel",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and by the 'gardening'/'hardware' StreetSpirit categories (coUserver/lib/entities/npcs/vendors/vendor.dart), assigned to streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "shovel",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"gardening\"/\"hardware\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/shovel/shovel.swf and wired into tools.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's much longer tool-use animation timeline (57 frames) was not converted -- only frame 1 (rest pose) is used, matching the existing single-icon (iconNum:1, stacksTo:1) item definition; toolAnimation/brokenUrl fields are unchanged and still point at dead links (out of this pass's iconUrl/spriteUrl-only scope)."
+    },
+    {
+      "id": "item-pick",
+      "displayName": "Pick",
+      "category": "tool (player item)",
+      "sourceAssetId": "item_icon_pick",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and by the 'hardware'/'alchemical'/'mining' StreetSpirit categories (coUserver/lib/entities/npcs/vendors/vendor.dart), assigned to streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "pick",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"hardware\"/\"alchemical\"/\"mining\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/pick/pick.swf and wired into tools.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's much longer tool-use animation timeline (37 frames) was not converted -- only frame 1 (rest pose) is used, matching the existing single-icon (iconNum:1, stacksTo:1) item definition; toolAnimation/brokenUrl fields are unchanged and still point at dead links (out of this pass's iconUrl/spriteUrl-only scope)."
+    },
+    {
+      "id": "item-scraper",
+      "displayName": "Scraper",
+      "category": "tool (player item)",
+      "sourceAssetId": "item_icon_scraper",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and by the 'hardware'/'alchemical' StreetSpirit categories (coUserver/lib/entities/npcs/vendors/vendor.dart), assigned to streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "scraper",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"hardware\"/\"alchemical\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/scraper/scraper.swf and wired into tools.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's much longer tool-use animation timeline (55 frames) was not converted -- only frame 1 (rest pose) is used for both iconUrl and spriteUrl (the original entry used two different dead URLs for icon vs. the single '1' quantity pose; only one usable static frame was available from this conversion, documented as a simplification); toolAnimation/brokenUrl fields are unchanged and still point at dead links (out of this pass's iconUrl/spriteUrl-only scope)."
+    },
+    {
+      "id": "item-watering_can",
+      "displayName": "Watering Can",
+      "category": "tool (player item)",
+      "sourceAssetId": "item_icon_watering_can",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and by the 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart), assigned to streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "watering_can",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"gardening\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/watering_can/watering_can.swf and wired into tools.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's much longer tool-use animation timeline (33 frames) was not converted -- only frame 1 (rest pose) is used, matching the existing single-icon (iconNum:1, stacksTo:1) item definition; brokenUrl field is unchanged and still points at a dead link (out of this pass's iconUrl/spriteUrl-only scope)."
+    },
+    {
+      "id": "item-dice",
+      "displayName": "Pair of Dice",
+      "category": "toy (player item)",
+      "sourceAssetId": "item_icon_dice",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by the 'toy' StreetSpirit vendor stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'toy'), assigned to 26 streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "dice",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"toy\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/dice/dice.swf and wired into toys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. This item is single-icon (stacksTo:1); the source SWF's 2 nearly-identical frames were reduced to 1 (visually confirmed near-duplicate), reused for both icon and sprite outputs."
+    },
+    {
+      "id": "item-camera",
+      "displayName": "Camera",
+      "category": "toy (player item)",
+      "sourceAssetId": "item_icon_camera",
+      "destination": "Player item",
+      "accessibleThrough": "Vendor: sold by the 'toy' StreetSpirit vendor stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'toy'), assigned to 26 streets via real per-street vendorType data in vendors.json. Neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references them yet. Vendor NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "camera",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"toy\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/camera/camera.swf and wired into toys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. This item is single-icon (stacksTo:1); the source SWF's 2 nearly-identical frames were reduced to 1 (visually confirmed near-duplicate), reused for both icon and sprite outputs."
+    },
+    {
+      "id": "item-potion_rainbow_juice",
+      "displayName": "Rainbow Juice",
+      "category": "tincture/potion (player item)",
+      "sourceAssetId": "item_icon_potion_rainbow_juice",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list, including the \"alchemical\" StreetSpirit category which sells only alchemy tools, not potions, and every coUserver/lib/entities/items/actions/recipes/json/*.json file). Per CONTENT_RECOVERY_PLAN.md's routing table, Tinctures & Potions are normally a Player item obtained via vendors/recipes/quest rewards/starter grants; wiring a concrete route is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "potion_rainbow_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_rainbow_juice/potion_rainbow_juice.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's 77-frame main timeline (a shimmer/sparkle effect animation) was not converted -- only frame 1 (a clean static bottle icon, visually confirmed) is used for both iconUrl and spriteUrl, matching this item's single-icon (stacksTo:1) definition and the iconUrl/spriteUrl-only task scope."
     }
   ],
   "deliberatelyDeferred": [
