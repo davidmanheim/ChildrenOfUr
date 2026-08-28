@@ -77,11 +77,26 @@ Prioritize and verify items before implementation.
   ginger, hot_pepper, licorice, mustard, nutmeg, older_spice, pinch_of_salt,
   saffron, turmeric) are ALL real, unmodified `spice_mill` recipe outputs
   from `allspice` (`coUserver/lib/entities/items/actions/recipes/json/
-  spice_mill.json`) -- a strong candidate for the next icon/sprite-conversion
-  batch, since the route already exists and only needs the tool placed/owned.
+  spice_mill.json`).
   Placing one `Garden` NPC per gardening-themed street (mirroring the
   proposed vendor-placement idea above) would make the crop-garden loop
   genuinely playable at once.
+- Done 2026-08-28 (third batch, same day as the crop batch above): converted
+  icon/sprite art for all 16 non-`allspice` `spices.json` items, and
+  re-verified the `spice_mill`-from-`allspice` recipe route directly rather
+  than trusting the prior note. Found a more nuanced accessibility picture
+  than the vendor/Garden placement gap documented above: `SpicePlant`
+  (`coUserver/lib/entities/plants/trees/spiceplant.dart`), the world entity
+  whose harvest grants the recipe's `allspice` input, **is** placed in the
+  live world (`tools/seed-demo-world.mjs`'s `RARITY.SpicePlant`, 45% per
+  street + a regional boost on uralia2/kajuu) -- unlike `Garden`/
+  `ToolVendor`/`StreetSpirit`, which are still not placed anywhere. The
+  remaining blocker for these 16 spices is narrower: the `spice_mill` tool
+  itself is only sold by `ToolVendor`/`StreetSpirit`(`kitchen`), both still
+  confirmed inert (not instantiated anywhere outside their own class
+  definitions). So placing just one tool vendor (or a `spice_mill` starter
+  grant / achievement reward) would make this whole 16-item family live,
+  without needing any additional harvest-loop placement work.
 
 ## Operations and reproducibility
 

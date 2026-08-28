@@ -3932,6 +3932,550 @@
       ]
     },
     {
+      "id": "item_icon_black_pepper",
+      "sourcePath": "tmp/glitch-items/spice/black_pepper/black_pepper.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "black_pepper-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/black_pepper/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-black_pepper-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 20,
+          "numFrames": 1
+        },
+        {
+          "state": "black_pepper-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/black_pepper/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-black_pepper-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 20,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_camphor",
+      "sourcePath": "tmp/glitch-items/spice/camphor/camphor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). This source has more DefineShape/DefineSprite tag volume than a typical spice (31 unextracted vector shape tags vs. the usual 5) -- verified via ffdec -export frame to still be exactly a 5-frame root timeline; the extra tags are nested detail-graphic sub-shapes within the same 5 poses, not additional top-level frames or states.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "camphor-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/camphor/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-camphor-icon.png",
+          "frameWidth": 68,
+          "frameHeight": 23,
+          "numFrames": 1
+        },
+        {
+          "state": "camphor-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/camphor/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-camphor-sprite.png",
+          "frameWidth": 68,
+          "frameHeight": 23,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cardamom",
+      "sourcePath": "tmp/glitch-items/spice/cardamom/cardamom.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cardamom-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cardamom/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cardamom-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 17,
+          "numFrames": 1
+        },
+        {
+          "state": "cardamom-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cardamom/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cardamom-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 17,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cinnamon",
+      "sourcePath": "tmp/glitch-items/spice/cinnamon/cinnamon.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cinnamon-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cinnamon/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cinnamon-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "cinnamon-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cinnamon/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cinnamon-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 18,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cumin",
+      "sourcePath": "tmp/glitch-items/spice/cumin/cumin.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cumin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cumin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cumin-icon.png",
+          "frameWidth": 56,
+          "frameHeight": 20,
+          "numFrames": 1
+        },
+        {
+          "state": "cumin-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cumin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cumin-sprite.png",
+          "frameWidth": 56,
+          "frameHeight": 20,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_curry",
+      "sourcePath": "tmp/glitch-items/spice/curry/curry.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "curry-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/curry/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-curry-icon.png",
+          "frameWidth": 56,
+          "frameHeight": 21,
+          "numFrames": 1
+        },
+        {
+          "state": "curry-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/curry/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-curry-sprite.png",
+          "frameWidth": 56,
+          "frameHeight": 21,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_garlic",
+      "sourcePath": "tmp/glitch-items/spice/garlic/garlic.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "garlic-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/garlic/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-garlic-icon.png",
+          "frameWidth": 49,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "garlic-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/garlic/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-garlic-sprite.png",
+          "frameWidth": 49,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_ginger",
+      "sourcePath": "tmp/glitch-items/spice/ginger/ginger.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). This source has more DefineShape/DefineSprite tag volume than a typical spice (111 unextracted vector shape tags vs. the usual 5) -- verified via ffdec -export frame to still be exactly a 5-frame root timeline; the extra tags are nested detail-graphic sub-shapes within the same 5 poses, not additional top-level frames or states.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "ginger-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/ginger/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-ginger-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 33,
+          "numFrames": 1
+        },
+        {
+          "state": "ginger-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/ginger/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-ginger-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 33,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_hot_pepper",
+      "sourcePath": "tmp/glitch-items/spice/hot_pepper/hot_pepper.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "hot_pepper-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hot_pepper/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hot_pepper-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "hot_pepper-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/hot_pepper/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hot_pepper-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 18,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_licorice",
+      "sourcePath": "tmp/glitch-items/spice/licorice/licorice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "licorice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/licorice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-licorice-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 22,
+          "numFrames": 1
+        },
+        {
+          "state": "licorice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/licorice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-licorice-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 22,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_mustard",
+      "sourcePath": "tmp/glitch-items/spice/mustard/mustard.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "mustard-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/mustard/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mustard-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 17,
+          "numFrames": 1
+        },
+        {
+          "state": "mustard-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/mustard/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mustard-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 17,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_nutmeg",
+      "sourcePath": "tmp/glitch-items/spice/nutmeg/nutmeg.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). This source has more DefineShape/DefineSprite tag volume than a typical spice (23 unextracted vector shape tags vs. the usual 5) -- verified via ffdec -export frame to still be exactly a 5-frame root timeline; the extra tags are nested detail-graphic sub-shapes within the same 5 poses, not additional top-level frames or states.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "nutmeg-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/nutmeg/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-nutmeg-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 27,
+          "numFrames": 1
+        },
+        {
+          "state": "nutmeg-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/nutmeg/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-nutmeg-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 27,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_older_spice",
+      "sourcePath": "tmp/glitch-items/spice/older_spice/older_spice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "older_spice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/older_spice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-older_spice-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 21,
+          "numFrames": 1
+        },
+        {
+          "state": "older_spice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/older_spice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-older_spice-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 21,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pinch_of_salt",
+      "sourcePath": "tmp/glitch-items/spice/pinch_of_salt/pinch_of_salt.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total). This source is a partial exception to \"vector shapes only\": tools/swf-extract-bitmaps.py found 159 embedded DefineBitsJPEG3 raster tags (tiny 8x4 to 104x47 crystal/grain detail bitmaps nested inside the vector shapes, not the top-level frame content) alongside 212 unextracted vector shape tags -- far more tag volume than a typical spice (5). Verified via ffdec -export frame to still be exactly a 5-frame root timeline with the same 'iconic' + 4 stack-quantity pose structure as every other spice; the extra bitmap/shape tags are nested salt-crystal detail graphics within those 5 poses, not additional top-level frames or states.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pinch_of_salt-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pinch_of_salt/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pinch_of_salt-icon.png",
+          "frameWidth": 91,
+          "frameHeight": 30,
+          "numFrames": 1
+        },
+        {
+          "state": "pinch_of_salt-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pinch_of_salt/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pinch_of_salt-sprite.png",
+          "frameWidth": 91,
+          "frameHeight": 30,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_saffron",
+      "sourcePath": "tmp/glitch-items/spice/saffron/saffron.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "saffron-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/saffron/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-saffron-icon.png",
+          "frameWidth": 65,
+          "frameHeight": 20,
+          "numFrames": 1
+        },
+        {
+          "state": "saffron-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/saffron/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-saffron-sprite.png",
+          "frameWidth": 65,
+          "frameHeight": 20,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_turmeric",
+      "sourcePath": "tmp/glitch-items/spice/turmeric/turmeric.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified via tools/swf-extract-bitmaps.py), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field (same family/authoring convention as item_icon_allspice from the prior batch): 'iconic' at frame offset 0, then '1'/'2'/'3'/'4' quantity-stack poses at offsets 1-4 (5 frames total).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' scene) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack scenes) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"), same method as item_icon_allspice.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "turmeric-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/turmeric/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-turmeric-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 19,
+          "numFrames": 1
+        },
+        {
+          "state": "turmeric-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/turmeric/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-turmeric-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 19,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
       "id": "auctioneer",
       "sourcePath": "tmp/glitch-items/inhabitants/rare_item_vendor/npc_rare_item_vendor.swf",
       "sourceRepository": "tinyspeck/glitch-items",
@@ -6263,7 +6807,7 @@
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
     "families": [
       "seeds",
       "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",
@@ -6271,6 +6815,7 @@
       "furniture",
       "tools (36 of 41 items still unconverted after this pass)",
       "toys, tinctures-potions (mostly unconverted; 2 and 1 converted respectively in the first pass)",
+      "spices (0 of 17 still unconverted after this pass -- all 16 non-allspice spices converted; allspice itself was already converted in an earlier pass)",
       "caterpillar (butterfly life-cycle baby form, no coUserver entity class)",
       "fox_ranger, fox_bait (not requested this pass)",
       "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)"

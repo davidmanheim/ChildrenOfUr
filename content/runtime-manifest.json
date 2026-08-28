@@ -1432,6 +1432,294 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/food/zucchini/zucchini.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-black_pepper",
+      "displayName": "Black Pepper",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_black_pepper",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"black_pepper\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 black_pepper, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "black_pepper",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "black_pepper"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/black_pepper/black_pepper.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-camphor",
+      "displayName": "Camphor",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_camphor",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"camphor\" as a real, unmodified spice_mill recipe output -- consuming 5 allspice and granting 1 camphor, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "camphor",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "camphor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/camphor/camphor.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-cardamom",
+      "displayName": "Cardamom",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_cardamom",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"cardamom\" as a real, unmodified spice_mill recipe output -- consuming 3 allspice and granting 1 cardamom, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "cardamom",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "cardamom"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/cardamom/cardamom.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-cinnamon",
+      "displayName": "Cinnamon",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_cinnamon",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"cinnamon\" as a real, unmodified spice_mill recipe output -- consuming 2 allspice and granting 1 cinnamon, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "cinnamon",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "cinnamon"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/cinnamon/cinnamon.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-cumin",
+      "displayName": "Cumin",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_cumin",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"cumin\" as a real, unmodified spice_mill recipe output -- consuming 2 allspice and granting 1 cumin, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "cumin",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "cumin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/cumin/cumin.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-curry",
+      "displayName": "Curry",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_curry",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"curry\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 curry, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "curry",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "curry"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/curry/curry.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-garlic",
+      "displayName": "Garlic",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_garlic",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"garlic\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 garlic, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "garlic",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "garlic"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/garlic/garlic.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-ginger",
+      "displayName": "Ginger",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_ginger",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"ginger\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 ginger, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "ginger",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "ginger"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/ginger/ginger.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-hot_pepper",
+      "displayName": "Hot Pepper",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_hot_pepper",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"hot_pepper\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 hot_pepper, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "hot_pepper",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "hot_pepper"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/hot_pepper/hot_pepper.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-licorice",
+      "displayName": "Licorice",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_licorice",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"licorice\" as a real, unmodified spice_mill recipe output -- consuming 2 allspice and granting 1 licorice, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "licorice",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "licorice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/licorice/licorice.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-mustard",
+      "displayName": "Mustard",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_mustard",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"mustard\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 mustard, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "mustard",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "mustard"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/mustard/mustard.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-nutmeg",
+      "displayName": "Nutmeg",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_nutmeg",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"nutmeg\" as a real, unmodified spice_mill recipe output -- consuming 3 allspice and granting 1 nutmeg, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "nutmeg",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "nutmeg"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/nutmeg/nutmeg.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-older_spice",
+      "displayName": "Old(er) Spice",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_older_spice",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"older_spice\" as a real, unmodified spice_mill recipe output -- consuming 5 allspice and granting 1 older_spice, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "older_spice",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "older_spice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/older_spice/older_spice.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-pinch_of_salt",
+      "displayName": "Pinch of Salt",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_pinch_of_salt",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"pinch_of_salt\" as a real, unmodified spice_mill recipe output -- consuming 1 allspice and granting 1 pinch_of_salt, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "pinch_of_salt",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "pinch_of_salt"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/pinch_of_salt/pinch_of_salt.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-saffron",
+      "displayName": "Saffron",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_saffron",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"saffron\" as a real, unmodified spice_mill recipe output -- consuming 3 allspice and granting 1 saffron, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "saffron",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "saffron"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/saffron/saffron.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
+    },
+    {
+      "id": "item-turmeric",
+      "displayName": "Turmeric",
+      "category": "spices (player item)",
+      "sourceAssetId": "item_icon_turmeric",
+      "destination": "Player item",
+      "accessibleThrough": "Recipe: spice_mill.json (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) lists \"turmeric\" as a real, unmodified spice_mill recipe output -- consuming 3 allspice and granting 1 turmeric, verified directly in the recipe JSON (not just trusted from a prior note), not invented for this pass. The input, allspice, is genuinely obtainable live right now: SpicePlant (coUserver/lib/entities/plants/trees/spiceplant.dart), whose harvest() grants allspice, IS placed in the live world by tools/seed-demo-world.mjs (RARITY.SpicePlant: 45% chance per street, maxCount 2, plus a 1.3x regional boost on uralia2/kajuu-themed streets -- confirmed by reading the seed script directly, same placement check the last two batches did for Garden/ToolVendor/StreetSpirit). However, using the recipe at all requires owning the spice_mill tool (coUserver/lib/entities/items/json/tools.json), and that tool's only two acquisition routes in the codebase -- ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and StreetSpirit's 'kitchen' vendor-stock category (coUserver/lib/entities/npcs/vendors/vendor.dart, assigned to 109 streets in vendors.json) -- are both currently inert: neither ToolVendor nor StreetSpirit (nor any of its regional subclasses) is instantiated anywhere outside its own class definition, confirmed via a repo-wide grep for both class names, the same placement gap already documented for these two vendor classes in prior passes. So the recipe route is real and wired, and its raw material (allspice) is genuinely live-obtainable, but the tool gating it is not yet reachable in the live world -- documented honestly as a partial/inert route, not claimed as fully live.",
+      "routeIds": {
+        "itemId": "turmeric",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spice_mill.json",
+        "itemRequirement": [
+          "spice_mill"
+        ],
+        "rewardItem": "turmeric"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/spice/turmeric/turmeric.swf and wired into spices.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. spice_mill recipe data is already real and unchanged. Status is 'converted' (art done), not 'placed'/'live' -- the recipe's input plant (SpicePlant) is placed, but the spice_mill tool needed to run the recipe is not yet obtainable anywhere in the live world (vendor NPC placement is a separate future item, same as documented for ToolVendor/StreetSpirit/Garden in prior passes)."
     }
   ],
   "deliberatelyDeferred": [
