@@ -54,6 +54,23 @@ class Street {
 		if (game.username != null && currentStreet != null)
 			sendLeftMessage(currentStreet.label);
 
+		// ~57% of streets have no CAT422 location file (coUserver's
+		// MapData.getStreetFile returns {} in that case, so streetData['dynamic']
+		// is null here) -- indexing straight into it threw "NoSuchMethodError:
+		// The method '[]' was called on null" and crashed street loading
+		// entirely for every one of those streets. Patch a sane default canvas
+		// (with an empty layers map, since nothing real exists to draw) into
+		// streetData itself, right here, so every other `streetData['dynamic']`
+		// access later in this class (bounds/groundY/layer iteration) gets it
+		// for free instead of needing the same null-guard repeated at each
+		// site. This is a rendering placeholder, not a claim about that
+		// street's real geometry.
+		if (streetData['dynamic'] == null) {
+			streetData['dynamic'] = {
+				'l': -900, 'r': 900, 't': -800, 'b': 0, 'ground_y': 0, 'layers': {}
+			};
+		}
+
 		bounds = new Rectangle(streetData['dynamic']['l'],
 			                       streetData['dynamic']['t'],
 			                       streetData['dynamic']['l'].abs() + streetData['dynamic']['r'].abs(),

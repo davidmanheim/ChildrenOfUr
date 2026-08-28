@@ -220,6 +220,19 @@ class Street {
 			_jsonCache[_tsidG] = streetData;
 		}
 
+		// ~57% of streets have no CAT422 location file (MapData.getStreetFile
+		// returns {} in that case, so streetData['dynamic'] is null here) --
+		// indexing straight into it threw "NoSuchMethodError: The method '[]'
+		// was called on null" and crashed loading for every one of those
+		// streets. Same fallback as the client's matching fix
+		// (coUclient street.dart) -- a rendering placeholder, not a claim
+		// about that street's real geometry.
+		if (streetData['dynamic'] == null) {
+			streetData['dynamic'] = {
+				'l': -900, 'r': 900, 't': -800, 'b': 0, 'ground_y': 0, 'layers': {}
+			};
+		}
+
 		groundY = -(streetData['dynamic']['ground_y'] as num).abs();
 		bounds = new Rectangle(streetData['dynamic']['l'],
 								   streetData['dynamic']['t'],
