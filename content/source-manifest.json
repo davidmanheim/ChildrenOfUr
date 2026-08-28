@@ -5818,16 +5818,459 @@
           "numFrames": 1
         }
       ]
+    },
+    {
+      "id": "item_icon_broccoli",
+      "sourcePath": "tmp/glitch-items/food/broccoli/broccoli.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "broccoli-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/broccoli/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-broccoli-icon.png",
+          "frameWidth": 74,
+          "frameHeight": 48,
+          "numFrames": 1
+        },
+        {
+          "state": "broccoli-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/broccoli/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-broccoli-sprite.png",
+          "frameWidth": 74,
+          "frameHeight": 48,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cabbage",
+      "sourcePath": "tmp/glitch-items/food/cabbage/cabbage.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cabbage-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cabbage/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cabbage-icon.png",
+          "frameWidth": 83,
+          "frameHeight": 63,
+          "numFrames": 1
+        },
+        {
+          "state": "cabbage-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cabbage/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cabbage-sprite.png",
+          "frameWidth": 83,
+          "frameHeight": 63,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_carrot",
+      "sourcePath": "tmp/glitch-items/food/carrot/carrot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "carrot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/carrot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot-icon.png",
+          "frameWidth": 84,
+          "frameHeight": 71,
+          "numFrames": 1
+        },
+        {
+          "state": "carrot-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/carrot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot-sprite.png",
+          "frameWidth": 84,
+          "frameHeight": 71,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_corn",
+      "sourcePath": "tmp/glitch-items/food/corn/corn.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "corn-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/corn/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-corn-icon.png",
+          "frameWidth": 98,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "corn-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/corn/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-corn-sprite.png",
+          "frameWidth": 98,
+          "frameHeight": 47,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cucumber",
+      "sourcePath": "tmp/glitch-items/food/cucumber/cucumber.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cucumber-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cucumber/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cucumber-icon.png",
+          "frameWidth": 55,
+          "frameHeight": 53,
+          "numFrames": 1
+        },
+        {
+          "state": "cucumber-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cucumber/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cucumber-sprite.png",
+          "frameWidth": 55,
+          "frameHeight": 53,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_onion",
+      "sourcePath": "tmp/glitch-items/food/onion/onion.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "onion-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/onion/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-onion-icon.png",
+          "frameWidth": 57,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "onion-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/onion/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-onion-sprite.png",
+          "frameWidth": 57,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_parsnip",
+      "sourcePath": "tmp/glitch-items/food/parsnip/parsnip.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "parsnip-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/parsnip/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-parsnip-icon.png",
+          "frameWidth": 97,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "parsnip-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/parsnip/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-parsnip-sprite.png",
+          "frameWidth": 97,
+          "frameHeight": 49,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potato",
+      "sourcePath": "tmp/glitch-items/food/potato/potato.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potato-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potato/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potato-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "potato-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/potato/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potato-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 32,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pumpkin",
+      "sourcePath": "tmp/glitch-items/food/pumpkin/pumpkin.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 52,
+          "numFrames": 1
+        },
+        {
+          "state": "pumpkin-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 52,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_rice",
+      "sourcePath": "tmp/glitch-items/food/rice/rice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "rice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/rice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-rice-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 29,
+          "numFrames": 1
+        },
+        {
+          "state": "rice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/rice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-rice-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 29,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spinach",
+      "sourcePath": "tmp/glitch-items/food/spinach/spinach.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spinach-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spinach/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spinach-icon.png",
+          "frameWidth": 76,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "spinach-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/spinach/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spinach-sprite.png",
+          "frameWidth": 76,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_tomato",
+      "sourcePath": "tmp/glitch-items/food/tomato/tomato.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "tomato-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/tomato/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tomato-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "tomato-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/tomato/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tomato-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_zucchini",
+      "sourcePath": "tmp/glitch-items/food/zucchini/zucchini.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only (verified zero DefineBits*/DefineBitsLossless* tags via tools/swf-extract-bitmaps.py), 5-frame main timeline, no FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default and this item's existing spriteUrl naming convention \"__x1_1_x1_2_x1_3_x1_4\"). Root timeline has no FrameLabel tags, but the same positional pattern already used for apple/banana/etc. holds: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses, visually confirmed by rendering every frame.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "zucchini-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zucchini/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zucchini-icon.png",
+          "frameWidth": 64,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "zucchini-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/zucchini/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zucchini-sprite.png",
+          "frameWidth": 64,
+          "frameHeight": 56,
+          "numFrames": 4
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. The vast majority of food/tools/toys/tinctures-potions/furniture/storage items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
     "families": [
       "seeds",
-      "food (341 of 345 items still unconverted after this pass)",
+      "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",
+      "croppery-gardening (20 of 33 items still unconverted after this pass -- 13 crops converted, seeds/beans/bubble_tree_bean etc. remain)",
       "furniture",
       "tools (36 of 41 items still unconverted after this pass)",
-      "toys, tinctures-potions (mostly unconverted; 2 and 1 converted respectively this pass)",
+      "toys, tinctures-potions (mostly unconverted; 2 and 1 converted respectively in the first pass)",
       "caterpillar (butterfly life-cycle baby form, no coUserver entity class)",
       "fox_ranger, fox_bait (not requested this pass)",
       "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)"

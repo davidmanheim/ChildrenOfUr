@@ -1214,6 +1214,224 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_rainbow_juice/potion_rainbow_juice.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Source SWF's 77-frame main timeline (a shimmer/sparkle effect animation) was not converted -- only frame 1 (a clean static bottle icon, visually confirmed) is used for both iconUrl and spriteUrl, matching this item's single-icon (stacksTo:1) definition and the iconUrl/spriteUrl-only task scope."
+    },
+    {
+      "id": "item-broccoli",
+      "displayName": "Broccoli",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_broccoli",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"broccoli\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (broccoli_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "broccoli",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/broccoli/broccoli.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-cabbage",
+      "displayName": "Cabbage",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_cabbage",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"cabbage\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (cabbage_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "cabbage",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/cabbage/cabbage.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-carrot",
+      "displayName": "Carrot",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_carrot",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"carrot\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (carrot_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "carrot",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/carrot/carrot.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-corn",
+      "displayName": "Corn",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_corn",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"corn\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (corn_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "corn",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/corn/corn.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-cucumber",
+      "displayName": "Cucumber",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_cucumber",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"cucumber\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (cucumber_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "cucumber",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/cucumber/cucumber.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-onion",
+      "displayName": "Onion",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_onion",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"onion\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (onion_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "onion",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/onion/onion.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-parsnip",
+      "displayName": "Parsnip",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_parsnip",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"parsnip\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (parsnip_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "parsnip",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/parsnip/parsnip.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-potato",
+      "displayName": "Potato",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_potato",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"potato\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (potato_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "potato",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/potato/potato.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-pumpkin",
+      "displayName": "Pumpkin",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"pumpkin\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (pumpkin_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. The 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart) does not include pumpkin (checked directly -- broccoli/carrot/cabbage/corn/cucumber/onion/parsnip/potato/rice/spinach/tomato/zucchini are listed, pumpkin is not), so the Garden harvest route is pumpkin's only current acquisition path in the codebase.",
+      "routeIds": {
+        "itemId": "pumpkin",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/pumpkin/pumpkin.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic is already real and unchanged."
+    },
+    {
+      "id": "item-rice",
+      "displayName": "Rice",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_rice",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"rice\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (rice_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "rice",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/rice/rice.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-spinach",
+      "displayName": "Spinach",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_spinach",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"spinach\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (spinach_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "spinach",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/spinach/spinach.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-tomato",
+      "displayName": "Tomato",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_tomato",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"tomato\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (tomato_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "tomato",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/tomato/tomato.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
+    },
+    {
+      "id": "item-zucchini",
+      "displayName": "Zucchini",
+      "category": "croppery & gardening (player item)",
+      "sourceAssetId": "item_icon_zucchini",
+      "destination": "Player item",
+      "accessibleThrough": "Harvest: Garden.CROPS (coUserver/lib/entities/npcs/garden.dart) lists \"zucchini\" as one of 13 real, fully-implemented crop-garden harvest outputs -- planting the matching seed (zucchini_seed) and progressing a Garden NPC through its HOED/WATERED/PLANTED states, then calling harvest(), grants the crop via a real, unmodified InventoryV2.addItemToUser(email, items[plantedWith].getMap(), count, id) call (garden.dart line ~542), not invented for this pass. The Garden NPC class is not currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references it (confirmed via a repo-wide grep for \"Garden(\" outside garden.dart's own definition), so this real harvest logic is currently inert, the same placement gap already documented for ToolVendor/StreetSpirit in a prior pass. Also (a second, independent route): sold by the real, unmodified 'produce' StreetSpirit vendor-stock list (coUserver/lib/entities/npcs/vendors/vendor.dart, case 'produce'), assigned to 118 streets via real per-street vendorType data in coUserver/lib/entities/npcs/vendors/vendors.json. Neither Garden nor StreetSpirit (nor any of its regional subclasses) is currently placed/spawned anywhere in the live world -- no street/hub NPC seed data references either class (confirmed via a repo-wide grep for both class names outside their own definition files). NPC world-placement is a separate future item from this pass, which converts icon/sprite visual assets only.",
+      "routeIds": {
+        "itemId": "zucchini",
+        "harvestSource": "coUserver/lib/entities/npcs/garden.dart:Garden (CROPS list, harvest())",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/street_spirit.dart:StreetSpirit (vendorType \"produce\")"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/zucchini/zucchini.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Garden harvest logic and vendor stock listing are already real and unchanged."
     }
   ],
   "deliberatelyDeferred": [

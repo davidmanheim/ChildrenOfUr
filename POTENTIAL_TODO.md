@@ -63,6 +63,25 @@ Prioritize and verify items before implementation.
   registry against vendor stock lists + recipe outputs + NPC harvest rewards
   would find the full set and is a prerequisite for RECOVERY_TODO.md's
   "Import/translate item, recipe, vendor, quest, and achievement graph" item.
+- Found 2026-08-28 while converting a second batch (13 `croppery-gardening.json`
+  crops -- broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/
+  rice/spinach/tomato/zucchini): `coUserver/lib/entities/npcs/garden.dart`'s
+  `Garden` NPC class is a third real, fully-implemented, currently-inert
+  acquisition route (alongside `ToolVendor`/`StreetSpirit`) -- its `CROPS`
+  list and `harvest()` method genuinely grant these 13 items, but no
+  street/hub seed data spawns a `Garden` NPC anywhere, so it is real but
+  unreachable in the live world, same placement gap as the vendor classes.
+  12 of the 13 crops (all but pumpkin) are additionally real `produce`
+  `StreetSpirit` vendor stock. Also confirmed this pass: `spices.json`'s
+  16 spices (black_pepper, camphor, cardamom, cinnamon, cumin, curry, garlic,
+  ginger, hot_pepper, licorice, mustard, nutmeg, older_spice, pinch_of_salt,
+  saffron, turmeric) are ALL real, unmodified `spice_mill` recipe outputs
+  from `allspice` (`coUserver/lib/entities/items/actions/recipes/json/
+  spice_mill.json`) -- a strong candidate for the next icon/sprite-conversion
+  batch, since the route already exists and only needs the tool placed/owned.
+  Placing one `Garden` NPC per gardening-themed street (mirroring the
+  proposed vendor-placement idea above) would make the crop-garden loop
+  genuinely playable at once.
 
 ## Operations and reproducibility
 
