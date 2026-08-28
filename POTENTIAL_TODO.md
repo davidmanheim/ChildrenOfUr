@@ -4,6 +4,231 @@ This is a review-derived, **potential** work list.  It is not a commitment to
 change every item, nor evidence that each path is currently user-visible.
 Prioritize and verify items before implementation.
 
+## Quest completability audit (2026-08-28)
+
+Full trace of all 12 quests in `coUserver/lib/quests/json/*.json` against the
+current codebase and `tools/seed-demo-world.mjs` world placement. Not a JSON
+well-formedness check -- for every requirement, verified the referenced item/
+entity/action/location is real and has a live acquisition or trigger route,
+including the full recipe-input chain (an item with a "real" recipe whose own
+inputs are unobtainable does not count as obtainable), and that every quest's
+offer-to-player trigger is actually reachable.
+
+**How quests reach a player at all** (`coUserver/lib/quests/quest_endpoint.dart`,
+`coUserver/lib/quests/quest.dart`): the only *unconditional* grant is Q1,
+auto-added to every new local player's log on WebSocket connect when
+`LOCAL_SEED_QUESTS=true` (set in `docker-compose.yml` for the local game
+server). Every other quest is offered (`UserQuestLog.offerQuest`) from a real
+in-code trigger site, each grep-verified directly against the current source
+(not assumed from a prior note):
+
+| Quest | Offer trigger | Source |
+| --- | --- | --- |
+| Q1 | `LOCAL_SEED_QUESTS` auto-grant on connect; also offered on buying `knife_and_board` from any vendor | `quest_endpoint.dart:65`, `vendor.dart:309` |
+| Q2 | Petting any placed tree-family entity | `tree.dart:223` |
+| Q3 | Donating an item to a Shrine | `shrine.dart:80` |
+| Q4 | Player's street becomes "Louise Pasture" | `player_update_handler.dart:66` |
+| Q5 | Same shrine donation as Q3 (offered alongside it) | `shrine.dart:82` |
+| Q6 | Buying `pick` or `fancy_pick` | `inventory_new.dart:1008` |
+| Q7 | Automatically 1 minute after Q1 completes (hardcoded timer, no NPC) | `quest.dart:317-319` |
+| Q8 | A player's very first inventory row is ever created (first item obtained, any source) | `inventory_new.dart:547` |
+| Q9 | Petting a Piggy | `piggy.dart:195` |
+| Q10 | Player's mood drops below `maxMood/10` (periodic `simulate()` check, no NPC) | `metabolics_endpoint.dart:148` |
+| Q11 | Nibbling a Piggy | `piggy.dart:140` |
+| Q12 | Buying `cocktail_shaker` | `inventory_new.dart:1011` |
+
+All of these trigger sites are live, ordinary code paths (not dead code), so
+reachability of each quest's *offer* reduces to whether its triggering
+entity/item is itself placed/obtainable -- checked per-quest below.
+
+### Summary
+
+| Quest ID | Title | Verdict |
+| --- | --- | --- |
+| Q1 | Make Me a Sammich | FULLY COMPLETABLE |
+| Q2 | Tree Petter | FULLY COMPLETABLE |
+| Q3 | Communing with the Giants | FULLY COMPLETABLE |
+| Q4 | Race to the Forest | FULLY COMPLETABLE |
+| Q5 | Loyalty's Rich Reward | FULLY COMPLETABLE |
+| Q6 | Dullite, Beryl and Sparkly | FULLY COMPLETABLE |
+| Q7 | Snocone Joy | PARTIALLY BLOCKED |
+| Q8 | Enlarge Yer Slots | FULLY COMPLETABLE |
+| Q9 | Doody Inspector | FULLY COMPLETABLE |
+| Q10 | The Great Guzzler Challenge | FULLY COMPLETABLE |
+| Q11 | Meat Galore | FULLY COMPLETABLE |
+| Q12 | Make Me Some Drinks | FULLY COMPLETABLE |
+
+11 of 12 quests are genuinely completable end-to-end today, several via
+recipe chains 2-3 tiers deep that were traced input-by-input rather than
+trusted from their top-level ingredient list. One notable finding while
+tracing: the `skill`/`skill_level`/`achievement_req`/`quest_req` keys present
+on many `knife_and_board.json` recipe entries (e.g. `deluxe_sammich`'s
+`achievement_req: "nice_dicer"`) are **not** enforced anywhere -- `Recipe`
+(`coUserver/lib/entities/items/actions/recipes/recipe.dart`) only declares an
+`@Field() Map skills` (populated from a JSON `skills` *map* key, which none of
+these entries use) and no achievement/quest field at all, so
+`redstone_mapper`'s `decode()` silently drops those keys and
+`RecipeBook.makeRecipe` never checks them. This isn't a completability bug
+(it makes recipes *more* permissive, not less) but is worth knowing before
+"fixing" a recipe gate that doesn't actually gate anything at runtime.
+
+### Q1 -- Make Me a Sammich -- FULLY COMPLETABLE
+
+Auto-granted (see table above). Requires making `cheezy_sammich`,
+`deluxe_sammich`, `hearty_groddle_sammich` (all `knife_and_board.json`
+recipes, tool `knife_and_board` = real `kitchen`-category `StreetSpirit`
+stock, `vendor.dart:170`). Ingredient chains, traced fully:
+- `cheezy_sammich`: `cheese`(1) + `bun`(2). `bun` = real `groceries`
+  `StreetSpirit` stock (`vendor.dart:123`). `cheese` chain: Butterfly (placed,
+  `RARITY.Butterfly` 30%) `milk` action (`butterfly.dart:265`) -> `butterfly_milk`
+  -> item action `shakeBottle` -> `butterfly_butter` -> item action `compress`
+  -> `cheese` (`milk-butter-cheese.dart`).
+- `deluxe_sammich`: `bun`(2) + `cheese`(1) [as above] + `pickle`(1) + `meat`(1).
+  `pickle` = `awesome_pot` recipe (tool = real `kitchen` stock) from
+  `cucumber`(produce vendor stock) + `olive_oil`(groceries vendor stock) +
+  `pinch_of_salt`(real `spice_mill` output from `allspice`/`SpicePlant`, placed,
+  per this file's Item economy section below). `meat` = real `Piggy` (placed)
+  `nibble` reward.
+- `hearty_groddle_sammich`: `bun`(2) + `hot_n_fizzy_sauce`(1) + `meat`(1).
+  `hot_n_fizzy_sauce` = `saucepan` recipe (real kitchen stock) from
+  `bubble_tiny`(1)[`bubble_tuner` recipe from `plain_bubble`x3, `plain_bubble`
+  = real `BubbleTree` harvest, placed] + `cumin`+`hot_pepper`(spices, real
+  `spice_mill` outputs) + `mustard`(real groceries vendor stock).
+
+### Q2 -- Tree Petter -- FULLY COMPLETABLE
+
+Needs 5 unique tree-family pets (`treePet.*`, `type: counter_unique`). 8
+placed tree-family types exist (`WoodTree`, `BeanTree`, `BubbleTree`,
+`FruitTree`, `PaperTree`, plus `EggPlant`/`GasPlant`/`SpicePlant`, which share
+the same `pet` action and per-type `Stat` tracking, confirmed in
+`tree.dart:190-223`), well over the 5 required.
+
+### Q3 -- Communing with the Giants -- FULLY COMPLETABLE
+
+Requires 1 `emblemGet` event. All 11 Shrine types (`Alph`...`Zille`) are
+placed (5% chance each, `seed-demo-world.mjs` `RARITY`). `Shrine.donate()`
+(`shrine.dart:60`) accepts any owned item, adds favor, and once a giant's
+favor bar fills, `metabolics.dart:113-131`'s `_setFavor` grants
+`emblem_of_<giant>` and publishes `emblemGet` -- real, wired, reachable given
+any placed shrine of any giant.
+
+### Q4 -- Race to the Forest -- FULLY COMPLETABLE (time-limit feasibility not independently verified)
+
+Offered on entering "Louise Pasture"; requires reaching "Blue Mountain Bore"
+within 79s (`location_Blue Mountain Bore`, `type: timed`). Both street names
+are confirmed real entries in `coUserver/lib/common/mapdata/json/streetdata.json`
+(verified directly, not assumed). The location-change/timer mechanism itself
+is real and unmodified from upstream. Not independently re-verified: whether
+79 seconds is actually enough time to travel between these two specific
+streets given current player movement speed and street adjacency/geometry --
+this is unchanged original-game balance data, not something this recovery
+project altered, so it is marked completable but flagged rather than silently
+assumed.
+
+### Q5 -- Loyalty's Rich Reward -- FULLY COMPLETABLE (deep grind)
+
+Prerequisite Q3 (completable, see above) is itself required and satisfiable.
+Requires collecting 11 emblems of one giant type and using the `iconize` item
+action (`emblems-icons.dart:25`) on a stack of them, which is real, wired code
+that consumes 11 matching emblems and grants `icon_of_<giant>`, publishing
+`iconGet`. Reachable via repeated Q3-style shrine donation; slow, but every
+step traces to a real route.
+
+### Q6 -- Dullite, Beryl and Sparkly -- FULLY COMPLETABLE
+
+Requires 17/13/11 `chunk_dullite`/`chunk_beryl`/`chunk_sparkly`. `BerylRock`/
+`DulliteRock`/`SparklyRock` are all placed (`RARITY` 22%/16%/10%) and their
+mining actions grant the exact matching chunk items
+(`berylrock.dart`/`dulliterock.dart`/`sparklyrock.dart`), which
+`InventoryV2.addItemToUser` turns into a matching `getItem_chunk_*` event
+automatically. Offer trigger (buying `pick`/`fancy_pick`) is real vendor stock
+across several placed vendor categories (`ToolVendor`, and `hardware`/
+`mining`/`alchemical`-category `StreetSpirit`).
+
+### Q7 -- Snocone Joy -- PARTIALLY BLOCKED
+
+Prerequisite Q1 is completable, and Q7 is auto-offered 1 minute after Q1
+completes, so the *quest itself* is reachable. Its two requirements split:
+- `location_Wintry Place` (travel there): fine -- "Wintry Place" is a real
+  street in `streetdata.json` (verified directly).
+- `getItem_snocone_*` (buy any sno cone): **blocked**. The only source of any
+  `snocone_blue`/`green`/`orange`/`red`/`purple` item anywhere in the codebase
+  is `SnoConeVendingMachine` (`coUserver/lib/entities/npcs/vendors/
+  snoconevendingmachine.dart`), and that class is not in
+  `tools/seed-demo-world.mjs`'s `VENDOR_NPC_TYPES` (only `Garden`,
+  `ToolVendor`, `StreetSpiritFirebog`/`Zutto`/`Groddle` are placed) -- so it is
+  never instantiated anywhere in the live world. This same gap was
+  independently noted in this file's Item economy section (the `snocone_*`
+  entry in the food-icon-conversion batch note above) and in
+  `RECOVERY_TODO.md`.
+  **Fix would require**: adding `SnoConeVendingMachine` to
+  `seed-demo-world.mjs`'s placed-NPC list, after confirming its constructor
+  signature matches `street.dart`'s reflective placement expectations (same
+  check already done for `Still`/`Crab`/the `HoochRespawningItem` family) --
+  a small, low-risk, well-precedented placement-only fix, not a code change.
+
+### Q8 -- Enlarge Yer Slots -- FULLY COMPLETABLE
+
+Offered automatically the first time any player ever receives any item (first
+`inventories` row INSERT, `inventory_new.dart:547`) -- not NPC-dependent.
+Requires buying any `*_bag` item (`getItem_.*_bag`). `generic_bag`/
+`bigger_bag`/color variants are all `category: "Storage"`
+(`entities/items/json/storage.json`), sold via `pickItems(["Storage"])` by
+both `ToolVendor` (placed) and `hardware`-category `StreetSpirit` (placed).
+
+### Q9 -- Doody Inspector -- FULLY COMPLETABLE
+
+Offered on petting a Piggy (placed, common). Requires 5 `examine_piggy_plop`
+events. `Piggy.feedItem` (`piggy.dart:223`, real `feed` action, requires any
+non-seed crop item -- produce vendor stock or `Garden` harvest, both real and
+placed) drops a `piggy_plop` item on the ground; picking it up and using its
+real `examine` item action (`piggy_plop.dart:25`, `examinePlop`) publishes the
+exact matching event.
+
+### Q10 -- The Great Guzzler Challenge -- FULLY COMPLETABLE
+
+Offered automatically whenever a player's mood drops below `maxMood/10`
+(`metabolics_endpoint.dart:148`, periodic `simulate()` check, no NPC needed).
+Requires drinking 12 `beer`. `beer` has a real, confirmed-wired `Drink` item
+action (`drinks.json`) that goes through `Consumable.drink()`
+(`consume.dart:23-46`), which publishes `drink_<itemType>` -- for `beer`, this
+is exactly `drink_beer`, matching the quest's `eventType`. `beer` is real
+`groceries`-category `StreetSpirit` stock (placed, confirmed in this file's
+prior Item economy note).
+
+### Q11 -- Meat Galore -- FULLY COMPLETABLE
+
+Offered on nibbling a Piggy. Requires 6 `piggyNibble` events; `Piggy.nibble()`
+(`piggy.dart:129`) requires no tool/item, just energy, and publishes the event
+directly. `Piggy` is common (50% chance, up to 2/street).
+
+### Q12 -- Make Me Some Drinks -- FULLY COMPLETABLE (deep grind)
+
+Offered on buying `cocktail_shaker` (real `kitchen`-category `StreetSpirit`
+stock). Requires making `face_smelter`, `pungent_sunrise`, `flaming_humbaba`
+(all `cocktail_shaker.json` recipes). All three recipes include `hooch`,
+which is real and placed two ways (`HoochRespawningItem` world-entity harvest,
+`RARITY` 25%, and the `Still` fermenting NPC, 6%). Remaining ingredients, all
+traced to real chains:
+- `face_smelter`: `onion_sauce`(1)[`saucepan` recipe: `butterfly_butter`
+  (cheese-chain intermediate, see Q1) + `onion`(4, produce vendor stock) +
+  `nutmeg`(1, real `spice_mill` output)] + `gas_crying`(1)[`gassifier` recipe
+  from `general_vapour`x4, `general_vapour` = real `GasPlant` harvest reward,
+  placed] + `parsnip`(2, produce vendor stock).
+- `flaming_humbaba`: `fruity_juice`(1)[`blender` recipe: `cherry`x4(real
+  `FruitTree` harvest reward, placed) + `plum`x2 + `orange`x1(both
+  `fruit_changing_machine` recipe outputs from `cherry`)] + `hot_n_fizzy_sauce`
+  (see Q1's `hearty_groddle_sammich` chain) + `gas_laughing`(1, `gassifier`
+  from `general_vapour`x3).
+- `pungent_sunrise`: `camphor`(1, real `spice_mill` output) + `exotic_juice`
+  (1)[`blender` recipe: `pineapple`+`mangosteen`x3+`banana`, all
+  `fruit_changing_machine` outputs from `cherry`] + `fruit_salad`(1)
+  [`knife_and_board` recipe: `bunch_of_grapes`+`banana`+`apple`, all
+  `fruit_changing_machine` outputs from `cherry`].
+All the tools involved (`saucepan`, `gassifier`, `blender`,
+`fruit_changing_machine`, `knife_and_board`, `cocktail_shaker`) are real
+`kitchen`/`hardware`/`ToolVendor` stock.
+
 ## Reliability and compatibility
 
 - ~~Finish replacing raw Redstone mapper query results with typed lists across
