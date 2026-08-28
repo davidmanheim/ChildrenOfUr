@@ -1382,8 +1382,8 @@
 	"magical_pendant": {
 		"name": "Magical Pendant",
 		"category": "Collectibles",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/artifact_magical_pendant__x1_1_png_1354840314.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/artifact_magical_pendant__x1_1_png_1354840314.png",
+		"iconUrl": "files/sprites/generated/converted/item-magical_pendant-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-magical_pendant-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "A high priestess of Grendaline once bestowed this piece of jewelry, known as the ‘Kommangerrit Neckpiece” to Helen, having observed that her low confidence was stalling her romantic life. Helen, who became the most desirable girl in Groddle, and believed it to have magical properties, though under duress, the priestess would admit that the vaguely suggestive shape and beer-scented pheromones sprinkled on it might have been more responsible."
@@ -2554,8 +2554,8 @@
 	"wooden_apple": {
 		"name": "Wooden Apple",
 		"category": "Collectibles",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/artifact_wooden_apple__x1_1_png_1354840322.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/artifact_wooden_apple__x1_1_png_1354840322.png",
+		"iconUrl": "files/sprites/generated/converted/item-wooden_apple-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-wooden_apple-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "Carved of hardest spice tree wood, once adorning the mantlepiece of Gaia, mother of Helen and Harris, this apple was once painted a startlingly shiny gold. This was made by mixing a secret combination of elements, grinding them down with powdered chunks of sparkly and turning them to liquid paint with the careful addition of happy butterfly tears. So desperate were others for the secret recipe that the Apple was stolen almost daily, a little of the patina scraped off each time."

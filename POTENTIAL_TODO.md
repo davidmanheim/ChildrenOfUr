@@ -228,6 +228,51 @@ Prioritize and verify items before implementation.
   same live route as the batch's own `machine_stand` -- another
   category, like `storage.json`, where the remaining unconverted items
   are pure icon-conversion work, not a blocked design/placement gap.
+- Found 2026-08-28 (seventh batch, scoped to exactly `alchemical.json`/
+  `collectibles.json`/`licenses-permits.json`/`tinctures-potions.json`
+  to avoid colliding with other agents converting other categories in
+  parallel), with a self-correction worth recording as a process note:
+  an initial pass checked only `test_tube.json`/`beaker.json`/
+  `alchemical_tongs.json`/`tincturing_kit.json` for where
+  `red_element`/`green_element`/`blue_element`/`shiny_element` come
+  from, found nothing, and wrongly concluded they had no acquisition
+  route at all. Re-checking `grinder.json` (which the sixth batch's own
+  note above already used for `copper`/`tin`/`molybdenum`, but this
+  pass initially failed to cross-reference) found real
+  `blue_element-grinder`/`green_element-grinder`/`red_element-grinder`/
+  `shiny_element-grinder` recipes producing all 4 elements from
+  `chunk_dullite`/`chunk_beryl`/`chunk_sparkly` (+ `cherry` for red) --
+  the same DulliteRock/BerylRock/SparklyRock/FruitTree harvests already
+  confirmed placed. So `abbasidose` (`test_tube`) and `fertilidust`
+  (`beaker`, via element-derived `humbabol`/`potoxin`/`cosmox`) are
+  genuinely live end-to-end (multi-hop: harvest rock/fruit -> grind ->
+  test_tube -> beaker), corrected in `content/runtime-manifest.json`
+  before this pass finished. Takeaway for future batches: always check
+  every `recipes/json/*.json` file for a candidate output, not just the
+  files whose tool name obviously matches the item's category -- a raw
+  material can be produced by a recipe under an unrelated-sounding tool
+  (here, alchemical raw materials came from `grinder`, a "mining/
+  hardware" tool, not from any alchemy-named tool). Confirmed genuinely
+  routeless in this same batch (recipe files and vendor `itemsForSale`
+  lists checked directly, `grinder.json`-style cross-referencing
+  included): `potion_amorous_philtre`, `potion_ancestral_spirits`,
+  `potion_tree_poison` (tinctures-potions.json), `card_carrying_
+  qualification` (whose only other reference, a same-named achievement
+  in `player.json`, cannot grant items -- the achievements subsystem
+  never calls any item-granting method anywhere, confirmed by grep),
+  `fox_permit`, `general_building_permit`, `teleportation_script_
+  imbued`, `teleportation_script`, `your_papers` (licenses-permits.json),
+  and `wooden_apple`/`magical_pendant` (collectibles.json, spot-checked
+  against several sibling `artifact_*`-sourced collectibles too, none of
+  which turned up a route either). `essence_of_gandlevery` has a real
+  `tincturing_kit` recipe (tool itself live) but is blocked by two
+  already-documented gaps at once: `gandlevery` the herb has no route
+  (the fifth batch's `HerbGarden` gap) and `hooch` was real-but-unplaced
+  (now placed, see the placement-pass row above). One genuine exception
+  found live: `note` -- `NoteManager.appEdit`
+  (`coUserver/lib/entities/items/actions/note.dart`) consumes 1 `paper`
+  and grants a `note` via a real HTTP route, auto-learning
+  `penpersonship`; `paper` comes from the already-placed `PaperTree`.
 
 ## Operations and reproducibility
 

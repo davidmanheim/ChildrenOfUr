@@ -2452,11 +2452,16 @@
       "category": "alchemical (player item)",
       "sourceAssetId": "item_icon_abbasidose",
       "destination": "Player item",
-      "accessibleThrough": "Real recipe route exists: coUserver/lib/entities/items/actions/recipes/json/test_tube.json's 'abbasidose' entry (tool 'test_tube', input 4x red_element + 2x green_element + 6x blue_element). The test_tube tool itself is genuinely live -- real ToolVendor.itemsForSale and StreetSpirit('alchemical') vendor stock (coUserver/lib/entities/npcs/vendors/toolvendor.dart, vendor.dart), both placed in the world by tools/seed-demo-world.mjs. However the recipe's raw-material inputs (red_element/green_element/blue_element/shiny_element) have NO acquisition route of any kind anywhere in coUserver -- checked every vendor itemsForSale list (none sell them) and every recipes/json/*.json file (they appear only as recipe INPUTS, never as an output of anything); they are also absent from every NPC harvest/reward path. So this recipe is real but permanently unreachable at the very first step, a stricter version of the spice_mill/allspice 'one hop already works' pattern from the spices/drinks batches -- here zero hops work.",
+      "accessibleThrough": "Real, live, end-to-end route (correction: an earlier pass in this same batch initially reported this as blocked because it missed grinder.json's element-producing recipes; re-checked directly before finalizing). coUserver/lib/entities/items/actions/recipes/json/test_tube.json's 'abbasidose' entry (tool 'test_tube', input 4x red_element + 2x green_element + 6x blue_element) is real, unmodified code, and all 3 element inputs are themselves genuinely obtainable via grinder.json recipes from world-entity harvests already placed by tools/seed-demo-world.mjs: blue_element from chunk_dullite (DulliteRock), green_element from chunk_beryl (BerylRock), red_element from chunk_dullite + cherry (DulliteRock + FruitTree). Both tools needed (grinder, then test_tube) are real ToolVendor/StreetSpirit('alchemical') stock, and ToolVendor is placed in the world. So this is a real, if multi-hop, live crafting chain: harvest rocks/fruit -> grind into elements -> combine in a test_tube.",
       "routeIds": {
         "itemId": "abbasidose",
         "recipeId": "abbasidose",
-        "recipeTool": "test_tube"
+        "recipeTool": "test_tube",
+        "elementRecipes": [
+          "blue_element-grinder",
+          "green_element-grinder",
+          "red_element-grinder"
+        ]
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/compounds/abbasidose/abbasidose.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
@@ -2467,9 +2472,12 @@
       "category": "alchemical (player item)",
       "sourceAssetId": "item_icon_blue_element",
       "destination": "Player item",
-      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase. Confirmed by grepping every .dart and .json file in coUserver: blue_element (and its 3 siblings red_element/green_element/shiny_element) appear only in alchemical.json's own item definitions, as INPUTS to the test_tube.json/alchemical_tongs.json recipe files, and in storage.json's generic storage-category listing -- never as a vendor stock item, recipe output, harvest reward, or achievement grant. This is the root cause blocking the entire alchemical compound/powder crafting chain (test_tube -> compounds -> beaker -> powders, all documented in this batch's other entries): every downstream item's recipe is real code, but none of it can ever run because the elements it starts from are unobtainable. Same 'genuinely missing design, not a placement gap' category as bacon/potion_rainbow_juice.",
+      "accessibleThrough": "Real, live, end-to-end route (correction: an earlier pass in this same batch initially missed grinder.json and reported this as routeless -- re-checked directly before finalizing). coUserver/lib/entities/items/actions/recipes/json/grinder.json's 'blue_element-grinder' entry (tool 'grinder', input 1x chunk_dullite, output 2x blue_element). chunk_dullite is a real, unmodified harvest reward from DulliteRock (coUserver/lib/entities/plants/rocks/dulliterock.dart: InventoryV2.addItemToUser(..., items['chunk_dullite']...)), and DulliteRock is placed in the live world by tools/seed-demo-world.mjs's RARITY table (e.g. cave/ilmenskie: 2.5, ix/hell: 0.4). The grinder tool itself is real, placed ToolVendor.itemsForSale stock (coUserver/lib/entities/npcs/vendors/toolvendor.dart) and also appears in the 'hardware'/'mining' StreetSpirit vendor categories. So blue_element is genuinely obtainable today: harvest a placed DulliteRock for chunk_dullite, then grind it with a ToolVendor-bought grinder.",
       "routeIds": {
-        "itemId": "blue_element"
+        "itemId": "blue_element",
+        "recipeId": "blue_element-grinder",
+        "recipeTool": "grinder",
+        "rawMaterialSourceEntity": "DulliteRock"
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/compounds/element_blue/element_blue.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
@@ -2480,11 +2488,16 @@
       "category": "alchemical (player item)",
       "sourceAssetId": "item_icon_fertilidust",
       "destination": "Player item",
-      "accessibleThrough": "Real recipe route exists: coUserver/lib/entities/items/actions/recipes/json/beaker.json's 'fertilidust' entry (tool 'beaker', input 40x humbabol + 20x potoxin + 10x cosmox). The beaker tool itself is genuinely live -- real ToolVendor/StreetSpirit('alchemical') vendor stock, both placed in the world. But all 3 compound inputs (humbabol/potoxin/cosmox) are themselves only produced by test_tube.json recipes consuming red/green/blue/shiny elements -- and those raw elements have zero acquisition route anywhere in coUserver (see item-blue_element's entry in this batch). So fertilidust is doubly blocked: even if a player owned a beaker, they could never obtain its 3 compound inputs in the first place.",
+      "accessibleThrough": "Real, live, end-to-end route (correction: an earlier pass in this same batch initially reported this as blocked because it missed grinder.json's element-producing recipes; re-checked directly before finalizing). coUserver/lib/entities/items/actions/recipes/json/beaker.json's 'fertilidust' entry (tool 'beaker', input 40x humbabol + 20x potoxin + 10x cosmox) is real, unmodified code. humbabol/potoxin/cosmox are themselves real test_tube.json recipe outputs from red/green/blue/shiny elements, which are in turn real grinder.json outputs from chunk_dullite/chunk_beryl/chunk_sparkly (DulliteRock/BerylRock/SparklyRock harvests) plus cherry (FruitTree harvest) -- every one of those world entities is placed by tools/seed-demo-world.mjs. All 3 tools needed (grinder, test_tube, beaker) are real ToolVendor/StreetSpirit('alchemical') stock, and ToolVendor is placed in the world. So this is a real, deep (rock/fruit harvest -> grind -> test_tube -> beaker), but genuinely live crafting chain.",
       "routeIds": {
         "itemId": "fertilidust",
         "recipeId": "fertilidust",
-        "recipeTool": "beaker"
+        "recipeTool": "beaker",
+        "compoundRecipes": [
+          "humbabol",
+          "potoxin",
+          "cosmox"
+        ]
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/fertilidust/fertilidust.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."

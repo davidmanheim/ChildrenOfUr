@@ -2,8 +2,8 @@
 	"abbasidose": {
 		"name": "Abbasidose",
 		"category": "Alchemical Compounds & Powders",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/abbasidose__x1_1_png_1354832197.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/abbasidose__x1_1_png_1354832197.png",
+		"iconUrl": "files/sprites/generated/converted/item-abbasidose-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-abbasidose-sprite.png",
 		"stacksTo": 500,
 		"price": 6,
 		"description": "A compound made out of red, green and blue elements."
@@ -20,8 +20,8 @@
 	"blue_element": {
 		"name": "Blue Element",
 		"category": "Alchemical Compounds & Powders",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/element_blue__x1_1_png_1354832189.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/element_blue__x1_1_png_1354832189.png",
+		"iconUrl": "files/sprites/generated/converted/item-blue_element-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-blue_element-sprite.png",
 		"stacksTo": 5000,
 		"price": 1,
 		"description": "An element is the basic building block of all stuff. This one is blue."
@@ -69,9 +69,9 @@
 	"fertilidust": {
 		"name": "Fertilidust",
 		"category": "Alchemical Compounds & Powders",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/fertilidust.png",
+		"iconUrl": "files/sprites/generated/converted/item-fertilidust-icon.png",
 		"toolAnimation": "https://childrenofur.com/assets/entityImages/fertilidust__x1_tool_animation_png_1354832151.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/fertilidust__x1_5_x1_4_x1_3_x1_2_x1_1_png_1354832152.png",
+		"spriteUrl": "files/sprites/generated/converted/item-fertilidust-sprite.png",
 		"stacksTo": 1,
 		"price": 500,
 		"durability": 5,

@@ -2,8 +2,8 @@
 	"potion_amorous_philtre": {
 		"name": "Amorous Philtre",
 		"category": "Tinctures & Potions",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/potion_amorous_philtre__x1_1_png_1354836963.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/potion_amorous_philtre__x1_tool_animation_png_1354836962.png",
+		"iconUrl": "files/sprites/generated/converted/item-potion_amorous_philtre-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-potion_amorous_philtre-sprite.png",
 		"stacksTo": 1,
 		"price": 750,
 		"description": "A sensual - and highly infectious - blend of natural ingredients that stimulate the positive mood-memory receptors of the Glitchate Brain. Smells like macaroons."
@@ -11,8 +11,8 @@
 	"potion_ancestral_spirits": {
 		"name": "Ancestral Spirits",
 		"category": "Tinctures & Potions",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/potion_ancestral_spirits__x1_1_png_1354837006.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/potion_ancestral_spirits__x1_tool_animation_png_1354837005.png",
+		"iconUrl": "files/sprites/generated/converted/item-potion_ancestral_spirits-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-potion_ancestral_spirits-sprite.png",
 		"stacksTo": 1,
 		"price": 1850,
 		"description": "Steadies the nerves and steels the soul against the onset of Ancestral Nostalgia."
@@ -93,8 +93,8 @@
 	"essence_of_gandlevery": {
 		"name": "Essence of Gandlevery",
 		"category": "Tinctures & Potions",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/essence_of_gandlevery__x1_1_png_1354836774.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/essence_of_gandlevery__x1_1_png_1354836774.png",
+		"iconUrl": "files/sprites/generated/converted/item-essence_of_gandlevery-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-essence_of_gandlevery-sprite.png",
 		"stacksTo": 20,
 		"price": 181,
 		"description": "A potent distillation of Gandlevery, as rich in protein and good for energy as it is foul on the tongue and bad for mood."
@@ -237,8 +237,8 @@
 	"potion_tree_poison": {
 		"name": "Tree Poison",
 		"category": "Tinctures & Potions",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/potion_tree_poison__x1_1_png_1354836878.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/potion_tree_poison__x1_tool_animation_png_1354836878.png",
+		"iconUrl": "files/sprites/generated/converted/item-potion_tree_poison-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-potion_tree_poison-sprite.png",
 		"stacksTo": 1,
 		"price": 750,
 		"description": "Thick glass conceals a dark truth: the death sentence for five trees. But really, since the inevitable broom of death clears the way for new life, isn't it actually just \"a life sentence for five NEW trees\"? No, it's mainly just tree poison."
