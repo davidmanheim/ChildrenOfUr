@@ -67,21 +67,21 @@ const REGION_THEME = {
   firebog: { BubbleTree: 1.8, Salmon: 1.8, Chicken: 0.4, Piggy: 0.4, MetalRock: 0.5 },
   // Caverns: rock and (underground pool) fish over surface flora/flyers.
   cave: { MetalRock: 2.2, Salmon: 1.6, WoodTree: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
-    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3, DemoWheat: 0.3 },
+    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3 },
   ilmenskie: { MetalRock: 2.2, Salmon: 1.6, WoodTree: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
-    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3, DemoWheat: 0.3 },
+    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3 },
   // Elevated grassland: good grazing, fewer big trees.
   highlands: { Chicken: 1.5, Piggy: 1.5, Fox: 1.5, WoodTree: 0.7, BeanTree: 0.7,
     BubbleTree: 0.7, FruitTree: 0.7, PaperTree: 0.7 },
   // Pastoral/farmland zones.
-  uralia2: { Chicken: 1.6, Piggy: 1.6, DemoWheat: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
-  kajuu: { Chicken: 1.6, Piggy: 1.6, DemoWheat: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
+  uralia2: { Chicken: 1.6, Piggy: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
+  kajuu: { Chicken: 1.6, Piggy: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
   // Ix: strange/artificial zone -- sparse ordinary life, exotic rarity up.
-  ix: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, DemoWheat: 0.3, MetalRock: 0.3, BeanTree: 0.3,
+  ix: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, MetalRock: 0.3, BeanTree: 0.3,
     BubbleTree: 0.3, FruitTree: 0.3, PaperTree: 0.3, Fox: 0.3, HeliKitty: 0.3, Salmon: 0.3,
     Butterfly: 0.3, Batterfly: 0.3, SilverFox: 2.5 },
   // Hell: harsh territory -- sparse life generally, volcanic rock up.
-  hell: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, DemoWheat: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
+  hell: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
     FruitTree: 0.3, PaperTree: 0.3, HeliKitty: 0.3, Butterfly: 0.3, Batterfly: 0.3, Salmon: 0.3,
     MetalRock: 1.4, Fox: 1.2 },
   // Fungal/mushroom hubs: less woody growth, fewer farm animals.
@@ -139,10 +139,16 @@ for (const [region, adjustments] of Object.entries({
 // content/source-manifest.json) placed with deterministic, geometry-aware --
 // not historically recovered -- positions, and a VARIED per-street subset
 // (see the RARITY table below) rather than every type on every street.
-// `DemoWheat` remains a hand-drawn placeholder (no real crop asset has been
-// converted yet) but is included in that same varied rotation. The
-// now-unused `DemoTree`/`DemoChicken` placeholder classes are no longer
-// seeded at all, superseded by the real WoodTree/Chicken.
+// `DemoWheat` (like the already-retired `DemoTree`/`DemoChicken` before it)
+// is a hand-drawn placeholder class with no real item/action behind it --
+// coUserver/lib/entities/plants/demo_plants.dart documents it as an
+// "intentionally non-harvestable" offline visual stand-in. It is no longer
+// seeded at all (removed 2026-08-28, see RECOVERY_TODO.md): unlike
+// DemoTree/DemoChicken it was never superseded by a converted real-art
+// entity, since no matching "wheat" source SWF or item exists in
+// tmp/glitch-items/ or the item registry to replace it with. The
+// `demo_plants.dart` class itself is left in place (same as `DemoTree`)
+// since it's harmless dead code, not something rendered in the live world.
 const QUOIN_TYPES = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor'];
 const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem', 'Mab',
   'Pot', 'Spriggan', 'Tii', 'Zille'];
@@ -187,7 +193,7 @@ const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
 // crab-*.png) from its own prior conversion batch, so it renders correctly.
 const RESPAWNING_ITEM_TYPES = ['HoochRespawningItem', 'PurpleFlowerRespawningItem'];
 const NPC_ITEM_TYPES = ['Still', 'Crab'];
-const REAL_TYPES = ['WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
+const REAL_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
   'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
   'BerylRock', 'DulliteRock', 'SparklyRock',
@@ -207,7 +213,7 @@ const types = [...QUOIN_TYPES, ...REAL_TYPES]; // still used for the manifest's 
 // SilverFox (a color-variant rarity, not a distinct species) rarest of all.
 const RARITY = {
   WoodTree: { chance: 50, maxCount: 2 }, Chicken: { chance: 50, maxCount: 2 },
-  DemoWheat: { chance: 50, maxCount: 2 }, Piggy: { chance: 50, maxCount: 2 },
+  Piggy: { chance: 50, maxCount: 2 },
   MetalRock: { chance: 50, maxCount: 2 },
   BeanTree: { chance: 45, maxCount: 2 }, BubbleTree: { chance: 45, maxCount: 2 },
   FruitTree: { chance: 45, maxCount: 2 }, PaperTree: { chance: 45, maxCount: 2 },
@@ -283,7 +289,7 @@ const RARITY = {
 const RUNTIME_ASSET_ID = {
   Img: 'quoin-collectibles', Mood: 'quoin-collectibles', Energy: 'quoin-collectibles',
   Currant: 'quoin-collectibles', Mystery: 'quoin-collectibles', Favor: 'quoin-collectibles',
-  WoodTree: 'wood_tree', Chicken: 'chicken', DemoWheat: 'demo-wheat',
+  WoodTree: 'wood_tree', Chicken: 'chicken',
   Piggy: 'piggy', MetalRock: 'metalrock',
   Fox: 'fox', SilverFox: 'silverfox', HeliKitty: 'helikitty', Salmon: 'salmon',
   Butterfly: 'butterfly', Batterfly: 'batterfly',
@@ -308,7 +314,7 @@ const RUNTIME_ASSET_ID = {
   // them as having real converted world-entity art.
   Crab: 'crab',
 };
-// Types with real, newly-converted official art (as opposed to quoins/DemoWheat,
+// Types with real, newly-converted official art (as opposed to quoins,
 // which predate this pass) -- these get concrete example rows in the placement
 // manifest; see generatePlacementManifest for why the full set isn't dumped there.
 const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
@@ -342,40 +348,165 @@ function hash(value) {
 const FLOATING_TYPES = new Set(['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor']);
 const AERIAL_TYPES = new Set(['Butterfly', 'Batterfly', 'HeliKitty']);
 
-function position(tsid, dynamic, index, type) {
-	const seed = hash(`${tsid}:${index}`);
+// Approximate on-screen widths (px), used only to keep placed entities
+// within a street's bounds and spaced apart from each other -- deliberately
+// generous/approximate, not exact per-frame sprite dimensions (those live in
+// each Dart entity class's Spritesheet() call, not this script, and aren't
+// worth re-deriving here just for a layout margin). Types not listed fall
+// back to DEFAULT_WIDTH, a reasonable guess for an NPC/person-sized entity.
+const DEFAULT_WIDTH = 180;
+const WIDTH_BY_TYPE = {
+	// Quoins/collectibles: small icon-sized sprites.
+	Img: 50, Mood: 50, Energy: 50, Currant: 50, Mystery: 50, Favor: 50,
+	// Trees: among the widest ground entities (frame widths seen in
+	// converted trees run up to ~220px).
+	WoodTree: 220, BeanTree: 220, BubbleTree: 220, FruitTree: 220, PaperTree: 220,
+	// Ground resources/rocks.
+	MetalRock: 140, BerylRock: 140, DulliteRock: 140, SparklyRock: 140,
+	DirtPile: 200, IceNubbin: 120, Jellisac: 120, MortarBarnacle: 120, PeatBog: 160,
+	EggPlant: 180, GasPlant: 180, SpicePlant: 180,
+	HoochRespawningItem: 140, PurpleFlowerRespawningItem: 100,
+	// Animals: generally smaller than trees/NPCs.
+	Chicken: 90, Piggy: 110, Fox: 110, SilverFox: 110, Salmon: 90, Crab: 90,
+	Butterfly: 60, Batterfly: 60, HeliKitty: 90,
+};
+
+function entityWidth(type) {
+	return WIDTH_BY_TYPE[type] ?? DEFAULT_WIDTH;
+}
+
+function entityY(dynamic, type, seed) {
 	if (!dynamic) {
-		// Some historical map records have no accompanying CAT422 layout. Keep
-		// their synthetic entities near the default street origin so the seed is
-		// complete without pretending that their original placement is known.
-		return {
-			x: Math.round(-900 + (seed % 1801)),
-			y: Math.round(600 + ((seed >>> 16) % 180))
-		};
+		return Math.round(600 + ((seed >>> 16) % 180));
 	}
-	const fraction = 0.12 + ((seed % 7600) / 10000);
-	const l = Number(dynamic.l);
-	const r = Number(dynamic.r);
 	const ground = Number(dynamic.ground_y);
 	const height = Math.abs(Number(dynamic.t) - Number(dynamic.b));
 	// Entity coordinates are local to the street canvas, whose origin is at
 	// its top rather than the game's signed ground coordinate; this is the
 	// canvas-local Y of the walkable ground line.
 	const groundLineY = height + ground;
-	let y;
 	if (FLOATING_TYPES.has(type)) {
 		// Floating collectibles: hover well above the ground at a varied
 		// height, matching the original quoin design.
-		y = groundLineY - 55 - ((seed >>> 16) % 220);
+		return Math.round(groundLineY - 55 - ((seed >>> 16) % 220));
 	} else if (AERIAL_TYPES.has(type)) {
 		// Flying creatures: a modest hover height, not quoin-height.
-		y = groundLineY - 20 - ((seed >>> 16) % 80);
+		return Math.round(groundLineY - 20 - ((seed >>> 16) % 80));
 	} else {
 		// Ground-anchored: feet on the ground line, with a few px of natural
 		// variance so a street's row of entities doesn't look perfectly ruled.
-		y = groundLineY - ((seed >>> 16) % 12);
+		return Math.round(groundLineY - ((seed >>> 16) % 12));
 	}
-	return { x: Math.round(l + (r - l) * fraction), y: Math.round(y) };
+}
+
+// Lays out every entity placed on ONE street together, instead of each
+// entity picking its own x independently (the old `position()` behavior).
+// That independence was the root of two confirmed live bugs: (1) a sprite
+// rolled near the outer edge of the allowed [0.12, 0.88] fraction range
+// could still render partly off-street, because the fraction accounted for
+// none of the entity's own width; (2) two entities on the same street had
+// no awareness of each other and could land on overlapping/adjacent x
+// values with nothing to keep them apart.
+//
+// This packs entities left-to-right in a street-varied order (hashed per
+// street, so quoins don't always end up leftmost) using each entity's own
+// approximate width plus a gap, exactly like laying out fixed-width boxes in
+// a row: cursor starts at the street's left bound (+ edge margin), and each
+// entity is placed at-or-after the cursor, which then advances by that
+// entity's width. A first attempt used equal-size slots (usable-width / N)
+// instead, which still overlapped constantly -- a slot narrower than the
+// entity placed in it (very common: e.g. a 220px tree in a 200px slot)
+// spills into its neighbor's slot no matter how the jitter is clamped, since
+// the entity's own footprint alone exceeds its allotted space. Sequential
+// packing has no such failure mode: neighbor i+1 can only start once
+// neighbor i's box (including its full width) has already ended.
+//
+// Whatever width remains after every entity's width and a preferred gap are
+// reserved gets spread out as extra breathing room (with a little
+// hash-based jitter inside each entity's own share of it, never crossing
+// into a neighbor's) so a sparse street doesn't clump everything at the
+// left edge. Only when the raw SUM of entity widths alone exceeds the
+// street's usable span -- more/wider things than the street can physically
+// fit even packed edge to edge -- can the tail end still run past the right
+// bound; that is a genuine capacity limit given how many entities this
+// street rolled, not a placement bug.
+function layoutPositions(tsid, dynamic, entries) {
+	const EDGE_MARGIN = 24; // px kept clear of the street's outer l/r bounds
+	const MAX_GAP = 40;     // preferred (not minimum) gap between neighbors
+
+	const l = dynamic ? Number(dynamic.l) : -900;
+	const r = dynamic ? Number(dynamic.r) : 900;
+	const usable = Math.max(0, (r - l) - 2 * EDGE_MARGIN);
+
+	const ordered = entries
+		.map((entry, i) => ({ ...entry, i, sortKey: hash(`${tsid}:slot:${entry.seedKey}`) }))
+		.sort((a, b) => a.sortKey - b.sortKey);
+	const widths = ordered.map(entry => entityWidth(entry.type));
+	const totalWidth = widths.reduce((sum, w) => sum + w, 0);
+	const n = ordered.length;
+
+	// Gap shrinks from MAX_GAP toward 0 as the street gets more crowded, so
+	// entities never overlap as long as their combined width alone fits.
+	const gapCount = Math.max(0, n - 1);
+	const gap = gapCount > 0 ? Math.max(0, Math.min(MAX_GAP, (usable - totalWidth) / gapCount)) : 0;
+	const packedWidth = totalWidth + gap * gapCount;
+	// Leftover space beyond the preferred gaps, spread evenly across n+1
+	// slots (before each entity, plus one trailing) as extra breathing room.
+	const leftover = Math.max(0, usable - packedWidth);
+	const extraPerSlot = n > 0 ? leftover / (n + 1) : 0;
+
+	const results = new Array(entries.length);
+	let cursor = l + EDGE_MARGIN;
+	ordered.forEach((entry, idx) => {
+		const width = widths[idx];
+		const seed = hash(`${tsid}:${entry.seedKey}`);
+		// Jitter within this entity's own share of the leftover space only
+		// (never the neighbor's), so the no-overlap guarantee above holds
+		// regardless of how much jitter lands. Guards on the ROUNDED value,
+		// not extraPerSlot itself: a small positive leftover (e.g. 0.12px/
+		// entity on a fairly full street) rounds to 0, and `seed % 0` is
+		// `NaN` in JS -- which then failed every later bounds check
+		// (`NaN >= x` is always false) and silently routed a fitting
+		// entity through the genuine-overflow fallback below, discarding
+		// its correct sequential position for an effectively unrelated one
+		// -- confirmed live, reproducibly, as the source of overlaps on
+		// streets whose entities should have fit with room to spare.
+		const jitterRange = Math.round(extraPerSlot);
+		const jitter = jitterRange > 0 ? (seed % jitterRange) : 0;
+		// Hard safety-net on top of the packing math above: when a street's
+		// rolled entities have more combined width than the street itself
+		// (bottom-decile street widths run as low as 1000px against a median
+		// of ~19 entities/street at ~150-220px each -- the packed cursor can
+		// run past r well before every entity has been placed), clamping
+		// straight to the edge would stack every overflowing entity on the
+		// exact same pixel (the internal cursor keeps advancing unclamped,
+		// so once one same-width entity overflows, every later one computes
+		// the identical clamped position). Wrapping the overflow back into
+		// the safe range via modulo instead spreads them back out across it
+		// -- still crowded/overlapping in this genuinely-over-capacity case
+		// (unavoidable: more entities than the street can hold), but not
+		// literally identical, and always inside [l, r] either way.
+		const minX = l + EDGE_MARGIN;
+		const maxX = Math.max(minX, r - EDGE_MARGIN - width);
+		const rawX = cursor + jitter;
+		const span = maxX - minX;
+		// FLOAT_SLACK absorbs floating-point drift from the fractional
+		// gap/extraPerSlot arithmetic above (e.g. a cursor landing at
+		// maxX + 5e-13 purely from repeated float addition) -- without it,
+		// that kind of negligible overshoot on a street that actually fits
+		// wrongly triggered the genuine-overflow branch below. And that
+		// branch keys off `seed` (each entity's own hash), not `rawX` --
+		// keying off the coordinate itself risked landing exactly on another
+		// entity's real, unrelated position by coincidence (confirmed live:
+		// it did, reproducibly, for one specific street).
+		const FLOAT_SLACK = 0.5;
+		const x = (rawX >= minX - FLOAT_SLACK && rawX <= maxX + FLOAT_SLACK)
+			? Math.min(Math.max(rawX, minX), maxX)
+			: (span > 0 ? minX + (seed % (span + 1)) : minX);
+		results[entry.i] = { x: Math.round(x), y: entityY(dynamic, entry.type, seed) };
+		cursor += extraPerSlot + width + gap;
+	});
+	return results;
 }
 
 const rows = [];
@@ -390,12 +521,17 @@ for (const [streetName, data] of Object.entries(streets)) {
 	if (!dynamic || !Number.isFinite(Number(dynamic.l)) || !Number.isFinite(Number(dynamic.r)) ||
 		!Number.isFinite(Number(dynamic.ground_y))) dynamic = null;
 
+  // Build the full list of entities to place on THIS street (quoins + real
+  // types) before assigning any positions, so layoutPositions() can lay them
+  // all out together -- sharing one non-overlapping slot allocation instead
+  // of each entity picking an x independently with no awareness of the
+  // street's other entities (see layoutPositions()'s comment above).
+  const entries = [];
+
   // Quoins: unchanged from the original design -- one of each type on every
-  // street, always present, same fixed-index id scheme (index doubles as
-  // both the row id suffix and the position() jitter seed).
+  // street, always present, same fixed-index id scheme.
   for (let index = 0; index < QUOIN_TYPES.length; index++) {
-    const { x, y } = position(data.tsid, dynamic, index, QUOIN_TYPES[index]);
-    rows.push({ id: `demo-${data.tsid}-${index}`, type: QUOIN_TYPES[index], tsid: data.tsid, x, y });
+    entries.push({ type: QUOIN_TYPES[index], seedKey: String(index), id: `demo-${data.tsid}-${index}` });
   }
 
   // Real entities: varied per street per the RARITY table above, then
@@ -419,10 +555,33 @@ for (const [streetName, data] of Object.entries(streets)) {
     const count = 1 + ((maxCount > 1 && hash(`${data.tsid}:${type}:count`) % 100 < 30) ? 1 : 0);
     for (let n = 1; n <= count; n++) {
       const seedKey = `${type}-${n}`;
-      const { x, y } = position(data.tsid, dynamic, seedKey, type);
-      rows.push({ id: `demo-${data.tsid}-${seedKey}`, type, tsid: data.tsid, x, y });
+      entries.push({ type, seedKey, id: `demo-${data.tsid}-${seedKey}` });
     }
   }
+
+  // Quoins (FLOATING_TYPES) hover 55-275px above the ground line -- far
+  // enough above the ground/aerial layer that they essentially never
+  // visually compete for space with a tree, rock, or animal below them.
+  // Packing them into the SAME sequential layout as ground entities anyway
+  // needlessly reserved horizontal room for them, which pushed a meaningful
+  // number of streets into "more combined width than the street can hold"
+  // (the one case where entities still end up overlapping) purely because
+  // of quoins that were never going to be at the same height in the first
+  // place. Two independent packing passes -- one for quoins, one for
+  // everything else -- share the same street bounds but no longer compete
+  // with each other for room.
+  const floatingEntries = entries.filter(entry => FLOATING_TYPES.has(entry.type));
+  const groundEntries = entries.filter(entry => !FLOATING_TYPES.has(entry.type));
+  const floatingPositions = layoutPositions(data.tsid, dynamic, floatingEntries);
+  const groundPositions = layoutPositions(data.tsid, dynamic, groundEntries);
+  floatingEntries.forEach((entry, i) => {
+    const { x, y } = floatingPositions[i];
+    rows.push({ id: entry.id, type: entry.type, tsid: data.tsid, x, y });
+  });
+  groundEntries.forEach((entry, i) => {
+    const { x, y } = groundPositions[i];
+    rows.push({ id: entry.id, type: entry.type, tsid: data.tsid, x, y });
+  });
 }
 
 process.stdout.write('BEGIN;\n');
@@ -437,6 +596,14 @@ process.stdout.write('BEGIN;\n');
 process.stdout.write(
   `DELETE FROM street_entities WHERE id LIKE 'demo-%' AND type IN (` +
   REAL_TYPES.map(t => `'${t}'`).join(', ') + `);\n`);
+// `DemoWheat` was removed from REAL_TYPES entirely (2026-08-28, see
+// RECOVERY_TODO.md -- it's a placeholder class with no real item/action
+// behind it, same category as the already-retired DemoTree/DemoChicken), so
+// the DELETE above no longer covers it. Explicitly clean up any rows a prior
+// run already seeded under the old REAL_TYPES membership, so a rerun of this
+// script actually removes it from the live world instead of leaving stale
+// placeholder rows behind.
+process.stdout.write(`DELETE FROM street_entities WHERE id LIKE 'demo-%' AND type = 'DemoWheat';\n`);
 for (const row of rows) {
 	process.stdout.write(
 		`INSERT INTO street_entities (id, type, tsid, x, y, z, h_flip, rotation, metadata_json) VALUES ` +
