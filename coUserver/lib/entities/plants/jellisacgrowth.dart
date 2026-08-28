@@ -31,8 +31,21 @@ class Jellisac extends Plant {
 			],
 		};
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/jellisac/jellisac.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host. The source exports 4 differently-shaped
+		// "jellySack" variants (jellySack1..4), each independently a 5-frame
+		// empty/small/big/bigger/ready fullness timeline matching this state's
+		// depletion mechanic exactly; jellySack1 was used arbitrarily as the
+		// representative variant (documented, not guessed). A sibling
+		// harvestable_resources/jellisac_mound/jellisac_mound.swf also exists
+		// but was not used -- jellisac.swf's own internal structure matches
+		// this entity's 5-frame depletion mechanic exactly, with no ambiguity.
 		states = {
-			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "https://childrenofur.com/assets/entityImages/jellisac.png", 210, 49, 42, 49, 5, false),
+			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "files/sprites/generated/converted/jellisac-1-2-3-4-5.png", 230, 51, 46, 51, 5, false),
 		};
 		setState('1-2-3-4-5');
 		state = new Random().nextInt(currentState.numFrames);

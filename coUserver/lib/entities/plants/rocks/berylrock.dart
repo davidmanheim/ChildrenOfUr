@@ -4,9 +4,19 @@ class BerylRock extends Rock {
 	BerylRock(String id, num x, num y, num z, num rotation, bool h_flip, String streetName) : super(id, x, y, z, rotation, h_flip, streetName) {
 		type = "Beryl Rock";
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/rock_beryl/rock_beryl_1/rock_beryl_1.swf)
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry. This
+		// replaces the previous hardcoded link to the retired childrenofur.com
+		// asset host. Like MetalRock, the source main timeline has 6 real frames
+		// (not the 5 the old hardcoded metadata implied); all 6 are used here.
+		// rock_beryl_1 of the 3 sibling numbered variant folders was used
+		// arbitrarily as the representative source, matching the MetalRock
+		// precedent; the other two were not converted in this pass.
 		states =
 		{
-			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "https://childrenofur.com/assets/entityImages/rock_beryl_x1_5_x1_4_x1_3_x1_2_x1_1__1_png_1354831451.png", 670, 120, 134, 120, 5, false)
+			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "files/sprites/generated/converted/rock_beryl-5-4-3-2-1.png", 930, 123, 155, 123, 6, false)
 		};
 		setState('5-4-3-2-1');
 		state = new Random().nextInt(currentState.numFrames);

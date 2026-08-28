@@ -30,18 +30,30 @@ class SpicePlant extends Tree {
 			]
 		};
 
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/spice_plant/trant_spice.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// These replace the previous hardcoded links to the retired
+		// childrenofur.com asset host.
+		//
+		// Same combinatorial growth-stage x health design as BeanTree/
+		// BubbleTree/EggPlant/GasPlant (see their entity files):
+		// trant_spice.as defines 10 exported spiceTree_growN clips (named via
+		// SymbolClass, like BeanTree), each a real 10-frame health timeline.
+		const String base = "files/sprites/generated/converted/spice_plant-";
 		states =
 		{
-			"maturity_1" : new Spritesheet("maturity_1", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_1_seed_0_191119119_png_1354830923.png", 954, 1000, 318, 250, 10, false),
-			"maturity_2" : new Spritesheet("maturity_2", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_2_seed_0_191119119_png_1354830925.png", 954, 1000, 318, 250, 10, false),
-			"maturity_3" : new Spritesheet("maturity_3", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_3_seed_0_191119119_png_1354830927.png", 954, 1000, 318, 250, 10, false),
-			"maturity_4" : new Spritesheet("maturity_4", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_4_seed_0_191119119_png_1354830932.png", 954, 3000, 318, 250, 35, false),
-			"maturity_5" : new Spritesheet("maturity_5", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_5_seed_0_191119119_png_1354830937.png", 954, 3750, 318, 250, 45, false),
-			"maturity_6" : new Spritesheet("maturity_6", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_6_seed_0_191119119_png_1354830942.png", 3498, 1250, 318, 250, 54, false),
-			"maturity_7" : new Spritesheet("maturity_7", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_7_seed_0_191119119_png_1354830948.png", 3816, 1250, 318, 250, 57, false),
-			"maturity_8" : new Spritesheet("maturity_8", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_8_seed_0_191119119_png_1354830955.png", 3498, 1500, 318, 250, 66, false),
-			"maturity_9" : new Spritesheet("maturity_9", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_9_seed_0_191119119_png_1354830962.png", 3498, 1500, 318, 250, 66, false),
-			"maturity_10" : new Spritesheet("maturity_10", "https://childrenofur.com/assets/entityImages/trant_spice__f_cap_10_f_num_10_h_10_m_10_seed_0_191119119_png_1354830969.png", 3498, 1500, 318, 250, 66, false)
+			"maturity_1" : new Spritesheet("maturity_1", "${base}maturity_1.png", 1260, 125, 126, 125, 10, false),
+			"maturity_2" : new Spritesheet("maturity_2", "${base}maturity_2.png", 1500, 145, 150, 145, 10, false),
+			"maturity_3" : new Spritesheet("maturity_3", "${base}maturity_3.png", 1660, 166, 166, 166, 10, false),
+			"maturity_4" : new Spritesheet("maturity_4", "${base}maturity_4.png", 1680, 174, 168, 174, 10, false),
+			"maturity_5" : new Spritesheet("maturity_5", "${base}maturity_5.png", 1910, 184, 191, 184, 10, false),
+			"maturity_6" : new Spritesheet("maturity_6", "${base}maturity_6.png", 2230, 199, 223, 199, 10, false),
+			"maturity_7" : new Spritesheet("maturity_7", "${base}maturity_7.png", 2530, 217, 253, 217, 10, false),
+			"maturity_8" : new Spritesheet("maturity_8", "${base}maturity_8.png", 2810, 239, 281, 239, 10, false),
+			"maturity_9" : new Spritesheet("maturity_9", "${base}maturity_9.png", 2930, 257, 293, 257, 10, false),
+			"maturity_10" : new Spritesheet("maturity_10", "${base}maturity_10.png", 3250, 271, 325, 271, 10, false)
 		};
 		maturity = new Random().nextInt(states.length) + 1;
 		setState('maturity_$maturity');

@@ -14,21 +14,31 @@ class DirtPile extends Plant {
 				..energyRequirements = new EnergyRequirements(energyAmount: 8)
 				..itemRequirements = itemReq
 		);
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/dirt_pile/dirt_pile.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded links to the retired
+		// childrenofur.com asset host. The source has two undifferentiated
+		// 11-frame DefineSprite variants (char ids 23 and 24, no distinguishing
+		// frame labels or export names); they were assigned to maturity_1/2 in
+		// the order ffdec exported them. Both frame counts (11) and dimensions
+		// (195x71) match the previously hardcoded values exactly.
 		states = {
 			"maturity_1": new Spritesheet(
 				"maturity_1",
-				"https://childrenofur.com/assets/entityImages/dirt_pile_dirt_state_x11_1_variant_dirt1_1_png_1354833756.png",
-				780,
-				213,
+				"files/sprites/generated/converted/dirt_pile-maturity_1.png",
+				2145,
+				71,
 				195,
 				71,
 				11,
 				false),
 			"maturity_2": new Spritesheet(
 				"maturity_2",
-				"https://childrenofur.com/assets/entityImages/dirt_pile_dirt_state_x11_1_variant_dirt2_1_png_1354833757.png",
-				780,
-				213,
+				"files/sprites/generated/converted/dirt_pile-maturity_2.png",
+				2145,
+				71,
 				195,
 				71,
 				11,

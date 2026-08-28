@@ -2,8 +2,8 @@
 	"barnacle": {
 		"name": "Mortar Barnacle",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/barnacle__x1_iconic_png_1354832734.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/barnacle__x1_1_x1_2_x1_3_x1_4_png_1354832735.png",
+		"iconUrl": "files/sprites/generated/converted/item-barnacle-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-barnacle-sprite.png",
 		"stacksTo": 20,
 		"price": 8,
 		"description": "If clinging to things is a skill, this little fella was a champion. Once prised from a cluster (or \"Blister\") of pals, Barnacles can be introduced to the Grinder to find a new purpose."
@@ -29,8 +29,8 @@
 	"chunk_beryl": {
 		"name": "Chunk of Beryl",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/beryl__x1_iconic_png_1354831475.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/beryl__x1_1_x1_2_x1_3_x1_4_png_1354831476.png",
+		"iconUrl": "files/sprites/generated/converted/item-chunk_beryl-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-chunk_beryl-sprite.png",
 		"stacksTo": 50,
 		"price": 6,
 		"description": "Halfway between sparkly and dull, it's an innocuous chunk of beryl."
@@ -38,8 +38,8 @@
 	"chunk_dullite": {
 		"name": "Chunk of Dullite",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/dullite__x1_iconic_png_1354831478.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/dullite__x1_1_x1_2_x1_3_x1_4_png_1354831478.png",
+		"iconUrl": "files/sprites/generated/converted/item-chunk_dullite-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-chunk_dullite-sprite.png",
 		"stacksTo": 50,
 		"price": 4,
 		"description": "A hefty chunk of dullite. What it lacks in sparkliness it makes up for in, um, dullness."
@@ -56,8 +56,8 @@
 	"chunk_sparkly": {
 		"name": "Chunk of Sparkly",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/sparkly__x1_iconic_png_1354831480.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/sparkly__x1_1_x1_2_x1_3_x1_4_png_1354831481.png",
+		"iconUrl": "files/sprites/generated/converted/item-chunk_sparkly-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-chunk_sparkly-sprite.png",
 		"stacksTo": 50,
 		"price": 8,
 		"description": "It's a pleasantly twinkly chunk of sparkly!"
@@ -65,8 +65,8 @@
 	"earth": {
 		"name": "Lump of Earth",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/earth__x1_iconic_png_1354832701.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/earth__x1_1_x1_2_x1_3_x1_4_png_1354832702.png",
+		"iconUrl": "files/sprites/generated/converted/item-earth-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-earth-sprite.png",
 		"stacksTo": 50,
 		"price": 3,
 		"description": "Many have tried to sum up the wonder of Earth, with superlatives like \"Earthy\", \"Lumpy\" and \"Eart... oh, that's been said? Brown, then.\" But it's just a lump of earth. For building with."
@@ -74,8 +74,8 @@
 	"egg": {
 		"name": "Egg",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/egg_plain__x1_iconic_png_1354829682.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/egg_plain__x1_1_x1_2_x1_3_x1_4_png_1354829683.png",
+		"iconUrl": "files/sprites/generated/converted/item-egg-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-egg-sprite.png",
 		"stacksTo": 250,
 		"price": 5,
 		"description": "A plain, unseasoned egg, newly harvested from an Egg Plant. It can be used for all kinds of cooking, or it can be hatched into different animals.",
@@ -102,8 +102,8 @@
 	"general_vapour": {
 		"name": "General Vapour",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/general_vapour__x1_iconic_png_1354830715.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/general_vapour__x1_1_x1_2_x1_3_x1_4_png_1354830715.png",
+		"iconUrl": "files/sprites/generated/converted/item-general_vapour-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-general_vapour-sprite.png",
 		"stacksTo": 250,
 		"price": 5,
 		"description": "A flask of all-purpose general vapour, harvested from a Gas Plant."
@@ -140,8 +140,8 @@
 	"ice": {
 		"name": "Ice",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/ice__x1_iconic_png_1354829891.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/ice__x1_1_x1_2_x1_3_x1_4_png_1354829892.png",
+		"iconUrl": "files/sprites/generated/converted/item-ice-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-ice-sprite.png",
 		"stacksTo": 40,
 		"price": 6,
 		"description": "A nugget of purest ice, plucked with a scraper from the Nubbins of the north and ripe in readiness for sno cones, cocktail making, and icing the occasional strained glitch-groin. Basically: frozen water in pleasingly cuboid form."
@@ -149,8 +149,8 @@
 	"jellisac": {
 		"name": "Clump of Jellisac",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/jellisac_clump__x1_iconic_png_1354833095.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/jellisac_clump__x1_1_x1_2_x1_3_x1_4_png_1354833095.png",
+		"iconUrl": "files/sprites/generated/converted/item-jellisac-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-jellisac-sprite.png",
 		"stacksTo": 100,
 		"price": 9,
 		"description": "It's like your mother always said, just because it's slimy, doesn't mean it's not desirable. Even if she didn't say it, this stuff is certainly gloopy, and eminently usable. Where ooze is needed, jellisacs are your friend."
@@ -158,8 +158,8 @@
 	"loam": {
 		"name": "Lump of Loam",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/loam__x1_iconic_png_1354832758.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/loam__x1_1_x1_2_x1_3_x1_4_png_1354832758.png",
+		"iconUrl": "files/sprites/generated/converted/item-loam-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-loam-sprite.png",
 		"stacksTo": 24,
 		"price": 10,
 		"description": "Ah, loam sweet loam. Moist and fertile, and leagues above plain old earth, this rich, meaty chunk of ground will do any building project proud."
@@ -194,8 +194,8 @@
 	"peat": {
 		"name": "Block of Peat",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/peat__x1_iconic_png_1354832706.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/peat__x1_1_x1_2_x1_3_x1_4_png_1354832707.png",
+		"iconUrl": "files/sprites/generated/converted/item-peat-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-peat-sprite.png",
 		"stacksTo": 24,
 		"price": 12,
 		"description": "After eons of sitting in the bog -- condensing, compacting and quietly conducting Peaty business -- this dense stinky block should be used to boost building projects."

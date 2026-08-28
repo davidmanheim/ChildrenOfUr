@@ -18,10 +18,18 @@
       "accessibleThrough": "Geometry-aware habitat placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4) and the animal-kinship skill loop (squeeze for grain, incubate eggs into chicks).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/chicken.dart:Chicken",
-        "actions": ["squeeze", "incubate"],
+        "actions": [
+          "squeeze",
+          "incubate"
+        ],
         "skill": "animal_kinship",
         "rewardItem": "grain",
-        "achievements": ["hen_hugger", "hen_hugger_deluxe", "hen_hugger_supremalicious", "the_hugginator"]
+        "achievements": [
+          "hen_hugger",
+          "hen_hugger_deluxe",
+          "hen_hugger_supremalicious",
+          "the_hugginator"
+        ]
       },
       "status": "placed",
       "statusNote": "Sprite sheets converted from source SWF and wired into Chicken.dart, replacing dead https://childrenofur.com/assets/entityImages/... links. Entity logic (squeeze/incubate/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Chicken per street TSID (demo- IDs, index 7 -- upgraded in place from the retired DemoChicken stand-in at the same index). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
@@ -36,10 +44,21 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/trees/woodtree.dart:WoodTree",
         "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
-        "actions": ["chop", "pet", "water"],
-        "itemRequirement": ["hatchet", "class_axe"],
+        "actions": [
+          "chop",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "hatchet",
+          "class_axe"
+        ],
         "rewardItem": "plank",
-        "achievements": ["wood_wacker", "timber_jack", "loggerator"]
+        "achievements": [
+          "wood_wacker",
+          "timber_jack",
+          "loggerator"
+        ]
       },
       "status": "placed",
       "statusNote": "Sprite sheets converted from source SWF and wired into woodtree.dart, replacing dead childrenofur.com links (all 4 maturity states previously pointed at ONE remote file with different crop rects; now 4 distinct locally converted files). Also fixed a pre-existing copy/paste bug where every Spritesheet entry used the literal stateName \"maturity_1\". Entity logic (chop/pet/water/achievements) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one WoodTree per street TSID (demo- IDs, index 6 -- upgraded in place from the retired DemoTree stand-in at the same index). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
@@ -53,7 +72,10 @@
       "accessibleThrough": "Geometry-aware habitat placements (once seeded per CONTENT_RECOVERY_PLAN.md step 4) and the animal-kinship skill loop (massage/milk for meat).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/piggy.dart:Piggy",
-        "actions": ["massage", "milk"],
+        "actions": [
+          "massage",
+          "milk"
+        ],
         "skill": "animal_kinship",
         "rewardItem": "meat"
       },
@@ -70,8 +92,12 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/rocks/metalrock.dart:MetalRock",
         "baseClass": "coUserver/lib/entities/plants/rocks/rock.dart:Rock",
-        "actions": ["mine"],
-        "itemRequirement": ["fancy_pick"],
+        "actions": [
+          "mine"
+        ],
+        "itemRequirement": [
+          "fancy_pick"
+        ],
         "rewardItem": "chunk_metal",
         "skill": "mining"
       },
@@ -100,7 +126,14 @@
       "accessibleThrough": "World collection: tools/seed-demo-world.mjs places one of each quoin type per street TSID (demo- IDs); collecting one grants the corresponding stat/currency via Quoin.setCollected.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/quoin.dart:Quoin",
-        "types": ["Img", "Mood", "Energy", "Currant", "Mystery", "Favor"]
+        "types": [
+          "Img",
+          "Mood",
+          "Energy",
+          "Currant",
+          "Mystery",
+          "Favor"
+        ]
       },
       "status": "existing-synthetic",
       "statusNote": "Pre-existing local fallback SVG/PNG (files/sprites/generated/local-quoin.svg|png), not derived from an original per-type Glitch/Ur quoin sprite. Listed here for coverage completeness, not produced by this pass."
@@ -114,8 +147,12 @@
       "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs). Spawns hidden until a player places fox_bait nearby, matching the source design (see routeIds.actions); once attracted it can be brushed for fiber.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/fox.dart:Fox",
-        "actions": ["brush"],
-        "itemRequirement": ["fox_brush"],
+        "actions": [
+          "brush"
+        ],
+        "itemRequirement": [
+          "fox_brush"
+        ],
         "rewardItem": "fiber"
       },
       "status": "placed",
@@ -131,8 +168,12 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/fox.dart:SilverFox",
         "baseClass": "coUserver/lib/entities/npcs/animals/fox.dart:Fox",
-        "actions": ["brush"],
-        "itemRequirement": ["fox_brush"],
+        "actions": [
+          "brush"
+        ],
+        "itemRequirement": [
+          "fox_brush"
+        ],
         "rewardItem": "fiber"
       },
       "status": "placed",
@@ -147,7 +188,9 @@
       "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the animal-kinship skill loop (pet).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/helikitty.dart:HeliKitty",
-        "actions": ["pet"],
+        "actions": [
+          "pet"
+        ],
         "skill": "animal_kinship"
       },
       "status": "placed",
@@ -162,8 +205,13 @@
       "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the pocket loop (pocket for pocket_salmon or salmon_bubble).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/salmon.dart:Salmon",
-        "actions": ["pocket"],
-        "rewardItem": ["pocket_salmon", "salmon_bubble"]
+        "actions": [
+          "pocket"
+        ],
+        "rewardItem": [
+          "pocket_salmon",
+          "salmon_bubble"
+        ]
       },
       "status": "placed",
       "statusNote": "Sprite sheets converted from source SWF and wired into salmon.dart, replacing dead childrenofur.com links (including the 'gone' respawn placeholder, now NPC.TRANSPARENT_SPRITE instead of a dead blank.png URL). Entity logic (pocket) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one Salmon per street TSID (demo- IDs, new index 14)."
@@ -177,8 +225,13 @@
       "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the animal-kinship skill loop (massage, then milk for butterfly_milk).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/butterfly.dart:Butterfly",
-        "actions": ["massage", "milk"],
-        "itemRequirement": ["butterfly_lotion"],
+        "actions": [
+          "massage",
+          "milk"
+        ],
+        "itemRequirement": [
+          "butterfly_lotion"
+        ],
         "rewardItem": "butterfly_milk"
       },
       "status": "placed",
@@ -193,7 +246,9 @@
       "accessibleThrough": "Geometry-aware placements (tools/seed-demo-world.mjs) and the feed loop (feed any energy-restoring item for a chance at guano).",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/animals/batterfly.dart:Batterfly",
-        "actions": ["feed"],
+        "actions": [
+          "feed"
+        ],
         "rewardItem": "guano"
       },
       "status": "placed",
@@ -209,8 +264,15 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/trees/beantree.dart:BeanTree",
         "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
-        "actions": ["harvest", "pet", "water"],
-        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
         "rewardItem": "bean",
         "skill": "arborology"
       },
@@ -227,8 +289,15 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/trees/bubbletree.dart:BubbleTree",
         "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
-        "actions": ["harvest", "pet", "water"],
-        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
         "rewardItem": "plain_bubble",
         "skill": "arborology"
       },
@@ -245,8 +314,15 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/trees/fruittree.dart:FruitTree",
         "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
-        "actions": ["harvest", "pet", "water"],
-        "itemRequirement": ["watering_can", "irrigator_9000"],
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
         "rewardItem": "cherry",
         "skill": "arborology"
       },
@@ -263,12 +339,453 @@
       "routeIds": {
         "entityClass": "coUserver/lib/entities/plants/trees/papertree.dart:PaperTree",
         "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
-        "actions": ["harvest"],
+        "actions": [
+          "harvest"
+        ],
         "rewardItem": "paper",
         "skill": "arborology"
       },
       "status": "placed",
       "statusNote": "Sprite sheet converted from source SWF and wired into papertree.dart, replacing a dead childrenofur.com link. Unlike the other 3 trees, this one is not a 10-stage maturity ladder in the source -- see content/source-manifest.json's complexityNote. Entity logic (harvest) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one PaperTree per street TSID (demo- IDs, new index 20)."
+    },
+    {
+      "id": "shrine_alph",
+      "displayName": "Shrine to Alph",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_alph",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/alph.dart:Alph",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_alph/npc_shrine_ix_alph, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into alph.dart's base (Alph) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The AlphFirebog/AlphIx/AlphUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_cosma",
+      "displayName": "Shrine to Cosma",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_cosma",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/cosma.dart:Cosma",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_cosma/npc_shrine_ix_cosma, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into cosma.dart's base (Cosma) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The CosmaFirebog/CosmaIx/CosmaUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_friendly",
+      "displayName": "Shrine to Friendly",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_friendly",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/friendly.dart:Friendly",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_friendly/npc_shrine_ix_friendly, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into friendly.dart's base (Friendly) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The FriendlyFirebog/FriendlyIx/FriendlyUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_grendaline",
+      "displayName": "Shrine to Grendaline",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_grendaline",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/grendaline.dart:Grendaline",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_grendaline/npc_shrine_ix_grendaline, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into grendaline.dart's base (Grendaline) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The GrendalineFirebog/GrendalineIx/GrendalineUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_humbaba",
+      "displayName": "Shrine to Humbaba",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_humbaba",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/humbaba.dart:Humbaba",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_humbaba/npc_shrine_ix_humbaba, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into humbaba.dart's base (Humbaba) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The HumbabaFirebog/HumbabaIx/HumbabaUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_lem",
+      "displayName": "Shrine to Lem",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_lem",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/lem.dart:Lem",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_lem/npc_shrine_ix_lem, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into lem.dart's base (Lem) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The LemFirebog/LemIx/LemUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_mab",
+      "displayName": "Shrine to Mab",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_mab",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/mab.dart:Mab",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_mab/npc_shrine_ix_mab, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into mab.dart's base (Mab) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The MabFirebog/MabIx/MabUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_pot",
+      "displayName": "Shrine to Pot",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_pot",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/pot.dart:Pot",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_pot/npc_shrine_ix_pot, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into pot.dart's base (Pot) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The PotFirebog/PotIx/PotUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_spriggan",
+      "displayName": "Shrine to Spriggan",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_spriggan",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/spriggan.dart:Spriggan",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_spriggan/npc_shrine_ix_spriggan, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into spriggan.dart's base (Spriggan) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The SprigganFirebog/SprigganIx/SprigganUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "shrine_zille",
+      "displayName": "Shrine to Zille",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_zille",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it's placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/zille.dart:Zille",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_zille/npc_shrine_ix_zille, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into zille.dart's base (Zille) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The ZilleFirebog/ZilleIx/ZilleUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
+    },
+    {
+      "id": "rock_beryl",
+      "displayName": "Beryl Rock",
+      "category": "harvestable resource (rock)",
+      "sourceAssetId": "rock_beryl",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the mining loop (mine for chunk_beryl).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/rocks/berylrock.dart:BerylRock",
+        "baseClass": "coUserver/lib/entities/plants/rocks/rock.dart:Rock",
+        "actions": [
+          "mine"
+        ],
+        "rewardItem": "chunk_beryl",
+        "skill": "mining"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into berylrock.dart, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "rock_dullite",
+      "displayName": "Dullite Rock",
+      "category": "harvestable resource (rock)",
+      "sourceAssetId": "rock_dullite",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the mining loop (mine for chunk_dullite).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/rocks/dulliterock.dart:DulliteRock",
+        "baseClass": "coUserver/lib/entities/plants/rocks/rock.dart:Rock",
+        "actions": [
+          "mine"
+        ],
+        "rewardItem": "chunk_dullite",
+        "skill": "mining"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into dulliterock.dart, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "rock_sparkly",
+      "displayName": "Sparkly Rock",
+      "category": "harvestable resource (rock)",
+      "sourceAssetId": "rock_sparkly",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the mining loop (mine for chunk_sparkly).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/rocks/sparklyrock.dart:SparklyRock",
+        "baseClass": "coUserver/lib/entities/plants/rocks/rock.dart:Rock",
+        "actions": [
+          "mine"
+        ],
+        "rewardItem": "chunk_sparkly",
+        "skill": "mining"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into sparklyrock.dart, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "ice_knob",
+      "displayName": "Ice Knob",
+      "category": "harvestable resource (depletable node)",
+      "sourceAssetId": "ice_knob",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the collect loop (for ice).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/icenubbin.dart:IceNubbin",
+        "baseClass": "coUserver/lib/entities/plants/plant.dart:Plant",
+        "actions": [
+          "collect"
+        ],
+        "itemRequirement": [
+          "scraper",
+          "super_scraper"
+        ],
+        "rewardItem": "ice"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into icenubbin.dart, replacing a dead childrenofur.com link. Entity logic (collect) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "jellisac",
+      "displayName": "Jellisac Growth",
+      "category": "harvestable resource (depletable node)",
+      "sourceAssetId": "jellisac",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the grab loop (for jellisac).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/jellisacgrowth.dart:Jellisac",
+        "baseClass": "coUserver/lib/entities/plants/plant.dart:Plant",
+        "actions": [
+          "grab"
+        ],
+        "rewardItem": "jellisac"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into jellisacgrowth.dart, replacing a dead childrenofur.com link. Entity logic (grab) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "mortar_barnacle",
+      "displayName": "Mortar Barnacle",
+      "category": "harvestable resource (depletable node)",
+      "sourceAssetId": "mortar_barnacle",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the scrape loop (for barnacle).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/mortarbarnacle.dart:MortarBarnacle",
+        "baseClass": "coUserver/lib/entities/plants/plant.dart:Plant",
+        "actions": [
+          "scrape"
+        ],
+        "itemRequirement": [
+          "scraper",
+          "super_scraper"
+        ],
+        "rewardItem": "barnacle"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into mortarbarnacle.dart, replacing a dead childrenofur.com link. Entity logic (scrape) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "peat_base",
+      "displayName": "Peat Bog",
+      "category": "harvestable resource (depletable node)",
+      "sourceAssetId": "peat_base",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the dig loop (for peat).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/peatbog.dart:PeatBog",
+        "baseClass": "coUserver/lib/entities/plants/plant.dart:Plant",
+        "actions": [
+          "dig"
+        ],
+        "itemRequirement": [
+          "shovel",
+          "ace_of_spades"
+        ],
+        "rewardItem": "peat"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheet converted from source SWF and wired into peatbog.dart, replacing a dead childrenofur.com link. Entity logic (dig) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "dirt_pile",
+      "displayName": "Dirt Pile",
+      "category": "harvestable resource (depletable node)",
+      "sourceAssetId": "dirt_pile",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the dig loop (for earth, with a chance of loam).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/dirtpile.dart:DirtPile",
+        "baseClass": "coUserver/lib/entities/plants/plant.dart:Plant",
+        "actions": [
+          "dig"
+        ],
+        "itemRequirement": [
+          "shovel",
+          "ace_of_spades"
+        ],
+        "rewardItem": [
+          "earth",
+          "loam"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into dirtpile.dart, replacing dead childrenofur.com links. Entity logic (dig) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "egg_plant",
+      "displayName": "Egg Plant",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "egg_plant",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the harvesting loop (harvest with arborology for egg).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/eggplant.dart:EggPlant",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
+        "rewardItem": "egg",
+        "skill": "arborology"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into eggplant.dart, replacing dead childrenofur.com links. See content/source-manifest.json's complexityNote for this tree's real growth-stage x health source structure. Entity logic (harvest/pet/water/achievements) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "gas_plant",
+      "displayName": "Gas Plant",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "gas_plant",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the harvesting loop (harvest with arborology for general_vapour).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/gasplant.dart:GasPlant",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
+        "rewardItem": "general_vapour",
+        "skill": "arborology"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into gasplant.dart, replacing dead childrenofur.com links. See content/source-manifest.json's complexityNote for this tree's real growth-stage x health source structure. Entity logic (harvest/pet/water/achievements) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "spice_plant",
+      "displayName": "Spice Plant",
+      "category": "harvestable resource (tree)",
+      "sourceAssetId": "spice_plant",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement system is being redesigned concurrently); once placed, accessible via the harvesting loop (harvest with arborology for allspice).",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/trees/spiceplant.dart:SpicePlant",
+        "baseClass": "coUserver/lib/entities/plants/trees/tree.dart:Tree",
+        "actions": [
+          "harvest",
+          "pet",
+          "water"
+        ],
+        "itemRequirement": [
+          "watering_can",
+          "irrigator_9000"
+        ],
+        "rewardItem": "allspice",
+        "skill": "arborology"
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF and wired into spiceplant.dart, replacing dead childrenofur.com links. See content/source-manifest.json's complexityNote for this tree's real growth-stage x health source structure. Entity logic (harvest/pet/water/achievements) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'."
+    },
+    {
+      "id": "shrine_ti",
+      "displayName": "Shrine to Tii",
+      "category": "shrine (giant lore location)",
+      "sourceAssetId": "shrine_ti",
+      "destination": "World entity",
+      "accessibleThrough": "Placement deferred to a follow-up pass (world-placement/rarity/region-theming system is being redesigned concurrently); once placed, accessible by visiting the street it is placed on and communing/donating to build favor with the giant.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/shrines/tii.dart:Tii",
+        "baseClass": "coUserver/lib/entities/npcs/shrines/shrine.dart:Shrine",
+        "actions": [
+          "communeWith",
+          "donate"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Sprite sheets converted from source SWF (shrines/npc_shrine_ti/npc_shrine_ix_ti, see content/source-manifest.json's sourceMappingNote for why the Ix regional variant was used) and wired into tii.dart's base (Tii) class, replacing dead childrenofur.com links. Entity logic (communeWith/donate) already existed and is unchanged. NOT yet placed -- world placement is being redesigned in a concurrent pass; status is 'converted', not 'placed'. The TiiFirebog/TiiIx/TiiUralia regional-reskin subclasses remain on their original dead links, deferred to a future pass."
     }
   ],
   "deliberatelyDeferred": [

@@ -16,8 +16,18 @@ class PeatBog extends Plant {
 				..itemRequirements = itemReq
 			);
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/peat_base/peat_1/peat_1.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host. peat_1 of the 3 sibling numbered variant
+		// folders was used arbitrarily as the representative source, matching
+		// the MetalRock precedent; the other two were not converted in this
+		// pass. Frame dimensions (210x53) closely match the previously
+		// hardcoded values (211x52), confirming the source mapping.
 		states = {
-			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "https://childrenofur.com/assets/entityImages/peat_x1_5_x1_4_x1_3_x1_2_x1_1__1_png_1354832710.png", 633, 104, 211, 52, 5, false),
+			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "files/sprites/generated/converted/peat_base-5-4-3-2-1.png", 1050, 53, 210, 53, 5, false),
 		};
 		setState('5-4-3-2-1');
 		state = new Random().nextInt(currentState.numFrames);

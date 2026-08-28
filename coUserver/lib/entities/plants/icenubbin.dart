@@ -17,8 +17,19 @@ class IceNubbin extends Plant {
 				..itemRequirements = itemReq
 		);
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/ice_knob/ice_knob.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host. The source exports 4 differently-shaped
+		// "knob" variants (knob1..knob4), each independently a 5-frame
+		// empty/small/big/bigger/ready fullness timeline matching this state's
+		// depletion mechanic exactly; knob1 was used arbitrarily as the
+		// representative variant (documented, not guessed), matching the
+		// MetalRock/BerylRock precedent of picking one numbered sibling.
 		states = {
-			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "https://childrenofur.com/assets/entityImages/ice_knob.png", 290, 84, 58, 84, 5, false),
+			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "files/sprites/generated/converted/ice_knob-1-2-3-4-5.png", 285, 83, 57, 83, 5, false),
 		};
 		setState('1-2-3-4-5');
 		state = new Random().nextInt(currentState.numFrames);

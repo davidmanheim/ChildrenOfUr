@@ -16,8 +16,20 @@ class MortarBarnacle extends Plant {
 				..itemRequirements = itemReq
 			);
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/mortar_barnacle/mortar_barnacle.swf) via
+		// tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// This replaces the previous hardcoded link to the retired
+		// childrenofur.com asset host. The source exports 6 differently-shaped
+		// "blister" variants (blister1..6, more than this entity's 5-frame
+		// state name implies), each independently a 5-frame
+		// empty/small/big/bigger/ready fullness timeline; blister1 was used
+		// arbitrarily as the representative variant (documented, not guessed).
+		// Frame dimensions (60x70) match the previously hardcoded values
+		// exactly, confirming the source mapping.
 		states = {
-			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "https://childrenofur.com/assets/entityImages/barnacle_left.png", 300, 70, 60, 70, 5, false),
+			"1-2-3-4-5" : new Spritesheet("1-2-3-4-5", "files/sprites/generated/converted/mortar_barnacle-1-2-3-4-5.png", 300, 70, 60, 70, 5, false),
 		};
 		setState('1-2-3-4-5');
 		state = new Random().nextInt(currentState.numFrames);

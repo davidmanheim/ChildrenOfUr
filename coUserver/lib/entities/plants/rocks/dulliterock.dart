@@ -4,9 +4,19 @@ class DulliteRock extends Rock {
 	DulliteRock(String id, num x, num y, num z, num rotation, bool h_flip, String streetName) : super(id, x, y, z, rotation, h_flip, streetName) {
 		type = "Dullite Rock";
 
+		// Sprite sheet converted locally from the CC0 tinyspeck/glitch-items
+		// source (harvestable_resources/rock_dullite/rock_dullite_1/rock_dullite_1.swf)
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry. This
+		// replaces the previous hardcoded link to the retired childrenofur.com
+		// asset host. Like MetalRock, the source main timeline has 6 real frames
+		// (not the 5 the old hardcoded metadata implied); all 6 are used here.
+		// rock_dullite_1 of the 3 sibling numbered variant folders was used
+		// arbitrarily as the representative source, matching the MetalRock
+		// precedent; the other two were not converted in this pass.
 		states =
 		{
-			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "https://childrenofur.com/assets/entityImages/rock_dullite_x1_5_x1_4_x1_3_x1_2_x1_1__1_png_1354831459.png", 655, 114, 131, 114, 5, false)
+			"5-4-3-2-1" : new Spritesheet("5-4-3-2-1", "files/sprites/generated/converted/rock_dullite-5-4-3-2-1.png", 930, 118, 155, 118, 6, false)
 		};
 		setState('5-4-3-2-1');
 		state = new Random().nextInt(currentState.numFrames);
