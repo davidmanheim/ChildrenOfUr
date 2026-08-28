@@ -418,6 +418,66 @@ Prioritize and verify items before implementation.
   items cap `collectibles.json` at 173/212 real converted art given
   currently-vendored source material.
 
+- Found 2026-08-28 (parallel batch: 7 sub-agents converting
+  `tinctures-potions.json`/`croppery-gardening.json`/`emblems-icons.json`/
+  `storage.json`/`herdkeeping.json`+`quest_items.json`+
+  `basic_resources.json`+`misc.json`/`drinks.json`/
+  `advanced_resources.json`+`machines-fuel.json`, 124 items total): two new
+  generic, fully-live accessibility mechanisms confirmed, both worth reusing
+  for future giant/emblem-adjacent or crop-seed-adjacent batches instead of
+  re-deriving per item -- (1) `Shrine.donate()`
+  (`coUserver/lib/endpoints/metabolics/metabolics.dart`) is genuinely generic
+  across all 11 giants (reflects on `${giantName}Favor` fields), so any
+  `emblem_of_<giant>` item is live once that giant's Shrine is placed (all 11
+  are); (2) `Emblem.iconize()`
+  (`coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart`) is
+  likewise generic (derives `icon_of_X` from whichever `emblem_of_X` invoked
+  it), so every `icon_of_<giant>` item is live the same way. Also confirmed:
+  `Garden.ITEM_REQ_PLANT` + the live `gardening` `StreetSpirit` vendor
+  category cover all 13 crop seeds (not just the 13 crops themselves, already
+  documented in an earlier batch); and `Vendor.pickItems(["Storage"])`
+  covers the entire remaining `storage.json` category the same way it was
+  already shown to cover the first 3 items of that file.
+- Found 2026-08-28 (same batch): several more genuinely-missing-design gaps
+  (no acquisition route of any kind, not a placement gap) -- all 16
+  `tinctures-potions.json` "potion" items (Charades Potion, Door Drink,
+  Draught of Giant Amicability, Dung-Kicker Drops, Elixir of Avarice,
+  Embiggenifying Potion (both directions), Keycutter Tonic, Liquid Super-Hoe,
+  Manyharvest Cordial, Potion of Animal Youth, Rook Balm, Seed-Dibber
+  Libation, Soak-All Solution, Trantsformation Fluid, Tree Poison Antidote);
+  5 of the 6 herb-essence tincturing_kit outputs (`essence_of_purple` is the
+  live exception, since its herb input `purple_flower` is placed -- the other
+  5 are recipe-real but blocked on their own unroutable herb input, the same
+  `HerbGarden` gap documented in an earlier batch); all 10
+  `advanced_resources.json` items in this batch (`beam`, `board`,
+  `bushel_of_grain`, `girder`, `metal_bar`, `metal_rod`, `plain_crystal`,
+  `snail`, `urth_block`, `wood_post` -- re-verified against all 22 recipe
+  files and every vendor stock mechanism, not just re-trusted from a prior
+  note); `drinks.json`'s `wine_of_the_dead` (its only candidate grant path,
+  `HellBartender.glassOfWine()`, is a stub with no `InventoryV2` call at all);
+  and `herdkeeping.json`'s `fox_bait`/`hogtied_piggy` plus
+  `quest_items.json`'s `juju_trowel`/`note_hint`. Real converted art now
+  exists for all of these regardless.
+- Found 2026-08-28 (same batch): `fox_bait`'s item-icon source SWF
+  (`tmp/glitch-items/misc/fox_bait/fox_bait.swf`) has its real art in a
+  nested `DefineSprite` with labeled `stink1`/`stink2`/`stink3` decay-state
+  frames -- a strong candidate to resolve the separately-tracked world-entity
+  `FoxBait` sprite gap (`coUserver/lib/entities/npcs/animals/fox.dart`,
+  previously deferred for lack of an identified source) in a future pass;
+  not attempted here since it was out of this batch's item-icon-only scope.
+- Found 2026-08-28 (same batch): 4 items confirmed to have no matching
+  source SWF after a targeted re-search each -- `musicblock_bag`/Crabpack,
+  `user_made_quest`, `salmon_bubble`, `new_player_pack_butterfly`. All 4 DO
+  have real, live, non-art acquisition routes despite the missing art:
+  `Crab.buyCrabpack()` (`coUserver/lib/entities/npcs/crab.dart`),
+  `QuestService.createQuestItem()`
+  (`coUserver/lib/entities/items/actions/quest_service.dart`),
+  `Salmon.pocket()`'s ~50%-miss branch
+  (`coUserver/lib/entities/npcs/animals/salmon.dart`), and a real
+  `tinkertool.json` recipe (`create_new_player_pack_butterfly`) respectively
+  -- recorded in `content/runtime-manifest.json`'s `deliberatelyDeferred`
+  with the art gap as the honest reason, not the (real) gameplay route.
+
 ## Asset conversion pipeline
 
 - Found/fixed 2026-08-28 (live bug triage, see RECOVERY_TODO.md): every

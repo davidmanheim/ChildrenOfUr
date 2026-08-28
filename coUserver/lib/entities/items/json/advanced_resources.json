@@ -11,8 +11,8 @@
 	"beam": {
 		"name": "Beam",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/beam__x1_1_png_1354837260.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/beam__x1_1_png_1354837260.png",
+		"iconUrl": "files/sprites/generated/converted/item-beam-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-beam-sprite.png",
 		"stacksTo": 8,
 		"price": 800,
 		"description": "One sturdy construction beam, similar in heft and girth to a mighty Wood Tree. But then, this Beam was once some Posts; Posts made from Boards, which in turn were once a whole shedload of Planks, each hand-culled from a tender young Wood Tree. Good thing those Wood Trees didn't die in vain, eh?"
@@ -20,8 +20,8 @@
 	"board": {
 		"name": "Board",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/board__x1_1_png_1354837255.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/board__x1_1_png_1354837255.png",
+		"iconUrl": "files/sprites/generated/converted/item-board-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-board-sprite.png",
 		"stacksTo": 100,
 		"price": 30,
 		"description": "A solid wooden board, reminiscent of some kind of ginormous Plank – unsurprisingly, since that's what it's made of."
@@ -38,8 +38,8 @@
 	"bushel_of_grain": {
 		"name": "Bushel of Grain",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/grain_bushel.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/grain_bushel__x1_1_x1_2_x1_3_x1_4_png_1354830729.png",
+		"iconUrl": "files/sprites/generated/converted/item-bushel_of_grain-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bushel_of_grain-sprite.png",
 		"stacksTo": 5,
 		"price": 250,
 		"description": "250 stalks of grain all tied up nice and neat.",
@@ -73,8 +73,8 @@
 	"girder": {
 		"name": "Girder",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/girder__x1_1_png_1354837249.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/girder__x1_1_png_1354837249.png",
+		"iconUrl": "files/sprites/generated/converted/item-girder-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-girder-sprite.png",
 		"stacksTo": 4,
 		"price": 1500,
 		"description": "A solid metal material used for correctly shafting mines and supporting structures. There's some crazy rumour that if you can find a way to boil these down, you can magically create a sparkling bright orange drink out of them. But this has never been proved, and their use in construction is by far the more popular one."
@@ -82,8 +82,8 @@
 	"metal_bar": {
 		"name": "Metal Bar",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/metal_post__x1_iconic_png_1354837251.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/metal_post__x1_1_x1_2_x1_3_x1_4_png_1354837251.png",
+		"iconUrl": "files/sprites/generated/converted/item-metal_bar-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-metal_bar-sprite.png",
 		"stacksTo": 8,
 		"price": 400,
 		"description": "A post made of metal. Good for arduous construction, securing Mineshafts, and doing daring dances on while people tuck herbs into your elasticated pants (probably not all at the same time)."
@@ -91,8 +91,8 @@
 	"metal_rod": {
 		"name": "Metal Rod",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/metal_rod__x1_iconic_png_1354839542.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/metal_rod__x1_1_x1_2_x1_3_x1_4_png_1354839543.png",
+		"iconUrl": "files/sprites/generated/converted/item-metal_rod-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-metal_rod-sprite.png",
 		"stacksTo": 16,
 		"price": 100,
 		"description": "Metal Rod, made of tin and plain metal, is not only useful for the yet unimagined construction purposes, but is also a much beloved snack of a Sloth."
@@ -109,8 +109,8 @@
 	"plain_crystal": {
 		"name": "Plain Crystal",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/plain_crystal__x1_iconic_png_1354833098.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/plain_crystal__x1_1_x1_2_x1_3_x1_4_png_1354833099.png",
+		"iconUrl": "files/sprites/generated/converted/item-plain_crystal-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-plain_crystal-sprite.png",
 		"stacksTo": 30,
 		"price": 300,
 		"description": "It shimmers, it glitters, and it's worth a good few currants, but you can't help but think that for a crystal, it's a little bland. Not that you're complaining."
@@ -127,8 +127,8 @@
 	"snail": {
 		"name": "Snail",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/snail__x1_iconic_png_1354839538.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/snail__x1_1_x1_2_x1_3_x1_4_png_1354839539.png",
+		"iconUrl": "files/sprites/generated/converted/item-snail-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-snail-sprite.png",
 		"stacksTo": 100,
 		"price": 10,
 		"description": "Part-screw, part-nail (and managing to combine the less useful parts of both), snails are the product of a Sloth getting private time with metal rods."
@@ -163,8 +163,8 @@
 	"urth_block": {
 		"name": "Urth Block",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/grade_aa_earth_block__x1_iconic_png_1354833254.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/grade_aa_earth_block__x1_1_x1_2_x1_3_x1_4_png_1354833257.png",
+		"iconUrl": "files/sprites/generated/converted/item-urth_block-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-urth_block-sprite.png",
 		"stacksTo": 10,
 		"price": 150,
 		"description": "Marginally muddy earth of Ur, less-than-lofty loam and heavy gas from somewhat suspect origin comprise these useful building blocks."
@@ -172,8 +172,8 @@
 	"wood_post": {
 		"name": "Wood Post",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/wood_post__x1_1_png_1354837258.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/wood_post__x1_1_png_1354837258.png",
+		"iconUrl": "files/sprites/generated/converted/item-wood_post-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-wood_post-sprite.png",
 		"stacksTo": 40,
 		"price": 150,
 		"description": "If you squint and look hard, you can almost see the joins where the Planks were put together to make Boards, and the Boards tirelessly hewn into a Post. But in its glorious finished form, you can't see the Planks for the Post. Or something."

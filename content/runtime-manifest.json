@@ -1,6 +1,6 @@
 {
   "$schema": "Content recovery runtime manifest. One row per runtime asset/item. Every row MUST have exactly one of the 5 destinations from CONTENT_RECOVERY_PLAN.md ('Street presentation' | 'World entity' | 'Player item' | 'UI/feedback visual' | 'Deliberately deferred'). tools/validate-content.mjs enforces this.",
-  "generatedAt": "2026-08-27",
+  "generatedAt": "2026-08-28T16:19:17.286Z",
   "destinations": [
     "Street presentation",
     "World entity",
@@ -10315,6 +10315,1816 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/food/egghunt_egg_1/egghunt_egg_1.swf and wired into collectibles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_charades",
+      "displayName": "Charades Potion",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_charades",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_charades"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_charades/potion_charades.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-de_embiggenifying_potion",
+      "displayName": "De-Embiggenifying Potion",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_de_embiggenifying_potion",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "de_embiggenifying_potion"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_avatar_small/potion_avatar_small.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_percival",
+      "displayName": "Door Drink",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_percival",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_percival"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_chris/potion_chris.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-draught_of_giant_amicability",
+      "displayName": "Draught of Giant Amicability",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_draught_of_giant_amicability",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "draught_of_giant_amicability"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_draught_of_giant_amicability/potion_draught_of_giant_amicability.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-dung_kicker_drops",
+      "displayName": "Dung-Kicker Drops",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_dung_kicker_drops",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "dung_kicker_drops"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_garden_fertilize/potion_garden_fertilize.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_elixir_of_avarice",
+      "displayName": "Elixir of Avarice",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_elixir_of_avarice",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_elixir_of_avarice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_elixir_of_avarice/potion_elixir_of_avarice.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-embiggenifying_potion",
+      "displayName": "Embiggenifying Potion",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_embiggenifying_potion",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "embiggenifying_potion"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_avatar_large/potion_avatar_large.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_keycutter_tonic",
+      "displayName": "Keycutter Tonic",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_keycutter_tonic",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_keycutter_tonic"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_keycutter_tonic/potion_keycutter_tonic.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-liquid_super_hoe",
+      "displayName": "Liquid Super-Hoe",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_liquid_super_hoe",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "liquid_super_hoe"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_garden_clear/potion_garden_clear.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-manyharvest_cordial",
+      "displayName": "Manyharvest Cordial",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_manyharvest_cordial",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "manyharvest_cordial"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_garden_harvest/potion_garden_harvest.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_animal_youth",
+      "displayName": "Potion of Animal Youth",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_animal_youth",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_animal_youth"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_animal_youth/potion_animal_youth.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_rook_balm",
+      "displayName": "Rook Balm",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_rook_balm",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_rook_balm"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_rook_balm/potion_rook_balm.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-seed_dibber_libation",
+      "displayName": "Seed-Dibber Libation",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_seed_dibber_libation",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "seed_dibber_libation"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_garden_plant/potion_garden_plant.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-soak_all_solution",
+      "displayName": "Soak-All Solution",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_soak_all_solution",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "soak_all_solution"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_garden_water/potion_garden_water.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-trantsformation_fluid",
+      "displayName": "Trantsformation Fluid",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_trantsformation_fluid",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "trantsformation_fluid"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_trantsformation_fluid/potion_trantsformation_fluid.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potion_tree_poison_antidote",
+      "displayName": "Tree Poison Antidote",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_potion_tree_poison_antidote",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver (checked every coUserver/lib/entities/items/actions/recipes/json/*.json file and every vendor pickItems/category/named stock list -- none reference this item, and no generic category-based mechanism covers 'Tinctures & Potions'). Genuinely missing design, consistent with the already-documented potion_rainbow_juice finding.",
+      "routeIds": {
+        "itemId": "potion_tree_poison_antidote"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_tree_poison_antidote/potion_tree_poison_antidote.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_hairball",
+      "displayName": "Essence of Hairball",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_hairball",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (hairball_flower x2 + hooch x1 -> essence_of_hairball x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, hairball_flower, has NO entity class or acquisition route anywhere in coUserver (confirmed by direct search) -- the recipe/tool/hooch legs are live, but this essence cannot actually be crafted until hairball_flower itself gets a route. Wired-but-blocked-on-one-ingredient, not fully live.",
+      "routeIds": {
+        "itemId": "essence_of_hairball",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "hairball_flower",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_hairball/essence_of_hairball.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_purple",
+      "displayName": "Essence of Purple",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_purple",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (purple_flower x2 + hooch x1 -> essence_of_purple x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, purple_flower, is also live (PurpleFlowerRespawningItem, ~35% chance/street, placed) -- this recipe is genuinely reachable end-to-end.",
+      "routeIds": {
+        "itemId": "essence_of_purple",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "purple_flower",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_purple/essence_of_purple.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_rookswort",
+      "displayName": "Essence of Rookswort",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_rookswort",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (rookswort x2 + hooch x1 -> essence_of_rookswort x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, rookswort, has NO entity class or acquisition route anywhere in coUserver (confirmed by direct search) -- the recipe/tool/hooch legs are live, but this essence cannot actually be crafted until rookswort itself gets a route. Wired-but-blocked-on-one-ingredient, not fully live.",
+      "routeIds": {
+        "itemId": "essence_of_rookswort",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "rookswort",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_rookswort/essence_of_rookswort.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_rubeweed",
+      "displayName": "Essence of Rubeweed",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_rubeweed",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (rubeweed x2 + hooch x1 -> essence_of_rubeweed x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, rubeweed, has NO entity class or acquisition route anywhere in coUserver (confirmed by direct search) -- the recipe/tool/hooch legs are live, but this essence cannot actually be crafted until rubeweed itself gets a route. Wired-but-blocked-on-one-ingredient, not fully live.",
+      "routeIds": {
+        "itemId": "essence_of_rubeweed",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "rubeweed",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_rubeweed/essence_of_rubeweed.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_silvertongue",
+      "displayName": "Essence of Silvertongue",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_silvertongue",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (silvertongue x2 + hooch x1 -> essence_of_silvertongue x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, silvertongue, has NO entity class or acquisition route anywhere in coUserver (confirmed by direct search) -- the recipe/tool/hooch legs are live, but this essence cannot actually be crafted until silvertongue itself gets a route. Wired-but-blocked-on-one-ingredient, not fully live.",
+      "routeIds": {
+        "itemId": "essence_of_silvertongue",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "silvertongue",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_silvertongue/essence_of_silvertongue.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-essence_of_yellow_crumb",
+      "displayName": "Essence of Yellow Crumb",
+      "category": "Tinctures & Potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_yellow_crumb",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of tincturing_kit.json (yellow_crumb_flower x2 + hooch x1 -> essence_of_yellow_crumb x2). The tincturing_kit tool is real, live vendor stock (alchemical/hardware StreetSpirit vendor categories, both placed via tools/seed-demo-world.mjs). hooch is live (HoochRespawningItem, ~25% chance/street, placed). The herb input, yellow_crumb_flower, has NO entity class or acquisition route anywhere in coUserver (confirmed by direct search) -- the recipe/tool/hooch legs are live, but this essence cannot actually be crafted until yellow_crumb_flower itself gets a route. Wired-but-blocked-on-one-ingredient, not fully live.",
+      "routeIds": {
+        "itemId": "essence_of_yellow_crumb",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json",
+        "tool": "tincturing_kit",
+        "inputs": [
+          "yellow_crumb_flower",
+          "hooch"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_yellow_crumb/essence_of_yellow_crumb.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-broccoli_seed",
+      "displayName": "Broccoli Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_broccoli_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "broccoli_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_broccoli/seed_broccoli.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-cabbage_seed",
+      "displayName": "Cabbage Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_cabbage_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "cabbage_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_cabbage/seed_cabbage.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-carrot_seed",
+      "displayName": "Carrot Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_carrot_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "carrot_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_carrot/seed_carrot.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-corn_seed",
+      "displayName": "Corn Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_corn_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "corn_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_corn/seed_corn.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-cucumber_seed",
+      "displayName": "Cucumber Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_cucumber_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "cucumber_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_cucumber/seed_cucumber.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-onion_seed",
+      "displayName": "Onion Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_onion_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "onion_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_onion/seed_onion.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-parsnip_seed",
+      "displayName": "Parsnip Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_parsnip_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "parsnip_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_parsnip/seed_parsnip.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-potato_seed",
+      "displayName": "Potato Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_potato_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "potato_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_potato/seed_potato.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-pumpkin_seed",
+      "displayName": "Pumpkin Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_pumpkin_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "pumpkin_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_pumpkin/seed_pumpkin.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-rice_seed",
+      "displayName": "Rice Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_rice_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "rice_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_rice/seed_rice.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-spinach_seed",
+      "displayName": "Spinach Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_spinach_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "spinach_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_spinach/seed_spinach.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-tomato_seed",
+      "displayName": "Tomato Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_tomato_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "tomato_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_tomato/seed_tomato.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-zucchini_seed",
+      "displayName": "Zucchini Seed",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_zucchini_seed",
+      "destination": "Player item",
+      "accessibleThrough": "Garden.ITEM_REQ_PLANT (coUserver/lib/entities/npcs/garden.dart) lists this seed id as required to plant the matching crop. Vendor's 'gardening' StreetSpirit category (coUserver/lib/entities/npcs/vendors/vendor.dart) sells all 13 crop seeds. Garden (~20%/street, boosted on gardening/produce streets) and the StreetSpirit subclasses (4-15%/street) are both placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "zucchini_seed",
+        "plantRequirement": "coUserver/lib/entities/npcs/garden.dart:Garden.ITEM_REQ_PLANT",
+        "vendorClass": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'gardening')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/seed_zucchini/seed_zucchini.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bean_tree_bean",
+      "displayName": "Bean Tree Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_bean_tree_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "bean_tree_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_bean/bean_bean.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bubble_tree_bean",
+      "displayName": "Bubble Tree Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_bubble_tree_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "bubble_tree_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_bubble/bean_bubble.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-egg_plant_bean",
+      "displayName": "Egg Plant Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_egg_plant_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "egg_plant_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_egg/bean_egg.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-fruit_tree_bean",
+      "displayName": "Fruit Tree Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_fruit_tree_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "fruit_tree_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_fruit/bean_fruit.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-gas_plant_bean",
+      "displayName": "Gas Plant Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_gas_plant_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "gas_plant_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_gas/bean_gas.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-spice_plant_bean",
+      "displayName": "Spice Plant Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_spice_plant_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "spice_plant_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_spice/bean_spice.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-wood_tree_bean",
+      "displayName": "Wood Tree Bean",
+      "category": "Croppery & Gardening (player item)",
+      "sourceAssetId": "item_icon_wood_tree_bean",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of the bean_seasoner tool (coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json), e.g. bean_tree_bean <- bean+nutmeg+lemon+general_vapour. NOT a Tree-class planting input (confirmed: no coUserver/lib/entities/plants/*.dart file references this id). bean_seasoner is live 'gardening' StreetSpirit vendor stock, same placement as the crop seeds above -- live.",
+      "routeIds": {
+        "itemId": "wood_tree_bean",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/bean_seasoner.json",
+        "tool": "bean_seasoner"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/beans/bean_wood/bean_wood.swf and wired into croppery-gardening.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_friendly",
+      "displayName": "Emblem of Friendly",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_friendly",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_friendly",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_friendly/emblem_friendly.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_grendaline",
+      "displayName": "Emblem of Grendaline",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_grendaline",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_grendaline",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_grendaline/emblem_grendaline.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_humbaba",
+      "displayName": "Emblem of Humbaba",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_humbaba",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_humbaba",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_humbaba/emblem_humbaba.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_lem",
+      "displayName": "Emblem of Lem",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_lem",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_lem",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_lem/emblem_lem.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_mab",
+      "displayName": "Emblem of Mab",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_mab",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_mab",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_mab/emblem_mab.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_pot",
+      "displayName": "Emblem of Pot",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_pot",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_pot",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_pot/emblem_pot.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_spriggan",
+      "displayName": "Emblem of Spriggan",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_spriggan",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_spriggan",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_spriggan/emblem_spriggan.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_tii",
+      "displayName": "Emblem of Tii",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_tii",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_tii",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_ti/emblem_ti.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-emblem_of_zille",
+      "displayName": "Emblem of Zille",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_zille",
+      "destination": "Player item",
+      "accessibleThrough": "Generic giant-favor-threshold mechanism: donating priced items to that giant's placed Shrine raises favor via MetabolicsChange._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the favor threshold grants emblem_of_<giant> via InventoryV2.addItemToUser. All 11 giant Shrines are placed in tools/seed-demo-world.mjs (SHRINE_TYPES, chance 5/maxCount 1 each) -- live.",
+      "routeIds": {
+        "itemId": "emblem_of_zille",
+        "grantMethod": "coUserver/lib/endpoints/metabolics/metabolics.dart:MetabolicsChange._setFavor (via Shrine.donate())"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_zille/emblem_zille.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_cosma",
+      "displayName": "Icon of Cosma",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_cosma",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_cosma",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_cosma/icon_cosma.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_friendly",
+      "displayName": "Icon of Friendly",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_friendly",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_friendly",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_friendly/icon_friendly.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_grendaline",
+      "displayName": "Icon of Grendaline",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_grendaline",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_grendaline",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_grendaline/icon_grendaline.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_humbaba",
+      "displayName": "Icon of Humbaba",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_humbaba",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_humbaba",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_humbaba/icon_humbaba.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_lem",
+      "displayName": "Icon of Lem",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_lem",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_lem",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_lem/icon_lem.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_mab",
+      "displayName": "Icon of Mab",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_mab",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_mab",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_mab/icon_mab.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_pot",
+      "displayName": "Icon of Pot",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_pot",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_pot",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_pot/icon_pot.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_spriggan",
+      "displayName": "Icon of Spriggan",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_spriggan",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_spriggan",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_spriggan/icon_spriggan.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_tii",
+      "displayName": "Icon of Tii",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_tii",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_tii",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_tii/icon_tii.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-icon_of_zille",
+      "displayName": "Icon of Zille",
+      "category": "Emblems & Icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_zille",
+      "destination": "Player item",
+      "accessibleThrough": "Generic 'Iconize' action (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) present on every emblem_of_X item consumes 11 emblem_of_X and grants 1 icon_of_X via InventoryV2.addItemToUser. Reachable once the matching emblem's live Shrine-donation route has been used enough times -- live.",
+      "routeIds": {
+        "itemId": "icon_of_zille",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart:Emblem.iconize()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_zille/icon_zille.swf and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bigger_bag",
+      "displayName": "Bigger Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_bigger_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "bigger_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_bigger/bag_bigger.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bigger_blue_bag",
+      "displayName": "Bigger Blue Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_bigger_blue_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "bigger_blue_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_bigger/bag_bigger_blue/bag_bigger_blue.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bigger_gray_bag",
+      "displayName": "Bigger Gray Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_bigger_gray_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "bigger_gray_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_bigger/bag_bigger_gray/bag_bigger_gray.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bigger_green_bag",
+      "displayName": "Bigger Green Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_bigger_green_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "bigger_green_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_bigger/bag_bigger_green/bag_bigger_green.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bigger_pink_bag",
+      "displayName": "Bigger Pink Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_bigger_pink_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "bigger_pink_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_bigger/bag_bigger_pink/bag_bigger_pink.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-chrome_toolbox",
+      "displayName": "Chrome Toolbox",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_chrome_toolbox",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "chrome_toolbox",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_chrome/bag_toolbox_chrome.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-cubimal_case",
+      "displayName": "Cubimal Case",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_cubimal_case",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "cubimal_case",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_cubimal_case/bag_cubimal_case.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-green_toolbox",
+      "displayName": "Green Toolbox",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_green_toolbox",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "green_toolbox",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_green/bag_toolbox_green.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-red_toolbox",
+      "displayName": "Red Toolbox",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_red_toolbox",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "red_toolbox",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_red/bag_toolbox_red.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-elemental_pouch",
+      "displayName": "Elemental Pouch",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_elemental_pouch",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "elemental_pouch",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_elemental_pouch/bag_elemental_pouch.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-generic_bag",
+      "displayName": "Generic Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_generic_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "generic_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_generic/bag_generic.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-generic_blue_bag",
+      "displayName": "Generic Blue Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_generic_blue_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "generic_blue_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_generic_blue/bag_generic_blue.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-generic_gray_bag",
+      "displayName": "Generic Gray Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_generic_gray_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "generic_gray_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_generic_gray/bag_generic_gray.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-generic_green_bag",
+      "displayName": "Generic Green Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_generic_green_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "generic_green_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_generic_green/bag_generic_green.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-generic_pink_bag",
+      "displayName": "Generic Pink Bag",
+      "category": "Storage (player item)",
+      "sourceAssetId": "item_icon_generic_pink_bag",
+      "destination": "Player item",
+      "accessibleThrough": "Generic category-based vendor stocking: Vendor.pickItems([\"Storage\"]) (coUserver/lib/entities/npcs/vendors/vendor.dart) auto-stocks every item whose category=='Storage' on ToolVendor (unconditionally placed, live) and the 'hardware' StreetSpirit category (conditionally live per-street via vendors.json).",
+      "routeIds": {
+        "itemId": "generic_pink_bag",
+        "vendorMechanism": [
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor.pickItems([\"Storage\"])",
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_generic_pink/bag_generic_pink.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-butterfly_egg",
+      "displayName": "Butterfly Egg",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_butterfly_egg",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of egg_seasoner.json. ALSO granted directly by NewPlayerPack.openPack() (coUserver/lib/entities/items/actions/itemgroups/misc.dart) when opening new_player_pack_butterfly, itself a live tinkertool.json recipe -- live via either route.",
+      "routeIds": {
+        "itemId": "butterfly_egg",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "altGrant": "coUserver/lib/entities/items/actions/itemgroups/misc.dart:NewPlayerPack.openPack()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/butterfly_egg/butterfly_egg.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-butterfly_lotion",
+      "displayName": "Butterfly Lotion",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_butterfly_lotion",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: ToolVendor.itemsForSale AND Vendor's 'animal' StreetSpirit category. Both delivering classes are placed in tools/seed-demo-world.mjs -- live.",
+      "routeIds": {
+        "itemId": "butterfly_lotion",
+        "vendor": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/butterfly_lotion/butterfly_lotion.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-butterfly_milker",
+      "displayName": "Butterfly Milker",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_butterfly_milker",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock (ToolVendor + Vendor 'animal' category) AND a real tinkertool.json recipe (new_butterfly_milker) -- live via either route.",
+      "routeIds": {
+        "itemId": "butterfly_milker",
+        "vendor": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+        ],
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tinkertool.json"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/butterfly_milker/butterfly_milker.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-butterfly_stick",
+      "displayName": "Butterfly Stick",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_butterfly_stick",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live 'animal' StreetSpirit vendor-type stock only (not ToolVendor, not a recipe output) -- placed via tools/seed-demo-world.mjs.",
+      "routeIds": {
+        "itemId": "butterfly_stick",
+        "vendor": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/magic_animal_stick/magic_butterfly_stick/magic_butterfly_stick.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-chicken_stick",
+      "displayName": "Chicken Stick",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_chicken_stick",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live 'animal' StreetSpirit vendor-type stock only (not ToolVendor, not a recipe output) -- placed via tools/seed-demo-world.mjs.",
+      "routeIds": {
+        "itemId": "chicken_stick",
+        "vendor": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/magic_animal_stick/magic_chicken_stick/magic_chicken_stick.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-pig_stick",
+      "displayName": "Pig Stick",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_pig_stick",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live 'animal' StreetSpirit vendor-type stock only (not ToolVendor, not a recipe output) -- placed via tools/seed-demo-world.mjs.",
+      "routeIds": {
+        "itemId": "pig_stick",
+        "vendor": "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/magic_animal_stick/magic_pig_stick/magic_pig_stick.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-chicken_egg",
+      "displayName": "Chicken Egg",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_chicken_egg",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of egg_seasoner.json. ALSO granted directly by NewPlayerPack.openPack() when opening new_player_pack_chicken -- live via either route.",
+      "routeIds": {
+        "itemId": "chicken_egg",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "altGrant": "coUserver/lib/entities/items/actions/itemgroups/misc.dart:NewPlayerPack.openPack()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/chicken_egg/chicken_egg.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-fox_bait",
+      "displayName": "Fox Bait",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_fox_bait",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked every vendor NPC stock list and every recipes/json/*.json file directly. Real converted art now exists for an item players cannot currently obtain.",
+      "routeIds": {
+        "itemId": "fox_bait"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/fox_bait/fox_bait.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-hogtied_piggy",
+      "displayName": "Hog-tied Piggy",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_hogtied_piggy",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- zero references outside its own item definition (checked recipes, vendor stock, NPC reward code, quest data).",
+      "routeIds": {
+        "itemId": "hogtied_piggy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/hogtied_piggy/hogtied_piggy.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-meat_collector",
+      "displayName": "Meat Collector",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_meat_collector",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock (ToolVendor + Vendor 'animal' category) AND a real tinkertool.json recipe (new_meat_collector) -- live via either route.",
+      "routeIds": {
+        "itemId": "meat_collector",
+        "vendor": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+        ],
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tinkertool.json"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/meat_collector/meat_collector.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-pig_bait",
+      "displayName": "Pig Bait",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_pig_bait",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: ToolVendor.itemsForSale AND Vendor's 'animal' StreetSpirit category -- live.",
+      "routeIds": {
+        "itemId": "pig_bait",
+        "vendor": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/pig_bait/pig_bait.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-piggy_egg",
+      "displayName": "Piggy Egg",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_piggy_egg",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe output of egg_seasoner.json. ALSO granted directly by NewPlayerPack.openPack() when opening new_player_pack_piggy -- live via either route.",
+      "routeIds": {
+        "itemId": "piggy_egg",
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "altGrant": "coUserver/lib/entities/items/actions/itemgroups/misc.dart:NewPlayerPack.openPack()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/piggy_egg/piggy_egg.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-piggy_feeder",
+      "displayName": "Piggy Feeder",
+      "category": "Herdkeeping (player item)",
+      "sourceAssetId": "item_icon_piggy_feeder",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock (ToolVendor + Vendor 'animal' category) AND a real tinkertool.json recipe (new_piggy_feeder) -- live via either route.",
+      "routeIds": {
+        "itemId": "piggy_feeder",
+        "vendor": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (case 'animal')"
+        ],
+        "recipe": "coUserver/lib/entities/items/actions/recipes/json/tinkertool.json"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/piggy_feeder/piggy_feeder.swf and wired into herdkeeping.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-juju_trowel",
+      "displayName": "Juju Trowel",
+      "category": "Quest Items (player item)",
+      "sourceAssetId": "item_icon_juju_trowel",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found -- no recipe, vendor stock, or quest-grant code references this item anywhere in coUserver.",
+      "routeIds": {
+        "itemId": "juju_trowel"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/juju_trowel/juju_trowel.swf and wired into quest_items.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-note_hint",
+      "displayName": "Secret Juju Hint",
+      "category": "Quest Items (player item)",
+      "sourceAssetId": "item_icon_note_hint",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found -- no recipe, vendor stock, or quest-grant code references this item anywhere in coUserver.",
+      "routeIds": {
+        "itemId": "note_hint"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/note/note_hint/note_hint.swf and wired into quest_items.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-small_worthless",
+      "displayName": "Small shiny object with no intrinsic value",
+      "category": "Quest Items (player item)",
+      "sourceAssetId": "item_icon_small_worthless",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live grant via MilkButterCheese.prod() (coUserver/lib/entities/items/actions/itemgroups/milk-butter-cheese.dart:158), triggered by the 'Prod' action on very_very_stinky_cheese.",
+      "routeIds": {
+        "itemId": "small_worthless",
+        "grantMethod": "coUserver/lib/entities/items/actions/itemgroups/milk-butter-cheese.dart:MilkButterCheese.prod()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/small_worthless/small_worthless.swf and wired into quest_items.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-cloudberry_daiquiri",
+      "displayName": "Cloudberry Daiquiri",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_cloudberry_daiquiri",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (cloud_11_smoothie+hooch+ice+nutmeg). All 4 ingredients trace to already-live sources (cloud_11_smoothie: prior blender-recipe batch; hooch: placed HoochRespawningItem; ice: placed IceNubbin/IceKnob harvested with vendor-stock scraper; nutmeg: spice_mill output) and cocktail_shaker is live kitchen-category vendor stock -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "cloudberry_daiquiri"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/cloudberry_daiquiri/cloudberry_daiquiri.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-creamy_martini",
+      "displayName": "Creamy Martini",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_creamy_martini",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (butterfly_milk+hooch+ice+lemon+onion). butterfly_milk is live via Butterfly.milk() (Butterfly placed); lemon is a live fruit_changing_machine output; onion is direct live vendor stock; ice/hooch as above -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "creamy_martini"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/creamy_martini/creamy_martini.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-gurly_drink",
+      "displayName": "Gurly Drink",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_gurly_drink",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (fruity_juice+ginger+honey+hooch+bubble_tiny). fruity_juice already-live (prior batch); ginger is a spice_mill output; honey is direct vendor stock; bubble_tiny is a bubble_tuner output -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "gurly_drink"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/gurly_drink/gurly_drink.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-lemon_juice",
+      "displayName": "Lemon Juice",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_lemon_juice",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live blender recipe output (lemon x5). lemon is a live fruit_changing_machine output; blender is live kitchen-category vendor stock -- live.",
+      "routeIds": {
+        "itemId": "lemon_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/lemon_juice/lemon_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-mabbish_coffee",
+      "displayName": "Mabbish Coffee",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_mabbish_coffee",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (butterfly_milk+cinnamon+coffee+hooch). coffee already-live (prior batch, groceries stock); cinnamon is a spice_mill output -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "mabbish_coffee"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/mabbish_coffee/mabbish_coffee.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-mega_healthy_veggie_juice",
+      "displayName": "Mega Healthy Veggie Juice",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_mega_healthy_veggie_juice",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live blender recipe output (carrot+cabbage+parsnip+mangosteen). carrot/cabbage/parsnip are direct vendor stock; mangosteen is a fruit_changing_machine output -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "mega_healthy_veggie_juice"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/mega_healthy_veggie_juice/mega_healthy_veggie_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-pungent_sunrise",
+      "displayName": "Pungent Sunrise",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_pungent_sunrise",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (camphor+exotic_juice+fruit_salad+hooch). exotic_juice already-live (prior batch); camphor is a spice_mill output; fruit_salad is a knife_and_board output -- fully live end-to-end. Also a listed requirement of quest Q12 ('Make Me Some Drinks').",
+      "routeIds": {
+        "itemId": "pungent_sunrise"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/pungent_sunrise/pungent_sunrise.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-savory_smoothie",
+      "displayName": "Savory Smoothie",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_savory_smoothie",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live blender recipe output (oily_dressing+bubble_hard+meat+allspice). oily_dressing is direct vendor stock; bubble_hard is a bubble_tuner output; meat is live via Piggy's reward action (Piggy placed); allspice is a spice_mill output -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "savory_smoothie"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/savory_smoothie/savory_smoothie.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-slow_gin_fizz",
+      "displayName": "Slow Gin Fizz",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_slow_gin_fizz",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (bubble_blue+fruity_juice+hooch). bubble_blue is a bubble_tuner output; fruity_juice already-live -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "slow_gin_fizz"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/slow_gin_fizz/slow_gin_fizz.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-spicy_grog",
+      "displayName": "Spicy Grog",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_spicy_grog",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live cocktail_shaker recipe output (allspice+hooch+hot_pepper+licorice+mustard). hot_pepper/licorice/allspice are spice_mill outputs; mustard is direct vendor stock -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "spicy_grog"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/spicy_grog/spicy_grog.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-tooberry_shake",
+      "displayName": "Too-Berry Shake",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_tooberry_shake",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live blender recipe output (butterfly_milk+strawberry+whortleberry+birch_syrup). strawberry/whortleberry are fruit_changing_machine outputs; birch_syrup is direct vendor stock; butterfly_milk live via Butterfly.milk() -- fully live end-to-end.",
+      "routeIds": {
+        "itemId": "tooberry_shake"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/tooberry_shake/tooberry_shake.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-cup_of_water",
+      "displayName": "Cup of Water",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_cup_of_water",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live non-recipe harvest byproduct: IceNubbin.collect() (coUserver/lib/entities/plants/icenubbin.dart:105) has a real ~50% 'it melted' branch that grants cup_of_water instead of ice. IceNubbin/IceKnob is placed (~25% chance/street) -- live, no recipe needed at all.",
+      "routeIds": {
+        "itemId": "cup_of_water",
+        "grantMethod": "coUserver/lib/entities/plants/icenubbin.dart:IceNubbin.collect()"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/cup_of_water/cup_of_water.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-wine_of_the_dead",
+      "displayName": "Wine of the Dead",
+      "category": "Drinks (player item)",
+      "sourceAssetId": "item_icon_wine_of_the_dead",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found. The only candidate is HellBartender.glassOfWine() (coUserver/lib/entities/npcs/hell_bartender.dart), but it is a stub that only calls say(...) with no InventoryV2.addItemToUser call at all -- it grants nothing even if triggered. HellBartender is also not placed anywhere in tools/seed-demo-world.mjs. No recipe, quest, or other vendor route exists either. Worse than wired-but-inert: the one candidate code path doesn't grant the item even in principle.",
+      "routeIds": {
+        "itemId": "wine_of_the_dead"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/wine_of_the_dead/wine_of_the_dead.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-bushel_of_grain",
+      "displayName": "Bushel of Grain",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_bushel_of_grain",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "bushel_of_grain"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/grain_bushel/grain_bushel.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-metal_bar",
+      "displayName": "Metal Bar",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_metal_bar",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "metal_bar"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/metal_post/metal_post.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-metal_rod",
+      "displayName": "Metal Rod",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_metal_rod",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "metal_rod"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/metal_rod/metal_rod.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-plain_crystal",
+      "displayName": "Plain Crystal",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_plain_crystal",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "plain_crystal"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/plain_crystal/plain_crystal.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-snail",
+      "displayName": "Snail",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_snail",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "snail"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/snail/snail.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-urth_block",
+      "displayName": "Urth Block",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_urth_block",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "urth_block"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/grade_aa_earth_block/grade_aa_earth_block.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-beam",
+      "displayName": "Beam",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_beam",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "beam"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/beam/beam.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-board",
+      "displayName": "Board",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_board",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "board"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/board/board.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-girder",
+      "displayName": "Girder",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_girder",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "girder"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/girder/girder.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-wood_post",
+      "displayName": "Wood Post",
+      "category": "Advanced Resources (player item)",
+      "sourceAssetId": "item_icon_wood_post",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route found anywhere in coUserver -- checked all 22 recipe files under coUserver/lib/entities/items/actions/recipes/json/*.json (as input and output), every named vendor itemsForSale list, and Vendor.pickItems() (only ever called with [\"Storage\"], never \"Advanced Resources\"). Achievement names referencing this item (e.g. plain_crystallizer, girder_herder) are display metadata only -- the achievement system has no item-grant code anywhere. Genuinely missing design, same category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "wood_post"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/wood_post/wood_post.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-blockmaker_chassis",
+      "displayName": "Blockmaker Chassis",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_blockmaker_chassis",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "blockmaker_chassis",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/blockmaker_chassis/blockmaker_chassis.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-blockmaker_plates",
+      "displayName": "Blockmaker Plates",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_blockmaker_plates",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "blockmaker_plates",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/blockmaker_plates/blockmaker_plates.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-fuelmaker_case",
+      "displayName": "Fuelmaker Case",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_fuelmaker_case",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "fuelmaker_case",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/fuelmaker_case/fuelmaker_case.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-fuelmaker_core",
+      "displayName": "Fuelmaker Core",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_fuelmaker_core",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "fuelmaker_core",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/fuelmaker_core/fuelmaker_core.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-machine_engine",
+      "displayName": "Machine Engine",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_machine_engine",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "machine_engine",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/blockmaker_engine/blockmaker_engine.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-metalmaker_mechanism",
+      "displayName": "Metal Machine Mechanism",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_metalmaker_mechanism",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "metalmaker_mechanism",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/metalmaker_mechanism/metalmaker_mechanism.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-metalmaker_tooler",
+      "displayName": "Metal Machine Tooler",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_metalmaker_tooler",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "metalmaker_tooler",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/metalmaker_tooler/metalmaker_tooler.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-woodworker_chassis",
+      "displayName": "Woodworker Chassis",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_woodworker_chassis",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "woodworker_chassis",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/woodworker_chassis/woodworker_chassis.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "item-woodworker_fuser",
+      "displayName": "Woodworker Fuser",
+      "category": "Machines & Fuel (player item)",
+      "sourceAssetId": "item_icon_woodworker_fuser",
+      "destination": "Player item",
+      "accessibleThrough": "Real, live vendor stock: hardcoded on ToolVendor.itemsForSale (coUserver/lib/entities/npcs/vendors/toolvendor.dart, itemsPredefined=true so this static list always sells regardless of street) and, for 8 of these 9 items (all but woodworker_fuser), also the 'hardware' StreetSpirit category. ToolVendor is confirmed placed in tools/seed-demo-world.mjs (chance 12/street). No recipe consumes any of these as a machine-assembly component (checked all 22 recipe files directly) -- the 'install into a machine stand' flavor text is not backed by recipe data.",
+      "routeIds": {
+        "itemId": "woodworker_fuser",
+        "vendor": "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/woodworker_fuser/woodworker_fuser.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
     }
   ],
   "deliberatelyDeferred": [
@@ -10374,6 +12184,34 @@
       "category": "NPC vendor (giant-reskin costume variants)",
       "reason": "StreetSpiritGroddle.dart's VARIANTS map has 23 remaining giant/light combinations (alph/night, cosma, friendly, grendaline, humbaba, lem, mab, pot, spriggan, tii, zille x day/night) beyond the 1 ('alph'/'day') converted this pass. Each requires compositing a distinct combination of layered base/bottom/eyes/skull/top part symbols from street_spirit_groddle.swf; this combination logic exists only as AS3 runtime instantiation code, not as pre-rendered timelines, so ffdec's static per-frame export cannot reconstruct them without custom multi-layer compositing tooling beyond this pipeline's current scope.",
       "replacementMilestone": "Extend tools/build-sprite-sheet.py (or a new script) to alpha-composite named part-symbol frame sequences at matching frame offsets, then convert the remaining 23 combinations the same way as 'alph'/'day'."
+    },
+    {
+      "id": "musicblock_bag",
+      "displayName": "Crabpack",
+      "category": "storage (player item)",
+      "reason": "No source SWF exists anywhere under tmp/glitch-items (searched thoroughly for 'jukebox'/'crabjukebox'/'crab_jukebox' -- the item's dead links reference crabjukebox_1.svg/crabjukebox.png; tmp/glitch-items/musicblocks/ holds only the individual music-block *contents* this container can hold, not the container art itself). Despite having no recoverable art, the item DOES have two real, live acquisition routes: generic Storage-category vendor stocking (category=='Storage', same mechanism as the other 15 storage.json items) AND a special-case direct sale via Crab.buyCrabpack() (coUserver/lib/entities/npcs/crab.dart:136-145), Crab being placed in tools/seed-demo-world.mjs (~22% chance/street).",
+      "replacementMilestone": "None planned unless source art for the Crabpack/jukebox container is recovered from another archive. The item remains playable (buyable) with a broken icon/sprite in the meantime."
+    },
+    {
+      "id": "user_made_quest",
+      "displayName": "A quest made by a user",
+      "category": "quest items (player item)",
+      "reason": "No source SWF exists anywhere under tmp/glitch-items (re-searched for 'user_made'/'usermade'/'user*quest' variants, zero hits). The item DOES have a real, live acquisition route: QuestService.createQuestItem() (coUserver/lib/entities/items/actions/quest_service.dart:91, /createQuestItem HTTP route) grants it when a player authors a custom quest.",
+      "replacementMilestone": "None planned unless source art is recovered from another archive."
+    },
+    {
+      "id": "salmon_bubble",
+      "displayName": "Salmon Bubble",
+      "category": "basic resources (player item)",
+      "reason": "No source SWF exists anywhere under tmp/glitch-items (re-searched for 'bubble_salmon'/'salmon_bubble'; only food/salmon, food/cedar_plank_salmon, food/salmon_jaella, inhabitants/salmon, and a mounted-salmon furniture piece exist, none of which is a bubble icon). The item DOES have a real, live acquisition route: Salmon.pocket() (coUserver/lib/entities/npcs/animals/salmon.dart) grants it on the 50%-miss branch of its 'pocket' action; Salmon is placed in tools/seed-demo-world.mjs across multiple regions.",
+      "replacementMilestone": "None planned unless source art is recovered from another archive."
+    },
+    {
+      "id": "new_player_pack_butterfly",
+      "displayName": "New Player Pack (Butterfly)",
+      "category": "misc (player item)",
+      "reason": "No source SWF exists anywhere under tmp/glitch-items (re-searched for 'newplayer'/'new_player' variants, zero hits; the item's dead link references newplayerbutterflybox.png, and this absence was already independently confirmed in the prior misc.json batch that converted the other 41 items). The item DOES have a real, live acquisition route: tinkertool.json's create_new_player_pack_butterfly recipe (coffee+spinach+cheezy_sammich+butterfly_lotion+butterfly_egg -> output) -- the confirmed third sibling of the already-live new_player_pack_chicken/new_player_pack_piggy recipes.",
+      "replacementMilestone": "None planned unless source art is recovered from another archive."
     }
   ]
 }

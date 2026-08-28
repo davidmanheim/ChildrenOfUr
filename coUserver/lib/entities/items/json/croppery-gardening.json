@@ -2,8 +2,8 @@
 	"bean_tree_bean": {
 		"name": "Bean Tree Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_bean__x1_iconic_png_1354829672.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_bean__x1_1_x1_2_x1_3_x1_4_png_1354829673.png",
+		"iconUrl": "files/sprites/generated/converted/item-bean_tree_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bean_tree_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "A plain, non-magical bean tree bean. It can grow even more beans!"
@@ -29,8 +29,8 @@
 	"broccoli_seed": {
 		"name": "Broccoli Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_broccoli__x1_iconic_png_1354830767.svg",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_broccoli__x1_1_x1_2_x1_3_x1_4_png_1354830768.png",
+		"iconUrl": "files/sprites/generated/converted/item-broccoli_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-broccoli_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 24,
 		"description": "A packet of broccoli seeds. This can be planted to grow Broccoli in a Crop Garden."
@@ -38,8 +38,8 @@
 	"bubble_tree_bean": {
 		"name": "Bubble Tree Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_bubble__x1_iconic_png_1354830305.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_bubble__x1_1_x1_2_x1_3_x1_4_png_1354830305.png",
+		"iconUrl": "files/sprites/generated/converted/item-bubble_tree_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bubble_tree_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "A fizzy bubble tree bean. It can be planted to grow a bubble tree."
@@ -65,8 +65,8 @@
 	"cabbage_seed": {
 		"name": "Cabbage Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_cabbage__x1_iconic_png_1354830770.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_cabbage__x1_1_x1_2_x1_3_x1_4_png_1354830771.png",
+		"iconUrl": "files/sprites/generated/converted/item-cabbage_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-cabbage_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 26,
 		"description": "A packet of cabbage seeds. This can be planted to grow Cabbages in a Crop Garden."
@@ -92,8 +92,8 @@
 	"carrot_seed": {
 		"name": "Carrot Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_carrot__x1_iconic_png_1354830773.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_carrot__x1_1_x1_2_x1_3_x1_4_png_1354830773.png",
+		"iconUrl": "files/sprites/generated/converted/item-carrot_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-carrot_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 28,
 		"description": "A packet of carrot seeds. This can be planted to grow Carrot in a Crop Garden."
@@ -119,8 +119,8 @@
 	"corn_seed": {
 		"name": "Corn Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_corn__x1_iconic_png_1354830775.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_corn__x1_1_x1_2_x1_3_x1_4_png_1354830776.png",
+		"iconUrl": "files/sprites/generated/converted/item-corn_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-corn_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 25,
 		"description": "A packet of corn seeds. This can be planted to grow Corn in a Crop Garden."
@@ -146,8 +146,8 @@
 	"cucumber_seed": {
 		"name": "Cucumber Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_cucumber__x1_iconic_png_1354830778.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_cucumber__x1_1_x1_2_x1_3_x1_4_png_1354830778.png",
+		"iconUrl": "files/sprites/generated/converted/item-cucumber_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-cucumber_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 25,
 		"description": "A packet of cucumber seeds. This can be planted to grow Cucumbers in a Crop Garden."
@@ -155,8 +155,8 @@
 	"egg_plant_bean": {
 		"name": "Egg Plant Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_egg__x1_iconic_png_1354829675.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_egg__x1_1_x1_2_x1_3_x1_4_png_1354829676.png",
+		"iconUrl": "files/sprites/generated/converted/item-egg_plant_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-egg_plant_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "A smooth, round egg plant bean. It can grow egg plants. Then the fun really starts!"
@@ -164,8 +164,8 @@
 	"fruit_tree_bean": {
 		"name": "Fruit Tree Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_fruit__x1_iconic_png_1354830688.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_fruit__x1_1_x1_2_x1_3_x1_4_png_1354830688.png",
+		"iconUrl": "files/sprites/generated/converted/item-fruit_tree_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-fruit_tree_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "An ordinary fruit tree bean. It can be used to grow a fruit tree."
@@ -173,8 +173,8 @@
 	"gas_plant_bean": {
 		"name": "Gas Plant Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_gas__x1_iconic_png_1354830708.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_gas__x1_1_x1_2_x1_3_x1_4_png_1354830708.png",
+		"iconUrl": "files/sprites/generated/converted/item-gas_plant_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-gas_plant_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "A vapourous gas plant bean. It can be used to grow a gas plant."
@@ -200,8 +200,8 @@
 	"onion_seed": {
 		"name": "Onion Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_onion__x1_iconic_png_1354830424.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_onion__x1_1_x1_2_x1_3_x1_4_png_1354830425.png",
+		"iconUrl": "files/sprites/generated/converted/item-onion_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-onion_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 15,
 		"description": "A packet of black onion seeds. This can be planted to grow Onions in a Crop Garden."
@@ -227,8 +227,8 @@
 	"parsnip_seed": {
 		"name": "Parsnip Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_parsnip__x1_iconic_png_1354834551.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_parsnip__x1_1_x1_2_x1_3_x1_4_png_1354834552.png",
+		"iconUrl": "files/sprites/generated/converted/item-parsnip_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-parsnip_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 24,
 		"description": "A packet of parsnip seeds. This can be planted to grow Parsnips in a Crop Garden."
@@ -254,8 +254,8 @@
 	"potato_seed": {
 		"name": "Potato Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_potato__x1_iconic_png_1354830785.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_potato__x1_1_x1_2_x1_3_x1_4_png_1354830785.png",
+		"iconUrl": "files/sprites/generated/converted/item-potato_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-potato_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 40,
 		"description": "A packet of tiny potatoes. This can be planted to grow Potatoes in a Crop Garden."
@@ -281,8 +281,8 @@
 	"pumpkin_seed": {
 		"name": "Pumpkin Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_pumpkin__x1_iconic_png_1354836494.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_pumpkin__x1_1_x1_2_x1_3_x1_4_png_1354836496.png",
+		"iconUrl": "files/sprites/generated/converted/item-pumpkin_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-pumpkin_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 17,
 		"description": "A packet of Pumpkin seeds. This can be planted to grow one mighty Pumpkin at a time in either a Crop Garden or a Herb garden."
@@ -308,8 +308,8 @@
 	"rice_seed": {
 		"name": "Rice Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_rice__x1_iconic_png_1354830789.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_rice__x1_1_x1_2_x1_3_x1_4_png_1354830790.png",
+		"iconUrl": "files/sprites/generated/converted/item-rice_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-rice_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 19,
 		"description": "A packet of rice seeds. This can be planted to grow Rice in a Crop Garden."
@@ -317,8 +317,8 @@
 	"spice_plant_bean": {
 		"name": "Spice Plant Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_spice__x1_iconic_png_1354830710.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_spice__x1_1_x1_2_x1_3_x1_4_png_1354830711.png",
+		"iconUrl": "files/sprites/generated/converted/item-spice_plant_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-spice_plant_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 150,
 		"description": "A small spicy bean. It can be used to plant a spice plant."
@@ -349,8 +349,8 @@
 	"spinach_seed": {
 		"name": "Spinach Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_spinach__x1_iconic_png_1354830793.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_spinach__x1_1_x1_2_x1_3_x1_4_png_1354830793.png",
+		"iconUrl": "files/sprites/generated/converted/item-spinach_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-spinach_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 12,
 		"description": "A packet of spinach seeds. This can be planted to grow Spinach in a Crop Garden."
@@ -376,8 +376,8 @@
 	"tomato_seed": {
 		"name": "Tomato Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_tomato__x1_iconic_png_1354830420.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_tomato__x1_1_x1_2_x1_3_x1_4_png_1354830421.png",
+		"iconUrl": "files/sprites/generated/converted/item-tomato_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-tomato_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 20,
 		"description": "A packet of heirloom-quality tomato seeds. This can be planted to grow Tomatoes in a Crop Garden."
@@ -385,8 +385,8 @@
 	"wood_tree_bean": {
 		"name": "Wood Tree Bean",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_wood__x1_iconic_png_1354833452.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_wood__x1_1_x1_2_x1_3_x1_4_png_1354833453.png",
+		"iconUrl": "files/sprites/generated/converted/item-wood_tree_bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-wood_tree_bean-sprite.png",
 		"stacksTo": 100,
 		"price": 200,
 		"description": "A satisfyingly woody wood tree bean. You can use this to grow a wood tree. Guaranteed 100% splinter-free!"
@@ -412,8 +412,8 @@
 	"zucchini_seed": {
 		"name": "Zucchini Seed",
 		"category": "Croppery & Gardening Supplies",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/seed_zucchini__x1_iconic_png_1354830787.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/seed_zucchini__x1_1_x1_2_x1_3_x1_4_png_1354830788.png",
+		"iconUrl": "files/sprites/generated/converted/item-zucchini_seed-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-zucchini_seed-sprite.png",
 		"stacksTo": 50,
 		"price": 34,
 		"description": "A packet of zucchini seeds. This can be planted to grow Zucchinis in a Crop Garden."

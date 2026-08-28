@@ -1,7 +1,7 @@
 {
   "$schema": "Content recovery source manifest. See CONTENT_RECOVERY_PLAN.md, 'Required manifests and validation'.",
   "generatedBy": "tools/build-sprite-sheet.py + tools/swf-frame-labels.py + tools/swf-extract-bitmaps.py",
-  "generatedAt": "2026-08-27",
+  "generatedAt": "2026-08-28T16:19:17.286Z",
   "sourceRepositories": [
     {
       "id": "tinyspeck/glitch-items",
@@ -26008,10 +26008,4226 @@
           "numFrames": 1
         }
       ]
+    },
+    {
+      "id": "item_icon_potion_charades",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_charades/potion_charades.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_charades-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_charades/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_charades-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_charades-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_charades/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_charades-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_de_embiggenifying_potion",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_avatar_small/potion_avatar_small.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "de_embiggenifying_potion-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/de_embiggenifying_potion/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-de_embiggenifying_potion-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "de_embiggenifying_potion-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/de_embiggenifying_potion/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-de_embiggenifying_potion-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_percival",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_chris/potion_chris.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_percival-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_percival/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_percival-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_percival-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_percival/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_percival-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_draught_of_giant_amicability",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_draught_of_giant_amicability/potion_draught_of_giant_amicability.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "draught_of_giant_amicability-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/draught_of_giant_amicability/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-draught_of_giant_amicability-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "draught_of_giant_amicability-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/draught_of_giant_amicability/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-draught_of_giant_amicability-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_dung_kicker_drops",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_garden_fertilize/potion_garden_fertilize.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "dung_kicker_drops-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dung_kicker_drops/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dung_kicker_drops-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "dung_kicker_drops-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dung_kicker_drops/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dung_kicker_drops-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_elixir_of_avarice",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_elixir_of_avarice/potion_elixir_of_avarice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_elixir_of_avarice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_elixir_of_avarice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_elixir_of_avarice-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_elixir_of_avarice-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_elixir_of_avarice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_elixir_of_avarice-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_embiggenifying_potion",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_avatar_large/potion_avatar_large.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "embiggenifying_potion-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/embiggenifying_potion/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-embiggenifying_potion-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "embiggenifying_potion-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/embiggenifying_potion/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-embiggenifying_potion-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_keycutter_tonic",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_keycutter_tonic/potion_keycutter_tonic.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_keycutter_tonic-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_keycutter_tonic/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_keycutter_tonic-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_keycutter_tonic-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_keycutter_tonic/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_keycutter_tonic-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_liquid_super_hoe",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_garden_clear/potion_garden_clear.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "liquid_super_hoe-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/liquid_super_hoe/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-liquid_super_hoe-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "liquid_super_hoe-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/liquid_super_hoe/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-liquid_super_hoe-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_manyharvest_cordial",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_garden_harvest/potion_garden_harvest.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "manyharvest_cordial-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/manyharvest_cordial/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-manyharvest_cordial-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "manyharvest_cordial-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/manyharvest_cordial/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-manyharvest_cordial-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_animal_youth",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_animal_youth/potion_animal_youth.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_animal_youth-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_animal_youth/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_animal_youth-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_animal_youth-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_animal_youth/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_animal_youth-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_rook_balm",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_rook_balm/potion_rook_balm.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_rook_balm-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_rook_balm/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_rook_balm-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_rook_balm-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_rook_balm/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_rook_balm-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_seed_dibber_libation",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_garden_plant/potion_garden_plant.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "seed_dibber_libation-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/seed_dibber_libation/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-seed_dibber_libation-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "seed_dibber_libation-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/seed_dibber_libation/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-seed_dibber_libation-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_soak_all_solution",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_garden_water/potion_garden_water.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "soak_all_solution-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/soak_all_solution/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-soak_all_solution-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "soak_all_solution-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/soak_all_solution/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-soak_all_solution-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_trantsformation_fluid",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_trantsformation_fluid/potion_trantsformation_fluid.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "trantsformation_fluid-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trantsformation_fluid/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trantsformation_fluid-icon.png",
+          "frameWidth": 43,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "trantsformation_fluid-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trantsformation_fluid/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trantsformation_fluid-sprite.png",
+          "frameWidth": 43,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_tree_poison_antidote",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_tree_poison_antidote/potion_tree_poison_antidote.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'tool_animation' (frames 3-77, a long shimmer/pour effect loop, not a quantity-stack strip). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (main timeline) -> frame 1 ('iconic') used for BOTH iconUrl and spriteUrl, matching the potion_rainbow_juice precedent (this family has no quantity-stack strip; frames 3-77 are an unused effect animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_tree_poison_antidote-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_tree_poison_antidote/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_tree_poison_antidote-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_tree_poison_antidote-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_tree_poison_antidote/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_tree_poison_antidote-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_hairball",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_hairball/essence_of_hairball.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_hairball-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_hairball/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_hairball-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_hairball-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_hairball/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_hairball-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_purple",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_purple/essence_of_purple.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_purple-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_purple/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_purple-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_purple-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_purple/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_purple-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_rookswort",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_rookswort/essence_of_rookswort.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_rookswort-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_rookswort/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_rookswort-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_rookswort-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_rookswort/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_rookswort-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_rubeweed",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_rubeweed/essence_of_rubeweed.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_rubeweed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_rubeweed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_rubeweed-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_rubeweed-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_rubeweed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_rubeweed-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_silvertongue",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_silvertongue/essence_of_silvertongue.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_silvertongue-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_silvertongue/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_silvertongue-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_silvertongue-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_silvertongue/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_silvertongue-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_yellow_crumb",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_yellow_crumb/essence_of_yellow_crumb.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_yellow_crumb-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_yellow_crumb/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_yellow_crumb-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_yellow_crumb-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_yellow_crumb/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_yellow_crumb-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_broccoli_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_broccoli/seed_broccoli.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "broccoli_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/broccoli_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-broccoli_seed-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "broccoli_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/broccoli_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-broccoli_seed-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cabbage_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_cabbage/seed_cabbage.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cabbage_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cabbage_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cabbage_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "cabbage_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cabbage_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cabbage_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_carrot_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_carrot/seed_carrot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "carrot_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/carrot_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "carrot_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/carrot_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-carrot_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_corn_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_corn/seed_corn.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "corn_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/corn_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-corn_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "corn_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/corn_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-corn_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cucumber_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_cucumber/seed_cucumber.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cucumber_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cucumber_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cucumber_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "cucumber_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cucumber_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cucumber_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_onion_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_onion/seed_onion.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "onion_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/onion_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-onion_seed-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "onion_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/onion_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-onion_seed-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_parsnip_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_parsnip/seed_parsnip.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "parsnip_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/parsnip_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-parsnip_seed-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "parsnip_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/parsnip_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-parsnip_seed-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 41,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potato_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_potato/seed_potato.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potato_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potato_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potato_seed-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "potato_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/potato_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potato_seed-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pumpkin_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_pumpkin/seed_pumpkin.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pumpkin_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pumpkin_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin_seed-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "pumpkin_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pumpkin_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pumpkin_seed-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 41,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_rice_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_rice/seed_rice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "rice_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/rice_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-rice_seed-icon.png",
+          "frameWidth": 49,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "rice_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/rice_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-rice_seed-sprite.png",
+          "frameWidth": 49,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spinach_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_spinach/seed_spinach.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spinach_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spinach_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spinach_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "spinach_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/spinach_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spinach_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 41,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_tomato_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_tomato/seed_tomato.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "tomato_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/tomato_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tomato_seed-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "tomato_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/tomato_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tomato_seed-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_zucchini_seed",
+      "sourcePath": "tmp/glitch-items/seeds/seed_zucchini/seed_zucchini.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "zucchini_seed-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zucchini_seed/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zucchini_seed-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "zucchini_seed-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/zucchini_seed/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zucchini_seed-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bean_tree_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_bean/bean_bean.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bean_tree_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bean_tree_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bean_tree_bean-icon.png",
+          "frameWidth": 58,
+          "frameHeight": 36,
+          "numFrames": 1
+        },
+        {
+          "state": "bean_tree_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bean_tree_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bean_tree_bean-sprite.png",
+          "frameWidth": 58,
+          "frameHeight": 36,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_tree_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_bubble/bean_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_tree_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_tree_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tree_bean-icon.png",
+          "frameWidth": 57,
+          "frameHeight": 24,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_tree_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bubble_tree_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tree_bean-sprite.png",
+          "frameWidth": 57,
+          "frameHeight": 24,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_egg_plant_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_egg/bean_egg.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "egg_plant_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/egg_plant_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-egg_plant_bean-icon.png",
+          "frameWidth": 56,
+          "frameHeight": 24,
+          "numFrames": 1
+        },
+        {
+          "state": "egg_plant_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/egg_plant_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-egg_plant_bean-sprite.png",
+          "frameWidth": 56,
+          "frameHeight": 24,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fruit_tree_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_fruit/bean_fruit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fruit_tree_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fruit_tree_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruit_tree_bean-icon.png",
+          "frameWidth": 57,
+          "frameHeight": 25,
+          "numFrames": 1
+        },
+        {
+          "state": "fruit_tree_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/fruit_tree_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruit_tree_bean-sprite.png",
+          "frameWidth": 57,
+          "frameHeight": 25,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_plant_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_gas/bean_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_plant_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_plant_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_plant_bean-icon.png",
+          "frameWidth": 57,
+          "frameHeight": 25,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_plant_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gas_plant_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_plant_bean-sprite.png",
+          "frameWidth": 57,
+          "frameHeight": 25,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spice_plant_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_spice/bean_spice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spice_plant_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spice_plant_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spice_plant_bean-icon.png",
+          "frameWidth": 57,
+          "frameHeight": 26,
+          "numFrames": 1
+        },
+        {
+          "state": "spice_plant_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/spice_plant_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spice_plant_bean-sprite.png",
+          "frameWidth": 57,
+          "frameHeight": 26,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_wood_tree_bean",
+      "sourcePath": "tmp/glitch-items/beans/bean_wood/bean_wood.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "wood_tree_bean-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/wood_tree_bean/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wood_tree_bean-icon.png",
+          "frameWidth": 49,
+          "frameHeight": 25,
+          "numFrames": 1
+        },
+        {
+          "state": "wood_tree_bean-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/wood_tree_bean/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wood_tree_bean-sprite.png",
+          "frameWidth": 49,
+          "frameHeight": 25,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_friendly",
+      "sourcePath": "tmp/glitch-items/giants/emblem_friendly/emblem_friendly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_friendly-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_friendly/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_friendly-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_friendly-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_friendly/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_friendly-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_grendaline",
+      "sourcePath": "tmp/glitch-items/giants/emblem_grendaline/emblem_grendaline.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_grendaline-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_grendaline/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_grendaline-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_grendaline-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_grendaline/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_grendaline-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_humbaba",
+      "sourcePath": "tmp/glitch-items/giants/emblem_humbaba/emblem_humbaba.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_humbaba-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_humbaba/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_humbaba-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_humbaba-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_humbaba/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_humbaba-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_lem",
+      "sourcePath": "tmp/glitch-items/giants/emblem_lem/emblem_lem.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_lem-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_lem/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_lem-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_lem-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_lem/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_lem-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_mab",
+      "sourcePath": "tmp/glitch-items/giants/emblem_mab/emblem_mab.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_mab-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_mab/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_mab-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_mab-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_mab/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_mab-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_pot",
+      "sourcePath": "tmp/glitch-items/giants/emblem_pot/emblem_pot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_pot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_pot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_pot-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_pot-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_pot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_pot-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_spriggan",
+      "sourcePath": "tmp/glitch-items/giants/emblem_spriggan/emblem_spriggan.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_spriggan-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_spriggan/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_spriggan-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_spriggan-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_spriggan/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_spriggan-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_tii",
+      "sourcePath": "tmp/glitch-items/giants/emblem_ti/emblem_ti.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_tii-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_tii/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_tii-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_tii-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_tii/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_tii-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_zille",
+      "sourcePath": "tmp/glitch-items/giants/emblem_zille/emblem_zille.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl (no distinct stack pose exists for this non-stacking collectible).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_zille-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_zille/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_zille-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_zille-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_zille/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_zille-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_cosma",
+      "sourcePath": "tmp/glitch-items/giants/icon_cosma/icon_cosma.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_cosma-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_cosma/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_cosma-icon.png",
+          "frameWidth": 110,
+          "frameHeight": 105,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_cosma-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_cosma/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_cosma-sprite.png",
+          "frameWidth": 110,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_friendly",
+      "sourcePath": "tmp/glitch-items/giants/icon_friendly/icon_friendly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_friendly-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_friendly/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_friendly-icon.png",
+          "frameWidth": 90,
+          "frameHeight": 99,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_friendly-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_friendly/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_friendly-sprite.png",
+          "frameWidth": 90,
+          "frameHeight": 99,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_grendaline",
+      "sourcePath": "tmp/glitch-items/giants/icon_grendaline/icon_grendaline.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_grendaline-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_grendaline/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_grendaline-icon.png",
+          "frameWidth": 86,
+          "frameHeight": 107,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_grendaline-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_grendaline/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_grendaline-sprite.png",
+          "frameWidth": 86,
+          "frameHeight": 107,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_humbaba",
+      "sourcePath": "tmp/glitch-items/giants/icon_humbaba/icon_humbaba.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_humbaba-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_humbaba/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_humbaba-icon.png",
+          "frameWidth": 81,
+          "frameHeight": 105,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_humbaba-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_humbaba/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_humbaba-sprite.png",
+          "frameWidth": 81,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_lem",
+      "sourcePath": "tmp/glitch-items/giants/icon_lem/icon_lem.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_lem-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_lem/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_lem-icon.png",
+          "frameWidth": 94,
+          "frameHeight": 104,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_lem-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_lem/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_lem-sprite.png",
+          "frameWidth": 94,
+          "frameHeight": 104,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_mab",
+      "sourcePath": "tmp/glitch-items/giants/icon_mab/icon_mab.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_mab-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_mab/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_mab-icon.png",
+          "frameWidth": 84,
+          "frameHeight": 107,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_mab-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_mab/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_mab-sprite.png",
+          "frameWidth": 84,
+          "frameHeight": 107,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_pot",
+      "sourcePath": "tmp/glitch-items/giants/icon_pot/icon_pot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_pot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_pot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_pot-icon.png",
+          "frameWidth": 111,
+          "frameHeight": 100,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_pot-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_pot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_pot-sprite.png",
+          "frameWidth": 111,
+          "frameHeight": 100,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_spriggan",
+      "sourcePath": "tmp/glitch-items/giants/icon_spriggan/icon_spriggan.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_spriggan-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_spriggan/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_spriggan-icon.png",
+          "frameWidth": 74,
+          "frameHeight": 105,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_spriggan-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_spriggan/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_spriggan-sprite.png",
+          "frameWidth": 74,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_tii",
+      "sourcePath": "tmp/glitch-items/giants/icon_tii/icon_tii.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_tii-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_tii/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_tii-icon.png",
+          "frameWidth": 91,
+          "frameHeight": 86,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_tii-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_tii/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_tii-sprite.png",
+          "frameWidth": 91,
+          "frameHeight": 86,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_zille",
+      "sourcePath": "tmp/glitch-items/giants/icon_zille/icon_zille.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') = icon, frame 2 ('1') = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_zille-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_zille/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_zille-icon.png",
+          "frameWidth": 104,
+          "frameHeight": 102,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_zille-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_zille/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_zille-sprite.png",
+          "frameWidth": 104,
+          "frameHeight": 102,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bigger_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_bigger/bag_bigger.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bigger_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bigger_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_bag-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "bigger_bag-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/bigger_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_bag-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bigger_blue_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_bigger/bag_bigger_blue/bag_bigger_blue.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bigger_blue_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bigger_blue_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_blue_bag-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "bigger_blue_bag-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/bigger_blue_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_blue_bag-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bigger_gray_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_bigger/bag_bigger_gray/bag_bigger_gray.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bigger_gray_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bigger_gray_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_gray_bag-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "bigger_gray_bag-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/bigger_gray_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_gray_bag-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bigger_green_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_bigger/bag_bigger_green/bag_bigger_green.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bigger_green_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bigger_green_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_green_bag-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "bigger_green_bag-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/bigger_green_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_green_bag-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bigger_pink_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_bigger/bag_bigger_pink/bag_bigger_pink.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bigger_pink_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bigger_pink_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_pink_bag-icon.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "bigger_pink_bag-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/bigger_pink_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bigger_pink_bag-sprite.png",
+          "frameWidth": 66,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_chrome_toolbox",
+      "sourcePath": "tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_chrome/bag_toolbox_chrome.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "chrome_toolbox-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/chrome_toolbox/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chrome_toolbox-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "chrome_toolbox-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/chrome_toolbox/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chrome_toolbox-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cubimal_case",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_cubimal_case/bag_cubimal_case.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cubimal_case-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cubimal_case/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cubimal_case-icon.png",
+          "frameWidth": 59,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "cubimal_case-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/cubimal_case/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cubimal_case-sprite.png",
+          "frameWidth": 59,
+          "frameHeight": 40,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_green_toolbox",
+      "sourcePath": "tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_green/bag_toolbox_green.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "green_toolbox-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/green_toolbox/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_toolbox-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "green_toolbox-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/green_toolbox/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_toolbox-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_red_toolbox",
+      "sourcePath": "tmp/glitch-items/misc/bag_toolbox_base/bag_toolbox_red/bag_toolbox_red.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2) -- distinct static art per role, not an animation. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "red_toolbox-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/red_toolbox/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-red_toolbox-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "red_toolbox-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/red_toolbox/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-red_toolbox-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 51,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_elemental_pouch",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_elemental_pouch/bag_elemental_pouch.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "elemental_pouch-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/elemental_pouch/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-elemental_pouch-icon.png",
+          "frameWidth": 46,
+          "frameHeight": 34,
+          "numFrames": 1
+        },
+        {
+          "state": "elemental_pouch-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/elemental_pouch/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-elemental_pouch-sprite.png",
+          "frameWidth": 46,
+          "frameHeight": 34,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_generic_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_generic/bag_generic.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic closed' (frame 1), 'iconic opened' (frame 2, unused), '1' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic closed') = icon, frame 3 ('1') = sprite; frame 2 ('iconic opened') intentionally unused (no slot in the icon/sprite two-field schema).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "generic_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/generic_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_bag-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        },
+        {
+          "state": "generic_bag-sprite",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/generic_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_bag-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_generic_blue_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_generic_blue/bag_generic_blue.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic closed' (frame 1), 'iconic opened' (frame 2, unused), '1' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic closed') = icon, frame 3 ('1') = sprite; frame 2 ('iconic opened') intentionally unused (no slot in the icon/sprite two-field schema).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "generic_blue_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/generic_blue_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_blue_bag-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 58,
+          "numFrames": 1
+        },
+        {
+          "state": "generic_blue_bag-sprite",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/generic_blue_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_blue_bag-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 58,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_generic_gray_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_generic_gray/bag_generic_gray.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic closed' (frame 1), 'iconic opened' (frame 2, unused), '1' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic closed') = icon, frame 3 ('1') = sprite; frame 2 ('iconic opened') intentionally unused (no slot in the icon/sprite two-field schema).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "generic_gray_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/generic_gray_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_gray_bag-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        },
+        {
+          "state": "generic_gray_bag-sprite",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/generic_gray_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_gray_bag-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_generic_green_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_generic_green/bag_generic_green.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic closed' (frame 1), 'iconic opened' (frame 2, unused), '1' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic closed') = icon, frame 3 ('1') = sprite; frame 2 ('iconic opened') intentionally unused (no slot in the icon/sprite two-field schema).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "generic_green_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/generic_green_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_green_bag-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        },
+        {
+          "state": "generic_green_bag-sprite",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/generic_green_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_green_bag-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_generic_pink_bag",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_generic_pink/bag_generic_pink.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic closed' (frame 1), 'iconic opened' (frame 2, unused), '1' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic closed') = icon, frame 3 ('1') = sprite; frame 2 ('iconic opened') intentionally unused (no slot in the icon/sprite two-field schema).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "generic_pink_bag-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/generic_pink_bag/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_pink_bag-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        },
+        {
+          "state": "generic_pink_bag-sprite",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/generic_pink_bag/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-generic_pink_bag-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 52,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_butterfly_egg",
+      "sourcePath": "tmp/glitch-items/misc/butterfly_egg/butterfly_egg.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "butterfly_egg-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/butterfly_egg/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_egg-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "butterfly_egg-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/butterfly_egg/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_egg-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_butterfly_lotion",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/butterfly_lotion/butterfly_lotion.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), '2' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-3 packed into a 2-frame sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "butterfly_lotion-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/butterfly_lotion/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_lotion-icon.png",
+          "frameWidth": 40,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "butterfly_lotion-sprite",
+          "sourceFrameRange": [
+            2,
+            3
+          ],
+          "file": "content/sprites/items/butterfly_lotion/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_lotion-sprite.png",
+          "frameWidth": 40,
+          "frameHeight": 46,
+          "numFrames": 2
+        }
+      ]
+    },
+    {
+      "id": "item_icon_butterfly_milker",
+      "sourcePath": "tmp/glitch-items/misc/butterfly_milker/butterfly_milker.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "butterfly_milker-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/butterfly_milker/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_milker-icon.png",
+          "frameWidth": 60,
+          "frameHeight": 95,
+          "numFrames": 1
+        },
+        {
+          "state": "butterfly_milker-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/butterfly_milker/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_milker-sprite.png",
+          "frameWidth": 60,
+          "frameHeight": 95,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_butterfly_stick",
+      "sourcePath": "tmp/glitch-items/misc/magic_animal_stick/magic_butterfly_stick/magic_butterfly_stick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'placed' (frame 3, a distinct in-world render, unused). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl, matching the original dead-link data's convention (frames 1 and 3 unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "butterfly_stick-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/butterfly_stick/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_stick-icon.png",
+          "frameWidth": 119,
+          "frameHeight": 198,
+          "numFrames": 1
+        },
+        {
+          "state": "butterfly_stick-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/butterfly_stick/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_stick-sprite.png",
+          "frameWidth": 119,
+          "frameHeight": 198,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_chicken_stick",
+      "sourcePath": "tmp/glitch-items/misc/magic_animal_stick/magic_chicken_stick/magic_chicken_stick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'placed' (frame 3, a distinct in-world render, unused). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl, matching the original dead-link data's convention (frames 1 and 3 unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "chicken_stick-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/chicken_stick/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chicken_stick-icon.png",
+          "frameWidth": 119,
+          "frameHeight": 199,
+          "numFrames": 1
+        },
+        {
+          "state": "chicken_stick-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/chicken_stick/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chicken_stick-sprite.png",
+          "frameWidth": 119,
+          "frameHeight": 199,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pig_stick",
+      "sourcePath": "tmp/glitch-items/misc/magic_animal_stick/magic_pig_stick/magic_pig_stick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes: 'iconic' (frame 1), '1' (frame 2), 'placed' (frame 3, a distinct in-world render, unused). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl, matching the original dead-link data's convention (frames 1 and 3 unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pig_stick-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/pig_stick/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pig_stick-icon.png",
+          "frameWidth": 119,
+          "frameHeight": 199,
+          "numFrames": 1
+        },
+        {
+          "state": "pig_stick-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/pig_stick/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pig_stick-sprite.png",
+          "frameWidth": 119,
+          "frameHeight": 199,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_chicken_egg",
+      "sourcePath": "tmp/glitch-items/misc/chicken_egg/chicken_egg.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "chicken_egg-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/chicken_egg/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chicken_egg-icon.png",
+          "frameWidth": 65,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "chicken_egg-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/chicken_egg/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chicken_egg-sprite.png",
+          "frameWidth": 65,
+          "frameHeight": 47,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fox_bait",
+      "sourcePath": "tmp/glitch-items/misc/fox_bait/fox_bait.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF; real art lives in a nested DefineSprite (chid=10), not the main timeline -- labeled frames include '1','iconic','bait1','stink1'(4),'bait2'(46),'stink2'(47),'bait3'(90),'stink3'(91).",
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> only frame '1' used for both iconUrl and spriteUrl, matching the original dead-link convention. NOTE: this same source SWF's stink1/stink2/stink3 labeled frames are a strong candidate to resolve the separately-tracked, still-open world-entity FoxBait (coUserver/lib/entities/npcs/animals/fox.dart) sprite gap in a future pass -- not attempted here (out of scope, this pass converts the inventory item only).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fox_bait-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fox_bait/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fox_bait-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 198,
+          "numFrames": 1
+        },
+        {
+          "state": "fox_bait-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fox_bait/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fox_bait-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 198,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_hogtied_piggy",
+      "sourcePath": "tmp/glitch-items/misc/hogtied_piggy/hogtied_piggy.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), single scene '1' (1 frame). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> the single frame reused for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "hogtied_piggy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hogtied_piggy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hogtied_piggy-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 40,
+          "numFrames": 1
+        },
+        {
+          "state": "hogtied_piggy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hogtied_piggy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hogtied_piggy-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 40,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_meat_collector",
+      "sourcePath": "tmp/glitch-items/misc/meat_collector/meat_collector.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1, unused), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl, matching the original dead-link convention.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "meat_collector-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/meat_collector/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-meat_collector-icon.png",
+          "frameWidth": 91,
+          "frameHeight": 72,
+          "numFrames": 1
+        },
+        {
+          "state": "meat_collector-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/meat_collector/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-meat_collector-sprite.png",
+          "frameWidth": 91,
+          "frameHeight": 72,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pig_bait",
+      "sourcePath": "tmp/glitch-items/misc/pig_bait/pig_bait.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pig_bait-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pig_bait/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pig_bait-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "pig_bait-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pig_bait/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pig_bait-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 46,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_piggy_egg",
+      "sourcePath": "tmp/glitch-items/misc/piggy_egg/piggy_egg.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "piggy_egg-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/piggy_egg/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_egg-icon.png",
+          "frameWidth": 79,
+          "frameHeight": 48,
+          "numFrames": 1
+        },
+        {
+          "state": "piggy_egg-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/piggy_egg/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_egg-sprite.png",
+          "frameWidth": 79,
+          "frameHeight": 48,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_piggy_feeder",
+      "sourcePath": "tmp/glitch-items/misc/piggy_feeder/piggy_feeder.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1, unused), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl, matching the original dead-link convention.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "piggy_feeder-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/piggy_feeder/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_feeder-icon.png",
+          "frameWidth": 95,
+          "frameHeight": 115,
+          "numFrames": 1
+        },
+        {
+          "state": "piggy_feeder-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/piggy_feeder/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_feeder-sprite.png",
+          "frameWidth": 95,
+          "frameHeight": 115,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_juju_trowel",
+      "sourcePath": "tmp/glitch-items/misc/juju_trowel/juju_trowel.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1, unused), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "juju_trowel-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/juju_trowel/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-juju_trowel-icon.png",
+          "frameWidth": 63,
+          "frameHeight": 45,
+          "numFrames": 1
+        },
+        {
+          "state": "juju_trowel-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/juju_trowel/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-juju_trowel-sprite.png",
+          "frameWidth": 63,
+          "frameHeight": 45,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_note_hint",
+      "sourcePath": "tmp/glitch-items/misc/note/note_hint/note_hint.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1, unused), '1' (frame 2). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> only frame 2 ('1') used for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "note_hint-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/note_hint/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note_hint-icon.png",
+          "frameWidth": 60,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "note_hint-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/note_hint/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note_hint-sprite.png",
+          "frameWidth": 60,
+          "frameHeight": 37,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_small_worthless",
+      "sourcePath": "tmp/glitch-items/misc/small_worthless/small_worthless.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 3 scenes in reversed real-frame order vs. the usual convention: '1' (frame 1), '2' (frame 2), 'iconic' (frame 3). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 3 ('iconic') = icon, frames 1-2 packed into a 2-frame sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "small_worthless-icon",
+          "sourceFrameRange": [
+            3,
+            3
+          ],
+          "file": "content/sprites/items/small_worthless/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-small_worthless-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "small_worthless-sprite",
+          "sourceFrameRange": [
+            1,
+            2
+          ],
+          "file": "content/sprites/items/small_worthless/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-small_worthless-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 41,
+          "numFrames": 2
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cloudberry_daiquiri",
+      "sourcePath": "tmp/glitch-items/drink/cloudberry_daiquiri/cloudberry_daiquiri.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cloudberry_daiquiri-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cloudberry_daiquiri/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cloudberry_daiquiri-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 45,
+          "numFrames": 1
+        },
+        {
+          "state": "cloudberry_daiquiri-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/cloudberry_daiquiri/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cloudberry_daiquiri-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 45,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_creamy_martini",
+      "sourcePath": "tmp/glitch-items/drink/creamy_martini/creamy_martini.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "creamy_martini-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/creamy_martini/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-creamy_martini-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "creamy_martini-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/creamy_martini/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-creamy_martini-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 49,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gurly_drink",
+      "sourcePath": "tmp/glitch-items/drink/gurly_drink/gurly_drink.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gurly_drink-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gurly_drink/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gurly_drink-icon.png",
+          "frameWidth": 54,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "gurly_drink-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gurly_drink/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gurly_drink-sprite.png",
+          "frameWidth": 54,
+          "frameHeight": 50,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_lemon_juice",
+      "sourcePath": "tmp/glitch-items/drink/lemon_juice/lemon_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "lemon_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/lemon_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lemon_juice-icon.png",
+          "frameWidth": 40,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "lemon_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/lemon_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lemon_juice-sprite.png",
+          "frameWidth": 40,
+          "frameHeight": 49,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_mabbish_coffee",
+      "sourcePath": "tmp/glitch-items/drink/mabbish_coffee/mabbish_coffee.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "mabbish_coffee-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/mabbish_coffee/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mabbish_coffee-icon.png",
+          "frameWidth": 43,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "mabbish_coffee-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/mabbish_coffee/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mabbish_coffee-sprite.png",
+          "frameWidth": 43,
+          "frameHeight": 50,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_mega_healthy_veggie_juice",
+      "sourcePath": "tmp/glitch-items/drink/mega_healthy_veggie_juice/mega_healthy_veggie_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "mega_healthy_veggie_juice-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/mega_healthy_veggie_juice/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mega_healthy_veggie_juice-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 55,
+          "numFrames": 1
+        },
+        {
+          "state": "mega_healthy_veggie_juice-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/mega_healthy_veggie_juice/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-mega_healthy_veggie_juice-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 55,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pungent_sunrise",
+      "sourcePath": "tmp/glitch-items/drink/pungent_sunrise/pungent_sunrise.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pungent_sunrise-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pungent_sunrise/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pungent_sunrise-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 42,
+          "numFrames": 1
+        },
+        {
+          "state": "pungent_sunrise-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/pungent_sunrise/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pungent_sunrise-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 42,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_savory_smoothie",
+      "sourcePath": "tmp/glitch-items/drink/savory_smoothie/savory_smoothie.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "savory_smoothie-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/savory_smoothie/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-savory_smoothie-icon.png",
+          "frameWidth": 38,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "savory_smoothie-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/savory_smoothie/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-savory_smoothie-sprite.png",
+          "frameWidth": 38,
+          "frameHeight": 49,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_slow_gin_fizz",
+      "sourcePath": "tmp/glitch-items/drink/slow_gin_fizz/slow_gin_fizz.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "slow_gin_fizz-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/slow_gin_fizz/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-slow_gin_fizz-icon.png",
+          "frameWidth": 32,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "slow_gin_fizz-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/slow_gin_fizz/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-slow_gin_fizz-sprite.png",
+          "frameWidth": 32,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spicy_grog",
+      "sourcePath": "tmp/glitch-items/drink/spicy_grog/spicy_grog.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spicy_grog-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spicy_grog/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spicy_grog-icon.png",
+          "frameWidth": 29,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "spicy_grog-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/spicy_grog/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spicy_grog-sprite.png",
+          "frameWidth": 29,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_tooberry_shake",
+      "sourcePath": "tmp/glitch-items/drink/tooberry_shake/tooberry_shake.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "tooberry_shake-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/tooberry_shake/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tooberry_shake-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "tooberry_shake-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/tooberry_shake/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tooberry_shake-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 46,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_cup_of_water",
+      "sourcePath": "tmp/glitch-items/misc/cup_of_water/cup_of_water.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 2 scenes: 'iconic' (frame 1), '1' (frame 2, unused). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 ('iconic') reused for both iconUrl and spriteUrl, matching the original dead-link data (same filename for both fields; stacksTo:1).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "cup_of_water-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cup_of_water/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cup_of_water-icon.png",
+          "frameWidth": 43,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "cup_of_water-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/cup_of_water/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cup_of_water-sprite.png",
+          "frameWidth": 43,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_wine_of_the_dead",
+      "sourcePath": "tmp/glitch-items/misc/wine_of_the_dead/wine_of_the_dead.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 95 frames total: 'tool_animation' (frames 1-90, a drinking/pouring loop), 'iconic' (frame 91), '1'-'4' (frames 92-95, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 91 ('iconic') = icon, frames 92-95 packed into the stack-strip sprite; the 90-frame tool_animation is unused, matching the original dead-link data's x1_iconic/x1_1_x1_2_x1_3_x1_4 naming exactly.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "wine_of_the_dead-icon",
+          "sourceFrameRange": [
+            91,
+            91
+          ],
+          "file": "content/sprites/items/wine_of_the_dead/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wine_of_the_dead-icon.png",
+          "frameWidth": 46,
+          "frameHeight": 86,
+          "numFrames": 1
+        },
+        {
+          "state": "wine_of_the_dead-sprite",
+          "sourceFrameRange": [
+            92,
+            95
+          ],
+          "file": "content/sprites/items/wine_of_the_dead/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wine_of_the_dead-sprite.png",
+          "frameWidth": 46,
+          "frameHeight": 86,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bushel_of_grain",
+      "sourcePath": "tmp/glitch-items/misc/grain_bushel/grain_bushel.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bushel_of_grain-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bushel_of_grain/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bushel_of_grain-icon.png",
+          "frameWidth": 119,
+          "frameHeight": 95,
+          "numFrames": 1
+        },
+        {
+          "state": "bushel_of_grain-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bushel_of_grain/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bushel_of_grain-sprite.png",
+          "frameWidth": 119,
+          "frameHeight": 95,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_metal_bar",
+      "sourcePath": "tmp/glitch-items/misc/metal_post/metal_post.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "metal_bar-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metal_bar/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metal_bar-icon.png",
+          "frameWidth": 60,
+          "frameHeight": 34,
+          "numFrames": 1
+        },
+        {
+          "state": "metal_bar-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/metal_bar/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metal_bar-sprite.png",
+          "frameWidth": 60,
+          "frameHeight": 34,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_metal_rod",
+      "sourcePath": "tmp/glitch-items/misc/metal_rod/metal_rod.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "metal_rod-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metal_rod/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metal_rod-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 29,
+          "numFrames": 1
+        },
+        {
+          "state": "metal_rod-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/metal_rod/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metal_rod-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 29,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_plain_crystal",
+      "sourcePath": "tmp/glitch-items/misc/plain_crystal/plain_crystal.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "plain_crystal-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/plain_crystal/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plain_crystal-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "plain_crystal-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/plain_crystal/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plain_crystal-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_snail",
+      "sourcePath": "tmp/glitch-items/misc/snail/snail.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "snail-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/snail/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-snail-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 38,
+          "numFrames": 1
+        },
+        {
+          "state": "snail-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/snail/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-snail-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 38,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_urth_block",
+      "sourcePath": "tmp/glitch-items/misc/grade_aa_earth_block/grade_aa_earth_block.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), DefineSceneAndFrameLabelData with 5 scenes: 'iconic' (frame 1), '1'-'4' (frames 2-5, quantity-stack poses). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frames 2-5 packed into the stack-strip sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "urth_block-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/urth_block/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-urth_block-icon.png",
+          "frameWidth": 142,
+          "frameHeight": 67,
+          "numFrames": 1
+        },
+        {
+          "state": "urth_block-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/urth_block/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-urth_block-sprite.png",
+          "frameWidth": 142,
+          "frameHeight": 67,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_beam",
+      "sourcePath": "tmp/glitch-items/misc/beam/beam.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames of genuinely different static art (frame 1 = an angled/held pose, frame 2 = a flat/lying pose) -- not an animation or quantity-stack strip. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite (matches the original dead-link data, which pointed a single pose at both URLs -- the second pose was previously unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "beam-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/beam/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-beam-icon.png",
+          "frameWidth": 89,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "beam-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/beam/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-beam-sprite.png",
+          "frameWidth": 89,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_board",
+      "sourcePath": "tmp/glitch-items/misc/board/board.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames of genuinely different static art (frame 1 = an angled/held pose, frame 2 = a flat/lying pose) -- not an animation or quantity-stack strip. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite (matches the original dead-link data, which pointed a single pose at both URLs -- the second pose was previously unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "board-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/board/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-board-icon.png",
+          "frameWidth": 94,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "board-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/board/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-board-sprite.png",
+          "frameWidth": 94,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_girder",
+      "sourcePath": "tmp/glitch-items/misc/girder/girder.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames of genuinely different static art (frame 1 = an angled/held pose, frame 2 = a flat/lying pose) -- not an animation or quantity-stack strip. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite (matches the original dead-link data, which pointed a single pose at both URLs -- the second pose was previously unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "girder-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/girder/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-girder-icon.png",
+          "frameWidth": 89,
+          "frameHeight": 53,
+          "numFrames": 1
+        },
+        {
+          "state": "girder-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/girder/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-girder-sprite.png",
+          "frameWidth": 89,
+          "frameHeight": 53,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_wood_post",
+      "sourcePath": "tmp/glitch-items/misc/wood_post/wood_post.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames of genuinely different static art (frame 1 = an angled/held pose, frame 2 = a flat/lying pose) -- not an animation or quantity-stack strip. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 = icon, frame 2 = sprite (matches the original dead-link data, which pointed a single pose at both URLs -- the second pose was previously unused).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "wood_post-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/wood_post/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wood_post-icon.png",
+          "frameWidth": 72,
+          "frameHeight": 48,
+          "numFrames": 1
+        },
+        {
+          "state": "wood_post-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/wood_post/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wood_post-sprite.png",
+          "frameWidth": 72,
+          "frameHeight": 48,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_blockmaker_chassis",
+      "sourcePath": "tmp/glitch-items/tools/blockmaker_chassis/blockmaker_chassis.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames, near-identical (a tiny idle-shimmer variation, not a distinct icon/sprite pose). White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "blockmaker_chassis-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blockmaker_chassis/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blockmaker_chassis-icon.png",
+          "frameWidth": 123,
+          "frameHeight": 94,
+          "numFrames": 1
+        },
+        {
+          "state": "blockmaker_chassis-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blockmaker_chassis/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blockmaker_chassis-sprite.png",
+          "frameWidth": 123,
+          "frameHeight": 94,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_blockmaker_plates",
+      "sourcePath": "tmp/glitch-items/tools/blockmaker_plates/blockmaker_plates.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames, near-identical. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "blockmaker_plates-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blockmaker_plates/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blockmaker_plates-icon.png",
+          "frameWidth": 86,
+          "frameHeight": 56,
+          "numFrames": 1
+        },
+        {
+          "state": "blockmaker_plates-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blockmaker_plates/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blockmaker_plates-sprite.png",
+          "frameWidth": 86,
+          "frameHeight": 56,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fuelmaker_case",
+      "sourcePath": "tmp/glitch-items/tools/fuelmaker_case/fuelmaker_case.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fuelmaker_case-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fuelmaker_case/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuelmaker_case-icon.png",
+          "frameWidth": 126,
+          "frameHeight": 134,
+          "numFrames": 1
+        },
+        {
+          "state": "fuelmaker_case-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fuelmaker_case/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuelmaker_case-sprite.png",
+          "frameWidth": 126,
+          "frameHeight": 134,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fuelmaker_core",
+      "sourcePath": "tmp/glitch-items/tools/fuelmaker_core/fuelmaker_core.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fuelmaker_core-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fuelmaker_core/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuelmaker_core-icon.png",
+          "frameWidth": 61,
+          "frameHeight": 89,
+          "numFrames": 1
+        },
+        {
+          "state": "fuelmaker_core-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fuelmaker_core/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuelmaker_core-sprite.png",
+          "frameWidth": 61,
+          "frameHeight": 89,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_machine_engine",
+      "sourcePath": "tmp/glitch-items/tools/blockmaker_engine/blockmaker_engine.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 frames, near-identical. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "machine_engine-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/machine_engine/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-machine_engine-icon.png",
+          "frameWidth": 102,
+          "frameHeight": 100,
+          "numFrames": 1
+        },
+        {
+          "state": "machine_engine-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/machine_engine/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-machine_engine-sprite.png",
+          "frameWidth": 102,
+          "frameHeight": 100,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_metalmaker_mechanism",
+      "sourcePath": "tmp/glitch-items/tools/metalmaker_mechanism/metalmaker_mechanism.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "metalmaker_mechanism-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metalmaker_mechanism/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metalmaker_mechanism-icon.png",
+          "frameWidth": 99,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "metalmaker_mechanism-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metalmaker_mechanism/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metalmaker_mechanism-sprite.png",
+          "frameWidth": 99,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_metalmaker_tooler",
+      "sourcePath": "tmp/glitch-items/tools/metalmaker_tooler/metalmaker_tooler.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "metalmaker_tooler-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metalmaker_tooler/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metalmaker_tooler-icon.png",
+          "frameWidth": 86,
+          "frameHeight": 118,
+          "numFrames": 1
+        },
+        {
+          "state": "metalmaker_tooler-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/metalmaker_tooler/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-metalmaker_tooler-sprite.png",
+          "frameWidth": 86,
+          "frameHeight": 118,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_woodworker_chassis",
+      "sourcePath": "tmp/glitch-items/tools/woodworker_chassis/woodworker_chassis.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "woodworker_chassis-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/woodworker_chassis/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-woodworker_chassis-icon.png",
+          "frameWidth": 132,
+          "frameHeight": 110,
+          "numFrames": 1
+        },
+        {
+          "state": "woodworker_chassis-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/woodworker_chassis/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-woodworker_chassis-sprite.png",
+          "frameWidth": 132,
+          "frameHeight": 110,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_woodworker_fuser",
+      "sourcePath": "tmp/glitch-items/tools/woodworker_fuser/woodworker_fuser.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 1 frame. White SetBackgroundColor.",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> frame 1 reused for both iconUrl and spriteUrl (static machine-component display, same convention as the already-converted machine_stand).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "woodworker_fuser-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/woodworker_fuser/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-woodworker_fuser-icon.png",
+          "frameWidth": 115,
+          "frameHeight": 78,
+          "numFrames": 1
+        },
+        {
+          "state": "woodworker_fuser-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/woodworker_fuser/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-woodworker_fuser-sprite.png",
+          "frameWidth": 115,
+          "frameHeight": 78,
+          "numFrames": 1
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md. A sixth batch (2026-08-28, storage.json/advanced_resources.json/basic_resources.json/machines-fuel.json pass) converted 14 items: 9 from advanced_resources.json (barnacle_talc, bulb, copper, general_fabric, molybdenum, ingot (item id for 'Plain Metal Ingot'), string, thread, tin -- all real recipe-chain outputs, see runtime-manifest for the full route), 3 from storage.json (alchemistry_kit, firefly_jar, spicerack -- real vendor stock, both explicitly named and via the generic pickItems([\"Storage\"]) vendor route that covers the whole category), and 2 from machines-fuel.json (machine_stand -- real ToolVendor/StreetSpirit(hardware) stock; fuel_cell -- converted but found to have NO acquisition route anywhere in coUserver, same as bacon/potion_rainbow_juice). basic_resources.json's only remaining unconverted item, salmon_bubble, has no matching source SWF anywhere under tmp/glitch-items (searched directly) and stays unconverted. storage.json's remaining 16 items (bigger_bag and its 4 color variants, chrome/green/red toolbox, cubimal_case, elemental_pouch, generic_bag and its 4 color variants, musicblock_bag) and advanced_resources.json's remaining 10 items (beam, board, girder, metal_bar, metal_rod, plain_crystal, snail, urth_block, wood_post, bushel_of_grain) all have real, distinct matching source SWFs under tmp/glitch-items/misc/ (confirmed by direct search) but were left unconverted this pass to stay within the requested batch size; the advanced_resources.json remainder was checked against every recipes/json/*.json file and every vendor itemsForSale list and confirmed to have NO acquisition route of any kind in the current codebase (a genuine missing-design gap, not a placement gap). machines-fuel.json's remaining 9 items (blockmaker_chassis, blockmaker_plates, fuelmaker_case, fuelmaker_core, machine_engine, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser) are ALL real, unmodified ToolVendor and StreetSpirit('hardware') vendor stock (confirmed directly in vendor.dart/toolvendor.dart) -- same live route as machine_stand -- but were left unconverted this pass; only machine_stand and fuel_cell were done as one live and one honestly-documented-gap example. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. A further batch (2026-08-28, keys.json + misc.json -- the last two previously-entirely-untouched item-registry categories) converted all 12 keys.json items and 41 of 42 misc.json items (all but new_player_pack_butterfly, which has no matching source SWF anywhere under tmp/glitch-items -- searched directly, iconUrl referenced 'newplayerbutterflybox.png' with no such asset present). Accessibility check found 13 of the 41 converted misc.json items have a genuine live route (crabpod_headphones via the placed Crab NPC's music-reward loan/reclaim mechanic; jack_the_pumpkin/lem_the_pumpkin/shiny_hello_pumpkin/steve_the_pumpkin/zille_the_pumpkin via a real, seasonally-gated (Zilloween, genuinely enforced via the in-game calendar) knife_and_board recipe from raw pumpkin, plus their jack_o_lantern/lem_o_lantern/steve_o_lantern/zille_o_lantern illuminatePumpkin derivatives; new_player_pack_chicken/new_player_pack_piggy via a real tinkertool recipe, tinkertool itself confirmed live ToolVendor/StreetSpirit stock; piggy_plop via the placed Piggy NPC's feed-response ground drop, which also feeds the real Q9 'Doody Inspector' quest). The remaining 28 misc.json items and all 12 keys.json items have no acquisition route of any kind in the current codebase -- notably this pass found the entire achievement system (coUserver/lib/achievements/) has zero item-grant code anywhere, so every one of the 16 *_trophy items in misc.json is a genuine missing-design gap, not a placement gap; and 11 of the 12 door keys have no matching door/consumer class at all (only teal_white_triangle_key has one, TealWhiteTriangleLockedDoor, and it is itself never placed anywhere). See content/runtime-manifest.json for full per-item accessibleThrough reasoning.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md. A sixth batch (2026-08-28, storage.json/advanced_resources.json/basic_resources.json/machines-fuel.json pass) converted 14 items: 9 from advanced_resources.json (barnacle_talc, bulb, copper, general_fabric, molybdenum, ingot (item id for 'Plain Metal Ingot'), string, thread, tin -- all real recipe-chain outputs, see runtime-manifest for the full route), 3 from storage.json (alchemistry_kit, firefly_jar, spicerack -- real vendor stock, both explicitly named and via the generic pickItems([\"Storage\"]) vendor route that covers the whole category), and 2 from machines-fuel.json (machine_stand -- real ToolVendor/StreetSpirit(hardware) stock; fuel_cell -- converted but found to have NO acquisition route anywhere in coUserver, same as bacon/potion_rainbow_juice). basic_resources.json's only remaining unconverted item, salmon_bubble, has no matching source SWF anywhere under tmp/glitch-items (searched directly) and stays unconverted. storage.json's remaining 16 items (bigger_bag and its 4 color variants, chrome/green/red toolbox, cubimal_case, elemental_pouch, generic_bag and its 4 color variants, musicblock_bag) and advanced_resources.json's remaining 10 items (beam, board, girder, metal_bar, metal_rod, plain_crystal, snail, urth_block, wood_post, bushel_of_grain) all have real, distinct matching source SWFs under tmp/glitch-items/misc/ (confirmed by direct search) but were left unconverted this pass to stay within the requested batch size; the advanced_resources.json remainder was checked against every recipes/json/*.json file and every vendor itemsForSale list and confirmed to have NO acquisition route of any kind in the current codebase (a genuine missing-design gap, not a placement gap). machines-fuel.json's remaining 9 items (blockmaker_chassis, blockmaker_plates, fuelmaker_case, fuelmaker_core, machine_engine, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser) are ALL real, unmodified ToolVendor and StreetSpirit('hardware') vendor stock (confirmed directly in vendor.dart/toolvendor.dart) -- same live route as machine_stand -- but were left unconverted this pass; only machine_stand and fuel_cell were done as one live and one honestly-documented-gap example. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. A further batch (2026-08-28, keys.json + misc.json -- the last two previously-entirely-untouched item-registry categories) converted all 12 keys.json items and 41 of 42 misc.json items (all but new_player_pack_butterfly, which has no matching source SWF anywhere under tmp/glitch-items -- searched directly, iconUrl referenced 'newplayerbutterflybox.png' with no such asset present). Accessibility check found 13 of the 41 converted misc.json items have a genuine live route (crabpod_headphones via the placed Crab NPC's music-reward loan/reclaim mechanic; jack_the_pumpkin/lem_the_pumpkin/shiny_hello_pumpkin/steve_the_pumpkin/zille_the_pumpkin via a real, seasonally-gated (Zilloween, genuinely enforced via the in-game calendar) knife_and_board recipe from raw pumpkin, plus their jack_o_lantern/lem_o_lantern/steve_o_lantern/zille_o_lantern illuminatePumpkin derivatives; new_player_pack_chicken/new_player_pack_piggy via a real tinkertool recipe, tinkertool itself confirmed live ToolVendor/StreetSpirit stock; piggy_plop via the placed Piggy NPC's feed-response ground drop, which also feeds the real Q9 'Doody Inspector' quest). The remaining 28 misc.json items and all 12 keys.json items have no acquisition route of any kind in the current codebase -- notably this pass found the entire achievement system (coUserver/lib/achievements/) has zero item-grant code anywhere, so every one of the 16 *_trophy items in misc.json is a genuine missing-design gap, not a placement gap; and 11 of the 12 door keys have no matching door/consumer class at all (only teal_white_triangle_key has one, TealWhiteTriangleLockedDoor, and it is itself never placed anywhere). See content/runtime-manifest.json for full per-item accessibleThrough reasoning. TENTH batch (2026-08-28, orchestrated as 7 parallel sub-agents scoped to exactly tinctures-potions.json/croppery-gardening.json/emblems-icons.json/storage.json/herdkeeping.json+quest_items.json+basic_resources.json+misc.json/drinks.json/advanced_resources.json+machines-fuel.json, to avoid colliding with other agents converting other categories concurrently in the same session) -- converted the entire remaining dead-linked backlog in those 11 files: 124 items total (22 tinctures-potions, 20 croppery-gardening, 19 emblems-icons, 15 storage, 13 herdkeeping, 3 quest_items, 13 drinks, 10 advanced_resources, 9 machines-fuel). All 124 used ffdec -ignorebackground -export frame/-export sprite (no opaque-background defect encountered on any source this pass; the swf-export-frame-alpha.py difference-matting fallback was available but never needed) and were verified with real (0,255)-range PIL alpha on every output. New frame-pattern families identified beyond the established 5-frame icon+stack-strip convention: a 77-frame potion family (iconic/1/tool_animation, frame 1 reused for both outputs); a 2-frame essence family (iconic/1); 1-, 2-, and 3-frame storage-bag families (some with a genuinely distinct 2nd/3rd static pose rather than a stack strip); a 2-frame emblem/icon family; a 2-frame beam/board/girder/wood_post family with two genuinely distinct static poses (not an animation); and several 1- or 2-near-identical-frame machine-component statics (matching the machine_stand precedent). 4 items across this batch were confirmed to have no matching source SWF after a targeted re-search each (musicblock_bag/Crabpack, user_made_quest, salmon_bubble, new_player_pack_butterfly) -- all 4 recorded in runtime-manifest.json.deliberatelyDeferred with an honest reason, and all 4 notably DO have real, live, non-art acquisition routes despite the missing art (Crab.buyCrabpack(), QuestService.createQuestItem(), Salmon.pocket(), and the tinkertool.json new-player-pack recipe respectively). Item registry coverage after this batch (combined with concurrent parallel agents converting other categories the same session): 745/788 (94.5%) items with real converted icon art, up from 193/788 (24.5%) at the start of this pass -- re-verified directly by grepping every iconUrl field across coUserver/lib/entities/items/json/*.json (only 20 items with an empty iconUrl and effectively zero remaining live childrenofur.com dead links across the whole registry). See RECOVERY_TODO.md's corresponding row for full per-item accessibility findings.",
     "families": [
       "seeds",
       "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",

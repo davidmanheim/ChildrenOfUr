@@ -20,8 +20,8 @@
 	"juju_trowel": {
 		"name": "Juju Trowel",
 		"category": "Quest Items",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/juju_trowel__x1_1_png_1354837840.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/juju_trowel__x1_1_png_1354837840.png",
+		"iconUrl": "files/sprites/generated/converted/item-juju_trowel-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-juju_trowel-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "A rustic trowel fashioned by Juju Bandits for delicate digging in the dense savanna dirt."
@@ -29,8 +29,8 @@
 	"note_hint": {
 		"name": "Secret Juju Hint",
 		"category": "Quest Items",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/note_hint__x1_1_png_1354837810.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/note_hint__x1_1_png_1354837810.png",
+		"iconUrl": "files/sprites/generated/converted/item-note_hint-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-note_hint-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "If you can decipher this clue, it might lead you somewhere interesting."
@@ -38,8 +38,8 @@
 	"small_worthless": {
 		"name": "Small shiny object with no intrinsic value",
 		"category": "Quest Items",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/small_worthless__x1_iconic_png_1354829516.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/small_worthless__x1_1_x1_2_png_1354829517.png",
+		"iconUrl": "files/sprites/generated/converted/item-small_worthless-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-small_worthless-sprite.png",
 		"iconNum": 2,
 		"stacksTo": 1,
 		"price": 0,
