@@ -13,7 +13,10 @@ import 'package:coUserver/common/mapdata/mapdata.dart';
 Future<List<String>> getLocationHistory(String email) async {
 	Metabolics metabolics = await getMetabolics(email: email);
 	String lhJson = metabolics.locationHistory;
-	List<String> lhList = jsonDecode(lhJson);
+	// List<String>.from(...) is required: jsonDecode returns an untyped
+	// List<dynamic>, and assigning that directly to List<String> is an
+	// implicit downcast that throws.
+	List<String> lhList = List<String>.from(jsonDecode(lhJson));
 	return lhList;
 }
 

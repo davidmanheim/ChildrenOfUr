@@ -197,7 +197,10 @@ Future<String> listAchievements(
 			} else {
 				return '{}';
 			}
-			awardedIds = jsonDecode((await dbConn.query(query, User, data)).first.achievements);
+			// List<String>.from(...) is required: jsonDecode returns an untyped
+			// List<dynamic>, and assigning that directly to the List<String>
+			// `awardedIds` is an implicit downcast that throws.
+			awardedIds = List<String>.from(jsonDecode((await dbConn.query(query, User, data)).first.achievements));
 		} catch (e, st) {
 			Log.error('Error getting achievements for <email=${email ?? username}>', e, st);
 			return '{}';

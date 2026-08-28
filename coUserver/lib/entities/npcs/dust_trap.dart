@@ -23,8 +23,13 @@ class DustTrap extends NPC implements EventHandler<PlayerPosition> {
 	}
 
 	DustTrap(String id, String streetName, this.tsid, num x, num y, num z, num rotation, bool h_flip) : super(id, x, y, z, rotation, h_flip, streetName) {
-		messageBus.subscribe(PlayerPosition, this, whereFunc: (PlayerPosition position) {
-			return position.streetName == streetName;
+		// See chicken.dart/scarecrow.dart's identical fix: whereFunc must match
+		// message_bus's `bool Function(dynamic)` typedef exactly, or this throws
+		// when the class is constructed reflectively (dart:mirrors) via
+		// street.dart's entity factory -- DustTrap always is (it's one of the
+		// two special-cased reflective-construction paths there).
+		messageBus.subscribe(PlayerPosition, this, whereFunc: (dynamic position) {
+			return position is PlayerPosition && position.streetName == streetName;
 		});
 
 		actionTime = 0;

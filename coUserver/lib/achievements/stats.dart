@@ -59,14 +59,28 @@ class StatManager {
 			} else {
 				// Index by Stat instead of String
 				Map<Stat, int> statKeys = {};
-				rows.single.toMap().forEach((String statName, int value) {
-					statKeys[_stringToStat(statName)] = value;
+				// Untyped params: rows.single.toMap() returns a Map whose runtime
+				// value type isn't statically `int` (redstone_mapper_pg row maps
+				// are effectively Map<String, dynamic>), so a forEach callback
+				// declared as (String, int) is a narrower type than the Map's own
+				// (dynamic, dynamic) => void signature expects -- throws
+				// "type '(String, int) => Null' is not a subtype of type
+				// '(dynamic, dynamic) => void' of 'f'" the moment this runs
+				// (confirmed live, via Tree.pet's achievement-stat lookup).
+				(rows.single.toMap() as Map).forEach((dynamic statName, dynamic value) {
+					Stat stat = _stringToStat(statName as String);
+					if (stat != null && value is int) {
+						statKeys[stat] = value;
+					}
 				});
 				return statKeys;
 			}
 		} catch (e, st) {
 			Log.error('Error reading stats for <email=$email>', e, st);
-			return null;
+			// Never null: every caller in this codebase indexes the result
+			// directly (e.g. `stats[Stat.foo] + stats[Stat.bar]`), so a null
+			// return here would just move this same crash one frame later.
+			return {};
 		} finally {
 			dbManager.closeConnection(dbConn);
 		}

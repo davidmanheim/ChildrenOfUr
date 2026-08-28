@@ -147,11 +147,16 @@ Future<String> sendMail(@app.Body(app.JSON) Map parameters) async {
 		items[index] = await InventoryV2.takeItemFromUser(email, barSlot, bagSlot, 1);
 	});
 
-	message.item1 = encode(items[0]);
-	message.item2 = encode(items[1]);
-	message.item3 = encode(items[2]);
-	message.item4 = encode(items[3]);
-	message.item5 = encode(items[4]);
+	// jsonEncode(...) is required, not just encode(...): Message.item1-5 are
+	// declared String (they hold a JSON-encoded blob for the DB column), but
+	// encode() (redstone_mapper) returns a Map, not a String -- assigning
+	// that directly is an implicit downcast that throws every time mail with
+	// an attached item is sent.
+	message.item1 = jsonEncode(encode(items[0]));
+	message.item2 = jsonEncode(encode(items[1]));
+	message.item3 = jsonEncode(encode(items[2]));
+	message.item4 = jsonEncode(encode(items[3]));
+	message.item5 = jsonEncode(encode(items[4]));
 
 	try {
 		String query = 'INSERT INTO messages(to_user, from_user, subject, body, currants, item1, item2, item3, item4, item5) VALUES(@to_user,@from_user,@subject,@body,@currants,@item1,@item2,@item3,@item4,@item5)';

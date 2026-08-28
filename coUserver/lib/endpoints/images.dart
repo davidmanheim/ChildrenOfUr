@@ -101,9 +101,30 @@ Future<int> getActualImageHeight(@app.QueryParam('url') String imageUrl,
 	if (FileCache.heightsCache[imageUrl] != null) {
 		return FileCache.heightsCache[imageUrl];
 	} else {
-		http.Response response = await http.get(imageUrl);
+		// `imageUrl` is either a remote absolute URL (the original
+		// childrenofur.com-hosted scheme, still used by any not-yet-converted
+		// entity) or a local relative path like "files/sprites/generated/...".
+		// http.get() only understands the former -- it throws "No host
+		// specified in URI" on a relative path, which was never reachable
+		// before locally-converted sprites started using this field. Local
+		// sprites are served by the (separate-container) client's dev server,
+		// not this one, so read the file directly instead of an HTTP
+		// round-trip; see docker-compose.yml's game-server volumes for the
+		// matching read-only mount at the same relative path.
+		List<int> bytes;
+		if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+			http.Response response = await http.get(imageUrl);
+			bytes = response.bodyBytes;
+		} else {
+			File file = new File(imageUrl);
+			if (!(await file.exists())) {
+				Log.warning('getActualImageHeight: local sprite not found at $imageUrl');
+				return 0;
+			}
+			bytes = await file.readAsBytes();
+		}
 
-		Image image = decodeImage(response.bodyBytes);
+		Image image = decodeImage(bytes);
 		if (image == null) {
 			return 0;
 		}

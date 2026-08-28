@@ -35,6 +35,13 @@ services:
       - "8282:8282"
     volumes:
       - ./coUserver:/app
+      # Read-only access to the client's static sprite files. getActualImageHeight
+      # (images.dart) needs to read locally-converted sprites -- it can't reach
+      # them over HTTP since they're served by the (separate-container) client's
+      # dev server, and the URL strings it receives ("files/sprites/...") are
+      # relative, not absolute. Mounted at the same relative path used in those
+      # URL strings (relative to WORKDIR /app) so both remain consistent.
+      - ./coUclient/web/files:/app/files:ro
 
   auth-server:
     build:

@@ -308,6 +308,16 @@ _jsonToObject(json, mirror) {
 
   if (_isPrimitive(json)) return json;
 
+  // A `dynamic` (or otherwise non-class) field has no ClassMirror to
+  // reflect into -- `mirror.newInstance` below throws NoSuchMethodError on
+  // a _SpecialTypeMirror (confirmed live: crashed BeanTree.harvest's reward
+  // grant, since Item.metadata is Map<String, dynamic> and some reward
+  // items' metadata holds non-primitive content, unlike the isEnum fix
+  // above which only covered the empty/primitive case). The json value
+  // (already a plain num/String/bool/null/List/Map from jsonDecode) IS the
+  // correct dynamic value as-is; there's nothing to reconstruct.
+  if (mirror is! ClassMirror) return json;
+
   // Handle complex types.
 
   TypeMirror type;

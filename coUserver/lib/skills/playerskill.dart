@@ -65,9 +65,14 @@ class PlayerSkill extends Skill {
 		PostgreSql dbConn = await dbManager.getConnection();
 		try {
 			// Get existing data
-			Map<String, int> skillsData = jsonDecode(
+			// .cast<String, int>() is required: jsonDecode returns an untyped
+			// Map<String, dynamic>, and assigning that directly to a
+			// Map<String, int> local is an implicit downcast that throws --
+			// same bug class fixed elsewhere this session (chicken/piggy
+			// restoreState, StatManager.getAll).
+			Map<String, int> skillsData = (jsonDecode(
 				(await dbConn.query(SkillManager.CELL_QUERY, Metabolics, {"email": email})
-			).first.skillsJson);
+			).first.skillsJson) as Map).cast<String, int>();
 
 			// Modify
 			skillsData[id] = points;

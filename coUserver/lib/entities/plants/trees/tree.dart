@@ -191,15 +191,21 @@ abstract class Tree extends Plant {
 		say(responses['pet'].elementAt(rand.nextInt(responses['pet'].length)));
 
 		// Award achievements
+		// `?? 0` on every lookup: a player who hasn't petted a given tree kind
+		// yet has no entry for that Stat at all (StatManager.getAll only
+		// returns keys that exist in the DB row), so summing the raw lookups
+		// throws "The operator '+' isn't defined for 'Null'" the moment any
+		// one of these seven stats is still unset -- true for every player
+		// until now, since no tree's pet action had ever actually run.
 		Map<Stat, int> stats = await StatManager.getAll(email);
 		int totalPetted = 0
-			+ stats[Stat.bean_trees_petted]
-			+ stats[Stat.bubble_trees_petted]
-			+ stats[Stat.egg_plants_petted]
-			+ stats[Stat.fruit_trees_petted]
-			+ stats[Stat.gas_plants_petted]
-			+ stats[Stat.spice_plants_petted]
-			+ stats[Stat.wood_trees_petted];
+			+ (stats[Stat.bean_trees_petted] ?? 0)
+			+ (stats[Stat.bubble_trees_petted] ?? 0)
+			+ (stats[Stat.egg_plants_petted] ?? 0)
+			+ (stats[Stat.fruit_trees_petted] ?? 0)
+			+ (stats[Stat.gas_plants_petted] ?? 0)
+			+ (stats[Stat.spice_plants_petted] ?? 0)
+			+ (stats[Stat.wood_trees_petted] ?? 0);
 
 		if (totalPetted >= 1009) {
 			Achievement.find("finallyprettygood_tree_hugger").awardTo(email);
