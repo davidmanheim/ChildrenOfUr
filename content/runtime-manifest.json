@@ -950,13 +950,13 @@
       "category": "NPC vendor",
       "sourceAssetId": "sno_cone",
       "destination": "World entity",
-      "accessibleThrough": "Placement deferred to a follow-up pass; once placed, accessible via the standard vendor buy/sell flow (sno cones).",
+      "accessibleThrough": "Placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json); accessible via the standard vendor buy/sell flow (snocone_blue/green/orange/purple/red) on any street it appears. This is the only source of any snocone_* item anywhere in the codebase, and unblocks quest Q7 'Snocone Joy' (coUserver/lib/quests/json/snocone_joy.json), previously PARTIALLY BLOCKED per POTENTIAL_TODO.md's quest completability audit.",
       "routeIds": {
         "entityClass": "coUserver/lib/entities/npcs/vendors/snoconevendingmachine.dart:SnoConeVendingMachine",
         "baseClass": "coUserver/lib/entities/npcs/vendor.dart:Vendor"
       },
       "status": "converted",
-      "statusNote": "Sprite sheets converted from source SWF and wired into snoconevendingmachine.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/attract appearance. Vendor logic and item catalog already existed and are unchanged; catalog item icons were not converted this pass. Not yet placed."
+      "statusNote": "Sprite sheets converted from source SWF and wired into snoconevendingmachine.dart, replacing dead childrenofur.com links, including the NPC's own idle/walk/talk/attract appearance. Vendor logic and item catalog already existed and are unchanged; catalog item icons (snocone_blue/green/orange/purple/red) were converted in an earlier item-icon batch. Placed 2026-08-28 (~10% chance per street, no region theme -- vendors.json has no snocone-related vendor category) -- verified live: a street loaded with a SnoConeVendingMachine present constructs and unloads cleanly."
     },
     {
       "id": "toolvendor",

@@ -164,8 +164,27 @@ const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem
 // coUserver/lib/entities/npcs/vendors/street_spirit.dart and
 // coUserver/lib/streets/street.dart's putEntitiesInMemory. The 3 concrete,
 // real-art subclasses (StreetSpiritFirebog/Zutto/Groddle) are used instead.
+// SnoConeVendingMachine (coUserver/lib/entities/npcs/vendors/
+// snoconevendingmachine.dart) added 2026-08-28 (see POTENTIAL_TODO.md's
+// "Quest completability audit": it's the only source of any `snocone_*`
+// item anywhere in the codebase, and Q7 "Snocone Joy" requires buying one).
+// Constructor signature re-verified directly against street.dart's
+// reflective placement code before adding, not trusted from the quest-audit
+// note alone: `SnoConeVendingMachine(String id, String streetName, String
+// tsid, num x, num y, num z, num rotation, bool h_flip)` matches the exact
+// `[id, label, tsid, x, y, z, rotation, h_flip]` argument order
+// `putEntitiesInMemory` uses for every `Vendor` subclass, identical in
+// shape to the already-placed `ToolVendor`. Its own on-map appearance art
+// (idle_stand/walk_left/walk_right/walk_end/talk/attract) is real and
+// already converted (`files/sprites/generated/converted/sno_cone-*.png`,
+// confirmed present under coUclient/web/ and referenced directly by the
+// class's own `states` map) -- unlike the Hooch/PurpleFlower/Still
+// precedent, this is NOT a dead-linked-sprite placement; both the NPC's
+// world sprite and its catalog's `snocone_blue/green/orange/purple/red`
+// item icons were already converted in an earlier item-icon batch.
 const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
-  'StreetSpiritFirebog', 'StreetSpiritZutto', 'StreetSpiritGroddle'];
+  'StreetSpiritFirebog', 'StreetSpiritZutto', 'StreetSpiritGroddle',
+  'SnoConeVendingMachine'];
 // Fourth/fifth drinks/herbalism conversion batches (see RECOVERY_TODO.md
 // "Continue asset conversion") documented three real, unmodified, working
 // acquisition routes that were simply never placed here -- confirmed directly
@@ -282,6 +301,18 @@ const RARITY = {
   // biome/beach association was found in any recovered data for it (same
   // "don't guess" rule as everything else above).
   Crab: { chance: 22, maxCount: 1 },
+  // SnoConeVendingMachine: a useful specialty vendor (real converted art,
+  // see the VENDOR_NPC_TYPES comment above), not a common decoration --
+  // same "landmark/specialty" tier as ToolVendor (12%), but narrower still:
+  // its catalog is fixed at exactly 5 sno-cone-flavor items (vs.
+  // ToolVendor's broad tool/machine catalog), closer in scope to Still's
+  // single-purpose niche (6%). Split the difference. No REGION_THEME entry:
+  // `vendors.json`'s 9 vendor categories (gardening/produce/alchemical/
+  // hardware/kitchen/groceries/toy/animal/mining) include no "snocone" or
+  // related category, so there's no grounded per-region signal to theme on
+  // (checked directly, same "don't guess" rule as the shrines/
+  // StreetSpiritZutto/Groddle above) -- a flat rate applies everywhere.
+  SnoConeVendingMachine: { chance: 10, maxCount: 1 },
 };
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
@@ -313,6 +344,12 @@ const RUNTIME_ASSET_ID = {
   // lookup -- giving them a runtime-manifest id here would misrepresent
   // them as having real converted world-entity art.
   Crab: 'crab',
+  // SnoConeVendingMachine has its own real converted-art runtime-manifest
+  // row (id "snoconevendingmachine") -- both its world-entity sprite and
+  // its item catalog's icons are real, see the VENDOR_NPC_TYPES comment
+  // above, so (unlike Hooch/PurpleFlower/Still) it belongs in
+  // NEWLY_PLACED_TYPES below too.
+  SnoConeVendingMachine: 'snoconevendingmachine',
 };
 // Types with real, newly-converted official art (as opposed to quoins,
 // which predate this pass) -- these get concrete example rows in the placement
@@ -324,6 +361,7 @@ const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
   ...SHRINE_TYPES, ...VENDOR_NPC_TYPES, 'Crab'];
+// (SnoConeVendingMachine is included via the VENDOR_NPC_TYPES spread above.)
 
 function hash(value) {
   let result = 2166136261;

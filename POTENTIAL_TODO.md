@@ -51,14 +51,15 @@ entity/item is itself placed/obtainable -- checked per-quest below.
 | Q4 | Race to the Forest | FULLY COMPLETABLE |
 | Q5 | Loyalty's Rich Reward | FULLY COMPLETABLE |
 | Q6 | Dullite, Beryl and Sparkly | FULLY COMPLETABLE |
-| Q7 | Snocone Joy | PARTIALLY BLOCKED |
+| Q7 | Snocone Joy | FULLY COMPLETABLE (fixed 2026-08-28) |
 | Q8 | Enlarge Yer Slots | FULLY COMPLETABLE |
 | Q9 | Doody Inspector | FULLY COMPLETABLE |
 | Q10 | The Great Guzzler Challenge | FULLY COMPLETABLE |
 | Q11 | Meat Galore | FULLY COMPLETABLE |
 | Q12 | Make Me Some Drinks | FULLY COMPLETABLE |
 
-11 of 12 quests are genuinely completable end-to-end today, several via
+All 12 quests are genuinely completable end-to-end today (Q7 fixed
+2026-08-28, see below), several via
 recipe chains 2-3 tiers deep that were traced input-by-input rather than
 trusted from their top-level ingredient list. One notable finding while
 tracing: the `skill`/`skill_level`/`achievement_req`/`quest_req` keys present
@@ -145,27 +146,30 @@ automatically. Offer trigger (buying `pick`/`fancy_pick`) is real vendor stock
 across several placed vendor categories (`ToolVendor`, and `hardware`/
 `mining`/`alchemical`-category `StreetSpirit`).
 
-### Q7 -- Snocone Joy -- PARTIALLY BLOCKED
+### Q7 -- Snocone Joy -- FULLY COMPLETABLE (fixed 2026-08-28)
 
 Prerequisite Q1 is completable, and Q7 is auto-offered 1 minute after Q1
-completes, so the *quest itself* is reachable. Its two requirements split:
+completes, so the *quest itself* is reachable. Its two requirements:
 - `location_Wintry Place` (travel there): fine -- "Wintry Place" is a real
   street in `streetdata.json` (verified directly).
-- `getItem_snocone_*` (buy any sno cone): **blocked**. The only source of any
+- `getItem_snocone_*` (buy any sno cone): **fixed**. The only source of any
   `snocone_blue`/`green`/`orange`/`red`/`purple` item anywhere in the codebase
   is `SnoConeVendingMachine` (`coUserver/lib/entities/npcs/vendors/
-  snoconevendingmachine.dart`), and that class is not in
-  `tools/seed-demo-world.mjs`'s `VENDOR_NPC_TYPES` (only `Garden`,
-  `ToolVendor`, `StreetSpiritFirebog`/`Zutto`/`Groddle` are placed) -- so it is
-  never instantiated anywhere in the live world. This same gap was
-  independently noted in this file's Item economy section (the `snocone_*`
-  entry in the food-icon-conversion batch note above) and in
-  `RECOVERY_TODO.md`.
-  **Fix would require**: adding `SnoConeVendingMachine` to
-  `seed-demo-world.mjs`'s placed-NPC list, after confirming its constructor
-  signature matches `street.dart`'s reflective placement expectations (same
-  check already done for `Still`/`Crab`/the `HoochRespawningItem` family) --
-  a small, low-risk, well-precedented placement-only fix, not a code change.
+  snoconevendingmachine.dart`), which was not in `tools/seed-demo-world.mjs`'s
+  `VENDOR_NPC_TYPES` at audit time -- never instantiated anywhere in the live
+  world. This same gap was independently noted in this file's Item economy
+  section (the `snocone_*` entry in the food-icon-conversion batch note
+  above) and in `RECOVERY_TODO.md`.
+  **Fixed**: `SnoConeVendingMachine` added to `seed-demo-world.mjs`'s
+  `VENDOR_NPC_TYPES`/`RARITY` (10% chance/street, maxCount 1) after
+  confirming its constructor signature matches `street.dart`'s reflective
+  placement expectations (identical shape to the already-placed
+  `ToolVendor`) -- see RECOVERY_TODO.md's "Placement pass:
+  SnoConeVendingMachine (Q7 fix)" row for full verification detail
+  (336 live instances seeded, WebSocket-probed clean construction, zero
+  server errors). Unlike the Hooch/PurpleFlower/Still placement precedent,
+  this NPC's own on-map sprite art was already real and converted (not
+  dead-linked) at fix time, so no follow-up art-conversion gap remains here.
 
 ### Q8 -- Enlarge Yer Slots -- FULLY COMPLETABLE
 
@@ -784,11 +788,14 @@ All the tools involved (`saucepan`, `gassifier`, `blender`,
   Eat table), not a conversion or placement gap, so a future pass should
   not re-search for a route for these 30 without first writing new
   recipe/vendor/reward data for them. 5 more (`snocone_blue`/`green`/
-  `orange`/`purple`/`red`) are real `SnoConeVendingMachine` vendor stock
-  but that vendor class is not in `tools/seed-demo-world.mjs`'s
-  `VENDOR_NPC_TYPES` -- a good, low-risk candidate for a future placement
-  pass (same shape as the already-fixed `Still`/`HoochRespawningItem`/
-  `PurpleFlowerRespawningItem` gap).
+  `orange`/`purple`/`red`) are real `SnoConeVendingMachine` vendor stock;
+  that vendor class was not in `tools/seed-demo-world.mjs`'s
+  `VENDOR_NPC_TYPES` at the time this batch was converted (same shape as
+  the already-fixed `Still`/`HoochRespawningItem`/`PurpleFlowerRespawningItem`
+  gap) -- fixed 2026-08-28 as this file's own quest completability audit's
+  Q7 fix (see the Q7 section above and RECOVERY_TODO.md's "Placement pass:
+  SnoConeVendingMachine (Q7 fix)" row); all 5 items are now genuinely
+  live-buyable.
 
 ## Operations and reproducibility
 

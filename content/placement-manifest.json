@@ -200,7 +200,7 @@
       "entityType": "SilverFox",
       "runtimeAssetId": "silverfox",
       "tsid": "LLI1FMJFI2J10EH",
-      "x": -96,
+      "x": 84,
       "y": 622,
       "sourceExport": null
     },
@@ -1210,7 +1210,7 @@
       "entityType": "StreetSpiritZutto",
       "runtimeAssetId": "streetspiritzutto",
       "tsid": "LLI2KOMKI2J152P",
-      "x": 24,
+      "x": 204,
       "y": 631,
       "sourceExport": null
     },
@@ -1255,6 +1255,36 @@
       "sourceExport": null
     },
     {
+      "id": "demo-LLI161CEI2J10K4-SnoConeVendingMachine-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SnoConeVendingMachine",
+      "runtimeAssetId": "snoconevendingmachine",
+      "tsid": "LLI161CEI2J10K4",
+      "x": -834,
+      "y": 755,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1F2EFI2J1F15-SnoConeVendingMachine-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SnoConeVendingMachine",
+      "runtimeAssetId": "snoconevendingmachine",
+      "tsid": "LLI1F2EFI2J1F15",
+      "x": 225,
+      "y": 663,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KOMKI2J152P-SnoConeVendingMachine-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SnoConeVendingMachine",
+      "runtimeAssetId": "snoconevendingmachine",
+      "tsid": "LLI2KOMKI2J152P",
+      "x": -576,
+      "y": 633,
+      "sourceExport": null
+    },
+    {
       "id": "demo-LA5NA0QJE4E2LCB-Crab-1",
       "provenanceKind": "synthetic",
       "entityType": "Crab",
@@ -1280,13 +1310,13 @@
       "entityType": "Crab",
       "runtimeAssetId": "crab",
       "tsid": "LLI161CEI2J10K4",
-      "x": 408,
+      "x": 578,
       "y": 732,
       "sourceExport": null
     }
   ],
   "coverageSummary": {
-    "note": "Full per-row placement data (59496 rows across 51 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle/Crab) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "note": "Full per-row placement data (59833 rows across 52 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle/SnoConeVendingMachine/Crab) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
     "streetsCovered": 3180,
     "totalStreets": 3183,
     "placementsByEntityType": {
@@ -1337,6 +1367,7 @@
       "IceNubbin": 858,
       "StreetSpiritZutto": 392,
       "SilverFox": 317,
+      "SnoConeVendingMachine": 337,
       "Pot": 145,
       "Mab": 156,
       "Tii": 162,
