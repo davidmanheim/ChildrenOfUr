@@ -59,6 +59,30 @@ Future main(List<String> arguments) async {
 	ArgResults argResults = parser.parse(arguments);
 	loadCert = argResults['load-cert'];
 
+	// Everything below (including all WebSocket/HTTP listeners registered
+	// during startup) now runs inside this zone, so an uncaught exception in
+	// ANY connection's message handler -- any of the per-websocket `.listen`
+	// callbacks in _initWebSockets, any redstone route, any async callback
+	// scheduled anywhere in the request-handling chain -- is caught here
+	// instead of propagating to the isolate's root zone. Before this fix,
+	// that propagation crashed the entire Dart process (confirmed live,
+	// repeatedly, this session: single bad-input bugs like a quest-favor
+	// decode mismatch or a message_bus concurrent-modification issue took
+	// the whole server down and dropped every connected player, not just the
+	// one triggering request). Individual bugs will keep surfacing --
+	// that's expected for a large recovered codebase -- but none of them
+	// should be able to take the whole server down; this makes that true
+	// structurally instead of requiring every future bug to be caught
+	// site-by-site.
+	runZoned(() async {
+		await _main(arguments);
+	}, onError: (Object error, StackTrace stackTrace) {
+		Log.error('[Zone] Unhandled error caught at the server root; the connection/request that '
+			'caused it may have failed, but the server itself keeps running', error, stackTrace);
+	});
+}
+
+Future _main(List<String> arguments) async {
 	try {
 		// Start logging
 		Log.init();
