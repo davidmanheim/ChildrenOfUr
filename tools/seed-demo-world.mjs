@@ -24,25 +24,105 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const streets = JSON.parse(fs.readFileSync(
   path.join(root, 'coUserver', 'lib', 'common', 'mapdata', 'json', 'streetdata.json'), 'utf8'));
+const hubs = JSON.parse(fs.readFileSync(
+  path.join(root, 'coUserver', 'lib', 'common', 'mapdata', 'json', 'hubdata.json'), 'utf8'));
 const locations = path.join(root, 'coUserver', 'CAT422', 'locations');
-// The first six are collectable quoins. `WoodTree`/`Chicken`/`Piggy`/`MetalRock`
-// are real official-art entities (see CONTENT_RECOVERY_PLAN.md's asset-recovery
-// pass; provenance in content/source-manifest.json) placed with deterministic,
-// geometry-aware -- not historically recovered -- positions. `DemoWheat`
-// remains a hand-drawn placeholder (no real crop asset has been converted
-// yet). `DemoTree`/`DemoChicken` placeholders are retired by this array: the
-// real WoodTree/Chicken take their place at the same index, so a rerun
-// upgrades existing demo- rows in place (see the ON CONFLICT clause below).
-// `Fox`/`SilverFox`/`HeliKitty`/`Salmon`/`Butterfly`/`Batterfly`/`BeanTree`/
-// `BubbleTree`/`FruitTree`/`PaperTree` are a second real-official-art batch
-// (same recovery pass, later session; provenance in
-// content/source-manifest.json) appended at new indices rather than reusing
-// any existing one, since there is no retired Demo* stand-in to upgrade in
-// place for any of them.
-const types = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor',
-  'WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
+
+// Resolves a street's region/biome key exactly the way the client already
+// does for world music (coUclient mapdata.dart's checkStringSetting: the
+// street's own `music` field if set, else its hub's `music` field via
+// `hub_id`, else the "forest" default) -- reusing that same recovered
+// region data (see content/music-manifest.json) to theme placement instead
+// of re-deriving a new region scheme from scratch.
+function regionKey(streetData) {
+  if (streetData.music) return streetData.music;
+  const hub = hubs[String(streetData.hub_id)];
+  return hub?.music || 'forest';
+}
+
+// Best-effort *thematic* rarity adjustment per region -- deliberate creative
+// judgment (per explicit user direction), not recovered historical
+// placement data. Like every other `demo-` row, this must never be
+// presented as authentic; it exists only to make different areas feel
+// different instead of every street carrying an identical roster.
+// Multipliers apply to a type's base RARITY.chance above; a region/type
+// combination not listed here keeps the base rate unchanged. `jal` and
+// `nottis` are intentionally left un-themed: no confident thematic read on
+// either from the data available, and guessing was exactly what the user
+// asked this project not to do with placement.
+const REGION_THEME = {
+  // Bog/swamp: bubbles fit thematically; farm animals don't.
+  firebog: { BubbleTree: 1.8, Salmon: 1.8, Chicken: 0.4, Piggy: 0.4, MetalRock: 0.5 },
+  // Caverns: rock and (underground pool) fish over surface flora/flyers.
+  cave: { MetalRock: 2.2, Salmon: 1.6, WoodTree: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
+    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3, DemoWheat: 0.3 },
+  ilmenskie: { MetalRock: 2.2, Salmon: 1.6, WoodTree: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
+    FruitTree: 0.3, PaperTree: 0.3, Butterfly: 0.3, Batterfly: 0.3, HeliKitty: 0.3, DemoWheat: 0.3 },
+  // Elevated grassland: good grazing, fewer big trees.
+  highlands: { Chicken: 1.5, Piggy: 1.5, Fox: 1.5, WoodTree: 0.7, BeanTree: 0.7,
+    BubbleTree: 0.7, FruitTree: 0.7, PaperTree: 0.7 },
+  // Pastoral/farmland zones.
+  uralia2: { Chicken: 1.6, Piggy: 1.6, DemoWheat: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
+  kajuu: { Chicken: 1.6, Piggy: 1.6, DemoWheat: 1.6, WoodTree: 1.3, BeanTree: 1.3, FruitTree: 1.3 },
+  // Ix: strange/artificial zone -- sparse ordinary life, exotic rarity up.
+  ix: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, DemoWheat: 0.3, MetalRock: 0.3, BeanTree: 0.3,
+    BubbleTree: 0.3, FruitTree: 0.3, PaperTree: 0.3, Fox: 0.3, HeliKitty: 0.3, Salmon: 0.3,
+    Butterfly: 0.3, Batterfly: 0.3, SilverFox: 2.5 },
+  // Hell: harsh territory -- sparse life generally, volcanic rock up.
+  hell: { WoodTree: 0.3, Chicken: 0.3, Piggy: 0.3, DemoWheat: 0.3, BeanTree: 0.3, BubbleTree: 0.3,
+    FruitTree: 0.3, PaperTree: 0.3, HeliKitty: 0.3, Butterfly: 0.3, Batterfly: 0.3, Salmon: 0.3,
+    MetalRock: 1.4, Fox: 1.2 },
+  // Fungal/mushroom hubs: less woody growth, fewer farm animals.
+  urwok: { WoodTree: 0.4, BeanTree: 0.4, BubbleTree: 0.4, FruitTree: 0.4, PaperTree: 0.4, Chicken: 0.5, Piggy: 0.5 },
+  kloroandhaoma: { WoodTree: 0.4, BeanTree: 0.4, BubbleTree: 0.4, FruitTree: 0.4, PaperTree: 0.4, Chicken: 0.5, Piggy: 0.5 },
+  // Ancestral/spiritual zones: creature-with-a-mystical-vibe bias.
+  ancestral: { Fox: 1.6, HeliKitty: 1.6, SilverFox: 1.8 },
+  // Woodland (the default region for untagged hubs too): wildlife-friendly.
+  forest: { Fox: 1.3, Butterfly: 1.3, Batterfly: 1.3, HeliKitty: 1.3 },
+  forest_slow: { Fox: 1.3, Butterfly: 1.3, Batterfly: 1.3, HeliKitty: 1.3 },
+  // Enchanted (the 3 streets with a real, already-recovered per-street
+  // override, per content/music-manifest.json): magical-forest boost.
+  enchanted: { WoodTree: 1.8, BeanTree: 1.8, BubbleTree: 1.8, FruitTree: 1.8, PaperTree: 1.8,
+    Butterfly: 1.8, Batterfly: 1.5, SilverFox: 2 },
+};
+// Quoins (collectibles) are placed one-of-each-always, unchanged from the
+// original design. `WoodTree`/`Chicken`/`Piggy`/`MetalRock`/`Fox`/`SilverFox`/
+// `HeliKitty`/`Salmon`/`Butterfly`/`Batterfly`/`BeanTree`/`BubbleTree`/
+// `FruitTree`/`PaperTree` are real official-art entities (see
+// CONTENT_RECOVERY_PLAN.md's asset-recovery pass; provenance in
+// content/source-manifest.json) placed with deterministic, geometry-aware --
+// not historically recovered -- positions, and a VARIED per-street subset
+// (see the RARITY table below) rather than every type on every street.
+// `DemoWheat` remains a hand-drawn placeholder (no real crop asset has been
+// converted yet) but is included in that same varied rotation. The
+// now-unused `DemoTree`/`DemoChicken` placeholder classes are no longer
+// seeded at all, superseded by the real WoodTree/Chicken.
+const QUOIN_TYPES = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor'];
+const REAL_TYPES = ['WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
   'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree'];
+const types = [...QUOIN_TYPES, ...REAL_TYPES]; // still used for the manifest's total-type-count text
+
+// Per-street inclusion chance (0-100) and max instance count for each real
+// type. Placing every type on every street uniformly (the old behavior) made
+// all ~3,180 streets look identical -- confirmed by direct user feedback
+// ("the set of items in the world seems limited and very repetitive").
+// This gives each street a varied, still-deterministic subset instead: each
+// type independently rolls whether it appears at all, and if so, whether a
+// second instance does too. Common resources (trees, farm animals) show up
+// on roughly half of streets; less-common animals on under a third;
+// SilverFox (a color-variant rarity, not a distinct species) rarest of all.
+const RARITY = {
+  WoodTree: { chance: 50, maxCount: 2 }, Chicken: { chance: 50, maxCount: 2 },
+  DemoWheat: { chance: 50, maxCount: 2 }, Piggy: { chance: 50, maxCount: 2 },
+  MetalRock: { chance: 50, maxCount: 2 },
+  BeanTree: { chance: 45, maxCount: 2 }, BubbleTree: { chance: 45, maxCount: 2 },
+  FruitTree: { chance: 45, maxCount: 2 }, PaperTree: { chance: 45, maxCount: 2 },
+  Fox: { chance: 30, maxCount: 1 }, HeliKitty: { chance: 30, maxCount: 1 },
+  Salmon: { chance: 30, maxCount: 1 }, Butterfly: { chance: 30, maxCount: 1 },
+  Batterfly: { chance: 30, maxCount: 1 },
+  SilverFox: { chance: 10, maxCount: 1 },
+};
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
 // content/placement-manifest.json provenance rows (see generatePlacementManifest below).
@@ -133,13 +213,44 @@ for (const data of Object.values(streets)) {
 	if (!dynamic || !Number.isFinite(Number(dynamic.l)) || !Number.isFinite(Number(dynamic.r)) ||
 		!Number.isFinite(Number(dynamic.ground_y))) dynamic = null;
 
-  for (let index = 0; index < types.length; index++) {
-    const { x, y } = position(data.tsid, dynamic, index, types[index]);
-    rows.push({ id: `demo-${data.tsid}-${index}`, type: types[index], tsid: data.tsid, x, y });
+  // Quoins: unchanged from the original design -- one of each type on every
+  // street, always present, same fixed-index id scheme (index doubles as
+  // both the row id suffix and the position() jitter seed).
+  for (let index = 0; index < QUOIN_TYPES.length; index++) {
+    const { x, y } = position(data.tsid, dynamic, index, QUOIN_TYPES[index]);
+    rows.push({ id: `demo-${data.tsid}-${index}`, type: QUOIN_TYPES[index], tsid: data.tsid, x, y });
+  }
+
+  // Real entities: varied per street per the RARITY table above, then
+  // themed by region (REGION_THEME) instead of unconditionally placing all
+  // 15 types everywhere at a flat rate.
+  const region = regionKey(data);
+  for (const type of REAL_TYPES) {
+    const { chance, maxCount } = RARITY[type];
+    const multiplier = REGION_THEME[region]?.[type] ?? 1;
+    const effectiveChance = Math.max(2, Math.min(95, Math.round(chance * multiplier)));
+    if (hash(`${data.tsid}:${type}:include`) % 100 >= effectiveChance) continue;
+    const count = 1 + ((maxCount > 1 && hash(`${data.tsid}:${type}:count`) % 100 < 30) ? 1 : 0);
+    for (let n = 1; n <= count; n++) {
+      const seedKey = `${type}-${n}`;
+      const { x, y } = position(data.tsid, dynamic, seedKey, type);
+      rows.push({ id: `demo-${data.tsid}-${seedKey}`, type, tsid: data.tsid, x, y });
+    }
   }
 }
 
 process.stdout.write('BEGIN;\n');
+// REAL_TYPES rows now use a variable-count id scheme (demo-<tsid>-<type>-<n>)
+// instead of the old fixed-index one (demo-<tsid>-<index>), and which
+// streets/instances get a given type can change between runs as the RARITY
+// table is tuned. Clear every previously-generated row for these types
+// first (id LIKE 'demo-%' scopes this to generator-owned rows only) so a
+// rerun never leaves stale duplicates behind under the old id scheme.
+// Quoins are untouched: their id scheme and one-of-each-always-present
+// design haven't changed.
+process.stdout.write(
+  `DELETE FROM street_entities WHERE id LIKE 'demo-%' AND type IN (` +
+  REAL_TYPES.map(t => `'${t}'`).join(', ') + `);\n`);
 for (const row of rows) {
 	process.stdout.write(
 		`INSERT INTO street_entities (id, type, tsid, x, y, z, h_flip, rotation, metadata_json) VALUES ` +
