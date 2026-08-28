@@ -139,6 +139,37 @@ Prioritize and verify items before implementation.
   so placing `HoochRespawningItem` or `Still` would unblock more than just
   the `hooch` item itself -- a good candidate for a future placement pass
   alongside `Garden`/`ToolVendor`/`StreetSpirit`.
+- Found 2026-08-28 (fifth batch, all 7 `herbalism.json` herbs + their 7
+  seeds): a genuine *code* gap, not just a placement gap, distinct from
+  everything found in prior batches. `HerbGarden`
+  (`coUserver/lib/entities/npcs/garden.dart` line 556) extends `Garden`
+  and carries its own herb-themed flavor text (`RESPONSES_HERB`), which
+  reads as if it should grow herbs, but it never overrides
+  `Garden.CROPS` or `ITEM_REQ_PLANT` -- both stay hardcoded to the same
+  13 vegetable crops as the plain `Garden` class -- so `HerbGarden`
+  cannot plant or harvest any herb even if it were placed in the world.
+  Confirmed no `herbalism` vendor category exists anywhere in
+  `vendor.dart`/`vendors.json` either (only `gardening`, 13 crop seeds,
+  and `produce`, 13 crops). Net effect: 6 of the 7 herbs (gandlevery,
+  hairball_flower, rookswort, rubeweed, silvertongue, yellow_crumb_flower)
+  and all 7 herb seeds have no acquisition route of any kind in the
+  current codebase -- the same "genuinely missing design" category as
+  `bacon`/`potion_rainbow_juice`, not a placement gap that seeding could
+  fix. The 7th herb, `purple_flower`, is the one exception:
+  `PurpleFlowerRespawningItem`
+  (`coUserver/lib/entities/plants/respawning_items/purple_flower.dart`)
+  is a real, unmodified `RespawningItem` world-entity harvestable
+  (3-minute respawn, same shape as `hooch`'s `HoochRespawningItem`) that
+  is simply never referenced in `tools/seed-demo-world.mjs` -- a genuine
+  placement-gap candidate for the same future pass as `hooch`/`Still`/
+  `Crab`, unlike its 6 sibling herbs. All 7 herbs are real
+  `tincturing_kit` recipe *inputs* (`essence_of_<herb>`) but never
+  outputs, so that recipe file provides no acquisition route either.
+  Fixing `HerbGarden` itself (adding a herb `CROPS`/`ITEM_REQ_PLANT` list,
+  or a `herbalism` vendor category) is a candidate for the "Import/
+  translate item, recipe, vendor, quest, and achievement graph" pass,
+  not attempted here per the instruction to record routes honestly
+  rather than invent or fix them.
 
 ## Operations and reproducibility
 

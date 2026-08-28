@@ -2005,6 +2005,188 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/crabato_juice/crabato_juice.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Crab.playMusic()/CRABATO reward logic is pre-existing and unmodified; only the icon/sprite asset was produced this pass. Placement is out of scope for this pass per instruction not to touch tools/seed-demo-world.mjs/content/placement-manifest.json."
+    },
+    {
+      "id": "item-gandlevery",
+      "displayName": "Gandlevery",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_gandlevery",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes gandlevery -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where gandlevery appears only as an *input* to tincturing_kit's essence_of_gandlevery recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Gandlevery even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "gandlevery"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/gandlevery/gandlevery.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-hairball_flower",
+      "displayName": "Hairball Flower",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_hairball_flower",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes hairball_flower -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where hairball_flower appears only as an *input* to tincturing_kit's essence_of_hairball_flower recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Hairball Flower even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "hairball_flower"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/hairball_flower/hairball_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-rookswort",
+      "displayName": "Rookswort",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_rookswort",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes rookswort -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where rookswort appears only as an *input* to tincturing_kit's essence_of_rookswort recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Rookswort even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "rookswort"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/rookswort/rookswort.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-rubeweed",
+      "displayName": "Rubeweed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_rubeweed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes rubeweed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where rubeweed appears only as an *input* to tincturing_kit's essence_of_rubeweed recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Rubeweed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "rubeweed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/rubeweed/rubeweed.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-silvertongue",
+      "displayName": "Silvertongue",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_silvertongue",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes silvertongue -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where silvertongue appears only as an *input* to tincturing_kit's essence_of_silvertongue recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Silvertongue even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "silvertongue"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/silvertongue/silvertongue.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-yellow_crumb_flower",
+      "displayName": "Yellow Crumb Flower",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_yellow_crumb_flower",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes yellow_crumb_flower -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where yellow_crumb_flower appears only as an *input* to tincturing_kit's essence_of_yellow_crumb_flower recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Yellow Crumb Flower even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "yellow_crumb_flower"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/yellow_crumb_flower/yellow_crumb_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-purple_flower",
+      "displayName": "Purple Flower",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_purple_flower",
+      "destination": "Player item",
+      "accessibleThrough": "One real, unmodified code route exists but is not placed in the live world (checked tools/seed-demo-world.mjs directly -- no reference to PurpleFlowerRespawningItem or any respawning_items/*.dart class). PurpleFlowerRespawningItem (coUserver/lib/entities/plants/respawning_items/purple_flower.dart) is a RespawningItem world-entity harvestable (itemType 'purple_flower', 3-minute respawnTime) -- the same kind of entity class as hooch's HoochRespawningItem, documented as a placement gap in the prior drinks batch, and the same kind of already-placed harvestable class (Chicken/wood tree/etc.), just never added to the seed script's placed-type list. Note this class still points its own Spritesheet at the dead https://childrenofur.com/... URL directly (not read from herbalism.json) -- left untouched this pass, matching the prior batches' precedent of only updating the player-item JSON's iconUrl/spriteUrl, not entity Dart source. purple_flower is also a tincturing_kit recipe input (essence_of_purple), same as the other 6 herbs in this batch, but unlike them it does have this one real (if unplaced) harvest route -- a more nuanced case than the other 6, which have no route of any kind.",
+      "routeIds": {
+        "itemId": "purple_flower"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/herbs/purple_flower/purple_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gandlevery_seed",
+      "displayName": "Gandlevery Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_gandlevery_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes gandlevery_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where gandlevery_seed appears only as an *input* to tincturing_kit's essence_of_gandlevery recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Gandlevery Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "gandlevery_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_gandlevery/seed_gandlevery.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-hairball_flower_seed",
+      "displayName": "Hairball Flower Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_hairball_flower_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes hairball_flower_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where hairball_flower_seed appears only as an *input* to tincturing_kit's essence_of_hairball_flower recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Hairball Flower Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "hairball_flower_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_hairball_flower/seed_hairball_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-rookswort_seed",
+      "displayName": "Rookswort Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_rookswort_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes rookswort_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where rookswort_seed appears only as an *input* to tincturing_kit's essence_of_rookswort recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Rookswort Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "rookswort_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_rookswort/seed_rookswort.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-rubeweed_seed",
+      "displayName": "Rubeweed Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_rubeweed_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes rubeweed_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where rubeweed_seed appears only as an *input* to tincturing_kit's essence_of_rubeweed recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Rubeweed Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "rubeweed_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_rubeweed/seed_rubeweed.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-silvertongue_seed",
+      "displayName": "Silvertongue Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_silvertongue_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes silvertongue_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where silvertongue_seed appears only as an *input* to tincturing_kit's essence_of_silvertongue recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Silvertongue Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "silvertongue_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_silvertongue/seed_silvertongue.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-yellow_crumb_flower_seed",
+      "displayName": "Yellow Crumb Flower Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_yellow_crumb_flower_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item (checked every vendor NPC itemsForSale list -- no \"herbalism\" vendor category exists in vendors.json/vendor.dart, only \"gardening\" (13 vegetable crop seeds) and \"produce\" (13 vegetable crops), neither of which includes yellow_crumb_flower_seed -- and every coUserver/lib/entities/items/actions/recipes/json/*.json file, where yellow_crumb_flower_seed appears only as an *input* to tincturing_kit's essence_of_yellow_crumb_flower recipe (coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json), never as an output). Also checked HerbGarden (coUserver/lib/entities/npcs/garden.dart, line 556): despite its name and its own RESPONSES_HERB flavor text, it extends Garden without overriding CROPS or ITEM_REQ_PLANT, so it inherits the base class's fixed vegetable-crop lists (broccoli/cabbage/carrot/... only) -- it cannot actually plant or harvest Yellow Crumb Flower Seed even if placed in the world. This is a genuine content gap in the pre-existing game logic, not a placement gap. Per CONTENT_RECOVERY_PLAN.md's routing table, herbs/seeds are normally a Player item obtained via gardening/vendors/recipes; wiring a concrete route (or fixing HerbGarden) is deferred to RECOVERY_TODO.md's \"Import/translate item, recipe, vendor, quest, and achievement graph\" pass. This pass only converts the icon/sprite visual asset, which is real (no longer a dead link) regardless of the still-missing acquisition route.",
+      "routeIds": {
+        "itemId": "yellow_crumb_flower_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_yellow_crumb_flower/seed_yellow_crumb_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-purple_flower_seed",
+      "displayName": "Purple Flower Seed",
+      "category": "herbalism (player item)",
+      "sourceAssetId": "item_icon_purple_flower_seed",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item, same as the other 6 herb seeds in this batch (checked every vendor NPC itemsForSale list and every recipes/json/*.json file; HerbGarden cannot plant it -- see the sibling herb-seed entries in this batch for the shared HerbGarden gap detail). Note purple_flower itself (the harvested plant, not this seed) does have a real but unplaced RespawningItem harvest route (PurpleFlowerRespawningItem) -- see that item's own runtime-manifest entry -- but that route does not consume or require this seed item at all (RespawningItem harvesting is not seed-gated), so it does not change this seed's own accessibility.",
+      "routeIds": {
+        "itemId": "purple_flower_seed"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_purple_flower/seed_purple_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
     }
   ],
   "deliberatelyDeferred": [
