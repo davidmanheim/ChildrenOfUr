@@ -9,8 +9,8 @@ class HoochRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/hooch__x1_1_x1_2_x1_3_x1_4_png_1354829882.png',
-				188, 52, 47, 52, 4, false)
+				'files/sprites/generated/converted/hooch-1-2-3-4.png',
+				188, 51, 47, 51, 4, false)
 		};
 
 		setState('1-2-3-4');

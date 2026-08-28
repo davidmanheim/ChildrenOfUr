@@ -2,8 +2,8 @@
 	"emblem_of_alph": {
 		"name": "Emblem of Alph",
 		"category": "Emblems & Icons",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/emblem_alph__x1_1_png_1354832461.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/emblem_alph__x1_1_png_1354832461.png",
+		"iconUrl": "files/sprites/generated/converted/item-emblem_of_alph-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-emblem_of_alph-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "As valuable as it is shiny, this Emblem of Alph enables special skills and abilities.",
@@ -45,8 +45,8 @@
 	"emblem_of_cosma": {
 		"name": "Emblem of Cosma",
 		"category": "Emblems & Icons",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/emblem_cosma__x1_1_png_1354832464.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/emblem_cosma__x1_1_png_1354832464.png",
+		"iconUrl": "files/sprites/generated/converted/item-emblem_of_cosma-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-emblem_of_cosma-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "More than just a highly cherishable gewgaw, this glistening Emblem of Cosma can confer special powers upon its holder.",
@@ -475,8 +475,8 @@
 	"icon_of_alph": {
 		"name": "Icon of Alph",
 		"category": "Emblems & Icons",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/icon_alph__x1_1_png_1354836409.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/icon_alph__x1_1_png_1354836409.png",
+		"iconUrl": "files/sprites/generated/converted/item-icon_of_alph-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-icon_of_alph-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "Containing the combined power of eleven already powerful emblems, this Icon of Alph can confer many blessings upon those who show it appropriate adoration.",

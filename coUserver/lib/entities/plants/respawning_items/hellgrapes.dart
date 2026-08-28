@@ -18,8 +18,8 @@ class HellGrapes extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/bunch_of_grapes__x1_1_x1_2_x1_3_x1_4_png_1354829730.png',
-				228, 30, 57, 30, 4, false)
+				'files/sprites/generated/converted/hell_grapes-1-2-3-4.png',
+				280, 73, 70, 73, 4, false)
 		};
 
 		setState('1-2-3-4');

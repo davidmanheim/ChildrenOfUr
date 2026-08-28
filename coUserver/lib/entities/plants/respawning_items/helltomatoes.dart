@@ -8,8 +8,8 @@ class HellTomato extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/tomato__x1_1_x1_2_x1_3_x1_4_png_1354830045.png',
-				176, 31, 44, 31, 4, false)
+				'files/sprites/generated/converted/hell_tomato-1-2-3-4.png',
+				176, 40, 44, 40, 4, false)
 		};
 
 		setState('1-2-3-4');

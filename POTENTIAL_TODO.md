@@ -273,6 +273,134 @@ Prioritize and verify items before implementation.
   (`coUserver/lib/entities/items/actions/note.dart`) consumes 1 `paper`
   and grants a `note` via a real HTTP route, auto-learning
   `penpersonship`; `paper` comes from the already-placed `PaperTree`.
+- Found 2026-08-28 (world-entity art batch): 9 more `RespawningItem`
+  world-entity classes now have real, converted, working on-map art but are
+  not placed anywhere in `tools/seed-demo-world.mjs` -- the same
+  real-but-unplaced pattern already fixed once for
+  `HoochRespawningItem`/`PurpleFlowerRespawningItem`/`Still`/`Crab`.
+  `AwesomeStewRespawningItem`, `ButterflyMilkRespawningItem`,
+  `CinnamonRespawningItem`, `CoffeeRespawningItem`,
+  `EarthshakerRespawningItem`, `FruityJuiceRespawningItem`, `HellGrapes`
+  (grants `bunch_of_grapes`, plus a real `squish` energy-reward action),
+  `HellTomato` (grants `tomato`), and `PlainBubbleRespawningItem`
+  (`coUserver/lib/entities/plants/respawning_items/*.dart`) each inherit
+  `RespawningItem`'s real, unmodified `pick up` action
+  (`InventoryV2.addItemToUser` on a real item id, then a respawn timer) --
+  confirmed by reading the base class directly, not assumed. A future
+  placement pass extending `tools/seed-demo-world.mjs` the same way the
+  hooch/purple_flower/still/crab pass did (RECOVERY_TODO.md's "Placement
+  pass: hooch/purple_flower/crabato_juice" row) would make all 9 genuinely
+  reachable at once. Not placed in this pass per its own scoping
+  instruction not to modify `tools/seed-demo-world.mjs`.
+- Found 2026-08-28 (eighth item-icon batch, scoped to `gasses-bubbles.json`/
+  `herdkeeping.json`/`emblems-icons.json`/`quest_items.json`): independently
+  hit and fixed the same `ffdec -export frame` opaque-backdrop defect
+  described in the "Asset conversion pipeline" section below, on 13 of 16
+  source SWFs (confirmed via PIL alpha-extrema check, `(255,255)` on every
+  one before fixing). Rather than the chroma-key-with-decontamination
+  approach used for the 129-file retroactive fix, or `-ignorebackground`
+  (found by a parallel agent's own pass -- see below), this pass built and
+  used a difference-matting tool (`tools/swf-patch-bgcolor.py` +
+  `tools/swf-export-frame-alpha.py`): byte-patch the SWF's
+  `SetBackgroundColor` tag to black, export the same frame against both the
+  original white and the patched black backdrop, then solve
+  `alpha = 1 - (C_white - C_black)/255` per pixel. **Cross-checked against
+  `-ignorebackground` after the fact** (this section's own note below,
+  found independently by a parallel agent converting different assets the
+  same day): re-exported one of this batch's affected files
+  (`crying_gas.swf`) with `-ignorebackground` and confirmed byte-for-byte
+  visually identical output to the difference-matted version (both show
+  genuine alpha extrema `(0,255)`, same checkerboard-composited preview).
+  So `-ignorebackground` is confirmed to work for this batch's source
+  family too, and is simpler (one export pass, no patched-SWF intermediate)
+  -- recommended for future `-export frame` batches over either the
+  chroma-key or difference-matting workaround. This pass's own 16 items
+  were already fully converted via the matting tool before making this
+  comparison, so were not redone; the matting tool is left in `tools/` as a
+  documented working alternative (useful if `-ignorebackground` is ever
+  found to misbehave on some source, since it needs no assumption about
+  what "ignoring" the background actually renders as underneath).
+- Found 2026-08-28 (`keys.json`/`misc.json` batch, RECOVERY_TODO.md's NINTH
+  batch row): a third independent confirmation of the above -- hit the same
+  opaque-background defect on this batch's sources, first tried
+  `-ignorebackground` directly (worked, genuine `(0,255)` alpha on all 53
+  items including the one with a non-white `SetBackgroundColor`, verified
+  visually), then switched to the established `tools/swf-patch-bgcolor.py`
+  + `tools/swf-export-frame-alpha.py` difference-matting tool instead for
+  consistency with the rest of the pipeline once it was found already
+  checked in mid-session by a parallel agent. Also found: the entire
+  achievement system (`coUserver/lib/achievements/achievements.dart` +
+  `achievement_checkers.dart`) has **zero item-grant code anywhere** --
+  confirmed by grep, no call to `InventoryV2.addItemToUser` or any other
+  grant API exists in either file. `coUserver/lib/achievements/json/
+  trophies.json` only holds display metadata (name/description/a dead
+  `c2.glitch.bz` `imageUrl`) for each achievement. This means every
+  `*_trophy`/`*_music_trophy` item in the item registry (16 of them in
+  `misc.json` alone: `bb_music_trophy`, `bubble_trophy`, `trophy_cubimal`,
+  `trophy_cubimal_2`, `db_music_trophy`, `dg_music_trophy`,
+  `dr_music_trophy`, `egg_hunter_trophy`, `emblem_trophy`, `fruit_trophy`,
+  `gas_trophy`, `gem_trophy`, `spice_trophy`, the 4
+  `street_creator_*_trophy` items, `xs_music_trophy`) has no acquisition
+  route at all -- a systemic missing-design gap (wiring achievement
+  completion to a real item grant), not a per-item placement gap, and worth
+  fixing once rather than per-trophy. Separately: `coUserver/lib/entities/
+  doors/` only has one concrete locked-door subclass
+  (`ld_teal-white-triangle.dart`) out of the 12 keys in `keys.json`, and
+  even that one class is never instantiated anywhere outside its own file
+  -- so all 12 door keys are equally unreachable regardless of whether a
+  matching door class exists. If door placement is ever added to
+  `tools/seed-demo-world.mjs`-style seeding, `keys.json` would need either
+  11 more door subclasses or a generalization of `LockedDoor` to take its
+  required key as placement data instead of being hardcoded per-subclass.
+
+## Asset conversion pipeline
+
+- Found/fixed 2026-08-28 (live bug triage, see RECOVERY_TODO.md): every
+  asset converted via `ffdec -export frame` (main-timeline rasterization,
+  used whenever a source SWF's art sits directly on the root timeline
+  rather than inside a named `DefineSprite`) comes out with the SWF's
+  `SetBackgroundColor` stage color baked in as an opaque fill -- this is
+  inherent ffdec CLI behavior (`lastExportTransparentBackground` config has
+  no effect on it), not a one-off mistake, and affected 129 of the ~161
+  converted source SWFs (every crop/spice/drink/herb/tool item icon plus
+  several rocks and dirt pile). `tools/README-swf-pipeline.md`'s pipeline
+  steps should be updated to document a required post-export chroma-key
+  pass for any `-export frame` conversion: read the SWF's
+  `SetBackgroundColor` tag directly (byte offset, no rendering -- see the
+  tag-parsing helpers already in `tools/swf-frame-labels.py`), then
+  soft-key that exact color out with a distance-based alpha ramp *and*
+  color decontamination (unpremultiplying the background's contribution
+  from partially-covered edge pixels -- a naive alpha-only key leaves a
+  visible fringe on saturated background colors, confirmed on a
+  purple-background asset). This was fixed ad hoc for all 129 existing
+  affected sources in the same pass but is not yet a permanent step in
+  `tools/build-sprite-sheet.py` or the documented pipeline -- a future
+  conversion batch that uses `-export frame` on a new source SWF needs to
+  apply the same chroma-key step by hand (or this gets automated into the
+  scripts) or it will reproduce the same defect.
+- Found 2026-08-28 (world-entity art batch, RECOVERY_TODO.md's "World-entity
+  art: hooch/purple_flower/still finish, plus 9 new RespawningItem
+  conversions" row): the same opaque-background export defect described in
+  the bullet above can be avoided entirely, with no post-hoc chroma-key/
+  fringe risk, by passing ffdec's `-ignorebackground` **pre-option** flag
+  (`ffdec -ignorebackground -export frame ...` / `-export sprite ...`) --
+  distinct from the `-config lastExportTransparentBackground=...` mechanism
+  the bullet above found ineffective. Verified directly on 12 source SWFs in
+  this batch: a first export without the flag reproduced the exact same
+  defect (PIL alpha `getextrema()` of `(255,255)`/`(254,255)`); re-exporting
+  the identical frame ranges with `-ignorebackground` produced genuine 0-255
+  alpha and fully transparent `(0,0,0,0)` corners on every output, with
+  identical frame geometry otherwise. Since this renders with no background
+  fill in the first place (rather than removing a baked-in color after
+  the fact), it should also sidestep the edge-fringe/color-decontamination
+  problem the chroma-key approach has to solve. Worth re-testing against a
+  few of the 129 already-fixed sources from the bullet above and, if it
+  holds up broadly, adopting `-ignorebackground` in
+  `tools/README-swf-pipeline.md`'s documented `-export frame`/`-export
+  sprite` steps as the primary fix instead of (or in addition to) the
+  chroma-key post-process -- not done here, out of scope for a
+  world-entity-only pass, but flagged for whoever next touches the pipeline
+  docs or `tools/build-sprite-sheet.py`.
 
 ## Operations and reproducibility
 

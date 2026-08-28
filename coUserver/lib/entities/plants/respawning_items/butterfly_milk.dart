@@ -9,8 +9,8 @@ class ButterflyMilkRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/milk_butterfly__x1_1_x1_2_x1_3_x1_4_png_1354829507.png',
-				148, 44, 37, 44, 4, false)
+				'files/sprites/generated/converted/butterfly_milk-1-2-3-4.png',
+				148, 45, 37, 45, 4, false)
 		};
 
 		setState('1-2-3-4');

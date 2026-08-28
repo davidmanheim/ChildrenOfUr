@@ -105,19 +105,6 @@
       "statusNote": "Sprite sheet converted from source SWF and wired into metalrock.dart, replacing a dead childrenofur.com link. Entity logic (mine) already existed and is unchanged. PLACED: tools/seed-demo-world.mjs now seeds one MetalRock per street TSID (demo- IDs, new index 10). CONTENT_RECOVERY_PLAN.md step 4 complete for this asset."
     },
     {
-      "id": "demo-wheat",
-      "displayName": "Demo Wheat",
-      "category": "synthetic visual stand-in",
-      "sourceAssetId": null,
-      "destination": "World entity",
-      "accessibleThrough": "tools/seed-demo-world.mjs places one DemoWheat per street TSID (demo- IDs).",
-      "routeIds": {
-        "entityClass": "coUserver/lib/entities/plants/demo_plants.dart:DemoWheat"
-      },
-      "status": "existing-synthetic",
-      "statusNote": "Pre-existing, hand-drawn placeholder SVG (files/sprites/generated/demo-wheat.svg), not derived from any original Glitch/Ur asset. Intentionally non-harvestable. Listed here for coverage completeness, not produced by this pass."
-    },
-    {
       "id": "quoin-collectibles",
       "displayName": "Quoin collectibles (Img/Mood/Energy/Currant/Mystery/Favor)",
       "category": "collectible",
@@ -1991,7 +1978,7 @@
         "itemId": "hooch"
       },
       "status": "converted",
-      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/hooch/hooch.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. HoochRespawningItem and Still game logic are pre-existing and unmodified. Placed 2026-08-28 by tools/seed-demo-world.mjs -- verified live: a WebSocket probe force-loaded a street with each present (HoochRespawningItem on RaceConcept_HogtiePiggy_v1.3 / LA510DDRBL62GC3; Still on Concept_Jetpack_Lvl_v1.0 / LA51087E1L824NE); both constructed and later unloaded cleanly with zero related exceptions in `docker compose logs game-server`. Neither entity's own on-map Spritesheet was converted this pass -- both still point at dead childrenofur.com URLs (only this item's inventory icon was converted, in the drinks batch), so the world-entity/NPC sprite itself will render broken in-browser even though the harvest/ferment/reward logic is now genuinely reachable; a separate future art-conversion candidate."
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/drink/hooch/hooch.swf and wired into drinks.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. HoochRespawningItem and Still game logic are pre-existing and unmodified. Placed 2026-08-28 by tools/seed-demo-world.mjs -- verified live: a WebSocket probe force-loaded a street with each present (HoochRespawningItem on RaceConcept_HogtiePiggy_v1.3 / LA510DDRBL62GC3; Still on Concept_Jetpack_Lvl_v1.0 / LA51087E1L824NE); both constructed and later unloaded cleanly with zero related exceptions in `docker compose logs game-server`. UPDATE (world-entity art pass, same day): both entities' own on-map Spritesheet art has now also been converted -- see this file's separate 'hooch' and 'still' world-entity rows -- so the caveat that they'd render broken on-map no longer applies; only this row's own item-icon conversion changed, not the item's route."
     },
     {
       "id": "item-crabato_juice",
@@ -2090,7 +2077,7 @@
       "category": "herbalism (player item)",
       "sourceAssetId": "item_icon_purple_flower",
       "destination": "Player item",
-      "accessibleThrough": "One real, unmodified code route, now placed in the live world (2026-08-28, tools/seed-demo-world.mjs, ~35% chance per street, maxCount 2). PurpleFlowerRespawningItem (coUserver/lib/entities/plants/respawning_items/purple_flower.dart) is a RespawningItem world-entity harvestable (itemType 'purple_flower', 3-minute respawnTime) -- the same kind of entity class as hooch's HoochRespawningItem (also placed this same pass), and the same kind of already-placed harvestable class (Chicken/wood tree/etc.). Note this class still points its own Spritesheet at the dead https://childrenofur.com/... URL directly (not read from herbalism.json) -- left untouched this pass, matching the prior batches' precedent of only updating the player-item JSON's iconUrl/spriteUrl, not entity Dart source, so the on-map sprite will render broken even though harvesting now genuinely works. purple_flower is also a tincturing_kit recipe input (essence_of_purple), same as the other 6 herbs in this batch, but unlike them it does have this one real harvest route -- a more nuanced case than the other 6, which have no route of any kind.",
+      "accessibleThrough": "One real, unmodified code route, now placed in the live world (2026-08-28, tools/seed-demo-world.mjs, ~35% chance per street, maxCount 2). PurpleFlowerRespawningItem (coUserver/lib/entities/plants/respawning_items/purple_flower.dart) is a RespawningItem world-entity harvestable (itemType 'purple_flower', 3-minute respawnTime) -- the same kind of entity class as hooch's HoochRespawningItem (also placed this same pass), and the same kind of already-placed harvestable class (Chicken/wood tree/etc.). UPDATE (world-entity art pass, same day): this class's own on-map Spritesheet has now also been converted -- see this file's separate 'purple_flower' world-entity row -- so it no longer points at the dead childrenofur.com URL and renders correctly, not just harvests correctly. purple_flower is also a tincturing_kit recipe input (essence_of_purple), same as the other 6 herbs in this batch, but unlike them it does have this real harvest route -- a more nuanced case than the other 6, which have no route of any kind.",
       "routeIds": {
         "itemId": "purple_flower"
       },
@@ -2676,6 +2663,1201 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/artifacts/artifact_magical_pendant/artifact_magical_pendant.swf and wired into collectibles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "hooch",
+      "displayName": "Hooch (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "hooch",
+      "destination": "World entity",
+      "accessibleThrough": "Already placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json and RECOVERY_TODO.md's 'Placement pass: hooch/purple_flower/crabato_juice' row). That pass placed the entity class but left its own on-map Spritesheet pointed at a dead childrenofur.com URL (only the matching player-item's inventory icon had been converted) -- documented at the time as a known caveat. This pass converts that missing world-entity art, so the entity now both spawns AND renders correctly on-map; the pick-up/ferment gameplay loop itself is unchanged.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/hooch.dart:HoochRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "hooch"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/drink/hooch/hooch.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'hooch' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "purple_flower",
+      "displayName": "Purple Flower (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "purple_flower",
+      "destination": "World entity",
+      "accessibleThrough": "Already placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json and RECOVERY_TODO.md's 'Placement pass: hooch/purple_flower/crabato_juice' row). That pass placed the entity class but left its own on-map Spritesheet pointed at a dead childrenofur.com URL (only the matching player-item's inventory icon had been converted) -- documented at the time as a known caveat. This pass converts that missing world-entity art, so the entity now both spawns AND renders correctly on-map; the pick-up/ferment gameplay loop itself is unchanged.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/purple_flower.dart:PurpleFlowerRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "purple_flower"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/herbs/purple_flower/purple_flower.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'purple_flower' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "awesome_stew",
+      "displayName": "Awesome Stew (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "awesome_stew",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: AwesomeStewRespawningItem inherits RespawningItem's 'pick up' action, which grants 'awesome_stew' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, AwesomeStewRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing AwesomeStewRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/awesome_stew.dart:AwesomeStewRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "awesome_stew"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/food/awesome_stew/awesome_stew.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'awesome_stew' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "butterfly_milk",
+      "displayName": "Butterfly Milk (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "butterfly_milk",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: ButterflyMilkRespawningItem inherits RespawningItem's 'pick up' action, which grants 'butterfly_milk' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, ButterflyMilkRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing ButterflyMilkRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/butterfly_milk.dart:ButterflyMilkRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "butterfly_milk"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/drink/milk_butterfly/milk_butterfly.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'butterfly_milk' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "cinnamon",
+      "displayName": "Cinnamon (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "cinnamon",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: CinnamonRespawningItem inherits RespawningItem's 'pick up' action, which grants 'cinnamon' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, CinnamonRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing CinnamonRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/cinnamon.dart:CinnamonRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "cinnamon"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/spice/cinnamon/cinnamon.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'cinnamon' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "coffee",
+      "displayName": "Coffee (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "coffee",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: CoffeeRespawningItem inherits RespawningItem's 'pick up' action, which grants 'coffee' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, CoffeeRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing CoffeeRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/coffee.dart:CoffeeRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "coffee"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/drink/coffee/coffee.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'coffee' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "earthshaker",
+      "displayName": "Earthshaker (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "earthshaker",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: EarthshakerRespawningItem inherits RespawningItem's 'pick up' action, which grants 'earthshaker' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, EarthshakerRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing EarthshakerRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/earthshaker.dart:EarthshakerRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "earthshaker"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/drink/earthshaker/earthshaker.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'earthshaker' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "fruity_juice",
+      "displayName": "Fruity Juice (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "fruity_juice",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: FruityJuiceRespawningItem inherits RespawningItem's 'pick up' action, which grants 'fruity_juice' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, FruityJuiceRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing FruityJuiceRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/fruity_juice.dart:FruityJuiceRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "fruity_juice"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/drink/fruity_juice/fruity_juice.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'fruity_juice' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "hell_grapes",
+      "displayName": "Hellish Grapes (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "hell_grapes",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: HellGrapes inherits RespawningItem's 'pick up' action, which grants 'bunch_of_grapes' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, HellGrapes is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing HellGrapes in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/hellgrapes.dart:HellGrapes",
+        "actions": [
+          "pick up",
+          "squish"
+        ],
+        "rewardItem": "bunch_of_grapes"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/food/bunch_of_grapes/bunch_of_grapes.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'hell_grapes' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "hell_tomato",
+      "displayName": "Hell Tomato (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "hell_tomato",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: HellTomato inherits RespawningItem's 'pick up' action, which grants 'tomato' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, HellTomato is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing HellTomato in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/helltomatoes.dart:HellTomato",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "tomato"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/food/tomato/tomato.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'hell_tomato' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "plain_bubble",
+      "displayName": "Plain Bubble (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "plain_bubble",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: PlainBubbleRespawningItem inherits RespawningItem's 'pick up' action, which grants 'plain_bubble' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, PlainBubbleRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing PlainBubbleRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/plain_bubble.dart:PlainBubbleRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "plain_bubble"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/food/plain_bubble/plain_bubble.swf (frames 2-5 of its 'iconic'/'1'/'2'/'3'/'4' scene layout -- the same source SWF already used for this item's inventory icon in an earlier batch, but a distinct frame range/output file) and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255)/(254,255) baked background -- ffdec's -ignorebackground flag was required to get this; see content/source-manifest.json's 'plain_bubble' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "still",
+      "displayName": "Still (world entity)",
+      "category": "NPC-item (fermenting structure)",
+      "sourceAssetId": "still",
+      "destination": "World entity",
+      "accessibleThrough": "Already placed 2026-08-28 by tools/seed-demo-world.mjs (see content/placement-manifest.json and RECOVERY_TODO.md's 'Placement pass: hooch/purple_flower/crabato_juice' row). That pass placed the entity class but left its own on-map Spritesheet pointed at a dead childrenofur.com URL (only the matching player-item's inventory icon had been converted) -- documented at the time as a known caveat. This pass converts that missing world-entity art, so the entity now both spawns AND renders correctly on-map; the pick-up/ferment gameplay loop itself is unchanged.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/items/still.dart:Still",
+        "actions": [
+          "add corn",
+          "add grain",
+          "add potato",
+          "add rice",
+          "collect",
+          "pick up"
+        ],
+        "rewardItem": "hooch"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet (all 4 states: empty/active/ready/collect) converted from tmp/glitch-items/misc/still/still.swf and wired into still.dart's SPRITESHEETS map, replacing dead childrenofur.com URLs. Source is a single nested DefineSprite (chid=120) with 4 real FrameLabel tags matching the 4 state names exactly; real frame boundaries resolved via tools/swf-frame-labels.py against that character id (ffdec -dumpSWF's nested-tag counters are not real frame numbers, a documented pipeline caveat). Resulting per-state frame counts (empty=1, active=99, ready=41, collect=119) exactly match still.dart's pre-existing (dead-link) Spritesheet numFrames values, confirming correct resolution against the original asset. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both each packed sheet and the updated Spritesheet() constructor args. Alpha channel verified genuine on all 4 outputs (0-255 extrema, not opaque) using ffdec -ignorebackground (see content/source-manifest.json's 'still' entry for the full defect/fix note). No gameplay logic touched."
+    },
+    {
+      "id": "item-bubble_blue",
+      "displayName": "Blue Bubble",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_bubble_blue",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json's 'bubble_blue' entry (tool 'bubble_tuner', input plain_bubble x1). plain_bubble is BubbleTree's rewardItemType (coUserver/lib/entities/plants/trees/bubbletree.dart), and BubbleTree is one of the 38 world-entity types placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.BubbleTree present on firebog/cave/ilmenskie/enchanted and other region themes). bubble_tuner itself is real ToolVendor + StreetSpirit stock (coUserver/lib/entities/npcs/vendors/{toolvendor,vendor}.dart), and both ToolVendor and the 3 concrete StreetSpirit subclasses are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed BubbleTree for plain_bubble, buy/find bubble_tuner from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "bubble_blue",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json",
+        "recipeTool": "bubble_tuner",
+        "recipeInput": {
+          "plain_bubble": 1
+        },
+        "recipeOutputAmount": 1,
+        "plainBubbleSourceEntity": "BubbleTree"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/blue_bubble/blue_bubble.swf (folder/id name mismatch: source SWF is named 'blue_bubble', item id is 'bubble_blue' -- same family of mismatch as the earlier cosmapolitan/cosma_politan precedent) and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-bubble_hard",
+      "displayName": "Hard Bubble",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_bubble_hard",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json's 'bubble_hard' entry (tool 'bubble_tuner', input plain_bubble x5). plain_bubble is BubbleTree's rewardItemType (coUserver/lib/entities/plants/trees/bubbletree.dart), and BubbleTree is one of the 38 world-entity types placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.BubbleTree present on firebog/cave/ilmenskie/enchanted and other region themes). bubble_tuner itself is real ToolVendor + StreetSpirit stock (coUserver/lib/entities/npcs/vendors/{toolvendor,vendor}.dart), and both ToolVendor and the 3 concrete StreetSpirit subclasses are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed BubbleTree for plain_bubble, buy/find bubble_tuner from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "bubble_hard",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json",
+        "recipeTool": "bubble_tuner",
+        "recipeInput": {
+          "plain_bubble": 5
+        },
+        "recipeOutputAmount": 1,
+        "plainBubbleSourceEntity": "BubbleTree"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/hard_bubble/hard_bubble.swf (folder/id name mismatch: source SWF is named 'hard_bubble', item id is 'bubble_hard' -- same family of mismatch as the earlier cosmapolitan/cosma_politan precedent) and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-bubble_tiny",
+      "displayName": "Tiny Bubble",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_bubble_tiny",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json's 'bubble_tiny' entry (tool 'bubble_tuner', input plain_bubble x3). plain_bubble is BubbleTree's rewardItemType (coUserver/lib/entities/plants/trees/bubbletree.dart), and BubbleTree is one of the 38 world-entity types placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.BubbleTree present on firebog/cave/ilmenskie/enchanted and other region themes). bubble_tuner itself is real ToolVendor + StreetSpirit stock (coUserver/lib/entities/npcs/vendors/{toolvendor,vendor}.dart), and both ToolVendor and the 3 concrete StreetSpirit subclasses are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed BubbleTree for plain_bubble, buy/find bubble_tuner from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "bubble_tiny",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/bubble_tuner.json",
+        "recipeTool": "bubble_tuner",
+        "recipeInput": {
+          "plain_bubble": 3
+        },
+        "recipeOutputAmount": 2,
+        "plainBubbleSourceEntity": "BubbleTree"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/food/tiny_bubble/tiny_bubble.swf (folder/id name mismatch: source SWF is named 'tiny_bubble', item id is 'bubble_tiny' -- same family of mismatch as the earlier cosmapolitan/cosma_politan precedent) and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gas_crying",
+      "displayName": "Crying Gas",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_gas_crying",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/gassifier.json's 'gas_crying' entry (tool 'gassifier', input general_vapour x4). general_vapour is GasPlant's rewardItemType (coUserver/lib/entities/plants/trees/gasplant.dart), and GasPlant is placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.GasPlant 1.6 on the firebog region theme, also present on the shared harvestable-cluster region themes). gassifier itself is real ToolVendor + StreetSpirit stock, and both are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed GasPlant for general_vapour, buy/find gassifier from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "gas_crying",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/gassifier.json",
+        "recipeTool": "gassifier",
+        "recipeInput": {
+          "general_vapour": 4
+        },
+        "generalVapourSourceEntity": "GasPlant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/crying_gas/crying_gas.swf and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gas_heavy",
+      "displayName": "Heavy Gas",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_gas_heavy",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/gassifier.json's 'gas_heavy' entry (tool 'gassifier', input general_vapour x6). general_vapour is GasPlant's rewardItemType (coUserver/lib/entities/plants/trees/gasplant.dart), and GasPlant is placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.GasPlant 1.6 on the firebog region theme, also present on the shared harvestable-cluster region themes). gassifier itself is real ToolVendor + StreetSpirit stock, and both are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed GasPlant for general_vapour, buy/find gassifier from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "gas_heavy",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/gassifier.json",
+        "recipeTool": "gassifier",
+        "recipeInput": {
+          "general_vapour": 6
+        },
+        "generalVapourSourceEntity": "GasPlant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/heavy_gas/heavy_gas.swf and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-helium",
+      "displayName": "Helium",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_helium",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/gassifier.json's 'helium' entry (tool 'gassifier', input general_vapour x5). general_vapour is GasPlant's rewardItemType (coUserver/lib/entities/plants/trees/gasplant.dart), and GasPlant is placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.GasPlant 1.6 on the firebog region theme, also present on the shared harvestable-cluster region themes). gassifier itself is real ToolVendor + StreetSpirit stock, and both are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed GasPlant for general_vapour, buy/find gassifier from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "helium",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/gassifier.json",
+        "recipeTool": "gassifier",
+        "recipeInput": {
+          "general_vapour": 5
+        },
+        "generalVapourSourceEntity": "GasPlant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/helium/helium.swf and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gas_laughing",
+      "displayName": "Laughing Gas",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_gas_laughing",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/gassifier.json's 'gas_laughing' entry (tool 'gassifier', input general_vapour x3). general_vapour is GasPlant's rewardItemType (coUserver/lib/entities/plants/trees/gasplant.dart), and GasPlant is placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.GasPlant 1.6 on the firebog region theme, also present on the shared harvestable-cluster region themes). gassifier itself is real ToolVendor + StreetSpirit stock, and both are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed GasPlant for general_vapour, buy/find gassifier from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "gas_laughing",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/gassifier.json",
+        "recipeTool": "gassifier",
+        "recipeInput": {
+          "general_vapour": 3
+        },
+        "generalVapourSourceEntity": "GasPlant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/laughing_gas/laughing_gas.swf and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gas_white",
+      "displayName": "White Gas",
+      "category": "gasses & bubbles (player item)",
+      "sourceAssetId": "item_icon_gas_white",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live recipe output: coUserver/lib/entities/items/actions/recipes/json/gassifier.json's 'gas_white' entry (tool 'gassifier', input general_vapour x8). general_vapour is GasPlant's rewardItemType (coUserver/lib/entities/plants/trees/gasplant.dart), and GasPlant is placed by tools/seed-demo-world.mjs (confirmed by grep, e.g. RARITY.GasPlant 1.6 on the firebog region theme, also present on the shared harvestable-cluster region themes). gassifier itself is real ToolVendor + StreetSpirit stock, and both are placed (2026-08-28 vendor/harvest NPC placement pass). End-to-end live: harvest a placed GasPlant for general_vapour, buy/find gassifier from a placed vendor, craft.",
+      "routeIds": {
+        "itemId": "gas_white",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/gassifier.json",
+        "recipeTool": "gassifier",
+        "recipeInput": {
+          "general_vapour": 8
+        },
+        "generalVapourSourceEntity": "GasPlant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/white_gas/white_gas.swf and wired into gasses-bubbles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-chick",
+      "displayName": "Chick",
+      "category": "herdkeeping supplies (player item)",
+      "sourceAssetId": "item_icon_chick",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live multi-hop route, freshly re-traced this pass (and partly unblocked by this same batch's own gasses-bubbles conversions): Chicken.incubate()/incubate2() (coUserver/lib/entities/npcs/animals/chicken.dart, EGG_ANIMALS map) consumes 1x 'chicken_egg' and directly grants 1x 'chick' via InventoryV2.addItemToUser -- not a spawn, a real inventory item grant. Chicken is one of the 38 placed world-entity types. 'chicken_egg' is itself a real, unmodified egg_seasoner.json recipe output (egg x1 + garlic x10 + gas_white x1); egg_seasoner is real ToolVendor/StreetSpirit stock, both placed. 'egg' (the shared base ingredient) is EggPlant's rewardItemType, and EggPlant is placed (RARITY.EggPlant on uralia2/kajuu and shared harvestable-cluster themes). garlic traces to the already-placed spice_mill/SpicePlant chain (prior batch); gas_white traces to this same batch's gassifier/GasPlant chain above. Every link in this chain is real and live-reachable.",
+      "routeIds": {
+        "itemId": "chick",
+        "grantedBy": "Chicken.incubate2()",
+        "requiredItem": "chicken_egg",
+        "eggRecipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "eggIngredients": [
+          "egg",
+          "garlic",
+          "gas_white"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/inhabitants/chick/chick.swf (nested DefineSprite 'sit' pose, frame 1) and wired into herdkeeping.json's iconUrl/spriteUrl (both previously the same flat 'Chick.png' dead link), replacing dead childrenofur.com links. The separate 'animSpriteUrl' field (chick__x1_sit_...) still points at a dead link -- only iconUrl/spriteUrl were in scope this pass; the source SWF's full walk/hop animation (frames up to 708) was not used. No other game logic touched."
+    },
+    {
+      "id": "item-piglet",
+      "displayName": "Piglet",
+      "category": "herdkeeping supplies (player item)",
+      "sourceAssetId": "item_icon_piglet",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live multi-hop route, freshly re-traced this pass (and partly unblocked by this same batch's own gasses-bubbles conversions): Chicken.incubate()/incubate2() (coUserver/lib/entities/npcs/animals/chicken.dart, EGG_ANIMALS map) consumes 1x 'piggy_egg' and directly grants 1x 'piglet' via InventoryV2.addItemToUser -- not a spawn, a real inventory item grant. Chicken is one of the 38 placed world-entity types. 'piggy_egg' is itself a real, unmodified egg_seasoner.json recipe output (egg x1 + bubble_hard x7 + potato x2 + apple x3); egg_seasoner is real ToolVendor/StreetSpirit stock, both placed. 'egg' (the shared base ingredient) is EggPlant's rewardItemType, and EggPlant is placed (RARITY.EggPlant on uralia2/kajuu and shared harvestable-cluster themes). bubble_hard traces to this same batch's bubble_tuner/BubbleTree chain above; potato/apple trace to the already-placed Garden-NPC crop harvest and the fruit_changing_machine recipe (prior batches). Every link in this chain is real and live-reachable.",
+      "routeIds": {
+        "itemId": "piglet",
+        "grantedBy": "Chicken.incubate2()",
+        "requiredItem": "piggy_egg",
+        "eggRecipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "eggIngredients": [
+          "egg",
+          "bubble_hard",
+          "potato",
+          "apple"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/inhabitants/piglet/piglet.swf (nested DefineSprite 'sit' pose, frame 1) and wired into herdkeeping.json's iconUrl/spriteUrl (both previously the same flat 'Piglet.png' dead link), replacing dead childrenofur.com links. The separate 'animSpriteUrl' field still points at a dead link -- only iconUrl/spriteUrl were in scope this pass. No other game logic touched."
+    },
+    {
+      "id": "item-caterpillar",
+      "displayName": "Caterpillar",
+      "category": "herdkeeping supplies (player item)",
+      "sourceAssetId": "item_icon_caterpillar",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live multi-hop route, freshly re-traced this pass (and partly unblocked by this same batch's own gasses-bubbles conversions): Chicken.incubate()/incubate2() (coUserver/lib/entities/npcs/animals/chicken.dart, EGG_ANIMALS map) consumes 1x 'butterfly_egg' and directly grants 1x 'caterpillar' via InventoryV2.addItemToUser -- not a spawn, a real inventory item grant. Chicken is one of the 38 placed world-entity types. 'butterfly_egg' is itself a real, unmodified egg_seasoner.json recipe output (egg x1 + bubble_blue x8 + bubble_tiny x10 + honey x10); egg_seasoner is real ToolVendor/StreetSpirit stock, both placed. 'egg' (the shared base ingredient) is EggPlant's rewardItemType, and EggPlant is placed (RARITY.EggPlant on uralia2/kajuu and shared harvestable-cluster themes). bubble_blue/bubble_tiny trace to this same batch's bubble_tuner/BubbleTree chain above; honey is real, unmodified ToolVendor stock (prior batch). Every link in this chain is real and live-reachable.",
+      "routeIds": {
+        "itemId": "caterpillar",
+        "grantedBy": "Chicken.incubate2()",
+        "requiredItem": "butterfly_egg",
+        "eggRecipe": "coUserver/lib/entities/items/actions/recipes/json/egg_seasoner.json",
+        "eggIngredients": [
+          "egg",
+          "bubble_blue",
+          "bubble_tiny",
+          "honey"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/inhabitants/caterpillar/caterpillar.swf (nested DefineSprite 'sit' pose, frame 1) and wired into herdkeeping.json's iconUrl/spriteUrl (both previously the same flat 'Caterpillar.png' dead link), replacing dead childrenofur.com links. The separate 'animSpriteUrl' field still points at a dead link -- only iconUrl/spriteUrl were in scope this pass. No other game logic touched."
+    },
+    {
+      "id": "item-emblem_of_alph",
+      "displayName": "Emblem of Alph",
+      "category": "emblems & icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_alph",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live route: Shrine.donate() (coUserver/lib/entities/npcs/shrines/shrine.dart) is a real player action reachable via the shrine's 'Commune With' -> donate-item flow -- donating any priced item to the shrine adds favor (floor(price*qty*0.35)) toward the matching giant via Metabolics._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the giant's favor-max threshold resets favor, raises the max by 100, and grants 1x 'emblem_of_alph' via InventoryV2.addItemToUser (plus the first_emblem_of_alph achievement). The alph Shrine is one of the 11 giant shrine world-entity types placed by tools/seed-demo-world.mjs (prior batch). Donating is trivial to satisfy (any purchasable item qualifies), so this is genuinely live, not just technically reachable.",
+      "routeIds": {
+        "itemId": "emblem_of_alph",
+        "grantedBy": "Metabolics._setFavor (via Shrine.donate)",
+        "shrineType": "alph",
+        "achievement": "first_emblem_of_alph"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_alph/emblem_alph.swf (single-frame main timeline, frame reused for both icon.png and sprite.png) and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-emblem_of_cosma",
+      "displayName": "Emblem of Cosma",
+      "category": "emblems & icons (player item)",
+      "sourceAssetId": "item_icon_emblem_of_cosma",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live route: Shrine.donate() (coUserver/lib/entities/npcs/shrines/shrine.dart) is a real player action reachable via the shrine's 'Commune With' -> donate-item flow -- donating any priced item to the shrine adds favor (floor(price*qty*0.35)) toward the matching giant via Metabolics._setFavor (coUserver/lib/endpoints/metabolics/metabolics.dart); crossing the giant's favor-max threshold resets favor, raises the max by 100, and grants 1x 'emblem_of_cosma' via InventoryV2.addItemToUser (plus the first_emblem_of_cosma achievement). The cosma Shrine is one of the 11 giant shrine world-entity types placed by tools/seed-demo-world.mjs (prior batch). Donating is trivial to satisfy (any purchasable item qualifies), so this is genuinely live, not just technically reachable.",
+      "routeIds": {
+        "itemId": "emblem_of_cosma",
+        "grantedBy": "Metabolics._setFavor (via Shrine.donate)",
+        "shrineType": "cosma",
+        "achievement": "first_emblem_of_cosma"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/emblem_cosma/emblem_cosma.swf (single-frame main timeline, frame reused for both icon.png and sprite.png) and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-icon_of_alph",
+      "displayName": "Icon of Alph",
+      "category": "emblems & icons (player item)",
+      "sourceAssetId": "item_icon_icon_of_alph",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified, live route, chained directly onto emblem_of_alph above: the 'Iconize' item action on emblem_of_alph itself (Emblem.iconize(), coUserver/lib/entities/items/actions/itemgroups/emblems-icons.dart) takes 11x emblem_of_alph from the player's inventory (InventoryV2.takeAnyItemsFromUser) and grants 1x icon_of_alph (InventoryV2.addItemToUser), publishing the 'iconGet' requirement progress. Since emblem_of_alph is itself genuinely live (repeated Alph Shrine donation, see item-emblem_of_alph), this is a real, if repetitive (11x), end-to-end live route.",
+      "routeIds": {
+        "itemId": "icon_of_alph",
+        "grantedBy": "Emblem.iconize()",
+        "requiredItem": {
+          "emblem_of_alph": 11
+        },
+        "actionName": "Iconize"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/giants/icon_alph/icon_alph.swf (2-frame main timeline, 'iconic'/'1'; only source in this batch with embedded bitmap tags -- a framed-portrait style icon, 2 DefineBits* tags alongside vector shapes) and wired into emblems-icons.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-juju_paperweight",
+      "displayName": "Ancestral Paperweight",
+      "category": "quest items (player item)",
+      "sourceAssetId": "item_icon_juju_paperweight",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase -- checked every recipes/json/*.json file, every vendor itemsForSale/vendorType category (including the generic pickItems(['Storage']) mechanism, which does not cover the 'Quest Items' category), every NPC/entity harvest reward, and every quest/achievement definition (grep for 'juju_paperweight' across coUserver/, tools/, content/ finds only this item's own json/entry). The item's description ties it to the Juju Bandits/smuggler questline (source folder tmp/glitch-items/misc/juju_paperweight/juju_paperweight), but no quest data implementing that questline exists in coUserver's quests/ directory. Same genuinely-missing-design category as bacon/potion_rainbow_juice/juju_paperweight's sibling contraband from earlier batches, not a placement gap.",
+      "routeIds": {
+        "itemId": "juju_paperweight"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/juju_paperweight/juju_paperweight.swf (2-frame main timeline, 'iconic'/'1') and wired into quest_items.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-contraband",
+      "displayName": "Contraband",
+      "category": "quest items (player item)",
+      "sourceAssetId": "item_icon_contraband",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase -- checked every recipes/json/*.json file, every vendor itemsForSale/vendorType category (including the generic pickItems(['Storage']) mechanism, which does not cover the 'Quest Items' category), every NPC/entity harvest reward, and every quest/achievement definition (grep for 'contraband' across coUserver/, tools/, content/ finds only this item's own json/entry). The item's description ties it to the Juju Bandits/smuggler questline (source folder tmp/glitch-items/misc/contraband/contraband), but no quest data implementing that questline exists in coUserver's quests/ directory. Same genuinely-missing-design category as bacon/potion_rainbow_juice/juju_paperweight's sibling contraband from earlier batches, not a placement gap.",
+      "routeIds": {
+        "itemId": "contraband"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/contraband/contraband.swf (1-frame main timeline, frame reused for both icon.png and sprite.png) and wired into quest_items.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-bb_music_trophy",
+      "displayName": "BB Music Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_bb_music_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route: coUserver/lib/achievements/achievements.dart and achievement_checkers.dart contain zero calls to InventoryV2.addItemToUser or any other item-grant API -- the achievement system currently only tracks/describes achievements (coUserver/lib/achievements/json/trophies.json has this trophy's display metadata, e.g. dead c2.glitch.bz imageUrl) and never grants a corresponding trophy item. This is a genuine missing-design gap shared by every *_trophy item in this batch, not a placement gap.",
+      "routeIds": {
+        "itemId": "bb_music_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_music_b_brown/trophy_music_b_brown.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-blue_white_hexagon_key",
+      "displayName": "Blue-White Hexagon Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_blue_white_hexagon_key",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver -- checked every vendor itemsForSale list, every recipes/json/*.json file, and every door/*.dart class. 11 of the 12 keys.json keys (all but teal_white_triangle_key) have no matching door/consumer class at all: coUserver/lib/entities/doors/ only defines locked_door.dart (the abstract base) and one concrete subclass, ld_teal-white-triangle.dart.",
+      "routeIds": {
+        "itemId": "blue_white_hexagon_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_8/door_key_8.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-blue_yellow_circle_key",
+      "displayName": "Blue-Yellow Circle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_blue_yellow_circle_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key: no matching door/consumer class, no vendor stock, no recipe output.",
+      "routeIds": {
+        "itemId": "blue_yellow_circle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_10/door_key_10.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-bubble_trophy",
+      "displayName": "Bubble Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_bubble_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy: no item-grant code exists anywhere in the achievement system.",
+      "routeIds": {
+        "itemId": "bubble_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_bubble/trophy_bubble.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-conch",
+      "displayName": "Conch",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_conch",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver -- checked every vendor itemsForSale list, every recipes/json/*.json file, and every NPC/quest .dart file; this id appears nowhere outside its own misc.json definition.",
+      "routeIds": {
+        "itemId": "conch"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/conch/conch.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-crabpod_headphones",
+      "displayName": "CrabPod Headphones",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_crabpod_headphones",
+      "destination": "Player item",
+      "accessibleThrough": "Genuinely live, if temporary: coUserver/lib/entities/npcs/crab.dart's Crab.playMusic loans the player crabpod_headphones (InventoryV2.addItemToUser) while a musicblock plays, then reclaims them (InventoryV2.takeAnyItemsFromUser) once the song ends -- the class's own WARN_HEADPHONES ('You stole my headphones!') string documents that a player who moves/spends the item elsewhere during the async listening delay keeps it instead of it being reclaimed. Crab is confirmed placed in the live world (tools/seed-demo-world.mjs RARITY table, chance:22 on applicable streets), so the interaction itself is reachable today.",
+      "routeIds": {
+        "itemId": "crabpod_headphones"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/crabphones/crabphones.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-crafty_bot",
+      "displayName": "Crafty Bot",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_crafty_bot",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver; this id appears nowhere outside its own misc.json definition, despite its description referencing a crafting-helper mechanic that does not exist in the current codebase. (Also the one item in this batch whose source SWF has a non-white SetBackgroundColor -- (102,153,153) -- so its icon/sprite were exported via a white-patched copy of the SWF before applying the standard difference-matting alpha workaround; see conversion notes.)",
+      "routeIds": {
+        "itemId": "crafty_bot"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/inhabitants/craftybot/npc_crafty_bot.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-db_music_trophy",
+      "displayName": "DB Music Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_db_music_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "db_music_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_music_d_blue/trophy_music_d_blue.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-dg_music_trophy",
+      "displayName": "DG Music Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_dg_music_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "dg_music_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_music_d_green/trophy_music_d_green.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-dr_music_trophy",
+      "displayName": "DR Music Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_dr_music_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "dr_music_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_music_d_red/trophy_music_d_red.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-drink_ticket",
+      "displayName": "Diabolical Drink Ticket",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_drink_ticket",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver; this id appears nowhere outside its own misc.json definition (its description references a 'Hell's Bartender' NPC and reward mechanic that does not exist in the current codebase).",
+      "routeIds": {
+        "itemId": "drink_ticket"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/drink_ticket/drink_ticket.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-egg_hunter_trophy",
+      "displayName": "Egg Hunter Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_egg_hunter_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy -- coUserver/lib/achievements/json/trophies.json has this trophy's display metadata only, no grant code anywhere.",
+      "routeIds": {
+        "itemId": "egg_hunter_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_egghunt/trophy_egghunt.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-emblem_trophy",
+      "displayName": "Emblem Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_emblem_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "emblem_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_emblems/trophy_emblems.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-faded_heart",
+      "displayName": "Faded Heart",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_faded_heart",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route despite sourcing from tmp/glitch-items/quest_items/ -- grepped every file under coUserver/lib/quests/json/ directly and found no quest referencing this item id anywhere; the original quest this item belonged to was never ported.",
+      "routeIds": {
+        "itemId": "faded_heart"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/quest_items/faded_heart/faded_heart.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-fruit_trophy",
+      "displayName": "Fruit Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_fruit_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "fruit_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_fruit/trophy_fruit.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gas_trophy",
+      "displayName": "Gas Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_gas_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "gas_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_gas/trophy_gas.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-gem_trophy",
+      "displayName": "Gem Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_gem_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "gem_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_gem/trophy_gem.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-green_orange_hexagon_key",
+      "displayName": "Green-Orange Hexagon Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_green_orange_hexagon_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "green_orange_hexagon_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_12/door_key_12.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-green_white_circle_key",
+      "displayName": "Green-White Circle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_green_white_circle_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "green_white_circle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_2/door_key_2.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-greeter_twig",
+      "displayName": "Greeter Twig",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_greeter_twig",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver, despite its unusually rich 91-frame source SWF (searching/available states suggesting a Greeter NPC search minigame) -- grepped every 'greeter'/'Greeter' reference in coUserver/lib and found only unrelated cubimal-collection code (itemgroups/cubimals.dart, npcs/items/cubimal.dart, npcs/rube.dart), none of which reference this item id.",
+      "routeIds": {
+        "itemId": "greeter_twig"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/greeter_twig/greeter_twig.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-hello_pumpkin",
+      "displayName": "Hello Pumpkin!",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_hello_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Unlike its 5 sibling carved-pumpkin items, hello_pumpkin is NOT a knife_and_board.json recipe output (only jack_the_pumpkin/lem_the_pumpkin/shiny_hello_pumpkin/steve_the_pumpkin/zille_the_pumpkin are). It is referenced only by itemgroups/pumpkins.dart's illuminatePumpkin action, which requires the player to already own a hello_pumpkin (special-cases it to shiny_hello_pumpkin instead of the usual '_the_pumpkin'->'_o_lantern' rename) -- that action consumes the item, it does not grant it. No vendor/recipe/harvest grants hello_pumpkin itself.",
+      "routeIds": {
+        "itemId": "hello_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_carved_3/pumpkin_carved_3.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-jack_o_lantern",
+      "displayName": "Jack-O-Lantern",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_jack_o_lantern",
+      "destination": "Player item",
+      "accessibleThrough": "Derived from jack_the_pumpkin: itemgroups/pumpkins.dart's illuminatePumpkin action consumes 5 fireflies (InventoryV2.addFireflyToJar amount:-5) plus 1 jack_the_pumpkin to grant jack_o_lantern (itemType.replaceAll('_the_pumpkin','_o_lantern')). Since jack_the_pumpkin has a real (seasonal) recipe route, this is reachable too, same season.",
+      "routeIds": {
+        "itemId": "jack_o_lantern"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_lit_1/pumpkin_lit_1.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-jack_the_pumpkin",
+      "displayName": "Jack the Pumpkin",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_jack_the_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route: coUserver/lib/entities/items/actions/recipes/json/knife_and_board.json's 'jack_the_pumpkin' recipe crafts it directly from 1x raw 'pumpkin' via the knife_and_board tool. Gated by recipe.holidays=['Zilloween'], and this gate is genuinely enforced (not decorative): RecipeBook.listRecipes (recipebook.dart) computes inSeason from the real in-game calendar (coUserver/lib/endpoints/time.dart's getHolidays, custom month 'Remember' days 25-37) and only lists the recipe when inSeason is true -- so this is a real, recurring seasonal window, not a permanently-blocked route. Raw 'pumpkin' itself is a real Garden-NPC harvest item per a prior batch's findings (Garden is now placed live).",
+      "routeIds": {
+        "itemId": "jack_the_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_carved_1/pumpkin_carved_1.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-lem_o_lantern",
+      "displayName": "Lem-O-Lantern",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_lem_o_lantern",
+      "destination": "Player item",
+      "accessibleThrough": "Same illuminatePumpkin derivation pattern as jack_o_lantern, from lem_the_pumpkin.",
+      "routeIds": {
+        "itemId": "lem_o_lantern"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_lit_5/pumpkin_lit_5.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-lem_the_pumpkin",
+      "displayName": "Lem the Pumpkin",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_lem_the_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Same real knife_and_board.json recipe pattern as jack_the_pumpkin (1x pumpkin, Zilloween-gated, genuinely enforced season check).",
+      "routeIds": {
+        "itemId": "lem_the_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_carved_5/pumpkin_carved_5.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-moving_box",
+      "displayName": "Moving Box",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_moving_box",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver; this id appears nowhere outside its own misc.json definition (its description references a 'Glitch Advanced Moving Service' NPC/mechanic that does not exist in the current codebase).",
+      "routeIds": {
+        "itemId": "moving_box"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_moving_box/bag_moving_box.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-new_player_pack_chicken",
+      "displayName": "New Player Pack (Chicken)",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_new_player_pack_chicken",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route: coUserver/lib/entities/items/actions/recipes/json/tinkertool.json's 'create_new_player_pack_chicken' recipe (tinkertool tool, 'tinkering' skill level 1, inputs coffee/spinach/eggy_scramble/watering_can/chicken_egg). tinkertool is confirmed real ToolVendor and StreetSpirit vendor stock (toolvendor.dart line 30, vendor.dart lines 136/194), and both ToolVendor and the concrete StreetSpirit subclasses are now placed live per the prior vendor-placement pass. The chicken_egg ingredient's own upstream source was not independently re-traced in this pass (chicken.dart's EGG_ANIMALS shows how eggs are consumed/hatched, not how they are originally obtained) -- noted honestly as unverified rather than assumed live.",
+      "routeIds": {
+        "itemId": "new_player_pack_chicken"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_gift_box/bag_gift_box_wrapped/bag_gift_box_wrapped.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-new_player_pack_piggy",
+      "displayName": "New Player Pack (Piggy)",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_new_player_pack_piggy",
+      "destination": "Player item",
+      "accessibleThrough": "Same tinkertool.json recipe pattern as new_player_pack_chicken ('create_new_player_pack_piggy': coffee/spinach/sammich/knife_and_board/piggy_egg). Same tinkertool vendor-route verification and same caveat about the piggy_egg ingredient's upstream source not being independently re-traced.",
+      "routeIds": {
+        "itemId": "new_player_pack_piggy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_gift_box/bag_gift_box_wrapped/bag_gift_box_wrapped.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-note_pole",
+      "displayName": "Note Pole",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_note_pole",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver; this id appears nowhere outside its own misc.json definition. (Its iconUrl/spriteUrl were both empty strings before this pass -- now populated with real converted art for the first time.)",
+      "routeIds": {
+        "itemId": "note_pole"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/note_pole/note_pole.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-orange_blue_square_key",
+      "displayName": "Orange-Blue Square Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_orange_blue_square_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "orange_blue_square_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_3/door_key_3.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-pareidolic_cosma_toast",
+      "displayName": "Pareidolic Giant Image on Toast",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_pareidolic_cosma_toast",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver; this id appears nowhere outside its own misc.json definition (its description references a 'GleBay' marketplace mechanic that does not exist in the current codebase).",
+      "routeIds": {
+        "itemId": "pareidolic_cosma_toast"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/rare_items/pareidolic_cosma_toast/pareidolic_cosma_toast.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-piggy_plop",
+      "displayName": "Piggy Plop",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_piggy_plop",
+      "destination": "Player item",
+      "accessibleThrough": "Real world-entity drop: coUserver/lib/entities/npcs/animals/piggy.dart's feed handler creates a ground-placed piggy_plop item (Item.clone('piggy_plop') + putItemOnGround) when a placed Piggy is fed crop products. Piggy is confirmed placed live (tools/seed-demo-world.mjs RARITY table, e.g. firebog/highlands/uralia2/kajuu entries). itemgroups/piggy_plop.dart's examinePlop action (a real, wired interaction) then has a chance to yield a matching seed item, and also fires the 'examine_piggy_plop' event that coUserver/lib/quests/json/doody_inspector.json's real Q9 quest ('Doody Inspector') tracks toward its reward.",
+      "routeIds": {
+        "itemId": "piggy_plop"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/plop/plop.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-purple_orange_circle_key",
+      "displayName": "Purple-Orange Circle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_purple_orange_circle_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "purple_orange_circle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_6/door_key_6.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-purple_red_square_key",
+      "displayName": "Purple-Red Square Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_purple_red_square_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "purple_red_square_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_11/door_key_11.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-red_green_triangle_key",
+      "displayName": "Red-Green Triangle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_red_green_triangle_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "red_green_triangle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_5/door_key_5.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-shiny_hello_pumpkin",
+      "displayName": "Shiny Hello Pumpkin!",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_shiny_hello_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route, and notably NOT derived from hello_pumpkin: knife_and_board.json's 'shiny_hello_pumpkin' recipe crafts it directly from 1x raw 'pumpkin' (same Zilloween-gated, genuinely-enforced-season pattern as jack_the_pumpkin), bypassing the otherwise-unreachable hello_pumpkin entirely.",
+      "routeIds": {
+        "itemId": "shiny_hello_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_lit_3/pumpkin_lit_3.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-spice_trophy",
+      "displayName": "Spice Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_spice_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "spice_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_spice/trophy_spice.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-spigot",
+      "displayName": "Spigot",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_spigot",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver. Note: a substring grep initially matched collectibles.json's unrelated 'antique_spigot' item; an exact '\"spigot\"' grep confirms zero real references to this item outside its own misc.json definition.",
+      "routeIds": {
+        "itemId": "spigot"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/tool_base/spigot/spigot.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-steve_o_lantern",
+      "displayName": "Steve-O-Lantern",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_steve_o_lantern",
+      "destination": "Player item",
+      "accessibleThrough": "Same illuminatePumpkin derivation pattern as jack_o_lantern, from steve_the_pumpkin.",
+      "routeIds": {
+        "itemId": "steve_o_lantern"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_lit_2/pumpkin_lit_2.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-steve_the_pumpkin",
+      "displayName": "Steve the Pumpkin",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_steve_the_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Same real knife_and_board.json recipe pattern as jack_the_pumpkin ('steve_the_pumpkin': 1x pumpkin, Zilloween-gated).",
+      "routeIds": {
+        "itemId": "steve_the_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_carved_2/pumpkin_carved_2.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-street_creator_dirt_trophy",
+      "displayName": "Street Creator Dirt Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_street_creator_dirt_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy -- trophies.json has display metadata (including 'related' cross-links to the other 3 street_creator trophies) but no grant code anywhere; also checked collectibles.json's incidental substring hit and confirmed it is unrelated (a different collectible item, not this trophy).",
+      "routeIds": {
+        "itemId": "street_creator_dirt_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_street_creator_dirt/trophy_street_creator_dirt.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-street_creator_earth_trophy",
+      "displayName": "Street Creator Earth Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_street_creator_earth_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as street_creator_dirt_trophy.",
+      "routeIds": {
+        "itemId": "street_creator_earth_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_street_creator_earth/trophy_street_creator_earth.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-street_creator_rock_trophy",
+      "displayName": "Street Creator Rock Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_street_creator_rock_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as street_creator_dirt_trophy.",
+      "routeIds": {
+        "itemId": "street_creator_rock_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_street_creator_rock/trophy_street_creator_rock.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-street_creator_wood_trophy",
+      "displayName": "Street Creator Wood Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_street_creator_wood_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as street_creator_dirt_trophy.",
+      "routeIds": {
+        "itemId": "street_creator_wood_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_street_creator_wood/trophy_street_creator_wood.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-teal_red_hexagon_key",
+      "displayName": "Teal-Red Hexagon Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_teal_red_hexagon_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "teal_red_hexagon_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_4/door_key_4.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-teal_white_triangle_key",
+      "displayName": "Teal-White Triangle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_teal_white_triangle_key",
+      "destination": "Player item",
+      "accessibleThrough": "The one key of the 12 with a real matching consumer: coUserver/lib/entities/doors/ld_teal-white-triangle.dart's TealWhiteTriangleLockedDoor requires exactly this key (ItemRequirements.any=[requiredKey]) to travel Subarna Spells -> Ajaya Bliss. Grep-confirmed this door class is never instantiated anywhere outside its own file (no factory/placement reference), so it is real but entirely unplaced -- the same 'wired but inert' pattern documented for ToolVendor/StreetSpirit/Garden before their placement pass, except no placement pass exists for doors at all. Even if the door were placed, the key itself still has no vendor/recipe/harvest granting it, so this remains a genuine no-route item, just with slightly more real downstream logic than the other 11 keys.",
+      "routeIds": {
+        "itemId": "teal_white_triangle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_9/door_key_9.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-trophy_cubimal",
+      "displayName": "Cubimal Series 1 Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_trophy_cubimal",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy -- also checked itemgroups/cubimals.dart and npcs/items/cubimal.dart directly (the only other files mentioning cubimals) for a trophy grant; neither references this item.",
+      "routeIds": {
+        "itemId": "trophy_cubimal"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_cubimal/trophy_cubimal.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-trophy_cubimal_2",
+      "displayName": "Cubimal Series 2 Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_trophy_cubimal_2",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as trophy_cubimal.",
+      "routeIds": {
+        "itemId": "trophy_cubimal_2"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_cubimal_2/trophy_cubimal_2.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-xs_music_trophy",
+      "displayName": "XS Music Trophy",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_xs_music_trophy",
+      "destination": "Player item",
+      "accessibleThrough": "Same achievement-system gap as bb_music_trophy.",
+      "routeIds": {
+        "itemId": "xs_music_trophy"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/trophies/trophy_music_x_shiny/trophy_music_x_shiny.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-yellow_purple_triangle_key",
+      "displayName": "Yellow-Purple Triangle Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_yellow_purple_triangle_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "yellow_purple_triangle_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_1/door_key_1.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-yellow_teal_square_key",
+      "displayName": "Yellow-Teal Square Key",
+      "category": "keys (player item)",
+      "sourceAssetId": "item_icon_yellow_teal_square_key",
+      "destination": "Player item",
+      "accessibleThrough": "Same check and same result as blue_white_hexagon_key.",
+      "routeIds": {
+        "itemId": "yellow_teal_square_key"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/keys/door_key_7/door_key_7.swf and wired into keys.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-zille_o_lantern",
+      "displayName": "Zille-O-Lantern",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_zille_o_lantern",
+      "destination": "Player item",
+      "accessibleThrough": "Same illuminatePumpkin derivation pattern as jack_o_lantern, from zille_the_pumpkin.",
+      "routeIds": {
+        "itemId": "zille_o_lantern"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_lit_4/pumpkin_lit_4.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-zille_the_pumpkin",
+      "displayName": "Zille the Pumpkin",
+      "category": "misc (player item)",
+      "sourceAssetId": "item_icon_zille_the_pumpkin",
+      "destination": "Player item",
+      "accessibleThrough": "Same real knife_and_board.json recipe pattern as jack_the_pumpkin ('zille_the_pumpkin': 1x pumpkin, Zilloween-gated).",
+      "routeIds": {
+        "itemId": "zille_the_pumpkin"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/carved_pumpkins/pumpkin_carved_4/pumpkin_carved_4.swf and wired into misc.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
     }
   ],
   "deliberatelyDeferred": [
@@ -2692,6 +3874,13 @@
       "category": "synthetic visual stand-in (retired)",
       "reason": "Superseded: tools/seed-demo-world.mjs now seeds the real 'wood_tree' asset at the same array index (see content/source-manifest.json), so DemoTree is no longer placed anywhere. The class and its hand-drawn placeholder SVG (files/sprites/generated/demo-tree.svg) remain in the codebase, unreferenced by the seed, in case a future rollback or a distinct non-interactive-filler use case needs it.",
       "replacementMilestone": "None planned -- permanently superseded by the real 'wood_tree' asset. Remove the class/SVG only if a future cleanup pass confirms nothing else references it."
+    },
+    {
+      "id": "demo-wheat",
+      "displayName": "Demo Wheat",
+      "category": "synthetic visual stand-in (retired)",
+      "reason": "Removed 2026-08-28 (live bug triage: user correctly identified it as a placeholder with no real game content behind it -- no real item, no real actions). Unlike DemoChicken/DemoTree above, it was never superseded by a converted real-art entity: no matching 'wheat' source SWF exists in tmp/glitch-items/, and no 'wheat' item exists in the item registry, to convert as a genuine replacement. tools/seed-demo-world.mjs no longer places DemoWheat anywhere (removed from RARITY/REGION_THEME/REAL_TYPES/RUNTIME_ASSET_ID, plus an explicit one-time DELETE for any rows a prior run already seeded). The class and its hand-drawn placeholder SVG (files/sprites/generated/demo-wheat.svg) remain in the codebase, unreferenced by the seed, same as DemoChicken/DemoTree.",
+      "replacementMilestone": "If a real wheat-like harvestable source asset and item are ever found/added, convert and wire a real entity class the same way WoodTree/BeanTree/etc. work, then place it in tools/seed-demo-world.mjs in DemoWheat's place. None planned currently."
     },
     {
       "id": "caterpillar",

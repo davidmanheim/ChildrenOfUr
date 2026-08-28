@@ -9,8 +9,8 @@ class PurpleFlowerRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/purple_flower__x1_1_x1_2_x1_3_x1_4_png_1354833813.png',
-				272, 45, 68, 45, 4, false)
+				'files/sprites/generated/converted/purple_flower-1-2-3-4.png',
+				272, 53, 68, 53, 4, false)
 		};
 
 		setState('1-2-3-4');

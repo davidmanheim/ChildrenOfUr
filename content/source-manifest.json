@@ -8810,10 +8810,2656 @@
           "numFrames": 1
         }
       ]
+    },
+    {
+      "id": "hooch",
+      "sourcePath": "tmp/glitch-items/drink/hooch/hooch.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/hooch/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hooch-1-2-3-4.png",
+          "frameWidth": 47,
+          "frameHeight": 51,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "purple_flower",
+      "sourcePath": "tmp/glitch-items/herbs/purple_flower/purple_flower.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/purple_flower/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/purple_flower-1-2-3-4.png",
+          "frameWidth": 68,
+          "frameHeight": 53,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "awesome_stew",
+      "sourcePath": "tmp/glitch-items/food/awesome_stew/awesome_stew.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/awesome_stew/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/awesome_stew-1-2-3-4.png",
+          "frameWidth": 44,
+          "frameHeight": 41,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "butterfly_milk",
+      "sourcePath": "tmp/glitch-items/drink/milk_butterfly/milk_butterfly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon. Source folder/file is 'milk_butterfly' (matching the pre-existing childrenofur.com URL's 'milk_butterfly' filename), same folder/id mismatch pattern already documented for the item-icon batch's butterfly_milk conversion.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/butterfly_milk/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly_milk-1-2-3-4.png",
+          "frameWidth": 37,
+          "frameHeight": 45,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "cinnamon",
+      "sourcePath": "tmp/glitch-items/spice/cinnamon/cinnamon.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/cinnamon/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cinnamon-1-2-3-4.png",
+          "frameWidth": 52,
+          "frameHeight": 18,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "sourcePath": "tmp/glitch-items/drink/coffee/coffee.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/coffee/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/coffee-1-2-3-4.png",
+          "frameWidth": 49,
+          "frameHeight": 33,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "earthshaker",
+      "sourcePath": "tmp/glitch-items/drink/earthshaker/earthshaker.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/earthshaker/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/earthshaker-1-2-3-4.png",
+          "frameWidth": 40,
+          "frameHeight": 54,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "fruity_juice",
+      "sourcePath": "tmp/glitch-items/drink/fruity_juice/fruity_juice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/fruity_juice/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/fruity_juice-1-2-3-4.png",
+          "frameWidth": 62,
+          "frameHeight": 93,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "hell_grapes",
+      "sourcePath": "tmp/glitch-items/food/bunch_of_grapes/bunch_of_grapes.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon. Source folder/file is 'bunch_of_grapes' (matching HellGrapes.dart's itemType 'bunch_of_grapes' and the pre-existing childrenofur.com URL), not the distinct 'bunch_of_grapes_hell' asset also present under tmp/glitch-items/misc/ (checked directly; that is a different, unused asset).",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/hell_grapes/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_grapes-1-2-3-4.png",
+          "frameWidth": 70,
+          "frameHeight": 73,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "hell_tomato",
+      "sourcePath": "tmp/glitch-items/food/tomato/tomato.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon. Source folder/file is the plain 'tomato' asset (matching HellTomato.dart's itemType 'tomato' and the pre-existing childrenofur.com URL) -- entity id 'hell_tomato' (matching the dart file name helltomatoes.dart/class HellTomato) is used here instead of the bare 'tomato' id specifically to avoid colliding with the already-converted croppery-gardening.json 'tomato' crop item's own content/sprites/items/tomato/ directory; they are unrelated assets that happen to share a source SWF name.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/hell_tomato/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hell_tomato-1-2-3-4.png",
+          "frameWidth": 44,
+          "frameHeight": 40,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "plain_bubble",
+      "sourcePath": "tmp/glitch-items/food/plain_bubble/plain_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), no DefineSprite/SymbolClass root -- 5 named states encoded via the DefineSceneAndFrameLabelData tag's SCENES field ('iconic' at frame 1, then '1'/'2'/'3'/'4' quantity/growth-stage poses at frames 2-5), same family/authoring convention already documented for this item's own icon conversion (see the item_icon_* entry for the same source file above). This pass uses frames 2-5 (the growth-stage poses) for the world-entity's own on-map appearance, distinct from frame 1 ('iconic'), which the earlier item-icon batch already used for the inventory icon.",
+      "conversionMethod": "ffdec -ignorebackground -export frame (rasterize main timeline with a transparent background) -> build-sprite-sheet.py packs frames 2-5 into the world-entity's own '1-2-3-4' Spritesheet strip. -ignorebackground was required: a first export attempt without it produced frames with a baked-in solid white/near-solid matte (PIL alpha-channel extrema of (255,255) or (254,255) across the whole sheet instead of a real 0-255 range) -- the exact ffdec export defect this pipeline's docs warn about. Re-exporting the same frame range with -ignorebackground fixed it; re-verified 0-255 alpha extrema and fully transparent (0,0,0,0) sheet corners on every output below before wiring any Spritesheet URL.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/plain_bubble/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/plain_bubble-1-2-3-4.png",
+          "frameWidth": 38,
+          "frameHeight": 38,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "still",
+      "sourcePath": "tmp/glitch-items/misc/still/still.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9/CWS, vector shapes only), main timeline (char 0, SymbolClass 'still_fla.MainTimeline') is a thin 128-frame wrapper around several nested DefineSprite characters; the real multi-state animation lives in DefineSprite chid=120 (72497-byte tag body), which carries 4 genuine FrameLabel tags -- 'empty', 'active', 'ready', 'collect' -- in that order, matching still.dart's 4 states by name exactly. ffdec's -dumpSWF nested-tag-list counters next to each FrameLabel are not real animation-frame numbers (documented pipeline caveat); resolved real 1-based frame boundaries instead via tools/swf-frame-labels.py's ShowFrame-counting labels command against chid 120 directly: empty=1, active=2, ready=101, collect=142 (sprite runs to frame 260 total). The resulting per-state frame counts -- empty=1, active=99, ready=41, collect=119 -- are an exact match to still.dart's pre-existing (dead-link) Spritesheet numFrames values, confirming the frame-boundary resolution against the original childrenofur.com asset's own encoded geometry.",
+      "conversionMethod": "ffdec -ignorebackground -selectid 120 -export sprite (rasterize only DefineSprite chid=120, all 260 frames, transparent background) -> tools/swf-frame-labels.py labels <swf> 120 (resolve real frame boundaries per named state) -> build-sprite-sheet.py packed each state's frame range separately (1x1, 99x1, 41x1, 119x1 -- 4 separate sheets, matching still.dart's 4 independently-addressed states, not one combined strip). -ignorebackground was required for the same reason documented on this batch's other entries -- verified 0-255 alpha extrema and transparent sheet corners on all 4 outputs.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "empty",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/still/empty.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/still-empty.png",
+          "frameWidth": 128,
+          "frameHeight": 215,
+          "numFrames": 1
+        },
+        {
+          "state": "active",
+          "sourceFrameRange": [
+            2,
+            100
+          ],
+          "file": "content/sprites/still/active.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/still-active.png",
+          "frameWidth": 128,
+          "frameHeight": 215,
+          "numFrames": 99
+        },
+        {
+          "state": "ready",
+          "sourceFrameRange": [
+            101,
+            141
+          ],
+          "file": "content/sprites/still/ready.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/still-ready.png",
+          "frameWidth": 128,
+          "frameHeight": 215,
+          "numFrames": 41
+        },
+        {
+          "state": "collect",
+          "sourceFrameRange": [
+            142,
+            260
+          ],
+          "file": "content/sprites/still/collect.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/still-collect.png",
+          "frameWidth": 128,
+          "frameHeight": 215,
+          "numFrames": 119
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_blue",
+      "sourcePath": "tmp/glitch-items/food/blue_bubble/blue_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_blue-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_blue/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_blue-icon.png",
+          "frameWidth": 38,
+          "frameHeight": 38,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_blue-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bubble_blue/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_blue-sprite.png",
+          "frameWidth": 38,
+          "frameHeight": 38,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_hard",
+      "sourcePath": "tmp/glitch-items/food/hard_bubble/hard_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_hard-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_hard/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_hard-icon.png",
+          "frameWidth": 38,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_hard-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bubble_hard/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_hard-sprite.png",
+          "frameWidth": 38,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_tiny",
+      "sourcePath": "tmp/glitch-items/food/tiny_bubble/tiny_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_tiny-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_tiny/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tiny-icon.png",
+          "frameWidth": 43,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_tiny-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bubble_tiny/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_tiny-sprite.png",
+          "frameWidth": 43,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_crying",
+      "sourcePath": "tmp/glitch-items/misc/crying_gas/crying_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_crying-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_crying/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_crying-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_crying-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gas_crying/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_crying-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_heavy",
+      "sourcePath": "tmp/glitch-items/misc/heavy_gas/heavy_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_heavy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_heavy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_heavy-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_heavy-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gas_heavy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_heavy-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_laughing",
+      "sourcePath": "tmp/glitch-items/misc/laughing_gas/laughing_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_laughing-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_laughing/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_laughing-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_laughing-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gas_laughing/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_laughing-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_white",
+      "sourcePath": "tmp/glitch-items/misc/white_gas/white_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_white-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_white/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_white-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_white-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/gas_white/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_white-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_helium",
+      "sourcePath": "tmp/glitch-items/misc/helium/helium.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frames 2-4 '1'/'2'/'3'/'4' -- same family as the previously-converted allspice/spices/drinks batches.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon) and frames 2-5 (sprite stack strip) with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting -- see notes on this defect below. tools/build-sprite-sheet.py then packs frame 1 alone into icon.png and frames 2-5 into the 4-frame sprite.png strip. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "helium-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/helium/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-helium-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 1
+        },
+        {
+          "state": "helium-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/helium/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-helium-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_icon_of_alph",
+      "sourcePath": "tmp/glitch-items/giants/icon_alph/icon_alph.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), 2 embedded DefineBits* bitmap tags plus vector shapes (a framed-portrait icon of the giant Alph). 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon, 'iconic') and frame 2 (sprite, '1') with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "icon_of_alph-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/icon_of_alph/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_alph-icon.png",
+          "frameWidth": 95,
+          "frameHeight": 115,
+          "numFrames": 1
+        },
+        {
+          "state": "icon_of_alph-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/icon_of_alph/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-icon_of_alph-sprite.png",
+          "frameWidth": 95,
+          "frameHeight": 115,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_juju_paperweight",
+      "sourcePath": "tmp/glitch-items/misc/juju_paperweight/juju_paperweight.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports frame 1 (icon, 'iconic') and frame 2 (sprite, '1') with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "juju_paperweight-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/juju_paperweight/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-juju_paperweight-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "juju_paperweight-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/juju_paperweight/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-juju_paperweight-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_alph",
+      "sourcePath": "tmp/glitch-items/giants/emblem_alph/emblem_alph.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 1-frame main timeline; DefineSceneAndFrameLabelData names the single frame '1' (no separate 'iconic' label, unlike the 2-and-5-frame families) -- same single-frame convention as the previously-converted alchemistry_kit/firefly_jar items, reused for both iconUrl and spriteUrl.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports the single frame with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting; the same frame is used for both icon.png and sprite.png. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_alph-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_alph/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_alph-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_alph-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_alph/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_alph-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_of_cosma",
+      "sourcePath": "tmp/glitch-items/giants/emblem_cosma/emblem_cosma.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 1-frame main timeline; DefineSceneAndFrameLabelData names the single frame '1' (no separate 'iconic' label, unlike the 2-and-5-frame families) -- same single-frame convention as the previously-converted alchemistry_kit/firefly_jar items, reused for both iconUrl and spriteUrl.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports the single frame with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting; the same frame is used for both icon.png and sprite.png. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_of_cosma-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_cosma/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_cosma-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_of_cosma-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_of_cosma/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_of_cosma-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_contraband",
+      "sourcePath": "tmp/glitch-items/misc/contraband/contraband.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 1-frame main timeline; DefineSceneAndFrameLabelData names the single frame '1' (no separate 'iconic' label, unlike the 2-and-5-frame families) -- same single-frame convention as the previously-converted alchemistry_kit/firefly_jar items, reused for both iconUrl and spriteUrl.",
+      "conversionMethod": "tools/swf-export-frame-alpha.py (new this pass) exports the single frame with genuine alpha, working around a known ffdec `-export frame` opaque-backdrop defect via difference matting; the same frame is used for both icon.png and sprite.png. ffdec `-export frame` (main-timeline export) bakes this SWF's SetBackgroundColor (white, ff ffff) in as an opaque backdrop -- verified via alpha-channel extrema check (PIL Image.split()[-1].getextrema() == (255,255) on the raw export) and by inspecting the equivalent `-format frame:svg` export, which contains an explicit <rect fill=\"#ffffff\".../> background element; `-config lastExportTransparentBackground=true` was tried and confirmed to have no effect on `-export frame` (only affects isolated symbol/sprite exports). Worked around with tools/swf-export-frame-alpha.py (new this pass): export the same frame twice, once against white and once against a black SetBackgroundColor patched via the new tools/swf-patch-bgcolor.py, then solve the standard two-backdrop difference-matting equations per pixel to recover true anti-aliased alpha. Re-verified post-matting: alpha extrema (0, 255) with a real distribution of intermediate values (not a binary mask), and visually confirmed against a checkerboard backdrop.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "contraband-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/contraband/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-contraband-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 25,
+          "numFrames": 1
+        },
+        {
+          "state": "contraband-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/contraband/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-contraband-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 25,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_chick",
+      "sourcePath": "tmp/glitch-items/inhabitants/chick/chick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. The main timeline (char id 0) merely places one instance of a nested DefineSprite (char id 11, SymbolClass name chick_fla.Chick_1) which carries the real animation: FrameLabel tags at frame 1 'sit', 345 'hop', 365 'flipped _sit', 708 'flipped_hop' (counted via tools/swf-frame-labels.py). Only frame 1 ('sit') was rasterized -- a single static pose, matching this item's original iconUrl/spriteUrl both pointing at the same flat 'Chick.png' (i.e. this item never had a distinct icon vs. sprite in the source data; the multi-hundred-frame walk/hop animation is not used for this item's inventory icon).",
+      "conversionMethod": "ffdec -export sprite <dir> chick.swf (rasterizes every nested DefineSprite, including char id 11, chick_fla.Chick_1) -> frame 1 ('sit') used for both icon.png and sprite.png. Per-symbol sprite export already renders with genuine alpha (verified: alpha extrema (0,255) on the raw export, no matting workaround needed) -- unlike `-export frame` on this same family's main timeline, which does hit the opaque-backdrop defect (see the gasses-bubbles/emblems-icons/quest_items entries in this same batch).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "chick-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/chick/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chick-icon.png",
+          "frameWidth": 35,
+          "frameHeight": 38,
+          "numFrames": 1
+        },
+        {
+          "state": "chick-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/chick/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chick-sprite.png",
+          "frameWidth": 35,
+          "frameHeight": 38,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_piglet",
+      "sourcePath": "tmp/glitch-items/inhabitants/piglet/piglet.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. The main timeline (char id 0) merely places one instance of a nested DefineSprite (char id 20, SymbolClass name piglet1_fla.piglet1_1); tools/swf-frame-labels.py finds a single FrameLabel, frame 1 'sit'. Rasterized frame 1 only, matching this item's original iconUrl/spriteUrl both pointing at the same flat 'Piglet.png'.",
+      "conversionMethod": "ffdec -export sprite <dir> piglet.swf (rasterizes every nested DefineSprite, including char id 20, piglet1_fla.piglet1_1) -> frame 1 ('sit') used for both icon.png and sprite.png. Per-symbol sprite export already renders with genuine alpha (verified: alpha extrema (0,255) on the raw export, no matting workaround needed) -- unlike `-export frame` on this same family's main timeline, which does hit the opaque-backdrop defect (see the gasses-bubbles/emblems-icons/quest_items entries in this same batch).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "piglet-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/piglet/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piglet-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "piglet-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/piglet/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piglet-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_caterpillar",
+      "sourcePath": "tmp/glitch-items/inhabitants/caterpillar/caterpillar.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. The main timeline (char id 0) merely places one instance of a nested DefineSprite (char id 19, SymbolClass name caterpillar_fla.caterpillar_1); tools/swf-frame-labels.py finds a single FrameLabel, frame 1 'sit'. Rasterized frame 1 only, matching this item's original iconUrl/spriteUrl both pointing at the same flat 'Caterpillar.png'.",
+      "conversionMethod": "ffdec -export sprite <dir> caterpillar.swf (rasterizes every nested DefineSprite, including char id 19, caterpillar_fla.caterpillar_1) -> frame 1 ('sit') used for both icon.png and sprite.png. Per-symbol sprite export already renders with genuine alpha (verified: alpha extrema (0,255) on the raw export, no matting workaround needed) -- unlike `-export frame` on this same family's main timeline, which does hit the opaque-backdrop defect (see the gasses-bubbles/emblems-icons/quest_items entries in this same batch).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "caterpillar-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/caterpillar/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-caterpillar-icon.png",
+          "frameWidth": 41,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "caterpillar-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/caterpillar/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-caterpillar-sprite.png",
+          "frameWidth": 41,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bb_music_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_music_b_brown/trophy_music_b_brown.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bb_music_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bb_music_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bb_music_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "bb_music_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bb_music_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bb_music_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_blue_white_hexagon_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_8/door_key_8.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "blue_white_hexagon_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_white_hexagon_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_white_hexagon_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "blue_white_hexagon_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_white_hexagon_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_white_hexagon_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_blue_yellow_circle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_10/door_key_10.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "blue_yellow_circle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_yellow_circle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_yellow_circle_key-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "blue_yellow_circle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_yellow_circle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_yellow_circle_key-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bubble_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_bubble/trophy_bubble.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bubble_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "bubble_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bubble_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bubble_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_conch",
+      "sourcePath": "tmp/glitch-items/misc/conch/conch.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 2-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "conch-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/conch/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-conch-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 55,
+          "numFrames": 1
+        },
+        {
+          "state": "conch-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/conch/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-conch-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 55,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_crabpod_headphones",
+      "sourcePath": "tmp/glitch-items/misc/crabphones/crabphones.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 2-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "crabpod_headphones-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/crabpod_headphones/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crabpod_headphones-icon.png",
+          "frameWidth": 108,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "crabpod_headphones-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/crabpod_headphones/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crabpod_headphones-sprite.png",
+          "frameWidth": 108,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_crafty_bot",
+      "sourcePath": "tmp/glitch-items/inhabitants/craftybot/npc_crafty_bot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "SetBackgroundColor patched to white (tools/swf-patch-bgcolor.py, source bg was (102,153,153), not white) -> ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "crafty_bot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/crafty_bot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crafty_bot-icon.png",
+          "frameWidth": 117,
+          "frameHeight": 120,
+          "numFrames": 1
+        },
+        {
+          "state": "crafty_bot-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/crafty_bot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-crafty_bot-sprite.png",
+          "frameWidth": 117,
+          "frameHeight": 120,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_db_music_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_music_d_blue/trophy_music_d_blue.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "db_music_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/db_music_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-db_music_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "db_music_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/db_music_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-db_music_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_dg_music_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_music_d_green/trophy_music_d_green.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "dg_music_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dg_music_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dg_music_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "dg_music_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dg_music_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dg_music_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_dr_music_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_music_d_red/trophy_music_d_red.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "dr_music_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dr_music_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dr_music_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "dr_music_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/dr_music_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-dr_music_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_drink_ticket",
+      "sourcePath": "tmp/glitch-items/misc/drink_ticket/drink_ticket.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 2-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "drink_ticket-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/drink_ticket/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-drink_ticket-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 48,
+          "numFrames": 1
+        },
+        {
+          "state": "drink_ticket-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/drink_ticket/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-drink_ticket-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 48,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_egg_hunter_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_egghunt/trophy_egghunt.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "egg_hunter_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/egg_hunter_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-egg_hunter_trophy-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 62,
+          "numFrames": 1
+        },
+        {
+          "state": "egg_hunter_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/egg_hunter_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-egg_hunter_trophy-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 62,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_emblem_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_emblems/trophy_emblems.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "emblem_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_trophy-icon.png",
+          "frameWidth": 39,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "emblem_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/emblem_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-emblem_trophy-sprite.png",
+          "frameWidth": 39,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_faded_heart",
+      "sourcePath": "tmp/glitch-items/quest_items/faded_heart/faded_heart.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 2-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "faded_heart-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/faded_heart/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-faded_heart-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 31,
+          "numFrames": 1
+        },
+        {
+          "state": "faded_heart-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/faded_heart/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-faded_heart-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 31,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fruit_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_fruit/trophy_fruit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fruit_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fruit_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruit_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "fruit_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fruit_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fruit_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gas_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_gas/trophy_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gas_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "gas_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gas_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gas_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_gem_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_gem/trophy_gem.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "gem_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gem_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gem_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "gem_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/gem_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-gem_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_green_orange_hexagon_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_12/door_key_12.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "green_orange_hexagon_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/green_orange_hexagon_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_orange_hexagon_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "green_orange_hexagon_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/green_orange_hexagon_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_orange_hexagon_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_green_white_circle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_2/door_key_2.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "green_white_circle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/green_white_circle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_white_circle_key-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "green_white_circle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/green_white_circle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-green_white_circle_key-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_greeter_twig",
+      "sourcePath": "tmp/glitch-items/misc/greeter_twig/greeter_twig.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 91-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "greeter_twig-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/greeter_twig/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-greeter_twig-icon.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "greeter_twig-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/greeter_twig/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-greeter_twig-sprite.png",
+          "frameWidth": 47,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_hello_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_carved_3/pumpkin_carved_3.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "hello_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hello_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hello_pumpkin-icon.png",
+          "frameWidth": 63,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "hello_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/hello_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-hello_pumpkin-sprite.png",
+          "frameWidth": 63,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_jack_o_lantern",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_lit_1/pumpkin_lit_1.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "jack_o_lantern-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/jack_o_lantern/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-jack_o_lantern-icon.png",
+          "frameWidth": 59,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "jack_o_lantern-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/jack_o_lantern/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-jack_o_lantern-sprite.png",
+          "frameWidth": 59,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_jack_the_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_carved_1/pumpkin_carved_1.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "jack_the_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/jack_the_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-jack_the_pumpkin-icon.png",
+          "frameWidth": 59,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "jack_the_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/jack_the_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-jack_the_pumpkin-sprite.png",
+          "frameWidth": 59,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_lem_o_lantern",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_lit_5/pumpkin_lit_5.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "lem_o_lantern-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/lem_o_lantern/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lem_o_lantern-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 55,
+          "numFrames": 1
+        },
+        {
+          "state": "lem_o_lantern-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/lem_o_lantern/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lem_o_lantern-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 55,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_lem_the_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_carved_5/pumpkin_carved_5.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "lem_the_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/lem_the_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lem_the_pumpkin-icon.png",
+          "frameWidth": 51,
+          "frameHeight": 55,
+          "numFrames": 1
+        },
+        {
+          "state": "lem_the_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/lem_the_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-lem_the_pumpkin-sprite.png",
+          "frameWidth": 51,
+          "frameHeight": 55,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_moving_box",
+      "sourcePath": "tmp/glitch-items/misc/bag_moving_box/bag_moving_box.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "moving_box-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/moving_box/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-moving_box-icon.png",
+          "frameWidth": 78,
+          "frameHeight": 84,
+          "numFrames": 1
+        },
+        {
+          "state": "moving_box-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/moving_box/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-moving_box-sprite.png",
+          "frameWidth": 78,
+          "frameHeight": 84,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_new_player_pack_chicken",
+      "sourcePath": "tmp/glitch-items/misc/bag_gift_box/bag_gift_box_wrapped/bag_gift_box_wrapped.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "new_player_pack_chicken-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/new_player_pack_chicken/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-new_player_pack_chicken-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "new_player_pack_chicken-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/new_player_pack_chicken/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-new_player_pack_chicken-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_new_player_pack_piggy",
+      "sourcePath": "tmp/glitch-items/misc/bag_gift_box/bag_gift_box_wrapped/bag_gift_box_wrapped.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "new_player_pack_piggy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/new_player_pack_piggy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-new_player_pack_piggy-icon.png",
+          "frameWidth": 52,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "new_player_pack_piggy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/new_player_pack_piggy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-new_player_pack_piggy-sprite.png",
+          "frameWidth": 52,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_note_pole",
+      "sourcePath": "tmp/glitch-items/misc/note_pole/note_pole.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "note_pole-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/note_pole/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note_pole-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 205,
+          "numFrames": 1
+        },
+        {
+          "state": "note_pole-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/note_pole/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note_pole-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 205,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_orange_blue_square_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_3/door_key_3.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "orange_blue_square_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/orange_blue_square_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-orange_blue_square_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        },
+        {
+          "state": "orange_blue_square_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/orange_blue_square_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-orange_blue_square_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_pareidolic_cosma_toast",
+      "sourcePath": "tmp/glitch-items/rare_items/pareidolic_cosma_toast/pareidolic_cosma_toast.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 2-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "pareidolic_cosma_toast-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/pareidolic_cosma_toast/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pareidolic_cosma_toast-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 51,
+          "numFrames": 1
+        },
+        {
+          "state": "pareidolic_cosma_toast-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/pareidolic_cosma_toast/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pareidolic_cosma_toast-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 51,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_piggy_plop",
+      "sourcePath": "tmp/glitch-items/misc/plop/plop.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "piggy_plop-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/piggy_plop/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_plop-icon.png",
+          "frameWidth": 28,
+          "frameHeight": 24,
+          "numFrames": 1
+        },
+        {
+          "state": "piggy_plop-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/piggy_plop/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-piggy_plop-sprite.png",
+          "frameWidth": 28,
+          "frameHeight": 24,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_purple_orange_circle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_6/door_key_6.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "purple_orange_circle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/purple_orange_circle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-purple_orange_circle_key-icon.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "purple_orange_circle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/purple_orange_circle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-purple_orange_circle_key-sprite.png",
+          "frameWidth": 37,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_purple_red_square_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_11/door_key_11.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "purple_red_square_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/purple_red_square_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-purple_red_square_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        },
+        {
+          "state": "purple_red_square_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/purple_red_square_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-purple_red_square_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_red_green_triangle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_5/door_key_5.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "red_green_triangle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/red_green_triangle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-red_green_triangle_key-icon.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        },
+        {
+          "state": "red_green_triangle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/red_green_triangle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-red_green_triangle_key-sprite.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_shiny_hello_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_lit_3/pumpkin_lit_3.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "shiny_hello_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/shiny_hello_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-shiny_hello_pumpkin-icon.png",
+          "frameWidth": 63,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "shiny_hello_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/shiny_hello_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-shiny_hello_pumpkin-sprite.png",
+          "frameWidth": 63,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spice_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_spice/trophy_spice.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spice_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spice_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spice_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "spice_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spice_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spice_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spigot",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/spigot/spigot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 5-frame main timeline with named scenes (DefineSceneAndFrameLabelData).",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting -> frame 1 ('iconic' scene label) used as the icon; frame 2 used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spigot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spigot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spigot-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "spigot-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/spigot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spigot-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_steve_o_lantern",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_lit_2/pumpkin_lit_2.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "steve_o_lantern-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/steve_o_lantern/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-steve_o_lantern-icon.png",
+          "frameWidth": 60,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "steve_o_lantern-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/steve_o_lantern/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-steve_o_lantern-sprite.png",
+          "frameWidth": 60,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_steve_the_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_carved_2/pumpkin_carved_2.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "steve_the_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/steve_the_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-steve_the_pumpkin-icon.png",
+          "frameWidth": 60,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "steve_the_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/steve_the_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-steve_the_pumpkin-sprite.png",
+          "frameWidth": 60,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_street_creator_dirt_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_street_creator_dirt/trophy_street_creator_dirt.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "street_creator_dirt_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_dirt_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_dirt_trophy-icon.png",
+          "frameWidth": 70,
+          "frameHeight": 68,
+          "numFrames": 1
+        },
+        {
+          "state": "street_creator_dirt_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_dirt_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_dirt_trophy-sprite.png",
+          "frameWidth": 70,
+          "frameHeight": 68,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_street_creator_earth_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_street_creator_earth/trophy_street_creator_earth.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "street_creator_earth_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_earth_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_earth_trophy-icon.png",
+          "frameWidth": 70,
+          "frameHeight": 67,
+          "numFrames": 1
+        },
+        {
+          "state": "street_creator_earth_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_earth_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_earth_trophy-sprite.png",
+          "frameWidth": 70,
+          "frameHeight": 67,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_street_creator_rock_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_street_creator_rock/trophy_street_creator_rock.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "street_creator_rock_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_rock_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_rock_trophy-icon.png",
+          "frameWidth": 70,
+          "frameHeight": 65,
+          "numFrames": 1
+        },
+        {
+          "state": "street_creator_rock_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_rock_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_rock_trophy-sprite.png",
+          "frameWidth": 70,
+          "frameHeight": 65,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_street_creator_wood_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_street_creator_wood/trophy_street_creator_wood.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "street_creator_wood_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_wood_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_wood_trophy-icon.png",
+          "frameWidth": 70,
+          "frameHeight": 68,
+          "numFrames": 1
+        },
+        {
+          "state": "street_creator_wood_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/street_creator_wood_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-street_creator_wood_trophy-sprite.png",
+          "frameWidth": 70,
+          "frameHeight": 68,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_teal_red_hexagon_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_4/door_key_4.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "teal_red_hexagon_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teal_red_hexagon_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teal_red_hexagon_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        },
+        {
+          "state": "teal_red_hexagon_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teal_red_hexagon_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teal_red_hexagon_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 18,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_teal_white_triangle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_9/door_key_9.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "teal_white_triangle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teal_white_triangle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teal_white_triangle_key-icon.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        },
+        {
+          "state": "teal_white_triangle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teal_white_triangle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teal_white_triangle_key-sprite.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_trophy_cubimal",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_cubimal/trophy_cubimal.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "trophy_cubimal-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trophy_cubimal/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trophy_cubimal-icon.png",
+          "frameWidth": 38,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "trophy_cubimal-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trophy_cubimal/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trophy_cubimal-sprite.png",
+          "frameWidth": 38,
+          "frameHeight": 39,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_trophy_cubimal_2",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_cubimal_2/trophy_cubimal_2.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "trophy_cubimal_2-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trophy_cubimal_2/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trophy_cubimal_2-icon.png",
+          "frameWidth": 39,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "trophy_cubimal_2-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/trophy_cubimal_2/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-trophy_cubimal_2-sprite.png",
+          "frameWidth": 39,
+          "frameHeight": 39,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_xs_music_trophy",
+      "sourcePath": "tmp/glitch-items/trophies/trophy_music_x_shiny/trophy_music_x_shiny.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "xs_music_trophy-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/xs_music_trophy/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-xs_music_trophy-icon.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        },
+        {
+          "state": "xs_music_trophy-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/xs_music_trophy/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-xs_music_trophy-sprite.png",
+          "frameWidth": 50,
+          "frameHeight": 50,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_yellow_purple_triangle_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_1/door_key_1.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "yellow_purple_triangle_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/yellow_purple_triangle_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-yellow_purple_triangle_key-icon.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        },
+        {
+          "state": "yellow_purple_triangle_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/yellow_purple_triangle_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-yellow_purple_triangle_key-sprite.png",
+          "frameWidth": 39,
+          "frameHeight": 17,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_yellow_teal_square_key",
+      "sourcePath": "tmp/glitch-items/keys/door_key_7/door_key_7.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "yellow_teal_square_key-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/yellow_teal_square_key/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-yellow_teal_square_key-icon.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        },
+        {
+          "state": "yellow_teal_square_key-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/yellow_teal_square_key/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-yellow_teal_square_key-sprite.png",
+          "frameWidth": 36,
+          "frameHeight": 16,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_zille_o_lantern",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_lit_4/pumpkin_lit_4.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "zille_o_lantern-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zille_o_lantern/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zille_o_lantern-icon.png",
+          "frameWidth": 49,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "zille_o_lantern-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zille_o_lantern/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zille_o_lantern-sprite.png",
+          "frameWidth": 49,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_zille_the_pumpkin",
+      "sourcePath": "tmp/glitch-items/carved_pumpkins/pumpkin_carved_4/pumpkin_carved_4.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF, vector shapes only. 1-frame main timeline.",
+      "conversionMethod": "ffdec -export frame + tools/swf-export-frame-alpha.py difference-matting (rasterize main timeline against white and black SetBackgroundColor, solve for true per-pixel alpha) -> the sole frame used directly for both iconUrl and spriteUrl.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "zille_the_pumpkin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zille_the_pumpkin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zille_the_pumpkin-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "zille_the_pumpkin-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/zille_the_pumpkin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-zille_the_pumpkin-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md. A sixth batch (2026-08-28, storage.json/advanced_resources.json/basic_resources.json/machines-fuel.json pass) converted 14 items: 9 from advanced_resources.json (barnacle_talc, bulb, copper, general_fabric, molybdenum, ingot (item id for 'Plain Metal Ingot'), string, thread, tin -- all real recipe-chain outputs, see runtime-manifest for the full route), 3 from storage.json (alchemistry_kit, firefly_jar, spicerack -- real vendor stock, both explicitly named and via the generic pickItems([\"Storage\"]) vendor route that covers the whole category), and 2 from machines-fuel.json (machine_stand -- real ToolVendor/StreetSpirit(hardware) stock; fuel_cell -- converted but found to have NO acquisition route anywhere in coUserver, same as bacon/potion_rainbow_juice). basic_resources.json's only remaining unconverted item, salmon_bubble, has no matching source SWF anywhere under tmp/glitch-items (searched directly) and stays unconverted. storage.json's remaining 16 items (bigger_bag and its 4 color variants, chrome/green/red toolbox, cubimal_case, elemental_pouch, generic_bag and its 4 color variants, musicblock_bag) and advanced_resources.json's remaining 10 items (beam, board, girder, metal_bar, metal_rod, plain_crystal, snail, urth_block, wood_post, bushel_of_grain) all have real, distinct matching source SWFs under tmp/glitch-items/misc/ (confirmed by direct search) but were left unconverted this pass to stay within the requested batch size; the advanced_resources.json remainder was checked against every recipes/json/*.json file and every vendor itemsForSale list and confirmed to have NO acquisition route of any kind in the current codebase (a genuine missing-design gap, not a placement gap). machines-fuel.json's remaining 9 items (blockmaker_chassis, blockmaker_plates, fuelmaker_case, fuelmaker_core, machine_engine, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser) are ALL real, unmodified ToolVendor and StreetSpirit('hardware') vendor stock (confirmed directly in vendor.dart/toolvendor.dart) -- same live route as machine_stand -- but were left unconverted this pass; only machine_stand and fuel_cell were done as one live and one honestly-documented-gap example. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md. A sixth batch (2026-08-28, storage.json/advanced_resources.json/basic_resources.json/machines-fuel.json pass) converted 14 items: 9 from advanced_resources.json (barnacle_talc, bulb, copper, general_fabric, molybdenum, ingot (item id for 'Plain Metal Ingot'), string, thread, tin -- all real recipe-chain outputs, see runtime-manifest for the full route), 3 from storage.json (alchemistry_kit, firefly_jar, spicerack -- real vendor stock, both explicitly named and via the generic pickItems([\"Storage\"]) vendor route that covers the whole category), and 2 from machines-fuel.json (machine_stand -- real ToolVendor/StreetSpirit(hardware) stock; fuel_cell -- converted but found to have NO acquisition route anywhere in coUserver, same as bacon/potion_rainbow_juice). basic_resources.json's only remaining unconverted item, salmon_bubble, has no matching source SWF anywhere under tmp/glitch-items (searched directly) and stays unconverted. storage.json's remaining 16 items (bigger_bag and its 4 color variants, chrome/green/red toolbox, cubimal_case, elemental_pouch, generic_bag and its 4 color variants, musicblock_bag) and advanced_resources.json's remaining 10 items (beam, board, girder, metal_bar, metal_rod, plain_crystal, snail, urth_block, wood_post, bushel_of_grain) all have real, distinct matching source SWFs under tmp/glitch-items/misc/ (confirmed by direct search) but were left unconverted this pass to stay within the requested batch size; the advanced_resources.json remainder was checked against every recipes/json/*.json file and every vendor itemsForSale list and confirmed to have NO acquisition route of any kind in the current codebase (a genuine missing-design gap, not a placement gap). machines-fuel.json's remaining 9 items (blockmaker_chassis, blockmaker_plates, fuelmaker_case, fuelmaker_core, machine_engine, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser) are ALL real, unmodified ToolVendor and StreetSpirit('hardware') vendor stock (confirmed directly in vendor.dart/toolvendor.dart) -- same live route as machine_stand -- but were left unconverted this pass; only machine_stand and fuel_cell were done as one live and one honestly-documented-gap example. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. A further batch (2026-08-28, keys.json + misc.json -- the last two previously-entirely-untouched item-registry categories) converted all 12 keys.json items and 41 of 42 misc.json items (all but new_player_pack_butterfly, which has no matching source SWF anywhere under tmp/glitch-items -- searched directly, iconUrl referenced 'newplayerbutterflybox.png' with no such asset present). Accessibility check found 13 of the 41 converted misc.json items have a genuine live route (crabpod_headphones via the placed Crab NPC's music-reward loan/reclaim mechanic; jack_the_pumpkin/lem_the_pumpkin/shiny_hello_pumpkin/steve_the_pumpkin/zille_the_pumpkin via a real, seasonally-gated (Zilloween, genuinely enforced via the in-game calendar) knife_and_board recipe from raw pumpkin, plus their jack_o_lantern/lem_o_lantern/steve_o_lantern/zille_o_lantern illuminatePumpkin derivatives; new_player_pack_chicken/new_player_pack_piggy via a real tinkertool recipe, tinkertool itself confirmed live ToolVendor/StreetSpirit stock; piggy_plop via the placed Piggy NPC's feed-response ground drop, which also feeds the real Q9 'Doody Inspector' quest). The remaining 28 misc.json items and all 12 keys.json items have no acquisition route of any kind in the current codebase -- notably this pass found the entire achievement system (coUserver/lib/achievements/) has zero item-grant code anywhere, so every one of the 16 *_trophy items in misc.json is a genuine missing-design gap, not a placement gap; and 11 of the 12 door keys have no matching door/consumer class at all (only teal_white_triangle_key has one, TealWhiteTriangleLockedDoor, and it is itself never placed anywhere). See content/runtime-manifest.json for full per-item accessibleThrough reasoning.",
     "families": [
       "seeds",
       "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",
@@ -8829,7 +11475,9 @@
       "storage.json (16 of 19 items still unconverted after this pass -- alchemistry_kit/firefly_jar/spicerack converted; bigger_bag/generic_bag families, toolboxes, cubimal_case, elemental_pouch, musicblock_bag remain, all with real matching source SWFs)",
       "advanced_resources.json (10 of 19 items still unconverted after this pass -- barnacle_talc/bulb/copper/general_fabric/molybdenum/ingot/string/thread/tin converted; beam/board/girder/metal_bar/metal_rod/plain_crystal/snail/urth_block/wood_post/bushel_of_grain remain -- confirmed to have no acquisition route anywhere in coUserver)",
       "machines-fuel.json (9 of 11 items still unconverted after this pass -- machine_stand/fuel_cell converted; blockmaker_chassis/blockmaker_plates/fuelmaker_case/fuelmaker_core/machine_engine/metalmaker_mechanism/metalmaker_tooler/woodworker_chassis/woodworker_fuser remain, all real ToolVendor/StreetSpirit(hardware) vendor stock per vendor.dart)",
-      "basic_resources.json (fully converted except salmon_bubble, which has no matching source SWF)"
+      "basic_resources.json (fully converted except salmon_bubble, which has no matching source SWF)",
+      "keys.json (fully converted, all 12 items -- none have any acquisition route)",
+      "misc.json (41 of 42 items converted -- only new_player_pack_butterfly remains, no matching source SWF found)"
     ]
   }
 }

@@ -3,17 +3,17 @@ part of entity;
 class Still extends EntityItem {
 	static final Map<String, Spritesheet> SPRITESHEETS = {
 		'active': new Spritesheet('active',
-			'https://childrenofur.com/assets/entityImages/still__x1_active_png_1354836755.png',
-			960, 1630, 96, 163, 99, true),
+			'files/sprites/generated/converted/still-active.png',
+			12672, 215, 128, 215, 99, true),
 		'collect': new Spritesheet('collect',
-			'https://childrenofur.com/assets/entityImages/still__x1_collect_png_1354836759.png',
-			960, 1956, 96, 163, 119, false),
+			'files/sprites/generated/converted/still-collect.png',
+			15232, 215, 128, 215, 119, false),
 		'ready': new Spritesheet('ready',
-			'https://childrenofur.com/assets/entityImages/still__x1_ready_png_1354836756.png',
-			864, 815, 96, 163, 41, true),
+			'files/sprites/generated/converted/still-ready.png',
+			5248, 215, 128, 215, 41, true),
 		'empty': new Spritesheet('empty',
-			'https://childrenofur.com/assets/entityImages/still__x1_empty_png_1354836751.png',
-			96, 163, 96, 163, 1, true)
+			'files/sprites/generated/converted/still-empty.png',
+			128, 215, 128, 215, 1, true)
 	};
 
 	static final int BREW_SECONDS = 3;

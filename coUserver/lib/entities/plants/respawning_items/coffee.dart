@@ -9,8 +9,8 @@ class CoffeeRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/coffee__x1_1_x1_2_x1_3_x1_4_png_1354829780.png',
-				192, 33, 48, 33, 4, false)
+				'files/sprites/generated/converted/coffee-1-2-3-4.png',
+				196, 33, 49, 33, 4, false)
 		};
 
 		setState('1-2-3-4');

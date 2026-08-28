@@ -9,8 +9,8 @@ class EarthshakerRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/earthshaker__x1_1_x1_2_x1_3_x1_4_png_1354829806.png',
-				144, 46, 36, 46, 4, false)
+				'files/sprites/generated/converted/earthshaker-1-2-3-4.png',
+				160, 54, 40, 54, 4, false)
 		};
 
 		setState('1-2-3-4');

@@ -9,8 +9,8 @@ class CinnamonRespawningItem extends RespawningItem {
 
 		states = {
 			'1-2-3-4': new Spritesheet('1-2-3-4',
-				'https://childrenofur.com/assets/entityImages/cinnamon__x1_1_x1_2_x1_3_x1_4_png_1354829766.png',
-				208, 17, 52, 17, 4, false)
+				'files/sprites/generated/converted/cinnamon-1-2-3-4.png',
+				208, 18, 52, 18, 4, false)
 		};
 
 		setState('1-2-3-4');

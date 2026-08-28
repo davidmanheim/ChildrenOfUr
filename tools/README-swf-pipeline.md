@@ -63,6 +63,40 @@ scripted and reproducible.
    `SymbolClass` entry whose name matches the file, e.g.
    `npc_chicken_fla.Chicken_1`).
 
+   **`-export frame` bakes in an opaque background -- chroma-key it out.**
+   Found 2026-08-28 (live bug triage, see RECOVERY_TODO.md): `-export
+   frame` (used whenever a source SWF's art sits directly on the main
+   timeline rather than inside a named `DefineSprite`, e.g. most item
+   icons and a few world entities like `metalrock`) always rasterizes
+   against the SWF's `SetBackgroundColor` stage tag as an *opaque* fill,
+   not a transparent canvas -- this is inherent ffdec CLI behavior (its
+   `lastExportTransparentBackground` config option has no effect on this
+   export mode; verified by diffing output before/after setting it) and
+   affected 129 of the ~161 sources converted so far before being fixed.
+   `-export sprite` output does not have this problem (a `DefineSprite`
+   character has no stage background of its own), so this step only
+   applies when you used `-export frame`. After exporting, before packing:
+   1. Read the exact background color straight from the SWF's
+      `SetBackgroundColor` tag (tag type 9), a few bytes after the header
+      -- do not guess it from a corner pixel. The tag-parsing helpers in
+      `tools/swf-frame-labels.py` (`decompress_body`/`read_rect_end`/
+      `iter_tags`) make this a few lines of code.
+   2. Soft chroma-key that exact color out of every exported frame PNG:
+      pixels within a small color-distance are made fully transparent,
+      pixels beyond a larger distance are left untouched, and pixels in
+      between get both a proportional alpha *and* their RGB pulled back
+      out along the bg->pixel blend line (undoing the "rendered =
+      coverage*fg + (1-coverage)*bg" compositing ffdec performed). Skipping
+      the color pull-back (alpha-only keying) leaves a visible
+      background-color fringe on antialiased edges, especially noticeable
+      against saturated background colors -- confirmed on a
+      purple-background asset during the 2026-08-28 fix.
+   3. Only then proceed to step 4 (pack into a sprite sheet) using the
+      keyed frames, not the raw ffdec output.
+   This is not yet automated into `build-sprite-sheet.py` itself -- treat
+   it as a required manual step for any new `-export frame` conversion
+   until it is (see POTENTIAL_TODO.md's "Asset conversion pipeline").
+
 3. **Resolve real animation-frame numbers for each named state.**
    ```sh
    python tools/swf-frame-labels.py labels <source.swf> <char_id>

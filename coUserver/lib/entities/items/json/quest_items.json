@@ -2,8 +2,8 @@
 	"juju_paperweight": {
 		"name": "Ancestral Paperweight",
 		"category": "Quest Items",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/juju_paperweight__x1_1_png_1354837859.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/juju_paperweight__x1_1_png_1354837859.png",
+		"iconUrl": "files/sprites/generated/converted/item-juju_paperweight-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-juju_paperweight-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "An ancient decorative weight of uncanny beauty and density, this relic is used by the Juju Bandits to secure the bounty of their traditional paper hunts."
@@ -11,8 +11,8 @@
 	"contraband": {
 		"name": "Contraband",
 		"category": "Quest Items",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/contraband__x1_1_png_1354836014.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/contraband__x1_1_png_1354836014.png",
+		"iconUrl": "files/sprites/generated/converted/item-contraband-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-contraband-sprite.png",
 		"stacksTo": 1,
 		"price": 0,
 		"description": "This is a surprisingly light package of *something* given to you by a smuggler who might ask you to take it from one place to another for reasons you cannot fully grasp. Still, a job's a job, right? What business is it of yours what's in the package. It DOES smell familiar, though…"
