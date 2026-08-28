@@ -143,6 +143,23 @@ class QuestService extends Object with MetabolicsChange {
 							? requirement
 							: decode(new Map<String, dynamic>.from(requirement as Map), Requirement);
 					}).toList();
+					// Same normalization as `requirements` above, previously missing
+					// for `rewards.favor`: QuestRewards.favor is kept as a raw List
+					// for the legacy mapper (it can't decode a bare `List favor`
+					// field into typed QuestFavor instances), so trySetFavor's
+					// `List<QuestFavor> favors` parameter got a raw List<dynamic> of
+					// decoded Maps instead -- confirmed live: crashed the whole
+					// server ("type 'List<dynamic>' is not a subtype of type
+					// 'List<QuestFavor>'") the first time a quest with a favor
+					// reward actually completed (Q2's tree-petter quest, now that
+					// tree-petting itself works).
+					if (q.rewards != null) {
+						q.rewards.favor = (q.rewards.favor ?? []).map((dynamic favor) {
+							return favor is QuestFavor
+								? favor
+								: decode(new Map<String, dynamic>.from(favor as Map), QuestFavor);
+						}).toList();
+					}
 					quests[q.id] = q;
 				}
 			}
