@@ -245,7 +245,39 @@ class SoundManager {
 		}
 	}
 
+	// Track keys for which a locally recovered/converted ambient track is bundled
+	// at files/sounds/music/<key>.$extension, so per-region ambient music can play
+	// without a SoundCloud API token. Source/provenance for each key is recorded in
+	// content/music-manifest.json. Keys not listed here (e.g. one-off event tracks
+	// like 'crowns', 'rainbow', 'rube', or the still-unmatched 'forest_slow' region)
+	// fall through to the SoundCloud path below, same as before this change.
+	static final Set<String> localMusicTracks = new Set<String>.from(<String>[
+		'ancestral', 'cave', 'enchanted', 'firebog', 'forest', 'hell',
+		'highlands', 'ilmenskie', 'ix', 'jal', 'kajuu', 'kloroandhaoma',
+		'nottis', 'uralia2', 'urwok',
+	]);
+
 	Future<void> loadSong(String name) async {
+		if (localMusicTracks.contains(name)) {
+			try {
+				String path = 'files/sounds/music/$name.$extension';
+				// Mirrors SC.load()'s construction of a Scound (see vendor/scproxy):
+				// an <audio> element attached to the document plus lightweight meta,
+				// just pointed at a bundled local file instead of a SoundCloud stream.
+				AudioElement localAudio = document.body.append(new AudioElement(path));
+				localAudio.load();
+				songs[name] = new Scound(localAudio, {
+					'title': name,
+					'user': {'username': 'Children of Ur (recovered soundtrack)'},
+					'permalink_url': path,
+				});
+				return;
+			} catch(e) {
+				logmessage('[SoundManager] Failed to load local music "$name", falling back to SoundCloud: $e');
+				// fall through to the SoundCloud path below
+			}
+		}
+
 		if (SC_TOKEN == null || SC_TOKEN.trim().isEmpty) {
 			if (!_soundCloudUnavailableLogged) {
 				logmessage('[SoundManager] Background music is disabled locally: no SoundCloud API token is configured.');
@@ -295,14 +327,18 @@ class SoundManager {
 		 * probably: if the specified type appears to be playable.
 		 * maybe: if it's impossible to tell whether the type is playable without playing it.
 		 * The empty string: if the specified type definitely cannot be played.
+		 *
+		 * Checked against `extension` (ogg, or mp3 fallback) rather than a
+		 * hardcoded mp3 so this also covers the local bundled tracks, which are
+		 * shipped as ogg (see loadSong's localMusicTracks path).
 		 */
-		String testResult = new AudioElement().canPlayType('audio/mp3');
+		String testResult = new AudioElement().canPlayType('audio/$extension');
 		if(testResult == '') {
-			logmessage('[SoundManager] SoundCloud: Your browser doesnt like mp3s :(');
+			logmessage('[SoundManager] Your browser doesnt like .$extension files :(');
 			return null;
 		} else if(testResult == 'maybe') {
 			//give warning message but proceed anyway
-			logmessage('[SoundManager] SoundCloud: Your browser may or may not fully support mp3s');
+			logmessage('[SoundManager] Your browser may or may not fully support .$extension files');
 		}
 
 		// Stop the old song

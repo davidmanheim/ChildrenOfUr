@@ -54,5 +54,21 @@ Prioritize and verify items before implementation.
 
 ## Audio
 
-- Bundle appropriately licensed world music and reference local URLs in the
-  music manifest; preserve SoundCloud only as an optional fallback.
+- ~~Bundle appropriately licensed world music and reference local URLs in the
+  music manifest; preserve SoundCloud only as an optional fallback.~~
+  Done 2026-08-28: 15 region/hub ambient tracks recovered (YouTube playlist +
+  existing zip album), converted to ogg, and wired as a local-file fallback in
+  `SoundManager.loadSong()`; SoundCloud remains the fallback path for any
+  key without a local file. See `content/music-manifest.json` and
+  `RECOVERY_TODO.md`'s "Sound policy" row. Licensing is documented as an
+  explicit caveat (fan-preserved, not officially re-hosted), not a resolved
+  clean-rights claim.
+- Fill the remaining `forest_slow` region gap (no confidently-matched
+  source track found) and consider wiring the already-reserved `wintry`
+  music.json key to the "Wintry Place" street via a `coUserver`
+  `streetdata.json` per-street override, mirroring the existing
+  `WintryPlaceHandler` buff special-case.
+- Consider reintroducing the original per-region multi-track rotation
+  (arrays of several tracks per hub, as in the 2013 game server's
+  `ambient_library`) instead of today's one-track-per-key architecture, if
+  more source tracks per region are ever recovered.

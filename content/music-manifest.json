@@ -1,0 +1,211 @@
+{
+  "$schema": "Content recovery music manifest. Records provenance for every locally-bundled ambient/region music track. See CONTENT_RECOVERY_PLAN.md for the general provenance rule, and RECOVERY_TODO.md 'Sound policy' row for status history.",
+  "generatedAt": "2026-08-28",
+  "licenseNote": "This is fan-preserved audio recovered from a YouTube playlist and a fan-circulated 'Glitch Soundtrack MP3.zip' bundle, not an officially re-hosted release from Tiny Speck/Glitch. It is bundled here on that basis (matching the project's existing 'preserve what would otherwise be lost' posture for other dead-host assets), not because clean rights have been independently re-verified. If a rights holder objects, remove the affected files under coUclient/web/files/sounds/music/ and delete/blank the corresponding entries in coUclient/web/files/json/music.json and this manifest.",
+  "runtimeMechanism": {
+    "description": "Per-region ambient music triggering already existed end-to-end before this change (server hubdata.json 'music' key -> client mapData.getSong() -> Street.load() -> audio.setSong()). This pass only added real local audio files for that existing key namespace and a local-file fallback path in SoundManager.loadSong() so playback works without a SoundCloud API token.",
+    "keyNamespace": "coUclient/web/files/json/music.json (SoundCloud scid manifest) and coUserver/lib/common/mapdata/json/hubdata.json 'music' field per hub share one flat key namespace (e.g. 'forest', 'ix', 'firebog'). Local files use the exact same keys.",
+    "trigger": "coUclient/lib/src/game/street.dart Street.load() calls audio.setSong(streetData['music'] ?? mapData.getSong(label)); mapData.getSong() resolves street-level 'music' override, else the street's hub's 'music' field, else default 'forest'.",
+    "localPlaybackChange": "coUclient/lib/src/systems/audio.dart SoundManager.loadSong(): for any key listed in the new `localMusicTracks` constant, constructs a Scound pointed at files/sounds/music/<key>.<extension> instead of requiring a SoundCloud API token. Falls through to the pre-existing SoundCloud path for any other key. _playSong()'s browser-support check was also generalized from a hardcoded 'audio/mp3' to 'audio/$extension' so it correctly gates on ogg (the local files' actual format) rather than always testing mp3 support.",
+    "multiTrackRotationNote": "The original 2013 game server (tmp/glitch-gameserver/main.js doLoginStart) built a per-region ARRAY of tracks with server-side random-ish rotation (e.g. 7 Firebogs tracks, 18 Ix tracks). The already-built local revival's client/server architecture (music.json + hubdata.json 'music') is single-track-per-key, not array-based, and this pass intentionally matches that existing architecture rather than reintroducing per-region arrays -- see 'multi-track rotation' follow-up in RECOVERY_TODO.md."
+  },
+  "sources": [
+    {
+      "id": "youtube-playlist",
+      "description": "User-provided YouTube playlist preserving the official Glitch soundtrack after the original c2.glitch.bz hosting went dead.",
+      "url": "https://www.youtube.com/playlist?list=PLN0GhXnhPcciUtcwFG5MfdT284einO0k1",
+      "playlistTitle": "Glitch Game Soundtrack",
+      "tracksInPlaylist": 23,
+      "tracksFetched": 23,
+      "fetchTool": "yt-dlp 2026.08.19, audio extracted via ffmpeg postprocessor",
+      "fetchedAt": "2026-08-28",
+      "note": "All 23 playlist videos were downloaded (audio + info.json metadata) to a local scratch directory for matching; only the tracks listed below were confidently matched to a music_map/hub region and copied into the repo. The rest were NOT copied into the repo (see 'unmatchedPlaylistTracks' below) -- they remain only in the local scratch/download area, not committed."
+    },
+    {
+      "id": "soundtrack-zip",
+      "description": "Pre-existing 'Glitch Soundtrack MP3.zip' already present in the repo root (gitignored, not committed -- see RECOVERY_TODO.md). Contains the official 'Soundscapes of Ur' ambient album (14 tracks, one per region) and the 'Glitch Variations' remix album (29 tracks, mostly one-off/quest/location themes). Used here only to fill region keys the YouTube playlist did not cover by an exact or near-exact region-name title match.",
+      "url": null,
+      "note": "Distinct source from the YouTube playlist above -- titled and produced differently (a polished region-named album vs. the playlist's raw ambient-loop-style tracks). Not re-downloaded by this pass; extracted directly from the zip already on disk."
+    }
+  ],
+  "regionTracks": [
+    {
+      "musicKey": "urwok",
+      "hubNames": ["Roobrik", "Balzare"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Roobrik & Balzare",
+      "sourceUrl": "https://www.youtube.com/watch?v=p6V8Wccb8Cg",
+      "confidence": "high",
+      "confidenceReason": "Video title names both hub streets in the 'urwok' hub group exactly.",
+      "outputFile": "coUclient/web/files/sounds/music/urwok.ogg"
+    },
+    {
+      "musicKey": "kloroandhaoma",
+      "hubNames": ["Haoma", "Kloro"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Haoma & Kloro",
+      "sourceUrl": "https://www.youtube.com/watch?v=4ugdzB8cZEg",
+      "confidence": "high",
+      "confidenceReason": "Video title names both hubs in the 'kloroandhaoma' hub group exactly.",
+      "outputFile": "coUclient/web/files/sounds/music/kloroandhaoma.ogg"
+    },
+    {
+      "musicKey": "ix",
+      "hubNames": ["Ix"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Ix (Part 1)",
+      "sourceUrl": "https://www.youtube.com/watch?v=6zd3vvkSmAg",
+      "confidence": "high",
+      "confidenceReason": "Exact hub name match. A second track, 'Ix (Part 2)' (LwY0zuX0990), also exists in the playlist but was not used -- see multiTrackRotationNote.",
+      "outputFile": "coUclient/web/files/sounds/music/ix.ogg"
+    },
+    {
+      "musicKey": "kajuu",
+      "hubNames": ["Andra", "Folivoria", "Kajuu", "Lida", "Ormonos", "Tahli"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Kajuu (Part 1)",
+      "sourceUrl": "https://www.youtube.com/watch?v=xS1E86mp9pU",
+      "confidence": "high",
+      "confidenceReason": "Exact hub-group name match. A second track, 'Kajuu (Part 2)' (ylEjzyGsGsA), also exists in the playlist but was not used -- see multiTrackRotationNote.",
+      "outputFile": "coUclient/web/files/sounds/music/kajuu.ogg"
+    },
+    {
+      "musicKey": "hell",
+      "hubNames": ["Naraka"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Naraka",
+      "sourceUrl": "https://www.youtube.com/watch?v=gi1C-KeE7RA",
+      "confidence": "high",
+      "confidenceReason": "'Naraka' is the literal hub name for hub id 40, the sole hub in the 'hell' music key group (see hubdata.json).",
+      "outputFile": "coUclient/web/files/sounds/music/hell.ogg"
+    },
+    {
+      "musicKey": "cave",
+      "hubNames": ["Callopee", "Massadoe", "Pollokoo"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Caves",
+      "sourceUrl": "https://www.youtube.com/watch?v=CzBatvPm5s8",
+      "confidence": "high",
+      "confidenceReason": "Generic 'Caves' title matches the 'cave' hub group's theme; cross-confirmed by the zip album's 'Callopee' track (that hub's actual name), which was not used here to avoid overlapping with the 'ilmenskie' key's similarly-named 'Ilmenskie Caverns'.",
+      "outputFile": "coUclient/web/files/sounds/music/cave.ogg"
+    },
+    {
+      "musicKey": "uralia2",
+      "hubNames": ["Uralia"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Uralia",
+      "sourceUrl": "https://www.youtube.com/watch?v=WqQ-o9Lwxo4",
+      "confidence": "high",
+      "confidenceReason": "Exact hub name match. The music-key suffix '2' is inherited from the existing music.json/hubdata.json naming (no 'uralia' or 'uralia1' key exists); it does not indicate this is a second/alternate track.",
+      "outputFile": "coUclient/web/files/sounds/music/uralia2.ogg"
+    },
+    {
+      "musicKey": "ilmenskie",
+      "hubNames": ["Ilmenskie Caverns", "Ilmenskie Deeps"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Ilmenskie Caverns",
+      "sourceUrl": "https://www.youtube.com/watch?v=HpOt2dv8B9M",
+      "confidence": "high",
+      "confidenceReason": "Exact hub name match.",
+      "outputFile": "coUclient/web/files/sounds/music/ilmenskie.ogg"
+    },
+    {
+      "musicKey": "highlands",
+      "hubNames": ["Alakol", "Firozi", "Rasana", "Salatu"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - The Highlands",
+      "sourceUrl": "https://www.youtube.com/watch?v=a3e-DK-tf60",
+      "confidence": "high",
+      "confidenceReason": "Exact music-key/region name match.",
+      "outputFile": "coUclient/web/files/sounds/music/highlands.ogg"
+    },
+    {
+      "musicKey": "firebog",
+      "hubNames": ["Chakra Phool", "Jethimadh", "Jethimadh Tower: Base", "Kalavana", "Shimla Mirch"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - The Firebog",
+      "sourceUrl": "https://www.youtube.com/watch?v=2WAFGVt3520",
+      "confidence": "high",
+      "confidenceReason": "Exact music-key/region name match (singular 'Firebog' vs. the key 'firebog').",
+      "outputFile": "coUclient/web/files/sounds/music/firebog.ogg"
+    },
+    {
+      "musicKey": "forest",
+      "hubNames": ["Aranna", "Besara", "Cauda", "Choru", "Fenneq", "Groddle Forest", "Groddle Heights", "Groddle Meadow", "Sura", "Tamila", "Vantalu"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Groddle",
+      "sourceUrl": "https://www.youtube.com/watch?v=X8oMUsp7Mik",
+      "confidence": "high",
+      "confidenceReason": "'Groddle' is the primary/most recognizable hub name in the 'forest' group (Groddle Forest/Heights/Meadow) and this is also the default fallback track for any hub with no 'music' field set, matching mapData.getSong()'s 'forest' default. A second, more somber-sounding playlist track, 'Dirge for Groddle' (f7MTtwwLdhs), was NOT used here -- its title suggests a specific narrative/quest cue rather than a general ambient loop, so using it for the default region track would be a guess; left unmatched/available for future quest-specific wiring.",
+      "outputFile": "coUclient/web/files/sounds/music/forest.ogg"
+    },
+    {
+      "musicKey": "enchanted",
+      "hubNames": ["(per-street override only: Afar Cleft, Grimssea Hollow, Magha Pleat -- see streetdata.json)"],
+      "source": "youtube-playlist",
+      "sourceTitle": "Glitch Soundtrack - Enchanted Woods",
+      "sourceUrl": "https://www.youtube.com/watch?v=VrtFka-L4HE",
+      "confidence": "high",
+      "confidenceReason": "Exact name match to both the music-key and the original music_map ENCHANTED_WOOD/_II/_III keys. Unlike the other keys here, 'enchanted' is not set on any hub -- it is already used as a per-street override on 3 specific streets in coUserver/lib/common/mapdata/json/streetdata.json.",
+      "outputFile": "coUclient/web/files/sounds/music/enchanted.ogg"
+    },
+    {
+      "musicKey": "ancestral",
+      "hubNames": ["Baqala", "Xalanga", "Zhambu"],
+      "source": "soundtrack-zip",
+      "sourceAlbum": "Soundscapes of Ur",
+      "sourceTitle": "06 Ancestral Lands",
+      "sourceUrl": null,
+      "confidence": "high",
+      "confidenceReason": "Exact name match to the 'ancestral' music key (the Savanna hub group's in-lore name). No equivalently-titled track exists in the YouTube playlist.",
+      "outputFile": "coUclient/web/files/sounds/music/ancestral.ogg"
+    },
+    {
+      "musicKey": "jal",
+      "hubNames": ["Jal", "Samudra"],
+      "source": "soundtrack-zip",
+      "sourceAlbum": "Soundscapes of Ur",
+      "sourceTitle": "08 Jal",
+      "sourceUrl": null,
+      "confidence": "high",
+      "confidenceReason": "Exact hub name match. No equivalently-titled track exists in the YouTube playlist.",
+      "outputFile": "coUclient/web/files/sounds/music/jal.ogg"
+    },
+    {
+      "musicKey": "nottis",
+      "hubNames": ["Drifa", "Nottis"],
+      "source": "soundtrack-zip",
+      "sourceAlbum": "Soundscapes of Ur",
+      "sourceTitle": "13 Nottis",
+      "sourceUrl": null,
+      "confidence": "high",
+      "confidenceReason": "Exact hub name match. No equivalently-titled track exists in the YouTube playlist; the playlist's 'Wintry Place' track is thematically related (Nottis is the winter hub group) but names a specific street, not this hub group, so it was not used here -- see unmatchedPlaylistTracks.",
+      "outputFile": "coUclient/web/files/sounds/music/nottis.ogg"
+    }
+  ],
+  "unmatchedRegions": [
+    {
+      "musicKey": "forest_slow",
+      "hubNames": ["Bortola", "Brillah", "Haraiva", "Karnata", "Muufo"],
+      "status": "no local track",
+      "reason": "Neither the YouTube playlist nor the zip album has a track titled after any of this hub group's names (Bortola/Brillah/Haraiva/Karnata/Muufo/'forest_slow'). Guessing an unrelated track's identity for this key would violate the project's no-silent-guess rule (CONTENT_RECOVERY_PLAN.md). SoundManager.loadSong() has no local entry for 'forest_slow', so streets in this hub group currently produce no ambient music client-side (same silent-no-music behavior as every other region had before this change, not a regression) -- see RECOVERY_TODO.md follow-up."
+    }
+  ],
+  "unmatchedPlaylistTracks": [
+    { "title": "Glitch Soundtrack - Dirge for Groddle", "url": "https://www.youtube.com/watch?v=f7MTtwwLdhs", "likelyMusicMapKey": null, "note": "Probably a specific narrative/quest cue for Groddle rather than a general ambient loop; not used as the 'forest' default to avoid overriding the more generic 'Groddle' match with a guess." },
+    { "title": "Glitch Soundtrack - Ix (Part 2)", "url": "https://www.youtube.com/watch?v=LwY0zuX0990", "likelyMusicMapKey": "ix (second track)", "note": "Second Ix track; not used -- see multiTrackRotationNote." },
+    { "title": "Glitch Soundtrack - Kajuu (Part 2)", "url": "https://www.youtube.com/watch?v=ylEjzyGsGsA", "likelyMusicMapKey": "kajuu (second track)", "note": "Second Kajuu track; not used -- see multiTrackRotationNote." },
+    { "title": "Glitch Soundtrack - The Rook", "url": "https://www.youtube.com/watch?v=PoJatooMP8I", "likelyMusicMapKey": "ROOK_ATTACK / ROOK_FLOCK", "note": "Not a region key; NPC/event sound, out of scope for this pass." },
+    { "title": "Glitch Soundtrack - Abandoned Building Puzzles", "url": "https://www.youtube.com/watch?v=wGB2x1ooYgA", "likelyMusicMapKey": "UNDERGROUND_PUZZLES", "note": "Not a region key; puzzle-location cue, out of scope for this pass." },
+    { "title": "Glitch Soundtrack - Metalmaker Song", "url": "https://www.youtube.com/watch?v=bZ3TULgs0Gk", "likelyMusicMapKey": "METALMAKER", "note": "Not a region key; skill/activity cue, out of scope for this pass." },
+    { "title": "Glitch Soundtrack - Bonus Level", "url": "https://www.youtube.com/watch?v=GkxJz2wRnXQ", "likelyMusicMapKey": null, "note": "No confident match; not a region key." },
+    { "title": "Glitch Soundtrack - Rainbow Run A Capella", "url": "https://www.youtube.com/watch?v=NtAFBwAH43c", "likelyMusicMapKey": "CLOUDHOPOLIS / TICKET_TO_PARADISE1", "note": "Not a region key; minigame cue, out of scope for this pass." },
+    { "title": "Glitch Soundtrack - Toxic Moon", "url": "https://www.youtube.com/watch?v=SVfF6XBS2Io", "likelyMusicMapKey": "TOXIC_MOON", "note": "Exact music_map key name match, but 'toxic_moon' is not used as a music.json/hubdata.json key today; not a region, out of scope for this pass." },
+    { "title": "Glitch Soundtrack - Wintry Place", "url": "https://www.youtube.com/watch?v=ry33RY0MVGs", "likelyMusicMapKey": "wintry (music.json has this key already, unused by any street)", "note": "music.json already reserves a 'wintry' key (existing SoundCloud scid, never assigned to a street in streetdata.json). This track is a strong candidate to fill it as a per-street override on 'Wintry Place', mirroring the existing WintryPlaceHandler buff special-case in coUserver/lib/streets/special_handlers.dart -- but that requires editing coUserver/lib/common/mapdata/json/streetdata.json, which is outside this pass's client-only scope. Left for human follow-up." },
+    { "title": "Glitch Soundtrack - Purple Trip", "url": "https://www.youtube.com/watch?v=hHtypV0tsYs", "likelyMusicMapKey": "PURPLE_LOCATION", "note": "Not a region key; specific location cue, out of scope for this pass." }
+  ],
+  "outOfScopeExistingKeys": {
+    "note": "coUclient/web/files/json/music.json already declares SoundCloud scids for these keys, none of which are region/hub keys (no hub in hubdata.json uses them). No local file was sourced or wired for them in this pass.",
+    "keys": ["crowns", "dream", "horns", "lullaby", "piano", "rainbow", "rube", "uralia3"]
+  }
+}
