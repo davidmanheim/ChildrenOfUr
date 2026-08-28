@@ -1763,8 +1763,8 @@
 	"pocket_salmon": {
 		"name": "Pocket Salmon",
 		"category": "Food",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/salmon__x1_iconic_png_1354829990.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/salmon__x1_1_x1_2_x1_3_x1_4_png_1354829991.png",
+		"iconUrl": "files/sprites/generated/converted/item-pocket_salmon-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-pocket_salmon-sprite.png",
 		"stacksTo": 40,
 		"price": 15,
 		"description": "It's like salmon, but in your pocket! Pocket Salmon! The handy friendly fish-at-your-fingertips that's always ready to go! Why settle for boring old underwater catch-me-if-you-calmon-salmon when you could have the ever-accessible, always-dependable, never-stinky always-yummy Pocket Salmon instead! POCKET SALMON! [TM. Always read the label. Terms and conditions apply]",

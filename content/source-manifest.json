@@ -263,17 +263,17 @@
       "outputs": [
         { "state": "fly-angle1", "characterId": 10, "sourceFrameRange": [1, 34], "file": "content/sprites/butterfly/fly-angle1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-angle1.png", "frameWidth": 78, "frameHeight": 76, "numFrames": 34 },
         { "state": "fly-angle2", "characterId": 11, "sourceFrameRange": [1, 20], "file": "content/sprites/butterfly/fly-angle2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-angle2.png", "frameWidth": 77, "frameHeight": 69, "numFrames": 20 },
-        { "state": "fly-rooked", "characterId": 9, "sourceFrameRange": [1, 14], "file": "content/sprites/butterfly/fly-rooked.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-rooked.png", "frameWidth": 414, "frameHeight": 291, "numFrames": 14, "note": "This symbol has no SymbolClass export name (unlike 8/10/11/13), so it was identified by exhaustively checking every remaining unnamed DefineSprite's frame-label layout ('fly'/'rest') for one whose 'fly' range length is exactly 14, matching Butterfly.dart's hardcoded fly-rooked numFrames. Visually confirmed afterward (same blue butterfly art, larger in-FLA canvas scale consistent with a close-up landing/settling pose)." },
-        { "state": "fly-side", "characterId": 8, "sourceFrameRange": [1, 84], "file": "content/sprites/butterfly/fly-side.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-side.png", "frameWidth": 471, "frameHeight": 479, "numFrames": 84 },
-        { "state": "fly-top", "characterId": 13, "sourceFrameRange": [1, 87], "file": "content/sprites/butterfly/fly-top.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-top.png", "frameWidth": 402, "frameHeight": 380, "numFrames": 87 },
+        { "state": "fly-rooked", "characterId": 9, "sourceFrameRange": [1, 14], "file": "content/sprites/butterfly/fly-rooked.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-rooked.png", "frameWidth": 78, "frameHeight": 55, "numFrames": 14, "note": "This symbol has no SymbolClass export name (unlike 8/10/11/13), so it was identified by exhaustively checking every remaining unnamed DefineSprite's frame-label layout ('fly'/'rest') for one whose 'fly' range length is exactly 14, matching Butterfly.dart's hardcoded fly-rooked numFrames. Visually confirmed afterward (same blue butterfly art, larger in-FLA canvas scale consistent with a close-up landing/settling pose). SCALE BUGFIX (2026-08-28): originally packed at the raw ffdec per-frame canvas size 414x291 -- 5-6x the angle states' scale, confirmed via a live screenshot to render comically oversized (bigger than a tree). Root cause: ffdec's exported per-frame canvas for this DefineSprite is sized to the UNION of the shape's extent across the whole clip's own timeline, and this clip's timeline bakes in the creature translating/wobbling a large distance within its own local coordinate space (verified frame-by-frame: e.g. fly-side's bbox y-range moved from y=3-262 at frame 1 to y=200-428 at frame 20 of the same 479px-tall canvas) -- i.e. camera-relative flight-path motion baked into the nested MovieClip bounds, not a genuinely larger creature. The angle1/angle2/rest-angle* states' art doesn't move within its own frame, so their canvas stayed tight. Fix: uniformly downscaled the already-packed sheet (PIL LANCZOS resize of the whole horizontal strip in one pass, so frame boundaries stay exact multiples of the new frame width -- no per-frame rounding drift) so the largest frame dimension matches fly-angle1's 78px, preserving the aspect ratio and all baked-in motion (now proportionally smaller, as it should be for a same-size creature). Before: 414x291. After: 78x55 (scale factor 78/414=0.1884)." },
+        { "state": "fly-side", "characterId": 8, "sourceFrameRange": [1, 84], "file": "content/sprites/butterfly/fly-side.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-side.png", "frameWidth": 77, "frameHeight": 78, "numFrames": 84, "note": "SCALE BUGFIX (2026-08-28): same root cause and fix as fly-rooked above (see its note) -- this was the most extreme case (canvas up to 471x479, ~6x the angle states). Before: 471x479. After: 77x78 (scale factor 78/479=0.1628)." },
+        { "state": "fly-top", "characterId": 13, "sourceFrameRange": [1, 87], "file": "content/sprites/butterfly/fly-top.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-fly-top.png", "frameWidth": 78, "frameHeight": 74, "numFrames": 87, "note": "SCALE BUGFIX (2026-08-28): same root cause and fix as fly-rooked above. Before: 402x380. After: 78x74 (scale factor 78/402=0.1940)." },
         { "state": "rest-angle1", "characterId": 10, "sourceFrameRange": [40, 45], "file": "content/sprites/butterfly/rest-angle1.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-rest-angle1.png", "frameWidth": 78, "frameHeight": 76, "numFrames": 6 },
         { "state": "rest-angle2", "characterId": 11, "sourceFrameRange": [21, 30], "file": "content/sprites/butterfly/rest-angle2.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-rest-angle2.png", "frameWidth": 77, "frameHeight": 69, "numFrames": 10 },
-        { "state": "rest-top", "characterId": 13, "sourceFrameRange": [88, 129], "file": "content/sprites/butterfly/rest-top.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-rest-top.png", "frameWidth": 402, "frameHeight": 380, "numFrames": 42 }
+        { "state": "rest-top", "characterId": 13, "sourceFrameRange": [88, 129], "file": "content/sprites/butterfly/rest-top.png", "runtimeFile": "coUclient/web/files/sprites/generated/converted/butterfly-rest-top.png", "frameWidth": 78, "frameHeight": 74, "numFrames": 42, "note": "SCALE BUGFIX (2026-08-28): same root cause and fix as fly-rooked above (shares character 13/fly-top's canvas geometry). Before: 402x380. After: 78x74 (scale factor 78/402=0.1940)." }
       ],
       "deferredStates": [
         { "state": "side's 'nuttin' range / side and angle1's 'rest' range (chars 8 and 10)", "reason": "Frame-label sections present in the source that don't correspond to any state referenced by coUserver's Butterfly entity class." }
       ],
-      "validationNote": "All 8 resolved frame ranges exactly match the numFrames already hardcoded in butterfly.dart from the dead-URL era -- see sourceMappingAmbiguityNote."
+      "validationNote": "All 8 resolved frame ranges exactly match the numFrames already hardcoded in butterfly.dart from the dead-URL era -- see sourceMappingAmbiguityNote. NOTE: the ORIGINAL pass's frameWidth/frameHeight for fly-rooked/fly-side/fly-top/rest-top (414x291 / 471x479 / 402x380 / 402x380) reproduced ffdec's raw per-frame canvas faithfully but were never sanity-checked against the other 4 states' scale, causing a visible oversized-butterfly bug (see the SCALE BUGFIX per-state notes above for root cause and fix). All 8 states are now consistent, with a largest frame dimension of 76-78px, matching the angle states' original scale and comparable to batterfly.dart (104x121) and chicken.dart (112x153)."
     },
     {
       "id": "batterfly",
@@ -379,6 +379,426 @@
       "deferredStates": [
         { "state": "needs_pet / needs_water / needs_pet_and_water", "reason": "Separate 22-frame sibling variants exist in the source but PaperTree.dart's entity logic has no concept of a pet/water-need visual state (only a single flat 'maturity_1' state used for the harvest-count mechanic) -- not referenced, not converted." }
       ]
+    },
+    {
+      "id": "reward_item_icons",
+      "note": "Bug 2 fix (2026-08-28): item icons/sprites for the 14 world entities in content/runtime-manifest.json were never converted in earlier passes -- only entity animation sprites were. Confirmed via basic_resources.json etc still pointing at dead https://childrenofur.com/assets/entityImages/... links. Cross-referenced each of the 14 entities' routeIds.rewardItem against coUserver/lib/entities/items/json/*.json, then searched tmp/glitch-items (beans/food/misc/drink/harvestable_resources) for each item's real icon SWF -- distinct, small, single-timeline SWFs separate from the entity animation SWFs, one per item, all following the same 'iconic' + '1'/'2'/'3'/'4' frame-label convention (confirmed by parsing each source's DefineSceneAndFrameLabelData tag directly, the same way tools/swf-frame-labels.py resolves entity animation states). Converted 12 of 13 reward items (helikitty has no rewardItem in the runtime manifest so contributes none; salmon_bubble deferred, see item_icon_salmon_bubble below). iconUrl now points at the single 'iconic'-labelled frame; spriteUrl now points at a 4-frame horizontal strip of the '1'/'2'/'3'/'4' quantity-stack frames (built with the existing tools/build-sprite-sheet.py, same as entity sheets), matching coUclient's so_item.dart sizeItem()/itemdef.dart iconNum=4 default. Wired into coUserver/lib/entities/items/json/basic_resources.json, drinks.json, and food.json, replacing the dead links."
+    },
+    {
+          "id": "item_icon_bean",
+          "sourcePath": "tmp/glitch-items/food/bean_plain/bean_plain.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "bean-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/bean_plain/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bean-icon.png",
+                      "frameWidth": 45,
+                      "frameHeight": 20,
+                      "numFrames": 1
+                },
+                {
+                      "state": "bean-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/bean_plain/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bean-sprite.png",
+                      "frameWidth": 45,
+                      "frameHeight": 20,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_cherry",
+          "sourcePath": "tmp/glitch-items/food/cherry/cherry.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "cherry-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/cherry/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cherry-icon.png",
+                      "frameWidth": 63,
+                      "frameHeight": 80,
+                      "numFrames": 1
+                },
+                {
+                      "state": "cherry-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/cherry/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-cherry-sprite.png",
+                      "frameWidth": 63,
+                      "frameHeight": 80,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_chunk_metal",
+          "sourcePath": "tmp/glitch-items/misc/metal_rock/metal_rock.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "chunk_metal-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/metal_rock/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chunk_metal-icon.png",
+                      "frameWidth": 64,
+                      "frameHeight": 41,
+                      "numFrames": 1
+                },
+                {
+                      "state": "chunk_metal-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/metal_rock/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-chunk_metal-sprite.png",
+                      "frameWidth": 64,
+                      "frameHeight": 41,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_fiber",
+          "sourcePath": "tmp/glitch-items/misc/fiber/strips_of_fabric.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline with only 2 frame labels ('iconic','1') -- no quantity-stack art.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used as the icon; frame 2 (the sole '1' quantity label -- this source has no 2/3/4 stack-count frames) used directly as the single-frame spriteUrl.",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "fiber-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/fiber/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fiber-icon.png",
+                      "frameWidth": 45,
+                      "frameHeight": 22,
+                      "numFrames": 1
+                },
+                {
+                      "state": "fiber-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            2
+                      ],
+                      "file": "content/sprites/items/fiber/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fiber-sprite.png",
+                      "frameWidth": 45,
+                      "frameHeight": 22,
+                      "numFrames": 1
+                }
+          ],
+          "note": "Source SWF only has 2 frame labels ('iconic', '1'), not the usual 5 -- no 2/3/4 quantity-stack art exists for this item. spriteUrl is therefore a single frame, not a 4-wide strip; basic_resources.json's \"fiber\" entry now sets \"iconNum\": 1 to match (the item.dart/itemdef.dart default of 4 would otherwise divide the single icon's width by 4 and render it zoomed/cropped)."
+    },
+    {
+          "id": "item_icon_grain",
+          "sourcePath": "tmp/glitch-items/food/grain/grain.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "grain-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/grain/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-grain-icon.png",
+                      "frameWidth": 54,
+                      "frameHeight": 54,
+                      "numFrames": 1
+                },
+                {
+                      "state": "grain-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/grain/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-grain-sprite.png",
+                      "frameWidth": 54,
+                      "frameHeight": 54,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_guano",
+          "sourcePath": "tmp/glitch-items/misc/guano/guano.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline with only 1 frame label ('1') -- no separate icon pose or quantity-stack art.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> the sole frame (labeled '1'; this source has no separate 'iconic' label) used directly for both iconUrl and spriteUrl.",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "guano-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/guano/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-guano-icon.png",
+                      "frameWidth": 27,
+                      "frameHeight": 17,
+                      "numFrames": 1
+                },
+                {
+                      "state": "guano-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            2
+                      ],
+                      "file": "content/sprites/items/guano/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-guano-sprite.png",
+                      "frameWidth": 27,
+                      "frameHeight": 17,
+                      "numFrames": 1
+                }
+          ],
+          "note": "Source SWF has only 1 frame label ('1'), no 'iconic' state and no 2/3/4 quantity-stack frames. iconUrl and spriteUrl are the same single-frame file; basic_resources.json's \"guano\" entry now sets \"iconNum\": 1 for the same reason as fiber above."
+    },
+    {
+          "id": "item_icon_meat",
+          "sourcePath": "tmp/glitch-items/food/meat/meat.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "meat-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/meat/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-meat-icon.png",
+                      "frameWidth": 67,
+                      "frameHeight": 32,
+                      "numFrames": 1
+                },
+                {
+                      "state": "meat-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/meat/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-meat-sprite.png",
+                      "frameWidth": 67,
+                      "frameHeight": 32,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_paper",
+          "sourcePath": "tmp/glitch-items/misc/paper/paper.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "paper-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/paper/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-paper-icon.png",
+                      "frameWidth": 95,
+                      "frameHeight": 37,
+                      "numFrames": 1
+                },
+                {
+                      "state": "paper-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/paper/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-paper-sprite.png",
+                      "frameWidth": 95,
+                      "frameHeight": 37,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_plain_bubble",
+          "sourcePath": "tmp/glitch-items/food/plain_bubble/plain_bubble.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "plain_bubble-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/plain_bubble/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plain_bubble-icon.png",
+                      "frameWidth": 38,
+                      "frameHeight": 38,
+                      "numFrames": 1
+                },
+                {
+                      "state": "plain_bubble-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/plain_bubble/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plain_bubble-sprite.png",
+                      "frameWidth": 38,
+                      "frameHeight": 38,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_plank",
+          "sourcePath": "tmp/glitch-items/food/plank/plank.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "plank-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/plank/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plank-icon.png",
+                      "frameWidth": 84,
+                      "frameHeight": 38,
+                      "numFrames": 1
+                },
+                {
+                      "state": "plank-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/plank/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-plank-sprite.png",
+                      "frameWidth": 84,
+                      "frameHeight": 38,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_butterfly_milk",
+          "sourcePath": "tmp/glitch-items/drink/milk_butterfly/milk_butterfly.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "butterfly_milk-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/milk_butterfly/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_milk-icon.png",
+                      "frameWidth": 37,
+                      "frameHeight": 45,
+                      "numFrames": 1
+                },
+                {
+                      "state": "butterfly_milk-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/milk_butterfly/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-butterfly_milk-sprite.png",
+                      "frameWidth": 37,
+                      "frameHeight": 45,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_pocket_salmon",
+          "sourcePath": "tmp/glitch-items/food/salmon/salmon.swf",
+          "sourceRepository": "tinyspeck/glitch-items",
+          "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. Root timeline (no DefineSprite/SymbolClass) with 5 frame labels ('iconic','1','2','3','4') -- an icon-sized single-item pose plus 4 stack-quantity poses -- matching the item's original dead-URL naming pattern (e.g. \"grain__x1_iconic\" / \"grain__x1_1_x1_2_x1_3_x1_4\") exactly.",
+          "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic' label) used directly as the icon; frames 2-5 ('1'/'2'/'3'/'4' quantity-stack labels) packed via build-sprite-sheet.py into the spriteUrl strip (iconNum=4, matching item.dart's default).",
+          "conversionResult": "success",
+          "outputs": [
+                {
+                      "state": "pocket_salmon-icon",
+                      "sourceFrameRange": [
+                            1,
+                            1
+                      ],
+                      "file": "content/sprites/items/salmon/icon.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pocket_salmon-icon.png",
+                      "frameWidth": 83,
+                      "frameHeight": 40,
+                      "numFrames": 1
+                },
+                {
+                      "state": "pocket_salmon-sprite",
+                      "sourceFrameRange": [
+                            2,
+                            5
+                      ],
+                      "file": "content/sprites/items/salmon/sprite.png",
+                      "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-pocket_salmon-sprite.png",
+                      "frameWidth": 83,
+                      "frameHeight": 40,
+                      "numFrames": 4
+                }
+          ]
+    },
+    {
+          "id": "item_icon_salmon_bubble",
+          "conversionResult": "deferred",
+          "reason": "The dead URL for this item ('bubble_salmon_iconic.png' / 'bubble_salmon_1234.png') doesn't follow the same '<name>__x1_iconic_png_<timestamp>' naming pattern every other converted item's dead URL uses (no double-underscore separator, no real upload timestamp) -- a strong signal this asset was never actually authored/uploaded even in the original game, or its filename was hand-typed rather than exported. Searched tmp/glitch-items exhaustively (misc, food, harvestable_resources/bubble_tree, inhabitants/salmon) for any 'bubble_salmon'/'salmon_bubble'-named SWF/FLA and found none. Per this project's no-silent-placement rule, salmon_bubble's iconUrl/spriteUrl are left pointing at the original dead childrenofur.com links rather than guessing a substitute asset.",
+          "replacementMilestone": "Identify or confirm the correct source SWF for this item's icon in a future pass (or accept that it may genuinely not exist in the recovered archive), then convert with the same pipeline used for the other 12 reward items here."
     }
   ],
   "notConverted": {

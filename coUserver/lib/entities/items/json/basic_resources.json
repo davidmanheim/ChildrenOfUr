@@ -11,8 +11,8 @@
 	"bean": {
 		"name": "Bean",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bean_plain__x1_iconic_png_1354829680.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bean_plain__x1_1_x1_2_x1_3_x1_4_png_1354829680.png",
+		"iconUrl": "files/sprites/generated/converted/item-bean-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bean-sprite.png",
 		"stacksTo": 250,
 		"price": 1,
 		"description": "A bean. It can be used for cooking, or it can be seasoned to turn it into seeds for different trees and plants."
@@ -20,8 +20,8 @@
 	"cherry": {
 		"name": "Cherry",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/cherry__x1_iconic_png_1354829757.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/cherry__x1_1_x1_2_x1_3_x1_4_png_1354829757.png",
+		"iconUrl": "files/sprites/generated/converted/item-cherry-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-cherry-sprite.png",
 		"stacksTo": 250,
 		"price": 1,
 		"description": "A basic cherry, freshly picked from a Fruit Tree."
@@ -47,8 +47,8 @@
 	"chunk_metal": {
 		"name": "Chunk of Metal Rock",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/metal_rock__x1_iconic_png_1354832617.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/metal_rock__x1_1_x1_2_x1_3_x1_4_png_1354832618.png",
+		"iconUrl": "files/sprites/generated/converted/item-chunk_metal-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-chunk_metal-sprite.png",
 		"stacksTo": 50,
 		"price": 3,
 		"description": "Chunky and metally, this rock, when smelted, makes Plain Metal. Boring maybe, but it's an excellent base for more ambitious alchemical experimentation."
@@ -92,8 +92,9 @@
 	"fiber": {
 		"name": "Fiber",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/fiber__x1_1_png_1354839574.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/fiber__x1_1_png_1354839574.png",
+		"iconUrl": "files/sprites/generated/converted/item-fiber-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-fiber-sprite.png",
+		"iconNum": 1,
 		"stacksTo": 999,
 		"price": 1,
 		"description": "A patch of downy hair brushed from the tail of a fox, perfect for spinning into thread or stuffing into furniture for padding.  Also might be perfect for gluing to your face as a moustache, but due to its origin (the underside of a fox tail), no one does."
@@ -110,8 +111,8 @@
 	"grain": {
 		"name": "Grain",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/grain__x1_iconic_png_1354830084.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/grain__x1_1_x1_2_x1_3_x1_4_png_1354830084.png",
+		"iconUrl": "files/sprites/generated/converted/item-grain-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-grain-sprite.png",
 		"stacksTo": 250,
 		"price": 1,
 		"description": "Some plain grain.",
@@ -129,8 +130,9 @@
 	"guano": {
 		"name": "Guano",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/guano__x1_1_png_1354831825.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/guano__x1_1_png_1354831825.png",
+		"iconUrl": "files/sprites/generated/converted/item-guano-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-guano-sprite.png",
+		"iconNum": 1,
 		"stacksTo": 40,
 		"price": 20,
 		"description": "An unobtrusive pellet from the back end of a Batterfly, Guano can be used as a fertilizer to boost the growth of Crops and Herbs, as an ingredient for Potions, or in the street-building trade."
@@ -165,8 +167,8 @@
 	"meat": {
 		"name": "Meat",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/meat__x1_iconic_png_1354829569.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/meat__x1_1_x1_2_x1_3_x1_4_png_1354829570.png",
+		"iconUrl": "files/sprites/generated/converted/item-meat-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-meat-sprite.png",
 		"stacksTo": 60,
 		"price": 10,
 		"description": "A simple meat.",
@@ -183,8 +185,8 @@
 	"paper": {
 		"name": "Paper",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/paper__x1_iconic_png_1354832570.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/paper__x1_1_x1_2_x1_3_x1_4_png_1354832570.png",
+		"iconUrl": "files/sprites/generated/converted/item-paper-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-paper-sprite.png",
 		"stacksTo": 250,
 		"price": 2,
 		"description": "A blank piece of paper."
@@ -201,8 +203,8 @@
 	"plain_bubble": {
 		"name": "Plain Bubble",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/plain_bubble__x1_iconic_png_1354829961.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/plain_bubble__x1_1_x1_2_x1_3_x1_4_png_1354829962.png",
+		"iconUrl": "files/sprites/generated/converted/item-plain_bubble-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-plain_bubble-sprite.png",
 		"stacksTo": 250,
 		"price": 2,
 		"description": "A common, ordinary, plain bubble harvested from  Bubble Tree."
@@ -210,8 +212,8 @@
 	"plank": {
 		"name": "Plank",
 		"category": "Basic Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/plank__x1_iconic_png_1354829966.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/plank__x1_1_x1_2_x1_3_x1_4_png_1354829971.png",
+		"iconUrl": "files/sprites/generated/converted/item-plank-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-plank-sprite.png",
 		"stacksTo": 250,
 		"price": 5,
 		"description": "A plain wooden plank with many uses."

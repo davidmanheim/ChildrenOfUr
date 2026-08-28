@@ -41,14 +41,30 @@ class Butterfly extends NPC {
 		// content/runtime-manifest.json for the route entry.
 		const String base = "files/sprites/generated/converted/butterfly-";
 		states = {
+			// fly-rooked/fly-side/fly-top/rest-top were originally wired at
+			// their raw ffdec per-frame canvas size (up to 479px). That canvas
+			// is NOT the creature's visible size: those 4 DefineSprite symbols
+			// bake the butterfly's own flight wobble (it translates across a
+			// large area within its own nested-MovieClip timeline) into their
+			// frame bounds, unlike the angle1/angle2/rest-angle* states, whose
+			// art doesn't move within its frame. Packing the raw per-frame
+			// canvas therefore produced sprite sheets 5-6x larger than the
+			// angle states for the SAME creature -- see the butterfly
+			// oversized-scale bugfix note in content/source-manifest.json.
+			// Fixed by uniformly downscaling each of these 4 states' already
+			// -packed sheets (via PIL, preserving aspect ratio and all
+			// animation/motion, just at the right physical size) so their
+			// largest frame dimension matches fly-angle1's 78px, consistent
+			// with the other states and with batterfly.dart/chicken.dart's
+			// scale.
 			"fly-angle1": new Spritesheet("fly-angle1", "${base}fly-angle1.png", 2652, 76, 78, 76, 34, true),
 			"fly-angle2": new Spritesheet("fly-angle2", "${base}fly-angle2.png", 1540, 69, 77, 69, 20, true),
-			"fly-rooked": new Spritesheet("fly-rooked", "${base}fly-rooked.png", 5796, 291, 414, 291, 14, true),
-			"fly-side": new Spritesheet("fly-side", "${base}fly-side.png", 39564, 479, 471, 479, 84, true),
-			"fly-top": new Spritesheet("fly-top", "${base}fly-top.png", 34974, 380, 402, 380, 87, true),
+			"fly-rooked": new Spritesheet("fly-rooked", "${base}fly-rooked.png", 1092, 55, 78, 55, 14, true),
+			"fly-side": new Spritesheet("fly-side", "${base}fly-side.png", 6468, 78, 77, 78, 84, true),
+			"fly-top": new Spritesheet("fly-top", "${base}fly-top.png", 6786, 74, 78, 74, 87, true),
 			"rest-angle1": new Spritesheet("rest-angle1", "${base}rest-angle1.png", 468, 76, 78, 76, 6, true),
 			"rest-angle2": new Spritesheet("rest-angle2", "${base}rest-angle2.png", 770, 69, 77, 69, 10, true),
-			"rest-top": new Spritesheet("rest-top", "${base}rest-top.png", 16884, 380, 402, 380, 42, true)
+			"rest-top": new Spritesheet("rest-top", "${base}rest-top.png", 3276, 74, 78, 74, 42, true)
 		};
 		setState("fly-side");
 		responses = {

@@ -4,11 +4,21 @@ class Pot extends Shrine
 {
 	Pot(String id, num x, num y, num z, num rotation, bool h_flip, String streetName) : super(id, x, y, z, rotation, h_flip, streetName)
 	{
+		// Sprite sheets converted locally from the CC0 tinyspeck/glitch-items
+		// source (shrines/npc_shrine_pot/npc_shrine_ix_pot/npc_shrine_ix_pot.swf)
+		// via tools/build-sprite-sheet.py; see content/source-manifest.json for
+		// provenance and content/runtime-manifest.json for the route entry.
+		// No unsuffixed "base" source SWF exists in the fetched archive for any
+		// giant shrine -- only the 3 regional reskins (Firebog/Ix/Uralia) do.
+		// The Ix variant was used for this base class (an arbitrary but
+		// consistent choice made identically across all 11 giants, documented
+		// rather than guessed at random); the Firebog/Ix/Uralia subclasses below
+		// remain on their original dead links, deferred to a future pass.
 		states =
 			{
-				"close" : new Spritesheet("close","https://childrenofur.com/assets/entityImages/npc_shrine_pot__x1_close_png_1354831243.png",906,752,151,188,23,false),
-				"open" : new Spritesheet("open","https://childrenofur.com/assets/entityImages/npc_shrine_pot__x1_open_png_1354831241.png",906,752,151,188,22,false),
-				"still" : new Spritesheet("still","https://childrenofur.com/assets/entityImages/npc_shrine_pot__x1_open_png_1354831241.png",906,752,151,188,1,false)
+				"close" : new Spritesheet("close","files/sprites/generated/converted/shrine_pot-close.png",3380,216,169,216,20,false),
+				"open" : new Spritesheet("open","files/sprites/generated/converted/shrine_pot-open.png",4056,216,169,216,24,false),
+				"still" : new Spritesheet("still","files/sprites/generated/converted/shrine_pot-open.png",4056,216,169,216,1,false)
 			};
 	 	setState('still');
 	 	type = 'Pot';
