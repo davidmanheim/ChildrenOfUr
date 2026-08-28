@@ -9,7 +9,16 @@ class NPC extends Entity {
 		dontFlip = false,
 		firstRender = true;
 	Animation animation;
-	ChatBubble chatBubble = null;
+	// NOT redeclared here: `chatBubble` already exists on the Entity base
+	// class (entity.dart). Shadowing it with a second same-named field on
+	// this subclass broke DDC's dynamic dispatch for any NPC whose bubble
+	// got cleared -- confirmed live: `hostObject.chatBubble = null` in
+	// ChatBubble.removeBubble() (called dynamically, since ChatBubble's
+	// hostObject is untyped) threw "NoSuchMethodError: method not found:
+	// 'chatBubble=' / Receiver: Instance of 'NPC'" for every NPC bubble
+	// timeout, which is why this had gone unnoticed: only became frequent
+	// once many real NPCs (chicken, fox, salmon, etc.) were actually
+	// talking instead of the handful before.
 	StreamController _animationLoaded = new StreamController.broadcast();
 
 	bool get facingRight => _facingRight;
