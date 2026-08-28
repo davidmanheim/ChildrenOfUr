@@ -567,7 +567,18 @@ All the tools involved (`saucepan`, `gassifier`, `blender`,
   now stands at 794 rows (9 new) and `content/source-manifest.json` gained
   62 new per-source-SWF entries (one per converted source file: 3
   multi-state NPCs + 4 single-state respawning items + 11 icon skins + 44
-  cubimal skins); `tools/validate-content.mjs` still passes.
+  cubimal skins); `tools/validate-content.mjs` still passes. **Placed
+  2026-08-28, same day (RECOVERY_TODO.md's "Placement pass:
+  DustTrap/Mailbox/GardeningGoodsVendor/4 respawning items" row)**: all 7
+  of these open candidates added to `tools/seed-demo-world.mjs` and seeded
+  live. Force-loading each live surfaced one genuine pre-existing bug
+  (`GardeningGoodsVendor.SELL_ITEMS`'s over-strict `List<Map<String,
+  dynamic>>` type vs. `Item.getMap()`'s untyped `Map` return, which also
+  silently truncated that street's whole entity-load loop on failure), fixed
+  with a type-annotation-only change to `scarecrow.dart`. All 7 re-verified
+  constructing cleanly afterward, including `DustTrap`/`Mailbox` on their
+  non-standard constructor-argument paths. No open placement-pass
+  candidates remain from this batch.
 - Found 2026-08-28 (eighth item-icon batch, scoped to `gasses-bubbles.json`/
   `herdkeeping.json`/`emblems-icons.json`/`quest_items.json`): independently
   hit and fixed the same `ffdec -export frame` opaque-backdrop defect

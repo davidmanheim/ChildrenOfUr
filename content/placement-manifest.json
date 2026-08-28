@@ -60,7 +60,7 @@
       "entityType": "Chicken",
       "runtimeAssetId": "chicken",
       "tsid": "LLI35ROMI2J13OF",
-      "x": -567,
+      "x": -463,
       "y": 718,
       "sourceExport": null
     },
@@ -80,7 +80,7 @@
       "entityType": "Chicken",
       "runtimeAssetId": "chicken",
       "tsid": "LIF1A8DFI2J14V4",
-      "x": 564,
+      "x": 654,
       "y": 603,
       "sourceExport": null
     },
@@ -130,7 +130,7 @@
       "entityType": "MetalRock",
       "runtimeAssetId": "metalrock",
       "tsid": "LLI26QQII2J12HH",
-      "x": -725,
+      "x": -734,
       "y": 756,
       "sourceExport": null
     },
@@ -160,7 +160,7 @@
       "entityType": "Fox",
       "runtimeAssetId": "fox",
       "tsid": "LLI35ROMI2J13OF",
-      "x": 398,
+      "x": 433,
       "y": 755,
       "sourceExport": null
     },
@@ -170,7 +170,7 @@
       "entityType": "Fox",
       "runtimeAssetId": "fox",
       "tsid": "LIF1CM8GI2J1HG5",
-      "x": 165,
+      "x": 164,
       "y": 638,
       "sourceExport": null
     },
@@ -180,7 +180,7 @@
       "entityType": "SilverFox",
       "runtimeAssetId": "silverfox",
       "tsid": "LLI272SII2J1NT9",
-      "x": 348,
+      "x": 284,
       "y": 715,
       "sourceExport": null
     },
@@ -230,7 +230,7 @@
       "entityType": "HeliKitty",
       "runtimeAssetId": "helikitty",
       "tsid": "LLI26QQII2J12HH",
-      "x": 544,
+      "x": 470,
       "y": 627,
       "sourceExport": null
     },
@@ -250,7 +250,7 @@
       "entityType": "Salmon",
       "runtimeAssetId": "salmon",
       "tsid": "LLI26QQII2J12HH",
-      "x": -442,
+      "x": -470,
       "y": 623,
       "sourceExport": null
     },
@@ -270,7 +270,7 @@
       "entityType": "Butterfly",
       "runtimeAssetId": "butterfly",
       "tsid": "LA5A8BOUU3E23J5",
-      "x": 534,
+      "x": 664,
       "y": 713,
       "sourceExport": null
     },
@@ -280,7 +280,7 @@
       "entityType": "Butterfly",
       "runtimeAssetId": "butterfly",
       "tsid": "LA5NA0QJE4E2LCB",
-      "x": 214,
+      "x": 304,
       "y": 671,
       "sourceExport": null
     },
@@ -300,7 +300,7 @@
       "entityType": "Batterfly",
       "runtimeAssetId": "batterfly",
       "tsid": "LA5A8BOUU3E23J5",
-      "x": 594,
+      "x": 724,
       "y": 712,
       "sourceExport": null
     },
@@ -310,7 +310,7 @@
       "entityType": "Batterfly",
       "runtimeAssetId": "batterfly",
       "tsid": "LLI35ROMI2J13OF",
-      "x": -60,
+      "x": 10,
       "y": 732,
       "sourceExport": null
     },
@@ -330,7 +330,7 @@
       "entityType": "BeanTree",
       "runtimeAssetId": "bean_tree",
       "tsid": "LA5A8BOUU3E23J5",
-      "x": 654,
+      "x": -33,
       "y": 767,
       "sourceExport": null
     },
@@ -340,7 +340,7 @@
       "entityType": "BeanTree",
       "runtimeAssetId": "bean_tree",
       "tsid": "LA5NA0QJE4E2LCB",
-      "x": 494,
+      "x": 584,
       "y": 634,
       "sourceExport": null
     },
@@ -350,7 +350,7 @@
       "entityType": "BeanTree",
       "runtimeAssetId": "bean_tree",
       "tsid": "LA5NA0QJE4E2LCB",
-      "x": 274,
+      "x": 364,
       "y": 682,
       "sourceExport": null
     },
@@ -400,7 +400,7 @@
       "entityType": "FruitTree",
       "runtimeAssetId": "fruit_tree",
       "tsid": "LLI35ROMI2J13OF",
-      "x": -458,
+      "x": -365,
       "y": 632,
       "sourceExport": null
     },
@@ -410,7 +410,7 @@
       "entityType": "FruitTree",
       "runtimeAssetId": "fruit_tree",
       "tsid": "LIF1CM8GI2J1HG5",
-      "x": 536,
+      "x": 634,
       "y": 741,
       "sourceExport": null
     },
@@ -430,7 +430,7 @@
       "entityType": "PaperTree",
       "runtimeAssetId": "paper_tree",
       "tsid": "LLI26QQII2J12HH",
-      "x": -110,
+      "x": -156,
       "y": 635,
       "sourceExport": null
     },
@@ -440,7 +440,7 @@
       "entityType": "PaperTree",
       "runtimeAssetId": "paper_tree",
       "tsid": "LLI15NBEI2J17A2",
-      "x": 174,
+      "x": 25,
       "y": 667,
       "sourceExport": null
     },
@@ -490,7 +490,7 @@
       "entityType": "DulliteRock",
       "runtimeAssetId": "rock_dullite",
       "tsid": "LLI25SLII2J1P5K",
-      "x": 654,
+      "x": -471,
       "y": 750,
       "sourceExport": null
     },
@@ -530,7 +530,7 @@
       "entityType": "SparklyRock",
       "runtimeAssetId": "rock_sparkly",
       "tsid": "LIF1J3AHI2J1IV6",
-      "x": -415,
+      "x": -341,
       "y": 743,
       "sourceExport": null
     },
@@ -570,7 +570,7 @@
       "entityType": "IceNubbin",
       "runtimeAssetId": "ice_knob",
       "tsid": "LIF1A8DFI2J14V4",
-      "x": -116,
+      "x": -26,
       "y": 648,
       "sourceExport": null
     },
@@ -580,7 +580,7 @@
       "entityType": "IceNubbin",
       "runtimeAssetId": "ice_knob",
       "tsid": "LLI2KGLKI2J1KBM",
-      "x": -202,
+      "x": -146,
       "y": 650,
       "sourceExport": null
     },
@@ -610,7 +610,7 @@
       "entityType": "Jellisac",
       "runtimeAssetId": "jellisac",
       "tsid": "LIF1CM8GI2J1HG5",
-      "x": 275,
+      "x": 374,
       "y": 772,
       "sourceExport": null
     },
@@ -620,7 +620,7 @@
       "entityType": "Jellisac",
       "runtimeAssetId": "jellisac",
       "tsid": "LLI2IFDKI2J1G6C",
-      "x": -156,
+      "x": -6,
       "y": 768,
       "sourceExport": null
     },
@@ -640,7 +640,7 @@
       "entityType": "MortarBarnacle",
       "runtimeAssetId": "mortar_barnacle",
       "tsid": "LLI26QQII2J12HH",
-      "x": -574,
+      "x": -592,
       "y": 653,
       "sourceExport": null
     },
@@ -650,7 +650,7 @@
       "entityType": "MortarBarnacle",
       "runtimeAssetId": "mortar_barnacle",
       "tsid": "LLI35ROMI2J13OF",
-      "x": 647,
+      "x": 658,
       "y": 708,
       "sourceExport": null
     },
@@ -670,7 +670,7 @@
       "entityType": "PeatBog",
       "runtimeAssetId": "peat_base",
       "tsid": "LA5J892JAHE2CFH",
-      "x": -367,
+      "x": -96,
       "y": 697,
       "sourceExport": null
     },
@@ -680,7 +680,7 @@
       "entityType": "PeatBog",
       "runtimeAssetId": "peat_base",
       "tsid": "LLI35ROMI2J13OF",
-      "x": 219,
+      "x": 265,
       "y": 670,
       "sourceExport": null
     },
@@ -700,7 +700,7 @@
       "entityType": "EggPlant",
       "runtimeAssetId": "egg_plant",
       "tsid": "LA5J892JAHE2CFH",
-      "x": 513,
+      "x": 56,
       "y": 648,
       "sourceExport": null
     },
@@ -710,7 +710,7 @@
       "entityType": "EggPlant",
       "runtimeAssetId": "egg_plant",
       "tsid": "LA5J892JAHE2CFH",
-      "x": 696,
+      "x": 57,
       "y": 724,
       "sourceExport": null
     },
@@ -760,7 +760,7 @@
       "entityType": "SpicePlant",
       "runtimeAssetId": "spice_plant",
       "tsid": "LLI26QQII2J12HH",
-      "x": 121,
+      "x": 66,
       "y": 761,
       "sourceExport": null
     },
@@ -770,7 +770,7 @@
       "entityType": "SpicePlant",
       "runtimeAssetId": "spice_plant",
       "tsid": "LLI2IFDKI2J1G6C",
-      "x": -336,
+      "x": -186,
       "y": 764,
       "sourceExport": null
     },
@@ -830,7 +830,7 @@
       "entityType": "Cosma",
       "runtimeAssetId": "shrine_cosma",
       "tsid": "LIF25OMMI2J1MPM",
-      "x": 213,
+      "x": 404,
       "y": 675,
       "sourceExport": null
     },
@@ -850,7 +850,7 @@
       "entityType": "Friendly",
       "runtimeAssetId": "shrine_friendly",
       "tsid": "LA5NA0QJE4E2LCB",
-      "x": 34,
+      "x": 124,
       "y": 733,
       "sourceExport": null
     },
@@ -880,7 +880,7 @@
       "entityType": "Grendaline",
       "runtimeAssetId": "shrine_grendaline",
       "tsid": "LLI2INEKI2J1318",
-      "x": -63,
+      "x": 74,
       "y": 628,
       "sourceExport": null
     },
@@ -890,7 +890,7 @@
       "entityType": "Grendaline",
       "runtimeAssetId": "shrine_grendaline",
       "tsid": "LLI27HUII2J1TJJ",
-      "x": 178,
+      "x": 205,
       "y": 674,
       "sourceExport": null
     },
@@ -950,7 +950,7 @@
       "entityType": "Lem",
       "runtimeAssetId": "shrine_lem",
       "tsid": "LIF1A8DFI2J14V4",
-      "x": 204,
+      "x": 294,
       "y": 712,
       "sourceExport": null
     },
@@ -970,7 +970,7 @@
       "entityType": "Mab",
       "runtimeAssetId": "shrine_mab",
       "tsid": "LIF20C9LI2J1BP5",
-      "x": -286,
+      "x": -106,
       "y": 687,
       "sourceExport": null
     },
@@ -1000,7 +1000,7 @@
       "entityType": "Pot",
       "runtimeAssetId": "shrine_pot",
       "tsid": "LIF257LMI2J1IJT",
-      "x": -326,
+      "x": -136,
       "y": 658,
       "sourceExport": null
     },
@@ -1020,7 +1020,7 @@
       "entityType": "Spriggan",
       "runtimeAssetId": "shrine_spriggan",
       "tsid": "LIF1CM8GI2J1HG5",
-      "x": -455,
+      "x": -456,
       "y": 703,
       "sourceExport": null
     },
@@ -1030,7 +1030,7 @@
       "entityType": "Spriggan",
       "runtimeAssetId": "shrine_spriggan",
       "tsid": "LLI2KGLKI2J1KBM",
-      "x": -762,
+      "x": -636,
       "y": 778,
       "sourceExport": null
     },
@@ -1040,7 +1040,7 @@
       "entityType": "Spriggan",
       "runtimeAssetId": "shrine_spriggan",
       "tsid": "LLI2INEKI2J1318",
-      "x": 672,
+      "x": -16,
       "y": 677,
       "sourceExport": null
     },
@@ -1060,7 +1060,7 @@
       "entityType": "Tii",
       "runtimeAssetId": "shrine_ti",
       "tsid": "LIF19JAFI2J1A4G",
-      "x": 484,
+      "x": 634,
       "y": 767,
       "sourceExport": null
     },
@@ -1080,7 +1080,7 @@
       "entityType": "Zille",
       "runtimeAssetId": "shrine_zille",
       "tsid": "LLI2IFDKI2J1G6C",
-      "x": 584,
+      "x": 542,
       "y": 663,
       "sourceExport": null
     },
@@ -1100,7 +1100,7 @@
       "entityType": "Zille",
       "runtimeAssetId": "shrine_zille",
       "tsid": "LLI2KGLKI2J1KBM",
-      "x": 696,
+      "x": -775,
       "y": 643,
       "sourceExport": null
     },
@@ -1130,7 +1130,7 @@
       "entityType": "Garden",
       "runtimeAssetId": "garden",
       "tsid": "LLI263NII2J1O7F",
-      "x": 304,
+      "x": 394,
       "y": 680,
       "sourceExport": null
     },
@@ -1140,7 +1140,7 @@
       "entityType": "ToolVendor",
       "runtimeAssetId": "toolvendor",
       "tsid": "LA5J892JAHE2CFH",
-      "x": -876,
+      "x": -726,
       "y": 612,
       "sourceExport": null
     },
@@ -1150,7 +1150,7 @@
       "entityType": "ToolVendor",
       "runtimeAssetId": "toolvendor",
       "tsid": "LLI2IFDKI2J1G6C",
-      "x": -36,
+      "x": 314,
       "y": 777,
       "sourceExport": null
     },
@@ -1240,7 +1240,7 @@
       "entityType": "StreetSpiritGroddle",
       "runtimeAssetId": "streetspiritgroddle",
       "tsid": "LA5J892JAHE2CFH",
-      "x": -693,
+      "x": -416,
       "y": 726,
       "sourceExport": null
     },
@@ -1260,7 +1260,7 @@
       "entityType": "SnoConeVendingMachine",
       "runtimeAssetId": "snoconevendingmachine",
       "tsid": "LLI161CEI2J10K4",
-      "x": -834,
+      "x": -864,
       "y": 755,
       "sourceExport": null
     },
@@ -1285,6 +1285,66 @@
       "sourceExport": null
     },
     {
+      "id": "demo-LLI272SII2J1NT9-GardeningGoodsVendor-1",
+      "provenanceKind": "synthetic",
+      "entityType": "GardeningGoodsVendor",
+      "runtimeAssetId": "scarecrow",
+      "tsid": "LLI272SII2J1NT9",
+      "x": 394,
+      "y": 762,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1FMJFI2J10EH-GardeningGoodsVendor-1",
+      "provenanceKind": "synthetic",
+      "entityType": "GardeningGoodsVendor",
+      "runtimeAssetId": "scarecrow",
+      "tsid": "LLI1FMJFI2J10EH",
+      "x": 4,
+      "y": 776,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI25SLII2J1P5K-GardeningGoodsVendor-1",
+      "provenanceKind": "synthetic",
+      "entityType": "GardeningGoodsVendor",
+      "runtimeAssetId": "scarecrow",
+      "tsid": "LLI25SLII2J1P5K",
+      "x": 484,
+      "y": 664,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KGLKI2J1KBM-DustTrap-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DustTrap",
+      "runtimeAssetId": "dust_trap",
+      "tsid": "LLI2KGLKI2J1KBM",
+      "x": -876,
+      "y": 749,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2INEKI2J1318-DustTrap-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DustTrap",
+      "runtimeAssetId": "dust_trap",
+      "tsid": "LLI2INEKI2J1318",
+      "x": 254,
+      "y": 648,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF19JAFI2J1A4G-DustTrap-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DustTrap",
+      "runtimeAssetId": "dust_trap",
+      "tsid": "LIF19JAFI2J1A4G",
+      "x": 284,
+      "y": 685,
+      "sourceExport": null
+    },
+    {
       "id": "demo-LA5NA0QJE4E2LCB-Crab-1",
       "provenanceKind": "synthetic",
       "entityType": "Crab",
@@ -1300,7 +1360,7 @@
       "entityType": "Crab",
       "runtimeAssetId": "crab",
       "tsid": "LLI272SII2J1NT9",
-      "x": -588,
+      "x": -626,
       "y": 715,
       "sourceExport": null
     },
@@ -1310,13 +1370,163 @@
       "entityType": "Crab",
       "runtimeAssetId": "crab",
       "tsid": "LLI161CEI2J10K4",
-      "x": 578,
+      "x": 745,
       "y": 732,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI35ROMI2J13OF-Mailbox-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mailbox",
+      "runtimeAssetId": "mailbox",
+      "tsid": "LLI35ROMI2J13OF",
+      "x": -591,
+      "y": 610,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2T6MLI2J1BHG-Mailbox-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mailbox",
+      "runtimeAssetId": "mailbox",
+      "tsid": "LLI2T6MLI2J1BHG",
+      "x": -563,
+      "y": 639,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1U6NJI2J1R9K-Mailbox-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mailbox",
+      "runtimeAssetId": "mailbox",
+      "tsid": "LIF1U6NJI2J1R9K",
+      "x": 504,
+      "y": 606,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5J892JAHE2CFH-CocktailShakerRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "CocktailShakerRespawningItem",
+      "runtimeAssetId": "cocktail_shaker",
+      "tsid": "LA5J892JAHE2CFH",
+      "x": -876,
+      "y": 709,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2IFDKI2J1G6C-CocktailShakerRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "CocktailShakerRespawningItem",
+      "runtimeAssetId": "cocktail_shaker",
+      "tsid": "LLI2IFDKI2J1G6C",
+      "x": -336,
+      "y": 684,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1TGLJI2J110R-CocktailShakerRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "CocktailShakerRespawningItem",
+      "runtimeAssetId": "cocktail_shaker",
+      "tsid": "LIF1TGLJI2J110R",
+      "x": 154,
+      "y": 767,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-HotNFizzySauceRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "HotNFizzySauceRespawningItem",
+      "runtimeAssetId": "hot_n_fizzy_sauce",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 34,
+      "y": 768,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-HotNFizzySauceRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "HotNFizzySauceRespawningItem",
+      "runtimeAssetId": "hot_n_fizzy_sauce",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 562,
+      "y": 767,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI263NII2J1O7F-HotNFizzySauceRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "HotNFizzySauceRespawningItem",
+      "runtimeAssetId": "hot_n_fizzy_sauce",
+      "tsid": "LLI263NII2J1O7F",
+      "x": -136,
+      "y": 618,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1CM8GI2J1HG5-LaughingGasRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "LaughingGasRespawningItem",
+      "runtimeAssetId": "gas_laughing",
+      "tsid": "LIF1CM8GI2J1HG5",
+      "x": 274,
+      "y": 717,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI15NBEI2J17A2-LaughingGasRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "LaughingGasRespawningItem",
+      "runtimeAssetId": "gas_laughing",
+      "tsid": "LLI15NBEI2J17A2",
+      "x": 639,
+      "y": 685,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2IFDKI2J1G6C-LaughingGasRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "LaughingGasRespawningItem",
+      "runtimeAssetId": "gas_laughing",
+      "tsid": "LLI2IFDKI2J1G6C",
+      "x": 214,
+      "y": 620,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-NoNoPowderRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "NoNoPowderRespawningItem",
+      "runtimeAssetId": "no_no_powder",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 534,
+      "y": 647,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-NoNoPowderRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "NoNoPowderRespawningItem",
+      "runtimeAssetId": "no_no_powder",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 350,
+      "y": 766,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5J892JAHE2CFH-NoNoPowderRespawningItem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "NoNoPowderRespawningItem",
+      "runtimeAssetId": "no_no_powder",
+      "tsid": "LA5J892JAHE2CFH",
+      "x": -546,
+      "y": 677,
       "sourceExport": null
     }
   ],
   "coverageSummary": {
-    "note": "Full per-row placement data (59833 rows across 52 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle/SnoConeVendingMachine/Crab) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "note": "Full per-row placement data (64429 rows across 59 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille/Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle/SnoConeVendingMachine/GardeningGoodsVendor/DustTrap/Crab/Mailbox/CocktailShakerRespawningItem/HotNFizzySauceRespawningItem/LaughingGasRespawningItem/NoNoPowderRespawningItem) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
     "streetsCovered": 3180,
     "totalStreets": 3183,
     "placementsByEntityType": {
@@ -1344,6 +1554,7 @@
       "StreetSpiritGroddle": 466,
       "HoochRespawningItem": 791,
       "PurpleFlowerRespawningItem": 1448,
+      "NoNoPowderRespawningItem": 1383,
       "Still": 196,
       "Fox": 1179,
       "FruitTree": 1812,
@@ -1352,10 +1563,14 @@
       "PeatBog": 811,
       "EggPlant": 1892,
       "Garden": 692,
+      "HotNFizzySauceRespawningItem": 771,
       "Crab": 673,
       "ToolVendor": 356,
+      "CocktailShakerRespawningItem": 391,
       "Chicken": 2047,
+      "Mailbox": 193,
       "Spriggan": 159,
+      "LaughingGasRespawningItem": 1305,
       "Alph": 160,
       "Zille": 176,
       "SparklyRock": 345,
@@ -1366,7 +1581,9 @@
       "DulliteRock": 502,
       "IceNubbin": 858,
       "StreetSpiritZutto": 392,
+      "DustTrap": 174,
       "SilverFox": 317,
+      "GardeningGoodsVendor": 379,
       "SnoConeVendingMachine": 337,
       "Pot": 145,
       "Mab": 156,

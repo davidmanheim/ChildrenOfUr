@@ -182,9 +182,38 @@ const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem
 // precedent, this is NOT a dead-linked-sprite placement; both the NPC's
 // world sprite and its catalog's `snocone_blue/green/orange/purple/red`
 // item icons were already converted in an earlier item-icon batch.
+// GardeningGoodsVendor (coUserver/lib/entities/npcs/vendors/scarecrow.dart --
+// the file is misnamed; the actual class is GardeningGoodsVendor, confirmed
+// by grep, no `class Scarecrow` exists anywhere in coUserver) added
+// 2026-08-28 alongside DustTrap/Mailbox/the 4 respawning items below (see
+// POTENTIAL_TODO.md's quest-completability audit and RECOVERY_TODO.md --
+// real, unmodified game logic and real converted art, just never placed).
+// Confirmed by reading the class directly: `class GardeningGoodsVendor
+// extends Vendor`, constructor `(String id, String streetName, String tsid,
+// num x, num y, num z, num rotation, bool h_flip)` -- an exact match for the
+// `[id, label, tsid, x, y, z, rotation, h_flip]` args `putEntitiesInMemory`
+// uses for every `Vendor` subclass, identical in shape to Garden/ToolVendor
+// above. It stocks hoe/watering_can/13 crop seeds (SELL_ITEMS) -- exactly
+// the "gardening" vendorCategory's own definition (hoe/watering_can/seeds a
+// garden needs, per the comment below), so it shares Garden's gardening-
+// street placement boost (see gardenVendorBoost below); it does not stock
+// produce, so it does NOT get the produce boost Garden also gets.
+//
+// DustTrap (coUserver/lib/entities/npcs/dust_trap.dart) is NOT a Vendor
+// subclass (`class DustTrap extends NPC implements EventHandler<...>`), but
+// is grouped here rather than in NPC_ITEM_TYPES because street.dart's
+// `putEntitiesInMemory` special-cases it (`classMirror == findClassMirror
+// ("DustTrap")`) to receive the exact same Vendor-shaped construction args
+// as every type in this list, confirmed directly: DustTrap's constructor is
+// `(String id, String streetName, this.tsid, num x, num y, num z, num
+// rotation, bool h_flip)` -- matching `[id, label, tsid, x, y, z, rotation,
+// h_flip]` exactly, not the plain-NPC `[id, x, y, z, rotation, h_flip,
+// label]` shape NPC_ITEM_TYPES' Still/Crab use. No server-side code change
+// was needed -- street.dart's special case already exists and was verified
+// live (see RECOVERY_TODO.md/POTENTIAL_TODO.md for the verification note).
 const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
   'StreetSpiritFirebog', 'StreetSpiritZutto', 'StreetSpiritGroddle',
-  'SnoConeVendingMachine'];
+  'SnoConeVendingMachine', 'GardeningGoodsVendor', 'DustTrap'];
 // Fourth/fifth drinks/herbalism conversion batches (see RECOVERY_TODO.md
 // "Continue asset conversion") documented three real, unmodified, working
 // acquisition routes that were simply never placed here -- confirmed directly
@@ -210,8 +239,35 @@ const VENDOR_NPC_TYPES = ['Garden', 'ToolVendor',
 // pass converts that art too -- see RECOVERY_TODO.md. `Crab` already has
 // real converted world-entity sprites (files/sprites/generated/converted/
 // crab-*.png) from its own prior conversion batch, so it renders correctly.
-const RESPAWNING_ITEM_TYPES = ['HoochRespawningItem', 'PurpleFlowerRespawningItem'];
-const NPC_ITEM_TYPES = ['Still', 'Crab'];
+// CocktailShakerRespawningItem/HotNFizzySauceRespawningItem/
+// LaughingGasRespawningItem/NoNoPowderRespawningItem (coUserver/lib/entities/
+// plants/respawning_items/{cocktail_shaker,hot_n_fizzy_sauce,laughing_gas,
+// nonopowder}.dart -- note the last file is `nonopowder.dart`, not
+// `no_no_powder.dart`) added 2026-08-28. All four are confirmed `class
+// XRespawningItem extends RespawningItem` (RespawningItem itself `extends
+// Plant`), constructor `(String id, num x, num y, num z, num rotation, bool
+// h_flip, String streetName)` -- the same plain Plant-branch
+// `[id, x, y, z, rotation, h_flip, label]` args as
+// Hooch/PurpleFlowerRespawningItem above. Unlike Hooch/PurpleFlower, all
+// four already have real converted on-map Spritesheet art (see
+// content/runtime-manifest.json's cocktail_shaker/hot_n_fizzy_sauce/
+// gas_laughing/no_no_powder entries -- "status": "converted", no dead-link
+// caveat), so placing them makes both the art and the real
+// pick-up-grants-item gameplay logic reachable at once.
+const RESPAWNING_ITEM_TYPES = ['HoochRespawningItem', 'PurpleFlowerRespawningItem',
+  'CocktailShakerRespawningItem', 'HotNFizzySauceRespawningItem',
+  'LaughingGasRespawningItem', 'NoNoPowderRespawningItem'];
+// Mailbox (coUserver/lib/entities/npcs/mailbox.dart) added 2026-08-28:
+// confirmed `class Mailbox extends NPC` (not Vendor, not the DustTrap
+// special case), constructor `(String id, num x, num y, num z, num
+// rotation, bool h_flip, String streetName)` -- the plain NPC-branch
+// `[id, x, y, z, rotation, h_flip, label]` args, identical in shape to
+// Still/Crab. Its 'check for mail'/'view inbox' actions and the real
+// /getMail, /sendMail, /collectItem, /collectCurrants, /deleteMail,
+// /readMail HTTP routes are all real, unmodified, unchanged game logic --
+// placing it is the only missing piece for the messaging system to be
+// reachable at all.
+const NPC_ITEM_TYPES = ['Still', 'Crab', 'Mailbox'];
 const REAL_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
   'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
@@ -313,6 +369,53 @@ const RARITY = {
   // (checked directly, same "don't guess" rule as the shrines/
   // StreetSpiritZutto/Groddle above) -- a flat rate applies everywhere.
   SnoConeVendingMachine: { chance: 10, maxCount: 1 },
+  // DustTrap: a stationary "prank" structure (a hidden trap that smacks
+  // down and grants a random paper/bun or a miss) -- same "landmark
+  // structure, not commodity" tier as Still (6%), per direct user guidance.
+  // No REGION_THEME entry: no confident biome read found for it either.
+  DustTrap: { chance: 6, maxCount: 1 },
+  // Mailbox: a stationary utility structure (enables the real player-to-
+  // player messaging system) -- same tier as Still/DustTrap (6%) per direct
+  // user guidance, even though its utility purpose could argue for higher;
+  // ~190 mailboxes across ~3,180 streets is still reliably reachable. No
+  // REGION_THEME entry: no confident biome read found for it.
+  Mailbox: { chance: 6, maxCount: 1 },
+  // GardeningGoodsVendor: a specialty vendor (real converted art, see the
+  // VENDOR_NPC_TYPES comment above) -- split the difference between
+  // SnoConeVendingMachine (10%) and ToolVendor (12%) for its flat base rate,
+  // then boosted on "gardening"-category streets the same way Garden is
+  // (see gardeningGoodsVendorBoost below) since its stock (hoe/watering_can/
+  // 13 seeds) is exactly that category's own definition -- a real, grounded
+  // per-street signal, not an invented heuristic. No general REGION_THEME
+  // entry: the gardening-category boost already covers the one genuine
+  // signal found for it.
+  GardeningGoodsVendor: { chance: 11, maxCount: 1 },
+  // CocktailShakerRespawningItem/HotNFizzySauceRespawningItem/
+  // LaughingGasRespawningItem/NoNoPowderRespawningItem: ground-resource
+  // harvestables (same RespawningItem shape as Hooch/PurpleFlower above),
+  // tiered by each item's own in-code respawnTime -- the same grounded
+  // "how special is this meant to be" signal the Hooch/PurpleFlower comment
+  // above already uses (a short respawnTime supports a common rate; a long
+  // one signals a deliberately rarer find). No REGION_THEME entry for any
+  // of the four: no confident biome association was found for any of them
+  // in any recovered data (same "don't guess" rule as everything else
+  // above).
+  // NoNoPowderRespawningItem: respawnTime 30s, the fastest of the four by
+  // far -- placed at PurpleFlower's common tier (35%).
+  NoNoPowderRespawningItem: { chance: 35, maxCount: 2 },
+  // LaughingGasRespawningItem: respawnTime 3min, same as PurpleFlower's own
+  // respawnTime -- same general tier, just below it since "gas" reads as a
+  // slightly less mundane find than a flower.
+  LaughingGasRespawningItem: { chance: 30, maxCount: 2 },
+  // HotNFizzySauceRespawningItem: respawnTime 6min, close to Hooch's 7min --
+  // placed at Hooch's tier.
+  HotNFizzySauceRespawningItem: { chance: 25, maxCount: 1 },
+  // CocktailShakerRespawningItem: respawnTime 45min -- 6-15x slower than the
+  // other three, and it grants a tool item (cocktail_shaker) rather than a
+  // consumable ingredient, both signaling a deliberately much rarer ground
+  // find. Placed at ToolVendor's specialty tier (12%) instead of the
+  // common-ingredient tier the other three respawning items above get.
+  CocktailShakerRespawningItem: { chance: 12, maxCount: 1 },
 };
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
@@ -350,6 +453,18 @@ const RUNTIME_ASSET_ID = {
   // above, so (unlike Hooch/PurpleFlower/Still) it belongs in
   // NEWLY_PLACED_TYPES below too.
   SnoConeVendingMachine: 'snoconevendingmachine',
+  // DustTrap/Mailbox/GardeningGoodsVendor/the 4 respawning items added
+  // 2026-08-28 all have their own real converted-art runtime-manifest rows
+  // (ids match content/runtime-manifest.json exactly -- "scarecrow" for
+  // GardeningGoodsVendor since that's the misnamed source file's id, and
+  // "gas_laughing"/"no_no_powder" for LaughingGas/NoNoPowder since those are
+  // the real item ids, not the class-name-derived strings), so all 7 belong
+  // in NEWLY_PLACED_TYPES below too.
+  DustTrap: 'dust_trap', Mailbox: 'mailbox', GardeningGoodsVendor: 'scarecrow',
+  CocktailShakerRespawningItem: 'cocktail_shaker',
+  HotNFizzySauceRespawningItem: 'hot_n_fizzy_sauce',
+  LaughingGasRespawningItem: 'gas_laughing',
+  NoNoPowderRespawningItem: 'no_no_powder',
 };
 // Types with real, newly-converted official art (as opposed to quoins,
 // which predate this pass) -- these get concrete example rows in the placement
@@ -360,8 +475,15 @@ const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'BerylRock', 'DulliteRock', 'SparklyRock',
   'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
   'EggPlant', 'GasPlant', 'SpicePlant',
-  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES, 'Crab'];
-// (SnoConeVendingMachine is included via the VENDOR_NPC_TYPES spread above.)
+  ...SHRINE_TYPES, ...VENDOR_NPC_TYPES, 'Crab', 'Mailbox',
+  'CocktailShakerRespawningItem', 'HotNFizzySauceRespawningItem',
+  'LaughingGasRespawningItem', 'NoNoPowderRespawningItem'];
+// (SnoConeVendingMachine/GardeningGoodsVendor/DustTrap are included via the
+// VENDOR_NPC_TYPES spread above; the 4 respawning items are listed
+// explicitly here rather than via a RESPAWNING_ITEM_TYPES spread, matching
+// how Hooch/PurpleFlowerRespawningItem were deliberately left OUT of this
+// list -- unlike those two, all 4 new respawning items have real converted
+// art, not a dead-linked sprite, so they belong here.)
 
 function hash(value) {
   let result = 2166136261;
@@ -404,6 +526,23 @@ const WIDTH_BY_TYPE = {
 	DirtPile: 200, IceNubbin: 120, Jellisac: 120, MortarBarnacle: 120, PeatBog: 160,
 	EggPlant: 180, GasPlant: 180, SpicePlant: 180,
 	HoochRespawningItem: 140, PurpleFlowerRespawningItem: 100,
+	// Added 2026-08-28: DustTrap/Mailbox/the 4 new respawning items' actual
+	// converted frame widths (5th positional arg of their default state's
+	// Spritesheet() call -- (name, url, sheetWidth, sheetHeight, frameWidth,
+	// frameHeight, numFrames, loops)) differ meaningfully from DEFAULT_WIDTH
+	// (180), so each gets an explicit entry here, scaled similarly to the
+	// existing Hooch(47px frame->140)/PurpleFlower(68px frame->100) margin
+	// convention above rather than using the raw frame width directly.
+	// GardeningGoodsVendor's own default state ('idle_stand') frame width is
+	// 187px -- close enough to DEFAULT_WIDTH (180) that it gets no entry,
+	// same as the other already-placed Vendor types (Garden/ToolVendor/etc.)
+	// above, none of which have one either.
+	DustTrap: 150, // 'up' (default/idle) state frame width 123px
+	Mailbox: 120, // 'idle' (default) state frame width 101px
+	CocktailShakerRespawningItem: 150, // frame width 125px
+	NoNoPowderRespawningItem: 130, // frame width 85px
+	LaughingGasRespawningItem: 100, // frame width 52px
+	HotNFizzySauceRespawningItem: 90, // frame width 41px
 	// Animals: generally smaller than trees/NPCs.
 	Chicken: 90, Piggy: 110, Fox: 110, SilverFox: 110, Salmon: 90, Crab: 90,
 	Butterfly: 60, Batterfly: 60, HeliKitty: 90,
@@ -584,10 +723,17 @@ for (const [streetName, data] of Object.entries(streets)) {
   const vendorCategory = vendorTypeByStreetName[streetName];
   const gardenVendorBoost = vendorCategory === 'gardening' ? 1.6
     : vendorCategory === 'produce' ? 1.3 : 1;
+  // GardeningGoodsVendor (added 2026-08-28) stocks hoe/watering_can/13 crop
+  // seeds -- exactly the "gardening" vendorCategory's own definition, with
+  // no produce overlap -- so it shares Garden's gardening-street boost only
+  // (not the produce boost Garden also gets, since GardeningGoodsVendor
+  // sells no produce). See the VENDOR_NPC_TYPES comment above.
+  const gardeningGoodsVendorBoost = vendorCategory === 'gardening' ? 1.6 : 1;
   for (const type of REAL_TYPES) {
     const { chance, maxCount } = RARITY[type];
     const multiplier = (REGION_THEME[region]?.[type] ?? 1) *
-      (type === 'Garden' ? gardenVendorBoost : 1);
+      (type === 'Garden' ? gardenVendorBoost
+        : type === 'GardeningGoodsVendor' ? gardeningGoodsVendorBoost : 1);
     const effectiveChance = Math.max(2, Math.min(95, Math.round(chance * multiplier)));
     if (hash(`${data.tsid}:${type}:include`) % 100 >= effectiveChance) continue;
     const count = 1 + ((maxCount > 1 && hash(`${data.tsid}:${type}:count`) % 100 < 30) ? 1 : 0);

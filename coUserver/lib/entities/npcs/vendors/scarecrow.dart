@@ -1,7 +1,19 @@
 part of entity;
 
 class GardeningGoodsVendor extends Vendor implements EventHandler<PlayerPosition> {
-	static final List<Map<String, dynamic>> SELL_ITEMS = [
+	// `List<Map>`, not `List<Map<String, dynamic>>`: Item.getMap() (item.dart)
+	// is declared `Map getMap() => {...}`, which Dart infers as
+	// `Map<dynamic, dynamic>` from the untyped return type, not
+	// `Map<String, dynamic>` -- the stricter generic here threw
+	// "type '_InternalLinkedHashMap<dynamic, dynamic>' is not a subtype of
+	// type 'Map<String, dynamic>'" the moment this class was actually
+	// constructed (dart:mirrors reflective construction via street.dart's
+	// putEntitiesInMemory), confirmed live 2026-08-28 during this class's
+	// first-ever placement pass -- never triggered before since the class
+	// was never placed anywhere. Vendor's own `itemsForSale` field
+	// (vendor.dart) is untyped `List<Map>` for the same reason. No gameplay
+	// behavior changes; this is a type-annotation-only fix.
+	static final List<Map> SELL_ITEMS = [
 		items['hoe'].getMap(),
 		items['watering_can'].getMap(),
 		items['broccoli_seed'].getMap(),
