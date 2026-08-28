@@ -443,10 +443,670 @@
       "x": -64,
       "y": 667,
       "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-BerylRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "BerylRock",
+      "runtimeAssetId": "rock_beryl",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 832,
+      "y": 760,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-BerylRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "BerylRock",
+      "runtimeAssetId": "rock_beryl",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -511,
+      "y": 746,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI263NII2J1O7F-BerylRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "BerylRock",
+      "runtimeAssetId": "rock_beryl",
+      "tsid": "LLI263NII2J1O7F",
+      "x": -752,
+      "y": 734,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1A8DFI2J14V4-DulliteRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DulliteRock",
+      "runtimeAssetId": "rock_dullite",
+      "tsid": "LIF1A8DFI2J14V4",
+      "x": 282,
+      "y": 686,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI25SLII2J1P5K-DulliteRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DulliteRock",
+      "runtimeAssetId": "rock_dullite",
+      "tsid": "LLI25SLII2J1P5K",
+      "x": -686,
+      "y": 750,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF19JAFI2J1A4G-DulliteRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DulliteRock",
+      "runtimeAssetId": "rock_dullite",
+      "tsid": "LIF19JAFI2J1A4G",
+      "x": 188,
+      "y": 687,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2PC8LI2J1Q9D-SparklyRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SparklyRock",
+      "runtimeAssetId": "rock_sparkly",
+      "tsid": "LLI2PC8LI2J1Q9D",
+      "x": 158,
+      "y": 618,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2OQ3LI2J1P60-SparklyRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SparklyRock",
+      "runtimeAssetId": "rock_sparkly",
+      "tsid": "LLI2OQ3LI2J1P60",
+      "x": -241,
+      "y": 715,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1J3AHI2J1IV6-SparklyRock-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SparklyRock",
+      "runtimeAssetId": "rock_sparkly",
+      "tsid": "LIF1J3AHI2J1IV6",
+      "x": -516,
+      "y": 743,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-DirtPile-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DirtPile",
+      "runtimeAssetId": "dirt_pile",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 116,
+      "y": 764,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI279UII2J12U8-DirtPile-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DirtPile",
+      "runtimeAssetId": "dirt_pile",
+      "tsid": "LLI279UII2J12U8",
+      "x": -431,
+      "y": 759,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1RO6HI2J1DNN-DirtPile-1",
+      "provenanceKind": "synthetic",
+      "entityType": "DirtPile",
+      "runtimeAssetId": "dirt_pile",
+      "tsid": "LLI1RO6HI2J1DNN",
+      "x": -64,
+      "y": 710,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1A8DFI2J14V4-IceNubbin-1",
+      "provenanceKind": "synthetic",
+      "entityType": "IceNubbin",
+      "runtimeAssetId": "ice_knob",
+      "tsid": "LIF1A8DFI2J14V4",
+      "x": 332,
+      "y": 648,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KGLKI2J1KBM-IceNubbin-1",
+      "provenanceKind": "synthetic",
+      "entityType": "IceNubbin",
+      "runtimeAssetId": "ice_knob",
+      "tsid": "LLI2KGLKI2J1KBM",
+      "x": 656,
+      "y": 650,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI279UII2J12U8-IceNubbin-1",
+      "provenanceKind": "synthetic",
+      "entityType": "IceNubbin",
+      "runtimeAssetId": "ice_knob",
+      "tsid": "LLI279UII2J12U8",
+      "x": 10,
+      "y": 654,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-Jellisac-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Jellisac",
+      "runtimeAssetId": "jellisac",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 463,
+      "y": 714,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1CM8GI2J1HG5-Jellisac-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Jellisac",
+      "runtimeAssetId": "jellisac",
+      "tsid": "LIF1CM8GI2J1HG5",
+      "x": -102,
+      "y": 772,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2IFDKI2J1G6C-Jellisac-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Jellisac",
+      "runtimeAssetId": "jellisac",
+      "tsid": "LLI2IFDKI2J1G6C",
+      "x": -363,
+      "y": 768,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-MortarBarnacle-1",
+      "provenanceKind": "synthetic",
+      "entityType": "MortarBarnacle",
+      "runtimeAssetId": "mortar_barnacle",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 848,
+      "y": 758,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-MortarBarnacle-1",
+      "provenanceKind": "synthetic",
+      "entityType": "MortarBarnacle",
+      "runtimeAssetId": "mortar_barnacle",
+      "tsid": "LLI26QQII2J12HH",
+      "x": -708,
+      "y": 653,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI35ROMI2J13OF-MortarBarnacle-1",
+      "provenanceKind": "synthetic",
+      "entityType": "MortarBarnacle",
+      "runtimeAssetId": "mortar_barnacle",
+      "tsid": "LLI35ROMI2J13OF",
+      "x": -136,
+      "y": 708,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-PeatBog-1",
+      "provenanceKind": "synthetic",
+      "entityType": "PeatBog",
+      "runtimeAssetId": "peat_base",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -889,
+      "y": 725,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5J892JAHE2CFH-PeatBog-1",
+      "provenanceKind": "synthetic",
+      "entityType": "PeatBog",
+      "runtimeAssetId": "peat_base",
+      "tsid": "LA5J892JAHE2CFH",
+      "x": 474,
+      "y": 697,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI35ROMI2J13OF-PeatBog-1",
+      "provenanceKind": "synthetic",
+      "entityType": "PeatBog",
+      "runtimeAssetId": "peat_base",
+      "tsid": "LLI35ROMI2J13OF",
+      "x": -205,
+      "y": 670,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-EggPlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "EggPlant",
+      "runtimeAssetId": "egg_plant",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": -211,
+      "y": 626,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5J892JAHE2CFH-EggPlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "EggPlant",
+      "runtimeAssetId": "egg_plant",
+      "tsid": "LA5J892JAHE2CFH",
+      "x": 545,
+      "y": 648,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5J892JAHE2CFH-EggPlant-2",
+      "provenanceKind": "synthetic",
+      "entityType": "EggPlant",
+      "runtimeAssetId": "egg_plant",
+      "tsid": "LA5J892JAHE2CFH",
+      "x": 48,
+      "y": 724,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-GasPlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "GasPlant",
+      "runtimeAssetId": "gas_plant",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 489,
+      "y": 732,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-GasPlant-2",
+      "provenanceKind": "synthetic",
+      "entityType": "GasPlant",
+      "runtimeAssetId": "gas_plant",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -8,
+      "y": 628,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1A8DFI2J14V4-GasPlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "GasPlant",
+      "runtimeAssetId": "gas_plant",
+      "tsid": "LIF1A8DFI2J14V4",
+      "x": 322,
+      "y": 614,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-SpicePlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SpicePlant",
+      "runtimeAssetId": "spice_plant",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": 587,
+      "y": 751,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI26QQII2J12HH-SpicePlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SpicePlant",
+      "runtimeAssetId": "spice_plant",
+      "tsid": "LLI26QQII2J12HH",
+      "x": 151,
+      "y": 761,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2IFDKI2J1G6C-SpicePlant-1",
+      "provenanceKind": "synthetic",
+      "entityType": "SpicePlant",
+      "runtimeAssetId": "spice_plant",
+      "tsid": "LLI2IFDKI2J1G6C",
+      "x": 565,
+      "y": 764,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI263NII2J1O7F-Alph-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Alph",
+      "runtimeAssetId": "shrine_alph",
+      "tsid": "LLI263NII2J1O7F",
+      "x": 49,
+      "y": 604,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1VSNHI2J1D9J-Alph-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Alph",
+      "runtimeAssetId": "shrine_alph",
+      "tsid": "LLI1VSNHI2J1D9J",
+      "x": 21,
+      "y": 763,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1RO6HI2J1DNN-Alph-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Alph",
+      "runtimeAssetId": "shrine_alph",
+      "tsid": "LLI1RO6HI2J1DNN",
+      "x": -624,
+      "y": 669,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1S88HI2J1JOK-Cosma-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Cosma",
+      "runtimeAssetId": "shrine_cosma",
+      "tsid": "LLI1S88HI2J1JOK",
+      "x": 724,
+      "y": 703,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1RO6HI2J1DNN-Cosma-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Cosma",
+      "runtimeAssetId": "shrine_cosma",
+      "tsid": "LLI1RO6HI2J1DNN",
+      "x": -436,
+      "y": 695,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF25OMMI2J1MPM-Cosma-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Cosma",
+      "runtimeAssetId": "shrine_cosma",
+      "tsid": "LIF25OMMI2J1MPM",
+      "x": 484,
+      "y": 675,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5A8BOUU3E23J5-Friendly-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Friendly",
+      "runtimeAssetId": "shrine_friendly",
+      "tsid": "LA5A8BOUU3E23J5",
+      "x": -451,
+      "y": 716,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LA5NA0QJE4E2LCB-Friendly-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Friendly",
+      "runtimeAssetId": "shrine_friendly",
+      "tsid": "LA5NA0QJE4E2LCB",
+      "x": 553,
+      "y": 733,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2SSLLI2J1KOM-Friendly-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Friendly",
+      "runtimeAssetId": "shrine_friendly",
+      "tsid": "LLI2SSLLI2J1KOM",
+      "x": 186,
+      "y": 714,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1KGQHI2J1PN3-Grendaline-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Grendaline",
+      "runtimeAssetId": "shrine_grendaline",
+      "tsid": "LIF1KGQHI2J1PN3",
+      "x": -134,
+      "y": 644,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2INEKI2J1318-Grendaline-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Grendaline",
+      "runtimeAssetId": "shrine_grendaline",
+      "tsid": "LLI2INEKI2J1318",
+      "x": -568,
+      "y": 628,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI27HUII2J1TJJ-Grendaline-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Grendaline",
+      "runtimeAssetId": "shrine_grendaline",
+      "tsid": "LLI27HUII2J1TJJ",
+      "x": 387,
+      "y": 674,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1S88HI2J1JOK-Humbaba-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Humbaba",
+      "runtimeAssetId": "shrine_humbaba",
+      "tsid": "LLI1S88HI2J1JOK",
+      "x": 608,
+      "y": 710,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF21N4MI2J19E9-Humbaba-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Humbaba",
+      "runtimeAssetId": "shrine_humbaba",
+      "tsid": "LIF21N4MI2J19E9",
+      "x": 587,
+      "y": 644,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1JABHI2J175E-Humbaba-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Humbaba",
+      "runtimeAssetId": "shrine_humbaba",
+      "tsid": "LIF1JABHI2J175E",
+      "x": 458,
+      "y": 672,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2PC8LI2J1Q9D-Lem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Lem",
+      "runtimeAssetId": "shrine_lem",
+      "tsid": "LLI2PC8LI2J1Q9D",
+      "x": -414,
+      "y": 642,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1S88HI2J1JOK-Lem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Lem",
+      "runtimeAssetId": "shrine_lem",
+      "tsid": "LLI1S88HI2J1JOK",
+      "x": 167,
+      "y": 692,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1A8DFI2J14V4-Lem-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Lem",
+      "runtimeAssetId": "shrine_lem",
+      "tsid": "LIF1A8DFI2J14V4",
+      "x": -859,
+      "y": 712,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1MB4II2J1ER5-Mab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mab",
+      "runtimeAssetId": "shrine_mab",
+      "tsid": "LIF1MB4II2J1ER5",
+      "x": 527,
+      "y": 636,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF20C9LI2J1BP5-Mab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mab",
+      "runtimeAssetId": "shrine_mab",
+      "tsid": "LIF20C9LI2J1BP5",
+      "x": -406,
+      "y": 687,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI31I3MI2J1MAM-Mab-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Mab",
+      "runtimeAssetId": "shrine_mab",
+      "tsid": "LLI31I3MI2J1MAM",
+      "x": -695,
+      "y": 722,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI1RO6HI2J1DNN-Pot-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Pot",
+      "runtimeAssetId": "shrine_pot",
+      "tsid": "LLI1RO6HI2J1DNN",
+      "x": -352,
+      "y": 622,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF257LMI2J1IJT-Pot-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Pot",
+      "runtimeAssetId": "shrine_pot",
+      "tsid": "LIF257LMI2J1IJT",
+      "x": -200,
+      "y": 658,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1PAMII2J19L5-Pot-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Pot",
+      "runtimeAssetId": "shrine_pot",
+      "tsid": "LIF1PAMII2J19L5",
+      "x": 796,
+      "y": 618,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1CM8GI2J1HG5-Spriggan-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Spriggan",
+      "runtimeAssetId": "shrine_spriggan",
+      "tsid": "LIF1CM8GI2J1HG5",
+      "x": -480,
+      "y": 703,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KGLKI2J1KBM-Spriggan-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Spriggan",
+      "runtimeAssetId": "shrine_spriggan",
+      "tsid": "LLI2KGLKI2J1KBM",
+      "x": -73,
+      "y": 778,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2INEKI2J1318-Spriggan-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Spriggan",
+      "runtimeAssetId": "shrine_spriggan",
+      "tsid": "LLI2INEKI2J1318",
+      "x": -285,
+      "y": 677,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KOMKI2J152P-Tii-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Tii",
+      "runtimeAssetId": "shrine_ti",
+      "tsid": "LLI2KOMKI2J152P",
+      "x": 450,
+      "y": 702,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF19JAFI2J1A4G-Tii-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Tii",
+      "runtimeAssetId": "shrine_ti",
+      "tsid": "LIF19JAFI2J1A4G",
+      "x": 128,
+      "y": 767,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF21N4MI2J19E9-Tii-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Tii",
+      "runtimeAssetId": "shrine_ti",
+      "tsid": "LIF21N4MI2J19E9",
+      "x": -341,
+      "y": 671,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2IFDKI2J1G6C-Zille-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Zille",
+      "runtimeAssetId": "shrine_zille",
+      "tsid": "LLI2IFDKI2J1G6C",
+      "x": 890,
+      "y": 663,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LIF1A8DFI2J14V4-Zille-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Zille",
+      "runtimeAssetId": "shrine_zille",
+      "tsid": "LIF1A8DFI2J14V4",
+      "x": -584,
+      "y": 768,
+      "sourceExport": null
+    },
+    {
+      "id": "demo-LLI2KGLKI2J1KBM-Zille-1",
+      "provenanceKind": "synthetic",
+      "entityType": "Zille",
+      "runtimeAssetId": "shrine_zille",
+      "tsid": "LLI2KGLKI2J1KBM",
+      "x": 397,
+      "y": 643,
+      "sourceExport": null
     }
   ],
   "coverageSummary": {
-    "note": "Full per-row placement data (42562 rows across 21 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
+    "note": "Full per-row placement data (56414 rows across 43 types) lives in the database, deterministically regenerable by rerunning tools/seed-demo-world.mjs -- it is not exhaustively duplicated here to avoid an unmaintainable multi-megabyte JSON file. 'placements' above holds 3 concrete example rows per newly-converted real-asset type (WoodTree/Chicken/Piggy/MetalRock/Fox/SilverFox/HeliKitty/Salmon/Butterfly/Batterfly/BeanTree/BubbleTree/FruitTree/PaperTree/BerylRock/DulliteRock/SparklyRock/DirtPile/IceNubbin/Jellisac/MortarBarnacle/PeatBog/EggPlant/GasPlant/SpicePlant/Alph/Cosma/Friendly/Grendaline/Humbaba/Lem/Mab/Pot/Spriggan/Tii/Zille) for schema/provenance illustration; 'placementsByEntityType' below is the full aggregate.",
     "streetsCovered": 3180,
     "totalStreets": 3183,
     "placementsByEntityType": {
@@ -466,11 +1126,33 @@
       "Batterfly": 1143,
       "BeanTree": 1811,
       "BubbleTree": 1870,
+      "BerylRock": 730,
+      "Jellisac": 823,
+      "MortarBarnacle": 807,
+      "GasPlant": 1909,
+      "SpicePlant": 1814,
+      "Friendly": 154,
       "Fox": 1179,
       "FruitTree": 1812,
       "PaperTree": 1756,
+      "DirtPile": 1647,
+      "PeatBog": 811,
+      "EggPlant": 1892,
       "Chicken": 2047,
-      "SilverFox": 317
+      "Spriggan": 159,
+      "Alph": 160,
+      "Zille": 176,
+      "SparklyRock": 345,
+      "Lem": 150,
+      "Cosma": 163,
+      "Humbaba": 146,
+      "Grendaline": 143,
+      "DulliteRock": 502,
+      "IceNubbin": 858,
+      "SilverFox": 317,
+      "Pot": 145,
+      "Mab": 156,
+      "Tii": 162
     }
   }
 }

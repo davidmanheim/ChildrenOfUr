@@ -85,6 +85,33 @@ const REGION_THEME = {
   enchanted: { WoodTree: 1.8, BeanTree: 1.8, BubbleTree: 1.8, FruitTree: 1.8, PaperTree: 1.8,
     Butterfly: 1.8, Batterfly: 1.5, SilverFox: 2 },
 };
+// Region theming for the second (rock/plant/tree) harvestable batch --
+// merged into REGION_THEME so a region's entry carries both batches' biases
+// without duplicating the table structure.
+for (const [region, adjustments] of Object.entries({
+  // Mining tiers (beryl/dullite/sparkly rock) and mortar barnacles (cling to
+  // rock) belong wherever MetalRock already concentrates.
+  cave: { BerylRock: 2.5, DulliteRock: 2.5, SparklyRock: 2.5, MortarBarnacle: 2, IceNubbin: 1.6 },
+  ilmenskie: { BerylRock: 2.5, DulliteRock: 2.5, SparklyRock: 2.5, MortarBarnacle: 2, IceNubbin: 1.6 },
+  // Bog: jellisac/peat are bog resources by name; gas plant (swamp gas) fits.
+  firebog: { Jellisac: 2, PeatBog: 2.2, GasPlant: 1.6 },
+  // Farmland/pastoral: egg plant fits alongside the other farm-style crops.
+  uralia2: { EggPlant: 1.4, SpicePlant: 1.3 },
+  kajuu: { EggPlant: 1.4, SpicePlant: 1.3 },
+  // Ix/Hell: same "ordinary life suppressed" logic as the first batch.
+  ix: { BerylRock: 0.4, DulliteRock: 0.4, SparklyRock: 0.4, DirtPile: 0.4, IceNubbin: 0.4,
+    Jellisac: 0.4, MortarBarnacle: 0.4, PeatBog: 0.4, EggPlant: 0.4, GasPlant: 0.4, SpicePlant: 0.4 },
+  hell: { BerylRock: 0.4, DulliteRock: 0.4, SparklyRock: 0.4, DirtPile: 0.4, IceNubbin: 0.4,
+    Jellisac: 0.4, MortarBarnacle: 0.4, PeatBog: 0.4, EggPlant: 0.4, GasPlant: 0.4, SpicePlant: 0.4 },
+})) {
+  REGION_THEME[region] = { ...(REGION_THEME[region] ?? {}), ...adjustments };
+}
+// Shrines are deliberately NOT region-themed: no confident giant-to-biome
+// association exists in any data recovered so far (the 11 giants' regional
+// SWF variants -- Firebog/Ix/Uralia reskins -- are a rendering detail, not a
+// placement rule), and guessing one would be exactly the kind of
+// unsupported claim this project's placement rules forbid. They get a flat,
+// deliberately sparse rate everywhere instead (see RARITY below).
 // Quoins (collectibles) are placed one-of-each-always, unchanged from the
 // original design. `WoodTree`/`Chicken`/`Piggy`/`MetalRock`/`Fox`/`SilverFox`/
 // `HeliKitty`/`Salmon`/`Butterfly`/`Batterfly`/`BeanTree`/`BubbleTree`/
@@ -98,9 +125,15 @@ const REGION_THEME = {
 // now-unused `DemoTree`/`DemoChicken` placeholder classes are no longer
 // seeded at all, superseded by the real WoodTree/Chicken.
 const QUOIN_TYPES = ['Img', 'Mood', 'Energy', 'Currant', 'Mystery', 'Favor'];
+const SHRINE_TYPES = ['Alph', 'Cosma', 'Friendly', 'Grendaline', 'Humbaba', 'Lem', 'Mab',
+  'Pot', 'Spriggan', 'Tii', 'Zille'];
 const REAL_TYPES = ['WoodTree', 'Chicken', 'DemoWheat', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
-  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree'];
+  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
+  'BerylRock', 'DulliteRock', 'SparklyRock',
+  'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
+  'EggPlant', 'GasPlant', 'SpicePlant',
+  ...SHRINE_TYPES];
 const types = [...QUOIN_TYPES, ...REAL_TYPES]; // still used for the manifest's total-type-count text
 
 // Per-street inclusion chance (0-100) and max instance count for each real
@@ -122,6 +155,23 @@ const RARITY = {
   Salmon: { chance: 30, maxCount: 1 }, Butterfly: { chance: 30, maxCount: 1 },
   Batterfly: { chance: 30, maxCount: 1 },
   SilverFox: { chance: 10, maxCount: 1 },
+  // Mining-tier rocks: rarer than MetalRock (50%), escalating with tier.
+  BerylRock: { chance: 22, maxCount: 1 }, DulliteRock: { chance: 16, maxCount: 1 },
+  SparklyRock: { chance: 10, maxCount: 1 },
+  // Ground-resource plants: similar tier to the animal group above.
+  DirtPile: { chance: 40, maxCount: 2 }, IceNubbin: { chance: 25, maxCount: 1 },
+  Jellisac: { chance: 25, maxCount: 1 }, MortarBarnacle: { chance: 25, maxCount: 1 },
+  PeatBog: { chance: 25, maxCount: 1 },
+  // Harvestable trees: same common tier as bean/bubble/fruit/paper.
+  EggPlant: { chance: 45, maxCount: 2 }, GasPlant: { chance: 45, maxCount: 2 },
+  SpicePlant: { chance: 45, maxCount: 2 },
+  // Giant shrines: deliberately sparse landmarks, not common flora/fauna --
+  // the user asked for "more" shrines (there were previously zero placed at
+  // all), not one on every street. At 5% across ~3,180 streets and 11
+  // giants, each giant gets roughly 150-200 shrines world-wide: findable,
+  // still special. No region theming (see REGION_THEME comment above) and
+  // never more than one of a given giant on the same street.
+  ...Object.fromEntries(SHRINE_TYPES.map(t => [t, { chance: 5, maxCount: 1 }])),
 };
 
 // Maps each seeded `type` to its content/runtime-manifest.json asset id, for
@@ -134,13 +184,25 @@ const RUNTIME_ASSET_ID = {
   Fox: 'fox', SilverFox: 'silverfox', HeliKitty: 'helikitty', Salmon: 'salmon',
   Butterfly: 'butterfly', Batterfly: 'batterfly',
   BeanTree: 'bean_tree', BubbleTree: 'bubble_tree', FruitTree: 'fruit_tree', PaperTree: 'paper_tree',
+  BerylRock: 'rock_beryl', DulliteRock: 'rock_dullite', SparklyRock: 'rock_sparkly',
+  DirtPile: 'dirt_pile', IceNubbin: 'ice_knob', Jellisac: 'jellisac',
+  MortarBarnacle: 'mortar_barnacle', PeatBog: 'peat_base',
+  EggPlant: 'egg_plant', GasPlant: 'gas_plant', SpicePlant: 'spice_plant',
+  Alph: 'shrine_alph', Cosma: 'shrine_cosma', Friendly: 'shrine_friendly',
+  Grendaline: 'shrine_grendaline', Humbaba: 'shrine_humbaba', Lem: 'shrine_lem',
+  Mab: 'shrine_mab', Pot: 'shrine_pot', Spriggan: 'shrine_spriggan',
+  Tii: 'shrine_ti', Zille: 'shrine_zille',
 };
 // Types with real, newly-converted official art (as opposed to quoins/DemoWheat,
 // which predate this pass) -- these get concrete example rows in the placement
 // manifest; see generatePlacementManifest for why the full set isn't dumped there.
 const NEWLY_PLACED_TYPES = ['WoodTree', 'Chicken', 'Piggy', 'MetalRock',
   'Fox', 'SilverFox', 'HeliKitty', 'Salmon', 'Butterfly', 'Batterfly',
-  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree'];
+  'BeanTree', 'BubbleTree', 'FruitTree', 'PaperTree',
+  'BerylRock', 'DulliteRock', 'SparklyRock',
+  'DirtPile', 'IceNubbin', 'Jellisac', 'MortarBarnacle', 'PeatBog',
+  'EggPlant', 'GasPlant', 'SpicePlant',
+  ...SHRINE_TYPES];
 
 function hash(value) {
   let result = 2166136261;
