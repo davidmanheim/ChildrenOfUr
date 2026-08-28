@@ -401,6 +401,44 @@ Prioritize and verify items before implementation.
   chroma-key post-process -- not done here, out of scope for a
   world-entity-only pass, but flagged for whoever next touches the pipeline
   docs or `tools/build-sprite-sheet.py`.
+- Found 2026-08-28 (TENTH batch, `food.json`, RECOVERY_TODO.md's TENTH row):
+  every one of the 142 remaining dead-link `food.json` items had a matching
+  source SWF under `tmp/glitch-items/food/` -- no sub-group was skipped for
+  lack of source art. Used `ffdec -ignorebackground -export frame` directly
+  (rather than the `swf-patch-bgcolor.py`/`swf-export-frame-alpha.py`
+  matting tool) since this batch reconfirmed the EIGHTH/NINTH batches'
+  finding that the flag is a verified-equivalent, simpler one-pass fix for
+  this same main-timeline `DefineSceneAndFrameLabelData` source family;
+  0 failures across 284 output PNGs (142 items x icon+sprite), each
+  individually PIL-alpha-extrema-checked non-opaque before finalizing. New
+  wrinkle worth flagging for future large batches: frame counts were NOT
+  uniformly 5 like the spice/drink batches -- ranged 2 to 5 total
+  main-timeline frames per item (`butterfly_butter`/`stinky_cheese`/
+  `very_stinky_cheese`/`very_very_stinky_cheese` = 3, `fried_egg` = 4, ~26
+  items = 2, the rest = 5) -- so a batch script for a new category should
+  read the real exported frame count per item (e.g. from ffdec's own
+  "Exported frame N/M" stdout line) rather than assuming a fixed
+  icon+4-stack layout; `tools/batch-convert-food.py` (new this pass, ad hoc
+  but reusable) does this generically. Of the 142, 30 were checked
+  individually against every recipe file/vendor list/NPC harvest method and
+  found to have **no acquisition route of any kind** in the current
+  codebase (`death_to_veg`, `desssert_rub`, `glitchepoix`, `green`,
+  `heston_mash`, `hot_potatoes`, `hototot_rub`, `hungry_nachos`,
+  `kind_breakfurst_burrito`, `king_of_condiments`, `legumes_abbassidienne`,
+  `luxury_tortellini`, `maburger_royale`, `naraka_flame_rub`, `onion_ring`,
+  `pad_tii`, `pi`, `potcorn`, `potians_feast`, `pottine`,
+  `precious_potato_salad`, `red`, `roux`, `salmon_jaella`, `stock_sauce`,
+  `swank_zucchini_loaf`, `swing_batter`, `trump_rub`, `urfu`,
+  `vegmageddon`) -- this is a genuine game-design gap (their only other
+  reference anywhere in `coUserver` is the generic `actions/consume.json`
+  Eat table), not a conversion or placement gap, so a future pass should
+  not re-search for a route for these 30 without first writing new
+  recipe/vendor/reward data for them. 5 more (`snocone_blue`/`green`/
+  `orange`/`purple`/`red`) are real `SnoConeVendingMachine` vendor stock
+  but that vendor class is not in `tools/seed-demo-world.mjs`'s
+  `VENDOR_NPC_TYPES` -- a good, low-risk candidate for a future placement
+  pass (same shape as the already-fixed `Still`/`HoochRespawningItem`/
+  `PurpleFlowerRespawningItem` gap).
 
 ## Operations and reproducibility
 
