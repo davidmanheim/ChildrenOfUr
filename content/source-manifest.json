@@ -7790,10 +7790,1030 @@
           "numFrames": 4
         }
       ]
+    },
+    {
+      "id": "item_icon_copper",
+      "sourcePath": "tmp/glitch-items/misc/copper/copper.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "copper-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/copper/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-copper-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "copper-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/copper/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-copper-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_tin",
+      "sourcePath": "tmp/glitch-items/misc/tin/tin.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "tin-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/tin/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tin-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "tin-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/tin/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-tin-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_molybdenum",
+      "sourcePath": "tmp/glitch-items/misc/molybdenum/molybdenum.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "molybdenum-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/molybdenum/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-molybdenum-icon.png",
+          "frameWidth": 67,
+          "frameHeight": 39,
+          "numFrames": 1
+        },
+        {
+          "state": "molybdenum-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/molybdenum/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-molybdenum-sprite.png",
+          "frameWidth": 67,
+          "frameHeight": 39,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_ingot",
+      "sourcePath": "tmp/glitch-items/misc/plain_metal/plain_metal.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "ingot-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/ingot/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-ingot-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "ingot-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/ingot/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-ingot-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_general_fabric",
+      "sourcePath": "tmp/glitch-items/misc/general_fabric/general_fabric.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "general_fabric-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/general_fabric/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-general_fabric-icon.png",
+          "frameWidth": 72,
+          "frameHeight": 36,
+          "numFrames": 1
+        },
+        {
+          "state": "general_fabric-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/general_fabric/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-general_fabric-sprite.png",
+          "frameWidth": 72,
+          "frameHeight": 36,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_string",
+      "sourcePath": "tmp/glitch-items/misc/string/string.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "string-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/string/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-string-icon.png",
+          "frameWidth": 70,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "string-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/string/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-string-sprite.png",
+          "frameWidth": 70,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_thread",
+      "sourcePath": "tmp/glitch-items/misc/thread/thread.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "thread-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/thread/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-thread-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "thread-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/thread/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-thread-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 32,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_barnacle_talc",
+      "sourcePath": "tmp/glitch-items/misc/barnacle_talc/barnacle_talc.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "barnacle_talc-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/barnacle_talc/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-barnacle_talc-icon.png",
+          "frameWidth": 85,
+          "frameHeight": 42,
+          "numFrames": 1
+        },
+        {
+          "state": "barnacle_talc-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/barnacle_talc/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-barnacle_talc-sprite.png",
+          "frameWidth": 85,
+          "frameHeight": 42,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_bulb",
+      "sourcePath": "tmp/glitch-items/misc/bulb/bulb.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "bulb-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/bulb/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bulb-icon.png",
+          "frameWidth": 40,
+          "frameHeight": 44,
+          "numFrames": 1
+        },
+        {
+          "state": "bulb-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/bulb/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-bulb-sprite.png",
+          "frameWidth": 40,
+          "frameHeight": 44,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fuel_cell",
+      "sourcePath": "tmp/glitch-items/misc/fuel_cell/fuel_cell.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 5-frame main timeline (MainTimeline, no top-level DefineSprite/SymbolClass and no FrameLabel tags -- same shape as the first standalone player-item batch's apple/banana sources), visually confirmed by rendering every frame: frame 1 is a clean single-item icon pose and frames 2-5 are 4 successive stack-quantity poses (1, 2, 3, 4 items), matching the item's original dead-URL naming (\"__x1_iconic\" / \"__x1_1_x1_2_x1_3_x1_4\").",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used directly as the icon; frames 2-5 packed via build-sprite-sheet.py into the spriteUrl strip.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fuel_cell-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fuel_cell/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuel_cell-icon.png",
+          "frameWidth": 58,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "fuel_cell-sprite",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/items/fuel_cell/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fuel_cell-sprite.png",
+          "frameWidth": 58,
+          "frameHeight": 37,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "item_icon_alchemistry_kit",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_alchemistry_kit/bag_alchemistry_kit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 1-frame main timeline (MainTimeline) -- a single static container icon, no animation states.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a single frame (a static alchemistry-kit icon), unlike the 5-frame icon+stack pattern used by stackable resources -- alchemistry_kit is stacksTo:1 (a non-stacking container), matching the source's single-frame content. The item registry entry uses a single static image for both iconUrl/spriteUrl, matching the task scope of converting iconUrl/spriteUrl only.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "alchemistry_kit-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/alchemistry_kit/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-alchemistry_kit-icon.png",
+          "frameWidth": 86,
+          "frameHeight": 66,
+          "numFrames": 1
+        },
+        {
+          "state": "alchemistry_kit-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/alchemistry_kit/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-alchemistry_kit-sprite.png",
+          "frameWidth": 86,
+          "frameHeight": 66,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_firefly_jar",
+      "sourcePath": "tmp/glitch-items/misc/firefly_jar/firefly_jar.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 1-frame main timeline (MainTimeline, an empty/static jar pose); the file also contains 8 small nested 'flies_0'..'flies_7' DefineSprite decoration symbols (firefly animation states used only when the jar is full) that are not part of the main-timeline icon and were not used.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. This source SWF's main timeline is a single frame (the empty jar, matching the item's own description/name 'Firefly Jar' before fireflies are added) -- firefly_jar is stacksTo:1, matching the source's single static content. The item registry entry uses a single static image for both iconUrl/spriteUrl, matching the task scope of converting iconUrl/spriteUrl only.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "firefly_jar-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/firefly_jar/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-firefly_jar-icon.png",
+          "frameWidth": 45,
+          "frameHeight": 64,
+          "numFrames": 1
+        },
+        {
+          "state": "firefly_jar-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/firefly_jar/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-firefly_jar-sprite.png",
+          "frameWidth": 45,
+          "frameHeight": 64,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_spicerack",
+      "sourcePath": "tmp/glitch-items/misc/bag_generic/bag_spicerack/bag_spicerack.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 3-frame main timeline (MainTimeline): frame 1 is a plain closed spice rack, frame 2 shows it open with visible spice jars, frame 3 is a closed variant pose.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. Only frame 1 (the plain closed-box 'iconic' pose, visually confirmed) was used for both iconUrl/spriteUrl -- the original dead URL used a single '__x1_1' filename (no separate iconic/stack naming), so this matches the source item's own single-image convention; frames 2-3 were not used. The item registry entry uses a single static image for both iconUrl/spriteUrl, matching the task scope of converting iconUrl/spriteUrl only.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "spicerack-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spicerack/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spicerack-icon.png",
+          "frameWidth": 65,
+          "frameHeight": 45,
+          "numFrames": 1
+        },
+        {
+          "state": "spicerack-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/spicerack/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-spicerack-sprite.png",
+          "frameWidth": 65,
+          "frameHeight": 45,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_machine_stand",
+      "sourcePath": "tmp/glitch-items/tools/machine_stand/machine_stand.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 46-frame main timeline (MainTimeline) -- a 360-degree rotating-showcase/turntable render of the machine stand platform, not a short icon+stack-quantity sequence (visually confirmed by sampling frames 1/23/46: same object at different rotation angles, frame 46 nearly identical to frame 1, i.e. a looping turntable). A separate nested 'blockmaker' DefineSprite (character 14) also exists and was not used (not the root symbol).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 used for both icon and sprite outputs. Only frame 1 (the resting/front-facing pose, visually confirmed) was used for both iconUrl/spriteUrl -- the item registry's original dead URLs already used two distinct static filenames ('__x1_iconic' and '__x1_stand1') rather than a stack sequence, so a single static frame for both matches the source data's shape; machine_stand is stacksTo:1 (a non-stacking placeable machine part). The item registry entry uses a single static image for both iconUrl/spriteUrl, matching the task scope of converting iconUrl/spriteUrl only.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "machine_stand-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/machine_stand/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-machine_stand-icon.png",
+          "frameWidth": 157,
+          "frameHeight": 104,
+          "numFrames": 1
+        },
+        {
+          "state": "machine_stand-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/machine_stand/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-machine_stand-sprite.png",
+          "frameWidth": 157,
+          "frameHeight": 104,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_abbasidose",
+      "sourcePath": "tmp/glitch-items/compounds/abbasidose/abbasidose.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps (verified via tools/swf-extract-bitmaps.py). 1-frame main timeline; DefineSceneAndFrameLabelData names its single scene '1' (no separate 'iconic' state) -- confirmed directly via a purpose-built scene parser (parses the tag's EncodedU32 offsets + cstring names, since ffdec -dumpSWF's per-line counters are not real frame numbers), same verification method as tools/swf-frame-labels.py uses for DefineSprite FrameLabel tags.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> the single frame used for both icon and sprite outputs (this SWF has no separate stack-quantity poses).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "abbasidose-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/abbasidose/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-abbasidose-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 20,
+          "numFrames": 1
+        },
+        {
+          "state": "abbasidose-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/abbasidose/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-abbasidose-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 20,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_blue_element",
+      "sourcePath": "tmp/glitch-items/compounds/element_blue/element_blue.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 1-frame main timeline, single scene named '1' (no separate 'iconic' state), same family as item_icon_abbasidose in this batch.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> the single frame used for both icon and sprite outputs.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "blue_element-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_element/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_element-icon.png",
+          "frameWidth": 41,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "blue_element-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/blue_element/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-blue_element-sprite.png",
+          "frameWidth": 41,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fertilidust",
+      "sourcePath": "tmp/glitch-items/alchemy/fertilidust/fertilidust.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 95-frame main timeline: DefineSceneAndFrameLabelData names frame 1 'tool_animation' (an 89-frame beaker-stirring use animation, frames 1-90) followed by 5 quantity-stack poses named '5','4','3','2','1' at frames 91-95 respectively -- i.e. the stack labels run in DESCENDING order across ascending frame numbers, the reverse of the ascending order seen in the spices/herbs batches' 'iconic'+'1'..'4' convention. Directly verified via the same purpose-built scene parser used for item_icon_abbasidose (not assumed from the file's original dead-URL naming, though it independently matches: 'fertilidust__x1_5_x1_4_x1_3_x1_2_x1_1' in the original spriteUrl).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 95 (the '1'-quantity pose, the cleanest single-item icon available) used as the icon; frames 91-95 (quantity poses 5,4,3,2,1 in that literal frame order) packed via build-sprite-sheet.py into the spriteUrl strip. The tool_animation frames (1-90) were not converted -- out of scope (toolAnimation field left pointing at its original dead URL, same as the hoe/spice_mill-family precedent).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fertilidust-icon",
+          "sourceFrameRange": [
+            95,
+            95
+          ],
+          "file": "content/sprites/items/fertilidust/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fertilidust-icon.png",
+          "frameWidth": 48,
+          "frameHeight": 171,
+          "numFrames": 1
+        },
+        {
+          "state": "fertilidust-sprite",
+          "sourceFrameRange": [
+            91,
+            95
+          ],
+          "file": "content/sprites/items/fertilidust/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fertilidust-sprite.png",
+          "frameWidth": 48,
+          "frameHeight": 171,
+          "numFrames": 5
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_amorous_philtre",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_amorous_philtre/potion_amorous_philtre.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 77-frame main timeline: DefineSceneAndFrameLabelData names frame 1 'iconic', frame 2 '1', then frame 3 'tool_animation' (a 75-frame drink-use animation, frames 3-77) -- same 'iconic'+'1'+long-animation family shared by potion_ancestral_spirits and potion_tree_poison in this batch. Verified via the purpose-built scene parser.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite. The tool_animation frames (3-77) were not converted -- out of scope; the item's original spriteUrl pointed at a 'tool_animation'-named dead URL, but per the hoe/machine_stand precedent only a single static frame is converted for spriteUrl (task scope is iconUrl/spriteUrl only, not the full use-animation).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_amorous_philtre-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_amorous_philtre/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_amorous_philtre-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_amorous_philtre-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/potion_amorous_philtre/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_amorous_philtre-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_ancestral_spirits",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_ancestral_spirits/potion_ancestral_spirits.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 77-frame main timeline, same 'iconic'(1)/'1'(2)/'tool_animation'(3-77) family as potion_amorous_philtre in this batch. Verified via the purpose-built scene parser.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite. tool_animation frames not converted, same as potion_amorous_philtre.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_ancestral_spirits-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_ancestral_spirits/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_ancestral_spirits-icon.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_ancestral_spirits-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/potion_ancestral_spirits/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_ancestral_spirits-sprite.png",
+          "frameWidth": 44,
+          "frameHeight": 47,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_potion_tree_poison",
+      "sourcePath": "tmp/glitch-items/alchemy/potion_tree_poison/potion_tree_poison.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 77-frame main timeline, same 'iconic'(1)/'1'(2)/'tool_animation'(3-77) family as potion_amorous_philtre/potion_ancestral_spirits in this batch. Verified via the purpose-built scene parser. Note: this is the drinkable-potion item ('Tree Poison', tinctures-potions.json); it is distinct from old_tree_poison in alchemical.json (asset filename 'tree_poison', a raw alchemical reagent, not converted this pass).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite. tool_animation frames not converted, same as potion_amorous_philtre.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "potion_tree_poison-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/potion_tree_poison/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_tree_poison-icon.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        },
+        {
+          "state": "potion_tree_poison-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/potion_tree_poison/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-potion_tree_poison-sprite.png",
+          "frameWidth": 53,
+          "frameHeight": 60,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_essence_of_gandlevery",
+      "sourcePath": "tmp/glitch-items/alchemy/essence_of_gandlevery/essence_of_gandlevery.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1' (a single quantity-stack pose, matching this item's stacksTo:20).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "essence_of_gandlevery-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/essence_of_gandlevery/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_gandlevery-icon.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "essence_of_gandlevery-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/essence_of_gandlevery/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-essence_of_gandlevery-sprite.png",
+          "frameWidth": 20,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_card_carrying_qualification",
+      "sourcePath": "tmp/glitch-items/misc/card_carrying_qualification/card_carrying_qualification.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "card_carrying_qualification-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/card_carrying_qualification/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-card_carrying_qualification-icon.png",
+          "frameWidth": 74,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "card_carrying_qualification-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/card_carrying_qualification/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-card_carrying_qualification-sprite.png",
+          "frameWidth": 74,
+          "frameHeight": 37,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_fox_permit",
+      "sourcePath": "tmp/glitch-items/misc/fox_permit/fox_permit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 '1' and frame 2 'iconic' -- the reverse order of every other 2-frame item in this batch (directly verified, not assumed uniform: a purpose-built scene parser was run per-file specifically because this reversal exists).",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 2 ('iconic') used as the icon; frame 1 ('1') used as the sprite -- frame numbers intentionally swapped relative to the rest of this batch to match this file's own (reversed) scene-label order.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "fox_permit-icon",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/fox_permit/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fox_permit-icon.png",
+          "frameWidth": 65,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "fox_permit-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/fox_permit/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-fox_permit-sprite.png",
+          "frameWidth": 65,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_general_building_permit",
+      "sourcePath": "tmp/glitch-items/misc/general_building_permit/general_building_permit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "general_building_permit-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/general_building_permit/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-general_building_permit-icon.png",
+          "frameWidth": 73,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "general_building_permit-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/general_building_permit/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-general_building_permit-sprite.png",
+          "frameWidth": 73,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_teleportation_script_imbued",
+      "sourcePath": "tmp/glitch-items/misc/teleportation_script/teleportation_script_imbued/teleportation_script_imbued.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "teleportation_script_imbued-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teleportation_script_imbued/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teleportation_script_imbued-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "teleportation_script_imbued-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/teleportation_script_imbued/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teleportation_script_imbued-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_teleportation_script",
+      "sourcePath": "tmp/glitch-items/misc/note/teleportation_script/teleportation_script.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 4-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic', frame 2 '1', frame 3 'embued_iconic', frame 4 'embued' -- i.e. this single source file actually contains both the plain and imbued states, though the separate teleportation_script_imbued.swf (used for item_icon_teleportation_script_imbued above) was used instead for that item to keep a 1:1 file-to-item mapping consistent with the rest of the batch.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite. Frames 3-4 (the embued variant baked into this same file) were not used for this item.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "teleportation_script-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/teleportation_script/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teleportation_script-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 49,
+          "numFrames": 1
+        },
+        {
+          "state": "teleportation_script-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/teleportation_script/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-teleportation_script-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 49,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_your_papers",
+      "sourcePath": "tmp/glitch-items/misc/your_papers/your_papers.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "your_papers-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/your_papers/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-your_papers-icon.png",
+          "frameWidth": 69,
+          "frameHeight": 46,
+          "numFrames": 1
+        },
+        {
+          "state": "your_papers-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/your_papers/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-your_papers-sprite.png",
+          "frameWidth": 69,
+          "frameHeight": 46,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_note",
+      "sourcePath": "tmp/glitch-items/misc/note/note.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "note-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/note/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note-icon.png",
+          "frameWidth": 55,
+          "frameHeight": 41,
+          "numFrames": 1
+        },
+        {
+          "state": "note-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/note/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-note-sprite.png",
+          "frameWidth": 55,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_wooden_apple",
+      "sourcePath": "tmp/glitch-items/artifacts/artifact_wooden_apple/artifact_wooden_apple.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 1-frame main timeline; DefineSceneAndFrameLabelData names its single scene '1' (no separate 'iconic' state), same shape as item_icon_abbasidose/item_icon_blue_element in this batch.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> the single frame used for both icon and sprite outputs.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "wooden_apple-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/wooden_apple/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wooden_apple-icon.png",
+          "frameWidth": 33,
+          "frameHeight": 37,
+          "numFrames": 1
+        },
+        {
+          "state": "wooden_apple-sprite",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/wooden_apple/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-wooden_apple-sprite.png",
+          "frameWidth": 33,
+          "frameHeight": 37,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "item_icon_magical_pendant",
+      "sourcePath": "tmp/glitch-items/artifacts/artifact_magical_pendant/artifact_magical_pendant.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed), vector shapes only, no embedded bitmaps. 2-frame main timeline; DefineSceneAndFrameLabelData names frame 1 'iconic' and frame 2 '1'.",
+      "conversionMethod": "ffdec -export frame (rasterize main timeline) -> frame 1 ('iconic') used as the icon; frame 2 ('1') used as the sprite.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "magical_pendant-icon",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/items/magical_pendant/icon.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-magical_pendant-icon.png",
+          "frameWidth": 58,
+          "frameHeight": 24,
+          "numFrames": 1
+        },
+        {
+          "state": "magical_pendant-sprite",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/items/magical_pendant/sprite.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/item-magical_pendant-sprite.png",
+          "frameWidth": 58,
+          "frameHeight": 24,
+          "numFrames": 1
+        }
+      ]
     }
   ],
   "notConverted": {
-    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md.",
+    "note": "Everything else under tmp/glitch-items (~5400 files across inhabitants, harvestable_resources, seeds, food, furniture, tools, etc.) remains unconverted pending further passes. A first standalone player-item batch (12 items: apple/banana/honey/bacon (food), hoe/shovel/pick/scraper/watering_can (tools), dice/camera (toys), potion_rainbow_juice (tinctures & potions)) was converted 2026-08-28 -- see the item_icon_apple..item_icon_potion_rainbow_juice entries above. A second batch (13 croppery-gardening.json crops: broccoli/cabbage/carrot/corn/cucumber/onion/parsnip/potato/pumpkin/rice/spinach/tomato/zucchini) was converted the same day -- see the item_icon_broccoli..item_icon_zucchini entries above; all 13 share a real, unmodified Garden-NPC harvest route (coUserver/lib/entities/npcs/garden.dart), and 12 of the 13 (all but pumpkin) are also stocked by the real, unmodified 'produce' StreetSpirit vendor category. A third batch (16 spices.json items: black_pepper/camphor/cardamom/cinnamon/cumin/curry/garlic/ginger/hot_pepper/licorice/mustard/nutmeg/older_spice/pinch_of_salt/saffron/turmeric) was converted the same day -- see the item_icon_black_pepper..item_icon_turmeric entries above; all 16 share a real, unmodified spice_mill recipe route (coUserver/lib/entities/items/actions/recipes/json/spice_mill.json) consuming allspice, re-verified directly in this pass rather than trusted from the prior note that found it. allspice's own source, SpicePlant, is confirmed placed in the live world (tools/seed-demo-world.mjs), but the spice_mill tool itself is only sold by ToolVendor/StreetSpirit(kitchen), neither of which is placed -- the same inert-vendor gap already documented for ToolVendor/StreetSpirit/Garden. A fourth batch (15 drinks.json items: beer/coffee/earthshaker/face_smelter/flaming_humbaba/bubble_tea/cloud_11_smoothie/exotic_juice/fruity_juice/orange_juice/carrot_margarita/cosma_politan/pumpkin_ale/hooch/crabato_juice) was converted 2026-08-28 -- see the item_icon_beer..item_icon_crabato_juice entries above. Unlike the spices batch, this one was converted AFTER the 2026-08-28 vendor/harvest NPC placement pass (Garden/ToolVendor/StreetSpiritFirebog/StreetSpiritZutto/StreetSpiritGroddle are now genuinely placed in tools/seed-demo-world.mjs), so several routes checked out as actually live rather than merely wired-but-inert: beer/coffee are direct 'groceries' StreetSpirit stock (86 streets), earthshaker/face_smelter/flaming_humbaba are direct 'mining' StreetSpirit stock (42 streets), and the blender/cocktail_shaker/saucepan tools needed for the remaining recipe-output drinks are themselves 'kitchen' StreetSpirit stock (109 streets) -- all reachable now that the 3 concrete StreetSpirit subclasses are placed. hooch and crabato_juice are the exception: each has a real, unmodified, but still entirely unplaced acquisition route (HoochRespawningItem/Still; Crab's music-reward chain) -- documented honestly as inert, not invented as live. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning. The vast majority of food/tools/toys/tinctures-potions/furniture/storage/drinks items remain unconverted. See content/runtime-manifest.json 'deliberately deferred' rows and RECOVERY_TODO.md. A sixth batch (2026-08-28, storage.json/advanced_resources.json/basic_resources.json/machines-fuel.json pass) converted 14 items: 9 from advanced_resources.json (barnacle_talc, bulb, copper, general_fabric, molybdenum, ingot (item id for 'Plain Metal Ingot'), string, thread, tin -- all real recipe-chain outputs, see runtime-manifest for the full route), 3 from storage.json (alchemistry_kit, firefly_jar, spicerack -- real vendor stock, both explicitly named and via the generic pickItems([\"Storage\"]) vendor route that covers the whole category), and 2 from machines-fuel.json (machine_stand -- real ToolVendor/StreetSpirit(hardware) stock; fuel_cell -- converted but found to have NO acquisition route anywhere in coUserver, same as bacon/potion_rainbow_juice). basic_resources.json's only remaining unconverted item, salmon_bubble, has no matching source SWF anywhere under tmp/glitch-items (searched directly) and stays unconverted. storage.json's remaining 16 items (bigger_bag and its 4 color variants, chrome/green/red toolbox, cubimal_case, elemental_pouch, generic_bag and its 4 color variants, musicblock_bag) and advanced_resources.json's remaining 10 items (beam, board, girder, metal_bar, metal_rod, plain_crystal, snail, urth_block, wood_post, bushel_of_grain) all have real, distinct matching source SWFs under tmp/glitch-items/misc/ (confirmed by direct search) but were left unconverted this pass to stay within the requested batch size; the advanced_resources.json remainder was checked against every recipes/json/*.json file and every vendor itemsForSale list and confirmed to have NO acquisition route of any kind in the current codebase (a genuine missing-design gap, not a placement gap). machines-fuel.json's remaining 9 items (blockmaker_chassis, blockmaker_plates, fuelmaker_case, fuelmaker_core, machine_engine, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser) are ALL real, unmodified ToolVendor and StreetSpirit('hardware') vendor stock (confirmed directly in vendor.dart/toolvendor.dart) -- same live route as machine_stand -- but were left unconverted this pass; only machine_stand and fuel_cell were done as one live and one honestly-documented-gap example. See content/runtime-manifest.json for the full per-item accessibleThrough reasoning.",
     "families": [
       "seeds",
       "food (341 of 345 items still unconverted; separate from croppery-gardening.json)",
@@ -7805,7 +8825,11 @@
       "drinks (13 of 29 items still unconverted after this pass -- 15 converted this pass plus the pre-existing butterfly_milk; cloudberry_daiquiri/creamy_martini/cup_of_water/gurly_drink/lemon_juice/mabbish_coffee/mega_healthy_veggie_juice/pungent_sunrise/savory_smoothie/slow_gin_fizz/spicy_grog/tooberry_shake/wine_of_the_dead remain, all but cup_of_water/wine_of_the_dead have a matching source SWF under tmp/glitch-items/drink/)",
       "caterpillar (butterfly life-cycle baby form, no coUserver entity class)",
       "fox_ranger, fox_bait (not requested this pass)",
-      "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)"
+      "other harvestable_resources (other rock/rock_metal variants, peat, garden, etc.)",
+      "storage.json (16 of 19 items still unconverted after this pass -- alchemistry_kit/firefly_jar/spicerack converted; bigger_bag/generic_bag families, toolboxes, cubimal_case, elemental_pouch, musicblock_bag remain, all with real matching source SWFs)",
+      "advanced_resources.json (10 of 19 items still unconverted after this pass -- barnacle_talc/bulb/copper/general_fabric/molybdenum/ingot/string/thread/tin converted; beam/board/girder/metal_bar/metal_rod/plain_crystal/snail/urth_block/wood_post/bushel_of_grain remain -- confirmed to have no acquisition route anywhere in coUserver)",
+      "machines-fuel.json (9 of 11 items still unconverted after this pass -- machine_stand/fuel_cell converted; blockmaker_chassis/blockmaker_plates/fuelmaker_case/fuelmaker_core/machine_engine/metalmaker_mechanism/metalmaker_tooler/woodworker_chassis/woodworker_fuser remain, all real ToolVendor/StreetSpirit(hardware) vendor stock per vendor.dart)",
+      "basic_resources.json (fully converted except salmon_bubble, which has no matching source SWF)"
     ]
   }
 }

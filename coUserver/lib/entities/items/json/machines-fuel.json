@@ -21,8 +21,8 @@
 	"fuel_cell": {
 		"name": "Fuel Cell",
 		"category": "Machines & Fuel",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/fuel_cell__x1_iconic_png_1354833264.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/fuel_cell__x1_1_x1_2_x1_3_x1_4_png_1354833265.png",
+		"iconUrl": "files/sprites/generated/converted/item-fuel_cell-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-fuel_cell-sprite.png",
 		"stacksTo": 10,
 		"price": 380,
 		"description": "Hundreds of tiny power-pellets in each capsule provide gigajoules of energy to fuel the machines."
@@ -58,8 +58,8 @@
 	"machine_stand": {
 		"name": "Machine Stand",
 		"category": "Machines & Fuel",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/machine_stand__x1_iconic_png_1354833222.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/machine_stand__x1_stand1_png_1354833217.png",
+		"iconUrl": "files/sprites/generated/converted/item-machine_stand-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-machine_stand-sprite.png",
 		"stacksTo": 1,
 		"price": 500,
 		"description": "This generic machine stand provides just the right foundation upon which many a machine can be built.  As with all good foundations, once assembled it cannot be moved."

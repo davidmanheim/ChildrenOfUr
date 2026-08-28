@@ -2,8 +2,8 @@
 	"barnacle_talc": {
 		"name": "Barnacle Talc",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/barnacle_talc__x1_iconic_png_1354832755.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/barnacle_talc__x1_1_x1_2_x1_3_x1_4_png_1354832756.png",
+		"iconUrl": "files/sprites/generated/converted/item-barnacle_talc-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-barnacle_talc-sprite.png",
 		"stacksTo": 20,
 		"price": 15,
 		"description": "The post-Grinder form of the lovable barnacle, this smooth off-white powder is bound to be good for something. If only you knew what…"
@@ -29,8 +29,8 @@
 	"bulb": {
 		"name": "Bulb",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/bulb__x1_iconic_png_1354839536.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/bulb__x1_1_x1_2_x1_3_x1_4_png_1354839536.png",
+		"iconUrl": "files/sprites/generated/converted/item-bulb-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-bulb-sprite.png",
 		"stacksTo": 10,
 		"price": 50,
 		"description": "The glowy bit of a lamp. Without this, a lamp is just a stick with a silly hat on."
@@ -55,8 +55,8 @@
 	"copper": {
 		"name": "Copper Ingot",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/copper__x1_iconic_png_1354832625.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/copper__x1_1_x1_2_x1_3_x1_4_png_1354832626.png",
+		"iconUrl": "files/sprites/generated/converted/item-copper-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-copper-sprite.png",
 		"stacksTo": 20,
 		"price": 70,
 		"description": "Pliable yet strong, malleably magnificent, copper is a much-prized material for building. A glitch bearing good, strong copper will always be welcome on a building project."
@@ -64,8 +64,8 @@
 	"general_fabric": {
 		"name": "General Fabric",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/general_fabric__x1_iconic_png_1354839547.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/general_fabric__x1_1_x1_2_x1_3_x1_4_png_1354839548.png",
+		"iconUrl": "files/sprites/generated/converted/item-general_fabric-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-general_fabric-sprite.png",
 		"stacksTo": 10,
 		"price": 250,
 		"description": "A coarse fabric necessary in the construction of various basic furniture items. Attractive from a distance, face-to-fabric contact feels uncomfortably like getting up close and personal with the underside of a fox's tail."
@@ -100,8 +100,8 @@
 	"molybdenum": {
 		"name": "Molybdenum Ingot",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/molybdenum__x1_iconic_png_1354832628.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/molybdenum__x1_1_x1_2_x1_3_x1_4_png_1354832628.png",
+		"iconUrl": "files/sprites/generated/converted/item-molybdenum-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-molybdenum-sprite.png",
 		"stacksTo": 20,
 		"price": 100,
 		"description": "The glint off a good piece of Molybdenum is like glimpsing into the future. That's why it's used for sophisticated and desirable electronic gadgetry."
@@ -118,8 +118,8 @@
 	"ingot": {
 		"name": "Plain Metal Ingot",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/plain_metal__x1_iconic_png_1354832621.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/plain_metal__x1_1_x1_2_x1_3_x1_4_png_1354832621.png",
+		"iconUrl": "files/sprites/generated/converted/item-ingot-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-ingot-sprite.png",
 		"stacksTo": 20,
 		"price": 30,
 		"description": "Sure, this metal is plain, but with the aid of Alchemical Tongs, Alchemy II and a secret blend of elemental ingredients, more exciting metal materials can be made."
@@ -136,8 +136,8 @@
 	"string": {
 		"name": "String",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/string__x1_iconic_png_1354839544.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/string__x1_1_x1_2_x1_3_x1_4_png_1354839545.png",
+		"iconUrl": "files/sprites/generated/converted/item-string-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-string-sprite.png",
 		"stacksTo": 100,
 		"price": 53,
 		"description": "This is String. In theory, it can be used for constructing fabric, rugs, and other basic furniture items. It is a pretty good theory."
@@ -145,8 +145,8 @@
 	"thread": {
 		"name": "Thread",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/thread__x1_iconic_png_1354839672.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/thread__x1_1_x1_2_x1_3_x1_4_png_1354839673.png",
+		"iconUrl": "files/sprites/generated/converted/item-thread-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-thread-sprite.png",
 		"stacksTo": 400,
 		"price": 9,
 		"description": "Thread, spun from Fox tail fibers, and essential in the Loomeration of String. Easily lost (but easily picked up again), smells faintly of Fox bottom."
@@ -154,8 +154,8 @@
 	"tin": {
 		"name": "Tin Ingot",
 		"category": "Advanced Resources",
-		"iconUrl": "https://childrenofur.com/assets/entityImages/tin__x1_iconic_png_1354832623.png",
-		"spriteUrl": "https://childrenofur.com/assets/entityImages/tin__x1_1_x1_2_x1_3_x1_4_png_1354832623.png",
+		"iconUrl": "files/sprites/generated/converted/item-tin-icon.png",
+		"spriteUrl": "files/sprites/generated/converted/item-tin-sprite.png",
 		"stacksTo": 20,
 		"price": 50,
 		"description": "It's tin."

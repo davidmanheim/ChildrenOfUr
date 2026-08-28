@@ -2187,6 +2187,482 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/seeds/herb_seed_purple_flower/seed_purple_flower.swf and wired into herbalism.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-ingot",
+      "displayName": "Plain Metal Ingot",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_ingot",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe route, fully traced and re-verified this pass: smelter.json's \"ingot\" recipe (chunk_metal:1 -> ingot:1, coUserver/lib/entities/items/actions/recipes/json/smelter.json). chunk_metal is granted by MetalRock.harvest() (coUserver/lib/entities/plants/rocks/metalrock.dart), which IS placed in the live world (tools/seed-demo-world.mjs RARITY.MetalRock: 50% chance per street, maxCount 2 -- one of the original first-4-assets batch). The smelter tool itself is real, unmodified ToolVendor stock (toolvendor.dart) and real 'hardware'/'mining' StreetSpirit vendor stock (vendor.dart); ToolVendor and the 3 concrete StreetSpirit subclasses (Firebog/Zutto/Groddle) ARE placed in the live world (2026-08-28 vendor/harvest NPC placement pass). So this is a genuinely live, end-to-end reachable chain, not just wired-but-inert: harvest a MetalRock for chunk_metal, buy a smelter from a placed ToolVendor/StreetSpirit, craft ingot.",
+      "routeIds": {
+        "itemId": "ingot",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/smelter.json",
+        "itemRequirement": [
+          "smelter"
+        ],
+        "harvestSource": "coUserver/lib/entities/plants/rocks/metalrock.dart:MetalRock"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/plain_metal/plain_metal.swf and wired into advanced_resources.json's iconUrl/spriteUrl (item id 'ingot', display name 'Plain Metal Ingot'), replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-copper",
+      "displayName": "Copper Ingot",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_copper",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified 2-hop recipe chain, fully traced this pass: alchemical_tongs.json's \"copper\" recipe (ingot:1, red_element:60, green_element:30 -> copper:1). ingot's own route is live (see item-ingot). red_element comes from grinder.json's recipe (chunk_dullite:1 + cherry:1 -> red_element:3); green_element comes from grinder.json (chunk_beryl:1 -> green_element:2). chunk_dullite/chunk_beryl are granted by DulliteRock/BerylRock (coUserver/lib/entities/plants/rocks/{dulliterock,berylrock}.dart), both placed in the live world (RARITY.DulliteRock 16%, RARITY.BerylRock 22%, 2026-08-28 mining-rocks batch); cherry is granted by FruitTree (rewardItemType='cherry'), also placed (RARITY.FruitTree 45%). alchemical_tongs and grinder are both real ToolVendor + StreetSpirit('hardware'/'mining'/'alchemical') stock, and ToolVendor/the 3 StreetSpirit subclasses are placed. Every link in this chain is real and live-reachable.",
+      "routeIds": {
+        "itemId": "copper",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/alchemical_tongs.json",
+        "itemRequirement": [
+          "alchemical_tongs"
+        ],
+        "ingredientChain": [
+          "ingot (smelter+chunk_metal/MetalRock)",
+          "red_element (grinder+chunk_dullite/DulliteRock+cherry/FruitTree)",
+          "green_element (grinder+chunk_beryl/BerylRock)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/copper/copper.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-tin",
+      "displayName": "Tin Ingot",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_tin",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified 2-hop recipe chain, same shape as copper (see item-copper for the shared ingot/red_element/green_element sub-chain): alchemical_tongs.json's \"tin\" recipe (ingot:1, red_element:8, green_element:8, blue_element:8 -> tin:1). blue_element additionally comes from grinder.json (chunk_dullite:1 -> blue_element:2), same DulliteRock source as red_element (both consume the same placed rock, just different recipe outputs). Every ingredient traces to a real, unmodified recipe and a real, placed harvest source or placed vendor tool, same as item-copper.",
+      "routeIds": {
+        "itemId": "tin",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/alchemical_tongs.json",
+        "itemRequirement": [
+          "alchemical_tongs"
+        ],
+        "ingredientChain": [
+          "ingot (smelter+chunk_metal/MetalRock)",
+          "red_element/blue_element (grinder+chunk_dullite/DulliteRock, +cherry/FruitTree for red)",
+          "green_element (grinder+chunk_beryl/BerylRock)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/tin/tin.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-molybdenum",
+      "displayName": "Molybdenum Ingot",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_molybdenum",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified 2-hop recipe chain: alchemical_tongs.json's \"molybdenum\" recipe (ingot:1, blue_element:5, shiny_element:50 -> molybdenum:1). shiny_element comes from grinder.json (chunk_sparkly:1 -> shiny_element:2); chunk_sparkly is granted by SparklyRock (coUserver/lib/entities/plants/rocks/sparklyrock.dart), placed in the live world (RARITY.SparklyRock 10%). blue_element/ingot trace the same way as item-tin/item-ingot. Every ingredient and tool (alchemical_tongs, grinder) is real, unmodified, and live-reachable via the placed ToolVendor/StreetSpirit subclasses.",
+      "routeIds": {
+        "itemId": "molybdenum",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/alchemical_tongs.json",
+        "itemRequirement": [
+          "alchemical_tongs"
+        ],
+        "ingredientChain": [
+          "ingot (smelter+chunk_metal/MetalRock)",
+          "blue_element (grinder+chunk_dullite/DulliteRock)",
+          "shiny_element (grinder+chunk_sparkly/SparklyRock)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/molybdenum/molybdenum.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-thread",
+      "displayName": "Thread",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_thread",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe route: spindle.json's \"thread-spindle\" recipe (fiber:7 -> thread:1, also craftable faster via splendid_spindle). fiber is granted by Fox's squeeze-brush action (coUserver/lib/entities/npcs/animals/fox.dart, FIBER='fiber'), and Fox IS placed in the live world (RARITY.Fox 30% chance per street, maxCount 1 -- one of the original entity-conversion batches). spindle is real ToolVendor + StreetSpirit('hardware') stock, both placed. Live, end-to-end reachable chain.",
+      "routeIds": {
+        "itemId": "thread",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/spindle.json",
+        "itemRequirement": [
+          "spindle"
+        ],
+        "harvestSource": "coUserver/lib/entities/npcs/animals/fox.dart:Fox"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/thread/thread.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-string",
+      "displayName": "String",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_string",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified 2-hop recipe chain: loomer.json's \"string\" recipe (thread:5 -> string:1). thread's own route is live (see item-thread: spindle + fiber from the placed Fox). loomer is real ToolVendor + StreetSpirit('hardware') stock, both placed. Live, end-to-end reachable.",
+      "routeIds": {
+        "itemId": "string",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/loomer.json",
+        "itemRequirement": [
+          "loomer"
+        ],
+        "ingredientChain": [
+          "thread (spindle+fiber/Fox)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/string/string.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-general_fabric",
+      "displayName": "General Fabric",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_general_fabric",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified 2-hop recipe chain, same shape as item-string but a bigger thread cost: loomer.json's \"general_fabric\" recipe (thread:21 -> general_fabric:1). thread's own route is live (see item-thread). loomer is real ToolVendor + StreetSpirit('hardware') stock, both placed. Live, end-to-end reachable (just a larger fiber/thread grind than string).",
+      "routeIds": {
+        "itemId": "general_fabric",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/loomer.json",
+        "itemRequirement": [
+          "loomer"
+        ],
+        "ingredientChain": [
+          "thread (spindle+fiber/Fox)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/general_fabric/general_fabric.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-barnacle_talc",
+      "displayName": "Barnacle Talc",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_barnacle_talc",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified recipe route: grinder.json's \"barnacle_talc-grinder\" recipe (barnacle:1 -> barnacle_talc:1, also craftable faster via grand_ol_grinder). barnacle is granted by MortarBarnacle.harvest() (coUserver/lib/entities/plants/mortarbarnacle.dart), placed in the live world (RARITY.MortarBarnacle 25% chance per street -- 2026-08-28 mining-rocks batch). grinder is real ToolVendor + StreetSpirit('hardware'/'mining'/'alchemical') stock, both placed. Live, end-to-end reachable chain.",
+      "routeIds": {
+        "itemId": "barnacle_talc",
+        "recipeSource": "coUserver/lib/entities/items/actions/recipes/json/grinder.json",
+        "itemRequirement": [
+          "grinder"
+        ],
+        "harvestSource": "coUserver/lib/entities/plants/mortarbarnacle.dart:MortarBarnacle"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/barnacle_talc/barnacle_talc.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Recipe and harvest data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-bulb",
+      "displayName": "Bulb",
+      "category": "advanced resources (player item)",
+      "sourceAssetId": "item_icon_bulb",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified direct vendor stock (no recipe needed): items[\"bulb\"].getMap() is listed verbatim in both ToolVendor.itemsForSale (toolvendor.dart) and the 'hardware' StreetSpirit vendorType case (vendor.dart). ToolVendor and the 3 concrete StreetSpirit subclasses are placed in the live world (2026-08-28 vendor/harvest placement pass), so wherever one lands, bulb is directly buyable (ToolVendor regardless of street; StreetSpirit wherever vendors.json assigns that street vendorType 'hardware').",
+      "routeIds": {
+        "itemId": "bulb",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType 'hardware', direct stock)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bulb/bulb.swf and wired into advanced_resources.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-fuel_cell",
+      "displayName": "Fuel Cell",
+      "category": "machines & fuel (player item)",
+      "sourceAssetId": "item_icon_fuel_cell",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route currently exists in coUserver for this item -- checked directly this pass: absent from every recipes/json/*.json file, absent from ToolVendor.itemsForSale, and absent from every named StreetSpirit vendorType case in vendor.dart (including 'hardware', which stocks 9 of machines-fuel.json's other 10 items). Same genuinely-missing-design category as bacon/potion_rainbow_juice/the 6 non-purple_flower herbs -- not a placement gap, an actual absent acquisition route.",
+      "routeIds": {
+        "itemId": "fuel_cell"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/fuel_cell/fuel_cell.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched; no acquisition route exists to wire it to."
+    },
+    {
+      "id": "item-machine_stand",
+      "displayName": "Machine Stand",
+      "category": "machines & fuel (player item)",
+      "sourceAssetId": "item_icon_machine_stand",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified direct vendor stock (no recipe needed): items[\"machine_stand\"].getMap() is listed verbatim in both ToolVendor.itemsForSale (toolvendor.dart) and the 'hardware' StreetSpirit vendorType case (vendor.dart), alongside 9 of machines-fuel.json's other 10 items (blockmaker_chassis, blockmaker_plates, machine_engine, fuelmaker_case, fuelmaker_core, metalmaker_mechanism, metalmaker_tooler, woodworker_chassis, woodworker_fuser -- all real 'hardware'/ToolVendor stock too, though not converted this pass). ToolVendor and the 3 concrete StreetSpirit subclasses are placed in the live world, so machine_stand is directly buyable wherever one lands.",
+      "routeIds": {
+        "itemId": "machine_stand",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType 'hardware', direct stock)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/machine_stand/machine_stand.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-alchemistry_kit",
+      "displayName": "Alchemistry Kit",
+      "category": "storage (player item)",
+      "sourceAssetId": "item_icon_alchemistry_kit",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified direct vendor stock via two separate mechanisms, both confirmed this pass: (1) explicitly listed by id in both ToolVendor.itemsForSale (toolvendor.dart) and the 'alchemical' StreetSpirit vendorType case (vendor.dart); (2) additionally covered by the generic pickItems([\"Storage\"]) call that both ToolVendor's constructor and the 'hardware' StreetSpirit case make -- pickItems returns every item whose 'category' field equals 'Storage' (vendor.dart:pickItems), which every item in storage.json (including this one) matches automatically, with no per-item vendor code needed. ToolVendor and the 3 concrete StreetSpirit subclasses are placed in the live world, so this item is directly buyable wherever one lands (via either mechanism).",
+      "routeIds": {
+        "itemId": "alchemistry_kit",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor (explicit + Storage-category pickItems)",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType 'alchemical', explicit; vendorType 'hardware', Storage-category pickItems)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_alchemistry_kit/bag_alchemistry_kit.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-firefly_jar",
+      "displayName": "Firefly Jar",
+      "category": "storage (player item)",
+      "sourceAssetId": "item_icon_firefly_jar",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified direct vendor stock via two mechanisms, same shape as item-alchemistry_kit: (1) explicitly listed by id in the 'alchemical' StreetSpirit vendorType case (vendor.dart) -- not explicitly listed on ToolVendor, but (2) still reached there and on the 'hardware' StreetSpirit case via the generic pickItems([\"Storage\"]) call, since firefly_jar's category is 'Storage' like every item in this file. ToolVendor and the 3 concrete StreetSpirit subclasses are placed in the live world.",
+      "routeIds": {
+        "itemId": "firefly_jar",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor (Storage-category pickItems)",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType 'alchemical', explicit; vendorType 'hardware', Storage-category pickItems)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/firefly_jar/firefly_jar.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-spicerack",
+      "displayName": "Spice Rack",
+      "category": "storage (player item)",
+      "sourceAssetId": "item_icon_spicerack",
+      "destination": "Player item",
+      "accessibleThrough": "Real, unmodified direct vendor stock via two mechanisms, same shape as item-alchemistry_kit: (1) explicitly listed by id in the 'kitchen' StreetSpirit vendorType case (vendor.dart), alongside spice_mill (see the 3rd asset-conversion batch's spices findings); (2) also reached via the generic pickItems([\"Storage\"]) call on ToolVendor and the 'hardware' StreetSpirit case. ToolVendor and the 3 concrete StreetSpirit subclasses are placed in the live world.",
+      "routeIds": {
+        "itemId": "spicerack",
+        "vendorClasses": [
+          "coUserver/lib/entities/npcs/vendors/toolvendor.dart:ToolVendor (Storage-category pickItems)",
+          "coUserver/lib/entities/npcs/vendors/vendor.dart:Vendor (vendorType 'kitchen', explicit; vendorType 'hardware', Storage-category pickItems)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/bag_generic/bag_spicerack/bag_spicerack.swf and wired into storage.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. Vendor stock data already real and unchanged; only the icon/sprite asset was produced this pass."
+    },
+    {
+      "id": "item-abbasidose",
+      "displayName": "Abbasidose",
+      "category": "alchemical (player item)",
+      "sourceAssetId": "item_icon_abbasidose",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route exists: coUserver/lib/entities/items/actions/recipes/json/test_tube.json's 'abbasidose' entry (tool 'test_tube', input 4x red_element + 2x green_element + 6x blue_element). The test_tube tool itself is genuinely live -- real ToolVendor.itemsForSale and StreetSpirit('alchemical') vendor stock (coUserver/lib/entities/npcs/vendors/toolvendor.dart, vendor.dart), both placed in the world by tools/seed-demo-world.mjs. However the recipe's raw-material inputs (red_element/green_element/blue_element/shiny_element) have NO acquisition route of any kind anywhere in coUserver -- checked every vendor itemsForSale list (none sell them) and every recipes/json/*.json file (they appear only as recipe INPUTS, never as an output of anything); they are also absent from every NPC harvest/reward path. So this recipe is real but permanently unreachable at the very first step, a stricter version of the spice_mill/allspice 'one hop already works' pattern from the spices/drinks batches -- here zero hops work.",
+      "routeIds": {
+        "itemId": "abbasidose",
+        "recipeId": "abbasidose",
+        "recipeTool": "test_tube"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/compounds/abbasidose/abbasidose.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-blue_element",
+      "displayName": "Blue Element",
+      "category": "alchemical (player item)",
+      "sourceAssetId": "item_icon_blue_element",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase. Confirmed by grepping every .dart and .json file in coUserver: blue_element (and its 3 siblings red_element/green_element/shiny_element) appear only in alchemical.json's own item definitions, as INPUTS to the test_tube.json/alchemical_tongs.json recipe files, and in storage.json's generic storage-category listing -- never as a vendor stock item, recipe output, harvest reward, or achievement grant. This is the root cause blocking the entire alchemical compound/powder crafting chain (test_tube -> compounds -> beaker -> powders, all documented in this batch's other entries): every downstream item's recipe is real code, but none of it can ever run because the elements it starts from are unobtainable. Same 'genuinely missing design, not a placement gap' category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "blue_element"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/compounds/element_blue/element_blue.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-fertilidust",
+      "displayName": "Fertilidust",
+      "category": "alchemical (player item)",
+      "sourceAssetId": "item_icon_fertilidust",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route exists: coUserver/lib/entities/items/actions/recipes/json/beaker.json's 'fertilidust' entry (tool 'beaker', input 40x humbabol + 20x potoxin + 10x cosmox). The beaker tool itself is genuinely live -- real ToolVendor/StreetSpirit('alchemical') vendor stock, both placed in the world. But all 3 compound inputs (humbabol/potoxin/cosmox) are themselves only produced by test_tube.json recipes consuming red/green/blue/shiny elements -- and those raw elements have zero acquisition route anywhere in coUserver (see item-blue_element's entry in this batch). So fertilidust is doubly blocked: even if a player owned a beaker, they could never obtain its 3 compound inputs in the first place.",
+      "routeIds": {
+        "itemId": "fertilidust",
+        "recipeId": "fertilidust",
+        "recipeTool": "beaker"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/fertilidust/fertilidust.swf and wired into alchemical.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-potion_amorous_philtre",
+      "displayName": "Amorous Philtre",
+      "category": "tinctures-potions (player item)",
+      "sourceAssetId": "item_icon_potion_amorous_philtre",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase. Checked every vendor NPC itemsForSale list and every recipes/json/*.json file (as both a recipe id and a recipe output) -- no hits outside this item's own tinctures-potions.json definition. Same 'genuinely missing design' category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "potion_amorous_philtre"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_amorous_philtre/potion_amorous_philtre.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-potion_ancestral_spirits",
+      "displayName": "Ancestral Spirits",
+      "category": "tinctures-potions (player item)",
+      "sourceAssetId": "item_icon_potion_ancestral_spirits",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase, same check and same result as potion_amorous_philtre in this batch (no vendor stock, no recipe output, no harvest/achievement grant).",
+      "routeIds": {
+        "itemId": "potion_ancestral_spirits"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_ancestral_spirits/potion_ancestral_spirits.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-potion_tree_poison",
+      "displayName": "Tree Poison (potion)",
+      "category": "tinctures-potions (player item)",
+      "sourceAssetId": "item_icon_potion_tree_poison",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in the current codebase, same check and same result as potion_amorous_philtre in this batch. Distinct item from old_tree_poison (alchemical.json's raw reagent, asset filename 'tree_poison', not converted this pass and itself also routeless per the same grep).",
+      "routeIds": {
+        "itemId": "potion_tree_poison"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/potion_tree_poison/potion_tree_poison.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-essence_of_gandlevery",
+      "displayName": "Essence of Gandlevery",
+      "category": "tinctures-potions (player item)",
+      "sourceAssetId": "item_icon_essence_of_gandlevery",
+      "destination": "Player item",
+      "accessibleThrough": "Real recipe route exists: coUserver/lib/entities/items/actions/recipes/json/tincturing_kit.json's 'essence_of_gandlevery' entry (tool 'tincturing_kit', input 2x gandlevery + 1x hooch, output_amt 2). The tincturing_kit tool itself is genuinely live -- real ToolVendor/StreetSpirit('alchemical') vendor stock, both placed in the world. But both recipe inputs are blocked: gandlevery (the herb) has NO acquisition route at all -- confirmed in the prior herbalism batch (herbalism.json's HerbGarden gap: HerbGarden never overrides Garden.CROPS/ITEM_REQ_PLANT, so it cannot plant/harvest any herb, and no 'herbalism' vendor category exists); hooch has a real but entirely unplaced route (HoochRespawningItem world-entity harvestable, and the Still NPC-item fermenter), confirmed absent from tools/seed-demo-world.mjs in the drinks batch. So this recipe is real but blocked by two separate gaps, one a missing-design gap (gandlevery) and one a placement gap (hooch).",
+      "routeIds": {
+        "itemId": "essence_of_gandlevery",
+        "recipeId": "essence_of_gandlevery",
+        "recipeTool": "tincturing_kit"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/alchemy/essence_of_gandlevery/essence_of_gandlevery.swf and wired into tinctures-potions.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-card_carrying_qualification",
+      "displayName": "Card-Carrying Qualification",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_card_carrying_qualification",
+      "destination": "Player item",
+      "accessibleThrough": "No vendor/recipe/reward route exists anywhere in coUserver. The only other reference to this id is an unrelated achievement definition of the same name in coUserver/lib/achievements/json/player.json ('Got the Card-Carrying Qualification'); achievements.dart/statsbased.dart never call InventoryV2.addItemToUser or any item-granting method anywhere in the achievements subsystem (confirmed by grep), so unlocking that achievement cannot and does not grant this item. Same 'genuinely missing design' category as bacon/potion_rainbow_juice.",
+      "routeIds": {
+        "itemId": "card_carrying_qualification"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/card_carrying_qualification/card_carrying_qualification.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-fox_permit",
+      "displayName": "Fox-Brushing Permit",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_fox_permit",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver -- checked every vendor itemsForSale list and every recipes/json/*.json file; this id appears nowhere outside its own licenses-permits.json definition.",
+      "routeIds": {
+        "itemId": "fox_permit"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/fox_permit/fox_permit.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-general_building_permit",
+      "displayName": "General Building Permit",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_general_building_permit",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver, same check and same result as fox_permit in this batch.",
+      "routeIds": {
+        "itemId": "general_building_permit"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/general_building_permit/general_building_permit.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-teleportation_script_imbued",
+      "displayName": "Imbued Teleportation Script",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_teleportation_script_imbued",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver -- checked every vendor itemsForSale list and every recipes/json/*.json file; this id appears nowhere outside its own licenses-permits.json definition. Not connected to the 'note' item's real NoteManager crafting mechanic (that mechanic is hardcoded to grant only the 'note' item type, see item-note's entry in this batch).",
+      "routeIds": {
+        "itemId": "teleportation_script_imbued"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/teleportation_script/teleportation_script_imbued/teleportation_script_imbued.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-teleportation_script",
+      "displayName": "Teleportation Script",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_teleportation_script",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver, same check as teleportation_script_imbued in this batch.",
+      "routeIds": {
+        "itemId": "teleportation_script"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/note/teleportation_script/teleportation_script.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-your_papers",
+      "displayName": "Your Papers",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_your_papers",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver, same check as fox_permit/general_building_permit in this batch.",
+      "routeIds": {
+        "itemId": "your_papers"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/your_papers/your_papers.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-note",
+      "displayName": "Note",
+      "category": "licenses-permits (player item)",
+      "sourceAssetId": "item_icon_note",
+      "destination": "Player item",
+      "accessibleThrough": "Genuinely live route, distinct from the rest of this batch: coUserver/lib/entities/items/actions/note.dart's NoteManager.appEdit consumes 1x 'paper' item (InventoryV2.takeAnyItemsFromUser) and grants a new 'note' item (InventoryV2.addItemToUser) via a real HTTP route, auto-learning the 'penpersonship' skill on the player's first note. 'paper' is itself genuinely live-obtainable: PaperTree (coUserver/lib/entities/plants/trees/papertree.dart) sets rewardItemType = 'paper' on harvest, and PaperTree is one of the 38 world-entity types placed in tools/seed-demo-world.mjs's per-street RARITY table (confirmed directly by grep, e.g. RARITY entries listing 'PaperTree: 0.3' / '0.7' on multiple region themes). So this item is reachable end-to-end today: harvest a placed PaperTree for paper, then write a note.",
+      "routeIds": {
+        "itemId": "note",
+        "craftingAction": "NoteManager.appEdit",
+        "requiredItem": "paper",
+        "requiredSkill": "penpersonship",
+        "paperSourceEntity": "PaperTree"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/misc/note/note.swf and wired into licenses-permits.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-wooden_apple",
+      "displayName": "Wooden Apple",
+      "category": "collectibles (player item)",
+      "sourceAssetId": "item_icon_wooden_apple",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver -- checked every vendor itemsForSale list and every recipes/json/*.json file; this id appears nowhere outside its own collectibles.json definition. Same 'genuinely missing design' category as bacon/potion_rainbow_juice; collectibles.json's many 'artifact_*'-sourced items (necklaces, buttons, torn manuscript pieces, etc.) were spot-checked the same way and none turned up a route either.",
+      "routeIds": {
+        "itemId": "wooden_apple"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/artifacts/artifact_wooden_apple/artifact_wooden_apple.swf and wired into collectibles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
+    },
+    {
+      "id": "item-magical_pendant",
+      "displayName": "Magical Pendant",
+      "category": "collectibles (player item)",
+      "sourceAssetId": "item_icon_magical_pendant",
+      "destination": "Player item",
+      "accessibleThrough": "No acquisition route of any kind exists anywhere in coUserver, same check and same result as wooden_apple in this batch.",
+      "routeIds": {
+        "itemId": "magical_pendant"
+      },
+      "status": "converted",
+      "statusNote": "Icon/sprite converted from tmp/glitch-items/artifacts/artifact_magical_pendant/artifact_magical_pendant.swf and wired into collectibles.json's iconUrl/spriteUrl, replacing dead childrenofur.com links. No other game logic touched."
     }
   ],
   "deliberatelyDeferred": [

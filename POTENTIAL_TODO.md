@@ -183,6 +183,51 @@ Prioritize and verify items before implementation.
   translate item, recipe, vendor, quest, and achievement graph" pass,
   not attempted here per the instruction to record routes honestly
   rather than invent or fix them.
+- Found 2026-08-28 (sixth batch, scoped to `storage.json`/
+  `advanced_resources.json`/`basic_resources.json`/`machines-fuel.json`
+  to avoid colliding with other agents converting other categories in
+  parallel): `vendor.dart`'s `pickItems(["Storage"])` helper (called by
+  both `ToolVendor`'s constructor and the `hardware` `StreetSpirit`
+  vendorType case) returns every item in the entire registry whose
+  `category` field equals `"Storage"` -- i.e. it automatically stocks
+  all 19 `storage.json` items (bags, toolboxes, the spice rack, the
+  alchemistry kit, the firefly jar, etc.) with no per-item vendor code
+  at all. Combined with the already-placed `ToolVendor`/`StreetSpirit`
+  subclasses (see "Vendor/harvest NPC family placement" in
+  RECOVERY_TODO.md), this means the *entire* `storage.json` category is
+  already genuinely live-buyable today, not just the 3 items
+  (alchemistry_kit, firefly_jar, spicerack) whose icon/sprite art was
+  actually converted this pass -- the remaining 16 `storage.json` items
+  have real matching source SWFs (confirmed by direct search under
+  `tmp/glitch-items/misc/bag_*` and `misc/firefly_jar`) and are pure
+  icon-conversion work away from being visually complete, not blocked on
+  any further game-logic or placement work.
+  Also found a real, substantial, fully-live crafting chain in
+  `advanced_resources.json`: `ingot` (`smelter` + `chunk_metal`),
+  `copper`/`tin`/`molybdenum` (`alchemical_tongs` + `ingot` + colored
+  elements, themselves `grinder` outputs of `chunk_dullite`/
+  `chunk_beryl`/`chunk_sparkly` + `cherry`), `thread` (`spindle` +
+  `fiber`), `string`/`general_fabric` (`loomer` + `thread`), and
+  `barnacle_talc` (`grinder` + `barnacle`) all trace end-to-end through
+  real, unmodified recipes to raw-material world-entities (MetalRock,
+  DulliteRock, BerylRock, SparklyRock, Fox, MortarBarnacle, FruitTree)
+  and tools (smelter, alchemical_tongs, grinder, spindle, loomer) that
+  are every one of them already placed in the live world -- this is a
+  second, independent confirmation (after the spices/drinks batches)
+  that the 2026-08-28 vendor/harvest NPC placement pass unlocked entire
+  downstream recipe trees, not just the directly-placed NPCs' own stock.
+  By contrast, `advanced_resources.json`'s other 10 items (beam, board,
+  girder, metal_bar, metal_rod, plain_crystal, snail, urth_block,
+  wood_post, bushel_of_grain) and `machines-fuel.json`'s `fuel_cell`
+  were checked against every `recipes/json/*.json` file and every named
+  vendor `itemsForSale`/vendorType case and confirmed to have **no
+  acquisition route of any kind** -- genuinely missing design, same
+  category as `bacon`/`potion_rainbow_juice`/6 of the 7 herbs, not a
+  placement gap. `machines-fuel.json`'s other 9 items, however, ARE all
+  real `ToolVendor`/`StreetSpirit(hardware)` stock (confirmed directly),
+  same live route as the batch's own `machine_stand` -- another
+  category, like `storage.json`, where the remaining unconverted items
+  are pure icon-conversion work, not a blocked design/placement gap.
 
 ## Operations and reproducibility
 
