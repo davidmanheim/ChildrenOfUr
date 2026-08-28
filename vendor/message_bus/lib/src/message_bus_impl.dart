@@ -72,7 +72,15 @@ class MessageBusImpl implements MessageBus {
 	@override
 	void publish(event) {
 		if (subscribersExist(event)) {
-			for (Deliverer deliverer in _channels[event.runtimeType]) {
+			// Iterate a snapshot, not the live list: a handler's `deliver` can
+			// itself call subscribe()/unsubscribe() for this same event type
+			// (e.g. a quest Trackable unsubscribing once its requirement is
+			// satisfied), mutating _channels[event.runtimeType] while this loop
+			// is still iterating it -- confirmed live: crashed the whole server
+			// with "Concurrent modification during iteration" the first time
+			// tree-petting's quest-progress publish actually triggered a
+			// subscriber to unsubscribe mid-delivery.
+			for (Deliverer deliverer in _channels[event.runtimeType].toList()) {
 				if (!deliverer.deliver(event)) {
 					_undeliverableHandler(event);
 				}
