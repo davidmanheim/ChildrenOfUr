@@ -23,20 +23,20 @@ class Mailbox extends NPC {
 
 		states = {
 			'add_done':new Spritesheet('all_done',
-				'https://childrenofur.com/assets/entityImages/npc_mailbox_variant_mailboxLeft_x1_all_done_png_1354832237.png',
-				776, 438, 97, 146, 22, false),
+				'files/sprites/generated/converted/mailbox-add_done.png',
+				2222, 147, 101, 147, 22, false),
 			'has_mail':new Spritesheet('has_mail',
-				'https://childrenofur.com/assets/entityImages/npc_mailbox_variant_mailboxLeft_x1_has_mail_png_1354832234.png',
-				970, 1168, 97, 146, 73, true),
+				'files/sprites/generated/converted/mailbox-has_mail.png',
+				7373, 147, 101, 147, 73, true),
 			'interract':new Spritesheet('interract',
-				'https://childrenofur.com/assets/entityImages/npc_mailbox_variant_mailboxLeft_x1_interact_png_1354832236.png',
-				873, 146, 97, 146, 9, false),
+				'files/sprites/generated/converted/mailbox-interract.png',
+				909, 147, 101, 147, 9, false),
 			'idle':new Spritesheet('idle',
-				'https://childrenofur.com/assets/entityImages/npc_mailbox_variant_mailboxLeft_x1_idle_png_1354832232.png',
-				97, 146, 97, 146, 1, false),
+				'files/sprites/generated/converted/mailbox-idle.png',
+				101, 147, 101, 147, 1, false),
 			'has_mail_idle':new Spritesheet('has_mail_idle',
-				'https://childrenofur.com/assets/entityImages/npc_mailbox_variant_mailboxLeft_x1_has_mail_idle_png_1354832235.png',
-				97, 146, 97, 146, 1, false)
+				'files/sprites/generated/converted/mailbox-has_mail_idle.png',
+				101, 147, 101, 147, 1, false)
 		};
 		setState('idle');
 		respawn = new DateTime.now();

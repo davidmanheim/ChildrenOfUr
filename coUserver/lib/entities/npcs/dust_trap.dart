@@ -38,10 +38,10 @@ class DustTrap extends NPC implements EventHandler<PlayerPosition> {
 		speed = 0;
 
 		states = {
-			"smackDown": new Spritesheet("smackDown", "https://childrenofur.com/assets/entityImages/dust_trap__x1_smackDown_png_1354833768.png", 990, 1275, 110, 255, 45, false),
-			"liftUp": new Spritesheet("liftUp", "https://childrenofur.com/assets/entityImages/dust_trap__x1_up_png_1354833769.png", 880, 510, 110, 255, 16, false),
-			"down": new Spritesheet("down", "https://childrenofur.com/assets/entityImages/dust_trap__x1_down_png_1354833768.png", 110, 255, 110, 255, 1, true),
-			"up": new Spritesheet("up", "https://childrenofur.com/assets/entityImages/dust_trap__x1_idle_png_1354833764.png", 110, 255, 110, 255, 1, true)
+			"smackDown": new Spritesheet("smackDown", "files/sprites/generated/converted/dust_trap-smackDown.png", 5535, 272, 123, 272, 45, false),
+			"liftUp": new Spritesheet("liftUp", "files/sprites/generated/converted/dust_trap-liftUp.png", 1968, 272, 123, 272, 16, false),
+			"down": new Spritesheet("down", "files/sprites/generated/converted/dust_trap-down.png", 123, 272, 123, 272, 1, true),
+			"up": new Spritesheet("up", "files/sprites/generated/converted/dust_trap-up.png", 123, 272, 123, 272, 1, true)
 		};
 		setState('up');
 	}

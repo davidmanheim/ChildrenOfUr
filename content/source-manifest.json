@@ -30224,6 +30224,1799 @@
           "numFrames": 1
         }
       ]
+    },
+    {
+      "id": "dust_trap",
+      "sourcePath": "tmp/glitch-items/misc/dust_trap/dust_trap.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/dust_trap/dust_trap.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 93, class 'dustTrap'), 64 total frames, 4 named FrameLabel states (idle@2, smackDown@3, down@48, up@49).",
+      "rootSymbol": {
+        "characterId": 93,
+        "class": "dustTrap",
+        "totalFrames": 64
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real frame ranges per state) -> build-sprite-sheet.py (one horizontal strip per state).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "smackDown",
+          "sourceFrameRange": [
+            3,
+            47
+          ],
+          "file": "content/sprites/dust_trap/smackDown.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/dust_trap-smackDown.png",
+          "frameWidth": 123,
+          "frameHeight": 272,
+          "numFrames": 45
+        },
+        {
+          "state": "liftUp",
+          "sourceFrameRange": [
+            49,
+            64
+          ],
+          "file": "content/sprites/dust_trap/liftUp.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/dust_trap-liftUp.png",
+          "frameWidth": 123,
+          "frameHeight": 272,
+          "numFrames": 16
+        },
+        {
+          "state": "down",
+          "sourceFrameRange": [
+            48,
+            48
+          ],
+          "file": "content/sprites/dust_trap/down.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/dust_trap-down.png",
+          "frameWidth": 123,
+          "frameHeight": 272,
+          "numFrames": 1
+        },
+        {
+          "state": "up",
+          "sourceFrameRange": [
+            49,
+            49
+          ],
+          "file": "content/sprites/dust_trap/up.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/dust_trap-up.png",
+          "frameWidth": 123,
+          "frameHeight": 272,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "mailbox",
+      "sourcePath": "tmp/glitch-items/misc/npc/npc_mailbox/npc_mailbox.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/npc/npc_mailbox/npc_mailbox.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 28, class 'mailboxLeft'), 106 total frames, 5 named FrameLabel states (idle@1, has_mail_idle@2, has_mail@3, interact@76, all_done@85). Sibling DefineSprites 'mailboxRight'/'mailboxContainer' present but unused (coUserver's Mailbox class only implements the left-facing variant).",
+      "rootSymbol": {
+        "characterId": 28,
+        "class": "mailboxLeft",
+        "totalFrames": 106
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real frame ranges per state) -> build-sprite-sheet.py (one horizontal strip per state).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "idle",
+          "sourceFrameRange": [
+            1,
+            1
+          ],
+          "file": "content/sprites/mailbox/idle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/mailbox-idle.png",
+          "frameWidth": 101,
+          "frameHeight": 147,
+          "numFrames": 1
+        },
+        {
+          "state": "has_mail_idle",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/mailbox/has_mail_idle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/mailbox-has_mail_idle.png",
+          "frameWidth": 101,
+          "frameHeight": 147,
+          "numFrames": 1
+        },
+        {
+          "state": "has_mail",
+          "sourceFrameRange": [
+            3,
+            75
+          ],
+          "file": "content/sprites/mailbox/has_mail.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/mailbox-has_mail.png",
+          "frameWidth": 101,
+          "frameHeight": 147,
+          "numFrames": 73
+        },
+        {
+          "state": "interract",
+          "sourceFrameRange": [
+            76,
+            84
+          ],
+          "file": "content/sprites/mailbox/interract.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/mailbox-interract.png",
+          "frameWidth": 101,
+          "frameHeight": 147,
+          "numFrames": 9
+        },
+        {
+          "state": "add_done",
+          "sourceFrameRange": [
+            85,
+            106
+          ],
+          "file": "content/sprites/mailbox/add_done.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/mailbox-add_done.png",
+          "frameWidth": 101,
+          "frameHeight": 147,
+          "numFrames": 22
+        }
+      ]
+    },
+    {
+      "id": "scarecrow",
+      "sourcePath": "tmp/glitch-items/inhabitants/gardening_vendor/npc_gardening_vendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/inhabitants/gardening_vendor/npc_gardening_vendor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 53, class 'npc_gardening_vendor_fla.gardeningvendor_1'), 350 total frames, 5 named FrameLabel states (walk@1, walk_end@22, talk@35, attract@61, idle_stand@91). NOTE: coUserver/lib/entities/npcs/vendors/scarecrow.dart's actual class is 'GardeningGoodsVendor', not a class literally named Scarecrow -- the file name is a pre-existing upstream-fork naming quirk, confirmed by grep (no 'class Scarecrow' exists anywhere in coUserver); this is the file/class the recovery task identified as 'vendors/scarecrow.dart'.",
+      "rootSymbol": {
+        "characterId": 53,
+        "class": "npc_gardening_vendor_fla.gardeningvendor_1",
+        "totalFrames": 350
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real frame ranges per state) -> build-sprite-sheet.py (one horizontal strip per state).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "walk",
+          "sourceFrameRange": [
+            1,
+            21
+          ],
+          "file": "content/sprites/scarecrow/walk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/scarecrow-walk.png",
+          "frameWidth": 187,
+          "frameHeight": 209,
+          "numFrames": 21
+        },
+        {
+          "state": "walk_end",
+          "sourceFrameRange": [
+            22,
+            34
+          ],
+          "file": "content/sprites/scarecrow/walk_end.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/scarecrow-walk_end.png",
+          "frameWidth": 187,
+          "frameHeight": 209,
+          "numFrames": 13
+        },
+        {
+          "state": "talk",
+          "sourceFrameRange": [
+            35,
+            60
+          ],
+          "file": "content/sprites/scarecrow/talk.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/scarecrow-talk.png",
+          "frameWidth": 187,
+          "frameHeight": 209,
+          "numFrames": 26
+        },
+        {
+          "state": "attract",
+          "sourceFrameRange": [
+            61,
+            90
+          ],
+          "file": "content/sprites/scarecrow/attract.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/scarecrow-attract.png",
+          "frameWidth": 187,
+          "frameHeight": 209,
+          "numFrames": 30
+        },
+        {
+          "state": "idle_stand",
+          "sourceFrameRange": [
+            91,
+            350
+          ],
+          "file": "content/sprites/scarecrow/idle_stand.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/scarecrow-idle_stand.png",
+          "frameWidth": 187,
+          "frameHeight": 209,
+          "numFrames": 260
+        }
+      ]
+    },
+    {
+      "id": "cocktail_shaker",
+      "sourcePath": "tmp/glitch-items/tools/tool_base/cocktail_shaker/cocktail_shaker.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/tools/tool_base/cocktail_shaker/cocktail_shaker.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), scene labels 'iconic'/'1'/'2'/'3'/'4' (or 'tool_animation'/'iconic'/'1' for tool-family sources). This pass converts the growth/state frame range for the entity's own on-map Spritesheet (a distinct output from this item's inventory icon, already converted in an earlier item-icon batch from the same source SWF).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (pack the growth-stage frame range into one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1",
+          "sourceFrameRange": [
+            92,
+            92
+          ],
+          "file": "content/sprites/cocktail_shaker/1.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cocktail_shaker-1.png",
+          "frameWidth": 125,
+          "frameHeight": 125,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "hot_n_fizzy_sauce",
+      "sourcePath": "tmp/glitch-items/food/hot_n_fizzy_sauce/hot_n_fizzy_sauce.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/food/hot_n_fizzy_sauce/hot_n_fizzy_sauce.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), scene labels 'iconic'/'1'/'2'/'3'/'4' (or 'tool_animation'/'iconic'/'1' for tool-family sources). This pass converts the growth/state frame range for the entity's own on-map Spritesheet (a distinct output from this item's inventory icon, already converted in an earlier item-icon batch from the same source SWF).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (pack the growth-stage frame range into one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/hot_n_fizzy_sauce/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/hot_n_fizzy_sauce-1-2-3-4.png",
+          "frameWidth": 41,
+          "frameHeight": 44,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "laughing_gas",
+      "sourcePath": "tmp/glitch-items/misc/laughing_gas/laughing_gas.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/laughing_gas/laughing_gas.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), scene labels 'iconic'/'1'/'2'/'3'/'4' (or 'tool_animation'/'iconic'/'1' for tool-family sources). This pass converts the growth/state frame range for the entity's own on-map Spritesheet (a distinct output from this item's inventory icon, already converted in an earlier item-icon batch from the same source SWF).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (pack the growth-stage frame range into one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            2,
+            5
+          ],
+          "file": "content/sprites/laughing_gas/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/laughing_gas-1-2-3-4.png",
+          "frameWidth": 52,
+          "frameHeight": 43,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "no_no_powder",
+      "sourcePath": "tmp/glitch-items/alchemy/no_no_powder/no_no_powder.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/alchemy/no_no_powder/no_no_powder.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), scene labels 'iconic'/'1'/'2'/'3'/'4' (or 'tool_animation'/'iconic'/'1' for tool-family sources). This pass converts the growth/state frame range for the entity's own on-map Spritesheet (a distinct output from this item's inventory icon, already converted in an earlier item-icon batch from the same source SWF).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (pack the growth-stage frame range into one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "1-2-3-4",
+          "sourceFrameRange": [
+            37,
+            40
+          ],
+          "file": "content/sprites/nonopowder/1-2-3-4.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/nonopowder-1-2-3-4.png",
+          "frameWidth": 85,
+          "frameHeight": 55,
+          "numFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "icon_alph",
+      "sourcePath": "tmp/glitch-items/giants/icon_alph/icon_alph.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_alph/icon_alph.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Alph",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/alph.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-alph.png",
+          "frameWidth": 95,
+          "frameHeight": 115,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_cosma",
+      "sourcePath": "tmp/glitch-items/giants/icon_cosma/icon_cosma.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_cosma/icon_cosma.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Cosma",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/cosma.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-cosma.png",
+          "frameWidth": 110,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_friendly",
+      "sourcePath": "tmp/glitch-items/giants/icon_friendly/icon_friendly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_friendly/icon_friendly.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Friendly",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/friendly.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-friendly.png",
+          "frameWidth": 90,
+          "frameHeight": 99,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_grendaline",
+      "sourcePath": "tmp/glitch-items/giants/icon_grendaline/icon_grendaline.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_grendaline/icon_grendaline.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Grendaline",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/grendaline.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-grendaline.png",
+          "frameWidth": 86,
+          "frameHeight": 107,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_humbaba",
+      "sourcePath": "tmp/glitch-items/giants/icon_humbaba/icon_humbaba.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_humbaba/icon_humbaba.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Humbaba",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/humbaba.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-humbaba.png",
+          "frameWidth": 81,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_lem",
+      "sourcePath": "tmp/glitch-items/giants/icon_lem/icon_lem.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_lem/icon_lem.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Lem",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/lem.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-lem.png",
+          "frameWidth": 94,
+          "frameHeight": 104,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_mab",
+      "sourcePath": "tmp/glitch-items/giants/icon_mab/icon_mab.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_mab/icon_mab.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Mab",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/mab.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-mab.png",
+          "frameWidth": 84,
+          "frameHeight": 107,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_pot",
+      "sourcePath": "tmp/glitch-items/giants/icon_pot/icon_pot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_pot/icon_pot.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Pot",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/pot.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-pot.png",
+          "frameWidth": 111,
+          "frameHeight": 100,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_spriggan",
+      "sourcePath": "tmp/glitch-items/giants/icon_spriggan/icon_spriggan.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_spriggan/icon_spriggan.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Spriggan",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/spriggan.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-spriggan.png",
+          "frameWidth": 74,
+          "frameHeight": 105,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_tii",
+      "sourcePath": "tmp/glitch-items/giants/icon_tii/icon_tii.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_tii/icon_tii.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Tii",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/tii.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-tii.png",
+          "frameWidth": 91,
+          "frameHeight": 86,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "icon_zille",
+      "sourcePath": "tmp/glitch-items/giants/icon_zille/icon_zille.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/giants/icon_zille/icon_zille.fla",
+      "sourceFormat": "SWF (main timeline, no DefineSprite), 2 total frames, scene labels 'iconic'@1 (item inventory icon, not converted this pass) and '1'@2 (the world-entity on-map static pose, converted this pass).",
+      "conversionMethod": "ffdec -ignorebackground -export frame -> swf-scene-labels.py (resolve real main-timeline frame numbers) -> build-sprite-sheet.py (single-frame strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "Zille",
+          "sourceFrameRange": [
+            2,
+            2
+          ],
+          "file": "content/sprites/icon/zille.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/icon-zille.png",
+          "frameWidth": 104,
+          "frameHeight": 102,
+          "numFrames": 1
+        }
+      ]
+    },
+    {
+      "id": "cubimal_batterfly",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_batterfly/npc_cubimal_batterfly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_batterfly/npc_cubimal_batterfly.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/batterfly.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-batterfly.png",
+          "frameWidth": 38,
+          "frameHeight": 42,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_bureaucrat",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_bureaucrat/npc_cubimal_bureaucrat.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_bureaucrat/npc_cubimal_bureaucrat.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/bureaucrat.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-bureaucrat.png",
+          "frameWidth": 37,
+          "frameHeight": 29,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_butler",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_butler/npc_cubimal_butler.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_butler/npc_cubimal_butler.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/butler.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-butler.png",
+          "frameWidth": 38,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_butterfly",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_butterfly/npc_cubimal_butterfly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_butterfly/npc_cubimal_butterfly.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/butterfly.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-butterfly.png",
+          "frameWidth": 40,
+          "frameHeight": 38,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_cactus",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_cactus/npc_cubimal_cactus.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_cactus/npc_cubimal_cactus.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/cactus.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-cactus.png",
+          "frameWidth": 37,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_chick",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_chick/npc_cubimal_chick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_chick/npc_cubimal_chick.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/chick.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-chick.png",
+          "frameWidth": 38,
+          "frameHeight": 34,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_crab",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_crab/npc_cubimal_crab.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_crab/npc_cubimal_crab.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/crab.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-crab.png",
+          "frameWidth": 40,
+          "frameHeight": 33,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_craftybot",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_craftybot/npc_cubimal_craftybot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_craftybot/npc_cubimal_craftybot.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/craftybot.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-craftybot.png",
+          "frameWidth": 38,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_deimaginator",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_deimaginator/npc_cubimal_deimaginator.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_deimaginator/npc_cubimal_deimaginator.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/deimaginator.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-deimaginator.png",
+          "frameWidth": 37,
+          "frameHeight": 32,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_dustbunny",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_dustbunny/npc_cubimal_dustbunny.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_dustbunny/npc_cubimal_dustbunny.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/dustbunny.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-dustbunny.png",
+          "frameWidth": 39,
+          "frameHeight": 26,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_emobear",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_emobear/npc_cubimal_emobear.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_emobear/npc_cubimal_emobear.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/emobear.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-emobear.png",
+          "frameWidth": 41,
+          "frameHeight": 29,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_factorydefect_chick",
+      "sourcePath": "tmp/glitch-items/rare_items/npc_cubimal_factorydefect_chick/npc_cubimal_factorydefect_chick.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/rare_items/npc_cubimal_factorydefect_chick/npc_cubimal_factorydefect_chick.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 31, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 31,
+        "class": "cubimal_mc",
+        "totalFrames": 60
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            60
+          ],
+          "file": "content/sprites/cubimal/factorydefect_chick.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-factorydefect_chick.png",
+          "frameWidth": 56,
+          "frameHeight": 39,
+          "numFrames": 59
+        }
+      ]
+    },
+    {
+      "id": "cubimal_firebogstreetspirit",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_firebogstreetspirit/npc_cubimal_firebogstreetspirit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_firebogstreetspirit/npc_cubimal_firebogstreetspirit.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/firebogstreetspirit.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-firebogstreetspirit.png",
+          "frameWidth": 38,
+          "frameHeight": 31,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_firefly",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_firefly/npc_cubimal_firefly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_firefly/npc_cubimal_firefly.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/firefly.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-firefly.png",
+          "frameWidth": 38,
+          "frameHeight": 37,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_fox",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_fox/npc_cubimal_fox.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_fox/npc_cubimal_fox.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/fox.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-fox.png",
+          "frameWidth": 39,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_foxranger",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_foxranger/npc_cubimal_foxranger.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_foxranger/npc_cubimal_foxranger.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/foxranger.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-foxranger.png",
+          "frameWidth": 38,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_frog",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_frog/npc_cubimal_frog.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_frog/npc_cubimal_frog.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/frog.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-frog.png",
+          "frameWidth": 40,
+          "frameHeight": 32,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_gardeningtoolsvendor",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_gardeningtoolsvendor/npc_cubimal_gardeningtoolsvendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_gardeningtoolsvendor/npc_cubimal_gardeningtoolsvendor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/gardeningtoolsvendor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-gardeningtoolsvendor.png",
+          "frameWidth": 40,
+          "frameHeight": 34,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_gnome",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_gnome/npc_cubimal_gnome.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_gnome/npc_cubimal_gnome.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/gnome.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-gnome.png",
+          "frameWidth": 40,
+          "frameHeight": 33,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_greeterbot",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_greeterbot/npc_cubimal_greeterbot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_greeterbot/npc_cubimal_greeterbot.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/greeterbot.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-greeterbot.png",
+          "frameWidth": 37,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_groddlestreetspirit",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_groddlestreetspirit/npc_cubimal_groddlestreetspirit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_groddlestreetspirit/npc_cubimal_groddlestreetspirit.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/groddlestreetspirit.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-groddlestreetspirit.png",
+          "frameWidth": 40,
+          "frameHeight": 36,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_gwendolyn",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_gwendolyn/npc_cubimal_gwendolyn.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_gwendolyn/npc_cubimal_gwendolyn.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/gwendolyn.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-gwendolyn.png",
+          "frameWidth": 38,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_helga",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_helga/npc_cubimal_helga.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_helga/npc_cubimal_helga.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/helga.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-helga.png",
+          "frameWidth": 39,
+          "frameHeight": 33,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_hellbartender",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_hellbartender/npc_cubimal_hellbartender.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_hellbartender/npc_cubimal_hellbartender.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 25, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 25,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/hellbartender.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-hellbartender.png",
+          "frameWidth": 53,
+          "frameHeight": 65,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_ilmenskiejones",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_ilmenskiejones/npc_cubimal_ilmenskiejones.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_ilmenskiejones/npc_cubimal_ilmenskiejones.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/ilmenskiejones.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-ilmenskiejones.png",
+          "frameWidth": 39,
+          "frameHeight": 35,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_juju",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_juju/npc_cubimal_juju.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_juju/npc_cubimal_juju.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/juju.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-juju.png",
+          "frameWidth": 38,
+          "frameHeight": 29,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_magicrock",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_magicrock/npc_cubimal_magicrock.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_magicrock/npc_cubimal_magicrock.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/magicrock.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-magicrock.png",
+          "frameWidth": 37,
+          "frameHeight": 26,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_maintenancebot",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_maintenancebot/npc_cubimal_maintenancebot.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_maintenancebot/npc_cubimal_maintenancebot.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/maintenancebot.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-maintenancebot.png",
+          "frameWidth": 38,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_mealvendor",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_mealvendor/npc_cubimal_mealvendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_mealvendor/npc_cubimal_mealvendor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/mealvendor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-mealvendor.png",
+          "frameWidth": 40,
+          "frameHeight": 32,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_phantom",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_phantom/npc_cubimal_phantom.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_phantom/npc_cubimal_phantom.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/phantom.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-phantom.png",
+          "frameWidth": 38,
+          "frameHeight": 35,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_piggy",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_piggy/npc_cubimal_piggy.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_piggy/npc_cubimal_piggy.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/piggy.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-piggy.png",
+          "frameWidth": 38,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_rook",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_rook/npc_cubimal_rook.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_rook/npc_cubimal_rook.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/rook.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-rook.png",
+          "frameWidth": 41,
+          "frameHeight": 31,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_rube",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_rube/npc_cubimal_rube.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_rube/npc_cubimal_rube.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/rube.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-rube.png",
+          "frameWidth": 39,
+          "frameHeight": 28,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_scionofpurple",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_scionofpurple/npc_cubimal_scionofpurple.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_scionofpurple/npc_cubimal_scionofpurple.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/scionofpurple.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-scionofpurple.png",
+          "frameWidth": 41,
+          "frameHeight": 37,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_senorfunpickle",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_senorfunpickle/npc_cubimal_senorfunpickle.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_senorfunpickle/npc_cubimal_senorfunpickle.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 20, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 20,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/senorfunpickle.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-senorfunpickle.png",
+          "frameWidth": 44,
+          "frameHeight": 35,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_sloth",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_sloth/npc_cubimal_sloth.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_sloth/npc_cubimal_sloth.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/sloth.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-sloth.png",
+          "frameWidth": 38,
+          "frameHeight": 31,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_smuggler",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_smuggler/npc_cubimal_smuggler.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_smuggler/npc_cubimal_smuggler.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/smuggler.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-smuggler.png",
+          "frameWidth": 39,
+          "frameHeight": 29,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_snoconevendor",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_snoconevendor/npc_cubimal_snoconevendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_snoconevendor/npc_cubimal_snoconevendor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/snoconevendor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-snoconevendor.png",
+          "frameWidth": 37,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_squid",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_squid/npc_cubimal_squid.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_squid/npc_cubimal_squid.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/squid.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-squid.png",
+          "frameWidth": 40,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_toolvendor",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_toolvendor/npc_cubimal_toolvendor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_toolvendor/npc_cubimal_toolvendor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/toolvendor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-toolvendor.png",
+          "frameWidth": 38,
+          "frameHeight": 30,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_trisor",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_trisor/npc_cubimal_trisor.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_trisor/npc_cubimal_trisor.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/trisor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-trisor.png",
+          "frameWidth": 38,
+          "frameHeight": 26,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_unclefriendly",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_unclefriendly/npc_cubimal_unclefriendly.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_unclefriendly/npc_cubimal_unclefriendly.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/unclefriendly.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-unclefriendly.png",
+          "frameWidth": 39,
+          "frameHeight": 32,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_uraliastreetspirit",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_uraliastreetspirit/npc_cubimal_uraliastreetspirit.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_uraliastreetspirit/npc_cubimal_uraliastreetspirit.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/uraliastreetspirit.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-uraliastreetspirit.png",
+          "frameWidth": 40,
+          "frameHeight": 33,
+          "numFrames": 60
+        }
+      ]
+    },
+    {
+      "id": "cubimal_yeti",
+      "sourcePath": "tmp/glitch-items/cubimals/npc_cubimal_yeti/npc_cubimal_yeti.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/cubimals/npc_cubimal_yeti/npc_cubimal_yeti.fla",
+      "sourceFormat": "SWF, DefineSprite (charId 14, nested 'cubimal_mc'), 2 named FrameLabel states ('1'@1 static pose, not converted this pass; 'race'@2 racing-loop animation, converted this pass).",
+      "rootSymbol": {
+        "characterId": 14,
+        "class": "cubimal_mc",
+        "totalFrames": 61
+      },
+      "conversionMethod": "ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve real 'race' frame range) -> build-sprite-sheet.py (one horizontal strip).",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "race",
+          "sourceFrameRange": [
+            2,
+            61
+          ],
+          "file": "content/sprites/cubimal/yeti.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/cubimal_race-yeti.png",
+          "frameWidth": 40,
+          "frameHeight": 32,
+          "numFrames": 60
+        }
+      ]
     }
   ],
   "notConverted": {

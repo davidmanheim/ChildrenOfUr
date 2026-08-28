@@ -21,19 +21,19 @@ class GardeningGoodsVendor extends Vendor implements EventHandler<PlayerPosition
 
 	static final Map<String, Spritesheet> SPRITESHEETS = {
 		'attract': new Spritesheet('attract',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_attract_png_1354831005.png', 890, 1188, 178, 198, 30, true),
+			'files/sprites/generated/converted/scarecrow-attract.png', 5610, 209, 187, 209, 30, true),
 		'idle_stand': new Spritesheet('idle_stand',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_idle_stand_png_1354831015.png', 3916, 2376, 178, 198, 260, true),
+			'files/sprites/generated/converted/scarecrow-idle_stand.png', 48620, 209, 187, 209, 260, true),
 		'talk': new Spritesheet('talk',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_talk_png_1354831002.png', 890, 1188, 178, 198, 26, false),
+			'files/sprites/generated/converted/scarecrow-talk.png', 4862, 209, 187, 209, 26, false),
 		'walk_end': new Spritesheet('walk_end',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_walk_end_png_1354831000.png', 890, 594, 178, 198, 13, false),
+			'files/sprites/generated/converted/scarecrow-walk_end.png', 2431, 209, 187, 209, 13, false),
 		'walk': new Spritesheet('walk',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_walk_png_1354830998.png', 890, 594, 178, 198, 15, true),
+			'files/sprites/generated/converted/scarecrow-walk.png', 3927, 209, 187, 209, 21, true),
 		'turn_left': new Spritesheet('walk',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_walk_png_1354830998.png', 890, 594, 178, 198, 15, true),
+			'files/sprites/generated/converted/scarecrow-walk.png', 3927, 209, 187, 209, 21, true),
 		'turn_right': new Spritesheet('walk',
-			'https://childrenofur.com/assets/entityImages/npc_gardening_vendor__x1_walk_png_1354830998.png', 890, 594, 178, 198, 15, true),
+			'files/sprites/generated/converted/scarecrow-walk.png', 3927, 209, 187, 209, 21, true),
 	};
 
 	int openCount = 0;

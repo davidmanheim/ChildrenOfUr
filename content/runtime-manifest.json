@@ -8438,7 +8438,7 @@
     },
     {
       "id": "item-cubimal_senorfunpickle",
-      "displayName": "Señor Funpickle Cubimal",
+      "displayName": "Se\u00f1or Funpickle Cubimal",
       "category": "collectibles (player item)",
       "sourceAssetId": "item_icon_cubimal_senorfunpickle",
       "destination": "Player item",
@@ -12125,6 +12125,180 @@
       },
       "status": "converted",
       "statusNote": "Icon/sprite converted from tmp/glitch-items/tools/woodworker_fuser/woodworker_fuser.swf and wired into machines-fuel.json's iconUrl/spriteUrl, replacing dead childrenofur.com links."
+    },
+    {
+      "id": "dust_trap",
+      "displayName": "Dust Trap (world entity)",
+      "category": "NPC (world entity)",
+      "sourceAssetId": "dust_trap",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: DustTrap reacts to a player standing on it (PlayerPosition EventHandler match, see dust_trap.dart's handleEvent/_approx) and grants a random paper/bun reward (or a miss) via stepOn(). However, DustTrap is not referenced anywhere in tools/seed-demo-world.mjs and is not in coUserver/lib/entities/npcs/items/entity_item.dart's ITEM_ENTITIES map either (unlike RacingCubimal/Icon, it cannot be spawned by any player item action) -- so it is real but currently unreachable in the live world. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously 4 dead childrenofur.com links); placing DustTrap in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/dust_trap.dart:DustTrap",
+        "actions": [
+          "stepOn (implicit, triggered by walking onto it)"
+        ],
+        "rewardItems": [
+          "paper",
+          "bun"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/misc/dust_trap/dust_trap.swf (DefineSprite charId 93 'dustTrap', 64 total frames, 4 named FrameLabel states) and wired into the entity .dart file's own 'states' Spritesheet map, replacing 4 dead childrenofur.com URLs. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine on all 4 outputs (PIL getextrema() returned a real 0-255 range on every state, not a fully-opaque (255,255) baked background -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "mailbox",
+      "displayName": "Mailbox (world entity)",
+      "category": "NPC (world entity)",
+      "sourceAssetId": "mailbox",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: Mailbox exposes 'check for mail' and 'view inbox' actions (checkForMail/viewInbox in mailbox.dart), and the real HTTP routes /getMail, /sendMail, /collectItem, /collectCurrants, /deleteMail, /readMail (also in mailbox.dart) implement the full messaging system. However, the Mailbox NPC entity itself is not referenced anywhere in tools/seed-demo-world.mjs and is not in entity_item.dart's ITEM_ENTITIES map, so no in-world Mailbox currently exists for a player to click 'view inbox' on. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously 5 dead childrenofur.com links); placing Mailbox in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/mailbox.dart:Mailbox",
+        "actions": [
+          "check for mail",
+          "view inbox"
+        ],
+        "httpRoutes": [
+          "/getMail",
+          "/sendMail",
+          "/collectItem",
+          "/collectCurrants",
+          "/deleteMail",
+          "/readMail"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/misc/npc/npc_mailbox/npc_mailbox.swf (DefineSprite charId 28 'mailboxLeft', 106 total frames, 5 named FrameLabel states) and wired into the entity .dart file's own 'states' Spritesheet map, replacing 5 dead childrenofur.com URLs. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine on all 5 outputs (PIL getextrema() returned a real 0-255 range on every state -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "scarecrow",
+      "displayName": "Gardening Goods Vendor (world entity)",
+      "category": "Vendor NPC (world entity)",
+      "sourceAssetId": "scarecrow",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified vendor game logic exists and is unchanged: GardeningGoodsVendor (coUserver/lib/entities/npcs/vendors/scarecrow.dart -- NOTE the class is actually named GardeningGoodsVendor, not Scarecrow; the file name is a pre-existing upstream-fork naming quirk, confirmed by grep -- no 'class Scarecrow' exists anywhere in coUserver) sells hoe/watering_can/13 crop seeds via the real Vendor.buy/sell mechanism. However, it is not referenced anywhere in tools/seed-demo-world.mjs and is not in entity_item.dart's ITEM_ENTITIES map, so it is currently unreachable in the live world (its stock is redundant with, but not identical to, the already-placed 'gardening'-category StreetSpirit vendor, which sells the same seeds). This pass converts only the visual asset (the entity's own on-map Spritesheet, previously 5 dead childrenofur.com links, several with grid-layout metadata that did not match the real per-source frame counts -- corrected to the real source-derived counts, same category of pre-existing bug already fixed for woodtree.dart's maturity states); placing GardeningGoodsVendor in the world is deferred to a future placement pass and documented honestly here as NOT yet live, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/vendors/scarecrow.dart:GardeningGoodsVendor",
+        "actions": [
+          "buy",
+          "sell"
+        ],
+        "itemsSold": [
+          "hoe",
+          "watering_can",
+          "13 crop seeds (broccoli_seed..zucchini_seed)"
+        ]
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/inhabitants/gardening_vendor/npc_gardening_vendor.swf (DefineSprite charId 53, 350 total frames, 5 named FrameLabel states) and wired into the entity .dart file's own 'states' Spritesheet map, replacing 5 dead childrenofur.com URLs. The pre-existing dead metadata's numFrames for 'walk'/'walk_end' (15/13) did not match the real source frame ranges derived from the SWF's own FrameLabel tags (21/13); the real source-derived values (21/13/26/30/260) were used, not the stale dead ones, consistent with this recovery project's established practice of trusting the source SWF over pre-existing (frequently buggy) metadata. Frame geometry verified to exactly match both the packed sheet and the updated Spritesheet() constructor args. Alpha channel verified genuine on all 5 outputs (PIL getextrema() returned a real 0-255 range on every state -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "cocktail_shaker",
+      "displayName": "Cocktail Shaker (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "cocktail_shaker",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: CocktailShakerRespawningItem inherits RespawningItem's 'pick up' action, which grants 'cocktail_shaker' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, CocktailShakerRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. The matching player item 'cocktail_shaker' is independently obtainable as real 'kitchen'-category StreetSpirit vendor stock (already placed, see item-cocktail_shaker's own runtime-manifest row) -- this world-entity ground-spawn would be a second, currently-inert acquisition route for the same item, not the only one. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing CocktailShakerRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live via this route, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/cocktail_shaker.dart:CocktailShakerRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "cocktail_shaker"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/tools/tool_base/cocktail_shaker/cocktail_shaker.swf and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255) baked background -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "hot_n_fizzy_sauce",
+      "displayName": "Hot 'n' Fizzy Sauce (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "hot_n_fizzy_sauce",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: HotNFizzySauceRespawningItem inherits RespawningItem's 'pick up' action, which grants 'hot_n_fizzy_sauce' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, HotNFizzySauceRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. The matching player item 'hot_n_fizzy_sauce' is independently obtainable via a real saucepan recipe (see item-hot_n_fizzy_sauce's own runtime-manifest row) -- this world-entity ground-spawn would be a second, currently-inert acquisition route for the same item, not the only one. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing HotNFizzySauceRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live via this route, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/hot_n_fizzy_sauce.dart:HotNFizzySauceRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "hot_n_fizzy_sauce"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/food/hot_n_fizzy_sauce/hot_n_fizzy_sauce.swf and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255) baked background -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "gas_laughing",
+      "displayName": "Laughing Gas (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "gas_laughing",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: LaughingGasRespawningItem inherits RespawningItem's 'pick up' action, which grants 'gas_laughing' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, LaughingGasRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. The matching player item 'gas_laughing' is independently obtainable via a real gassifier recipe from GasPlant's general_vapour harvest (GasPlant is placed; see item-gas_laughing's own runtime-manifest row) -- this world-entity ground-spawn would be a second, currently-inert acquisition route for the same item, not the only one. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing LaughingGasRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live via this route, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/laughing_gas.dart:LaughingGasRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "gas_laughing"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/misc/laughing_gas/laughing_gas.swf and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255) baked background -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "no_no_powder",
+      "displayName": "No-No Powder (world entity)",
+      "category": "Harvestable respawning item (world entity)",
+      "sourceAssetId": "no_no_powder",
+      "destination": "World entity",
+      "accessibleThrough": "Real, unmodified game logic exists and is unchanged: NoNoPowderRespawningItem inherits RespawningItem's 'pick up' action, which grants 'no_no_powder' to the player via InventoryV2.addItemToUser on a real (non-synthetic) item id, then hides and respawns on its own timer. However, NoNoPowderRespawningItem is not referenced anywhere in tools/seed-demo-world.mjs -- the same real-but-unplaced gap already documented and since fixed for HoochRespawningItem/PurpleFlowerRespawningItem/Still before their own 2026-08-28 placement pass. The matching player item 'no_no_powder' is independently obtainable via a real beaker recipe (see item-no_no_powder's own runtime-manifest row) -- this world-entity ground-spawn would be a second, currently-inert acquisition route for the same item, not the only one. This pass converts only the visual asset (the entity's own on-map Spritesheet, previously a dead childrenofur.com link); placing NoNoPowderRespawningItem in the world is deferred to a future placement pass and documented honestly here as NOT yet live via this route, rather than assumed reachable.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/plants/respawning_items/nonopowder.dart:NoNoPowderRespawningItem",
+        "actions": [
+          "pick up"
+        ],
+        "rewardItem": "no_no_powder"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted from tmp/glitch-items/alchemy/no_no_powder/no_no_powder.swf and wired into the entity .dart file's own 'states' Spritesheet map, replacing a dead childrenofur.com URL. Frame geometry (frameWidth x numFrames = sheetWidth, frameHeight = sheetHeight) verified to exactly match both the packed sheet and the updated Spritesheet() constructor args in the .dart file. Alpha channel verified genuine (PIL getextrema() returned a real 0-255 range, not a fully-opaque (255,255) baked background -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "icon",
+      "displayName": "Icon of the Giants (world entity, 11 skins)",
+      "category": "NPC (world entity, player-placeable)",
+      "sourceAssetId": "icon",
+      "destination": "World entity",
+      "accessibleThrough": "Genuinely live end-to-end, NOT gated on tools/seed-demo-world.mjs placement: every icon_of_<giant> player item (all 11: alph/cosma/friendly/grendaline/humbaba/lem/mab/pot/spriggan/tii/zille) has a real 'Place' item action (emblems-icons.json) wired to Item.place() (coUserver/lib/entities/items/item.dart), which calls the real, unmodified EntityItem.place()/ITEM_ENTITIES lookup (coUserver/lib/entities/npcs/items/entity_item.dart, mapping 'icon_of_alph' -> 'Icon_Alph' etc. for all 11) to spawn the matching Icon_<Giant> world entity via StreetEntities.setEntity() -- confirmed by reading item.dart/entity_item.dart directly, not assumed. The icon_of_<giant> items themselves are real and obtainable via Emblem.iconize() (11x emblem_of_<giant> -> 1x icon_of_<giant>), and emblem_of_<giant> is obtainable from any of the 11 placed Shrine types via Shrine.donate() (all confirmed live in POTENTIAL_TODO.md's Q3/Q5 quest trace). So placing any of the 11 Shrines (all placed) -> donating to fill a giant's favor -> repeating for 11 emblems -> iconize -> Place is a real, if grindy, end-to-end player-driven route to a rendered Icon_<Giant> on the map -- no game-server code change or seed-demo-world.mjs placement pass needed.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/items/icon.dart:Icon (base) / Icon_Alph..Icon_Zille (11 concrete subclasses)",
+        "actions": [
+          "tithe",
+          "ruminate",
+          "revere",
+          "reflect"
+        ],
+        "spawnedBy": "icon_of_<giant> item's real 'Place' action (Item.place -> EntityItem.place -> ITEM_ENTITIES)",
+        "itemPrerequisite": "icon_of_<giant> (11 variants, via Emblem.iconize from 11x emblem_of_<giant>)"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted for all 11 giant skins from their individual source SWFs (tmp/glitch-items/giants/icon_<name>/icon_<name>.swf, each a 2-frame main-timeline SWF: frame 1 'iconic' = inventory icon (already converted in an earlier item-icon batch), frame 2 '1' = this world-entity's static on-map pose) and wired into icon.dart's SPRITESHEETS map, replacing 11 dead childrenofur.com URLs. Used ffdec -ignorebackground -export frame -> swf-scene-labels.py -> build-sprite-sheet.py (single-frame strip per giant). Frame geometry verified to exactly match both each packed sheet and the updated Spritesheet() constructor args. Alpha channel verified genuine on all 11 outputs (PIL getextrema() returned a real 0-255 range on every giant -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
+    },
+    {
+      "id": "cubimal",
+      "displayName": "Racing Cubimal (world entity, 44 skins)",
+      "category": "NPC (world entity, player-placeable)",
+      "sourceAssetId": "cubimal",
+      "destination": "World entity",
+      "accessibleThrough": "Genuinely live end-to-end, NOT gated on tools/seed-demo-world.mjs placement: every cubimal_<name> player item (all 44) has a real 'Race' item action (collectibles.json) wired to Cubimal.race() (coUserver/lib/entities/items/actions/itemgroups/cubimals.dart), which reads EntityItem.ITEM_ENTITIES directly (mapping 'cubimal_batterfly' -> 'RacingCubimal_batterfly' etc. for all 44) and spawns the matching RacingCubimal_<Name> world entity via StreetEntity.create + StreetEntities.setEntity() -- confirmed by reading cubimals.dart/entity_item.dart directly, not assumed. The cubimal_<name> items themselves are real and obtainable from CubimalBox.takeOutCubimal (43 of the 44, weighted random per box) consuming a real, confirmed vendor-stocked cubimal_series_1_box/cubimal_series_2_box (coUserver/lib/entities/npcs/vendors/vendor.dart line 227-228); factorydefect_chick is the one exception with no box-drop table entry (previously documented in POTENTIAL_TODO.md's twelfth item-icon batch note), so its own RacingCubimal_factorydefect_chick skin is only reachable if that one item is otherwise obtained. So buy a cubimal box from a placed vendor -> open it -> use the item's real 'Race' action is a real, live, end-to-end player-driven route to a rendered RacingCubimal on the map for 43 of the 44 skins -- no game-server code change or seed-demo-world.mjs placement pass needed.",
+      "routeIds": {
+        "entityClass": "coUserver/lib/entities/npcs/items/cubimal.dart:RacingCubimal (base) / RacingCubimal_batterfly..RacingCubimal_yeti (44 concrete subclasses)",
+        "actions": [
+          "race (automatic, races itself then despawns)"
+        ],
+        "spawnedBy": "cubimal_<name> item's real 'Race' action (Cubimal.race -> ITEM_ENTITIES)",
+        "itemPrerequisite": "cubimal_<name> (44 variants, 43 via CubimalBox.takeOutCubimal from vendor-stocked cubimal_series_1_box/cubimal_series_2_box)"
+      },
+      "status": "converted",
+      "statusNote": "World-entity on-map Spritesheet converted for all 44 cubimal skins from their individual source SWFs (tmp/glitch-items/cubimals/npc_cubimal_<name>/npc_cubimal_<name>.swf, or tmp/glitch-items/rare_items/npc_cubimal_factorydefect_chick/ for that one skin -- confirmed by direct search after it was absent from the main cubimals/ directory), each a nested DefineSprite ('cubimal_mc') with 2 named FrameLabel states: '1'@frame1 (static pose, not converted this pass) and 'race'@frame2-end (the racing-loop animation, converted this pass; 60 frames for 43 skins, 59 for factorydefect_chick). Used ffdec -ignorebackground -export sprite -> swf-frame-labels.py (resolve the real per-file nested-sprite character id and 'race' frame range) -> build-sprite-sheet.py (one horizontal strip per skin), scripted end-to-end via tmp/final9_frames/batch_cubimal.py for reproducibility across all 44 files. Frame geometry verified to exactly match both each packed sheet and the updated Spritesheet() constructor args (all 44 SPRITESHEETS entries in cubimal.dart rewired). Alpha channel verified genuine on all 44 outputs (PIL getextrema() returned a real 0-255 range on every skin -- ffdec's -ignorebackground flag was used). No gameplay logic touched."
     }
   ],
   "deliberatelyDeferred": [

@@ -521,6 +521,53 @@ All the tools involved (`saucepan`, `gassifier`, `blender`,
   pass: hooch/purple_flower/crabato_juice" row) would make all 9 genuinely
   reachable at once. Not placed in this pass per its own scoping
   instruction not to modify `tools/seed-demo-world.mjs`.
+- Found/closed 2026-08-28 (final world-entity art batch, RECOVERY_TODO.md's
+  FOURTEENTH row): converted the last 9 world-entity classes this project
+  had identified as having dead/missing on-map art --
+  `DustTrap`/`Mailbox`/`GardeningGoodsVendor`
+  (`coUserver/lib/entities/npcs/{dust_trap,mailbox,vendors/scarecrow}.dart`),
+  4 `RespawningItem` growth-stage entities
+  (`CocktailShakerRespawningItem`/`HotNFizzySauceRespawningItem`/
+  `LaughingGasRespawningItem`/`NoNoPowderRespawningItem`), and the 2
+  multi-skin item-triggered NPC families `Icon` (11 giant skins) and
+  `RacingCubimal` (44 skins). Same real-but-unplaced-in-`seed-demo-world.mjs`
+  finding as the bullet above for the first 3 NPCs and the 4
+  `RespawningItem` classes (their matching player items are separately
+  obtainable via vendor/recipe routes already documented in earlier
+  batches, so only the ground-spawn harvest route itself is blocked).
+  `Icon`/`RacingCubimal` turned out to have a materially better
+  accessibility story on closer reading, worth calling out since it
+  contradicts the "needs a placement pass" pattern every other
+  `ITEM_ENTITIES`-adjacent finding in this file follows: both are
+  dynamically spawned by a real, already-wired player item action, not by
+  static world placement at all -- `icon_of_<giant>`'s `Place` action
+  (`emblems-icons.json`) runs `Item.place()`
+  (`coUserver/lib/entities/items/item.dart`) -> `EntityItem.place()`
+  (`coUserver/lib/entities/npcs/items/entity_item.dart`), which looks up
+  the item type in the real, unmodified `ITEM_ENTITIES` map and calls
+  `StreetEntities.setEntity()` directly; `cubimal_<name>`'s `Race` action
+  (`collectibles.json`) runs `Cubimal.race()`
+  (`coUserver/lib/entities/items/actions/itemgroups/cubimals.dart`), which
+  reads the same `ITEM_ENTITIES` map itself rather than going through
+  `Item.place()`. Both confirmed by reading `item.dart`/`entity_item.dart`/
+  `cubimals.dart` directly, not inferred from the map's existence. Both
+  triggering items are themselves already live end-to-end: `icon_of_<giant>`
+  via `Emblem.iconize()` (11x placed-Shrine-sourced `emblem_of_<giant>` ->
+  1x icon, all 11 giants), and `cubimal_<name>` via
+  `CubimalBox.takeOutCubimal` from a real, vendor-stocked
+  `cubimal_series_1_box`/`cubimal_series_2_box` (43 of the 44 skins --
+  `cubimal_factorydefect_chick` has real converted art now but still no
+  box-drop-table entry, the same gap the TWELFTH item-icon batch already
+  found and left open). Net effect: `tools/seed-demo-world.mjs` needs no
+  change at all for `Icon`/`RacingCubimal` to render correctly in the live
+  world; only `DustTrap`/`Mailbox`/`GardeningGoodsVendor` and the 4
+  `RespawningItem` classes remain open placement-pass candidates from this
+  batch. No other in-scope world-entity classes with dead/missing on-map
+  art are known to remain as of this batch -- `content/runtime-manifest.json`
+  now stands at 794 rows (9 new) and `content/source-manifest.json` gained
+  62 new per-source-SWF entries (one per converted source file: 3
+  multi-state NPCs + 4 single-state respawning items + 11 icon skins + 44
+  cubimal skins); `tools/validate-content.mjs` still passes.
 - Found 2026-08-28 (eighth item-icon batch, scoped to `gasses-bubbles.json`/
   `herdkeeping.json`/`emblems-icons.json`/`quest_items.json`): independently
   hit and fixed the same `ffdec -export frame` opaque-backdrop defect
