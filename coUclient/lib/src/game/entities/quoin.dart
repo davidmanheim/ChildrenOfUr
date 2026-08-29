@@ -53,8 +53,15 @@ class Quoin {
 		}
 
 		canvas = new CanvasElement();
-		canvas.width = animation.width;
-		canvas.height = animation.height;
+		// The real converted per-type art (~24-41px) reads as noticeably
+		// small in-world at its native pixel size -- per direct user
+		// feedback, scaled up here rather than left at 1:1. drawImageToRect()
+		// (see render() below) already scales the source image to whatever
+		// destRect/canvas size is set, so this is just a display multiplier,
+		// not a re-export of the art at a different resolution.
+		const num displayScale = 1.75;
+		canvas.width = (animation.width * displayScale).round();
+		canvas.height = (animation.height * displayScale).round();
 		canvas.id = id;
 		canvas.className = map['type'] + " quoin";
 		canvas.style.position = "absolute";

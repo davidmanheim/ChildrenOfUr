@@ -43,7 +43,24 @@ class InteractionWindow {
 				} else if (shrineTypes.contains(entityName)) {
 					entityInBubble = new ImageElement(src: 'files/system/icons/shrine.svg');
 				} else {
-					entityInBubble = new ImageElement(src: 'https://childrenofur.com/assets/staticEntityImages/$entityName.png');
+					// Was a hardcoded https://childrenofur.com/assets/staticEntityImages/
+					// URL -- that host is retired, so this 404'd (a broken image icon)
+					// for every entity type not special-cased above, i.e. most of
+					// them: chickens, trees, rocks, vendors, etc. -- confirmed live,
+					// reported as broken images in the multi-entity overlap picker.
+					// The entity's own canvas is already rendering its real current
+					// animation frame on screen, so snapshot that directly instead of
+					// guessing at a per-type static icon path -- works for every
+					// entity uniformly and always matches its actual current
+					// appearance. toDataUrl() can throw if the canvas is
+					// cross-origin-tainted; every sprite here is same-origin, but
+					// fall back to a generic icon rather than leaving the bubble
+					// blank if that ever isn't true.
+					try {
+						entityInBubble = new ImageElement(src: (entityOnStreet as CanvasElement).toDataUrl());
+					} catch (e) {
+						entityInBubble = new ImageElement(src: 'files/system/icons/currant.svg');
+					}
 				}
 			} else if (entityOnStreet is ImageElement) {
 				// Dropped item, use its image
