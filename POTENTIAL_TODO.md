@@ -546,6 +546,131 @@ dimension this audit covers, and was not touched.) Left entirely untouched.
 `node tools/validate-content.mjs` still passes (1869 sprite sheets checked).
 Not independently re-confirmed with an in-browser screenshot this session.
 
+## Non-tree state-direction sprite audit (2026-08-29)
+
+Companion pass to the "Tree-family maturity-sprite frame-order audit" above,
+covering every *other* entity whose sprite `state` is a persisted,
+interaction-driven value mapped directly to a sprite-sheet frame column with
+no reversal (`Plant.update()` in `coUclient/lib/src/game/entities/plant.dart`:
+`column = state % numColumns`). Prompted by a live-confirmed instance in
+`DirtPile` found just before this pass started. Scope: every class under
+`coUserver/lib/entities/plants/` (excluding `trees/`, covered above) and
+`coUserver/lib/entities/plants/respawning_items/`, plus every class under
+`coUserver/lib/entities/npcs/` (excluding `animals/`, covered by the
+sprite-flip audit for a *different* bug). **Method**: for each `Plant`
+subclass, read its action method(s) to determine whether `state` increments
+or decrements on the interaction and what `state==0`/`state==maxState`
+semantically mean; cropped and zoomed every individual frame of the actual
+converted sprite sheet (`PIL`, per-frame crop at the class's own declared
+`Spritesheet()` width/height, upscaled with `NEAREST` where the strip was too
+small to read at native size); compared actual frame content against what
+the game logic requires at each end.
+
+### Confirmed REVERSED and fixed: `DirtPile`
+
+`DirtPile.dig()` (`coUserver/lib/entities/plants/dirtpile.dart`) does
+`state++` per dig and respawns once `state >= numFrames` -- i.e. `state==0`
+must mean a full, undug mound and the last frame must mean fully depleted
+(about to respawn), the same "full-at-0, depleted-at-max" convention
+`Rock.mine()`'s own code comment documents for the 4 `Rock` subclasses
+(`coUserver/lib/entities/plants/rocks/rock.dart:99-101`: "rocks spritesheets
+go from full to empty ... mining the rock will actually increase its state
+number"). Both `maturity_1`/`maturity_2` sheets (11 frames each, 195x71 per
+frame) had this backwards: frame 0 was a small, sparse scatter of dirt clods
+and the last frame was a large, full mound -- exactly backwards. Fixed by
+cropping each of the 22 frames (11 x 2 sheets) using the exact frame geometry
+from `DirtPile`'s `Spritesheet()` constructor args and reassembling in
+reversed column order (pure reorder, no mirroring) in both
+`content/sprites/dirt_pile/maturity_{1,2}.png` and
+`coUclient/web/files/sprites/generated/converted/dirt_pile-maturity_{1,2}.png`.
+Re-verified visually after the fix: frame 0 is now a large full mound and the
+last frame is a thin, mostly-cleared scatter, for both maturity sheets.
+
+### Confirmed already correct, no fix needed
+
+- **`IceNubbin`** (`icenubbin.dart`) -- `collect()` does `state--` (depleting
+  toward 0 = "out of ice", `say('Out of ice')` guard at `state < 1`);
+  `maxState = 4` = full. Zoomed all 5 frames of the `1-2-3-4-5` sheet
+  (57x83/frame): frame 0 is a single thin ice sliver (empty/depleted), frame
+  4 is a large, dense ice-crystal cluster (full). Matches.
+- **`Jellisac`** (`jellisacgrowth.dart`) -- `grab()` does `state--`, same
+  empty-at-0/full-at-max convention (`say('No more goop')` guard at
+  `state < 1`). Zoomed all 5 frames of the `1-2-3-4-5` sheet (46x51/frame):
+  frame 0 is a tiny, dark, shriveled nub, frame 4 is a large, glossy green
+  cluster. Matches.
+- **`MortarBarnacle`** (`mortarbarnacle.dart`) -- `scrape()` does `state--`,
+  same convention (`say('No more barnacles')` guard at `state < 1`). Zoomed
+  all 5 frames of the `1-2-3-4-5` sheet (60x70/frame): frame 0 is a cracked,
+  broken-open, whitish empty shell, frames 1-3 are progressively larger solid
+  dark shells, frame 4 is the largest with a distinct mottled/speckled
+  "ready" texture. Matches (empty/broken at 0, full/ready at max).
+- **`PeatBog`** (`peatbog.dart`) -- `dig()` does `state++` (same convention
+  as `DirtPile`/`Rock`, respawns at `state >= numFrames`), despite its state
+  key being misleadingly named `"5-4-3-2-1"` (source-folder naming artifact
+  only, confirmed to NOT indicate reversed frame order). Zoomed all 5 frames
+  of the sheet (210x53/frame): frame 0 is a full, grassy, unbroken mound;
+  frame 4 is a deeply hollowed-out, sparse-grassed depression. Matches
+  (full-at-0, depleted-at-max).
+- **`BerylRock`, `DulliteRock`, `SparklyRock`** (`rocks/*.dart`) -- each
+  independently re-verified (not assumed from `MetalRock`'s prior spot-check
+  or from `rock.dart`'s shared comment alone): all 3 use the inherited
+  `Rock.mine()` (`state++`, full-at-0/depleted-at-max, per the class's own
+  code comment). Zoomed all 6 frames of each sheet (`5-4-3-2-1` state key,
+  same naming-artifact caveat as `PeatBog`): every one of the 3 shows a
+  large, intact rock at frame 0 shrinking to a small, flattened rock-remnant
+  at frame 5. Matches for all 3. (`MetalRock` re-checked too, for
+  completeness: same pattern, matches.)
+- **`RespawningItem` and all 15 subclasses**
+  (`respawning_items/{respawning_item,hooch,purple_flower,cocktail_shaker,
+  hot_n_fizzy_sauce,laughing_gas,nonopowder,awesome_stew,butterfly_milk,
+  cinnamon,coffee,earthshaker,fruity_juice,hellgrapes,helltomatoes,
+  plain_bubble}.dart`) -- **not applicable**, confirmed by reading the shared
+  base class rather than assumed: `state` is set to `0` by `show()` and to
+  `maxState + 1` by `hide()` and is never incremented/decremented anywhere
+  else in the base class or any of the 15 subclasses (verified by grep across
+  the whole directory for `state++`/`state--`/`state =`). Every subclass's
+  multi-frame `"1-2-3-4"` (or single-frame) sheet is therefore never cycled
+  through by gameplay at all -- only frame 0 is ever rendered while visible,
+  and the hidden value (`maxState + 1`) falls outside the sheet's frame count
+  by construction, rendering nothing. Frames 1-3 of every 4-frame sheet in
+  this family are currently dead art (unused, not a direction bug -- there is
+  no "direction" to get backwards when only one frame is ever shown).
+- **`Garden`/`HerbGarden`** (`npcs/garden.dart`) -- **not applicable**:
+  `Garden extends NPC`, not `Plant`, and every one of its growth-stage
+  `Spritesheet`s (`new`/`hoed`/`watered`/`planted_baby`/each `<crop>_<1,2,3>`)
+  is declared with `numFrames = 1`. Stage transitions are done by calling
+  `setState('<name>')` to switch to a *different named single-frame sheet*,
+  not by advancing a `state` integer through columns of one shared strip --
+  there is no sequential frame order for this mechanic to get backwards.
+- **`Shrine` and 11 giant subclasses, `Still`, `DustTrap`, `Mailbox`,
+  `Blob`, `Crab`, `VisitingStone`, `Auctioneer`, `HellBartender`, `Rube`,
+  all `vendors/*.dart`, `EntityItem`/`Icon`/`Cubimal`** -- **not
+  applicable, confirmed structurally**: none of these extend `Plant`; all
+  extend `NPC` (or a subclass of it) and switch appearance exclusively via
+  `Entity.setState(String)` (`coUserver/lib/entities/entity.dart:248`),
+  selecting a whole named `Spritesheet` object rather than indexing a column
+  by a persisted int. On the client, `NPC`-backed entities render through
+  `Animation`/`animation.updateSourceRect(dt)`
+  (`coUclient/lib/src/game/entities/npc.dart`), which time-advances through
+  every frame of whichever named sheet is active -- there is no persisted
+  `state` int and no "which frame does state N mean" question to get
+  backwards for this whole family. Grepped the entire `npcs/` tree (excluding
+  `animals/`) for `extends Plant` and for direct `state = <int>`/`state++`/
+  `state--` assignments outside `Plant` subclasses: zero matches. `Still`'s
+  brewing stages (`empty`/`active`/`ready`/`collect`) and `Shrine`'s
+  `open`/`close` are both named-state animations of exactly this kind, not
+  persisted int state -- confirmed by reading both files directly, per the
+  task's own "likely a pure animation, verify" framing.
+
+**Verification**: `docker compose restart game-server client` -- both
+containers came up clean (`docker inspect` shows `restarts=0` on both,
+`docker compose logs --since` after the restart has zero ERROR/Exception
+lines for either container). `node tools/validate-content.mjs` still passes
+(1869 sprite sheets checked, 794 runtime-manifest assets, 14 deliberately
+deferred, 150 placement rows -- unchanged counts, since this pass only
+reordered existing frames and added no/removed no assets). Not independently
+re-confirmed with an in-browser screenshot this session.
+
 ## Reliability and compatibility
 
 - ~~Finish replacing raw Redstone mapper query results with typed lists across
