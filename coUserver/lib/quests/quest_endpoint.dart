@@ -23,9 +23,12 @@ class QuestEndpoint {
 	static void cleanupList(WebSocket ws) {
 		String leavingUser;
 
+		// `socket = null` here would reassign only the forEach callback's own
+		// local parameter, not the map entry -- a harmless but pointless
+		// no-op (the real removal already happens below via
+		// `userSockets.remove`). Simplified to just find the matching email.
 		userSockets.forEach((String email, WebSocket socket) {
 			if (ws == socket) {
-				socket = null;
 				leavingUser = email;
 			}
 		});
@@ -47,6 +50,22 @@ class QuestEndpoint {
 		Map map = jsonDecode(message);
 		if (map['connect'] != null) {
 			String email = map['email'];
+
+			// A previous `connect` for this same email (a reconnect: hard
+			// refresh, network blip, or any prior session that never got a
+			// clean `onDone`/cleanupList) may have already left a
+			// UserQuestLog here, fully subscribed to the message bus via
+			// startTracking(). Overwriting the cache entry without first
+			// stopping that one leaves its entire subscription tree (the
+			// quest log itself, each in-progress Quest, each of their
+			// Requirements) as permanent zombie listeners nobody ever
+			// unsubscribes -- confirmed live: after this session's many
+			// reconnects, a single tree-pet fired the Tree Petter quest's
+			// completion popup once per accumulated zombie generation,
+			// reported as "that wasn't too hard... shows up every single
+			// time." stopTracking() is safe to call even on a log that was
+			// never actually tracking (Trackable's default state).
+			questLogCache[email]?.stopTracking();
 
 			//setup our associative data structures
 			userSockets[email] = ws;
