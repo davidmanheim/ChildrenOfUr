@@ -233,6 +233,85 @@ All the tools involved (`saucepan`, `gassifier`, `blender`,
 `fruit_changing_machine`, `knife_and_board`, `cocktail_shaker`) are real
 `kitchen`/`hardware`/`ToolVendor` stock.
 
+## Action rate-limit gating audit (2026-08-29)
+
+Prompted by the `chicken.dart` `squeeze()`/`customizeActions()` bug fixed
+earlier this session (`customizeActions()` correctly gated the `squeeze`
+action on a daily cap derived from `squeezeList`, but `squeeze()` never
+added to `squeezeList`, so the cap never engaged). Audited every entity
+class under `coUserver/lib/entities/` (`npcs/`, `plants/`, `items/`) for the
+same bug *shape*: a per-instance tracking field (list/map/counter/DateTime)
+read by `customizeActions()` (or an equivalent client-facing gate) to
+disable an action or vary a parameter, cross-checked against whether the
+corresponding action handler(s) actually keep that field's data current on
+the successful-use path -- in both directions (gate reads stale/never-updated
+data, or handler tracks data nothing ever reads).
+
+**Method**: grepped `customizeActions` (8 hits) and a broad set of
+tracking-shaped identifiers/comments (`List<String>`, `Map<String,\s*int>`,
+`lastUsed`, `timesUsed`, `history`, `DateTime last`, `cooldown`,
+`dailyLimit`, `once per`, `Count\b`, `Attempts\b`, `Cooldown`, etc.) across
+every `.dart` file in `npcs/`, `plants/`, and `items/`, then read each hit's
+full class to compare its gate logic against its handler(s) line-for-line.
+
+### Findings
+
+No further instances of the chicken.dart bug shape (gate reads a tracking
+field the handler never populates, or vice versa) were found. One related
+but distinct issue turned up:
+
+1. **`coUserver/lib/entities/npcs/animals/butterfly.dart`, class `Butterfly`
+   -- dead tracking field `numMilks`.** Declared (`int numMilks = 0;`) and
+   reset to `0` inside `massage()`'s successful-lotion branch, but never
+   incremented anywhere in `milk()` (or elsewhere) and never read by any
+   gate -- grep-confirmed as the field's only two references in the entire
+   codebase. Unlike the chicken.dart bug there is no `customizeActions()`
+   (or other) gate currently trying to read it, so nothing is silently
+   broken today; it reads as a vestige of an unimplemented "N free milkings
+   per massage" mechanic. Proposed fix (once intent is confirmed): either
+   increment `numMilks` on each successful `milk()` call and use it in a
+   real gate (e.g. disable/limit `milk` after N uses per massage), or
+   remove the dead field entirely if no such limit was ever intended.
+
+### Checked and confirmed correctly wired (no re-check needed)
+
+- `coUserver/lib/entities/npcs/animals/chicken.dart` (`Chicken`) -- the
+  originating bug, already fixed this session (`squeezeList` is now
+  populated in `squeeze()`).
+- `coUserver/lib/entities/npcs/animals/piggy.dart` (`Piggy`) -- `nibbleCounts`
+  and `petCounts` are both correctly incremented in `nibble()`/`pet()` past
+  their success checks, matching what `customizeActions()` reads.
+- `coUserver/lib/entities/npcs/items/icon.dart` (`Icon`) -- `currants` is
+  correctly debited/credited in `tithe()`/`ruminate()`/`revere()`/`reflect()`
+  on their success paths, matching the `customizeActions()` gate.
+- `coUserver/lib/entities/plants/trees/tree.dart` (`Tree`, and all of its
+  subclasses: `WoodTree`, `BeanTree`, `BubbleTree`, `EggPlant`, `FruitTree`,
+  `GasPlant`, `PaperTree`, `SpicePlant`) -- gating uses `state`/`maxState`
+  directly (incremented/decremented in `water()`/`harvest()`), not a
+  separate tracking field; no drift possible.
+- `coUserver/lib/entities/npcs/rube.dart` (`Rube`) -- `tradeAttempts` is
+  read and incremented in the same method (`talkTo()`); no separate gate to
+  drift out of sync with.
+- `coUserver/lib/entities/npcs/crab.dart` (`Crab`) -- `listenHistory` is
+  populated at the end of `playMusic()` and consumed internally by
+  `likesSong()`; no external `customizeActions()`-style gate.
+- Plants with depletion-based gating via `state`/`respawn` (self-contained,
+  no separate tracking field): `PeatBog`, `MortarBarnacle`, `IceNubbin`
+  (`IceKnob`), `DirtPile`, `Rock` (and its rock subclasses).
+- Concurrency-only counters (`openCount` in the `Vendor`/`StreetSpirit`
+  family, `communeCount` in `Shrine`) track simultaneously-open UI windows
+  for animation state, not a rate limit, and are correctly
+  incremented/decremented on both open and close paths.
+- Entities with no per-instance rate-limit tracking at all (actions are
+  either unlimited, gated purely by inventory/energy/item requirements, or
+  gated by a single directly-mutated `state`/`respawn` field): `Mailbox`,
+  `Still`, `Garden`/`HerbGarden`, `Fox`/`SilverFox`/`FoxBait`, `Blob`,
+  `Salmon`, `Firefly`, `HeliKitty`, `Batterfly`, `Auctioneer`,
+  `HellBartender`, `DustTrap`, `RacingCubimal` family, `VisitingStone`,
+  `DemoChicken`, all `Vendor` subclasses (`StreetSpiritGroddle`, etc.),
+  `BabyAnimals`, `StreetEntityBalancer`, `Recipe`/`RecipeBook`, `FocusingOrb`,
+  `Quill`, `Potions`.
+
 ## Reliability and compatibility
 
 - ~~Finish replacing raw Redstone mapper query results with typed lists across
