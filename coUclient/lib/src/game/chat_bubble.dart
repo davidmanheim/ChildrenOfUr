@@ -4,7 +4,20 @@ class ChatBubble {
 	String text, bubbleClass;
 	num timeToLive;
 	DivElement bubble, parent, textElement, arrowElement;
-	var hostObject;
+	// Was `var hostObject` (untyped -> dynamic). removeBubble()'s
+	// `hostObject.chatBubble = null` then went through DDC's dynamic
+	// dispatch (dart.dput) instead of a normal virtual call -- which has
+	// now broken twice this session for two different concrete Entity
+	// subclasses (NPC, then Plant), each throwing "NoSuchMethodError:
+	// method not found: 'chatBubble=' / Receiver: Instance of '<Class>'"
+	// despite chatBubble being a perfectly ordinary inherited Entity field.
+	// Every real call site (so_chat.dart, so_player.dart, chatpanel.dart)
+	// already only ever passes an Entity (or Player, a subtype), so typing
+	// this field statically turns that fragile dynamic lookup into a normal
+	// virtual method call and removes the whole failure mode, rather than
+	// hoping no future Entity subclass trips the same DDC dynamic-dispatch
+	// edge case.
+	Entity hostObject;
 	bool autoDismiss, removeParent;
 
 	ChatBubble(this.text, this.hostObject, this.parent,

@@ -217,6 +217,10 @@ class VendorWindow extends Modal {
 
 			if(sellMode) {
 				if(numToBuy > util.getNumItems(item['itemType'])) {
+					// Previously a silent no-op: clicking Sell just did nothing,
+					// with no indication of why -- confirmed live, reported as
+					// "seller seems not to be able to always buy things".
+					new Toast("You don't have that many to sell!");
 					return;
 				}
 
@@ -225,6 +229,8 @@ class VendorWindow extends Modal {
 				diffSign = "+";
 			} else {
 				if(metabolics.currants < item["discount"] * item["price"] * numToBuy) {
+					// Same silent no-op as the sell-side check above.
+					new Toast("Not enough currants!");
 					return;
 				}
 
