@@ -312,6 +312,114 @@ but distinct issue turned up:
   `BabyAnimals`, `StreetEntityBalancer`, `Recipe`/`RecipeBook`, `FocusingOrb`,
   `Quill`, `Potions`.
 
+## Sprite-flip (facing direction) audit (2026-08-29)
+
+Prompted by a bug found and fixed in `Piggy`: the client's sprite-flip
+convention (`coUclient/lib/src/game/entities/npc.dart` -- renders
+**unmirrored** when `facingRight == true`, `scale3d(-1,1,1)` mirrored
+otherwise) assumes every converted sprite sheet's raw art faces **right** by
+default, matching `defaultXAction()`'s `x += speed * (facingRight ? 1 : -1)`
+(`coUserver/lib/entities/npcs/npc.dart`). This holds for some converted
+animals (`chicken-walk.png`) but not others -- `Piggy`'s entire converted
+state set faced left, causing it to visually walk backward relative to its
+movement direction; fixed earlier this session by individually mirroring
+every frame of all 7 states (both `content/sprites/piggy/` and
+`coUclient/web/files/sprites/generated/converted/piggy-*.png`), preserving
+frame order.
+
+**Method**: every entity under `coUserver/lib/entities/npcs/` (`animals/`,
+plus vendors/giants/`Crab` from `tools/seed-demo-world.mjs`'s
+`REAL_TYPES`/`VENDOR_NPC_TYPES`) was checked for (a) whether any of its
+states actually move horizontally via `moveXY()`'s `facingRight`-driven
+`defaultXAction()`, and if so (b) which way its raw converted art visually
+faces, by cropping individual frames (using each state's own `Spritesheet()`
+frame-width/height args) to PNGs and visually inspecting them at 3-12x
+scale, across multiple frames per state (not just frame 0) to rule out a
+misleading neutral pose.
+
+### Fixed
+
+Individually mirrored every frame of every state (frame order preserved,
+same method as the `Piggy` fix), applied to both `content/sprites/<name>/`
+and `coUclient/web/files/sprites/generated/converted/<name>-*.png`:
+
+- **`Fox`** (`coUserver/lib/entities/npcs/animals/fox.dart`) -- all 9 real
+  states (`brushed`, `eat`, `eatEnd`, `eatStart`, `jump`, `pause`, `run`,
+  `taunt`, `walk`); raw art faced left (head/snout on the left, tail on the
+  right). Note: the class already had a `facingRight = false;` line in its
+  constructor with a comment noting the left-facing art, but that value is
+  overwritten immediately by `update()`'s `facingRight = (movingTo.x >
+  this.x)` as soon as the fox actually moves toward bait/home, so it never
+  prevented the backward-run visual bug; left as-is since it's harmless
+  (the fox starts hidden and its facing is always recomputed from movement
+  before it becomes visible).
+- **`SilverFox`** (same file, extends `Fox`) -- same 9 states, own
+  `silverfox-*.png` art, same left-facing issue (identical frame layout to
+  `Fox`, confirmed independently by direct visual inspection of its own
+  converted files, not assumed from the `Fox` fix).
+- **`Batterfly`** (`coUserver/lib/entities/npcs/animals/batterfly.dart`) --
+  all 5 states (`chew`, `front_turned`, `front_waiting`, `fly_profile`,
+  `fly_profile_turned`); raw art clearly faced left (bat-like face/snout on
+  the left throughout the whole `fly_profile` flap cycle, confirmed across
+  5 sampled frames). `fly_profile` is the state `update()` actually drives
+  movement through (`currentState.stateName.contains("fly")`).
+
+### Checked and confirmed already correct or non-directional (no re-check needed)
+
+- **`Chicken`** (`walk`, `flying`) -- raw art already faces right
+  (beak/head on the right); matches the task's prior spot-check.
+- **`Salmon`** (`swim`, `swimUp15`, `swimUp30`, `swimDown15`, `swimDown30`,
+  `turn`) -- **contradicts this investigation's own starting assumption**:
+  all 5 movement states were individually inspected at high zoom across
+  multiple frames each, and every one clearly shows the fish's eye/mouth on
+  the *right* side with the tail fin flexing on the left -- i.e. the raw art
+  already faces right in every state, including the up/down variants (which
+  are diagonal, not purely vertical: `Salmon.update()`'s `moveXY(yAction:
+  ...)` still runs the default `facingRight`-driven horizontal
+  `xAction`, so all 5 states move horizontally the same way, and all 5 were
+  checked on that basis). No mismatch found; no fix applied, despite prior
+  guidance that this entity needed one.
+- **`HeliKitty`** (`2fly`, `3fly`) -- a front-on/hovering chibi-cat design
+  (helicopter tail spinning overhead); no side-profile head/tail asymmetry
+  across a full sampled cycle, so mirroring produces no visually detectable
+  difference. No fix applied.
+- **`Butterfly`** (`fly-side`, the only state `update()` actually drives
+  movement through) -- wings-only silhouette with a thin, non-directional
+  body segment; no discernible head/antennae orientation across 12 sampled
+  frames spanning the whole flap cycle. No fix applied.
+- **`Crab`** (`walk`) -- fully front-facing/symmetric across the entire
+  24-frame walk cycle (eyes, claws, legs all centered); mirroring is a
+  no-op visually. No fix applied.
+- **`ToolVendor`** (`walk`, the only state its movement code actually sets
+  via `setState()` -- `walk_left`/`turn_left`/`turn_right` sprites exist in
+  its `states` map but are dead code, never reached by `setState()`) --
+  front-facing/symmetric creature design. No fix applied.
+- **`SnoConeVendingMachine`** -- does not use the mirror convention at all:
+  `facingRight` is set once (`true`) in the constructor and never toggled
+  again, so the client always renders it unmirrored; direction instead
+  comes from switching between its own dedicated `walk_left`/`walk_right`
+  sprite sheets. Immune to this bug class by construction. Not touched.
+- **`StreetSpiritFirebog`** (`idle_move`, its only real-art moving state --
+  inherited `StreetSpirit.speed = 75`) -- front-facing/symmetric jellyfish-
+  like design. No fix applied.
+- **`StreetSpiritGroddle`**, `alph`/`day` variant only (the sole one of its
+  24 giant/light combos with real converted art -- see the class's own
+  source comment; the other 23 remain on dead `childrenofur.com` links and
+  are out of scope) -- `idle_move` is front-facing/symmetric. No fix
+  applied.
+- Confirmed stationary (no state ever calls `moveXY()` with a nonzero,
+  `facingRight`-driven horizontal `xAction`, so this bug class cannot apply
+  regardless of art): `Garden`/`HerbGarden`, `GardeningGoodsVendor`
+  (`scarecrow.dart`), `DustTrap`, `Mailbox`, `StreetSpiritZutto` (`speed =
+  0`), `Shrine` and all giant subclasses (`update()` is a no-op), all
+  `Vendor` base-class behavior with no movement override.
+
+**Verification**: `docker compose restart client` rebuilt with 0 errors
+across several webdev rebuild cycles; `node tools/validate-content.mjs`
+still passes (1861 sprite sheets checked, same pass/fail counts as before --
+expected, since only pixel content changed, not geometry or manifests). Not
+independently re-confirmed with an in-browser screenshot this session.
+
 ## Reliability and compatibility
 
 - ~~Finish replacing raw Redstone mapper query results with typed lists across
