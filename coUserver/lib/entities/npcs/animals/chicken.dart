@@ -228,6 +228,17 @@ class Chicken extends NPC implements EventHandler<ChatEvent> {
 
 		SkillManager.learn(SKILL, email);
 
+		// customizeActions() already gates the squeeze action's `enabled`
+		// flag on _countSqueezes(email) reaching a level-based daily cap
+		// (once per day at AK 0, twice above AK 0, thrice above AK 4) --
+		// fully implemented, correctly wired into the client-facing action
+		// list -- but nothing ever added an entry here, so the count was
+		// always 0 and the cap never actually engaged. Recorded at this
+		// point (successful squeeze, past the level-0 random-fail chance
+		// and the energy check above) so a failed attempt doesn't count
+		// against the player's daily total.
+		squeezeList.add(email);
+
 		if(rand.nextInt(odds) == 1) {
 			// 1/odds chance of bonus
 			await InventoryV2.addItemToUser(email, items['grain'].getMap(), count+3, id);
