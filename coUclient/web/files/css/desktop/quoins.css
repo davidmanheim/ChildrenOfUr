@@ -67,42 +67,24 @@ quoin graphic
 }
 
 /* ///////////////////////////////
-Per-reward-type tinting of the shared local quoin token.
+Per-reward-type tinting of the quoin token.
 The canvas element carries the server quoin type as a class
 (see Quoin.init: canvas.className = type + " quoin").
-The base SVG is gold-rimmed with a teal core; hue rotation keeps the
-token readable while making each reward type distinguishable at a glance.
+
+Historical note: this used to hue-rotate one shared generic placeholder
+icon (files/sprites/generated/local-quoin.svg) per type, because every
+type otherwise rendered identically. Real per-type art was converted
+2026-08-29 from tmp/glitch-items/misc/quoin/quoin.swf (see
+content/source-manifest.json) -- each type now has its own distinctly
+colored/shaped icon (purple "i" for img, green smiley for mood, green
+bolt for energy, bronze coin for currant, purple "?" for mystery,
+magenta star for favor, blue clock for time, a multicolor burst for
+quarazy), so hue-rotating it back would fight the source colors instead
+of clarifying them. Only quarazy keeps a (non-recoloring) glow to mark
+it as the rare type; every other type is untinted.
 */
-.quoin.currant {
-    /* Money: keep the base gold token. */
-}
-.quoin.mood {
-    /* Pink/magenta */
-    filter: hue-rotate(300deg) saturate(1.15);
-}
-.quoin.energy {
-    /* Green */
-    filter: hue-rotate(75deg);
-}
-.quoin.img {
-    /* Blue/violet */
-    filter: hue-rotate(210deg);
-}
 .quoin.quarazy {
-    /* Rare: deep purple with a glow */
-    filter: hue-rotate(255deg) saturate(1.3) drop-shadow(0 0 6px rgba(160, 90, 255, 0.9));
-}
-.quoin.favor {
-    /* Red/orange */
-    filter: hue-rotate(-25deg) saturate(1.4);
-}
-.quoin.time {
-    /* Cyan */
-    filter: hue-rotate(140deg);
-}
-.quoin.mystery {
-    /* Silvery: multiplier bonus rather than a direct stat */
-    filter: saturate(0.15) brightness(1.25);
+    filter: drop-shadow(0 0 6px rgba(160, 90, 255, 0.9));
 }
 
 /* Disabled state must win over the type tint. */

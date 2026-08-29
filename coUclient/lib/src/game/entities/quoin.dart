@@ -1,7 +1,6 @@
 part of couclient;
 
 class Quoin {
-	static const int generatedSpriteSize = 64;
 	static Map<String, bool> notified = new Map();
 
 	String typeString;
@@ -40,8 +39,11 @@ class Quoin {
 
 		id = map["id"];
 		// The original 8x24 remote quoin sprite sheet has been retired.  The
-		// local fallback is one static token, deliberately rendered at a small
-		// in-world size rather than cropped as a legacy sprite sheet.
+		// local fallback (and each real converted per-type token, which is
+		// not square -- see content/sprites/quoin/) is one static frame,
+		// sized below from the loaded image's own pixel dimensions rather
+		// than a fixed constant, matching how NPC entities size their canvas
+		// (see npc.dart's updateAnimation).
 		animation = new Animation(map['url'], typeString.toLowerCase(), 1, 1, [0], fps: 1);
 		try {
 		await animation.load();
@@ -51,8 +53,8 @@ class Quoin {
 		}
 
 		canvas = new CanvasElement();
-		canvas.width = generatedSpriteSize;
-		canvas.height = generatedSpriteSize;
+		canvas.width = animation.width;
+		canvas.height = animation.height;
 		canvas.id = id;
 		canvas.className = map['type'] + " quoin";
 		canvas.style.position = "absolute";

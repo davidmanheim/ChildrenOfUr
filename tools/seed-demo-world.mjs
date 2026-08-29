@@ -553,11 +553,23 @@ function entityWidth(type) {
 }
 
 function entityY(dynamic, type, seed) {
-	if (!dynamic) {
-		return Math.round(600 + ((seed >>> 16) % 180));
-	}
-	const ground = Number(dynamic.ground_y);
-	const height = Math.abs(Number(dynamic.t) - Number(dynamic.b));
+	// Was a totally disconnected formula (600 + jitter, i.e. y=600-780) for
+	// streets with no CAT422 geometry, skipping the floating/aerial branching
+	// below entirely. Both the client (coUclient street.dart) and the server
+	// (coUserver street.dart) already inject the exact same default
+	// placeholder geometry when no CAT422 file exists --
+	// {l:-900, r:900, t:-800, b:0, ground_y:0} -- and that's what actually
+	// gets rendered as this street's ground line (canvas-local y = height +
+	// ground_y = 800). The old fallback's y=600-780 sat 20-200px ABOVE that,
+	// on every one of the ~57% of streets with no CAT422 file -- ground-
+	// anchored entities (dirt piles and everything else) floating above
+	// wherever the client actually draws the ground, confirmed live. Reusing
+	// the identical placeholder values here (instead of a second, drifted
+	// set of magic numbers) and falling through to the same type-based
+	// branching fixes both the height and the missing float/aerial handling
+	// for these streets in one pass.
+	const ground = Number(dynamic ? dynamic.ground_y : 0);
+	const height = dynamic ? Math.abs(Number(dynamic.t) - Number(dynamic.b)) : 800;
 	// Entity coordinates are local to the street canvas, whose origin is at
 	// its top rather than the game's signed ground coordinate; this is the
 	// canvas-local Y of the walkable ground line.

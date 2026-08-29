@@ -32017,6 +32017,163 @@
           "numFrames": 60
         }
       ]
+    },
+    {
+      "id": "quoin",
+      "sourcePath": "tmp/glitch-items/misc/quoin/quoin.swf",
+      "sourceRepository": "tinyspeck/glitch-items",
+      "flaSiblingPresent": "tmp/glitch-items/misc/quoin/quoin.fla",
+      "sourceFormat": "SWF (version 9, zlib/CWS-compressed). NOT vector art like most other converted assets in this manifest -- 9 embedded DefineBitsLossless2 raster tags (char ids 1-9), zero DefineShape/DefineSprite tags, confirmed via tools/swf-extract-bitmaps.py. Each bitmap is itself a pre-baked 24-frame horizontal animation strip (960x50px = 24 frames of 40x50px each, a subtle idle spin/bounce+sparkle loop), not a single static icon, despite the '_thumb' symbol-name suffix.",
+      "rootSymbol": {
+        "characterId": 0,
+        "class": "quoin",
+        "totalFrames": 195,
+        "note": "Investigated per task requirement: character id 0 ('quoin') is the SWF's main-timeline document class, not a renderable graphic -- it has zero PlaceObject tags on its 195 (blank) frames, just an AS3 DoABC2 code-only library that references the 9 bitmap character ids by class name (quoin_xp_thumb, quoin_time_thumb, quoin_qurazy_thumb, quoin_mystery_thumb, quoin_mood_thumb, quoin_img_thumb, quoin_favor_thumb, quoin_energy_thumb, quoin_currants_thumb). It is not a generic/animated combined version of the quoin and was not converted; the 9 named bitmap symbols are the real per-type art."
+      },
+      "siblingSourceInvestigated": {
+        "path": "tmp/glitch-items/misc/quoin/moving_quoin.swf",
+        "finding": "Same structure as quoin.swf (a code-only root + embedded DefineBitsLossless2 bitmaps, no vector/timeline animation beyond what's already baked into each bitmap strip), but with only 7 of the 9 bitmaps -- quoin_img_thumb and quoin_qurazy_thumb are absent. Every bitmap it does contain is byte-identical (same PNG-after-decode size) to the corresponding bitmap in quoin.swf. It is a redundant, strictly-smaller subset of quoin.swf, not an alternate/richer 'moving' animation -- quoin.swf was used exclusively as the conversion source. Also present in the same source directory: quoin_tester.swf, a 4-bitmap preview/test harness (SymbolClass names quoin_xp_thumb/quoin_mood_thumb/quoin_energy_thumb/quoin_currant_thumb, singular 'currant' unlike quoin.swf's 'quoin_currants_thumb') whose actual bitmap content is a generic '?' bubble spin-test animation reused under all 4 names, not real per-type art -- not used as a source. quoin.as (ActionScript source, not a binary asset) was left unexamined; not needed once the compiled bitmaps were recovered directly from quoin.swf."
+      },
+      "conversionMethod": "tools/swf-extract-bitmaps.py (direct DefineBitsLossless2 decode, no ffdec rasterization needed since the art is embedded raster, not vector) -> crop frame 0 of each type's 40x50 24-frame animation strip to a tight alpha bounding box (+2px pad) with Pillow, producing one representative static icon per type, matching the single-frame, fps:1 Animation the client entity (quoin.dart) already uses. The remaining 23 frames of each strip's idle-loop animation were not packed into a sprite sheet; out of scope for this pass, which targets a static per-type token replacing the single generic placeholder.",
+      "conversionResult": "success",
+      "outputs": [
+        {
+          "state": "img",
+          "sourceCharacterId": 6,
+          "sourceSymbolName": "quoin_img_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/img.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-img.png",
+          "frameWidth": 29,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "mood",
+          "sourceCharacterId": 5,
+          "sourceSymbolName": "quoin_mood_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/mood.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-mood.png",
+          "frameWidth": 28,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "energy",
+          "sourceCharacterId": 8,
+          "sourceSymbolName": "quoin_energy_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/energy.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-energy.png",
+          "frameWidth": 24,
+          "frameHeight": 33,
+          "numFrames": 1
+        },
+        {
+          "state": "currant",
+          "sourceCharacterId": 9,
+          "sourceSymbolName": "quoin_currants_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/currant.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-currant.png",
+          "frameWidth": 28,
+          "frameHeight": 32,
+          "numFrames": 1
+        },
+        {
+          "state": "mystery",
+          "sourceCharacterId": 4,
+          "sourceSymbolName": "quoin_mystery_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/mystery.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-mystery.png",
+          "frameWidth": 29,
+          "frameHeight": 31,
+          "numFrames": 1
+        },
+        {
+          "state": "favor",
+          "sourceCharacterId": 7,
+          "sourceSymbolName": "quoin_favor_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/favor.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-favor.png",
+          "frameWidth": 26,
+          "frameHeight": 29,
+          "numFrames": 1
+        },
+        {
+          "state": "time",
+          "sourceCharacterId": 2,
+          "sourceSymbolName": "quoin_time_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/time.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-time.png",
+          "frameWidth": 28,
+          "frameHeight": 31,
+          "numFrames": 1
+        },
+        {
+          "state": "quarazy",
+          "sourceCharacterId": 3,
+          "sourceSymbolName": "quoin_qurazy_thumb",
+          "sourceBitmapFrame": [
+            0,
+            40,
+            0,
+            50
+          ],
+          "file": "content/sprites/quoin/quarazy.png",
+          "runtimeFile": "coUclient/web/files/sprites/generated/converted/quoin-quarazy.png",
+          "frameWidth": 40,
+          "frameHeight": 41,
+          "numFrames": 1
+        }
+      ],
+      "deferredStates": [
+        {
+          "state": "xp",
+          "sourceCharacterId": 1,
+          "sourceSymbolName": "quoin_xp_thumb",
+          "reason": "Real art exists (a bottle icon labelled 'xp') but there is no 'xp' entry in tools/seed-demo-world.mjs's QUOIN_TYPES, no coUserver/lib/streets/street.dart type-string check for it, and no other code path that ever constructs a Quoin with type=='xp'. Not converted; would need a game-logic decision (is this a retired/unused Glitch quoin type?) before it has anywhere to be wired, per CONTENT_RECOVERY_PLAN.md's 'never placed merely because it exists' rule."
+        }
+      ]
     }
   ],
   "notConverted": {

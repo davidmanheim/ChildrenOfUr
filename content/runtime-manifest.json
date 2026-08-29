@@ -108,7 +108,7 @@
       "id": "quoin-collectibles",
       "displayName": "Quoin collectibles (Img/Mood/Energy/Currant/Mystery/Favor)",
       "category": "collectible",
-      "sourceAssetId": null,
+      "sourceAssetId": "quoin",
       "destination": "Player item",
       "accessibleThrough": "World collection: tools/seed-demo-world.mjs places one of each quoin type per street TSID (demo- IDs); collecting one grants the corresponding stat/currency via Quoin.setCollected.",
       "routeIds": {
@@ -122,8 +122,8 @@
           "Favor"
         ]
       },
-      "status": "existing-synthetic",
-      "statusNote": "Pre-existing local fallback SVG/PNG (files/sprites/generated/local-quoin.svg|png), not derived from an original per-type Glitch/Ur quoin sprite. Listed here for coverage completeness, not produced by this pass."
+      "status": "placed",
+      "statusNote": "Real per-type art converted 2026-08-29 from tmp/glitch-items/misc/quoin/quoin.swf (see content/source-manifest.json asset id 'quoin') and wired into coUserver/lib/entities/quoin.dart via a static type->url Map keyed by the exact lowercase type string street.dart already constructs (falling back to the pre-existing files/sprites/generated/local-quoin.svg placeholder for any type without real art, so nothing regresses). Client-side (coUclient/lib/src/game/entities/quoin.dart) now sizes each quoin's canvas from the loaded image's own pixel dimensions (animation.width/height) instead of a hardcoded 64x64 square, matching how npc.dart sizes its canvas -- the real art is small and non-square (~24-29px wide, ~29-33px tall). The CSS per-type hue-rotate tinting in coUclient/web/files/css/desktop/quoins.css (added to make the single shared placeholder distinguishable per type) was removed since it fought the real art's own colors; only quarazy keeps a non-recoloring glow as a rarity cue."
     },
     {
       "id": "fox",
@@ -12386,6 +12386,13 @@
       "category": "misc (player item)",
       "reason": "No source SWF exists anywhere under tmp/glitch-items (re-searched for 'newplayer'/'new_player' variants, zero hits; the item's dead link references newplayerbutterflybox.png, and this absence was already independently confirmed in the prior misc.json batch that converted the other 41 items). The item DOES have a real, live acquisition route: tinkertool.json's create_new_player_pack_butterfly recipe (coffee+spinach+cheezy_sammich+butterfly_lotion+butterfly_egg -> output) -- the confirmed third sibling of the already-live new_player_pack_chicken/new_player_pack_piggy recipes.",
       "replacementMilestone": "None planned unless source art is recovered from another archive."
+    },
+    {
+      "id": "quoin-collectibles-time-quarazy",
+      "displayName": "Quoin collectibles (Time/Quarazy)",
+      "category": "collectible (converted art, not currently placed)",
+      "reason": "Real art converted for completeness alongside the 6 priority QUOIN_TYPES (coUserver/lib/entities/quoin.dart's typeUrls map includes 'time' and 'quarazy', and the client/server already had pre-existing dormant support for both type strings -- street.dart's type check and Quoin.setCollected's 'quarazy' special-case predate this pass). No placement route exists for these two types: tools/seed-demo-world.mjs's QUOIN_TYPES does not include either, so no code in this repository ever constructs a Time or Quarazy quoin or inserts a matching street_entities row. Adding one is a game-design decision (drop rate, rarity, whether 'Quarazy' should be a one-time-per-street bonus as the pre-existing setCollected special-case implies) out of scope for this art-conversion pass.",
+      "replacementMilestone": "If/when tools/seed-demo-world.mjs (or a future authentic-placement import) adds Time/Quarazy placement, the converted art at content/sprites/quoin/time.png and content/sprites/quoin/quarazy.png is already wired in coUserver/lib/entities/quoin.dart and ready."
     }
   ]
 }
