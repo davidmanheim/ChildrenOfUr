@@ -552,7 +552,74 @@ function entityWidth(type) {
 	return WIDTH_BY_TYPE[type] ?? DEFAULT_WIDTH;
 }
 
-function entityY(dynamic, type, seed) {
+// A street's walkable surface is not one flat line -- elevated platforms and
+// ledges (CAT422 `platformLines`) are real ground too, and the live server
+// already treats them that way for player physics (coUserver street.dart's
+// CollisionPlatform/getYFromGround/_getBestPlatform). This placement script
+// previously ignored that entirely and always used the single flat
+// height+ground_y baseline for every x on the street -- fine for a flat
+// street, but on one with real elevated platforms an entity's rolled x could
+// land under a ledge with no relation to what's actually walkable there.
+// Mirrors CollisionPlatform's exact coordinate transform (the `middleground`
+// layer offsets both x and y by half the layer's own width/height; every
+// other layer only offsets y by groundY) so platform lines end up in the
+// same canvas-local space this script already places entities in.
+function buildPlatforms(dynamic) {
+	if (!dynamic || !dynamic.layers) return [];
+	const ground = -Math.abs(Number(dynamic.ground_y));
+	const platforms = [];
+	for (const layer of Object.values(dynamic.layers)) {
+		for (const line of (layer.platformLines || [])) {
+			// platform_pc_perm marks a ceiling/underside line, not walkable
+			// ground -- excluded the same way _getBestPlatform skips them.
+			if (line.platform_pc_perm === 1) continue;
+			const endpoints = line.endpoints || [];
+			const startEp = endpoints.find(e => e.name === 'start');
+			const endEp = endpoints.find(e => e.name === 'end');
+			if (!startEp || !endEp) continue;
+			let start, end;
+			if (layer.name === 'middleground') {
+				const halfW = Math.floor(Number(layer.w) / 2);
+				start = { x: startEp.x + halfW, y: startEp.y + layer.h + ground };
+				end = { x: endEp.x + halfW, y: endEp.y + layer.h + ground };
+			} else {
+				start = { x: startEp.x, y: startEp.y + ground };
+				end = { x: endEp.x, y: endEp.y + ground };
+			}
+			// Normalize to start.x <= end.x for a simple containment check --
+			// CAT422 lines aren't guaranteed authored left-to-right.
+			if (start.x > end.x) { const tmp = start; start = end; end = tmp; }
+			platforms.push({ start, end });
+		}
+	}
+	// "Topmost (smallest y) first" -- same documented invariant
+	// _getBestPlatform relies on, so the first x-matching platform found
+	// below is the one an entity dropped from above would actually land on.
+	platforms.sort((a, b) => a.start.y - b.start.y);
+	return platforms;
+}
+
+// Returns the canvas-local ground y at a given x from the topmost platform
+// spanning it (mirroring getYFromGround's line-equation math, minus the
+// "falling from" trajectory logic that only makes sense for live physics,
+// not a one-shot spawn placement -- this just wants "whatever's directly
+// walkable here"), or null if no platform covers that x (a genuine gap, or
+// a street with no platform data at all -- entityY() falls back to the
+// flat baseline in that case, same as before this existed).
+function groundYAtX(platforms, ground, x) {
+	for (const p of platforms) {
+		if (x >= p.start.x && x <= p.end.x) {
+			const dx = p.end.x - p.start.x;
+			if (dx === 0) return p.start.y - ground;
+			const slope = (p.end.y - p.start.y) / dx;
+			const yInt = p.start.y - slope * p.start.x;
+			return (slope * x + yInt) - ground;
+		}
+	}
+	return null;
+}
+
+function entityY(dynamic, type, seed, x, platforms) {
 	// Was a totally disconnected formula (600 + jitter, i.e. y=600-780) for
 	// streets with no CAT422 geometry, skipping the floating/aerial branching
 	// below entirely. Both the client (coUclient street.dart) and the server
@@ -582,9 +649,17 @@ function entityY(dynamic, type, seed) {
 		// Flying creatures: a modest hover height, not quoin-height.
 		return Math.round(groundLineY - 20 - ((seed >>> 16) % 80));
 	} else {
-		// Ground-anchored: feet on the ground line, with a few px of natural
-		// variance so a street's row of entities doesn't look perfectly ruled.
-		return Math.round(groundLineY - ((seed >>> 16) % 12));
+		// Ground-anchored: feet on the actual walkable surface at this x --
+		// an elevated platform/ledge if one covers it (real ground, not just
+		// the street's overall flat baseline; see buildPlatforms()/
+		// groundYAtX() above), falling back to the flat ground line if no
+		// platform does (a genuine gap, or a street with no platform data at
+		// all). A few px of natural variance so a street's row of entities
+		// doesn't look perfectly ruled.
+		const ground = -Math.abs(dynamic ? Number(dynamic.ground_y) : 0);
+		const platformY = platforms && x !== undefined ? groundYAtX(platforms, ground, x) : null;
+		const baseY = platformY !== null ? platformY : groundLineY;
+		return Math.round(baseY - ((seed >>> 16) % 12));
 	}
 }
 
@@ -626,6 +701,10 @@ function layoutPositions(tsid, dynamic, entries) {
 	const l = dynamic ? Number(dynamic.l) : -900;
 	const r = dynamic ? Number(dynamic.r) : 900;
 	const usable = Math.max(0, (r - l) - 2 * EDGE_MARGIN);
+	// Built once per street (not per entity) since every entity placed here
+	// shares the same platform geometry -- see buildPlatforms()/
+	// groundYAtX() above.
+	const platforms = buildPlatforms(dynamic);
 
 	const ordered = entries
 		.map((entry, i) => ({ ...entry, i, sortKey: hash(`${tsid}:slot:${entry.seedKey}`) }))
@@ -692,7 +771,7 @@ function layoutPositions(tsid, dynamic, entries) {
 		const x = (rawX >= minX - FLOAT_SLACK && rawX <= maxX + FLOAT_SLACK)
 			? Math.min(Math.max(rawX, minX), maxX)
 			: (span > 0 ? minX + (seed % (span + 1)) : minX);
-		results[entry.i] = { x: Math.round(x), y: entityY(dynamic, entry.type, seed) };
+		results[entry.i] = { x: Math.round(x), y: entityY(dynamic, entry.type, seed, x, platforms) };
 		cursor += extraPerSlot + width + gap;
 	});
 	return results;
