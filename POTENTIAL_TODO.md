@@ -420,6 +420,132 @@ still passes (1861 sprite sheets checked, same pass/fail counts as before --
 expected, since only pixel content changed, not geometry or manifests). Not
 independently re-confirmed with an in-browser screenshot this session.
 
+## Tree-family maturity-sprite frame-order audit (2026-08-29)
+
+Prompted by a live user report that `SpicePlant` showed its full/lush frame
+*after* harvesting rather than before. By the game's own logic this is
+backwards: `Tree.harvest()` decrements `state` toward 0 (`state == 0` ->
+"nothing to harvest", `harvest()` returns false) and `Tree.water()`
+increments `state` toward `maxState` (`state == maxState` -> "not thirsty",
+`water()` returns false) (`coUserver/lib/entities/plants/trees/tree.dart`),
+and the client maps `state` directly to sprite-sheet column with **no
+reversal** (`column = state % numColumns` in
+`coUclient/lib/src/game/entities/plant.dart`). So frame 0 of every
+maturity-level sheet must depict the bare/depleted state and the last frame
+must depict the full/lush state, for all 8 `Tree` subclasses (`WoodTree`,
+`BeanTree`, `BubbleTree`, `FruitTree`, `PaperTree`, `EggPlant`, `GasPlant`,
+`SpicePlant`).
+
+**Method**: read each entity's `states` map for its real maturity-level
+count (1-4 for `WoodTree`; 1 for `PaperTree`; 1-10 for the other 6) and each
+state's exact `Spritesheet()` frame width/height. Cropped every individual
+frame of every maturity level of every type (not just maturity_1, and not
+just a full low-res strip) into per-type labeled grids (`PIL`, one row per
+maturity level, one column per frame, each frame independently cropped from
+its sheet using its own declared frame geometry) and visually inspected
+each grid at readable size. Cross-referenced every type's original AS3
+source (`tmp/glitch-items/harvestable_resources/*/trant_*.as` /
+`wood_tree.as` / `paper_tree.as`) for its actual health-to-frame formula,
+since a mismatched formula is a more reliable signal than eyeballing alone.
+
+### Confirmed REVERSED and fixed: `GasPlant`, `SpicePlant`
+
+Both source files use an **inverted** health formula not present in any
+other tree type:
+
+- `trant_gas.as:25`: `tree.gotoAndStop(11 - health);`
+- `trant_spice.as:26`: `tree.gotoAndStop(11 - health);`
+
+Health 1 (bare) therefore lives at SWF timeline frame 10, and health 10
+(full) lives at frame 1. The conversion pipeline rasterized frames in raw
+SWF frame order and placed them left-to-right as sheet columns 0-9 with no
+correction for this inversion, so column 0 ended up as health 10 (full/lush)
+and column 9 as health 1 (bare) -- exactly backwards from `Tree.state`'s
+bare-at-0/full-at-max convention. Visually confirmed on the original art
+before fixing: every maturity level of both types showed a dense, fully
+bloomed frame 0 (purple flower clusters for `GasPlant`, red berry-like
+clusters for `SpicePlant`) fading to a bare, whitened/dried final frame --
+the reverse of every other tree type's own progression.
+
+Fixed by cropping each of the 10 maturity-level sheets per type into its 10
+individual frames (using that type's exact per-maturity-level frame
+width/height from its `Spritesheet()` args) and reassembling them in
+reversed column order -- a pure frame **reorder**, not a horizontal mirror
+(mirroring is the unrelated animal-sprite `facingRight` bug fixed in the
+"Sprite-flip" audit above; no frame here was flipped). Applied to both
+`content/sprites/{gas_plant,spice_plant}/maturity_1.png` through
+`maturity_10.png` and the matching
+`coUclient/web/files/sprites/generated/converted/{gas_plant,spice_plant}-maturity_N.png`
+copies -- confirmed byte-identical (md5) to their `content/sprites` source
+both before and after the fix, so both locations stay in sync. Re-verified
+visually after the fix: every one of the 10 maturity levels for both types
+now shows a bare/thin frame 0 and a fully bloomed final frame, for all 10
+maturity levels of both types.
+
+### Confirmed already correct (bare-to-full, left-to-right): `WoodTree`, `BeanTree`, `BubbleTree`, `EggPlant`, `PaperTree`
+
+- **`WoodTree`** -- no health dimension at all (only 4 maturity stages,
+  6 frames each, a plain chop-progression). Visually confirmed frame 0 =
+  bare stump, frame 5 = full branching log pile, for all 4 maturity levels.
+- **`PaperTree`** -- a single real 22-frame timeline,
+  `paper_tree.as`: `gotoAndStop(paper_count+1)` for `paper_count` 0-21, a
+  direct (non-inverted) mapping. Visually confirmed frame 0 = mostly green
+  leaves with little white "paper", frame 21 = canopy fully covered in
+  white paper-leaves (the harvestable), for its one maturity level.
+- **`BeanTree`** -- `trant_bean.as:27`: `tree.setHealth(health);`, direct.
+  Visually confirmed frame 0 = tightly curled, leafless dry growth, frame 9
+  = open leaves with visible green bean pods, for all 10 maturity levels.
+- **`BubbleTree`** -- `trant_bubble.as:27`: `tree.gotoAndPlay(health);`,
+  direct. Visually confirmed frame 0 = sparse young growth, frame 9 =
+  bushier growth with many more of the white ring-shaped harvestable
+  bubbles attached, for all 10 maturity levels.
+- **`EggPlant`** -- `trant_egg.as:25`: `tree.gotoAndStop(health);`, direct.
+  Visually confirmed frame 0 = bare stalk with only small eye-like spots,
+  frame 9 = stalk sprouting many white harvestable egg pods, for all 10
+  maturity levels.
+
+None of these five were modified.
+
+### `FruitTree` -- ambiguous case, resolved: frame order is moot, not touched
+
+This was flagged for special attention because a first quick look was
+inconclusive -- its bare-branch frames look visually similar across a low-
+res strip. Investigated in two ways:
+
+1. **Source structure**: `trant_fruit.as`'s 10 `grow_N` maturity clips are
+   each confirmed (per `content/source-manifest.json`'s conversion note for
+   `fruit_tree`) to hold only **one** real top-level frame; the 10-level
+   "health" and fruit-count visuals are driven entirely by separately
+   toggling dozens of nested per-leaf (`fol_1..fol_maxfla`) and per-cherry
+   (`cherry_1..cherry_maxcherry`) child clips via AS3, which has no single
+   equivalent top-level frame range and isn't representable by this
+   single-composited-frame-per-state sprite architecture. Each `maturity_N`
+   sheet was therefore built by duplicating that one real, correctly
+   converted default-health snapshot across all 10 columns -- documented in
+   both `content/source-manifest.json`'s per-output `note` field and
+   `fruittree.dart`'s own code comment above its `states` map.
+2. **Pixel proof**: cropped every frame of 4 sampled maturity levels
+   (`maturity_1`, `maturity_4`, `maturity_7`, `maturity_10`, chosen to span
+   the low/mid/high end of the growth range) and diffed every frame against
+   frame 0 of the same sheet with `PIL.ImageChops.difference`. Every single
+   comparison across all 4 sheets returned `bbox=None` (no differing
+   pixels at all) and `meandiff=0.0000` -- i.e. all 10 frames within a given
+   maturity level's sheet are byte-identical duplicates, exactly as the
+   source manifest documented.
+
+Since every frame in a `FruitTree` maturity sheet is an identical copy of
+the same image, reversing the column order produces a byte-identical sheet
+-- there is no reversed-vs-correct distinction to make or fix for this
+type. (What *does* legitimately vary is the image between different
+maturity levels -- e.g. `maturity_4`'s duplicated frame shows a young,
+sparsely-fruited tree while `maturity_10`'s shows a large, densely-fruited
+canopy -- but that is the separate `maturity` dimension, not the `state`
+dimension this audit covers, and was not touched.) Left entirely untouched.
+
+**Verification**: `docker compose restart client` rebuilt with 0 errors;
+`node tools/validate-content.mjs` still passes (1869 sprite sheets checked).
+Not independently re-confirmed with an in-browser screenshot this session.
+
 ## Reliability and compatibility
 
 - ~~Finish replacing raw Redstone mapper query results with typed lists across
