@@ -1372,7 +1372,18 @@ If you are reporting a bug, please reload then repeat the steps to cause the bug
 					</div>
 				</div>
 				<div id="shrine-window-bottom">
-					<ur-progress id="shrine-window-favor" percent="0" status=""></ur-progress>
+					<!-- The CSS below (#shrine-window-bottom .progress / .progress progress /
+					     .progress label) already expects exactly this structure -- a real
+					     <progress> element plus a <label> for the status text. It used to
+					     target a `<ur-progress percent="..." status="...">` custom element
+					     instead, which was never actually implemented anywhere (no JS/Dart
+					     registration, no rendering), so setting those attributes was a
+					     complete no-op: donating to a shrine updated server-side favor
+					     correctly, but nothing ever appeared on screen. -->
+					<div class="progress">
+						<progress id="shrine-window-favor" value="0" max="100"></progress>
+						<label></label>
+					</div>
 				</div>
 			</div>
 		</div>

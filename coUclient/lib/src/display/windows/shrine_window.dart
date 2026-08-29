@@ -6,7 +6,9 @@ class ShrineWindow extends Modal {
 		giantName;
 	int favor, maxFavor;
 	String shrineId;
-	Element buttonHolder, confirmButton, cancelButton, dropTarget, favorProgress, numSelectorContainer, helpText;
+	Element buttonHolder, confirmButton, cancelButton, dropTarget, numSelectorContainer, helpText;
+	ProgressElement favorProgress;
+	Element favorLabel;
 	Map<String, dynamic> item;
 	NumberInputElement numBox;
 	Element QtyContainer, plusBtn, minusBtn, maxBtn;
@@ -78,9 +80,15 @@ class ShrineWindow extends Modal {
 		});
 	}
 
+	// Was: favorProgress..setAttribute('percent', ...)..setAttribute('status', ...)
+	// against a `<ur-progress>` element -- a custom element that was never
+	// actually implemented anywhere (no JS/Dart registration, no CSS), so
+	// those attributes had no visual effect at all. Donating genuinely
+	// updated favor server-side; nothing about it ever appeared on screen.
+	// Drives the real <progress>/<label> pair now (see index.html).
 	void _setFavorProgress(int percent) {
-		favorProgress..setAttribute('percent', percent.toString())..setAttribute(
-			'status', "$favor of $maxFavor favor towards an Emblem of $giantName");
+		favorProgress.value = percent;
+		favorLabel.text = "$favor of $maxFavor favor towards an Emblem of $giantName";
 	}
 
 	ShrineWindow._(this.giantName, this.favor, this.maxFavor, this.shrineId) {
@@ -96,6 +104,7 @@ class ShrineWindow extends Modal {
 		cancelButton = querySelector('#shrine-window-cancel');
 		dropTarget = querySelector("#DonateDropTarget");
 		favorProgress = querySelector("#shrine-window-favor");
+		favorLabel = displayElement.querySelector("#shrine-window-bottom .progress label");
 		numSelectorContainer = querySelector("#shrine-window-qty");
 		helpText = querySelector("#DonateHelp");
 		item = {};
