@@ -64,7 +64,10 @@ class WoodTree extends Tree {
 	Future<bool> chop({WebSocket userSocket, String email}) async {
 		//make sure the player has a hatchet that chop some wood
 		Action digAction = actions.singleWhere((Action a) => a.actionName == 'chop');
-		List<String> types = digAction.itemRequirements.any;
+		// See icenubbin.dart's comment on this same fix -- itemRequirements.any
+		// is an untyped List, so the legacy mapper decodes raw List<dynamic>;
+		// direct assignment to List<String> threw on every use.
+		List<String> types = List<String>.from(digAction.itemRequirements.any);
 		bool success = await InventoryV2.decreaseDurability(email, types);
 		if(!success) {
 			return false;

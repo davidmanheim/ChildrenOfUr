@@ -61,7 +61,18 @@ abstract class Rock extends Plant {
 
 		//make sure the player has a pick that can mine this rock
 		Action digAction = actions.singleWhere((Action a) => a.actionName == 'mine');
-		List<String> types = digAction.itemRequirements.any;
+		// itemRequirements.any is declared as an untyped `List` (action.dart's
+		// ItemRequirements class), so the legacy mapper decodes it as raw
+		// List<dynamic> -- direct assignment to a List<String> local threw
+		// "type 'List<dynamic>' is not a subtype of type 'List<String>'" on
+		// every mine() call, confirmed live (silently failing every rock
+		// type's mine action -- no item ever granted, no error shown, since
+		// this session's earlier zone-isolation fix catches the exception at
+		// the server root instead of crashing, but the action itself still
+		// fails). The same pattern existed in 6 more files (icenubbin,
+		// mortarbarnacle, peatbog, dirtpile, tree.water(), woodtree.chop()),
+		// all fixed alongside this one.
+		List<String> types = List<String>.from(digAction.itemRequirements.any);
 		int miningSkillLevel = await SkillManager.getLevel(SKILL, email);
 		bool success = await InventoryV2.decreaseDurability(email, types, amount: (miningSkillLevel >= 3 ? 1 : 2));
 		if(!success) {

@@ -55,7 +55,9 @@ abstract class BabyAnimals {
 			return false;
 		}
 
-		List<String> foods = items[itemInSlot.itemType].actions[0].itemRequirements.any;
+		// Same untyped-List decode issue documented in icenubbin.dart/
+		// rock.dart -- itemRequirements.any decodes as raw List<dynamic>.
+		List<String> foods = List<String>.from(items[itemInSlot.itemType].actions[0].itemRequirements.any);
 		userSocket.add(jsonEncode({
 			'id': 'global_action_monster',
 			'openWindow': 'itemChooser',

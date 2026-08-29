@@ -59,7 +59,14 @@ class IceNubbin extends Plant {
 
 		//make sure the player has a shovel that can scrape this ice
 		Action digAction = actions.singleWhere((Action a) => a.actionName == 'collect');
-		List<String> types = digAction.itemRequirements.any;
+		// itemRequirements.any is declared as an untyped `List` (action.dart's
+		// ItemRequirements class), so the legacy mapper decodes it as raw
+		// List<dynamic> -- direct assignment to a List<String> local threw
+		// "type 'List<dynamic>' is not a subtype of type 'List<String>'" on
+		// every use, confirmed live (same defect independently found and
+		// fixed in Rock.mine() this session -- this is the same pattern in
+		// 6 more places, not a one-off).
+		List<String> types = List<String>.from(digAction.itemRequirements.any);
 		bool success = await InventoryV2.decreaseDurability(email, types);
 		if(!success) {
 			return false;
